@@ -1,0 +1,1392 @@
+/**
+ * app.js
+ * Logik Pelanggan Utama Portal Set Soalan Interaktif Harian (etutor.my)
+ * Menyokong:
+ *   1. Continue Progress merentas peranti (telefon <-> komputer)
+ *   2. Bento Kemajuan Pembelajaran (Progress Ring, Bar Subjek, Streak & Fokus Ulang Kaji)
+ *   3. Leaderboard Adil (Podium Top 3, Jadual Responsif @container & Kedudukan Peribadi)
+ *   4. Pemapar Kuiz <iframe srcdoc> Anti-Reseller + Cetakan Slip Keputusan Rasmi
+ */
+
+(function () {
+  "use strict";
+
+  const SESSION_STORAGE_KEY = "etutor_portal_session_v1";
+  const ADMIN_SESSION_STORAGE_KEY = "etutor_admin_session_v1";
+  const DEVICE_STORAGE_KEY = "etutor_portal_device_id_v1";
+
+  // Ikon Vektor SVG Sebaris (UI/UX Pro Max: Sifar Emoji Struktur, Garisan Seragam)
+  const ICONS = {
+    shield: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/></svg>',
+    play: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>',
+    refresh: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-2.64-6.36M21 3v6h-6"/></svg>',
+    checkCircle: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+    clock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg>',
+    trophy: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 01-10 0V4zM7 6H4v2a3 3 0 003 3m10-5h3v2a3 3 0 01-3 3"/></svg>',
+    flame: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2c.5 4.5 4 6.5 4 11a4 4 0 11-8 0c0-2.5 1.5-4.5 2-6 1 1.5 2 2 2 0 0-2-.5-3.5 0-5z"/></svg>',
+    sparkles: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3zM5 17l.8 1.8L7.6 19.6 5.8 20.4 5 22.2l-.8-1.8-1.8-.8 1.8-.8L5 17z"/></svg>',
+    book: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg>',
+    printer: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/></svg>',
+    arrowLeft: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/></svg>',
+    alert: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>',
+    logout: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/></svg>'
+  };
+
+  const portalState = {
+    sessionToken: "",
+    deviceId: getOrCreateDeviceId(),
+    user: null,
+    catalog: [],
+    inProgress: [],
+    progressSummary: null,
+    leaderboard: null,
+    selectedSubject: "ALL",
+    selectedStatus: "ALL",
+    searchQuery: "",
+    lbPeriod: "all",
+    lbSubject: "ALL",
+    activeQuizFileId: null,
+    latestSlipData: null,
+    pendingProgressPayload: null,
+    progressFlushTimer: null,
+    adminToken: "",
+    adminData: null,
+    adminSearch: "",
+    adminStatusFilter: "ALL"
+  };
+
+  function getOrCreateDeviceId() {
+    try {
+      let existing = localStorage.getItem(DEVICE_STORAGE_KEY);
+      if (existing && existing.length >= 8) return existing;
+      const uuid = (window.crypto && window.crypto.randomUUID)
+        ? "dev_" + window.crypto.randomUUID().replace(/-/g, "").slice(0, 16)
+        : "dev_" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36);
+      localStorage.setItem(DEVICE_STORAGE_KEY, uuid);
+      return uuid;
+    } catch (e) {
+      return "dev_session_fallback";
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatMinutesLeft(sec) {
+    if (sec === null || typeof sec === "undefined" || sec === "" || isNaN(Number(sec))) return "";
+    const mins = Math.max(1, Math.ceil(Number(sec) / 60));
+    return "Baki ~" + mins + " minit";
+  }
+
+  function showToast(msg) {
+    const el = document.getElementById("portalToast");
+    if (!el) return;
+    el.textContent = msg;
+    el.hidden = false;
+    if (window.ETutorMotion) window.ETutorMotion.animateToastIn(el);
+    clearTimeout(el._hideTimer);
+    el._hideTimer = setTimeout(function () {
+      el.hidden = true;
+    }, 4200);
+  }
+
+  // Top-Layer <dialog> Exit Transition Detection & Fallback (Firefox Bug 1882408 / Safari)
+  let supportsDisplayTransition;
+  function canTransitionDisplay() {
+    if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
+    if (typeof window === "undefined" || !window.CSS || !window.CSS.supports || !window.CSS.supports("transition-behavior", "allow-discrete") || !document.body) {
+      return false;
+    }
+    const probe = document.createElement("div");
+    probe.style.cssText = "transition: display 1s allow-discrete !important; display: block;";
+    document.body.appendChild(probe);
+    getComputedStyle(probe).display;
+    probe.style.display = "none";
+    supportsDisplayTransition = getComputedStyle(probe).display === "block";
+    probe.remove();
+    return supportsDisplayTransition;
+  }
+
+  function supportsTopLayerExit() {
+    return Boolean(window.CSS && window.CSS.supports && window.CSS.supports("overlay", "auto") && canTransitionDisplay());
+  }
+
+  async function closeTopLayer(dialogEl) {
+    if (!dialogEl || !dialogEl.open) return;
+    if (!supportsTopLayerExit()) {
+      dialogEl.setAttribute("data-closing", "");
+      const animations = typeof dialogEl.getAnimations === "function" ? dialogEl.getAnimations({ subtree: true }) : [];
+      if (animations.length > 0) {
+        await Promise.race([
+          Promise.allSettled(animations.map(function (a) { return a.finished; })),
+          new Promise(function (r) { setTimeout(r, 400); })
+        ]);
+      }
+      if (!dialogEl.hasAttribute("data-closing")) return;
+      dialogEl.removeAttribute("data-closing");
+    }
+    dialogEl.close();
+  }
+
+  // ==========================================================================
+  // TRANSPORT LAYER (GAS WebApp POST text/plain | google.script.run | Local /api)
+  // ==========================================================================
+  async function callBackend(action, payload) {
+    const reqBody = Object.assign({}, payload || {}, {
+      action: action,
+      deviceId: portalState.deviceId,
+      sessionToken: portalState.sessionToken || undefined
+    });
+
+    // 1. Jika dibuka terus sebagai Sandaran Google Apps Script (Index.html)
+    if (typeof google !== "undefined" && google.script && google.script.run) {
+      return new Promise(function (resolve, reject) {
+        google.script.run
+          .withSuccessHandler(function (res) { resolve(res); })
+          .withFailureHandler(function (err) { reject(err); })
+          .gasClientBridge(JSON.stringify(reqBody));
+      });
+    }
+
+    // 2. Domain etutor.my atau Pelayan Pratonton Lokal (/api)
+    const cfgUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GAS_WEB_APP_URL)
+      ? window.ETUTOR_CONFIG.GAS_WEB_APP_URL.trim()
+      : "";
+    const hostName = (typeof window !== "undefined" && window.location && window.location.hostname)
+      ? window.location.hostname
+      : "";
+    const isLocalPreview = /^(localhost|127\.0\.0\.1)$/i.test(hostName);
+    if (!cfgUrl && !isLocalPreview) {
+      throw new Error(
+        "Pelayan Google Apps Script belum dipautkan pada config.js. Sila jalankan `npm run clasp:login`, `npm run clasp:create`, dan `npm run deploy:all` pada komputer pentadbir."
+      );
+    }
+    const endpoint = cfgUrl || "/api";
+
+    // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
+    const resp = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(reqBody),
+      redirect: "follow"
+    });
+
+    if (!resp.ok) {
+      throw new Error("Ralat sambungan pelayan (HTTP " + resp.status + ")");
+    }
+    return resp.json();
+  }
+
+  // ==========================================================================
+  // FORM VALIDATION (:user-invalid + ARIA sync + WeakMap Fallback)
+  // ==========================================================================
+  function initFormValidation() {
+    const form = document.getElementById("loginForm");
+    if (!form) return;
+
+    const syncAria = function (el) {
+      if (!el || !el.checkValidity) return;
+      try {
+        const invalid = el.matches(":user-invalid") || el.classList.contains("user-invalid-fallback");
+        el.setAttribute("aria-invalid", invalid ? "true" : "false");
+      } catch (e) {}
+    };
+
+    document.addEventListener("blur", function (e) { syncAria(e.target); }, true);
+    document.addEventListener("input", function (e) {
+      if (e.target && e.target.hasAttribute && e.target.hasAttribute("aria-invalid")) {
+        syncAria(e.target);
+      }
+    });
+
+    // Fallback untuk pelayar lama tanpa sokongan :user-invalid
+    if (typeof CSS !== "undefined" && !CSS.supports("selector(:user-invalid)")) {
+      const dirty = new WeakMap();
+      const updateFallback = function (input) {
+        const ok = input.checkValidity();
+        input.classList.toggle("user-invalid-fallback", !ok);
+        input.setAttribute("aria-invalid", ok ? "false" : "true");
+      };
+      form.addEventListener("input", function (e) {
+        const st = dirty.get(e.target) || {};
+        st.typed = true;
+        dirty.set(e.target, st);
+        if (st.blurred) updateFallback(e.target);
+      });
+      form.addEventListener("blur", function (e) {
+        if (!e.target || !e.target.checkValidity) return;
+        const st = dirty.get(e.target) || {};
+        st.blurred = true;
+        dirty.set(e.target, st);
+        if (st.typed) updateFallback(e.target);
+      }, true);
+    }
+  }
+
+  // ==========================================================================
+  // RENDERING: DASHBOARD SECTIONS
+  // ==========================================================================
+  function applyDashboardBundle(res) {
+    if (res.user) portalState.user = res.user;
+    if (Array.isArray(res.catalog)) portalState.catalog = res.catalog;
+    if (Array.isArray(res.inProgress)) portalState.inProgress = res.inProgress;
+    if (res.progressSummary) portalState.progressSummary = res.progressSummary;
+    if (res.leaderboard) portalState.leaderboard = res.leaderboard;
+
+    renderHeaderUser();
+    renderContinueProgressSection();
+    renderProgressOverviewSection();
+    populateSubjectSelectors();
+    renderLeaderboardSection();
+    renderCatalogSection();
+
+    if (window.ETutorMotion) {
+      window.ETutorMotion.playDashboardEntrance();
+      window.ETutorMotion.animateProgressCounters(portalState.progressSummary);
+    }
+  }
+
+  function renderHeaderUser() {
+    const u = portalState.user || {};
+    const nameEl = document.getElementById("navBuyerName");
+    const pkgEl = document.getElementById("navPackageBadge");
+    if (nameEl) nameEl.textContent = u.buyerName || "Pelajar";
+    if (pkgEl) pkgEl.textContent = "Pakej: " + (u.aksesPakej || "ALL");
+  }
+
+  // 1. SEKSYEN CONTINUE PROGRESS
+  function renderContinueProgressSection() {
+    const sec = document.getElementById("continueProgressSection");
+    const grid = document.getElementById("continueProgressGrid");
+    if (!sec || !grid) return;
+
+    const list = portalState.inProgress || [];
+    if (list.length === 0) {
+      sec.hidden = true;
+      grid.innerHTML = "";
+      return;
+    }
+
+    sec.hidden = false;
+    grid.innerHTML = list.slice(0, 2).map(function (item) {
+      const answered = Math.max(0, Number(item.answeredCount) || 0);
+      const total = Math.max(1, Number(item.totalQuestions) || 45);
+      const pct = Math.min(100, Math.round((answered / total) * 100));
+      const remLabel = formatMinutesLeft(item.timeRemaining);
+      const title = item.quizTitle || "Set Latihan Interaktif";
+
+      return [
+        '<article class="continue-card">',
+        '  <div>',
+        '    <div class="continue-top">',
+        '      <span class="continue-tag">' + ICONS.clock + ' Sedang Dijawab</span>',
+        '      <span class="tabular-nums" style="font-size:0.8rem;color:#cbd5e1">' + escapeHtml(item.subject || "SPM") + '</span>',
+        '    </div>',
+        '    <h3 class="continue-title">' + escapeHtml(title) + '</h3>',
+        '    <div class="continue-meta" style="margin-top:8px">',
+        '      <span>Disimpan: ' + escapeHtml(item.updatedAt || "Sebentar tadi") + '</span>',
+        (remLabel ? '      <span class="tabular-nums">• ' + escapeHtml(remLabel) + '</span>' : ''),
+        '    </div>',
+        '  </div>',
+        '  <div class="continue-progress-wrap">',
+        '    <div class="continue-progress-labels">',
+        '      <span>Kemajuan Jawapan</span>',
+        '      <strong class="tabular-nums">' + answered + ' / ' + total + ' soalan (' + pct + '%)</strong>',
+        '    </div>',
+        '    <progress class="etutor-progress on-dark" max="' + total + '" value="' + Math.min(answered, total) + '" aria-label="Kemajuan ' + escapeHtml(title) + '"></progress>',
+        '  </div>',
+        '  <div class="continue-actions">',
+        '    <button type="button" class="btn btn-continue-white js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-resume="1">',
+               ICONS.play + ' <span>Sambung Semula</span>',
+        '    </button>',
+        '    <button type="button" class="btn btn-continue-subtle btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1">',
+               ICONS.refresh + ' <span>Mula Baharu</span>',
+        '    </button>',
+        '  </div>',
+        '</article>'
+      ].join("\n");
+    }).join("\n");
+  }
+
+  // 2. SEKSYEN PROGRESS OVERVIEW (Bento Grid)
+  function renderProgressOverviewSection() {
+    const ps = portalState.progressSummary || {
+      totalSets: 0,
+      completedSets: 0,
+      completionPercentage: 0,
+      averageScore: 0,
+      averageGrade: "—",
+      totalXp: 0,
+      streakDays: 0,
+      subjectBreakdown: [],
+      weakTopics: []
+    };
+
+    const ringBox = document.getElementById("overallProgressRing");
+    const ringVal = document.getElementById("overallProgressPct");
+    const setsCountEl = document.getElementById("overallSetsDoneText");
+    if (ringBox) {
+      const pctNum = Math.max(0, Math.min(100, Number(ps.completionPercentage) || 0));
+      ringBox.value = pctNum;
+      ringBox.setAttribute("value", String(pctNum));
+      ringBox.style.setProperty("--ring-pct", String(pctNum));
+    }
+    if (ringVal) ringVal.textContent = (ps.completionPercentage || 0) + "%";
+    if (setsCountEl) setsCountEl.textContent = (ps.completedSets || 0) + " daripada " + (ps.totalSets || 0) + " set selesai";
+
+    const kpiAvg = document.getElementById("kpiAvgScore");
+    const kpiGrade = document.getElementById("kpiAvgGrade");
+    const kpiXp = document.getElementById("kpiTotalXp");
+    const kpiStreak = document.getElementById("kpiStreakDays");
+
+    if (kpiAvg) kpiAvg.textContent = (ps.averageScore || 0) + "%";
+    if (kpiGrade) kpiGrade.textContent = ps.averageGrade || "—";
+    if (kpiXp) kpiXp.textContent = Number(ps.totalXp || 0).toLocaleString("en-MY") + " XP";
+    if (kpiStreak) kpiStreak.textContent = (ps.streakDays || 0) + " Hari";
+
+    // Bar Subjek
+    const subContainer = document.getElementById("subjectBreakdownList");
+    if (subContainer) {
+      const subs = ps.subjectBreakdown || [];
+      if (subs.length === 0) {
+        subContainer.innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted)">Tiada set soalan lagi.</p>';
+      } else {
+        subContainer.innerHTML = subs.map(function (s) {
+          return [
+            '<div class="subject-bar-item">',
+            '  <div class="subject-bar-head">',
+            '    <span>' + escapeHtml(s.subject) + '</span>',
+            '    <span class="tabular-nums">' + s.completed + '/' + s.total + ' (' + s.percentage + '%)</span>',
+            '  </div>',
+            '  <progress class="etutor-progress" max="100" value="' + s.percentage + '" aria-label="Kemajuan subjek ' + escapeHtml(s.subject) + '"></progress>',
+            '</div>'
+          ].join("");
+        }).join("");
+      }
+    }
+
+    // Fokus Ulang Kaji (Topik Lemah)
+    const weakCard = document.getElementById("weakTopicsBanner");
+    const weakRow = document.getElementById("weakTopicsPills");
+    if (weakCard && weakRow) {
+      const wList = ps.weakTopics || [];
+      if (wList.length === 0) {
+        weakCard.hidden = true;
+      } else {
+        weakCard.hidden = false;
+        weakRow.innerHTML = wList.map(function (w) {
+          return '<span class="weak-pill">' + ICONS.alert + ' ' + escapeHtml(w.topic) + ' <strong class="tabular-nums">(' + w.lowestPct + '%)</strong></span>';
+        }).join("");
+      }
+    }
+  }
+
+  // 3. SEKSYEN LEADERBOARD
+  function renderLeaderboardSection() {
+    const lb = portalState.leaderboard || { entries: [], myStanding: null, totalParticipants: 0 };
+    const podiumEl = document.getElementById("leaderboardPodium");
+    const tbodyEl = document.getElementById("leaderboardTableBody");
+    const myFootEl = document.getElementById("myStandingFooter");
+
+    const entries = lb.entries || [];
+
+    if (podiumEl) {
+      if (entries.length === 0) {
+        podiumEl.innerHTML = "";
+        podiumEl.hidden = true;
+      } else {
+        podiumEl.hidden = false;
+        podiumEl.innerHTML = entries.slice(0, 3).map(function (e) {
+          return [
+            '<div class="podium-tile rank-' + e.rank + '">',
+            '  <div class="podium-medal tabular-nums">#' + e.rank + '</div>',
+            '  <div style="min-width:0">',
+            '    <div style="font-weight:700;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">',
+                   escapeHtml(e.displayName) + (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
+            '    </div>',
+            '    <div class="tabular-nums" style="font-size:0.82rem;color:var(--text-secondary);margin-top:2px">',
+                   Number(e.xp).toLocaleString("en-MY") + ' XP • Purata ' + e.averageScore + '% (' + escapeHtml(e.grade) + ')',
+            '    </div>',
+            '  </div>',
+            '</div>'
+          ].join("");
+        }).join("");
+      }
+    }
+
+    if (tbodyEl) {
+      if (entries.length === 0) {
+        tbodyEl.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:24px">Belum ada rekod markah dihantar bagi kategori ini. Jadilah pelajar pertama di tangga #1!</td></tr>';
+      } else {
+        tbodyEl.innerHTML = entries.map(function (e) {
+          return [
+            '<tr class="' + (e.isCurrentUser ? "is-me" : "") + '">',
+            '  <th scope="row">',
+            '    <span class="tabular-nums" style="display:inline-block;min-width:28px;color:var(--text-muted)">#' + e.rank + '</span> ',
+                 escapeHtml(e.displayName),
+                 (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
+            '  </th>',
+            '  <td class="tabular-nums">' + e.setsCompleted + ' set</td>',
+            '  <td class="tabular-nums">' + e.averageScore + '%</td>',
+            '  <td><span class="status-badge badge-done">' + escapeHtml(e.grade) + '</span></td>',
+            '  <td class="tabular-nums" style="font-weight:700;color:var(--brand-primary)">' + Number(e.xp).toLocaleString("en-MY") + ' XP</td>',
+            '</tr>'
+          ].join("");
+        }).join("");
+      }
+    }
+
+    if (myFootEl) {
+      const me = lb.myStanding;
+      if (!me) {
+        myFootEl.hidden = true;
+      } else {
+        myFootEl.hidden = false;
+        const rankText = me.rank
+          ? "Kedudukan Semasa Anda: #" + me.rank + " daripada " + (lb.totalParticipants || 1) + " pelajar"
+          : "Anda belum menghantar markah bagi penapis ini — selesaikan 1 set untuk masuk ke Leaderboard!";
+        myFootEl.innerHTML = [
+          '<span>' + ICONS.trophy + ' ' + escapeHtml(rankText) + '</span>',
+          '<span class="tabular-nums">' + Number(me.xp || 0).toLocaleString("en-MY") + ' XP • ' + (me.setsCompleted || 0) + ' Set • Purata ' + (me.averageScore || 0) + '%</span>'
+        ].join("");
+      }
+    }
+
+    if (window.ETutorMotion) window.ETutorMotion.animateLeaderboardUpdate();
+  }
+
+  function populateSubjectSelectors() {
+    const subjects = [];
+    const seen = {};
+    (portalState.catalog || []).forEach(function (c) {
+      if (c.subject && !seen[c.subject]) {
+        seen[c.subject] = true;
+        subjects.push(c.subject);
+      }
+    });
+    subjects.sort();
+
+    // Cip Subjek Katalog
+    const chipRow = document.getElementById("subjectChipsRow");
+    if (chipRow) {
+      const allOpts = ["ALL"].concat(subjects);
+      chipRow.innerHTML = allOpts.map(function (sub) {
+        const active = portalState.selectedSubject === sub;
+        const label = sub === "ALL" ? "Semua Subjek" : sub;
+        return '<button type="button" class="tab-chip js-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
+      }).join("");
+    }
+
+    // Dropdown Subjek Leaderboard
+    const lbSelect = document.getElementById("lbSubjectSelect");
+    if (lbSelect) {
+      const prev = portalState.lbSubject || "ALL";
+      lbSelect.innerHTML = ['<option value="ALL">Semua Subjek</option>']
+        .concat(subjects.map(function (s) {
+          return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>';
+        }))
+        .join("");
+      lbSelect.value = seen[prev] ? prev : "ALL";
+    }
+  }
+
+  // 4. SEKSYEN KATALOG BANK SOALAN
+  function renderCatalogSection() {
+    const grid = document.getElementById("catalogCardsGrid");
+    const countLabel = document.getElementById("catalogCountLabel");
+    if (!grid) return;
+
+    const q = portalState.searchQuery.trim().toLowerCase();
+    const filtered = (portalState.catalog || []).filter(function (item) {
+      if (portalState.selectedSubject !== "ALL" && item.subject !== portalState.selectedSubject) {
+        return false;
+      }
+      if (portalState.selectedStatus !== "ALL" && item.status !== portalState.selectedStatus) {
+        return false;
+      }
+      if (q) {
+        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (countLabel) {
+      countLabel.textContent = filtered.length + " set dipaparkan";
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set soalan sepadan dengan carian atau penapis semasa.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function (item) {
+      let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
+      let primaryBtnLabel = "Mula Latihan";
+      let primaryBtnClass = "btn-primary";
+      let resumeAttr = 'data-resume="0"';
+
+      if (item.inProgress) {
+        const ans = item.inProgress.answeredCount || 0;
+        const tot = item.inProgress.totalQuestions || 45;
+        statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
+        primaryBtnLabel = "Sambung Semula";
+        primaryBtnClass = "btn-emerald";
+        resumeAttr = 'data-resume="1"';
+      } else if (item.bestScore) {
+        statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
+        primaryBtnLabel = "Ulang Latihan";
+        primaryBtnClass = "btn-outline";
+      }
+
+      return [
+        '<article class="quiz-card">',
+        '  <div>',
+        '    <div class="quiz-card-badges">',
+        '      <span class="status-badge badge-subject">' + ICONS.book + ' ' + escapeHtml(item.subject) + '</span>',
+               statusBadgeHtml,
+        '    </div>',
+        '    <h3 class="quiz-card-title">' + escapeHtml(item.cleanTitle) + '</h3>',
+        '    <div class="quiz-card-meta">',
+        (item.setCode ? '<span>' + escapeHtml(item.setCode) + '</span>' : ''),
+        (item.stateOrSource ? '<span>• ' + escapeHtml(item.stateOrSource) + '</span>' : ''),
+        (item.year ? '<span class="tabular-nums">• ' + escapeHtml(item.year) + '</span>' : ''),
+        '    </div>',
+        '  </div>',
+        '  <div class="quiz-card-footer">',
+        '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
+               ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
+        '    </button>',
+        (item.inProgress
+          ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
+          : ''),
+        '  </div>',
+        '</article>'
+      ].join("\n");
+    }).join("\n");
+
+    if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
+  }
+
+  // ==========================================================================
+  // OPEN QUIZ IN PROTECTED <iframe srcdoc> & SYNC PROGRESS / SCORE
+  // ==========================================================================
+  async function openQuizSet(fileId, autoResume, resetStart) {
+    const stage = document.getElementById("examStage");
+    const iframe = document.getElementById("examIframe");
+    const titleEl = document.getElementById("examStageTitle");
+    const slipBtn = document.getElementById("openSlipBtn");
+    const syncEl = document.getElementById("examSyncStatus");
+
+    const meta = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
+    if (titleEl) titleEl.textContent = meta ? meta.cleanTitle : "Memuatkan Set Soalan...";
+    if (slipBtn) slipBtn.hidden = true;
+    if (syncEl) syncEl.textContent = "Memuatkan soalan selamat...";
+
+    portalState.activeQuizFileId = fileId;
+    portalState.latestSlipData = null;
+    stage.hidden = false;
+    document.body.style.overflow = "hidden";
+    if (window.ETutorMotion) window.ETutorMotion.playExamStageOpen();
+
+    iframe.srcdoc = '<!DOCTYPE html><html lang="ms"><body style="font-family:system-ui,sans-serif;display:grid;place-items:center;height:92vh;color:#334155;background:#f8fafc"><div style="text-align:center"><p style="font-weight:700;font-size:1.05rem;margin-bottom:6px">Menyediakan Kertas Soalan Dilindungi...</p><p style="font-size:0.88rem;color:#64748b">Sila tunggu sebentar.</p></div></body></html>';
+
+    try {
+      const res = await callBackend("getQuizHtml", {
+        fileId: fileId,
+        autoResume: Boolean(autoResume),
+        resetStart: Boolean(resetStart)
+      });
+
+      if (!res || !res.ok) {
+        if (res && res.authExpired) {
+          handleLogout();
+        }
+        showToast((res && res.error) || "Gagal memuatkan set soalan.");
+        closeQuizStage();
+        return;
+      }
+
+      iframe.srcdoc = res.html;
+      if (syncEl) {
+        syncEl.textContent = autoResume && res.hasSavedState
+          ? "Sesi terdahulu disambung automatik"
+          : "Auto-simpan aktif";
+      }
+
+      if (resetStart) {
+        portalState.inProgress = (portalState.inProgress || []).filter(function (p) { return p.fileId !== fileId; });
+        renderContinueProgressSection();
+        renderCatalogSection();
+      }
+    } catch (err) {
+      showToast("Ralat rangkaian semasa memuatkan soalan: " + err.message);
+      closeQuizStage();
+    }
+  }
+
+  async function flushPendingProgressNow() {
+    clearTimeout(portalState.progressFlushTimer);
+    const payload = portalState.pendingProgressPayload;
+    portalState.pendingProgressPayload = null;
+    if (!payload) return;
+
+    try {
+      await callBackend("saveProgress", payload);
+    } catch (e) {}
+  }
+
+  async function closeQuizStage() {
+    const stage = document.getElementById("examStage");
+    const iframe = document.getElementById("examIframe");
+    await flushPendingProgressNow();
+
+    if (iframe) iframe.srcdoc = "about:blank";
+    if (stage) stage.hidden = true;
+    document.body.style.overflow = "";
+    portalState.activeQuizFileId = null;
+
+    // Segarkan data dashboard dari pelayan supaya Continue Progress & Leaderboard tepat
+    try {
+      const refreshed = await callBackend("dashboard", { forceRefresh: false });
+      if (refreshed && refreshed.ok) {
+        applyDashboardBundle(refreshed);
+      }
+    } catch (e) {}
+  }
+
+  // Terima mesej postMessage daripada jambatan di dalam <iframe srcdoc>
+  function handleQuizMessage(event) {
+    const msg = event && event.data;
+    if (!msg || typeof msg !== "object" || typeof msg.type !== "string") return;
+
+    if (msg.type === "ETUTOR_PRINT_BLOCKED") {
+      showToast("Cetakan kertas soalan disekat. Sila hantar kuiz dahulu untuk mencetak Slip Keputusan Rasmi.");
+      return;
+    }
+
+    if (msg.type === "ETUTOR_PROGRESS_CLEARED") {
+      portalState.pendingProgressPayload = null;
+      if (msg.fileId) {
+        callBackend("clearProgress", { fileId: msg.fileId }).catch(function () {});
+      }
+      return;
+    }
+
+    if (msg.type === "ETUTOR_PROGRESS_SYNC") {
+      if (msg.isSubmitted) return; // Keputusan penuh diuruskan oleh ETUTOR_QUIZ_COMPLETED
+      if ((Number(msg.answeredCount) || 0) === 0) return;
+
+      const syncEl = document.getElementById("examSyncStatus");
+      if (syncEl) {
+        syncEl.textContent = "Disimpan (" + msg.answeredCount + " dijawab)";
+      }
+
+      // Kemas kini state lokal segera supaya UI responsif serta-merta
+      const itemSummary = {
+        updatedAt: "Sebentar tadi",
+        fileId: msg.fileId,
+        quizTitle: msg.quizTitle,
+        subject: msg.subject,
+        answeredCount: msg.answeredCount,
+        totalQuestions: msg.totalQuestions || 45,
+        timeRemaining: msg.timeRemaining
+      };
+
+      const others = (portalState.inProgress || []).filter(function (p) { return p.fileId !== msg.fileId; });
+      portalState.inProgress = [itemSummary].concat(others);
+
+      portalState.pendingProgressPayload = {
+        fileId: msg.fileId,
+        quizTitle: msg.quizTitle,
+        subject: msg.subject,
+        answeredCount: msg.answeredCount,
+        totalQuestions: msg.totalQuestions || 45,
+        timeRemaining: msg.timeRemaining,
+        stateJson: msg.stateJson
+      };
+
+      clearTimeout(portalState.progressFlushTimer);
+      portalState.progressFlushTimer = setTimeout(function () {
+        flushPendingProgressNow();
+      }, 7000);
+      return;
+    }
+
+    if (msg.type === "ETUTOR_QUIZ_COMPLETED") {
+      portalState.pendingProgressPayload = null;
+      clearTimeout(portalState.progressFlushTimer);
+
+      portalState.latestSlipData = msg;
+      const slipBtn = document.getElementById("openSlipBtn");
+      if (slipBtn) slipBtn.hidden = false;
+      if (window.ETutorMotion) window.ETutorMotion.celebrateQuizCompletion();
+
+      const syncEl = document.getElementById("examSyncStatus");
+      if (syncEl) syncEl.textContent = "Keputusan direkodkan: " + msg.percentage + "% (" + msg.grade + ")";
+
+      showToast("Tahniah! Markah " + msg.percentage + "% (Gred " + msg.grade + ") telah direkodkan ke Leaderboard.");
+
+      callBackend("saveScore", {
+        fileId: msg.fileId,
+        quizTitle: msg.quizTitle,
+        subject: msg.subject,
+        scoreText: msg.scoreText,
+        percentage: msg.percentage,
+        grade: msg.grade,
+        weakTopics: msg.weakTopics || []
+      }).then(function (res) {
+        if (res && res.ok) {
+          applyDashboardBundle(res);
+        }
+      }).catch(function () {});
+    }
+  }
+
+  // ==========================================================================
+  // OFFICIAL RESULT SLIP MODAL & SAFE PRINT
+  // ==========================================================================
+  function openResultSlipModal() {
+    const data = portalState.latestSlipData;
+    const dlg = document.getElementById("resultSlipDialog");
+    if (!data || !dlg) return;
+
+    document.getElementById("slipStudentName").textContent = (portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar";
+    document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
+    document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
+    document.getElementById("slipSubject").textContent = data.subject || "SPM";
+    document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
+    document.getElementById("slipScorePct").textContent = data.percentage + "%";
+    document.getElementById("slipGrade").textContent = data.grade || "—";
+    document.getElementById("slipBreakdown").textContent = data.breakdown || ("Markah: " + (data.scoreText || ""));
+
+    const weakListEl = document.getElementById("slipWeakTopics");
+    const wt = data.weakTopics || [];
+    if (wt.length === 0) {
+      weakListEl.innerHTML = '<li style="color:var(--grade-emerald)">Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.</li>';
+    } else {
+      weakListEl.innerHTML = wt.map(function (w) {
+        return "<li>" + escapeHtml(w.topic) + " — Penguasaan " + w.percentage + "% (" + w.obtained + "/" + w.total + ")</li>";
+      }).join("");
+    }
+
+    if (typeof dlg.showModal === "function") {
+      dlg.showModal();
+    } else {
+      dlg.setAttribute("open", "");
+    }
+    if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(data.percentage);
+  }
+
+  function printOfficialSlip() {
+    document.body.classList.add("printing-official-slip");
+    window.print();
+    setTimeout(function () {
+      document.body.classList.remove("printing-official-slip");
+    }, 500);
+  }
+
+  // ==========================================================================
+  // AUTHENTICATION & SESSION LIFECYCLE
+  // ==========================================================================
+  function saveSessionLocally(token, userObj) {
+    try {
+      localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify({
+        sessionToken: token,
+        user: userObj
+      }));
+    } catch (e) {}
+  }
+
+  function handleLogout() {
+    portalState.sessionToken = "";
+    portalState.user = null;
+    try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
+    document.getElementById("dashboardView").hidden = true;
+    document.getElementById("examStage").hidden = true;
+    document.getElementById("loginView").hidden = false;
+    document.body.style.overflow = "";
+    if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
+  }
+
+  async function tryRestoreExistingSession() {
+    try {
+      const raw = localStorage.getItem(SESSION_STORAGE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.sessionToken) return;
+
+      portalState.sessionToken = parsed.sessionToken;
+      portalState.user = parsed.user || null;
+
+      const btn = document.getElementById("loginSubmitBtn");
+      if (btn) btn.textContent = "Menyambung sesi...";
+
+      const res = await callBackend("dashboard", { forceRefresh: false });
+      if (res && res.ok) {
+        document.getElementById("loginView").hidden = true;
+        document.getElementById("dashboardView").hidden = false;
+        applyDashboardBundle(res);
+      } else {
+        handleLogout();
+      }
+    } catch (e) {
+      handleLogout();
+    } finally {
+      const btn = document.getElementById("loginSubmitBtn");
+      if (btn) btn.textContent = "Log Masuk ke Portal";
+    }
+  }
+
+  // ==========================================================================
+  // EVENT BINDINGS
+  // ==========================================================================
+  function bindEvents() {
+    initFormValidation();
+    window.addEventListener("message", handleQuizMessage);
+
+    // Sekat Ctrl+S / Ctrl+P pada peringkat induk kecuali semasa dialog slip dibuka
+    document.addEventListener("keydown", function (e) {
+      const ctrl = e.ctrlKey || e.metaKey;
+      const k = String(e.key || "").toLowerCase();
+      if (ctrl && (k === "s" || k === "u")) {
+        e.preventDefault();
+      }
+      if (ctrl && k === "p") {
+        const dlg = document.getElementById("resultSlipDialog");
+        if (!dlg || !dlg.open) {
+          e.preventDefault();
+          showToast("Cetakan halaman disekat. Gunakan butang Slip Keputusan selepas tamat menjawab kuiz.");
+        }
+      }
+    });
+
+    // Toggle Show/Hide PIN
+    const pinBtn = document.getElementById("togglePinBtn");
+    const pinInput = document.getElementById("loginPinInput");
+    if (pinBtn && pinInput) {
+      pinBtn.addEventListener("click", function () {
+        const isPwd = pinInput.type === "password";
+        pinInput.type = isPwd ? "text" : "password";
+        pinBtn.setAttribute("aria-pressed", isPwd ? "true" : "false");
+        pinBtn.setAttribute("aria-label", isPwd ? "Sembunyikan Kod PIN" : "Paparkan Kod PIN");
+      });
+    }
+
+    // Submit Login
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const errBox = document.getElementById("loginAlertBox");
+        const errText = document.getElementById("loginAlertText");
+        const submitBtn = document.getElementById("loginSubmitBtn");
+
+        const userId = document.getElementById("loginUserIdInput").value.trim();
+        const pin = document.getElementById("loginPinInput").value.trim();
+
+        if (!loginForm.checkValidity()) {
+          loginForm.reportValidity();
+          return;
+        }
+
+        errBox.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Mengesahkan Akses...";
+
+        try {
+          const res = await callBackend("login", { userId: userId, pin: pin });
+          if (!res || !res.ok) {
+            errText.textContent = (res && res.error) || "Log masuk gagal. Sila semak ID & PIN anda.";
+            errBox.hidden = false;
+            if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
+            return;
+          }
+
+          portalState.sessionToken = res.sessionToken;
+          saveSessionLocally(res.sessionToken, res.user);
+
+          document.getElementById("loginView").hidden = true;
+          document.getElementById("dashboardView").hidden = false;
+          applyDashboardBundle(res);
+        } catch (err) {
+          errText.textContent = "Gagal menghubungi pelayan pengesahan: " + err.message;
+          errBox.hidden = false;
+          if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Log Masuk ke Portal";
+        }
+      });
+    }
+
+    // Logout & Refresh
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
+
+    const refreshBtn = document.getElementById("refreshCatalogBtn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async function () {
+        refreshBtn.disabled = true;
+        try {
+          const res = await callBackend("dashboard", { forceRefresh: true });
+          if (res && res.ok) {
+            applyDashboardBundle(res);
+            showToast("Bank soalan & Leaderboard telah dikemas kini.");
+          }
+        } catch (err) {
+          showToast("Gagal menyegarkan data.");
+        } finally {
+          refreshBtn.disabled = false;
+        }
+      });
+    }
+
+    // Delegated Clicks (Open Quiz, Subject Filter Chips, Leaderboard Period)
+    document.addEventListener("click", async function (e) {
+      const openBtn = e.target.closest(".js-open-quiz");
+      if (openBtn) {
+        const fid = openBtn.getAttribute("data-file-id");
+        const resume = openBtn.getAttribute("data-resume") === "1";
+        const reset = openBtn.getAttribute("data-reset") === "1";
+        if (fid) openQuizSet(fid, resume, reset);
+        return;
+      }
+
+      const subChip = e.target.closest(".js-subject-chip");
+      if (subChip) {
+        portalState.selectedSubject = subChip.getAttribute("data-subject") || "ALL";
+        document.querySelectorAll(".js-subject-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === subChip ? "true" : "false");
+        });
+        renderCatalogSection();
+        return;
+      }
+
+      const lbTab = e.target.closest(".js-lb-period");
+      if (lbTab) {
+        const period = lbTab.getAttribute("data-period") || "all";
+        portalState.lbPeriod = period;
+        document.querySelectorAll(".js-lb-period").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === lbTab ? "true" : "false");
+        });
+        try {
+          const res = await callBackend("getLeaderboard", {
+            period: portalState.lbPeriod,
+            subject: portalState.lbSubject
+          });
+          if (res && res.ok) {
+            portalState.leaderboard = res.leaderboard;
+            renderLeaderboardSection();
+          }
+        } catch (err) {}
+      }
+    });
+
+    // Leaderboard Subject Select
+    const lbSubSel = document.getElementById("lbSubjectSelect");
+    if (lbSubSel) {
+      lbSubSel.addEventListener("change", async function () {
+        portalState.lbSubject = lbSubSel.value || "ALL";
+        try {
+          const res = await callBackend("getLeaderboard", {
+            period: portalState.lbPeriod,
+            subject: portalState.lbSubject
+          });
+          if (res && res.ok) {
+            portalState.leaderboard = res.leaderboard;
+            renderLeaderboardSection();
+          }
+        } catch (err) {}
+      });
+    }
+
+    // Catalog Search & Status Filter
+    const searchInput = document.getElementById("catalogSearchInput");
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        portalState.searchQuery = searchInput.value;
+        renderCatalogSection();
+      });
+    }
+
+    const statusSelect = document.getElementById("catalogStatusSelect");
+    if (statusSelect) {
+      statusSelect.addEventListener("change", function () {
+        portalState.selectedStatus = statusSelect.value || "ALL";
+        renderCatalogSection();
+      });
+    }
+
+    // Exam Stage Controls & Result Slip Dialog
+    const closeStageBtn = document.getElementById("closeExamStageBtn");
+    if (closeStageBtn) closeStageBtn.addEventListener("click", closeQuizStage);
+
+    const openSlipBtn = document.getElementById("openSlipBtn");
+    if (openSlipBtn) openSlipBtn.addEventListener("click", openResultSlipModal);
+
+    const printSlipBtn = document.getElementById("printSlipBtn");
+    if (printSlipBtn) printSlipBtn.addEventListener("click", printOfficialSlip);
+
+    const closeSlipBtn = document.getElementById("closeSlipBtn");
+    const slipDlg = document.getElementById("resultSlipDialog");
+    if (closeSlipBtn && slipDlg) {
+      closeSlipBtn.addEventListener("click", function () { closeTopLayer(slipDlg); });
+      slipDlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(slipDlg);
+      });
+      if (typeof HTMLDialogElement !== "undefined" && !("closedBy" in HTMLDialogElement.prototype)) {
+        slipDlg.addEventListener("click", function (ev) {
+          if (ev.target !== slipDlg) return;
+          const rect = slipDlg.getBoundingClientRect();
+          const isDialogContent = (
+            rect.top <= ev.clientY &&
+            ev.clientY <= rect.top + rect.height &&
+            rect.left <= ev.clientX &&
+            ev.clientX <= rect.left + rect.width
+          );
+          if (!isDialogContent) {
+            closeTopLayer(slipDlg);
+          }
+        });
+      }
+    }
+
+    initAdminPanelBindings();
+  }
+
+  // ==========================================================================
+  // PANEL KAWALAN ADMIN (#admin): SEMAKAN LANGGANAN, AKSES & PERANTI
+  // ==========================================================================
+  function isHashAdmin() {
+    return window.location.hash.toLowerCase() === "#admin";
+  }
+
+  async function syncRouteMode() {
+    const adminView = document.getElementById("adminView");
+    const loginView = document.getElementById("loginView");
+    const dashboardView = document.getElementById("dashboardView");
+    const examStage = document.getElementById("examStage");
+    if (!adminView) return;
+
+    if (isHashAdmin()) {
+      loginView.hidden = true;
+      dashboardView.hidden = true;
+      examStage.hidden = true;
+      adminView.hidden = false;
+
+      let savedAdminTok = portalState.adminToken;
+      if (!savedAdminTok) {
+        try {
+          savedAdminTok = sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) || "";
+        } catch (e) {}
+      }
+
+      if (savedAdminTok) {
+        portalState.adminToken = savedAdminTok;
+        try {
+          const res = await callBackend("adminDashboard", { adminToken: savedAdminTok });
+          if (res && res.ok) {
+            document.getElementById("adminLoginShell").hidden = true;
+            document.getElementById("adminDashboardShell").hidden = false;
+            applyAdminBundle(res);
+            return;
+          }
+        } catch (e) {}
+      }
+
+      portalState.adminToken = "";
+      document.getElementById("adminDashboardShell").hidden = true;
+      document.getElementById("adminLoginShell").hidden = false;
+    } else {
+      adminView.hidden = true;
+      if (portalState.sessionToken && portalState.user) {
+        loginView.hidden = true;
+        dashboardView.hidden = false;
+      } else {
+        dashboardView.hidden = true;
+        loginView.hidden = false;
+      }
+    }
+  }
+
+  function applyAdminBundle(res) {
+    portalState.adminData = res;
+    const st = res.stats || {};
+    const elTot = document.getElementById("admTotalUsers");
+    const elAct = document.getElementById("admActiveUsers");
+    const elBlk = document.getElementById("admBlockedUsers");
+    const elScr = document.getElementById("admTotalScores");
+    if (elTot) elTot.textContent = String(st.totalUsers || 0);
+    if (elAct) elAct.textContent = String(st.activeUsers || 0);
+    if (elBlk) elBlk.textContent = String(st.blockedOrExpiredUsers || 0);
+    if (elScr) elScr.textContent = String(st.totalScoreSubmissions || 0);
+
+    const sheetLink = document.getElementById("adminOpenSheetLink");
+    if (sheetLink) {
+      if (res.spreadsheetUrl) {
+        sheetLink.href = res.spreadsheetUrl;
+        sheetLink.hidden = false;
+      } else {
+        sheetLink.hidden = true;
+      }
+    }
+
+    renderAdminUsersTable();
+    renderAdminLogsTable();
+  }
+
+  function renderAdminUsersTable() {
+    const tbody = document.getElementById("adminUsersTableBody");
+    if (!tbody || !portalState.adminData) return;
+
+    const q = portalState.adminSearch.trim().toLowerCase();
+    const sf = portalState.adminStatusFilter;
+    const list = (portalState.adminData.users || []).filter(function (u) {
+      const effectivelyActive = u.status === "AKTIF" && !u.isExpired;
+      if (sf === "AKTIF" && !effectivelyActive) return false;
+      if (sf === "SEKAT" && effectivelyActive) return false;
+      if (q) {
+        const hay = [u.userId, u.buyerName, u.aksesPakej, u.status].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (list.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:20px">Tiada rekod pelanggan sepadan.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = list.map(function (u) {
+      const isOk = u.status === "AKTIF" && !u.isExpired;
+      const badgeClass = isOk ? "badge-done" : "badge-progress";
+      const statusLabel = u.isExpired ? "TAMAT TEMPOH" : u.status;
+      const toggleLabel = u.status === "AKTIF" ? "Sekat" : "Aktifkan";
+      const expText = u.expiryDate ? " (Tamat: " + escapeHtml(u.expiryDate) + ")" : " (Tiada had tarikh)";
+
+      return [
+        "<tr>",
+        '  <th scope="row">',
+        '    <div style="font-weight:700;color:var(--text-primary)">' + escapeHtml(u.buyerName || "Pelajar") + "</div>",
+        '    <div class="tabular-nums" style="font-size:0.8rem;color:var(--text-muted)">' + escapeHtml(u.userId) + "</div>",
+        "  </th>",
+        '  <td class="tabular-nums"><code>' + escapeHtml(u.pin || "—") + "</code></td>",
+        "  <td>" + escapeHtml(u.aksesPakej || "ALL") + "</td>",
+        '  <td><span class="status-badge ' + badgeClass + '">' + escapeHtml(statusLabel) + '</span><div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">' + expText + "</div></td>",
+        '  <td class="tabular-nums">' + u.devicesUsed + " / " + u.deviceLimit + " peranti</td>",
+        '  <td class="tabular-nums" style="font-size:0.8rem;color:var(--text-secondary)">' + escapeHtml(u.lastAccess || "Belum log masuk") + "</td>",
+        "  <td>",
+        '    <div class="admin-row-actions">',
+        '      <button type="button" class="btn btn-outline btn-xs js-adm-copy-wa" data-uid="' + escapeHtml(u.userId) + '" data-name="' + escapeHtml(u.buyerName) + '" data-pin="' + escapeHtml(u.pin) + '" data-pkg="' + escapeHtml(u.aksesPakej) + '">Salin WA</button>',
+        '      <button type="button" class="btn btn-outline btn-xs js-adm-reset-dev" data-uid="' + escapeHtml(u.userId) + '">Reset Peranti</button>',
+        '      <button type="button" class="btn btn-outline btn-xs js-adm-toggle-status" data-uid="' + escapeHtml(u.userId) + '">' + toggleLabel + "</button>",
+        "    </div>",
+        "  </td>",
+        "</tr>"
+      ].join("");
+    }).join("");
+  }
+
+  function renderAdminLogsTable() {
+    const tbody = document.getElementById("adminLogsTableBody");
+    if (!tbody || !portalState.adminData) return;
+    const logs = portalState.adminData.recentLogs || [];
+    if (logs.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:18px">Belum ada log akses direkodkan.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = logs.slice(0, 30).map(function (l) {
+      return [
+        "<tr>",
+        '  <th scope="row" class="tabular-nums" style="font-size:0.8rem">' + escapeHtml(l.timestamp) + "</th>",
+        '  <td class="tabular-nums">' + escapeHtml(l.userId) + "</td>",
+        '  <td><span class="status-badge badge-subject">' + escapeHtml(l.eventType) + "</span></td>",
+        '  <td class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(l.deviceId) + "</td>",
+        '  <td style="font-size:0.82rem;color:var(--text-secondary)">' + escapeHtml(l.details) + "</td>",
+        "</tr>"
+      ].join("");
+    }).join("");
+  }
+
+  function initAdminPanelBindings() {
+    window.addEventListener("hashchange", syncRouteMode);
+
+    const exitLink = document.getElementById("exitAdminToStudentLink");
+    if (exitLink) {
+      exitLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.hash = "";
+        syncRouteMode();
+      });
+    }
+
+    const adminForm = document.getElementById("adminLoginForm");
+    if (adminForm) {
+      adminForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const keyInput = document.getElementById("adminKeyInput");
+        const errBox = document.getElementById("adminLoginError");
+        const errTxt = document.getElementById("adminLoginErrorText");
+        const btn = document.getElementById("adminLoginBtn");
+
+        errBox.hidden = true;
+        btn.disabled = true;
+        btn.textContent = "Mengesahkan...";
+        try {
+          const res = await callBackend("adminLogin", { adminKey: keyInput.value.trim() });
+          if (!res || !res.ok) {
+            errTxt.textContent = (res && res.error) || "Kunci Rahsia Admin tidak sah.";
+            errBox.hidden = false;
+            return;
+          }
+          portalState.adminToken = res.adminToken;
+          try { sessionStorage.setItem(ADMIN_SESSION_STORAGE_KEY, res.adminToken); } catch (e2) {}
+          keyInput.value = "";
+          document.getElementById("adminLoginShell").hidden = true;
+          document.getElementById("adminDashboardShell").hidden = false;
+          applyAdminBundle(res);
+        } catch (err) {
+          errTxt.textContent = "Ralat pelayan: " + err.message;
+          errBox.hidden = false;
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Buka Panel Admin";
+        }
+      });
+    }
+
+    const admLogout = document.getElementById("adminLogoutBtn");
+    if (admLogout) {
+      admLogout.addEventListener("click", function () {
+        portalState.adminToken = "";
+        try { sessionStorage.removeItem(ADMIN_SESSION_STORAGE_KEY); } catch (e) {}
+        window.location.hash = "";
+        syncRouteMode();
+      });
+    }
+
+    const admRefresh = document.getElementById("adminRefreshBtn");
+    if (admRefresh) {
+      admRefresh.addEventListener("click", async function () {
+        const res = await callBackend("adminDashboard", { adminToken: portalState.adminToken });
+        if (res && res.ok) {
+          applyAdminBundle(res);
+          showToast("Data langganan & log akses telah disegarkan.");
+        }
+      });
+    }
+
+    const upsertForm = document.getElementById("adminUpsertForm");
+    if (upsertForm) {
+      upsertForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const btn = document.getElementById("admSaveUserBtn");
+        btn.disabled = true;
+        try {
+          const res = await callBackend("adminUpsertUser", {
+            adminToken: portalState.adminToken,
+            userId: document.getElementById("admUserId").value.trim(),
+            buyerName: document.getElementById("admBuyerName").value.trim(),
+            aksesPakej: document.getElementById("admPackage").value.trim() || "ALL",
+            deviceLimit: document.getElementById("admDeviceLimit").value,
+            expiryDate: document.getElementById("admExpiry").value,
+            pin: document.getElementById("admCustomPin").value.trim()
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            showToast("Pelanggan disimpan! Kod PIN: " + res.savedPin);
+            upsertForm.reset();
+            document.getElementById("admPackage").value = "ALL";
+            document.getElementById("admDeviceLimit").value = "2";
+          } else {
+            showToast((res && res.error) || "Gagal menyimpan pelanggan.");
+          }
+        } catch (err) {
+          showToast("Ralat: " + err.message);
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    }
+
+    const admSearch = document.getElementById("adminSearchInput");
+    if (admSearch) {
+      admSearch.addEventListener("input", function () {
+        portalState.adminSearch = admSearch.value;
+        renderAdminUsersTable();
+      });
+    }
+
+    const admStatus = document.getElementById("adminStatusFilter");
+    if (admStatus) {
+      admStatus.addEventListener("change", function () {
+        portalState.adminStatusFilter = admStatus.value || "ALL";
+        renderAdminUsersTable();
+      });
+    }
+
+    document.addEventListener("click", async function (e) {
+      const waBtn = e.target.closest(".js-adm-copy-wa");
+      if (waBtn) {
+        const portalUrl = (portalState.adminData && portalState.adminData.portalUrl) || window.location.origin;
+        const msg = [
+          "Assalamualaikum & Salam Sejahtera " + (waBtn.getAttribute("data-name") || "Pelajar") + ",",
+          "",
+          "Akses Portal Latihan Interaktif eTutor.my anda telah DIAKTIFKAN:",
+          "URL Portal: " + portalUrl,
+          "ID Pengguna: " + waBtn.getAttribute("data-uid"),
+          "Kod PIN: " + waBtn.getAttribute("data-pin"),
+          "Pakej: " + (waBtn.getAttribute("data-pkg") || "ALL"),
+          "",
+          "Selamat maju jaya!"
+        ].join("\n");
+        try {
+          await navigator.clipboard.writeText(msg);
+          showToast("Mesej WhatsApp akses berjaya disalin!");
+        } catch {
+          showToast("PIN Pelanggan: " + waBtn.getAttribute("data-pin"));
+        }
+        return;
+      }
+
+      const resetBtn = e.target.closest(".js-adm-reset-dev");
+      if (resetBtn) {
+        const uid = resetBtn.getAttribute("data-uid");
+        const res = await callBackend("adminResetDevices", { adminToken: portalState.adminToken, userId: uid });
+        if (res && res.ok) {
+          applyAdminBundle(res);
+          showToast("Senarai peranti untuk " + uid + " telah dikosongkan.");
+        }
+        return;
+      }
+
+      const toggleBtn = e.target.closest(".js-adm-toggle-status");
+      if (toggleBtn) {
+        const uid = toggleBtn.getAttribute("data-uid");
+        const res = await callBackend("adminToggleStatus", { adminToken: portalState.adminToken, userId: uid });
+        if (res && res.ok) {
+          applyAdminBundle(res);
+          showToast("Status langganan " + uid + " telah dikemas kini.");
+        }
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    bindEvents();
+    if (isHashAdmin()) {
+      syncRouteMode();
+    } else {
+      if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
+      tryRestoreExistingSession();
+    }
+  });
+})();

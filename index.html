@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>eTutor.my — Portal Set Soalan Interaktif Harian</title>
+  <meta name="description" content="Portal latihan kuiz interaktif harian SPM & sekolah Malaysia dengan penjejakan kemajuan, Continue Progress dan Leaderboard pelajar.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       SKRIN 1: LOG MASUK PEMBELI BERDAFTAR
+       ===================================================================== -->
+  <main id="loginView" class="login-shell">
+    <div class="login-bg-orbs" aria-hidden="true">
+      <span class="orb orb-blue"></span>
+      <span class="orb orb-emerald"></span>
+      <span class="orb orb-gold"></span>
+    </div>
+    <section class="login-card" aria-labelledby="loginHeading">
+      <div class="brand-mark">
+        <div class="brand-logo-box" aria-hidden="true">
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 8l10 5 10-5-10-5zM2 13l10 5 10-5M6 15.5V19c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--brand-primary)">eTutor.my</div>
+          <div style="font-size:0.78rem;color:var(--text-muted)">Portal Set Soalan Interaktif Harian</div>
+        </div>
+      </div>
+
+      <h1 id="loginHeading">Log Masuk Pelajar</h1>
+      <p class="login-subtitle">Masukkan ID Pengguna dan Kod PIN pembelian anda untuk menyambung latihan harian serta menyemak kedudukan Leaderboard.</p>
+
+      <div id="loginAlertBox" class="alert-banner alert-danger" role="alert" hidden>
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="margin-top:2px">
+          <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+        </svg>
+        <span id="loginAlertText"></span>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-field">
+          <label for="loginUserIdInput">ID Pengguna (No. Telefon / E-mel)</label>
+          <span id="userIdHint" class="field-hint">Contoh: 0123456789 atau nama@gmail.com</span>
+          <input
+            type="text"
+            id="loginUserIdInput"
+            name="username"
+            class="text-input"
+            required
+            minlength="5"
+            autocomplete="username"
+            aria-describedby="userIdHint"
+            aria-errormessage="userIdError"
+            placeholder="0123456789"
+          >
+          <div id="userIdError" class="field-error">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+            </svg>
+            <span>Sila masukkan No. Telefon atau alamat e-mel yang sah.</span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="loginPinInput">Kod PIN Akses</label>
+          <span id="pinHint" class="field-hint">Masukkan Kod PIN 4–12 aksara daripada mesej pengesahan anda</span>
+          <div class="input-wrap">
+            <input
+              type="password"
+              id="loginPinInput"
+              name="password"
+              class="text-input has-trailing-btn tabular-nums"
+              required
+              minlength="4"
+              maxlength="20"
+              inputmode="text"
+              autocomplete="current-password"
+              aria-describedby="pinHint"
+              aria-errormessage="pinError"
+              placeholder="••••••"
+            >
+            <button
+              type="button"
+              id="togglePinBtn"
+              class="pin-toggle-btn"
+              aria-label="Paparkan Kod PIN"
+              aria-pressed="false"
+            >
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <div id="pinError" class="field-error">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+            </svg>
+            <span>Sila masukkan Kod PIN sekurang-kurangnya 4 aksara.</span>
+          </div>
+        </div>
+
+        <button type="submit" id="loginSubmitBtn" class="btn btn-primary" style="inline-size:100%">
+          Log Masuk ke Portal
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       SKRIN 2: MUKA DEPAN PELAJAR SELEPAS LOGIN
+       (Continue Progress + Progress Bento + Leaderboard + Katalog Soalan)
+       ===================================================================== -->
+  <div id="dashboardView" hidden>
+    <header class="portal-topbar">
+      <div class="topbar-inner">
+        <div class="topbar-brand">
+          <div class="brand-logo-box" style="inline-size:38px;block-size:38px" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 8l10 5 10-5-10-5zM2 13l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="topbar-brand-title">eTutor.my</div>
+            <div class="topbar-brand-sub" id="navPackageBadge">Pakej: ALL</div>
+          </div>
+        </div>
+
+        <div class="topbar-user-area">
+          <div class="user-pill">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/>
+            </svg>
+            <span id="navBuyerName">Pelajar</span>
+          </div>
+
+          <button type="button" id="refreshCatalogBtn" class="btn btn-outline btn-sm" aria-label="Segarkan Katalog dan Leaderboard">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-2.64-6.36M21 3v6h-6"/>
+            </svg>
+            <span>Segarkan</span>
+          </button>
+
+          <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/>
+            </svg>
+            <span>Log Keluar</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+
+      <!-- 1. SEKSYEN CONTINUE PROGRESS (Muncul automatik apabila ada kuiz separuh jalan) -->
+      <section id="continueProgressSection" class="continue-section" aria-labelledby="continueHeading" hidden>
+        <div class="section-header">
+          <div>
+            <div class="section-title-group">
+              <svg class="icon" style="color:var(--brand-accent)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8"/>
+              </svg>
+              <h2 id="continueHeading" class="section-title">Sambung Latihan Terakhir (Continue Progress)</h2>
+            </div>
+            <p class="section-subtitle">Jawapan &amp; baki masa anda disimpan automatik merentas telefon dan komputer.</p>
+          </div>
+        </div>
+        <div id="continueProgressGrid" class="continue-grid"></div>
+      </section>
+
+      <!-- 2. SEKSYEN KEMAJUAN PEMBELAJARAN SAYA (PROGRESS BENTO GRID) -->
+      <section aria-labelledby="progressHeading">
+        <div class="section-header">
+          <div>
+            <div class="section-title-group">
+              <svg class="icon" style="color:var(--grade-emerald-fill)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/>
+              </svg>
+              <h2 id="progressHeading" class="section-title">Kemajuan Pembelajaran Saya</h2>
+            </div>
+            <p class="section-subtitle">Jejaki penguasaan set harian, purata gred SPM, dan bab fokus ulang kaji anda.</p>
+          </div>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Kad A: Progress Ring Keseluruhan -->
+          <div class="bento-card bento-completion">
+            <div class="progress-ring-wrapper">
+              <progress id="overallProgressRing" class="progress-ring" value="0" max="100" aria-label="Peratus keseluruhan set selesai"></progress>
+              <div class="progress-ring-inner" aria-hidden="true">
+                <span id="overallProgressPct" class="progress-ring-value tabular-nums">0%</span>
+                <span class="progress-ring-caption">Siap</span>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size:1rem;color:var(--text-primary)">Penguasaan Bank Soalan</h3>
+              <p id="overallSetsDoneText" class="tabular-nums" style="font-size:0.88rem;color:var(--text-muted);margin-top:4px">0 daripada 0 set selesai</p>
+              <p style="font-size:0.78rem;color:var(--grade-emerald);font-weight:600;margin-top:8px">Sasaran: Selesaikan 1 set setiap hari</p>
+            </div>
+          </div>
+
+          <!-- Kad B: 4 KPI Utama -->
+          <div class="bento-card bento-kpis">
+            <div class="kpi-tile">
+              <span class="kpi-label">Purata Markah</span>
+              <span id="kpiAvgScore" class="kpi-value tabular-nums">0%</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Gred Semasa</span>
+              <span id="kpiAvgGrade" class="kpi-value" style="color:var(--grade-emerald)">—</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Jumlah Mata XP</span>
+              <span id="kpiTotalXp" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0 XP</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Streak Harian</span>
+              <span id="kpiStreakDays" class="kpi-value tabular-nums" style="color:var(--grade-gold)">0 Hari</span>
+            </div>
+          </div>
+
+          <!-- Kad C: Pecahan Mengikut Subjek -->
+          <div class="bento-card bento-subjects">
+            <h3 style="font-size:0.95rem;color:var(--text-primary)">Kemajuan Mengikut Subjek</h3>
+            <div id="subjectBreakdownList" class="subject-bar-list"></div>
+          </div>
+
+          <!-- Kad D: Bab / Topik Perlu Diulang Kaji -->
+          <div id="weakTopicsBanner" class="bento-card bento-weak-topics" hidden>
+            <h3 style="font-size:0.95rem;color:var(--text-primary)">Fokus Ulang Kaji Segera (Topik &lt; 60%)</h3>
+            <p style="font-size:0.83rem;color:var(--text-muted)">Berdasarkan analisis jawapan kuiz yang telah anda hantar:</p>
+            <div id="weakTopicsPills" class="weak-pills-row"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SEKSYEN LEADERBOARD PELAJAR -->
+      <section aria-labelledby="leaderboardHeading">
+        <div class="section-header">
+          <div>
+            <div class="section-title-group">
+              <svg class="icon" style="color:var(--grade-gold-fill)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 01-10 0V4zM7 6H4v2a3 3 0 003 3m10-5h3v2a3 3 0 01-3 3"/>
+              </svg>
+              <h2 id="leaderboardHeading" class="section-title">Carta Kedudukan Pelajar (Leaderboard)</h2>
+            </div>
+            <p class="section-subtitle">Dikira secara adil berdasarkan Skor Terbaik setiap Set Unik (1% = 10 XP + 50 XP bonus siap).</p>
+          </div>
+
+          <div class="leaderboard-controls">
+            <button type="button" class="tab-chip js-lb-period" data-period="all" aria-pressed="true">Keseluruhan</button>
+            <button type="button" class="tab-chip js-lb-period" data-period="weekly" aria-pressed="false">Minggu Ini</button>
+            <label for="lbSubjectSelect" class="sr-only">Tapis Subjek Leaderboard</label>
+            <select id="lbSubjectSelect" class="select-control">
+              <option value="ALL">Semua Subjek</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="leaderboard-card">
+          <div id="leaderboardPodium" class="podium-grid"></div>
+
+          <div tabindex="0" role="region" aria-labelledby="lbTableCaption" class="table-wrapper">
+            <table class="lb-table">
+              <caption id="lbTableCaption" class="sr-only">Senarai 10 pelajar terbaik eTutor.my</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Kedudukan &amp; Pelajar</th>
+                  <th scope="col">Set Selesai</th>
+                  <th scope="col">Purata Markah</th>
+                  <th scope="col">Gred</th>
+                  <th scope="col">Mata XP</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboardTableBody"></tbody>
+            </table>
+          </div>
+
+          <div id="myStandingFooter" class="my-standing-footer" hidden></div>
+        </div>
+      </section>
+
+      <!-- 4. SEKSYEN KATALOG SET SOALAN INTERAKTIF HARIAN -->
+      <section aria-labelledby="catalogHeading">
+        <div class="section-header">
+          <div>
+            <div class="section-title-group">
+              <svg class="icon" style="color:var(--brand-primary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+              </svg>
+              <h2 id="catalogHeading" class="section-title">Bank Set Soalan Interaktif Harian</h2>
+            </div>
+            <p class="section-subtitle">Fail baharu di Google Drive muncul secara automatik di dalam senarai ini.</p>
+          </div>
+          <span id="catalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:600;color:var(--text-muted)">0 set</span>
+        </div>
+
+        <div class="catalog-toolbar">
+          <div class="search-and-status-row">
+            <div class="search-box">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+              </svg>
+              <label for="catalogSearchInput" class="sr-only">Cari tajuk set, subjek atau negeri</label>
+              <input
+                type="search"
+                id="catalogSearchInput"
+                class="search-input"
+                placeholder="Cari subjek, negeri, atau nombor set (cth: Sejarah Johor, Set 01)..."
+              >
+            </div>
+
+            <label for="catalogStatusSelect" class="sr-only">Tapis Status Latihan</label>
+            <select id="catalogStatusSelect" class="select-control">
+              <option value="ALL">Semua Status</option>
+              <option value="in_progress">Sedang Dijawab</option>
+              <option value="not_started">Belum Jawab</option>
+              <option value="completed">Telah Selesai</option>
+            </select>
+          </div>
+
+          <div id="subjectChipsRow" class="chip-scroll-row" role="group" aria-label="Penapis Subjek"></div>
+        </div>
+
+        <div id="catalogCardsGrid" class="catalog-grid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =====================================================================
+       SKRIN 3: MOD KUIZ PENUH SKRIN (100dvh + <iframe srcdoc>)
+       ===================================================================== -->
+  <section id="examStage" class="exam-stage" aria-label="Ruang Peperiksaan Interaktif" hidden>
+    <div class="exam-stage-bar">
+      <div class="exam-stage-left">
+        <button type="button" id="closeExamStageBtn" class="btn btn-stage-back btn-sm">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/>
+          </svg>
+          <span>Kembali ke Katalog</span>
+        </button>
+        <span id="examStageTitle" class="exam-stage-title">Set Soalan Interaktif</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <span id="examSyncStatus" class="sync-indicator tabular-nums">Auto-simpan aktif</span>
+        <button type="button" id="openSlipBtn" class="btn btn-emerald btn-sm" hidden>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
+          </svg>
+          <span>Slip Keputusan</span>
+        </button>
+      </div>
+    </div>
+
+    <iframe
+      id="examIframe"
+      class="exam-iframe"
+      title="Kertas Soalan Interaktif eTutor.my"
+    ></iframe>
+  </section>
+
+  <!-- =====================================================================
+       DIALOG SLIP KEPUTUSAN RASMI (Boleh Dicetak Tanpa Soalan Peperiksaan)
+       ===================================================================== -->
+  <dialog id="resultSlipDialog" class="slip-dialog" closedby="any" aria-labelledby="slipHeading">
+    <div class="slip-paper">
+      <div class="slip-header">
+        <div>
+          <h2 id="slipHeading" style="font-size:1.25rem;color:var(--brand-primary)">Slip Keputusan Latihan Interaktif</h2>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Rekod Pencapaian Rasmi Portal eTutor.my</p>
+        </div>
+        <span class="status-badge badge-subject">Disahkan</span>
+      </div>
+
+      <div class="slip-score-banner">
+        <div>
+          <div style="font-size:0.78rem;color:var(--text-muted);font-weight:600">PERATUS MARKAH</div>
+          <div id="slipScorePct" class="tabular-nums" style="font-size:2rem;font-weight:800;color:var(--brand-primary)">0%</div>
+        </div>
+        <div>
+          <div style="font-size:0.78rem;color:var(--text-muted);font-weight:600">GRED PENCAPAIAN</div>
+          <div id="slipGrade" style="font-size:2rem;font-weight:800;color:var(--grade-emerald)">—</div>
+        </div>
+      </div>
+
+      <div class="slip-meta-grid">
+        <div>
+          <div style="color:var(--text-muted);font-size:0.76rem">Nama Pelajar</div>
+          <div id="slipStudentName" style="font-weight:700">—</div>
+        </div>
+        <div>
+          <div style="color:var(--text-muted);font-size:0.76rem">ID Berdaftar</div>
+          <div id="slipUserId" class="tabular-nums" style="font-weight:600">—</div>
+        </div>
+        <div>
+          <div style="color:var(--text-muted);font-size:0.76rem">Subjek</div>
+          <div id="slipSubject" style="font-weight:600">—</div>
+        </div>
+        <div>
+          <div style="color:var(--text-muted);font-size:0.76rem">Tarikh &amp; Masa</div>
+          <div id="slipDate" class="tabular-nums" style="font-weight:600">—</div>
+        </div>
+        <div style="grid-column:1/-1">
+          <div style="color:var(--text-muted);font-size:0.76rem">Set Soalan</div>
+          <div id="slipQuizTitle" style="font-weight:700">—</div>
+          <div id="slipBreakdown" class="tabular-nums" style="font-size:0.84rem;color:var(--text-secondary);margin-top:2px"></div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border-subtle);padding-top:12px">
+        <div style="font-size:0.82rem;font-weight:700;margin-bottom:6px">Analisis Penguasaan Topik:</div>
+        <ul id="slipWeakTopics" style="padding-left:18px;font-size:0.84rem;color:var(--text-secondary);display:flex;flex-direction:column;gap:4px"></ul>
+      </div>
+    </div>
+
+    <div class="slip-actions">
+      <button type="button" id="closeSlipBtn" class="btn btn-outline">Tutup</button>
+      <button type="button" id="printSlipBtn" class="btn btn-primary">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
+        </svg>
+        <span>Cetak / Simpan PDF Slip</span>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- =====================================================================
+       SKRIN 4: PANEL KAWALAN ADMIN (#admin — Semakan Langganan & Akses)
+       Diakses melalui URL `etutor.my/#admin` (atau `http://localhost:4173/#admin`)
+       ===================================================================== -->
+  <div id="adminView" hidden>
+    <!-- 4A: Pengesahan Kunci Rahsia Admin -->
+    <main id="adminLoginShell" class="login-shell">
+      <section class="login-card" aria-labelledby="adminLoginHeading">
+        <div class="brand-mark">
+          <div class="brand-logo-box" aria-hidden="true">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)">Panel Kawalan Admin</div>
+            <div style="font-size:0.78rem;color:var(--text-muted)">Pengurusan Langganan &amp; Akses Pelanggan</div>
+          </div>
+        </div>
+
+        <h1 id="adminLoginHeading">Akses Pentadbir</h1>
+        <p class="login-subtitle">Masukkan Kunci Rahsia Admin (<code>ADMIN_PIN</code>) untuk menyemak status langganan, menambah pembeli, atau mereset had peranti.</p>
+
+        <div id="adminLoginError" class="alert-banner alert-danger" role="alert" hidden>
+          <span id="adminLoginErrorText"></span>
+        </div>
+
+        <form id="adminLoginForm" novalidate>
+          <div class="form-field">
+            <label for="adminKeyInput">Kunci Rahsia Admin</label>
+            <span id="adminKeyHint" class="field-hint">Pratonton lokal: <code>admin123</code> • Produksi: nilai <code>ADMIN_PIN</code> dalam ScriptProperties</span>
+            <input
+              type="password"
+              id="adminKeyInput"
+              class="text-input tabular-nums"
+              required
+              minlength="4"
+              autocomplete="current-password"
+              aria-describedby="adminKeyHint"
+              placeholder="Masukkan ADMIN_PIN"
+            >
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="submit" id="adminLoginBtn" class="btn btn-primary" style="flex:1">Buka Panel Admin</button>
+            <a href="#" id="exitAdminToStudentLink" class="btn btn-outline">Skrin Pelajar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- 4B: Papan Pemuka Langganan & Kawalan Akses Admin -->
+    <div id="adminDashboardShell" hidden>
+      <header class="portal-topbar">
+        <div class="topbar-inner">
+          <div class="topbar-brand">
+            <div class="brand-logo-box" style="inline-size:38px;block-size:38px" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="topbar-brand-title">eTutor.my — Pentadbir</div>
+              <div class="topbar-brand-sub">Kawalan Langganan, Pakej &amp; Log Peranti</div>
+            </div>
+          </div>
+
+          <div class="topbar-user-area">
+            <a id="adminOpenSheetLink" href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm" hidden>
+              <span>Buka Google Sheets</span>
+            </a>
+            <button type="button" id="adminRefreshBtn" class="btn btn-outline btn-sm">Segarkan</button>
+            <button type="button" id="adminLogoutBtn" class="btn btn-ghost btn-sm">Log Keluar Admin</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-main">
+        <!-- Ringkasan KPI Langganan -->
+        <section aria-labelledby="adminStatsHeading">
+          <div class="section-header">
+            <h2 id="adminStatsHeading" class="section-title">Ringkasan Langganan &amp; Akses</h2>
+          </div>
+          <div class="admin-kpi-grid">
+            <div class="kpi-tile">
+              <span class="kpi-label">Jumlah Pelanggan</span>
+              <span id="admTotalUsers" class="kpi-value tabular-nums">0</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Langganan Aktif</span>
+              <span id="admActiveUsers" class="kpi-value tabular-nums" style="color:var(--grade-emerald)">0</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Disekat / Tamat Tempoh</span>
+              <span id="admBlockedUsers" class="kpi-value tabular-nums" style="color:var(--status-danger)">0</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Jumlah Kuiz Dihantar</span>
+              <span id="admTotalScores" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Borang Daftar / Kemas Kini Pelanggan -->
+        <section class="bento-card" aria-labelledby="adminAddHeading">
+          <h2 id="adminAddHeading" class="section-title" style="margin-bottom:4px">Daftar Pelanggan Baharu / Kemas Kini Langganan</h2>
+          <p class="section-subtitle" style="margin-bottom:16px">Jika ID Pengguna sudah wujud, maklumat pakej, tarikh tamat &amp; PIN akan dikemas kini dan diaktifkan semula.</p>
+
+          <form id="adminUpsertForm" class="admin-upsert-grid">
+            <div>
+              <label for="admUserId" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">ID Pengguna (Telefon / E-mel) *</label>
+              <input type="text" id="admUserId" class="text-input" required placeholder="0123456789">
+            </div>
+            <div>
+              <label for="admBuyerName" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Nama Pembeli *</label>
+              <input type="text" id="admBuyerName" class="text-input" required placeholder="Ali bin Ahmad">
+            </div>
+            <div>
+              <label for="admPackage" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Akses Pakej</label>
+              <input type="text" id="admPackage" class="text-input" value="ALL" placeholder="ALL atau Sejarah, Sains">
+            </div>
+            <div>
+              <label for="admDeviceLimit" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Had Peranti</label>
+              <input type="number" id="admDeviceLimit" class="text-input tabular-nums" min="1" max="10" value="2">
+            </div>
+            <div>
+              <label for="admExpiry" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Tarikh Tamat (Pilihan)</label>
+              <input type="date" id="admExpiry" class="text-input tabular-nums">
+            </div>
+            <div>
+              <label for="admCustomPin" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Kod PIN (Kosong = Auto 6-Digit)</label>
+              <input type="text" id="admCustomPin" class="text-input tabular-nums" placeholder="Auto-jana">
+            </div>
+            <div style="grid-column:1/-1;display:flex;justify-content:flex-end">
+              <button type="submit" id="admSaveUserBtn" class="btn btn-primary">Simpan &amp; Aktifkan Akses</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Senarai Semakan Langganan & Kawalan Akses Pelanggan -->
+        <section class="leaderboard-card" aria-labelledby="adminUsersHeading">
+          <div class="section-header">
+            <div>
+              <h2 id="adminUsersHeading" class="section-title">Senarai Pelanggan, Status Langganan &amp; Peranti</h2>
+              <p class="section-subtitle">Kawal status AKTIF/SEKAT, semak tarikh tamat langganan, atau reset peranti pelanggan dengan 1 klik.</p>
+            </div>
+            <div class="leaderboard-controls">
+              <label for="adminSearchInput" class="sr-only">Cari pelanggan</label>
+              <input type="search" id="adminSearchInput" class="search-input" style="min-inline-size:240px;padding-inline-start:14px" placeholder="Cari nama, telefon atau pakej...">
+              <label for="adminStatusFilter" class="sr-only">Tapis status langganan</label>
+              <select id="adminStatusFilter" class="select-control">
+                <option value="ALL">Semua Status</option>
+                <option value="AKTIF">Aktif Sahaja</option>
+                <option value="SEKAT">Disekat / Tamat</option>
+              </select>
+            </div>
+          </div>
+
+          <div tabindex="0" role="region" aria-labelledby="adminUsersHeading" class="table-wrapper">
+            <table class="lb-table admin-users-table">
+              <thead>
+                <tr>
+                  <th scope="col">Pelanggan &amp; ID</th>
+                  <th scope="col">PIN</th>
+                  <th scope="col">Pakej</th>
+                  <th scope="col">Status &amp; Tamat</th>
+                  <th scope="col">Peranti</th>
+                  <th scope="col">Akses Terakhir</th>
+                  <th scope="col">Tindakan</th>
+                </tr>
+              </thead>
+              <tbody id="adminUsersTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Log Keselamatan & Akses Terkini -->
+        <section class="leaderboard-card" aria-labelledby="adminLogsHeading">
+          <div class="section-header">
+            <div>
+              <h2 id="adminLogsHeading" class="section-title">Log Akses &amp; Sekatan Peranti Terkini</h2>
+              <p class="section-subtitle">Memaparkan cubaan log masuk, PIN salah, dan sekatan melebihi had 2 peranti secara langsung.</p>
+            </div>
+          </div>
+          <div tabindex="0" role="region" aria-labelledby="adminLogsHeading" class="table-wrapper">
+            <table class="lb-table admin-logs-table">
+              <thead>
+                <tr>
+                  <th scope="col">Masa</th>
+                  <th scope="col">ID Pengguna</th>
+                  <th scope="col">Peristiwa</th>
+                  <th scope="col">Peranti</th>
+                  <th scope="col">Butiran</th>
+                </tr>
+              </thead>
+              <tbody id="adminLogsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div id="portalToast" class="toast-banner" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js" onerror="this.onerror=null;this.src='/__vendor/anime.umd.min.js'"></script>
+  <script src="./config.js"></script>
+  <script src="./animations.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

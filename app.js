@@ -810,17 +810,17 @@
     try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
     document.getElementById("dashboardView").hidden = true;
     document.getElementById("examStage").hidden = true;
-    document.getElementById("loginView").hidden = false;
     document.body.style.overflow = "";
-    if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
+    window.location.hash = "#login";
+    syncRouteMode();
   }
 
   async function tryRestoreExistingSession() {
     try {
       const raw = localStorage.getItem(SESSION_STORAGE_KEY);
-      if (!raw) return;
+      if (!raw) return false;
       const parsed = JSON.parse(raw);
-      if (!parsed || !parsed.sessionToken) return;
+      if (!parsed || !parsed.sessionToken) return false;
 
       portalState.sessionToken = parsed.sessionToken;
       portalState.user = parsed.user || null;
@@ -830,14 +830,25 @@
 
       const res = await callBackend("dashboard", { forceRefresh: false });
       if (res && res.ok) {
+        const landingEl = document.getElementById("landingView");
+        if (landingEl) landingEl.hidden = true;
         document.getElementById("loginView").hidden = true;
         document.getElementById("dashboardView").hidden = false;
         applyDashboardBundle(res);
+        return true;
       } else {
-        handleLogout();
+        portalState.sessionToken = "";
+        portalState.user = null;
+        try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e2) {}
+        syncRouteMode();
+        return false;
       }
     } catch (e) {
-      handleLogout();
+      portalState.sessionToken = "";
+      portalState.user = null;
+      try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e3) {}
+      syncRouteMode();
+      return false;
     } finally {
       const btn = document.getElementById("loginSubmitBtn");
       if (btn) btn.textContent = "Log Masuk ke Portal";
@@ -912,8 +923,13 @@
           portalState.sessionToken = res.sessionToken;
           saveSessionLocally(res.sessionToken, res.user);
 
+          const landingEl = document.getElementById("landingView");
+          if (landingEl) landingEl.hidden = true;
           document.getElementById("loginView").hidden = true;
           document.getElementById("dashboardView").hidden = false;
+          if (window.location.hash.toLowerCase() === "#login") {
+            history.replaceState(null, "", window.location.pathname + window.location.search);
+          }
           applyDashboardBundle(res);
         } catch (err) {
           errText.textContent = "Gagal menghubungi pelayan pengesahan: " + err.message;
@@ -1059,17 +1075,278 @@
       }
     }
 
+    initLandingAndOrderBindings();
     initAdminPanelBindings();
   }
 
   // ==========================================================================
-  // PANEL KAWALAN ADMIN (#admin): SEMAKAN LANGGANAN, AKSES & PERANTI
+  // LAMAN JUALAN UTAMA (LANDING PAGE), SIMULASI KUIZ DEMO & TEMPAHAN PAKEJ
+  // ==========================================================================
+  const DEMO_QUESTIONS = [
+    {
+      topic: "Topik: Ungkapan & Persamaan Kuadratik (Matematik Kertas 1)",
+      question: "Diberi persamaan kuadratik (x - 4)(2x + 3) = 0. Nyatakan punca-punca bagi persamaan tersebut.",
+      options: [
+        "x = -4 atau x = 3/2",
+        "x = 4 atau x = -3/2",
+        "x = 4 atau x = 3/2",
+        "x = -4 atau x = -3/2"
+      ],
+      correctIndex: 1,
+      explanation: "Apabila hasil darab dua faktor ialah sifar: (x - 4) = 0 menghasilkan x = 4, manakala (2x + 3) = 0 menghasilkan 2x = -3, maka x = -3/2."
+    },
+    {
+      topic: "Topik: Bab 2 Tingkatan 5 — Perlembagaan Persekutuan (Sejarah Kertas 1)",
+      question: "Apakah kepentingan utama Pindaan Perlembagaan Persekutuan 1963 dalam sejarah pembinaan negara Malaysia?",
+      options: [
+        "Memansuhkan jawatan Yang di-Pertuan Agong di peringkat Persekutuan",
+        "Menyesuaikan peruntukan perlembagaan bagi kemasukan Sabah, Sarawak dan Singapura",
+        "Menyeragamkan semua undang-undang adat negeri di bawah satu mahkamah tunggal",
+        "Menggantikan sistem Raja Berperlembagaan kepada sistem Republik"
+      ],
+      correctIndex: 1,
+      explanation: "Kata kunci skema KSSM: Pindaan 1963 dilakukan khusus untuk menyesuaikan struktur Mahkamah Tinggi, kedudukan Yang di-Pertua Negeri, dan autonomi imigresen berikutan pembentukan Malaysia."
+    },
+    {
+      topic: "Topik: Analisis & Tafsiran Penyata Kewangan (Prinsip Perakaunan)",
+      question: "Perniagaan Wawasan mempunyai Aset Semasa berjumlah RM 54,000 dan Liabiliti Semasa berjumlah RM 18,000. Berapakah Nisbah Semasa perniagaan ini?",
+      options: [
+        "0.33 : 1",
+        "1.5 : 1",
+        "3 : 1",
+        "36,000 : 1"
+      ],
+      correctIndex: 2,
+      explanation: "Rumus Nisbah Semasa = Aset Semasa / Liabiliti Semasa = RM 54,000 / RM 18,000 = 3 : 1. Ini bermakna setiap RM 1 liabiliti jangka pendek disokong oleh RM 3 aset semasa."
+    }
+  ];
+
+  let activeDemoIdx = 0;
+  let demoXpEarned = 0;
+  const answeredDemoSet = {};
+
+  function renderLandingDemoQuestion(idx) {
+    activeDemoIdx = idx;
+    const q = DEMO_QUESTIONS[idx] || DEMO_QUESTIONS[0];
+    const topicEl = document.getElementById("lpDemoTopicLabel");
+    const textEl = document.getElementById("lpDemoQuestionText");
+    const gridEl = document.getElementById("lpDemoOptionsGrid");
+    const expEl = document.getElementById("lpDemoExplainBox");
+
+    document.querySelectorAll(".lp-demo-tab").forEach(function (btn) {
+      const bIdx = parseInt(btn.getAttribute("data-demo-idx"), 10);
+      btn.setAttribute("aria-selected", bIdx === idx ? "true" : "false");
+    });
+
+    if (topicEl) topicEl.textContent = q.topic;
+    if (textEl) textEl.textContent = q.question;
+    if (expEl) expEl.hidden = true;
+    if (!gridEl) return;
+
+    const letters = ["A", "B", "C", "D"];
+    gridEl.innerHTML = q.options.map(function (optText, optIdx) {
+      return [
+        '<button type="button" class="lp-demo-opt" data-opt-idx="' + optIdx + '">',
+        '  <span class="lp-demo-opt-letter">' + letters[optIdx] + "</span>",
+        "  <span>" + escapeHtml(optText) + "</span>",
+        "</button>"
+      ].join("");
+    }).join("");
+  }
+
+  function handleDemoOptionSelect(optIdx) {
+    const q = DEMO_QUESTIONS[activeDemoIdx] || DEMO_QUESTIONS[0];
+    const gridEl = document.getElementById("lpDemoOptionsGrid");
+    const expEl = document.getElementById("lpDemoExplainBox");
+    const xpBadge = document.getElementById("lpDemoXpBadge");
+    if (!gridEl || !expEl) return;
+
+    const isRight = optIdx === q.correctIndex;
+    gridEl.querySelectorAll(".lp-demo-opt").forEach(function (btn) {
+      const idx = parseInt(btn.getAttribute("data-opt-idx"), 10);
+      btn.classList.remove("is-correct", "is-wrong");
+      if (idx === q.correctIndex) {
+        btn.classList.add("is-correct");
+      } else if (idx === optIdx && !isRight) {
+        btn.classList.add("is-wrong");
+      }
+    });
+
+    if (!answeredDemoSet[activeDemoIdx]) {
+      answeredDemoSet[activeDemoIdx] = true;
+      demoXpEarned += isRight ? 100 : 40;
+      if (xpBadge) xpBadge.textContent = "+" + demoXpEarned + " XP Dicuba";
+    }
+
+    const statusHead = isRight
+      ? "<strong>Jawapan Tepat! (+100 XP)</strong> — Beginilah kepantasan semakan sebenar di dalam eTutor.my:"
+      : "<strong>Kurang Tepat — Jom Semak Skema Sebenar:</strong> Jawapan betul telah ditandakan hijau di atas.";
+
+    expEl.className = isRight ? "lp-demo-explain" : "lp-demo-explain is-wrong-box";
+    expEl.innerHTML = [
+      '<div style="margin-bottom:6px">' + statusHead + "</div>",
+      "<div>" + escapeHtml(q.explanation) + "</div>",
+      '<div style="margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">',
+      '  <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary)">Di dalam portal penuh, setiap set mengandungi 40–45 soalan lengkap analisis bab lemah.</span>',
+      '  <a href="#pakej" class="btn btn-primary btn-sm">Buka Akses Penuh Sekarang</a>',
+      "</div>"
+    ].join("");
+    expEl.hidden = false;
+    if (window.ETutorMotion) window.ETutorMotion.animateDemoFeedback(expEl);
+  }
+
+  function initLandingAndOrderBindings() {
+    renderLandingDemoQuestion(0);
+
+    // Segerakkan harga pakej daripada config.js jika diubah pentadbir
+    const plans = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PRICING_PLANS) || {};
+    if (plans.single && document.getElementById("lpPriceSingle")) {
+      document.getElementById("lpPriceSingle").textContent = plans.single.price;
+    }
+    if (plans.allAccess && document.getElementById("lpPriceAll")) {
+      document.getElementById("lpPriceAll").textContent = plans.allAccess.price;
+    }
+    if (plans.family && document.getElementById("lpPriceFamily")) {
+      document.getElementById("lpPriceFamily").textContent = plans.family.price;
+    }
+
+    const orderDlg = document.getElementById("orderDialog");
+    const closeOrderBtn = document.getElementById("closeOrderDialogBtn");
+    const pkgSelect = document.getElementById("orderPackageSelect");
+    const planBadge = document.getElementById("orderPlanBadge");
+    const orderForm = document.getElementById("orderLeadForm");
+
+    const syncOrderPlanBadge = function () {
+      if (!pkgSelect || !planBadge) return;
+      const key = pkgSelect.value || "allAccess";
+      const p = plans[key];
+      if (p) {
+        planBadge.textContent = p.name + " — " + p.price;
+      }
+    };
+
+    if (pkgSelect) {
+      pkgSelect.addEventListener("change", syncOrderPlanBadge);
+    }
+
+    if (closeOrderBtn && orderDlg) {
+      closeOrderBtn.addEventListener("click", function () { closeTopLayer(orderDlg); });
+      orderDlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(orderDlg);
+      });
+      if (typeof HTMLDialogElement !== "undefined" && !("closedBy" in HTMLDialogElement.prototype)) {
+        orderDlg.addEventListener("click", function (ev) {
+          if (ev.target !== orderDlg) return;
+          const rect = orderDlg.getBoundingClientRect();
+          const inside = rect.top <= ev.clientY && ev.clientY <= rect.top + rect.height && rect.left <= ev.clientX && ev.clientX <= rect.left + rect.width;
+          if (!inside) closeTopLayer(orderDlg);
+        });
+      }
+    }
+
+    document.addEventListener("click", function (e) {
+      const demoTab = e.target.closest(".lp-demo-tab");
+      if (demoTab) {
+        renderLandingDemoQuestion(parseInt(demoTab.getAttribute("data-demo-idx"), 10) || 0);
+        return;
+      }
+
+      const demoOpt = e.target.closest(".lp-demo-opt");
+      if (demoOpt) {
+        handleDemoOptionSelect(parseInt(demoOpt.getAttribute("data-opt-idx"), 10) || 0);
+        return;
+      }
+
+      const planBtn = e.target.closest(".js-select-plan");
+      if (planBtn && orderDlg) {
+        const key = planBtn.getAttribute("data-plan-key") || "allAccess";
+        const directPayUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PAYMENT_URL) ? window.ETUTOR_CONFIG.PAYMENT_URL.trim() : "";
+        if (directPayUrl) {
+          window.open(directPayUrl, "_blank", "noopener");
+          return;
+        }
+        if (pkgSelect) pkgSelect.value = key;
+        syncOrderPlanBadge();
+        orderDlg.showModal();
+        return;
+      }
+
+      const gotoLogin = e.target.closest(".js-goto-login");
+      if (gotoLogin) {
+        e.preventDefault();
+        window.location.hash = "#login";
+        syncRouteMode();
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      const backLanding = e.target.closest(".js-back-to-landing");
+      if (backLanding) {
+        e.preventDefault();
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+        syncRouteMode();
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      const backPricing = e.target.closest(".js-back-to-pricing");
+      if (backPricing) {
+        e.preventDefault();
+        window.location.hash = "#pakej";
+        syncRouteMode();
+      }
+    });
+
+    if (orderForm) {
+      orderForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const studentName = document.getElementById("orderStudentName").value.trim();
+        const phone = document.getElementById("orderPhoneInput").value.trim();
+        const key = (pkgSelect && pkgSelect.value) || "allAccess";
+        if (!studentName || phone.length < 7) {
+          orderForm.reportValidity();
+          return;
+        }
+        const p = plans[key] || { name: "Pas Penuh Semua Subjek SPM", price: "RM 59" };
+        const msgLines = [
+          "Salam Admin eTutor.my, saya berminat untuk mengaktifkan akses portal:",
+          "",
+          "Nama Pelajar: " + studentName,
+          "No. Telefon (ID): " + phone,
+          "Pakej Pilihan: " + p.name + " (" + p.price + ")",
+          "",
+          "Mohon kongsikan maklumat pembayaran untuk pengaktifan Kod PIN. Terima kasih!"
+        ].join("\n");
+
+        const rawWa = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP)
+          ? window.ETUTOR_CONFIG.SALES_WHATSAPP.replace(/\D/g, "")
+          : "";
+        const waUrl = rawWa
+          ? "https://wa.me/" + rawWa + "?text=" + encodeURIComponent(msgLines)
+          : "https://wa.me/?text=" + encodeURIComponent(msgLines);
+
+        try { await navigator.clipboard.writeText(msgLines); } catch (err) {}
+        await closeTopLayer(orderDlg);
+        window.open(waUrl, "_blank", "noopener");
+        showToast("Butiran tempahan disiapkan! Sila hantar mesej di WhatsApp.");
+      });
+    }
+  }
+
+  // ==========================================================================
+  // PANEL KAWALAN ADMIN (#admin) & PENGHALAAN PAPARAN (#landing / #login / #admin)
   // ==========================================================================
   function isHashAdmin() {
     return window.location.hash.toLowerCase() === "#admin";
   }
 
+  function isHashLogin() {
+    return window.location.hash.toLowerCase() === "#login";
+  }
+
   async function syncRouteMode() {
+    const landingView = document.getElementById("landingView");
     const adminView = document.getElementById("adminView");
     const loginView = document.getElementById("loginView");
     const dashboardView = document.getElementById("dashboardView");
@@ -1077,6 +1354,7 @@
     if (!adminView) return;
 
     if (isHashAdmin()) {
+      if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = true;
       dashboardView.hidden = true;
       examStage.hidden = true;
@@ -1105,16 +1383,39 @@
       portalState.adminToken = "";
       document.getElementById("adminDashboardShell").hidden = true;
       document.getElementById("adminLoginShell").hidden = false;
+      return;
+    }
+
+    adminView.hidden = true;
+    if (portalState.sessionToken && portalState.user) {
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = true;
+      dashboardView.hidden = false;
+      return;
+    }
+
+    dashboardView.hidden = true;
+    if (isHashLogin()) {
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = false;
+      if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
     } else {
-      adminView.hidden = true;
-      if (portalState.sessionToken && portalState.user) {
-        loginView.hidden = true;
-        dashboardView.hidden = false;
-      } else {
-        dashboardView.hidden = true;
-        loginView.hidden = false;
+      loginView.hidden = true;
+      if (landingElExists(landingView)) {
+        landingView.hidden = false;
+        const hashId = window.location.hash ? window.location.hash.slice(1) : "";
+        if (hashId) {
+          const targetSec = document.getElementById(hashId);
+          if (targetSec) {
+            setTimeout(function () { targetSec.scrollIntoView(); }, 30);
+          }
+        }
       }
     }
+  }
+
+  function landingElExists(el) {
+    return Boolean(el);
   }
 
   function applyAdminBundle(res) {
@@ -1336,12 +1637,12 @@
     document.addEventListener("click", async function (e) {
       const waBtn = e.target.closest(".js-adm-copy-wa");
       if (waBtn) {
-        const portalUrl = (portalState.adminData && portalState.adminData.portalUrl) || window.location.origin;
+        const basePortalUrl = ((portalState.adminData && portalState.adminData.portalUrl) || window.location.origin).replace(/\/$/, "");
         const msg = [
           "Assalamualaikum & Salam Sejahtera " + (waBtn.getAttribute("data-name") || "Pelajar") + ",",
           "",
           "Akses Portal Latihan Interaktif eTutor.my anda telah DIAKTIFKAN:",
-          "URL Portal: " + portalUrl,
+          "URL Log Masuk: " + basePortalUrl + "/#login",
           "ID Pengguna: " + waBtn.getAttribute("data-uid"),
           "Kod PIN: " + waBtn.getAttribute("data-pin"),
           "Pakej: " + (waBtn.getAttribute("data-pkg") || "ALL"),
@@ -1380,13 +1681,18 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", async function () {
     bindEvents();
     if (isHashAdmin()) {
       syncRouteMode();
-    } else {
-      if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
-      tryRestoreExistingSession();
+      return;
+    }
+    const restored = await tryRestoreExistingSession();
+    if (!restored) {
+      syncRouteMode();
+      if (!isHashLogin() && window.ETutorMotion) {
+        window.ETutorMotion.playLandingEntrance();
+      }
     }
   });
 })();

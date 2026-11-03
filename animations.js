@@ -539,6 +539,65 @@
     });
   }
 
+  function playLandingEntrance() {
+    const A = getAnime();
+    if (!A || prefersReducedMotion()) return;
+
+    const copyItems = document.querySelectorAll("#landingView .lp-hero-copy > *");
+    const browserFrame = document.querySelector("#landingView .lp-browser-frame");
+    const trustItems = document.querySelectorAll("#landingView .lp-trust-item");
+
+    const tl = A.createTimeline({ defaults: { ease: "outQuart" } });
+    if (copyItems.length) {
+      tl.add(copyItems, {
+        opacity: [0, 1],
+        translateY: [18, 0],
+        duration: 480,
+        delay: A.stagger(65),
+        onComplete: function () {
+          clearInlineTransform(copyItems);
+        }
+      }, 0);
+    }
+    if (browserFrame) {
+      tl.add(browserFrame, {
+        opacity: [0, 1],
+        translateY: [22, 0],
+        scale: [0.97, 1],
+        duration: 560,
+        onComplete: function () {
+          clearInlineTransform(browserFrame);
+        }
+      }, 120);
+    }
+    if (trustItems.length) {
+      tl.add(trustItems, {
+        opacity: [0, 1],
+        translateY: [12, 0],
+        duration: 400,
+        delay: A.stagger(55),
+        onComplete: function () {
+          clearInlineTransform(trustItems);
+        }
+      }, 260);
+    }
+  }
+
+  function animateDemoFeedback(el) {
+    const A = getAnime();
+    if (!A || prefersReducedMotion() || !el) return;
+    A.remove(el);
+    A.animate(el, {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 320,
+      ease: "outCubic",
+      onComplete: function () {
+        clearInlineTransform(el);
+      }
+    });
+  }
+
   // Pantau perubahan keutamaan gerakan sistem secara langsung
   if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === "function") {
     reducedMotionQuery.addEventListener("change", function (ev) {
@@ -548,6 +607,8 @@
 
   window.ETutorMotion = {
     prefersReducedMotion: prefersReducedMotion,
+    playLandingEntrance: playLandingEntrance,
+    animateDemoFeedback: animateDemoFeedback,
     playLoginEntrance: playLoginEntrance,
     stopLoginAmbientOrbs: stopLoginAmbientOrbs,
     shakeLoginAlert: shakeLoginAlert,

@@ -52,7 +52,8 @@
     adminToken: "",
     adminData: null,
     adminSearch: "",
-    adminStatusFilter: "ALL"
+    adminStatusFilter: "ALL",
+    revealedAdminPins: new Set()
   };
 
   function getOrCreateDeviceId() {
@@ -647,7 +648,7 @@
     const iframe = document.getElementById("examIframe");
     await flushPendingProgressNow();
 
-    if (iframe) iframe.srcdoc = "about:blank";
+    if (iframe) iframe.srcdoc = "";
     if (stage) stage.hidden = true;
     document.body.style.overflow = "";
     portalState.activeQuizFileId = null;
@@ -661,10 +662,15 @@
     } catch (e) {}
   }
 
-  // Terima mesej postMessage daripada jambatan di dalam <iframe srcdoc>
+  // Terima mesej postMessage daripada jambatan di dalam <iframe sandbox srcdoc> dengan pengesahan ketat
   function handleQuizMessage(event) {
-    const msg = event && event.data;
+    const iframe = document.getElementById("examIframe");
+    if (!iframe || !iframe.contentWindow || !event || event.source !== iframe.contentWindow) return;
+    if (event.origin !== "null" && event.origin !== window.location.origin) return;
+
+    const msg = event.data;
     if (!msg || typeof msg !== "object" || typeof msg.type !== "string") return;
+    if (!portalState.activeQuizFileId || String(msg.fileId || "") !== String(portalState.activeQuizFileId)) return;
 
     if (msg.type === "ETUTOR_PRINT_BLOCKED") {
       showToast("Cetakan kertas soalan disekat. Sila hantar kuiz dahulu untuk mencetak Slip Keputusan Rasmi.");
@@ -673,43 +679,49 @@
 
     if (msg.type === "ETUTOR_PROGRESS_CLEARED") {
       portalState.pendingProgressPayload = null;
-      if (msg.fileId) {
-        callBackend("clearProgress", { fileId: msg.fileId }).catch(function () {});
-      }
+      callBackend("clearProgress", { fileId: portalState.activeQuizFileId }).catch(function () {});
       return;
     }
 
     if (msg.type === "ETUTOR_PROGRESS_SYNC") {
       if (msg.isSubmitted) return; // Keputusan penuh diuruskan oleh ETUTOR_QUIZ_COMPLETED
-      if ((Number(msg.answeredCount) || 0) === 0) return;
+      const answeredCount = Math.max(0, Math.round(Number(msg.answeredCount) || 0));
+      const totalQuestions = Math.max(1, Math.round(Number(msg.totalQuestions) || 45));
+      if (answeredCount === 0) return;
 
       const syncEl = document.getElementById("examSyncStatus");
       if (syncEl) {
-        syncEl.textContent = "Disimpan (" + msg.answeredCount + " dijawab)";
+        syncEl.textContent = "Disimpan (" + answeredCount + " dijawab)";
       }
+
+      const activeMeta = (portalState.catalog || []).find(function (c) {
+        return c.fileId === portalState.activeQuizFileId;
+      });
+      const safeTitle = (activeMeta && activeMeta.cleanTitle) || String(msg.quizTitle || "").slice(0, 140);
+      const safeSubject = (activeMeta && activeMeta.subject) || String(msg.subject || "").slice(0, 60);
 
       // Kemas kini state lokal segera supaya UI responsif serta-merta
       const itemSummary = {
         updatedAt: "Sebentar tadi",
-        fileId: msg.fileId,
-        quizTitle: msg.quizTitle,
-        subject: msg.subject,
-        answeredCount: msg.answeredCount,
-        totalQuestions: msg.totalQuestions || 45,
-        timeRemaining: msg.timeRemaining
+        fileId: portalState.activeQuizFileId,
+        quizTitle: safeTitle,
+        subject: safeSubject,
+        answeredCount: answeredCount,
+        totalQuestions: totalQuestions,
+        timeRemaining: typeof msg.timeRemaining === "number" ? Math.max(0, Math.round(msg.timeRemaining)) : null
       };
 
-      const others = (portalState.inProgress || []).filter(function (p) { return p.fileId !== msg.fileId; });
+      const others = (portalState.inProgress || []).filter(function (p) { return p.fileId !== portalState.activeQuizFileId; });
       portalState.inProgress = [itemSummary].concat(others);
 
       portalState.pendingProgressPayload = {
-        fileId: msg.fileId,
-        quizTitle: msg.quizTitle,
-        subject: msg.subject,
-        answeredCount: msg.answeredCount,
-        totalQuestions: msg.totalQuestions || 45,
-        timeRemaining: msg.timeRemaining,
-        stateJson: msg.stateJson
+        fileId: portalState.activeQuizFileId,
+        quizTitle: safeTitle,
+        subject: safeSubject,
+        answeredCount: answeredCount,
+        totalQuestions: totalQuestions,
+        timeRemaining: itemSummary.timeRemaining,
+        stateJson: String(msg.stateJson || "")
       };
 
       clearTimeout(portalState.progressFlushTimer);
@@ -723,24 +735,53 @@
       portalState.pendingProgressPayload = null;
       clearTimeout(portalState.progressFlushTimer);
 
-      portalState.latestSlipData = msg;
+      const pctSafe = Math.max(0, Math.min(100, Math.round(Number(msg.percentage) || 0)));
+      const gradeSafe = String(msg.grade || "—").trim().slice(0, 6);
+      const activeMeta = (portalState.catalog || []).find(function (c) {
+        return c.fileId === portalState.activeQuizFileId;
+      });
+      const safeTitle = (activeMeta && activeMeta.cleanTitle) || String(msg.quizTitle || "").slice(0, 140);
+      const safeSubject = (activeMeta && activeMeta.subject) || String(msg.subject || "").slice(0, 60);
+      const safeWeakTopics = (Array.isArray(msg.weakTopics) ? msg.weakTopics.slice(0, 10) : [])
+        .filter(function (w) { return w && typeof w === "object" && w.topic; })
+        .map(function (w) {
+          return {
+            topic: String(w.topic || "").trim().slice(0, 120),
+            percentage: Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0))),
+            obtained: Math.max(0, Math.round(Number(w.obtained) || 0)),
+            total: Math.max(1, Math.round(Number(w.total) || 1))
+          };
+        });
+
+      portalState.latestSlipData = {
+        fileId: portalState.activeQuizFileId,
+        quizTitle: safeTitle,
+        subject: safeSubject,
+        buyerName: (portalState.user && portalState.user.buyerName) || "",
+        scoreText: String(msg.scoreText || (pctSafe + "%")).slice(0, 40),
+        percentage: pctSafe,
+        grade: gradeSafe,
+        breakdown: String(msg.breakdown || "").slice(0, 180),
+        weakTopics: safeWeakTopics
+      };
+
       const slipBtn = document.getElementById("openSlipBtn");
       if (slipBtn) slipBtn.hidden = false;
       if (window.ETutorMotion) window.ETutorMotion.celebrateQuizCompletion();
 
       const syncEl = document.getElementById("examSyncStatus");
-      if (syncEl) syncEl.textContent = "Keputusan direkodkan: " + msg.percentage + "% (" + msg.grade + ")";
+      if (syncEl) syncEl.textContent = "Keputusan direkodkan: " + pctSafe + "% (" + gradeSafe + ")";
 
-      showToast("Tahniah! Markah " + msg.percentage + "% (Gred " + msg.grade + ") telah direkodkan ke Leaderboard.");
+      showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan ke Leaderboard.");
 
       callBackend("saveScore", {
-        fileId: msg.fileId,
-        quizTitle: msg.quizTitle,
-        subject: msg.subject,
-        scoreText: msg.scoreText,
-        percentage: msg.percentage,
-        grade: msg.grade,
-        weakTopics: msg.weakTopics || []
+        fileId: portalState.activeQuizFileId,
+        quizTitle: safeTitle,
+        subject: safeSubject,
+        scoreText: portalState.latestSlipData.scoreText,
+        percentage: pctSafe,
+        grade: gradeSafe,
+        weakTopics: safeWeakTopics
       }).then(function (res) {
         if (res && res.ok) {
           applyDashboardBundle(res);
@@ -757,23 +798,33 @@
     const dlg = document.getElementById("resultSlipDialog");
     if (!data || !dlg) return;
 
+    const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
     document.getElementById("slipStudentName").textContent = (portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar";
     document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
     document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
     document.getElementById("slipSubject").textContent = data.subject || "SPM";
     document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
-    document.getElementById("slipScorePct").textContent = data.percentage + "%";
-    document.getElementById("slipGrade").textContent = data.grade || "—";
+    document.getElementById("slipScorePct").textContent = safePct + "%";
+    document.getElementById("slipGrade").textContent = String(data.grade || "—").slice(0, 6);
     document.getElementById("slipBreakdown").textContent = data.breakdown || ("Markah: " + (data.scoreText || ""));
 
     const weakListEl = document.getElementById("slipWeakTopics");
-    const wt = data.weakTopics || [];
+    weakListEl.textContent = "";
+    const wt = Array.isArray(data.weakTopics) ? data.weakTopics : [];
     if (wt.length === 0) {
-      weakListEl.innerHTML = '<li style="color:var(--grade-emerald)">Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.</li>';
+      const okLi = document.createElement("li");
+      okLi.style.color = "var(--grade-emerald)";
+      okLi.textContent = "Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.";
+      weakListEl.appendChild(okLi);
     } else {
-      weakListEl.innerHTML = wt.map(function (w) {
-        return "<li>" + escapeHtml(w.topic) + " — Penguasaan " + w.percentage + "% (" + w.obtained + "/" + w.total + ")</li>";
-      }).join("");
+      wt.forEach(function (w) {
+        const li = document.createElement("li");
+        const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
+        const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
+        const wTot = Math.max(1, Math.round(Number(w.total) || 1));
+        li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ")";
+        weakListEl.appendChild(li);
+      });
     }
 
     if (typeof dlg.showModal === "function") {
@@ -781,7 +832,7 @@
     } else {
       dlg.setAttribute("open", "");
     }
-    if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(data.percentage);
+    if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(safePct);
   }
 
   function printOfficialSlip() {
@@ -1473,13 +1524,17 @@
       const toggleLabel = u.status === "AKTIF" ? "Sekat" : "Aktifkan";
       const expText = u.expiryDate ? " (Tamat: " + escapeHtml(u.expiryDate) + ")" : " (Tiada had tarikh)";
 
+      const isPinVisible = portalState.revealedAdminPins.has(u.userId);
+      const pinDisplay = isPinVisible ? escapeHtml(u.pin || "—") : "••••••";
+      const pinBtnLabel = isPinVisible ? "Tutup" : "Lihat";
+
       return [
         "<tr>",
         '  <th scope="row">',
         '    <div style="font-weight:700;color:var(--text-primary)">' + escapeHtml(u.buyerName || "Pelajar") + "</div>",
         '    <div class="tabular-nums" style="font-size:0.8rem;color:var(--text-muted)">' + escapeHtml(u.userId) + "</div>",
         "  </th>",
-        '  <td class="tabular-nums"><code>' + escapeHtml(u.pin || "—") + "</code></td>",
+        '  <td class="tabular-nums"><div style="display:inline-flex;align-items:center;gap:6px"><code>' + pinDisplay + '</code><button type="button" class="btn btn-ghost btn-xs js-adm-toggle-pin" data-uid="' + escapeHtml(u.userId) + '" aria-label="Papar atau sembunyi PIN">' + pinBtnLabel + "</button></div></td>",
         "  <td>" + escapeHtml(u.aksesPakej || "ALL") + "</td>",
         '  <td><span class="status-badge ' + badgeClass + '">' + escapeHtml(statusLabel) + '</span><div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">' + expText + "</div></td>",
         '  <td class="tabular-nums">' + u.devicesUsed + " / " + u.deviceLimit + " peranti</td>",
@@ -1635,6 +1690,20 @@
     }
 
     document.addEventListener("click", async function (e) {
+      const pinToggleBtn = e.target.closest(".js-adm-toggle-pin");
+      if (pinToggleBtn) {
+        const uid = pinToggleBtn.getAttribute("data-uid");
+        if (uid) {
+          if (portalState.revealedAdminPins.has(uid)) {
+            portalState.revealedAdminPins.delete(uid);
+          } else {
+            portalState.revealedAdminPins.add(uid);
+          }
+          renderAdminUsersTable();
+        }
+        return;
+      }
+
       const waBtn = e.target.closest(".js-adm-copy-wa");
       if (waBtn) {
         const basePortalUrl = ((portalState.adminData && portalState.adminData.portalUrl) || window.location.origin).replace(/\/$/, "");

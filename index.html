@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'self';">
   <title>eTutor.my — Portal Set Soalan Interaktif</title>
   <meta name="description" content="Portal latihan kuiz interaktif harian SPM & sekolah Malaysia dengan penjejakan kemajuan, Continue Progress dan Leaderboard pelajar.">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
@@ -1217,6 +1219,8 @@
     <iframe
       id="examIframe"
       class="exam-iframe"
+      sandbox="allow-scripts allow-forms allow-modals"
+      referrerpolicy="no-referrer"
       title="Kertas Soalan Interaktif eTutor.my"
     ></iframe>
   </section>
@@ -1493,7 +1497,7 @@
 
   <div id="portalToast" class="toast-banner" role="status" aria-live="polite" hidden></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.umd.min.js" onerror="this.onerror=null;this.src='/__vendor/anime.umd.min.js'"></script>
+  <script src="./vendor/anime.umd.min.js"></script>
   <script src="./config.js"></script>
   <script src="./animations.js"></script>
   <script src="./app.js"></script>

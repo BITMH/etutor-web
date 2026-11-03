@@ -4,10 +4,12 @@
    Modern Web Standards: 100dvh, @container, :user-invalid, <progress>, <dialog>
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Lexend:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Lexend:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Brand & Semantic Tokens (WCAG AA >= 4.5:1) */
+  --logo-royal: #1d49c9;
+  --logo-navy: #121e48;
   --brand-navy: #0f172a;
   --brand-primary: #1e3a8a;
   --brand-accent: #2563eb;
@@ -286,6 +288,107 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
   padding: clamp(22px, 5vw, 36px);
+}
+
+/* Official eTutor.my Two-Tone Brand Emblem & Wordmark Lockup */
+.etutor-svg-sprite {
+  position: absolute;
+  inline-size: 0;
+  block-size: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.etutor-logo-lockup {
+  --emblem-blue: var(--logo-royal);
+  --emblem-navy: var(--logo-navy);
+  --emblem-cutout: #ffffff;
+  --logo-etutor-color: var(--logo-royal);
+  --logo-dotmy-color: var(--logo-navy);
+  --logo-tagline-color: #172554;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.etutor-emblem-svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+.etutor-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.etutor-wordmark {
+  font-family: var(--font-sans);
+  font-size: 1.34rem;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.etutor-wordmark .wm-etutor {
+  font-weight: 800;
+  color: var(--logo-etutor-color);
+}
+
+.etutor-wordmark .wm-dotmy {
+  font-weight: 400;
+  color: var(--logo-dotmy-color);
+}
+
+.etutor-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--logo-tagline-color);
+  margin-block-start: 2px;
+}
+
+.etutor-logo-lg {
+  gap: 14px;
+}
+
+.etutor-logo-lg .etutor-wordmark {
+  font-size: clamp(1.65rem, 1.4rem + 0.9vw, 2.02rem);
+}
+
+.etutor-logo-lg .etutor-tagline {
+  font-size: 0.82rem;
+  margin-block-start: 3px;
+}
+
+.etutor-logo-sm {
+  gap: 9px;
+}
+
+.etutor-logo-sm .etutor-wordmark {
+  font-size: 1.15rem;
+}
+
+.etutor-logo-on-dark {
+  --emblem-blue: #3b82f6;
+  --emblem-navy: #f1f5f9;
+  --emblem-cutout: var(--brand-navy);
+  --logo-etutor-color: #60a5fa;
+  --logo-dotmy-color: #ffffff;
+  --logo-tagline-color: #cbd5e1;
+}
+
+.login-brand-header {
+  display: flex;
+  justify-content: center;
+  padding-block-end: var(--space-4);
+  margin-block-end: var(--space-5);
+  border-block-end: 1px solid var(--border-subtle);
 }
 
 .brand-mark {
@@ -2597,7 +2700,7 @@ dialog.slip-dialog::backdrop {
 
 /* PRINT RULE: Block printing everywhere EXCEPT when Official Result Slip Dialog is open */
 @media print {
-  body > *:not(#resultSlipDialog) {
+  body > *:not(#resultSlipDialog, .etutor-svg-sprite) {
     display: none !important;
   }
   body:not(.printing-official-slip) {

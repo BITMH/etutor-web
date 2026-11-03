@@ -3,11 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>eTutor.my — Portal Set Soalan Interaktif Harian</title>
+  <title>eTutor.my — Portal Set Soalan Interaktif</title>
   <meta name="description" content="Portal latihan kuiz interaktif harian SPM & sekolah Malaysia dengan penjejakan kemajuan, Continue Progress dan Leaderboard pelajar.">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
+  <!-- Simbol Vektor Rasmi Jenama eTutor.my (Sebaris sekali & dirujuk melalui <use href="#etutor-brand-emblem">) -->
+  <svg class="etutor-svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="etutor-brand-emblem" viewBox="0 0 124 98">
+      <!-- Papan Topi Graduasi Dua Tona (Terbelah di x=56) -->
+      <polygon points="4,34 56,8 56,60" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,8 108,34 56,60" fill="var(--emblem-navy, #121e48)"/>
+      <!-- Rumbai Kiri (Tassel) -->
+      <rect x="13.2" y="37.5" width="4.6" height="20" fill="var(--emblem-blue, #1d49c9)"/>
+      <circle cx="15.5" cy="59.5" r="5.1" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="11.8,63.2 19.2,63.2 22.4,79.5 8.6,79.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <!-- Tapak Topi Bawah Jurang-V -->
+      <polygon points="28,50.6 56,64.6 56,85 28,74.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,64.6 84,50.6 84,74.5 56,85" fill="var(--emblem-navy, #121e48)"/>
+      <!-- Tongkat Semakan Betul + Sempadan Knockout -->
+      <path d="M40.5 73.5 L56 89 L86.5 58.5" fill="none" stroke="var(--emblem-cutout, #ffffff)" stroke-width="15.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <path d="M43.2 76.2 L56 89 L86 59" fill="none" stroke="var(--emblem-navy, #121e48)" stroke-width="8.4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <!-- Hujung Tongkat & Kilauan Bintang -->
+      <circle cx="89.4" cy="55.6" r="6.4" fill="var(--emblem-cutout, #ffffff)"/>
+      <circle cx="89.4" cy="55.6" r="3.9" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="97.8" cy="48.6" r="2.55" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="104.5" cy="43.4" r="1.8" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="101.2" cy="57.6" r="2.7" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M111 43.2 Q112 51.1 119.9 52.1 Q112 53.1 111 61 Q110 53.1 102.1 52.1 Q110 51.1 111 43.2 Z" fill="var(--emblem-navy, #121e48)"/>
+    </symbol>
+  </svg>
 
   <!-- =====================================================================
        SKRIN 0: LAMAN JUALAN & KREDIBILITI UTAMA (LANDING PAGE — ui-ux-pro-max)
@@ -15,15 +42,13 @@
   <div id="landingView" class="lp-shell">
     <header class="lp-navbar">
       <div class="lp-navbar-inner">
-        <a href="#" class="lp-brand-link" aria-label="eTutor.my Laman Utama">
-          <div class="brand-logo-box" style="inline-size:38px;block-size:38px" aria-hidden="true">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 8l10 5 10-5-10-5zM2 13l10 5 10-5M6 15.5V19c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5"/>
-            </svg>
-          </div>
-          <div>
-            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.08rem;color:var(--brand-primary);line-height:1.15">eTutor.my</div>
-            <div style="font-size:0.72rem;color:var(--text-muted);font-weight:600">Portal Peperiksaan Interaktif Malaysia</div>
+        <a href="#" class="lp-brand-link etutor-logo-lockup" aria-label="eTutor.my Portal Set Soalan Interaktif">
+          <svg class="etutor-emblem-svg" width="52" height="41" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
           </div>
         </a>
 
@@ -755,8 +780,16 @@
     <footer class="lp-footer">
       <div class="lp-container lp-footer-inner">
         <div>
-          <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:#ffffff">eTutor.my — Portal Set Soalan Interaktif Harian</div>
-          <div style="font-size:0.82rem;margin-top:4px;color:#94a3b8">Sambungan Terlindung SSL HTTPS • Hak Cipta Terpelihara 2026 eTutor.my</div>
+          <div class="etutor-logo-lockup etutor-logo-on-dark">
+            <svg class="etutor-emblem-svg" width="50" height="40" aria-hidden="true">
+              <use href="#etutor-brand-emblem"></use>
+            </svg>
+            <div class="etutor-logo-text">
+              <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+              <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+            </div>
+          </div>
+          <div style="font-size:0.82rem;margin-top:10px;color:#94a3b8">Sambungan Terlindung SSL HTTPS • Hak Cipta Terpelihara 2026 eTutor.my</div>
         </div>
         <ul class="lp-footer-links">
           <li><a href="#demo-interaktif">Demo Percuma</a></li>
@@ -778,9 +811,14 @@
   <dialog id="orderDialog" class="slip-dialog" closedby="any" aria-labelledby="orderDialogTitle">
     <div class="slip-paper">
       <div class="slip-header">
-        <div>
-          <div style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--brand-primary)" id="orderDialogTitle">Pendaftaran Akses eTutor.my</div>
-          <div id="orderPlanBadge" style="font-size:0.82rem;color:var(--grade-emerald);font-weight:700;margin-top:2px">Pas Penuh Semua Subjek SPM — RM 59</div>
+        <div class="etutor-logo-lockup etutor-logo-sm">
+          <svg class="etutor-emblem-svg" width="44" height="35" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)" id="orderDialogTitle">Pendaftaran Akses eTutor.my</div>
+            <div id="orderPlanBadge" style="font-size:0.82rem;color:var(--grade-emerald);font-weight:700;margin-top:2px">Pas Penuh Semua Subjek SPM — RM 59</div>
+          </div>
         </div>
         <span class="status-badge badge-done">Pengaktifan Pantas</span>
       </div>
@@ -826,15 +864,15 @@
       <span class="orb orb-gold"></span>
     </div>
     <section class="login-card" aria-labelledby="loginHeading">
-      <div class="brand-mark">
-        <div class="brand-logo-box" aria-hidden="true">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 8l10 5 10-5-10-5zM2 13l10 5 10-5M6 15.5V19c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5"/>
+      <div class="login-brand-header">
+        <div class="etutor-logo-lockup etutor-logo-lg">
+          <svg class="etutor-emblem-svg" width="74" height="59" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
           </svg>
-        </div>
-        <div>
-          <div style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--brand-primary)">eTutor.my</div>
-          <div style="font-size:0.78rem;color:var(--text-muted)">Portal Set Soalan Interaktif Harian</div>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+          </div>
         </div>
       </div>
 
@@ -937,14 +975,12 @@
   <div id="dashboardView" hidden>
     <header class="portal-topbar">
       <div class="topbar-inner">
-        <div class="topbar-brand">
-          <div class="brand-logo-box" style="inline-size:38px;block-size:38px" aria-hidden="true">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L2 8l10 5 10-5-10-5zM2 13l10 5 10-5"/>
-            </svg>
-          </div>
-          <div>
-            <div class="topbar-brand-title">eTutor.my</div>
+        <div class="topbar-brand etutor-logo-lockup">
+          <svg class="etutor-emblem-svg" width="48" height="38" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark" style="font-size:1.25rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
             <div class="topbar-brand-sub" id="navPackageBadge">Pakej: ALL</div>
           </div>
         </div>
@@ -1191,9 +1227,14 @@
   <dialog id="resultSlipDialog" class="slip-dialog" closedby="any" aria-labelledby="slipHeading">
     <div class="slip-paper">
       <div class="slip-header">
-        <div>
-          <h2 id="slipHeading" style="font-size:1.25rem;color:var(--brand-primary)">Slip Keputusan Latihan Interaktif</h2>
-          <p style="font-size:0.82rem;color:var(--text-muted)">Rekod Pencapaian Rasmi Portal eTutor.my</p>
+        <div class="etutor-logo-lockup">
+          <svg class="etutor-emblem-svg" width="52" height="41" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark" style="font-size:1.22rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <h2 id="slipHeading" style="font-size:0.96rem;color:var(--logo-navy);margin-top:2px">Slip Keputusan Latihan Interaktif</h2>
+          </div>
         </div>
         <span class="status-badge badge-subject">Disahkan</span>
       </div>
@@ -1258,15 +1299,15 @@
     <!-- 4A: Pengesahan Kunci Rahsia Admin -->
     <main id="adminLoginShell" class="login-shell">
       <section class="login-card" aria-labelledby="adminLoginHeading">
-        <div class="brand-mark">
-          <div class="brand-logo-box" aria-hidden="true">
-            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/>
+        <div class="login-brand-header">
+          <div class="etutor-logo-lockup etutor-logo-lg">
+            <svg class="etutor-emblem-svg" width="66" height="52" aria-hidden="true">
+              <use href="#etutor-brand-emblem"></use>
             </svg>
-          </div>
-          <div>
-            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)">Panel Kawalan Admin</div>
-            <div style="font-size:0.78rem;color:var(--text-muted)">Pengurusan Langganan &amp; Akses Pelanggan</div>
+            <div class="etutor-logo-text">
+              <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+              <div class="etutor-tagline">Panel Kawalan Pentadbir</div>
+            </div>
           </div>
         </div>
 
@@ -1304,15 +1345,13 @@
     <div id="adminDashboardShell" hidden>
       <header class="portal-topbar">
         <div class="topbar-inner">
-          <div class="topbar-brand">
-            <div class="brand-logo-box" style="inline-size:38px;block-size:38px" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="topbar-brand-title">eTutor.my — Pentadbir</div>
-              <div class="topbar-brand-sub">Kawalan Langganan, Pakej &amp; Log Peranti</div>
+          <div class="topbar-brand etutor-logo-lockup">
+            <svg class="etutor-emblem-svg" width="48" height="38" aria-hidden="true">
+              <use href="#etutor-brand-emblem"></use>
+            </svg>
+            <div class="etutor-logo-text">
+              <div class="etutor-wordmark" style="font-size:1.22rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+              <div class="topbar-brand-sub">Kawalan Pentadbir, Pakej &amp; Log Peranti</div>
             </div>
           </div>
 

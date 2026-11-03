@@ -127,16 +127,19 @@
       }
     }, 0);
 
-    // Lukis garisan ikon topi graduasi SVG menggunakan createDrawable Anime.js v4
-    const brandPaths = document.querySelectorAll("#loginView .brand-logo-box path");
-    if (brandPaths.length && typeof A.createDrawable === "function") {
-      try {
-        tl.add(A.createDrawable(brandPaths), {
-          draw: ["0 0", "0 1"],
-          duration: 720,
-          ease: "inOutQuad"
-        }, 80);
-      } catch (e) {}
+    // Animasi kemunculan logo rasmi dua-tona eTutor.my pada skrin log masuk
+    const brandLockup = document.querySelector("#loginView .etutor-logo-lockup");
+    if (brandLockup) {
+      tl.add(brandLockup, {
+        opacity: [0, 1],
+        scale: [0.92, 1],
+        translateY: [8, 0],
+        duration: 480,
+        ease: "outBack(1.4)",
+        onComplete: function () {
+          clearInlineTransform(brandLockup);
+        }
+      }, 60);
     }
 
     const fields = document.querySelectorAll(

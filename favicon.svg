@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#ffffff"/>
+  <g transform="translate(2, 16)">
+    <!-- Top Mortarboard Diamond (2-Tone Split at x=56) -->
+    <polygon points="4,34 56,8 56,60" fill="#1d49c9"/>
+    <polygon points="56,8 108,34 56,60" fill="#121e48"/>
+    <!-- Left Hanging Tassel -->
+    <rect x="13.2" y="37.5" width="4.6" height="20" fill="#1d49c9"/>
+    <circle cx="15.5" cy="59.5" r="5.1" fill="#1d49c9"/>
+    <polygon points="11.8,63.2 19.2,63.2 22.4,79.5 8.6,79.5" fill="#1d49c9"/>
+    <!-- Skullcap Base Beneath V-Gap -->
+    <polygon points="28,50.6 56,64.6 56,85 28,74.5" fill="#1d49c9"/>
+    <polygon points="56,64.6 84,50.6 84,74.5 56,85" fill="#121e48"/>
+    <!-- Foreground Checkmark Wand Knockout & Stroke -->
+    <path d="M40.5 73.5 L56 89 L86.5 58.5" fill="none" stroke="#ffffff" stroke-width="15.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <path d="M43.2 76.2 L56 89 L86 59" fill="none" stroke="#121e48" stroke-width="8.4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+    <!-- Wand Tip Node + Sparkles -->
+    <circle cx="89.4" cy="55.6" r="6.4" fill="#ffffff"/>
+    <circle cx="89.4" cy="55.6" r="3.9" fill="#121e48"/>
+    <circle cx="97.8" cy="48.6" r="2.55" fill="#121e48"/>
+    <circle cx="104.5" cy="43.4" r="1.8" fill="#121e48"/>
+    <circle cx="101.2" cy="57.6" r="2.7" fill="#121e48"/>
+    <path d="M111 43.2 Q112 51.1 119.9 52.1 Q112 53.1 111 61 Q110 53.1 102.1 52.1 Q110 51.1 111 43.2 Z" fill="#121e48"/>
+  </g>
+</svg>

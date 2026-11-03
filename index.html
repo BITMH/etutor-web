@@ -797,6 +797,7 @@
           <li><a href="#demo-interaktif">Demo Percuma</a></li>
           <li><a href="#pakej">Pakej Akses</a></li>
           <li><a href="#soalan-lazim">Soalan Lazim</a></li>
+          <li><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20tentang%20pakej%20akses%20portal." target="_blank" rel="noopener">WhatsApp Admin (013-732 7696)</a></li>
           <li><a href="#login" class="js-goto-login">Log Masuk Pelajar</a></li>
         </ul>
       </div>
@@ -837,19 +838,42 @@
           <input type="tel" id="orderPhoneInput" class="text-input tabular-nums" required minlength="8" inputmode="tel" autocomplete="tel" placeholder="Contoh: 0123456789">
         </div>
 
-        <div class="form-field" style="margin-block-end:0">
+        <div class="form-field">
           <label for="orderPackageSelect">Pilihan Pakej</label>
-          <select id="orderPackageSelect" class="select-input" style="inline-size:100%">
+          <select id="orderPackageSelect" name="packagePlan" class="select-input" style="inline-size:100%">
             <option value="allAccess">Pas Penuh Semua Subjek SPM — RM 59 (Paling Popular)</option>
             <option value="single">Pas Fokus Subjek Pilihan — RM 29</option>
             <option value="family">Pas Kembar / Adik-Beradik (2 Akaun) — RM 99</option>
           </select>
         </div>
 
+        <div id="orderFocusSubjectWrap" class="form-field" style="margin-block-end:0" hidden>
+          <label for="orderFocusSubjectSelect">Subjek Pilihan (Bagi Pas Fokus Subjek)</label>
+          <select id="orderFocusSubjectSelect" name="focusSubject" class="select-input" style="inline-size:100%">
+            <option value="Sejarah">Sejarah</option>
+            <option value="Bahasa Melayu">Bahasa Melayu</option>
+            <option value="Bahasa Inggeris">Bahasa Inggeris</option>
+            <option value="Matematik">Matematik</option>
+            <option value="Sains">Sains</option>
+            <option value="Pendidikan Islam">Pendidikan Islam</option>
+            <option value="Pendidikan Moral">Pendidikan Moral</option>
+            <option value="Prinsip Perakaunan">Prinsip Perakaunan</option>
+            <option value="Perniagaan">Perniagaan</option>
+            <option value="Ekonomi">Ekonomi</option>
+            <option value="Sains Komputer">Sains Komputer</option>
+            <option value="Geografi">Geografi</option>
+            <option value="Tasawwur Islam">Tasawwur Islam</option>
+            <option value="Biologi">Biologi</option>
+            <option value="Fizik">Fizik</option>
+            <option value="Kimia">Kimia</option>
+            <option value="Matematik Tambahan">Matematik Tambahan</option>
+          </select>
+        </div>
+
         <div class="slip-actions" style="margin-inline:-24px;margin-block-end:-24px;margin-block-start:20px">
           <button type="button" id="closeOrderDialogBtn" class="btn btn-outline">Batal</button>
           <button type="submit" id="submitOrderWhatsAppBtn" class="btn btn-emerald">
-            <span>Teruskan Tempahan &amp; Dapatkan PIN</span>
+            <span>Hantar WhatsApp ke Admin (013-732 7696)</span>
           </button>
         </div>
       </form>
@@ -964,6 +988,9 @@
           </a>
           <a href="#pakej" class="js-back-to-pricing" style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
             Belum ada PIN? Dapatkan Akses
+          </a>
+          <a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20perlukan%20bantuan%20log%20masuk%20%2F%20PIN%20portal." target="_blank" rel="noopener" style="color:var(--grade-emerald);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center;inline-size:100%;justify-content:center;border-block-start:1px dashed var(--border-subtle);padding-block-start:10px">
+            Bantuan WhatsApp Admin: 013-732 7696
           </a>
         </div>
       </form>
@@ -1403,30 +1430,59 @@
           <form id="adminUpsertForm" class="admin-upsert-grid">
             <div>
               <label for="admUserId" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">ID Pengguna (Telefon / E-mel) *</label>
-              <input type="text" id="admUserId" class="text-input" required placeholder="0123456789">
+              <input type="text" id="admUserId" name="userId" class="text-input" required autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="0123456789">
             </div>
             <div>
               <label for="admBuyerName" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Nama Pembeli *</label>
-              <input type="text" id="admBuyerName" class="text-input" required placeholder="Ali bin Ahmad">
+              <input type="text" id="admBuyerName" name="buyerName" class="text-input" required placeholder="Ali bin Ahmad">
             </div>
             <div>
-              <label for="admPackage" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Akses Pakej</label>
-              <input type="text" id="admPackage" class="text-input" value="ALL" placeholder="ALL atau Sejarah, Sains">
+              <label for="admPackagePreset" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Jenis Pakej Langganan *</label>
+              <select id="admPackagePreset" name="packagePreset" class="select-input" style="inline-size:100%">
+                <option value="ALL">Pas Penuh Semua Subjek SPM (ALL — 2 Peranti)</option>
+                <option value="FAMILY">Pas Kembar / Adik-Beradik (ALL — 4 Peranti)</option>
+                <option value="CUSTOM">Pas Fokus Subjek Pilihan (Pilih Subjek di Bawah)</option>
+                <option value="TERAS">Pakej Subjek Teras SPM (6 Subjek Teras)</option>
+                <option value="SAINS_TULEN">Pakej Aliran Sains Tulen (Biologi, Fizik, Kimia, Add Math)</option>
+                <option value="IKHTISAS">Pakej Perniagaan &amp; Ikhtisas (Perakaunan, Perniagaan, Ekonomi, SK, Geo, Tasawwur)</option>
+              </select>
             </div>
             <div>
               <label for="admDeviceLimit" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Had Peranti</label>
-              <input type="number" id="admDeviceLimit" class="text-input tabular-nums" min="1" max="10" value="2">
+              <input type="number" id="admDeviceLimit" name="deviceLimit" class="text-input tabular-nums" min="1" max="10" value="2">
             </div>
             <div>
               <label for="admExpiry" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Tarikh Tamat (Pilihan)</label>
-              <input type="date" id="admExpiry" class="text-input tabular-nums">
+              <input type="date" id="admExpiry" name="expiryDate" class="text-input tabular-nums">
             </div>
             <div>
               <label for="admCustomPin" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Kod PIN (Kosong = Auto 6-Digit)</label>
-              <input type="text" id="admCustomPin" class="text-input tabular-nums" placeholder="Auto-jana">
+              <input type="text" id="admCustomPin" name="pin" class="text-input tabular-nums" inputmode="numeric" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Auto-jana">
             </div>
-            <div style="grid-column:1/-1;display:flex;justify-content:flex-end">
-              <button type="submit" id="admSaveUserBtn" class="btn btn-primary">Simpan &amp; Aktifkan Akses</button>
+
+            <fieldset id="admSubjectFieldset" class="adm-subject-fieldset" style="grid-column:1/-1" hidden>
+              <legend class="adm-subject-legend">Pilih Subjek Yang Dibenarkan untuk Pelanggan Ini:</legend>
+              <div class="adm-subject-toolbar">
+                <span class="field-hint" style="margin:0">Tandakan satu atau lebih subjek (disegerakkan terus dengan Bank Soalan Google Drive).</span>
+                <div style="display:flex;gap:8px">
+                  <button type="button" id="admSelectAllSubBtn" class="btn btn-outline btn-xs">Tandakan Semua</button>
+                  <button type="button" id="admClearAllSubBtn" class="btn btn-ghost btn-xs">Kosongkan</button>
+                </div>
+              </div>
+              <div id="admSubjectPillsGrid" class="adm-subject-pills-grid"></div>
+            </fieldset>
+
+            <div style="grid-column:1/-1">
+              <label for="admPackage" style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:4px">Nilai Akses Pakej Sebenar (Disimpan ke Pangkalan Data)</label>
+              <input type="text" id="admPackage" name="aksesPakej" class="text-input" value="ALL" required placeholder="ALL atau Sejarah, Sains">
+            </div>
+
+            <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+              <span style="font-size:0.8rem;color:var(--text-muted)">Nombor Sokongan Admin dalam Mesej WhatsApp: <strong class="tabular-nums">013-732 7696</strong></span>
+              <div style="display:flex;gap:8px">
+                <button type="button" id="admResetFormBtn" class="btn btn-outline">Kosongkan Borang</button>
+                <button type="submit" id="admSaveUserBtn" class="btn btn-primary">Simpan &amp; Aktifkan Akses</button>
+              </div>
             </div>
           </form>
         </section>

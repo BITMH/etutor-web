@@ -7,13 +7,33 @@ window.ETUTOR_CONFIG = {
   // URL Web App Google Apps Script Produksi
   GAS_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbxQakzUqQG5AO2Q6tWDBs1AJ39WNqeir29G3zMyLC69FaUd_A-703i28-P98Ap-Q2Ql/exec",
   BRAND_NAME: "eTutor.my",
-  SUPPORT_CONTACT: "Pasukan Sokongan Akademik eTutor.my",
+  SUPPORT_CONTACT: "Sokongan WhatsApp Admin eTutor.my (013-732 7696)",
+  ADMIN_WHATSAPP_DISPLAY: "013-732 7696",
 
-  // Tetapan Penutupan Jualan (Landing Page):
-  // Masukkan nombor WhatsApp jualan anda dalam format antarabangsa tanpa '+' (cth: "60123456789")
-  // atau masukkan pautan terus ToyyibPay / Billplz / OnPay pada PAYMENT_URL jika mahu bayaran terus.
-  SALES_WHATSAPP: "",
+  // Tetapan Penutupan Jualan & Sokongan Langsung WhatsApp Admin (format antarabangsa tanpa '+'):
+  SALES_WHATSAPP: "60137327696",
   PAYMENT_URL: "",
+
+  // Senarai Subjek Standard SPM (digabungkan secara dinamik dengan subjek sebenar di Google Drive)
+  DEFAULT_SUBJECTS: [
+    "Bahasa Melayu",
+    "Bahasa Inggeris",
+    "Sejarah",
+    "Matematik",
+    "Sains",
+    "Pendidikan Islam",
+    "Pendidikan Moral",
+    "Prinsip Perakaunan",
+    "Perniagaan",
+    "Ekonomi",
+    "Sains Komputer",
+    "Geografi",
+    "Tasawwur Islam",
+    "Biologi",
+    "Fizik",
+    "Kimia",
+    "Matematik Tambahan"
+  ],
 
   PRICING_PLANS: {
     single: {

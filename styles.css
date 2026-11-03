@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Lexend:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
+  --icon-check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+
   /* Brand & Semantic Tokens (WCAG AA >= 4.5:1) */
   --logo-royal: #1d49c9;
   --logo-navy: #121e48;
@@ -2648,6 +2650,118 @@ dialog.slip-dialog::backdrop {
 
 .lp-footer-links a:hover {
   color: #93c5fd;
+}
+
+/* Admin Subject Multi-Select Fieldset & Accessible Custom Checkboxes (modern-web-guidance) */
+.adm-subject-fieldset {
+  border: 1px solid var(--brand-border);
+  background: var(--brand-soft);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin: 4px 0 0 0;
+}
+
+.adm-subject-legend {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  padding-inline: 6px;
+}
+
+.adm-subject-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block-end: 10px;
+}
+
+.adm-subject-pills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 8px;
+}
+
+.adm-subject-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-block-size: 44px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--text-primary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.adm-subject-pill:hover {
+  border-color: var(--brand-accent);
+}
+
+.adm-subject-pill.is-checked,
+.adm-subject-pill:has(.adm-subject-cb:checked) {
+  border-color: var(--brand-accent);
+  background: #eff6ff;
+  color: var(--brand-primary);
+}
+
+.adm-subject-cb {
+  --checkbox-size: 1.15em;
+  --checkbox-icon-size: 0.72em;
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  inline-size: var(--checkbox-size);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  margin: 0;
+  border: 2px solid var(--text-muted);
+  border-radius: 4px;
+  background: #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.adm-subject-cb::before {
+  content: "";
+  inline-size: var(--checkbox-icon-size);
+  aspect-ratio: 1;
+  background-color: currentColor;
+  -webkit-mask: var(--icon-check) no-repeat center / contain;
+  mask: var(--icon-check) no-repeat center / contain;
+  scale: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .adm-subject-cb::before {
+    transition: scale 150ms ease;
+  }
+}
+
+@media (forced-colors: active) {
+  .adm-subject-cb::before {
+    background-color: CanvasText;
+  }
+}
+
+.adm-subject-cb:checked {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+}
+
+.adm-subject-cb:checked::before {
+  scale: 1;
+}
+
+.adm-subject-cb:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
 }
 
 /* Mobile Sticky Bottom Bar (Safe-Area Compliant) */

@@ -1264,6 +1264,8 @@
     const orderDlg = document.getElementById("orderDialog");
     const closeOrderBtn = document.getElementById("closeOrderDialogBtn");
     const pkgSelect = document.getElementById("orderPackageSelect");
+    const focusWrap = document.getElementById("orderFocusSubjectWrap");
+    const focusSelect = document.getElementById("orderFocusSubjectSelect");
     const planBadge = document.getElementById("orderPlanBadge");
     const orderForm = document.getElementById("orderLeadForm");
 
@@ -1273,6 +1275,9 @@
       const p = plans[key];
       if (p) {
         planBadge.textContent = p.name + " — " + p.price;
+      }
+      if (focusWrap) {
+        focusWrap.hidden = key !== "single";
       }
     };
 
@@ -1360,27 +1365,30 @@
           return;
         }
         const p = plans[key] || { name: "Pas Penuh Semua Subjek SPM", price: "RM 59" };
+        const chosenFocusSubject = (key === "single" && focusSelect && focusSelect.value)
+          ? focusSelect.value.trim()
+          : "";
+        const packageLabel = chosenFocusSubject
+          ? p.name + " — Subjek: " + chosenFocusSubject + " (" + p.price + ")"
+          : p.name + " (" + p.price + ")";
+
         const msgLines = [
           "Salam Admin eTutor.my, saya berminat untuk mengaktifkan akses portal:",
           "",
           "Nama Pelajar: " + studentName,
           "No. Telefon (ID): " + phone,
-          "Pakej Pilihan: " + p.name + " (" + p.price + ")",
+          "Pakej Pilihan: " + packageLabel,
           "",
           "Mohon kongsikan maklumat pembayaran untuk pengaktifan Kod PIN. Terima kasih!"
         ].join("\n");
 
-        const rawWa = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP)
-          ? window.ETUTOR_CONFIG.SALES_WHATSAPP.replace(/\D/g, "")
-          : "";
-        const waUrl = rawWa
-          ? "https://wa.me/" + rawWa + "?text=" + encodeURIComponent(msgLines)
-          : "https://wa.me/?text=" + encodeURIComponent(msgLines);
+        const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
+        const waUrl = "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(msgLines);
 
         try { await navigator.clipboard.writeText(msgLines); } catch (err) {}
         await closeTopLayer(orderDlg);
         window.open(waUrl, "_blank", "noopener");
-        showToast("Butiran tempahan disiapkan! Sila hantar mesej di WhatsApp.");
+        showToast("Membuka WhatsApp Admin (013-732 7696)...");
       });
     }
   }
@@ -1469,6 +1477,151 @@
     return Boolean(el);
   }
 
+  const ADMIN_PRESET_SUBJECTS = {
+    TERAS: ["Bahasa Melayu", "Bahasa Inggeris", "Sejarah", "Matematik", "Sains", "Pendidikan Islam", "Pendidikan Moral"],
+    SAINS_TULEN: ["Biologi", "Fizik", "Kimia", "Matematik Tambahan"],
+    IKHTISAS: ["Prinsip Perakaunan", "Perniagaan", "Ekonomi", "Sains Komputer", "Geografi", "Tasawwur Islam"]
+  };
+
+  function getMergedSubjectOptions() {
+    const defaults = (window.ETUTOR_CONFIG && Array.isArray(window.ETUTOR_CONFIG.DEFAULT_SUBJECTS))
+      ? window.ETUTOR_CONFIG.DEFAULT_SUBJECTS
+      : ["Bahasa Melayu", "Bahasa Inggeris", "Sejarah", "Matematik", "Sains", "Pendidikan Islam", "Pendidikan Moral", "Prinsip Perakaunan", "Perniagaan", "Sains Komputer", "Geografi", "Tasawwur Islam", "Biologi", "Fizik"];
+    const dynamicSubs = (portalState.adminData && Array.isArray(portalState.adminData.availableSubjects))
+      ? portalState.adminData.availableSubjects
+      : [];
+    const seen = new Set();
+    const out = [];
+    defaults.concat(dynamicSubs).forEach(function (s) {
+      const clean = String(s || "").trim();
+      if (!clean || clean === "Umum") return;
+      const k = clean.toLowerCase();
+      if (!seen.has(k)) {
+        seen.add(k);
+        out.push(clean);
+      }
+    });
+    return out;
+  }
+
+  function renderAdminSubjectCheckboxes(selectedList) {
+    const grid = document.getElementById("admSubjectPillsGrid");
+    if (!grid) return;
+    const selectedSet = new Set(
+      (selectedList || []).map(function (s) { return String(s || "").trim().toLowerCase(); }).filter(Boolean)
+    );
+    const allSubjects = getMergedSubjectOptions();
+    grid.textContent = "";
+
+    allSubjects.forEach(function (subj) {
+      const label = document.createElement("label");
+      label.className = "adm-subject-pill";
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.className = "adm-subject-cb";
+      cb.name = "admSubjectItem";
+      cb.value = subj;
+      cb.checked = selectedSet.has(subj.toLowerCase());
+      if (cb.checked) label.classList.add("is-checked");
+
+      const span = document.createElement("span");
+      span.textContent = subj;
+
+      label.appendChild(cb);
+      label.appendChild(span);
+      grid.appendChild(label);
+    });
+  }
+
+  function syncAdminPackageInputFromCheckboxes() {
+    const grid = document.getElementById("admSubjectPillsGrid");
+    const pkgInput = document.getElementById("admPackage");
+    if (!grid || !pkgInput) return;
+    const picked = [];
+    grid.querySelectorAll(".adm-subject-cb").forEach(function (cb) {
+      const pill = cb.closest(".adm-subject-pill");
+      if (pill) pill.classList.toggle("is-checked", cb.checked);
+      if (cb.checked) picked.push(cb.value);
+    });
+    pkgInput.value = picked.join(", ");
+  }
+
+  function applyAdminPresetSelection(presetValue, customPackageRaw) {
+    const presetEl = document.getElementById("admPackagePreset");
+    const fieldset = document.getElementById("admSubjectFieldset");
+    const pkgInput = document.getElementById("admPackage");
+    const devInput = document.getElementById("admDeviceLimit");
+    if (!presetEl || !fieldset || !pkgInput) return;
+
+    presetEl.value = presetValue;
+
+    if (presetValue === "ALL") {
+      fieldset.hidden = true;
+      pkgInput.value = "ALL";
+      if (devInput && devInput.value === "4") devInput.value = "2";
+      return;
+    }
+
+    if (presetValue === "FAMILY") {
+      fieldset.hidden = true;
+      pkgInput.value = "ALL";
+      if (devInput) devInput.value = "4";
+      return;
+    }
+
+    fieldset.hidden = false;
+    if (presetValue === "TERAS" || presetValue === "SAINS_TULEN" || presetValue === "IKHTISAS") {
+      const list = ADMIN_PRESET_SUBJECTS[presetValue] || [];
+      renderAdminSubjectCheckboxes(list);
+      syncAdminPackageInputFromCheckboxes();
+      return;
+    }
+
+    // CUSTOM
+    const tokens = String(customPackageRaw || "")
+      .split(",")
+      .map(function (t) { return t.trim(); })
+      .filter(function (t) { return t && t.toUpperCase() !== "ALL"; });
+    renderAdminSubjectCheckboxes(tokens);
+    if (tokens.length > 0) {
+      pkgInput.value = tokens.join(", ");
+    } else {
+      syncAdminPackageInputFromCheckboxes();
+    }
+  }
+
+  function toMalaysianWhatsAppNumber(rawUserId) {
+    const s = String(rawUserId || "").trim();
+    if (!s || s.indexOf("@") !== -1) return "";
+    const digits = s.replace(/\D/g, "");
+    if (/^601\d{7,9}$/.test(digits)) return digits;
+    if (/^01\d{7,9}$/.test(digits)) return "6" + digits;
+    if (/^1\d{7,9}$/.test(digits)) return "60" + digits;
+    return "";
+  }
+
+  function buildCustomerActivationWaText(btnEl) {
+    const basePortalUrl = ((portalState.adminData && portalState.adminData.portalUrl) || window.location.origin).replace(/\/$/, "");
+    const adminWaDigits = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "") || "60137327696";
+    const adminWaDisplay = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.ADMIN_WHATSAPP_DISPLAY) || "013-732 7696";
+    const pkgVal = btnEl.getAttribute("data-pkg") || "ALL";
+    const pkgReadable = pkgVal.toUpperCase() === "ALL" ? "Semua Subjek SPM (ALL)" : pkgVal;
+
+    return [
+      "Assalamualaikum & Salam Sejahtera " + (btnEl.getAttribute("data-name") || "Pelajar") + ",",
+      "",
+      "Akses Portal Latihan Interaktif eTutor.my anda telah DIAKTIFKAN:",
+      "URL Log Masuk: " + basePortalUrl + "/#login",
+      "ID Pengguna: " + btnEl.getAttribute("data-uid"),
+      "Kod PIN: " + btnEl.getAttribute("data-pin"),
+      "Pakej Akses: " + pkgReadable,
+      "",
+      "Bantuan Sokongan Admin WhatsApp: " + adminWaDisplay + " (https://wa.me/" + adminWaDigits + ")",
+      "",
+      "Selamat maju jaya!"
+    ].join("\n");
+  }
+
   function applyAdminBundle(res) {
     portalState.adminData = res;
     const st = res.stats || {};
@@ -1489,6 +1642,15 @@
       } else {
         sheetLink.hidden = true;
       }
+    }
+
+    const fieldset = document.getElementById("admSubjectFieldset");
+    if (fieldset && !fieldset.hidden) {
+      const currentRaw = (document.getElementById("admPackage") || {}).value || "";
+      const currentTokens = currentRaw.split(",").map(function (t) { return t.trim(); }).filter(Boolean);
+      renderAdminSubjectCheckboxes(currentTokens);
+    } else {
+      renderAdminSubjectCheckboxes([]);
     }
 
     renderAdminUsersTable();
@@ -1541,6 +1703,8 @@
         '  <td class="tabular-nums" style="font-size:0.8rem;color:var(--text-secondary)">' + escapeHtml(u.lastAccess || "Belum log masuk") + "</td>",
         "  <td>",
         '    <div class="admin-row-actions">',
+        '      <button type="button" class="btn btn-outline btn-xs js-adm-edit-user" data-uid="' + escapeHtml(u.userId) + '">Edit Pakej</button>',
+        '      <button type="button" class="btn btn-emerald btn-xs js-adm-send-wa" data-uid="' + escapeHtml(u.userId) + '" data-name="' + escapeHtml(u.buyerName) + '" data-pin="' + escapeHtml(u.pin) + '" data-pkg="' + escapeHtml(u.aksesPakej) + '">Hantar WA</button>',
         '      <button type="button" class="btn btn-outline btn-xs js-adm-copy-wa" data-uid="' + escapeHtml(u.userId) + '" data-name="' + escapeHtml(u.buyerName) + '" data-pin="' + escapeHtml(u.pin) + '" data-pkg="' + escapeHtml(u.aksesPakej) + '">Salin WA</button>',
         '      <button type="button" class="btn btn-outline btn-xs js-adm-reset-dev" data-uid="' + escapeHtml(u.userId) + '">Reset Peranti</button>',
         '      <button type="button" class="btn btn-outline btn-xs js-adm-toggle-status" data-uid="' + escapeHtml(u.userId) + '">' + toggleLabel + "</button>",
@@ -1640,10 +1804,63 @@
       });
     }
 
+    const admPresetSelect = document.getElementById("admPackagePreset");
+    if (admPresetSelect) {
+      admPresetSelect.addEventListener("change", function () {
+        applyAdminPresetSelection(admPresetSelect.value || "ALL", "");
+      });
+    }
+
+    const admPillsGrid = document.getElementById("admSubjectPillsGrid");
+    if (admPillsGrid) {
+      admPillsGrid.addEventListener("change", function (e) {
+        if (e.target && e.target.classList.contains("adm-subject-cb")) {
+          const presetEl = document.getElementById("admPackagePreset");
+          if (presetEl && presetEl.value !== "CUSTOM") {
+            presetEl.value = "CUSTOM";
+          }
+          syncAdminPackageInputFromCheckboxes();
+        }
+      });
+    }
+
+    const admSelectAllSubBtn = document.getElementById("admSelectAllSubBtn");
+    if (admSelectAllSubBtn) {
+      admSelectAllSubBtn.addEventListener("click", function () {
+        renderAdminSubjectCheckboxes(getMergedSubjectOptions());
+        syncAdminPackageInputFromCheckboxes();
+      });
+    }
+
+    const admClearAllSubBtn = document.getElementById("admClearAllSubBtn");
+    if (admClearAllSubBtn) {
+      admClearAllSubBtn.addEventListener("click", function () {
+        renderAdminSubjectCheckboxes([]);
+        syncAdminPackageInputFromCheckboxes();
+      });
+    }
+
+    const admResetFormBtn = document.getElementById("admResetFormBtn");
+    if (admResetFormBtn) {
+      admResetFormBtn.addEventListener("click", function () {
+        const f = document.getElementById("adminUpsertForm");
+        if (f) f.reset();
+        document.getElementById("admDeviceLimit").value = "2";
+        applyAdminPresetSelection("ALL", "");
+      });
+    }
+
     const upsertForm = document.getElementById("adminUpsertForm");
     if (upsertForm) {
       upsertForm.addEventListener("submit", async function (e) {
         e.preventDefault();
+        const presetVal = (document.getElementById("admPackagePreset") || {}).value || "ALL";
+        const pkgRaw = document.getElementById("admPackage").value.trim();
+        if (presetVal !== "ALL" && presetVal !== "FAMILY" && !pkgRaw) {
+          showToast("Sila tandakan sekurang-kurangnya satu subjek bagi pakej pilihan.");
+          return;
+        }
+
         const btn = document.getElementById("admSaveUserBtn");
         btn.disabled = true;
         try {
@@ -1651,7 +1868,7 @@
             adminToken: portalState.adminToken,
             userId: document.getElementById("admUserId").value.trim(),
             buyerName: document.getElementById("admBuyerName").value.trim(),
-            aksesPakej: document.getElementById("admPackage").value.trim() || "ALL",
+            aksesPakej: pkgRaw || "ALL",
             deviceLimit: document.getElementById("admDeviceLimit").value,
             expiryDate: document.getElementById("admExpiry").value,
             pin: document.getElementById("admCustomPin").value.trim()
@@ -1660,8 +1877,8 @@
             applyAdminBundle(res);
             showToast("Pelanggan disimpan! Kod PIN: " + res.savedPin);
             upsertForm.reset();
-            document.getElementById("admPackage").value = "ALL";
             document.getElementById("admDeviceLimit").value = "2";
+            applyAdminPresetSelection("ALL", "");
           } else {
             showToast((res && res.error) || "Gagal menyimpan pelanggan.");
           }
@@ -1704,23 +1921,50 @@
         return;
       }
 
+      const editUserBtn = e.target.closest(".js-adm-edit-user");
+      if (editUserBtn && portalState.adminData) {
+        const uid = editUserBtn.getAttribute("data-uid");
+        const found = (portalState.adminData.users || []).find(function (u) { return u.userId === uid; });
+        if (found) {
+          document.getElementById("admUserId").value = found.userId || "";
+          document.getElementById("admBuyerName").value = found.buyerName || "";
+          document.getElementById("admDeviceLimit").value = String(found.deviceLimit || 2);
+          document.getElementById("admExpiry").value = found.expiryDate || "";
+          document.getElementById("admCustomPin").value = found.pin || "";
+
+          const rawPkg = String(found.aksesPakej || "ALL").trim();
+          if (!rawPkg || rawPkg.toUpperCase() === "ALL") {
+            applyAdminPresetSelection((found.deviceLimit || 2) >= 4 ? "FAMILY" : "ALL", "ALL");
+          } else {
+            applyAdminPresetSelection("CUSTOM", rawPkg);
+          }
+
+          const addHeading = document.getElementById("adminAddHeading");
+          if (addHeading) addHeading.scrollIntoView({ behavior: "smooth", block: "start" });
+          showToast("Rekod " + found.buyerName + " dimuatkan ke borang untuk dikemas kini.");
+        }
+        return;
+      }
+
+      const sendWaBtn = e.target.closest(".js-adm-send-wa");
+      if (sendWaBtn) {
+        const msg = buildCustomerActivationWaText(sendWaBtn);
+        const buyerWa = toMalaysianWhatsAppNumber(sendWaBtn.getAttribute("data-uid"));
+        const targetWaUrl = buyerWa
+          ? "https://wa.me/" + buyerWa + "?text=" + encodeURIComponent(msg)
+          : "https://wa.me/?text=" + encodeURIComponent(msg);
+        try { await navigator.clipboard.writeText(msg); } catch {}
+        window.open(targetWaUrl, "_blank", "noopener");
+        showToast(buyerWa ? "Membuka WhatsApp terus kepada pelanggan..." : "Mesej disalin & membuka WhatsApp...");
+        return;
+      }
+
       const waBtn = e.target.closest(".js-adm-copy-wa");
       if (waBtn) {
-        const basePortalUrl = ((portalState.adminData && portalState.adminData.portalUrl) || window.location.origin).replace(/\/$/, "");
-        const msg = [
-          "Assalamualaikum & Salam Sejahtera " + (waBtn.getAttribute("data-name") || "Pelajar") + ",",
-          "",
-          "Akses Portal Latihan Interaktif eTutor.my anda telah DIAKTIFKAN:",
-          "URL Log Masuk: " + basePortalUrl + "/#login",
-          "ID Pengguna: " + waBtn.getAttribute("data-uid"),
-          "Kod PIN: " + waBtn.getAttribute("data-pin"),
-          "Pakej: " + (waBtn.getAttribute("data-pkg") || "ALL"),
-          "",
-          "Selamat maju jaya!"
-        ].join("\n");
+        const msg = buildCustomerActivationWaText(waBtn);
         try {
           await navigator.clipboard.writeText(msg);
-          showToast("Mesej WhatsApp akses berjaya disalin!");
+          showToast("Mesej WhatsApp akses (lengkap No. Admin 013-732 7696) berjaya disalin!");
         } catch {
           showToast("PIN Pelanggan: " + waBtn.getAttribute("data-pin"));
         }

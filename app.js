@@ -588,7 +588,7 @@
     const meta = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
     if (titleEl) titleEl.textContent = meta ? meta.cleanTitle : "Memuatkan Set Soalan...";
     if (slipBtn) slipBtn.hidden = true;
-    if (syncEl) syncEl.textContent = "Memuatkan soalan selamat...";
+    if (syncEl) syncEl.textContent = "Memuatkan soalan...";
 
     portalState.activeQuizFileId = fileId;
     portalState.latestSlipData = null;
@@ -596,7 +596,23 @@
     document.body.style.overflow = "hidden";
     if (window.ETutorMotion) window.ETutorMotion.playExamStageOpen();
 
-    iframe.srcdoc = '<!DOCTYPE html><html lang="ms"><body style="font-family:system-ui,sans-serif;display:grid;place-items:center;height:92vh;color:#334155;background:#f8fafc"><div style="text-align:center"><p style="font-weight:700;font-size:1.05rem;margin-bottom:6px">Menyediakan Kertas Soalan Dilindungi...</p><p style="font-size:0.88rem;color:#64748b">Sila tunggu sebentar.</p></div></body></html>';
+    iframe.srcdoc = [
+      '<!DOCTYPE html><html lang="ms"><head><meta charset="utf-8"><style>',
+      'progress.loading-spinner:indeterminate::-webkit-progress-bar,progress.loading-spinner:indeterminate::-webkit-progress-value{display:none;background:none}',
+      'progress.loading-spinner:indeterminate::-moz-progress-bar{display:none;background:none}',
+      'progress.loading-spinner:indeterminate{--size:38px;--thickness:3px;--spinner-color:#2563eb;--track-color:#e2e8f0;--_used-spinner-duration:1.1s;display:inline-block;width:var(--size);height:var(--size);border-radius:50%;appearance:none;margin-bottom:14px;background:conic-gradient(from 90deg,var(--spinner-color) 158deg,transparent 0) var(--track-color);animation:progress-spin var(--_used-spinner-duration) linear infinite}',
+      '@supports (background-clip: border-area){progress.loading-spinner:indeterminate{background-clip:border-area;border:var(--thickness) solid transparent;background-origin:border-box}}',
+      '@supports not (background-clip: border-area){progress.loading-spinner:indeterminate{--clip-boundary:calc(100% - var(--thickness));-webkit-mask-image:radial-gradient(farthest-side,transparent var(--clip-boundary),#000 var(--clip-boundary));mask-image:radial-gradient(farthest-side,transparent var(--clip-boundary),#000 var(--clip-boundary));border:0}}',
+      '@keyframes progress-spin{to{rotate:1turn}}',
+      '@media (prefers-reduced-motion: reduce){progress.loading-spinner:indeterminate{--_used-spinner-duration:6s}}',
+      '</style></head>',
+      '<body style="font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:92dvh;margin:0;color:#334155;background:#f8fafc">',
+      '<div style="text-align:center">',
+      '<progress aria-label="Memuatkan kertas soalan" class="loading-spinner"></progress>',
+      '<p style="font-weight:700;font-size:1.05rem;margin:0 0 6px">Memuatkan kertas soalan...</p>',
+      '<p style="font-size:0.88rem;color:#64748b;margin:0">Sila tunggu sebentar.</p>',
+      '</div></body></html>'
+    ].join("");
 
     try {
       const res = await callBackend("getQuizHtml", {

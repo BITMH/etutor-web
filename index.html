@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="ms" data-open-access="true">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -56,22 +56,28 @@
 
         <nav aria-label="Navigasi Halaman Utama">
           <ul class="lp-nav-links">
-            <li><a href="#demo-interaktif">Cuba Demo</a></li>
+            <li><a href="#demo-interaktif">Simulasi Soalan</a></li>
             <li><a href="#perbandingan">Kenapa eTutor</a></li>
             <li><a href="#ciri">Ciri &amp; Subjek</a></li>
-            <li><a href="#pakej">Pakej Akses</a></li>
+            <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
             <li><a href="#soalan-lazim">Soalan Lazim</a></li>
           </ul>
         </nav>
 
         <div class="lp-nav-actions">
-          <a href="#login" class="btn btn-outline js-goto-login">
+          <a href="#login" class="btn btn-outline js-goto-login" data-paid-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
             </svg>
             <span>Log Masuk</span>
           </a>
-          <a href="#pakej" class="btn btn-primary lp-hide-xs">Dapatkan Akses</a>
+          <a href="#pakej" class="btn btn-primary lp-hide-xs" data-paid-only>Dapatkan Akses</a>
+          <a href="#portal" class="btn btn-primary js-enter-open-portal" data-open-only>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/>
+            </svg>
+            <span>Masuk Portal Latihan</span>
+          </a>
         </div>
       </div>
     </header>
@@ -98,8 +104,14 @@
             </p>
 
             <div class="lp-hero-cta-group">
-              <a href="#pakej" class="btn btn-emerald btn-lg">
+              <a href="#pakej" class="btn btn-emerald btn-lg" data-paid-only>
                 <span>Lihat Pakej &amp; Daftar Sekarang</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
+                </svg>
+              </a>
+              <a href="#portal" class="btn btn-emerald btn-lg js-enter-open-portal" data-open-only>
+                <span>Mula Menjawab Sekarang</span>
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
                 </svg>
@@ -108,16 +120,22 @@
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/>
                 </svg>
-                <span>Cuba Soalan Percuma</span>
+                <span>Cuba Simulasi Soalan</span>
               </a>
             </div>
 
             <ul class="lp-micro-guarantees">
-              <li>
+              <li data-paid-only>
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 <span>Aktif Serta-Merta (ID + PIN 6-Digit)</span>
+              </li>
+              <li data-open-only>
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Terus Jawab &amp; Semak Serta-Merta</span>
               </li>
               <li>
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -218,7 +236,7 @@
             </div>
           </div>
 
-          <div class="lp-trust-item">
+          <div class="lp-trust-item" data-paid-only>
             <div class="lp-trust-icon" aria-hidden="true">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/>
@@ -227,6 +245,18 @@
             <div>
               <div class="lp-trust-num">2 Peranti Serentak</div>
               <div class="lp-trust-desc">Mula jawab di telefon, sambung di laptop tanpa hilang</div>
+            </div>
+          </div>
+
+          <div class="lp-trust-item" data-open-only>
+            <div class="lp-trust-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/>
+              </svg>
+            </div>
+            <div>
+              <div class="lp-trust-num">Auto-Simpan Jawapan</div>
+              <div class="lp-trust-desc">Sambung semula latihan separuh jalan pada bila-bila masa</div>
             </div>
           </div>
 
@@ -465,15 +495,21 @@
             <p style="font-size:0.86rem;color:var(--text-secondary);margin-top:4px">Set baharu ditambah secara berterusan merangkumi kertas percubaan negeri-negeri seluruh Malaysia:</p>
             <ul class="lp-subject-pills">
               <li>Matematik</li>
+              <li>Matematik Tambahan</li>
               <li>Sejarah</li>
               <li>Sains</li>
+              <li>Kimia</li>
               <li>Prinsip Perakaunan</li>
+              <li>Ekonomi</li>
               <li>Perniagaan</li>
               <li>Pendidikan Islam</li>
               <li>Pendidikan Moral</li>
               <li>Geografi</li>
               <li>Sains Komputer</li>
+              <li>Sains Sukan</li>
+              <li>Sains Rumah Tangga</li>
               <li>Tasawwur Islam</li>
+              <li>Pendidikan Al-Quran &amp; As-Sunnah</li>
             </ul>
           </div>
         </div>
@@ -485,12 +521,15 @@
           <div class="lp-section-head">
             <span class="lp-section-kicker">3 Langkah Mudah &amp; Maklum Balas Pengguna</span>
             <h2 id="lpFeedbackHeading" class="lp-section-title">Dipercayai Ibu Bapa &amp; Calon SPM Untuk Ulang Kaji Harian</h2>
-            <p class="lp-section-sub">
+            <p class="lp-section-sub" data-paid-only>
               Pendaftaran ringkas tanpa pemasangan rumit — akaun boleh terus digunakan dalam masa beberapa minit.
+            </p>
+            <p class="lp-section-sub" data-open-only>
+              Susun atur ringkas tanpa pemasangan aplikasi — buka terus di telefon pintar atau komputer untuk memulakan latihan.
             </p>
           </div>
 
-          <div class="lp-steps-grid" style="margin-block-end:var(--space-10)">
+          <div class="lp-steps-grid" style="margin-block-end:var(--space-10)" data-paid-only>
             <div class="lp-step-card">
               <div class="lp-step-num">1</div>
               <h3 style="font-size:1.02rem;margin-block-end:6px">Pilih Pakej Akses</h3>
@@ -505,6 +544,24 @@
               <div class="lp-step-num">3</div>
               <h3 style="font-size:1.02rem;margin-block-end:6px">Mula Menjawab &amp; Pantau Skor</h3>
               <p style="font-size:0.88rem;color:var(--text-secondary)">Klik Log Masuk di etutor.my, pilih kertas soalan harian, dan lihat peningkatan gred setiap minggu.</p>
+            </div>
+          </div>
+
+          <div class="lp-steps-grid" style="margin-block-end:var(--space-10)" data-open-only>
+            <div class="lp-step-card">
+              <div class="lp-step-num">1</div>
+              <h3 style="font-size:1.02rem;margin-block-end:6px">Pilih Subjek &amp; Set Soalan</h3>
+              <p style="font-size:0.88rem;color:var(--text-secondary)">Masuk ke Bank Soalan dan pilih kertas percubaan negeri mengikut subjek fokus ulang kaji anda.</p>
+            </div>
+            <div class="lp-step-card">
+              <div class="lp-step-num">2</div>
+              <h3 style="font-size:1.02rem;margin-block-end:6px">Jawab di Telefon atau Komputer</h3>
+              <p style="font-size:0.88rem;color:var(--text-secondary)">Jawab soalan objektif dan subjektif mengikut format KSSM dengan ciri auto-simpan jawapan separuh jalan.</p>
+            </div>
+            <div class="lp-step-card">
+              <div class="lp-step-num">3</div>
+              <h3 style="font-size:1.02rem;margin-block-end:6px">Semak Skema &amp; Slip Keputusan</h3>
+              <p style="font-size:0.88rem;color:var(--text-secondary)">Dapatkan markah, gred SPM, analisis bab lemah, serta jana Slip Keputusan PDF serta-merta.</p>
             </div>
           </div>
 
@@ -570,7 +627,7 @@
       </section>
 
       <!-- SEKSYEN PAKEJ HARGA TELUS (#pakej) -->
-      <section id="pakej" class="lp-section lp-deferred-section" aria-labelledby="lpPricingHeading">
+      <section id="pakej" class="lp-section lp-deferred-section" aria-labelledby="lpPricingHeading" data-paid-only>
         <div class="lp-container">
           <div class="lp-section-head">
             <span class="lp-section-kicker">Pelaburan Pendidikan Mampu Milik</span>
@@ -697,10 +754,14 @@
       <section id="soalan-lazim" class="lp-section lp-section-alt lp-deferred-section" aria-labelledby="lpFaqHeading">
         <div class="lp-container">
           <div class="lp-section-head">
-            <span class="lp-section-kicker">Jawapan Telus Sebelum Melanggan</span>
+            <span class="lp-section-kicker" data-paid-only>Jawapan Telus Sebelum Melanggan</span>
+            <span class="lp-section-kicker" data-open-only>Panduan Penggunaan Portal</span>
             <h2 id="lpFaqHeading" class="lp-section-title">Soalan Lazim Ibu Bapa &amp; Pelajar (FAQ)</h2>
-            <p class="lp-section-sub">
+            <p class="lp-section-sub" data-paid-only>
               Segala maklumat penting mengenai pengaktifan akaun, peranti, dan kandungan soalan di dalam eTutor.my.
+            </p>
+            <p class="lp-section-sub" data-open-only>
+              Maklumat penting mengenai cara menjawab soalan, simpanan kemajuan automatik, dan cetakan Slip Keputusan di dalam eTutor.my.
             </p>
           </div>
 
@@ -715,7 +776,17 @@
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq">
+            <details class="lp-faq-item" name="etutor-faq" data-open-only>
+              <summary class="lp-faq-summary">
+                <span>Adakah jawapan separuh jalan disimpan jika saya menutup pelayar?</span>
+                <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </summary>
+              <div class="lp-faq-answer">
+                Ya. Ciri <em>Continue Progress</em> menyimpan jawapan dan baki masa latihan anda secara automatik pada pelayar peranti yang sedang digunakan supaya anda boleh menyambung semula pada bila-bila masa.
+              </div>
+            </details>
+
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
               <summary class="lp-faq-summary">
                 <span>Berapa cepat saya akan menerima akses selepas membuat tempahan?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -725,7 +796,7 @@
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq">
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
               <summary class="lp-faq-summary">
                 <span>Bolehkah pelajar membuka akaun yang sama di telefon dan komputer riba?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -745,7 +816,17 @@
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq">
+            <details class="lp-faq-item" name="etutor-faq" data-open-only>
+              <summary class="lp-faq-summary">
+                <span>Bagaimana cara menulis jalan kerja bagi soalan subjektif Kertas 2 di telefon?</span>
+                <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </summary>
+              <div class="lp-faq-answer">
+                Setiap soalan subjektif dilengkapi templat input pintar mengikut subjek (baris langkah pengiraan Matematik, pemboleh ubah Sains, kad Fakta + Huraian Sejarah), berserta pilihan imlak suara, pad contengan digital, atau muat naik gambar jalan kerja buku tulis.
+              </div>
+            </details>
+
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
               <summary class="lp-faq-summary">
                 <span>Bagaimana jika anak saya menukar telefon baharu nanti?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -767,11 +848,14 @@
               Jangan tunggu sehingga minggu terakhir sebelum peperiksaan. Bentuk disiplin menjawab satu set soalan berfokus setiap hari dengan semakan serta-merta di <strong>eTutor.my</strong>.
             </p>
             <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="allAccess">
+              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="allAccess" data-paid-only>
                 <span>Daftar Pas Penuh Semua Subjek</span>
               </button>
-              <a href="#login" class="btn btn-outline btn-lg js-goto-login" style="background:rgb(255 255 255 / 0.1);color:#ffffff;border-color:rgb(255 255 255 / 0.35)">
+              <a href="#login" class="btn btn-outline btn-lg js-goto-login" style="background:rgb(255 255 255 / 0.1);color:#ffffff;border-color:rgb(255 255 255 / 0.35)" data-paid-only>
                 <span>Sudah Ada PIN? Log Masuk Pelajar</span>
+              </a>
+              <a href="#portal" class="btn btn-emerald btn-lg js-enter-open-portal" data-open-only>
+                <span>Buka Bank Soalan Sekarang</span>
               </a>
             </div>
           </div>
@@ -794,19 +878,22 @@
           <div style="font-size:0.82rem;margin-top:10px;color:#94a3b8">Sambungan Terlindung SSL HTTPS • Hak Cipta Terpelihara 2026 eTutor.my</div>
         </div>
         <ul class="lp-footer-links">
-          <li><a href="#demo-interaktif">Demo Percuma</a></li>
-          <li><a href="#pakej">Pakej Akses</a></li>
+          <li><a href="#demo-interaktif">Simulasi Soalan</a></li>
+          <li data-open-only><a href="#portal" class="js-enter-open-portal">Bank Soalan</a></li>
+          <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
           <li><a href="#soalan-lazim">Soalan Lazim</a></li>
-          <li><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20tentang%20pakej%20akses%20portal." target="_blank" rel="noopener">WhatsApp Admin (013-732 7696)</a></li>
-          <li><a href="#login" class="js-goto-login">Log Masuk Pelajar</a></li>
+          <li data-paid-only><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20tentang%20pakej%20akses%20portal." target="_blank" rel="noopener">WhatsApp Admin (013-732 7696)</a></li>
+          <li data-open-only><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20mengenai%20portal%20latihan%20interaktif." target="_blank" rel="noopener">Hubungi Admin (013-732 7696)</a></li>
+          <li data-paid-only><a href="#login" class="js-goto-login">Log Masuk Pelajar</a></li>
         </ul>
       </div>
     </footer>
 
     <!-- BAR TINDAKAN PANTAS MUDAH ALIH -->
     <div class="lp-mobile-cta-bar" aria-label="Tindakan Pantas Mudah Alih">
-      <a href="#login" class="btn btn-outline js-goto-login" style="flex:0 0 auto">Log Masuk</a>
-      <a href="#pakej" class="btn btn-emerald" style="flex:1;justify-content:center">Dapatkan Akses</a>
+      <a href="#login" class="btn btn-outline js-goto-login" style="flex:0 0 auto" data-paid-only>Log Masuk</a>
+      <a href="#pakej" class="btn btn-emerald" style="flex:1;justify-content:center" data-paid-only>Dapatkan Akses</a>
+      <a href="#portal" class="btn btn-emerald js-enter-open-portal" style="flex:1;justify-content:center" data-open-only>Mula Menjawab Sekarang</a>
     </div>
   </div>
 
@@ -1029,12 +1116,19 @@
             <span>Segarkan</span>
           </button>
 
-          <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">
+          <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm" data-paid-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/>
             </svg>
             <span>Log Keluar</span>
           </button>
+
+          <a href="#" id="backToLandingBtn" class="btn btn-ghost btn-sm js-back-to-landing" data-open-only>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/>
+            </svg>
+            <span>Laman Utama</span>
+          </a>
         </div>
       </div>
     </header>
@@ -1282,12 +1376,17 @@
         </div>
       </div>
 
+      <div class="slip-no-print" style="margin-block-end:14px" data-open-only>
+        <label for="slipCustomNameInput" style="font-size:0.78rem;font-weight:700;color:var(--text-secondary);display:block;margin-bottom:4px">Nama Pelajar untuk Cetakan Slip (Pilihan):</label>
+        <input type="text" id="slipCustomNameInput" class="text-input" autocomplete="name" maxlength="80" placeholder="Taip nama anda di sini supaya tertera pada slip PDF...">
+      </div>
+
       <div class="slip-meta-grid">
         <div>
           <div style="color:var(--text-muted);font-size:0.76rem">Nama Pelajar</div>
           <div id="slipStudentName" style="font-weight:700">—</div>
         </div>
-        <div>
+        <div data-paid-only>
           <div style="color:var(--text-muted);font-size:0.76rem">ID Berdaftar</div>
           <div id="slipUserId" class="tabular-nums" style="font-weight:600">—</div>
         </div>
@@ -1398,6 +1497,24 @@
       </header>
 
       <main class="dashboard-main">
+        <!-- Suis Utama Mod Akses Portal (Akses Terbuka vs Mod Langganan Berbayar) -->
+        <section class="bento-card adm-mode-switch-card" aria-labelledby="adminPortalModeHeading">
+          <div style="max-inline-size:68ch">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+              <h2 id="adminPortalModeHeading" class="section-title" style="margin:0">Mod Operasi Portal Semasa</h2>
+              <span id="admPortalModeBadge" class="status-badge badge-done">Mod Akses Terbuka Aktif</span>
+            </div>
+            <p id="admPortalModeDesc" class="section-subtitle" style="margin:0">
+              Pakej harga dan skrin log masuk ditutup buat masa ini — pelajar boleh terus masuk ke Bank Soalan. Klik butang di sebelah pada tahun hadapan apabila anda sedia mengaktifkan semula harga &amp; log masuk PIN.
+            </p>
+          </div>
+          <div>
+            <button type="button" id="admToggleOpenModeBtn" class="btn btn-primary">
+              Tukar ke Mod Langganan &amp; Log Masuk PIN
+            </button>
+          </div>
+        </section>
+
         <!-- Ringkasan KPI Langganan -->
         <section aria-labelledby="adminStatsHeading">
           <div class="section-header">

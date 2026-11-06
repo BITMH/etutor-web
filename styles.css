@@ -2812,6 +2812,25 @@ dialog.slip-dialog::backdrop {
   }
 }
 
+/* Kawalan Suis Mod Akses Terbuka vs Mod Langganan Berbayar */
+html[data-open-access="true"] [data-paid-only] {
+  display: none !important;
+}
+
+html:not([data-open-access="true"]) [data-open-only] {
+  display: none !important;
+}
+
+.adm-mode-switch-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1px solid var(--brand-border);
+}
+
 /* PRINT RULE: Block printing everywhere EXCEPT when Official Result Slip Dialog is open */
 @media print {
   body > *:not(#resultSlipDialog, .etutor-svg-sprite) {
@@ -2828,7 +2847,8 @@ dialog.slip-dialog::backdrop {
     border: 1px solid #cbd5e1 !important;
     box-shadow: none !important;
   }
-  .slip-actions {
+  .slip-actions,
+  .slip-no-print {
     display: none !important;
   }
 }

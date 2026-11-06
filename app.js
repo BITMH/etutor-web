@@ -14,6 +14,10 @@
   const SESSION_STORAGE_KEY = "etutor_portal_session_v1";
   const ADMIN_SESSION_STORAGE_KEY = "etutor_admin_session_v1";
   const DEVICE_STORAGE_KEY = "etutor_portal_device_id_v1";
+  const OPEN_PROGRESS_STORAGE_KEY = "etutor_open_progress_v1";
+  const OPEN_SCORES_STORAGE_KEY = "etutor_open_scores_v1";
+  const OPEN_STUDENT_NAME_KEY = "etutor_open_student_name_v1";
+  const OPEN_MODE_OVERRIDE_KEY = "etutor_open_mode_override_v1";
 
   // Ikon Vektor SVG Sebaris (UI/UX Pro Max: Sifar Emoji Struktur, Garisan Seragam)
   const ICONS = {
@@ -53,8 +57,367 @@
     adminData: null,
     adminSearch: "",
     adminStatusFilter: "ALL",
-    revealedAdminPins: new Set()
+    revealedAdminPins: new Set(),
+    openPortalActive: false,
+    rawOpenCatalog: [],
+    rawServerLeaderboard: null
   };
+
+  function isOpenAccessMode() {
+    try {
+      const ov = sessionStorage.getItem(OPEN_MODE_OVERRIDE_KEY);
+      if (ov === "1") return true;
+      if (ov === "0") return false;
+    } catch (e) {}
+    return Boolean(window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.OPEN_ACCESS_MODE);
+  }
+
+  function setOpenAccessOverride(enabled) {
+    try {
+      sessionStorage.setItem(OPEN_MODE_OVERRIDE_KEY, enabled ? "1" : "0");
+    } catch (e) {}
+    syncOpenAccessDom();
+  }
+
+  function syncOpenAccessDom() {
+    const open = isOpenAccessMode();
+    if (typeof document !== "undefined" && document.documentElement) {
+      document.documentElement.setAttribute("data-open-access", open ? "true" : "false");
+      document.querySelectorAll("[data-paid-only]").forEach(function (el) {
+        el.hidden = open;
+      });
+      document.querySelectorAll("[data-open-only]").forEach(function (el) {
+        el.hidden = !open;
+      });
+    }
+    renderHeaderUser();
+  }
+
+  function getOpenStudentName() {
+    try {
+      return String(localStorage.getItem(OPEN_STUDENT_NAME_KEY) || "").trim().slice(0, 80);
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function setOpenStudentName(name) {
+    const clean = String(name || "").trim().slice(0, 80);
+    try {
+      if (clean) localStorage.setItem(OPEN_STUDENT_NAME_KEY, clean);
+      else localStorage.removeItem(OPEN_STUDENT_NAME_KEY);
+    } catch (e) {}
+    return clean;
+  }
+
+  function loadOpenProgressMap() {
+    try {
+      const raw = localStorage.getItem(OPEN_PROGRESS_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return (parsed && typeof parsed === "object" && !Array.isArray(parsed)) ? parsed : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveOpenProgressMap(mapObj) {
+    try {
+      localStorage.setItem(OPEN_PROGRESS_STORAGE_KEY, JSON.stringify(mapObj || {}));
+    } catch (e) {}
+  }
+
+  function loadOpenScoresList() {
+    try {
+      const raw = localStorage.getItem(OPEN_SCORES_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveOpenScoresList(listArr) {
+    try {
+      localStorage.setItem(OPEN_SCORES_STORAGE_KEY, JSON.stringify(Array.isArray(listArr) ? listArr.slice(-250) : []));
+    } catch (e) {}
+  }
+
+  function computeLocalSpmGrade(pct, hasData) {
+    if (!hasData) return "—";
+    if (pct >= 90) return "A+";
+    if (pct >= 80) return "A";
+    if (pct >= 70) return "A-";
+    if (pct >= 65) return "B+";
+    if (pct >= 60) return "B";
+    if (pct >= 55) return "C+";
+    if (pct >= 50) return "C";
+    if (pct >= 45) return "D";
+    if (pct >= 40) return "E";
+    return "G";
+  }
+
+  function formatLocalDateOnly(d) {
+    const dt = d instanceof Date ? d : new Date();
+    const pad = function (n) { return String(n).padStart(2, "0"); };
+    return dt.getFullYear() + "-" + pad(dt.getMonth() + 1) + "-" + pad(dt.getDate());
+  }
+
+  function calculateLocalStreakDays(dateMap) {
+    let streak = 0;
+    const now = new Date();
+    for (let d = 0; d < 365; d++) {
+      const check = new Date(now.getTime() - d * 86400000);
+      const key = formatLocalDateOnly(check);
+      if (dateMap[key]) {
+        streak++;
+      } else if (d === 0) {
+        continue;
+      } else {
+        break;
+      }
+    }
+    return streak;
+  }
+
+  function buildOpenDashboardBundle(rawCatalog, serverLb) {
+    const files = Array.isArray(rawCatalog) ? rawCatalog : [];
+    const progMap = loadOpenProgressMap();
+    const scores = loadOpenScoresList();
+    const customName = getOpenStudentName() || "Pelajar";
+
+    const bestByFile = {};
+    const dateMap = {};
+    const weakCounter = {};
+
+    scores.forEach(function (s) {
+      if (!s || !s.fileId) return;
+      const pct = Math.max(0, Math.min(100, Number(s.percentage) || 0));
+      if (s.dateOnly) dateMap[s.dateOnly] = true;
+      if (!bestByFile[s.fileId] || pct >= bestByFile[s.fileId].percentage) {
+        bestByFile[s.fileId] = {
+          fileId: s.fileId,
+          quizTitle: s.quizTitle || "",
+          subject: s.subject || "",
+          scoreText: s.scoreText || (pct + "%"),
+          percentage: pct,
+          grade: s.grade || computeLocalSpmGrade(pct, true),
+          completedAt: s.completedAt || ""
+        };
+      }
+      if (Array.isArray(s.weakTopics)) {
+        s.weakTopics.forEach(function (w) {
+          if (!w || !w.topic) return;
+          if (!weakCounter[w.topic]) weakCounter[w.topic] = { topic: w.topic, count: 0, lowestPct: 100 };
+          weakCounter[w.topic].count++;
+          if (typeof w.percentage === "number" && w.percentage < weakCounter[w.topic].lowestPct) {
+            weakCounter[w.topic].lowestPct = w.percentage;
+          }
+        });
+      }
+    });
+
+    const inProgressList = Object.keys(progMap)
+      .map(function (fid) {
+        const p = progMap[fid];
+        if (!p || !p.fileId) return null;
+        return {
+          updatedAt: p.updatedAt || "Sebentar tadi",
+          fileId: p.fileId,
+          quizTitle: p.quizTitle || "Set Latihan Interaktif",
+          subject: p.subject || "SPM",
+          answeredCount: Math.max(0, Number(p.answeredCount) || 0),
+          totalQuestions: Math.max(1, Number(p.totalQuestions) || 45),
+          timeRemaining: p.timeRemaining !== undefined ? p.timeRemaining : null
+        };
+      })
+      .filter(Boolean);
+
+    const subMap = {};
+    let completedSets = 0;
+    let sumBestPct = 0;
+    let totalXp = 0;
+
+    const enrichedCatalog = files.map(function (f) {
+      const best = bestByFile[f.fileId] || null;
+      const prog = progMap[f.fileId] || null;
+      const subName = f.subject || "Umum";
+      if (!subMap[subName]) subMap[subName] = { subject: subName, total: 0, completed: 0 };
+      subMap[subName].total++;
+      if (best) {
+        completedSets++;
+        subMap[subName].completed++;
+        sumBestPct += best.percentage;
+        totalXp += Math.round(best.percentage * 10) + 50;
+      }
+      return Object.assign({}, f, {
+        bestScore: best,
+        inProgress: prog ? {
+          updatedAt: prog.updatedAt || "Sebentar tadi",
+          fileId: prog.fileId,
+          quizTitle: prog.quizTitle,
+          subject: prog.subject,
+          answeredCount: prog.answeredCount,
+          totalQuestions: prog.totalQuestions,
+          timeRemaining: prog.timeRemaining
+        } : null,
+        status: prog ? "in_progress" : (best ? "completed" : "not_started")
+      });
+    });
+
+    const avgScore = completedSets > 0 ? Math.round(sumBestPct / completedSets) : 0;
+    const completionPct = enrichedCatalog.length > 0 ? Math.round((completedSets / enrichedCatalog.length) * 100) : 0;
+    const subjectBreakdown = Object.keys(subMap)
+      .map(function (k) {
+        const st = subMap[k];
+        return {
+          subject: st.subject,
+          completed: st.completed,
+          total: st.total,
+          percentage: st.total > 0 ? Math.round((st.completed / st.total) * 100) : 0
+        };
+      })
+      .sort(function (a, b) { return b.total - a.total; });
+
+    const weakTopics = Object.keys(weakCounter)
+      .map(function (k) { return weakCounter[k]; })
+      .sort(function (a, b) { return a.lowestPct - b.lowestPct || b.count - a.count; })
+      .slice(0, 4);
+
+    // Kira kedudukan tempatan pelajar ("Anda") dan gabungkan bersama papan pendahulu pelayan
+    const subFilterNorm = String(portalState.lbSubject || "ALL").trim().toLowerCase();
+    const isWeekly = portalState.lbPeriod === "weekly";
+    const sevenDaysMs = 7 * 24 * 3600 * 1000;
+    const myLbBest = {};
+    scores.forEach(function (s) {
+      if (!s || !s.fileId) return;
+      if (isWeekly && s.completedMs && (Date.now() - Number(s.completedMs)) > sevenDaysMs) return;
+      const sSub = String(s.subject || "").trim().toLowerCase();
+      if (subFilterNorm && subFilterNorm !== "all" && sSub !== subFilterNorm) return;
+      const pct = Math.max(0, Math.min(100, Number(s.percentage) || 0));
+      if (!myLbBest[s.fileId] || pct > myLbBest[s.fileId]) myLbBest[s.fileId] = pct;
+    });
+
+    const myLbFids = Object.keys(myLbBest);
+    let myLbXp = 0;
+    let myLbSum = 0;
+    myLbFids.forEach(function (fid) {
+      myLbSum += myLbBest[fid];
+      myLbXp += Math.round(myLbBest[fid] * 10) + 50;
+    });
+    const myLbAvg = myLbFids.length > 0 ? Math.round(myLbSum / myLbFids.length) : 0;
+
+    const baseEntries = (serverLb && Array.isArray(serverLb.entries))
+      ? serverLb.entries.map(function (e) { return Object.assign({}, e, { isCurrentUser: false }); })
+      : [];
+
+    if (myLbFids.length > 0) {
+      baseEntries.push({
+        isCurrentUser: true,
+        displayName: customName,
+        setsCompleted: myLbFids.length,
+        averageScore: myLbAvg,
+        grade: computeLocalSpmGrade(myLbAvg, true),
+        xp: myLbXp
+      });
+    }
+
+    baseEntries.sort(function (a, b) {
+      if (b.xp !== a.xp) return b.xp - a.xp;
+      if (b.averageScore !== a.averageScore) return b.averageScore - a.averageScore;
+      return b.setsCompleted - a.setsCompleted;
+    });
+    baseEntries.forEach(function (item, i) { item.rank = i + 1; });
+
+    const meRow = baseEntries.find(function (b) { return b.isCurrentUser; }) || null;
+    const totalPart = Math.max(baseEntries.length, (serverLb && serverLb.totalParticipants) || 0);
+
+    return {
+      user: {
+        userId: "PELAJAR",
+        buyerName: customName,
+        aksesPakej: "ALL"
+      },
+      catalog: enrichedCatalog,
+      inProgress: inProgressList,
+      progressSummary: {
+        totalSets: enrichedCatalog.length,
+        completedSets: completedSets,
+        inProgressSets: inProgressList.length,
+        completionPercentage: completionPct,
+        averageScore: avgScore,
+        averageGrade: computeLocalSpmGrade(avgScore, completedSets > 0),
+        totalXp: totalXp,
+        streakDays: calculateLocalStreakDays(dateMap),
+        subjectBreakdown: subjectBreakdown,
+        weakTopics: weakTopics
+      },
+      leaderboard: {
+        period: portalState.lbPeriod,
+        subject: portalState.lbSubject,
+        totalParticipants: totalPart,
+        entries: baseEntries.slice(0, 10),
+        myStanding: {
+          rank: meRow ? meRow.rank : null,
+          totalParticipants: totalPart,
+          isCurrentUser: true,
+          displayName: customName,
+          setsCompleted: myLbFids.length,
+          averageScore: myLbAvg,
+          grade: computeLocalSpmGrade(myLbAvg, myLbFids.length > 0),
+          xp: myLbXp
+        }
+      }
+    };
+  }
+
+  async function enterOpenPortal(forceRefresh) {
+    if (!isOpenAccessMode()) {
+      window.location.hash = "#login";
+      syncRouteMode();
+      return;
+    }
+
+    portalState.openPortalActive = true;
+    const landingView = document.getElementById("landingView");
+    const loginView = document.getElementById("loginView");
+    const adminView = document.getElementById("adminView");
+    const dashboardView = document.getElementById("dashboardView");
+
+    if (landingView) landingView.hidden = true;
+    if (loginView) loginView.hidden = true;
+    if (adminView) adminView.hidden = true;
+    if (dashboardView) dashboardView.hidden = false;
+
+    const grid = document.getElementById("catalogCardsGrid");
+    if ((portalState.rawOpenCatalog.length === 0 || forceRefresh) && grid && portalState.rawOpenCatalog.length === 0) {
+      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:32px">Memuatkan Bank Set Soalan Interaktif...</div>';
+    }
+
+    if (portalState.rawOpenCatalog.length === 0 || forceRefresh) {
+      try {
+        const res = await callBackend("publicDashboard", { forceRefresh: Boolean(forceRefresh) });
+        if (res && res.openAccessDisabled) {
+          portalState.openPortalActive = false;
+          setOpenAccessOverride(false);
+          window.location.hash = "#login";
+          syncRouteMode();
+          showToast("Portal kini beroperasi dalam mod akses berdaftar.");
+          return;
+        }
+        if (res && res.ok) {
+          portalState.rawOpenCatalog = Array.isArray(res.catalog) ? res.catalog : [];
+          portalState.rawServerLeaderboard = res.leaderboard || null;
+        } else if (res && res.error) {
+          showToast(res.error);
+        }
+      } catch (err) {
+        showToast("Gagal memuatkan senarai bank soalan: " + err.message);
+      }
+    }
+
+    const bundle = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard);
+    applyDashboardBundle(bundle);
+  }
 
   function getOrCreateDeviceId() {
     try {
@@ -254,11 +617,17 @@
   }
 
   function renderHeaderUser() {
+    const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
     const u = portalState.user || {};
     const nameEl = document.getElementById("navBuyerName");
     const pkgEl = document.getElementById("navPackageBadge");
-    if (nameEl) nameEl.textContent = u.buyerName || "Pelajar";
-    if (pkgEl) pkgEl.textContent = "Pakej: " + (u.aksesPakej || "ALL");
+    if (isOpenGuest) {
+      if (nameEl) nameEl.textContent = getOpenStudentName() || "Pelajar";
+      if (pkgEl) pkgEl.textContent = "Portal Latihan Interaktif";
+    } else {
+      if (nameEl) nameEl.textContent = u.buyerName || "Pelajar";
+      if (pkgEl) pkgEl.textContent = "Pakej: " + (u.aksesPakej || "ALL");
+    }
   }
 
   // 1. SEKSYEN CONTINUE PROGRESS
@@ -615,13 +984,40 @@
     ].join("");
 
     try {
-      const res = await callBackend("getQuizHtml", {
+      const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
+      let clientSavedStateJson;
+      if (isOpenGuest) {
+        const progMap = loadOpenProgressMap();
+        if (resetStart) {
+          delete progMap[fileId];
+          saveOpenProgressMap(progMap);
+        } else if (autoResume && progMap[fileId] && progMap[fileId].stateJson) {
+          clientSavedStateJson = progMap[fileId].stateJson;
+        }
+      }
+
+      const reqBody = {
         fileId: fileId,
         autoResume: Boolean(autoResume),
         resetStart: Boolean(resetStart)
-      });
+      };
+      if (isOpenGuest) {
+        reqBody.guestName = getOpenStudentName() || "Pelajar";
+        if (clientSavedStateJson) reqBody.clientSavedStateJson = clientSavedStateJson;
+      }
+
+      const res = await callBackend("getQuizHtml", reqBody);
 
       if (!res || !res.ok) {
+        if (res && res.openAccessDisabled) {
+          portalState.openPortalActive = false;
+          setOpenAccessOverride(false);
+          closeQuizStage();
+          window.location.hash = "#login";
+          syncRouteMode();
+          showToast("Portal kini beroperasi dalam mod akses berdaftar.");
+          return;
+        }
         if (res && res.authExpired) {
           handleLogout();
         }
@@ -653,6 +1049,7 @@
     const payload = portalState.pendingProgressPayload;
     portalState.pendingProgressPayload = null;
     if (!payload) return;
+    if (!portalState.sessionToken && isOpenAccessMode()) return;
 
     try {
       await callBackend("saveProgress", payload);
@@ -668,6 +1065,11 @@
     if (stage) stage.hidden = true;
     document.body.style.overflow = "";
     portalState.activeQuizFileId = null;
+
+    if (!portalState.sessionToken && isOpenAccessMode()) {
+      applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+      return;
+    }
 
     // Segarkan data dashboard dari pelayan supaya Continue Progress & Leaderboard tepat
     try {
@@ -688,6 +1090,8 @@
     if (!msg || typeof msg !== "object" || typeof msg.type !== "string") return;
     if (!portalState.activeQuizFileId || String(msg.fileId || "") !== String(portalState.activeQuizFileId)) return;
 
+    const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
+
     if (msg.type === "ETUTOR_PRINT_BLOCKED") {
       showToast("Cetakan kertas soalan disekat. Sila hantar kuiz dahulu untuk mencetak Slip Keputusan Rasmi.");
       return;
@@ -695,7 +1099,13 @@
 
     if (msg.type === "ETUTOR_PROGRESS_CLEARED") {
       portalState.pendingProgressPayload = null;
-      callBackend("clearProgress", { fileId: portalState.activeQuizFileId }).catch(function () {});
+      if (isOpenGuest) {
+        const progMap = loadOpenProgressMap();
+        delete progMap[portalState.activeQuizFileId];
+        saveOpenProgressMap(progMap);
+      } else {
+        callBackend("clearProgress", { fileId: portalState.activeQuizFileId }).catch(function () {});
+      }
       return;
     }
 
@@ -729,6 +1139,15 @@
 
       const others = (portalState.inProgress || []).filter(function (p) { return p.fileId !== portalState.activeQuizFileId; });
       portalState.inProgress = [itemSummary].concat(others);
+
+      if (isOpenGuest) {
+        const progMap = loadOpenProgressMap();
+        progMap[portalState.activeQuizFileId] = Object.assign({}, itemSummary, {
+          stateJson: String(msg.stateJson || "")
+        });
+        saveOpenProgressMap(progMap);
+        return;
+      }
 
       portalState.pendingProgressPayload = {
         fileId: portalState.activeQuizFileId,
@@ -769,11 +1188,15 @@
           };
         });
 
+      const resolvedName = isOpenGuest
+        ? (getOpenStudentName() || "Pelajar")
+        : ((portalState.user && portalState.user.buyerName) || "");
+
       portalState.latestSlipData = {
         fileId: portalState.activeQuizFileId,
         quizTitle: safeTitle,
         subject: safeSubject,
-        buyerName: (portalState.user && portalState.user.buyerName) || "",
+        buyerName: resolvedName,
         scoreText: String(msg.scoreText || (pctSafe + "%")).slice(0, 40),
         percentage: pctSafe,
         grade: gradeSafe,
@@ -787,6 +1210,31 @@
 
       const syncEl = document.getElementById("examSyncStatus");
       if (syncEl) syncEl.textContent = "Keputusan direkodkan: " + pctSafe + "% (" + gradeSafe + ")";
+
+      if (isOpenGuest) {
+        const progMap = loadOpenProgressMap();
+        delete progMap[portalState.activeQuizFileId];
+        saveOpenProgressMap(progMap);
+
+        const scores = loadOpenScoresList();
+        scores.push({
+          completedAt: new Date().toLocaleString("ms-MY"),
+          completedMs: Date.now(),
+          dateOnly: formatLocalDateOnly(new Date()),
+          fileId: portalState.activeQuizFileId,
+          quizTitle: safeTitle,
+          subject: safeSubject,
+          scoreText: portalState.latestSlipData.scoreText,
+          percentage: pctSafe,
+          grade: gradeSafe,
+          weakTopics: safeWeakTopics
+        });
+        saveOpenScoresList(scores);
+
+        showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan.");
+        applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+        return;
+      }
 
       showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan ke Leaderboard.");
 
@@ -814,8 +1262,19 @@
     const dlg = document.getElementById("resultSlipDialog");
     if (!data || !dlg) return;
 
+    const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
+    const customNameInput = document.getElementById("slipCustomNameInput");
+    const savedOpenName = getOpenStudentName();
+    if (customNameInput && isOpenGuest) {
+      customNameInput.value = savedOpenName;
+    }
+
+    const displayStudentName = isOpenGuest
+      ? (savedOpenName || data.buyerName || "Pelajar")
+      : ((portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar");
+
     const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
-    document.getElementById("slipStudentName").textContent = (portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar";
+    document.getElementById("slipStudentName").textContent = displayStudentName;
     document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
     document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
     document.getElementById("slipSubject").textContent = data.subject || "SPM";
@@ -874,11 +1333,12 @@
   function handleLogout() {
     portalState.sessionToken = "";
     portalState.user = null;
+    portalState.openPortalActive = false;
     try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
     document.getElementById("dashboardView").hidden = true;
     document.getElementById("examStage").hidden = true;
     document.body.style.overflow = "";
-    window.location.hash = "#login";
+    window.location.hash = isOpenAccessMode() ? "" : "#login";
     syncRouteMode();
   }
 
@@ -1018,10 +1478,15 @@
       refreshBtn.addEventListener("click", async function () {
         refreshBtn.disabled = true;
         try {
-          const res = await callBackend("dashboard", { forceRefresh: true });
-          if (res && res.ok) {
-            applyDashboardBundle(res);
-            showToast("Bank soalan & Leaderboard telah dikemas kini.");
+          if (!portalState.sessionToken && isOpenAccessMode()) {
+            await enterOpenPortal(true);
+            showToast("Bank soalan telah dikemas kini.");
+          } else {
+            const res = await callBackend("dashboard", { forceRefresh: true });
+            if (res && res.ok) {
+              applyDashboardBundle(res);
+              showToast("Bank soalan & Leaderboard telah dikemas kini.");
+            }
           }
         } catch (err) {
           showToast("Gagal menyegarkan data.");
@@ -1065,7 +1530,12 @@
             subject: portalState.lbSubject
           });
           if (res && res.ok) {
-            portalState.leaderboard = res.leaderboard;
+            if (!portalState.sessionToken && isOpenAccessMode()) {
+              portalState.rawServerLeaderboard = res.leaderboard;
+              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
+            } else {
+              portalState.leaderboard = res.leaderboard;
+            }
             renderLeaderboardSection();
           }
         } catch (err) {}
@@ -1083,7 +1553,12 @@
             subject: portalState.lbSubject
           });
           if (res && res.ok) {
-            portalState.leaderboard = res.leaderboard;
+            if (!portalState.sessionToken && isOpenAccessMode()) {
+              portalState.rawServerLeaderboard = res.leaderboard;
+              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
+            } else {
+              portalState.leaderboard = res.leaderboard;
+            }
             renderLeaderboardSection();
           }
         } catch (err) {}
@@ -1116,6 +1591,19 @@
 
     const printSlipBtn = document.getElementById("printSlipBtn");
     if (printSlipBtn) printSlipBtn.addEventListener("click", printOfficialSlip);
+
+    const slipCustomNameInput = document.getElementById("slipCustomNameInput");
+    if (slipCustomNameInput) {
+      slipCustomNameInput.addEventListener("input", function () {
+        if (portalState.sessionToken || !isOpenAccessMode()) return;
+        const clean = setOpenStudentName(slipCustomNameInput.value);
+        const finalName = clean || "Pelajar";
+        const slipNameEl = document.getElementById("slipStudentName");
+        if (slipNameEl) slipNameEl.textContent = finalName;
+        if (portalState.latestSlipData) portalState.latestSlipData.buyerName = finalName;
+        renderHeaderUser();
+      });
+    }
 
     const closeSlipBtn = document.getElementById("closeSlipBtn");
     const slipDlg = document.getElementById("resultSlipDialog");
@@ -1249,13 +1737,17 @@
       ? "<strong>Jawapan Tepat! (+100 XP)</strong> — Beginilah kepantasan semakan sebenar di dalam eTutor.my:"
       : "<strong>Kurang Tepat — Jom Semak Skema Sebenar:</strong> Jawapan betul telah ditandakan hijau di atas.";
 
+    const demoCtaHtml = isOpenAccessMode()
+      ? '  <a href="#portal" class="btn btn-primary btn-sm js-enter-open-portal">Buka Bank Soalan Penuh</a>'
+      : '  <a href="#pakej" class="btn btn-primary btn-sm">Buka Akses Penuh Sekarang</a>';
+
     expEl.className = isRight ? "lp-demo-explain" : "lp-demo-explain is-wrong-box";
     expEl.innerHTML = [
       '<div style="margin-bottom:6px">' + statusHead + "</div>",
       "<div>" + escapeHtml(q.explanation) + "</div>",
       '<div style="margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">',
       '  <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary)">Di dalam portal penuh, setiap set mengandungi 40–45 soalan lengkap analisis bab lemah.</span>',
-      '  <a href="#pakej" class="btn btn-primary btn-sm">Buka Akses Penuh Sekarang</a>',
+      demoCtaHtml,
       "</div>"
     ].join("");
     expEl.hidden = false;
@@ -1344,10 +1836,19 @@
         return;
       }
 
+      const enterOpen = e.target.closest(".js-enter-open-portal");
+      if (enterOpen) {
+        e.preventDefault();
+        window.location.hash = "#portal";
+        syncRouteMode();
+        window.scrollTo(0, 0);
+        return;
+      }
+
       const gotoLogin = e.target.closest(".js-goto-login");
       if (gotoLogin) {
         e.preventDefault();
-        window.location.hash = "#login";
+        window.location.hash = isOpenAccessMode() ? "#portal" : "#login";
         syncRouteMode();
         window.scrollTo(0, 0);
         return;
@@ -1356,6 +1857,7 @@
       const backLanding = e.target.closest(".js-back-to-landing");
       if (backLanding) {
         e.preventDefault();
+        portalState.openPortalActive = false;
         history.pushState("", document.title, window.location.pathname + window.location.search);
         syncRouteMode();
         window.scrollTo(0, 0);
@@ -1420,7 +1922,13 @@
     return window.location.hash.toLowerCase() === "#login";
   }
 
+  function isHashPortal() {
+    return window.location.hash.toLowerCase() === "#portal";
+  }
+
   async function syncRouteMode() {
+    syncOpenAccessDom();
+
     const landingView = document.getElementById("landingView");
     const adminView = document.getElementById("adminView");
     const loginView = document.getElementById("loginView");
@@ -1469,8 +1977,20 @@
       return;
     }
 
+    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || portalState.openPortalActive)) {
+      if (isHashLogin()) {
+        history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
+      }
+      await enterOpenPortal(false);
+      return;
+    }
+
+    if (!isOpenAccessMode() && isHashPortal()) {
+      history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
+    }
+
     dashboardView.hidden = true;
-    if (isHashLogin()) {
+    if (isHashLogin() || (!isOpenAccessMode() && isHashPortal())) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = false;
       if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
@@ -1481,7 +2001,7 @@
         const hashId = window.location.hash ? window.location.hash.slice(1) : "";
         if (hashId) {
           const targetSec = document.getElementById(hashId);
-          if (targetSec) {
+          if (targetSec && !targetSec.hidden) {
             setTimeout(function () { targetSec.scrollIntoView(); }, 30);
           }
         }
@@ -1640,6 +2160,29 @@
 
   function applyAdminBundle(res) {
     portalState.adminData = res;
+    if (typeof res.openAccessMode === "boolean") {
+      setOpenAccessOverride(res.openAccessMode);
+      const modeBadge = document.getElementById("admPortalModeBadge");
+      const modeDesc = document.getElementById("admPortalModeDesc");
+      const modeBtn = document.getElementById("admToggleOpenModeBtn");
+      if (modeBadge) {
+        modeBadge.textContent = res.openAccessMode
+          ? "Mod Akses Terbuka Aktif"
+          : "Mod Langganan & Log Masuk PIN Aktif";
+        modeBadge.className = "status-badge " + (res.openAccessMode ? "badge-done" : "badge-subject");
+      }
+      if (modeDesc) {
+        modeDesc.textContent = res.openAccessMode
+          ? "Pakej harga dan skrin log masuk ditutup buat masa ini — pelajar boleh terus masuk ke Bank Soalan. Klik butang di sebelah pada tahun hadapan apabila anda sedia mengaktifkan semula harga & log masuk PIN."
+          : "Pakej harga dan pengesahan ID + Kod PIN sedang aktif sepenuhnya. Hanya pelanggan berdaftar yang mempunyai PIN sah boleh membuka set soalan.";
+      }
+      if (modeBtn) {
+        modeBtn.textContent = res.openAccessMode
+          ? "Tukar ke Mod Langganan & Log Masuk PIN"
+          : "Tukar ke Mod Akses Terbuka (Tutup Harga & Login)";
+        modeBtn.className = res.openAccessMode ? "btn btn-primary" : "btn btn-outline";
+      }
+    }
     const st = res.stats || {};
     const elTot = document.getElementById("admTotalUsers");
     const elAct = document.getElementById("admActiveUsers");
@@ -1816,6 +2359,35 @@
         if (res && res.ok) {
           applyAdminBundle(res);
           showToast("Data langganan & log akses telah disegarkan.");
+        }
+      });
+    }
+
+    const admToggleOpenBtn = document.getElementById("admToggleOpenModeBtn");
+    if (admToggleOpenBtn) {
+      admToggleOpenBtn.addEventListener("click", async function () {
+        const currentOpen = portalState.adminData && typeof portalState.adminData.openAccessMode === "boolean"
+          ? portalState.adminData.openAccessMode
+          : isOpenAccessMode();
+        const nextOpen = !currentOpen;
+        admToggleOpenBtn.disabled = true;
+        try {
+          const res = await callBackend("adminSetOpenAccessMode", {
+            adminToken: portalState.adminToken,
+            enabled: nextOpen
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            showToast(nextOpen
+              ? "Mod Akses Terbuka diaktifkan — harga & skrin log masuk kini disembunyikan."
+              : "Mod Langganan & Log Masuk PIN diaktifkan semula sepenuhnya.");
+          } else {
+            showToast((res && res.error) || "Gagal menukar mod operasi portal.");
+          }
+        } catch (err) {
+          showToast("Ralat: " + err.message);
+        } finally {
+          admToggleOpenBtn.disabled = false;
         }
       });
     }
@@ -2011,15 +2583,29 @@
   }
 
   document.addEventListener("DOMContentLoaded", async function () {
+    syncOpenAccessDom();
     bindEvents();
+
+    // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
+    callBackend("ping").then(function (r) {
+      if (r && typeof r.openAccessMode === "boolean") {
+        const prev = isOpenAccessMode();
+        setOpenAccessOverride(r.openAccessMode);
+        if (prev !== r.openAccessMode) {
+          syncRouteMode();
+        }
+      }
+    }).catch(function () {});
+
     if (isHashAdmin()) {
       syncRouteMode();
       return;
     }
-    const restored = await tryRestoreExistingSession();
+    const restored = isOpenAccessMode() ? false : await tryRestoreExistingSession();
     if (!restored) {
-      syncRouteMode();
-      if (!isHashLogin() && window.ETutorMotion) {
+      await syncRouteMode();
+      const landingEl = document.getElementById("landingView");
+      if (landingEl && !landingEl.hidden && window.ETutorMotion) {
         window.ETutorMotion.playLandingEntrance();
       }
     }

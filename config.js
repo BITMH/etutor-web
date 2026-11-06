@@ -7,6 +7,13 @@ window.ETUTOR_CONFIG = {
   // URL Web App Google Apps Script Produksi
   GAS_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbxQakzUqQG5AO2Q6tWDBs1AJ39WNqeir29G3zMyLC69FaUd_A-703i28-P98Ap-Q2Ql/exec",
   BRAND_NAME: "eTutor.my",
+
+  // Suis Utama Mod Akses Portal:
+  //   true  = Mod Akses Terbuka (Log Masuk OFF & Pakej Harga OFF — pelajar terus masuk Bank Soalan)
+  //   false = Mod Langganan Berdaftar (Log Masuk PIN + Had 2 Peranti + Pakej Harga ON)
+  // Boleh juga ditukar terus secara langsung melalui Panel Kawalan Admin (#admin) pada tahun hadapan.
+  OPEN_ACCESS_MODE: true,
+
   SUPPORT_CONTACT: "Sokongan WhatsApp Admin eTutor.my (013-732 7696)",
   ADMIN_WHATSAPP_DISPLAY: "013-732 7696",
 

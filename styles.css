@@ -4,7 +4,7 @@
    Modern Web Standards: 100dvh, @container, :user-invalid, <progress>, <dialog>
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Lexend:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* Google Fonts dimuatkan melalui <link rel="preconnect"> di dalam <head> untuk LCP optimum */
 
 :root {
   --icon-check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'></polyline></svg>");
@@ -411,7 +411,8 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-sm);
 }
 
-.login-card h1 {
+.login-card h1,
+.login-card .login-title {
   font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.65rem);
   color: var(--text-primary);
   margin-block-end: var(--space-2);
@@ -2345,6 +2346,17 @@ dialog.slip-dialog::backdrop {
   font-size: 0.84rem;
   font-weight: 700;
   color: var(--brand-primary);
+  transition: border-color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard);
+}
+
+.lp-subject-pills li:hover {
+  border-color: var(--brand-accent);
+  background: var(--brand-soft);
+}
+
+.lp-subject-pills a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* 3-Step Funnel */
@@ -2852,3 +2864,12 @@ html:not([data-open-access="true"]) [data-open-only] {
     display: none !important;
   }
 }
+
+/* Cloud Sync Progress */
+.sync-progress-btn[data-linked="true"]{background:var(--grade-emerald,#059669)}
+.sync-progress-btn[aria-busy="true"]{opacity:.7;pointer-events:none}
+.sync-progress-btn[data-nudge="true"]{animation:sync-nudge 1.4s ease-in-out 3;box-shadow:0 0 0 3px rgb(37 99 235 / .35)}
+@keyframes sync-nudge{50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.sync-progress-btn[data-nudge="true"]{animation:none}}
+.sync-dialog-msg{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;border-radius:10px;padding:9px 13px;font-size:.88rem;margin-block-end:14px}
+.sync-dialog-msg[data-error="true"]{background:#fef2f2;border-color:#fecaca;color:#991b1b}

@@ -60,7 +60,8 @@
     revealedAdminPins: new Set(),
     openPortalActive: false,
     rawOpenCatalog: [],
-    rawServerLeaderboard: null
+    rawServerLeaderboard: null,
+    deepLinkHandled: false
   };
 
   function isOpenAccessMode() {
@@ -417,6 +418,7 @@
 
     const bundle = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard);
     applyDashboardBundle(bundle);
+    maybeAutoPull();
   }
 
   function getOrCreateDeviceId() {
@@ -613,6 +615,94 @@
     if (window.ETutorMotion) {
       window.ETutorMotion.playDashboardEntrance();
       window.ETutorMotion.animateProgressCounters(portalState.progressSummary);
+    }
+
+    applyDeepLinkParamsOnce();
+  }
+
+  function hasDeepLinkPortalParams() {
+    try {
+      if (!window.location || !window.location.search) return false;
+      const params = new URLSearchParams(window.location.search);
+      return Boolean(
+        (params.get("set") || "").trim() ||
+        (params.get("subject") || "").trim() ||
+        (params.get("q") || "").trim()
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function applyDeepLinkParamsOnce() {
+    if (portalState.deepLinkHandled) return;
+    const list = portalState.catalog || [];
+    if (list.length === 0) return;
+
+    let params;
+    try {
+      params = new URLSearchParams(window.location.search || "");
+    } catch (e) {
+      portalState.deepLinkHandled = true;
+      return;
+    }
+
+    const setParam = (params.get("set") || "").trim();
+    const subParam = (params.get("subject") || "").trim();
+    const qParam = (params.get("q") || "").trim();
+    const autoOpen = params.get("open") === "1" || params.get("open") === "true";
+
+    portalState.deepLinkHandled = true;
+    if (!setParam && !subParam && !qParam) return;
+
+    if (subParam) {
+      const targetNorm = subParam.toLowerCase();
+      const matchedSub = list.map(function (c) { return c.subject; }).find(function (s) {
+        return String(s || "").trim().toLowerCase() === targetNorm;
+      });
+      if (matchedSub) {
+        portalState.selectedSubject = matchedSub;
+        populateSubjectSelectors();
+      }
+    }
+
+    if (qParam) {
+      portalState.searchQuery = qParam;
+      const searchEl = document.getElementById("catalogSearchInput");
+      if (searchEl) searchEl.value = qParam;
+    }
+
+    let matchedSetItem = null;
+    if (setParam) {
+      const digits = setParam.replace(/\D/g, "");
+      const codeNorm = digits ? ("SET " + digits.padStart(2, "0")) : setParam.toUpperCase();
+      matchedSetItem = list.find(function (c) {
+        return String(c.setCode || "").toUpperCase() === codeNorm;
+      }) || list.find(function (c) {
+        return String(c.cleanTitle || "").toLowerCase().indexOf(setParam.toLowerCase()) !== -1;
+      }) || null;
+
+      if (!autoOpen) {
+        const filterText = matchedSetItem && matchedSetItem.setCode ? matchedSetItem.setCode : setParam;
+        portalState.searchQuery = filterText;
+        const searchEl2 = document.getElementById("catalogSearchInput");
+        if (searchEl2) searchEl2.value = filterText;
+      }
+    }
+
+    renderCatalogSection();
+
+    try {
+      history.replaceState(null, "", window.location.pathname + "#portal");
+    } catch (e) {}
+
+    if (matchedSetItem && autoOpen) {
+      openQuizSet(matchedSetItem.fileId, Boolean(matchedSetItem.inProgress), false);
+    } else {
+      const catHead = document.getElementById("catalogHeading");
+      if (catHead) {
+        setTimeout(function () { catHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      }
     }
   }
 
@@ -1134,7 +1224,8 @@
         subject: safeSubject,
         answeredCount: answeredCount,
         totalQuestions: totalQuestions,
-        timeRemaining: typeof msg.timeRemaining === "number" ? Math.max(0, Math.round(msg.timeRemaining)) : null
+        timeRemaining: typeof msg.timeRemaining === "number" ? Math.max(0, Math.round(msg.timeRemaining)) : null,
+        updatedMs: Date.now()
       };
 
       const others = (portalState.inProgress || []).filter(function (p) { return p.fileId !== portalState.activeQuizFileId; });
@@ -1230,6 +1321,7 @@
           weakTopics: safeWeakTopics
         });
         saveOpenScoresList(scores);
+        cloudSyncAfterSubmit(portalState.activeQuizFileId);
 
         showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan.");
         applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
@@ -1858,7 +1950,7 @@
       if (backLanding) {
         e.preventDefault();
         portalState.openPortalActive = false;
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+        history.pushState("", document.title, window.location.pathname);
         syncRouteMode();
         window.scrollTo(0, 0);
         return;
@@ -1977,7 +2069,7 @@
       return;
     }
 
-    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || portalState.openPortalActive)) {
+    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
       if (isHashLogin()) {
         history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
       }
@@ -2582,9 +2674,331 @@
     });
   }
 
+  // ==========================================================================
+  // CLOUD SYNC PROGRESS (Mod Akses Terbuka) — e-mel OTP / Google Sign-In
+  // Simpan setempat dahulu (localStorage); hantar ke awan HANYA bila "Hantar Jawapan"
+  // atau pelajar menekan "Sync Progress".
+  // ==========================================================================
+  const SYNC_TOKEN_KEY = "etutor_sync_token_v1";
+  const SYNC_EMAIL_KEY = "etutor_sync_email_v1";
+  const SYNC_LAST_KEY = "etutor_sync_last_v1";
+  const syncUi = { busy: false, pulledOnce: false, otpEmail: "", gsiReady: false };
+
+  function getSyncLink() {
+    try {
+      const t = localStorage.getItem(SYNC_TOKEN_KEY);
+      return t ? { token: t, email: localStorage.getItem(SYNC_EMAIL_KEY) || "" } : null;
+    } catch (e) { return null; }
+  }
+
+  function setSyncLink(token, email) {
+    try {
+      localStorage.setItem(SYNC_TOKEN_KEY, token);
+      localStorage.setItem(SYNC_EMAIL_KEY, email || "");
+    } catch (e) {}
+  }
+
+  function clearSyncLink() {
+    try {
+      localStorage.removeItem(SYNC_TOKEN_KEY);
+      localStorage.removeItem(SYNC_EMAIL_KEY);
+      localStorage.removeItem(SYNC_LAST_KEY);
+    } catch (e) {}
+  }
+
+  function syncScoreKey(s) {
+    return String(s.fileId) + "|" + String(Math.round(Number(s.completedMs) || 0));
+  }
+
+  function mergeRemoteIntoLocal(remote) {
+    const localScores = loadOpenScoresList();
+    const seen = {};
+    localScores.forEach(function (s) { if (s && s.fileId) seen[syncScoreKey(s)] = true; });
+    (Array.isArray(remote.scores) ? remote.scores : []).forEach(function (s) {
+      if (!s || !s.fileId || !s.completedMs) return;
+      const k = syncScoreKey(s);
+      if (seen[k]) return;
+      seen[k] = true;
+      localScores.push(s);
+    });
+    localScores.sort(function (a, b) { return (a.completedMs || 0) - (b.completedMs || 0); });
+    saveOpenScoresList(localScores);
+
+    const progMap = loadOpenProgressMap();
+    (Array.isArray(remote.progress) ? remote.progress : []).forEach(function (p) {
+      if (!p || !p.fileId) return;
+      const cur = progMap[p.fileId];
+      if (!cur || (p.updatedMs || 0) > (cur.updatedMs || 0)) progMap[p.fileId] = p;
+    });
+    localScores.forEach(function (s) {
+      const pr = progMap[s.fileId];
+      if (pr && (s.completedMs || 0) >= (pr.updatedMs || 0)) delete progMap[s.fileId];
+    });
+    saveOpenProgressMap(progMap);
+
+    if (remote.name && !getOpenStudentName()) setOpenStudentName(remote.name);
+  }
+
+  function refreshOpenDashboardIfIdle() {
+    if (portalState.sessionToken || !isOpenAccessMode() || !portalState.openPortalActive) return;
+    if (portalState.activeQuizFileId) return;
+    applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+  }
+
+  function renderSyncButton() {
+    const btn = document.getElementById("syncProgressBtn");
+    if (!btn) return;
+    const label = btn.querySelector("[data-sync-label]");
+    const link = getSyncLink();
+    if (label) label.textContent = link ? "Sync Progress" : "Simpan Progress";
+    btn.setAttribute("data-linked", link ? "true" : "false");
+    btn.title = link ? ("Disambungkan: " + link.email) : "Simpan progress ke awan supaya boleh disambung di peranti lain";
+    const st = document.getElementById("syncDialogLinked");
+    const form = document.getElementById("syncDialogLogin");
+    if (st) st.hidden = !link;
+    if (form) form.hidden = Boolean(link);
+    const em = document.getElementById("syncLinkedEmail");
+    if (em) em.textContent = link ? link.email : "";
+    const last = document.getElementById("syncLastTime");
+    if (last) {
+      let t = "";
+      try { t = localStorage.getItem(SYNC_LAST_KEY) || ""; } catch (e) {}
+      last.textContent = t ? ("Disegerak terakhir: " + t) : "Belum pernah disegerak.";
+    }
+  }
+
+  function setSyncDialogMsg(text, isError) {
+    const el = document.getElementById("syncDialogMsg");
+    if (!el) return;
+    el.textContent = text || "";
+    el.hidden = !text;
+    el.setAttribute("data-error", isError ? "true" : "false");
+  }
+
+  async function syncNow(opts) {
+    opts = opts || {};
+    const link = getSyncLink();
+    if (!link || syncUi.busy) return false;
+    syncUi.busy = true;
+    const btn = document.getElementById("syncProgressBtn");
+    if (btn) btn.setAttribute("aria-busy", "true");
+    try {
+      const progMap = loadOpenProgressMap();
+      const res = await callBackend("syncPush", {
+        syncToken: link.token,
+        name: getOpenStudentName(),
+        scores: loadOpenScoresList().slice(-250),
+        progress: Object.keys(progMap).map(function (k) { return progMap[k]; }),
+        completedFileIds: opts.completedFileId ? [opts.completedFileId] : []
+      });
+      if (!res || !res.ok) {
+        if (res && res.authExpired) {
+          clearSyncLink();
+          renderSyncButton();
+          if (!opts.silent) showToast(res.error || "Sesi sync tamat. Sila sahkan e-mel semula.");
+        } else if (!opts.silent) {
+          showToast((res && res.error) || "Gagal menyegerak progress.");
+        }
+        return false;
+      }
+      mergeRemoteIntoLocal(res);
+      try { localStorage.setItem(SYNC_LAST_KEY, res.syncedAt || new Date().toLocaleString("ms-MY")); } catch (e) {}
+
+      if (res.newScoresAdded) {
+        try {
+          const lb = await callBackend("getLeaderboard", { period: portalState.lbPeriod, subject: portalState.lbSubject });
+          if (lb && lb.ok) portalState.rawServerLeaderboard = lb.leaderboard;
+        } catch (e) {}
+      }
+      refreshOpenDashboardIfIdle();
+      renderSyncButton();
+      if (!opts.silent) showToast("Progress berjaya disimpan ke awan.");
+      return true;
+    } catch (err) {
+      if (!opts.silent) showToast("Tiada sambungan. Progress kekal disimpan di peranti ini.");
+      return false;
+    } finally {
+      syncUi.busy = false;
+      if (btn) btn.removeAttribute("aria-busy");
+    }
+  }
+
+  async function onSyncLoggedIn(res) {
+    setSyncLink(res.syncToken, res.email);
+    mergeRemoteIntoLocal(res);
+    renderSyncButton();
+    setSyncDialogMsg("");
+    await syncNow({ silent: true });
+    refreshOpenDashboardIfIdle();
+    showToast("Disambungkan sebagai " + res.email + ". Progress anda kini disegerakkan.");
+    const dlg = document.getElementById("syncDialog");
+    if (dlg) closeTopLayer(dlg);
+  }
+
+  function loadGoogleSignIn() {
+    const cid = window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GOOGLE_CLIENT_ID;
+    const holder = document.getElementById("syncGoogleBtn");
+    const wrap = document.getElementById("syncGoogleWrap");
+    if (!cid || !holder || (typeof google !== "undefined" && google.script)) return;
+    if (wrap) wrap.hidden = false;
+
+    function init() {
+      if (syncUi.gsiReady || !window.google || !google.accounts || !google.accounts.id) return;
+      syncUi.gsiReady = true;
+      google.accounts.id.initialize({
+        client_id: cid,
+        callback: async function (resp) {
+          setSyncDialogMsg("Mengesahkan akaun Google...");
+          try {
+            const res = await callBackend("googleSignIn", { idToken: resp.credential });
+            if (res && res.ok) await onSyncLoggedIn(res);
+            else setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
+          } catch (e) {
+            setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
+          }
+        }
+      });
+      google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: 280 });
+    }
+
+    if (window.google && google.accounts) { init(); return; }
+    if (document.getElementById("gsiScript")) return;
+    const s = document.createElement("script");
+    s.id = "gsiScript";
+    s.src = "https://accounts.google.com/gsi/client";
+    s.async = true;
+    s.defer = true;
+    s.onload = init;
+    document.head.appendChild(s);
+  }
+
+  function openSyncDialog() {
+    const dlg = document.getElementById("syncDialog");
+    if (!dlg) return;
+    renderSyncButton();
+    setSyncDialogMsg("");
+    const stepCode = document.getElementById("syncStepCode");
+    const stepEmail = document.getElementById("syncStepEmail");
+    if (stepCode) stepCode.hidden = true;
+    if (stepEmail) stepEmail.hidden = false;
+    loadGoogleSignIn();
+    if (!dlg.open) dlg.showModal();
+  }
+
+  function bindCloudSyncEvents() {
+    const btn = document.getElementById("syncProgressBtn");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        btn.removeAttribute("data-nudge");
+        if (getSyncLink()) {
+          syncNow({ silent: false });
+          return;
+        }
+        openSyncDialog();
+      });
+    }
+    renderSyncButton();
+
+    const dlg = document.getElementById("syncDialog");
+    const closeBtn = document.getElementById("syncDialogClose");
+    if (closeBtn && dlg) closeBtn.addEventListener("click", function () { closeTopLayer(dlg); });
+
+    const emailForm = document.getElementById("syncEmailForm");
+    if (emailForm) {
+      emailForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const input = document.getElementById("syncEmailInput");
+        const submit = emailForm.querySelector("button[type=submit]");
+        const email = String(input && input.value || "").trim().toLowerCase();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          setSyncDialogMsg("Sila masukkan e-mel yang sah.", true);
+          return;
+        }
+        if (submit) submit.disabled = true;
+        setSyncDialogMsg("Menghantar kod...");
+        try {
+          const res = await callBackend("requestEmailOtp", { email: email });
+          if (res && res.ok) {
+            syncUi.otpEmail = email;
+            document.getElementById("syncStepEmail").hidden = true;
+            document.getElementById("syncStepCode").hidden = false;
+            const ci = document.getElementById("syncCodeInput");
+            if (ci) { ci.value = ""; ci.focus(); }
+            setSyncDialogMsg(res.message || "Kod telah dihantar.");
+          } else {
+            setSyncDialogMsg((res && res.error) || "Gagal menghantar kod.", true);
+          }
+        } catch (err) {
+          setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
+
+    const codeForm = document.getElementById("syncCodeForm");
+    if (codeForm) {
+      codeForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const code = String((document.getElementById("syncCodeInput") || {}).value || "").replace(/\D/g, "");
+        const submit = codeForm.querySelector("button[type=submit]");
+        if (code.length !== 6) { setSyncDialogMsg("Masukkan kod 6 digit.", true); return; }
+        if (submit) submit.disabled = true;
+        try {
+          const res = await callBackend("verifyEmailOtp", { email: syncUi.otpEmail, code: code });
+          if (res && res.ok) await onSyncLoggedIn(res);
+          else setSyncDialogMsg((res && res.error) || "Kod tidak betul.", true);
+        } catch (err) {
+          setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
+        } finally {
+          if (submit) submit.disabled = false;
+        }
+      });
+    }
+
+    const backBtn = document.getElementById("syncCodeBack");
+    if (backBtn) backBtn.addEventListener("click", function () {
+      document.getElementById("syncStepCode").hidden = true;
+      document.getElementById("syncStepEmail").hidden = false;
+      setSyncDialogMsg("");
+    });
+
+    const nowBtn = document.getElementById("syncNowBtn");
+    if (nowBtn) nowBtn.addEventListener("click", async function () {
+      nowBtn.disabled = true;
+      await syncNow({ silent: false });
+      nowBtn.disabled = false;
+    });
+
+    const outBtn = document.getElementById("syncSignOutBtn");
+    if (outBtn) outBtn.addEventListener("click", function () {
+      clearSyncLink();
+      renderSyncButton();
+      showToast("Cloud Sync diputuskan. Data kekal di peranti ini.");
+    });
+  }
+
+  // Selepas "Hantar Jawapan": segerak senyap jika sudah disambung; jika belum, tarik perhatian ke butang simpan.
+  function cloudSyncAfterSubmit(fileId) {
+    if (getSyncLink()) {
+      syncNow({ silent: true, completedFileId: fileId });
+      return;
+    }
+    const btn = document.getElementById("syncProgressBtn");
+    if (btn) btn.setAttribute("data-nudge", "true");
+  }
+
+  // Tarik data awan sekali setiap muat semula halaman (peranti baharu / pelayar berlainan)
+  function maybeAutoPull() {
+    if (syncUi.pulledOnce || !getSyncLink()) return;
+    syncUi.pulledOnce = true;
+    syncNow({ silent: true });
+  }
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
+    bindCloudSyncEvents();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

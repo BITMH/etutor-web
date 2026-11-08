@@ -712,7 +712,10 @@
     const nameEl = document.getElementById("navBuyerName");
     const pkgEl = document.getElementById("navPackageBadge");
     if (isOpenGuest) {
-      if (nameEl) nameEl.textContent = getOpenStudentName() || "Pelajar";
+      if (nameEl) {
+        const lnk = getSyncLink();
+        nameEl.textContent = getOpenStudentName() || (lnk && lnk.email ? lnk.email.split("@")[0] : "Log Masuk");
+      }
       if (pkgEl) pkgEl.textContent = "Portal Latihan Interaktif";
     } else {
       if (nameEl) nameEl.textContent = u.buyerName || "Pelajar";
@@ -2747,9 +2750,12 @@
 
   function renderSyncButton() {
     const btn = document.getElementById("syncProgressBtn");
+    const link = getSyncLink();
+    const landingLbl = document.querySelector("#landingLoginBtn [data-login-label]");
+    if (landingLbl) landingLbl.textContent = link && link.email ? link.email.split("@")[0] : "Log Masuk";
+    renderHeaderUser();
     if (!btn) return;
     const label = btn.querySelector("[data-sync-label]");
-    const link = getSyncLink();
     if (label) label.textContent = link ? "Sync Progress" : "Simpan Progress";
     btn.setAttribute("data-linked", link ? "true" : "false");
     btn.title = link ? ("Disambungkan: " + link.email) : "Simpan progress ke awan supaya boleh disambung di peranti lain";
@@ -2833,6 +2839,11 @@
     showToast("Disambungkan sebagai " + res.email + ". Progress anda kini disegerakkan.");
     const dlg = document.getElementById("syncDialog");
     if (dlg) closeTopLayer(dlg);
+    const landingEl = document.getElementById("landingView");
+    if (landingEl && !landingEl.hidden && isOpenAccessMode()) {
+      window.location.hash = "#portal";
+      enterOpenPortal(false);
+    }
   }
 
   function loadGoogleSignIn() {
@@ -2858,7 +2869,12 @@
           }
         }
       });
-      google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: 280 });
+      syncUi.renderGsi = function () {
+        const w = Math.max(200, Math.min(400, (holder.parentElement ? holder.parentElement.clientWidth : 320) || 320));
+        holder.innerHTML = "";
+        google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: w });
+      };
+      syncUi.renderGsi();
     }
 
     if (window.google && google.accounts) { init(); return; }
@@ -2883,6 +2899,7 @@
     if (stepEmail) stepEmail.hidden = false;
     loadGoogleSignIn();
     if (!dlg.open) dlg.showModal();
+    if (syncUi.renderGsi) syncUi.renderGsi();
   }
 
   function bindCloudSyncEvents() {
@@ -2898,6 +2915,10 @@
       });
     }
     renderSyncButton();
+
+    document.addEventListener("click", function (e) {
+      if (e.target.closest(".js-open-sync-dialog")) openSyncDialog();
+    });
 
     const dlg = document.getElementById("syncDialog");
     const closeBtn = document.getElementById("syncDialogClose");

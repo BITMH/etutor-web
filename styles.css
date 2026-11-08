@@ -2873,3 +2873,14 @@ html:not([data-open-access="true"]) [data-open-only] {
 @media (prefers-reduced-motion:reduce){.sync-progress-btn[data-nudge="true"]{animation:none}}
 .sync-dialog-msg{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;border-radius:10px;padding:9px 13px;font-size:.88rem;margin-block-end:14px}
 .sync-dialog-msg[data-error="true"]{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+
+.user-pill-btn{border:0;font:inherit;color:inherit;cursor:pointer}
+.user-pill-btn:hover{filter:brightness(.96)}
+.user-pill-btn:focus-visible{outline:2px solid var(--brand-accent,#2563eb);outline-offset:2px}
+
+#syncDialog{inline-size:min(440px,calc(100vw - 32px));max-inline-size:none}
+#syncDialog > div{max-inline-size:none !important}
+#syncGoogleBtn{display:flex;justify-content:center}
+.lp-nav-actions .btn{white-space:nowrap}
+.lp-nav-actions{flex-wrap:nowrap}
+@media (max-width:520px){#landingLoginBtn{padding-inline:12px}}

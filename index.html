@@ -185,6 +185,12 @@
             <span>Log Masuk</span>
           </a>
           <a href="#pakej" class="btn btn-primary lp-hide-xs" data-paid-only>Dapatkan Akses</a>
+          <button type="button" id="landingLoginBtn" class="btn btn-outline js-open-sync-dialog" data-open-only>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+            </svg>
+            <span data-login-label>Log Masuk</span>
+          </button>
           <a href="#portal" class="btn btn-primary js-enter-open-portal" data-open-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/>
@@ -1028,12 +1034,10 @@
   <!-- DIALOG CLOUD SYNC PROGRESS (e-mel OTP / Google) -->
 <dialog id="syncDialog" class="slip-dialog" closedby="any" aria-labelledby="syncDialogTitle">
   <div style="padding:clamp(20px,4vw,30px);max-inline-size:440px">
-    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Simpan Progress Anda</h2>
+    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Log Masuk Pelajar</h2>
     <p style="margin:0 0 16px;color:var(--text-secondary);font-size:0.92rem;line-height:1.55">
-      Percuma. Sahkan e-mel anda supaya markah, XP &amp; kuiz separuh jalan boleh disambung di telefon atau komputer lain.
+      Percuma, tanpa kata laluan. Sahkan e-mel atau guna Google supaya markah, XP &amp; kuiz separuh jalan tersimpan dan boleh disambung di telefon atau komputer lain.
     </p>
-
-    <div id="syncDialogMsg" class="sync-dialog-msg" role="status" aria-live="polite" hidden></div>
 
     <div id="syncDialogLogin">
       <div id="syncGoogleWrap" hidden style="margin-block-end:14px">
@@ -1065,6 +1069,8 @@
       <button type="button" id="syncNowBtn" class="btn btn-primary" style="inline-size:100%">Sync Sekarang</button>
       <button type="button" id="syncSignOutBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Putuskan sambungan</button>
     </div>
+
+    <div id="syncDialogMsg" class="sync-dialog-msg" role="status" aria-live="polite" hidden style="margin-block:14px 0"></div>
 
     <button type="button" id="syncDialogClose" class="btn btn-outline btn-sm" style="margin-block-start:14px;inline-size:100%">Tutup</button>
   </div>
@@ -1275,12 +1281,12 @@
         </div>
 
         <div class="topbar-user-area">
-          <div class="user-pill">
+          <button type="button" id="navUserBtn" class="user-pill user-pill-btn js-open-sync-dialog" aria-label="Log masuk atau urus akaun pelajar">
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <circle cx="12" cy="8" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/>
             </svg>
             <span id="navBuyerName">Pelajar</span>
-          </div>
+          </button>
 
           <button type="button" id="refreshCatalogBtn" class="btn btn-outline btn-sm" aria-label="Segarkan Katalog dan Leaderboard">
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">

@@ -159,7 +159,33 @@
 .cikgu-ai-hdr-actions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+}
+
+.cikgu-ai-token-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: rgba(16, 185, 129, 0.18);
+  color: #6ee7b7;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  white-space: nowrap;
+}
+
+.cikgu-ai-token-pill.is-low {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+  border-color: rgba(251, 191, 36, 0.45);
+}
+
+.cikgu-ai-token-pill.is-empty {
+  background: rgba(239, 68, 68, 0.22);
+  color: #fecaca;
+  border-color: rgba(248, 113, 113, 0.5);
 }
 
 .cikgu-ai-icon-btn {

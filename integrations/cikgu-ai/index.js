@@ -5,18 +5,22 @@
  * HTML kuiz dimuat turun daripada pelayan jauh Google Apps Script!) tanpa menyentuh app.js.
  */
 
-import { DEFAULT_CIKGU_CONFIG } from "./config.js?v=16";
-import { CikguFailoverClient } from "./api/failover-client.js?v=16";
-import { WarmupStateMachine } from "./state/warmup-machine.js?v=16";
-import { CikguSpeechIO } from "./audio/speech-io.js?v=16";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=16";
+import {
+  DEFAULT_CIKGU_CONFIG,
+  loadDailyTokenState,
+  onDailyTokenChange
+} from "./config.js?v=17";
+import { CikguFailoverClient } from "./api/failover-client.js?v=17";
+import { WarmupStateMachine } from "./state/warmup-machine.js?v=17";
+import { CikguSpeechIO } from "./audio/speech-io.js?v=17";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=17";
 
 function injectScopedStylesheet() {
   if (document.getElementById("cikguAiScopedCss")) return;
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=16", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=17", import.meta.url).href;
   document.head.appendChild(link);
 }
 
@@ -278,9 +282,33 @@ export function initCikguAiIntegration() {
     return Math.max(0, Math.min(Number(maxMarks) || 20, val));
   }
 
+  function postTokenSyncToIframe(st = loadDailyTokenState()) {
+    const frame = document.getElementById("examIframe");
+    if (!frame || !frame.contentWindow || !st) return;
+    try {
+      frame.contentWindow.postMessage(
+        {
+          type: "ETUTOR_TOKEN_SYNC",
+          remaining: st.remaining,
+          limit: st.limit
+        },
+        "*"
+      );
+    } catch {
+      // abaikan
+    }
+  }
+
+  onDailyTokenChange((st) => postTokenSyncToIframe(st));
+
   window.addEventListener("message", (ev) => {
     const d = ev && ev.data;
     if (!d || typeof d !== "object") return;
+
+    if (d.type === "ETUTOR_REQUEST_TOKEN_SYNC") {
+      postTokenSyncToIframe();
+      return;
+    }
 
     if (d.type === "ETUTOR_AI_SUB_GRADE_REQ" && d.subId) {
       const frame = document.getElementById("examIframe");
@@ -308,6 +336,37 @@ export function initCikguAiIntegration() {
       (async () => {
         let accText = "";
         try {
+          const curTok = loadDailyTokenState();
+          if (curTok.remaining <= 0) {
+            targetWin.postMessage(
+              {
+                type: "ETUTOR_AI_SUB_GRADE_LIMIT",
+                subId: d.subId,
+                remaining: 0,
+                limit: curTok.limit,
+                message: `Kuota ${curTok.limit} token AI harian anda telah penuh untuk hari ini (reset jam 12:00 tengah malam MYT). Sila klik butang 'Skema Jawapan' untuk menyemak jawapan rasmi tanpa had!`
+              },
+              "*"
+            );
+            return;
+          }
+
+          if (warmupMachine && warmupMachine.status !== "ready") {
+            try {
+              targetWin.postMessage(
+                {
+                  type: "ETUTOR_AI_SUB_GRADE_STREAM",
+                  subId: d.subId,
+                  text: "Cikgu AI sedang membuka buku rekod skema KSSM...",
+                  aiScore: null,
+                  done: false
+                },
+                "*"
+              );
+            } catch {}
+            await warmupMachine.greetCikgu();
+          }
+
           await client.streamSemak(
             {
               subjek: detectedSubj,
@@ -344,18 +403,36 @@ export function initCikguAiIntegration() {
             targetWin.postMessage({ type: "ETUTOR_AI_SUB_GRADE_FALLBACK", subId: d.subId }, "*");
             return;
           }
+          const updatedTok = loadDailyTokenState();
           targetWin.postMessage(
             {
               type: "ETUTOR_AI_SUB_GRADE_STREAM",
               subId: d.subId,
               text: finalClean,
               aiScore: finalScore,
+              remaining: updatedTok.remaining,
+              limit: updatedTok.limit,
               done: true
             },
             "*"
           );
-        } catch {
-          // Jika AI gagal / luar talian, kembali kepada fallback asal 100% secara automatik
+        } catch (err) {
+          if (err && err.isDailyLimit) {
+            const updatedTok = loadDailyTokenState();
+            try {
+              targetWin.postMessage(
+                {
+                  type: "ETUTOR_AI_SUB_GRADE_LIMIT",
+                  subId: d.subId,
+                  remaining: 0,
+                  limit: updatedTok.limit,
+                  message: String(err.message)
+                },
+                "*"
+              );
+            } catch {}
+            return;
+          }
           try {
             targetWin.postMessage({ type: "ETUTOR_AI_SUB_GRADE_FALLBACK", subId: d.subId }, "*");
           } catch {}
@@ -365,6 +442,7 @@ export function initCikguAiIntegration() {
     }
 
     if (d.type !== "CIKGU_AI_ACTIVE_QUESTION" && d.type !== "ETUTOR_ACTIVE_QUESTION") return;
+    postTokenSyncToIframe();
     const stageTitle = ((document.getElementById("examStageTitle") || {}).textContent || "").trim();
     const enriched = {
       ...d,

@@ -7,8 +7,12 @@ export const CIKGU_STORAGE_KEYS = {
   ROUTING_MODE: "etutor_cikgu_routing_mode_v1",
   PRIMARY_URL: "etutor_cikgu_cloudrun_url_v1",
   BACKUP_URL: "etutor_cikgu_hfspaces_url_v1",
-  SELECTED_SUBJECT: "etutor_cikgu_subject_v1"
+  SELECTED_SUBJECT: "etutor_cikgu_subject_v1",
+  DAILY_TOKENS: "etutor_cikgu_daily_tokens_v1",
+  CLIENT_UID: "etutor_cikgu_client_uid_v1"
 };
+
+export const DAILY_AI_TOKEN_LIMIT = 30;
 
 const isLocalHost =
   typeof window !== "undefined" &&
@@ -102,4 +106,90 @@ export function saveRuntimeEndpoints({ mode, primaryUrl, backupUrl }) {
   } catch {
     // Abaikan jika pelayar dalam mod privasi ketat
   }
+}
+
+export function getMytDateKey() {
+  const nowMyt = new Date(Date.now() + 8 * 3600 * 1000);
+  return nowMyt.toISOString().slice(0, 10);
+}
+
+export function resolveCikguUserKey() {
+  try {
+    const rawSession = localStorage.getItem("etutor_portal_session_v1");
+    if (rawSession) {
+      const parsed = JSON.parse(rawSession);
+      const u = parsed && parsed.user;
+      const uid = u && (u.userId || u.email || u.phone);
+      if (uid && String(uid).trim()) return `usr:${String(uid).trim().toLowerCase()}`;
+    }
+  } catch {
+    // abaikan
+  }
+
+  try {
+    const syncEmail = localStorage.getItem("etutor_sync_email_v1");
+    if (syncEmail && syncEmail.trim()) return `eml:${syncEmail.trim().toLowerCase()}`;
+  } catch {
+    // abaikan
+  }
+
+  try {
+    let cid = localStorage.getItem(CIKGU_STORAGE_KEYS.CLIENT_UID);
+    if (!cid) {
+      const rand =
+        typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+      cid = `dev:${rand}`;
+      localStorage.setItem(CIKGU_STORAGE_KEYS.CLIENT_UID, cid);
+    }
+    return cid;
+  } catch {
+    return "dev:ephemeral";
+  }
+}
+
+const tokenSubscribers = new Set();
+
+export function onDailyTokenChange(fn) {
+  if (typeof fn === "function") tokenSubscribers.add(fn);
+  return () => tokenSubscribers.delete(fn);
+}
+
+export function loadDailyTokenState() {
+  const today = getMytDateKey();
+  try {
+    const raw = localStorage.getItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.date === today && typeof parsed.remaining === "number") {
+        const lim = Number(parsed.limit) || DAILY_AI_TOKEN_LIMIT;
+        const rem = Math.max(0, Math.min(lim, Math.floor(parsed.remaining)));
+        return { date: today, remaining: rem, limit: lim };
+      }
+    }
+  } catch {
+    // abaikan
+  }
+  return { date: today, remaining: DAILY_AI_TOKEN_LIMIT, limit: DAILY_AI_TOKEN_LIMIT };
+}
+
+export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT) {
+  const today = getMytDateKey();
+  const safeLim = Math.max(1, Number(limit) || DAILY_AI_TOKEN_LIMIT);
+  const safeRem = Math.max(0, Math.min(safeLim, Math.floor(Number(remaining))));
+  const next = { date: today, remaining: safeRem, limit: safeLim };
+  try {
+    localStorage.setItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS, JSON.stringify(next));
+  } catch {
+    // abaikan
+  }
+  tokenSubscribers.forEach((fn) => {
+    try {
+      fn(next);
+    } catch {
+      // abaikan
+    }
+  });
+  return next;
 }

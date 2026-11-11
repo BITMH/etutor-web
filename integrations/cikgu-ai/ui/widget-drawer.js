@@ -6,7 +6,12 @@
  * - Membaca soalan semasa di skrin pelajar secara automatik di latar belakang
  */
 
-import { loadRuntimeEndpoints, saveRuntimeEndpoints } from "../config.js";
+import {
+  loadDailyTokenState,
+  loadRuntimeEndpoints,
+  onDailyTokenChange,
+  saveRuntimeEndpoints
+} from "../config.js";
 import { renderSpmMarkdown } from "./markdown-spm.js";
 
 export class CikguWidgetDrawer {
@@ -57,6 +62,7 @@ export class CikguWidgetDrawer {
             </div>
           </div>
           <div class="cikgu-ai-hdr-actions">
+            <span class="cikgu-ai-token-pill" id="cikguAiTokenPill" title="Kuota harian dikongsi bersama Semak Jawapan AI Kertas 2 (reset 12:00 tengah malam MYT)">30/30 Token</span>
             <button type="button" class="cikgu-ai-icon-btn" id="cikguAiSettingsBtn" title="Tetapan Pelayan (Admin)" ${isAdminRoute ? "" : "hidden"}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </button>
@@ -177,6 +183,16 @@ export class CikguWidgetDrawer {
     const micBtn = this.rootEl.querySelector("#cikguAiMicBtn");
     const form = this.rootEl.querySelector("#cikguAiForm");
     const chatInput = this.rootEl.querySelector("#cikguAiChatInput");
+    const tokenPill = this.rootEl.querySelector("#cikguAiTokenPill");
+
+    const renderTokenPill = (st) => {
+      if (!tokenPill || !st) return;
+      tokenPill.textContent = `${st.remaining}/${st.limit} Token`;
+      tokenPill.classList.toggle("is-empty", st.remaining <= 0);
+      tokenPill.classList.toggle("is-low", st.remaining > 0 && st.remaining <= 5);
+    };
+    renderTokenPill(loadDailyTokenState());
+    onDailyTokenChange(renderTokenPill);
 
     window.addEventListener("hashchange", () => {
       if (settingsBtn) {
@@ -411,16 +427,22 @@ export class CikguWidgetDrawer {
         }
       }
 
-      const footer = document.createElement("div");
-      footer.className = "cikgu-ai-msg-footer";
-      footer.innerHTML = `<button type="button" class="cikgu-ai-tts-btn">🔊 Dengar</button>`;
-      const ttsBtn = footer.querySelector(".cikgu-ai-tts-btn");
-      ttsBtn.addEventListener("click", () => {
-        this.speechIO.speakText(rawAccumulated, detectedSubj, ttsBtn);
-      });
-      botBubble.appendChild(footer);
+      if (this.speechIO && this.speechIO.isTtsSupported()) {
+        const footer = document.createElement("div");
+        footer.className = "cikgu-ai-msg-footer";
+        footer.innerHTML = `<button type="button" class="cikgu-ai-tts-btn">🔊 Dengar</button>`;
+        const ttsBtn = footer.querySelector(".cikgu-ai-tts-btn");
+        ttsBtn.addEventListener("click", () => {
+          this.speechIO.speakText(rawAccumulated, detectedSubj, ttsBtn);
+        });
+        botBubble.appendChild(footer);
+      }
     } catch (err) {
-      contentDiv.innerHTML = `<span style="color:#b91c1c;">Maaf, sambungan tergendala sebentar (${String(err.message || err)}). Cuba hantar semula ya.</span>`;
+      if (err && err.isDailyLimit) {
+        contentDiv.innerHTML = `<span style="color:#92400e;font-weight:600;">${String(err.message)}</span>`;
+      } else {
+        contentDiv.innerHTML = `<span style="color:#b91c1c;">Maaf, sambungan tergendala sebentar (${String(err.message || err)}). Cuba hantar semula ya.</span>`;
+      }
     } finally {
       this.isStreaming = false;
       submitBtn.disabled = false;

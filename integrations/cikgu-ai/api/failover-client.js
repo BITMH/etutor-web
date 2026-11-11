@@ -5,7 +5,14 @@
  * had kuota percuma 85% (HTTP 429 + X-Cikgu-Failover: hf-spaces) atau tidak dapat dihubungi.
  */
 
-import { DEFAULT_CIKGU_CONFIG, loadRuntimeEndpoints } from "../config.js";
+import {
+  DAILY_AI_TOKEN_LIMIT,
+  DEFAULT_CIKGU_CONFIG,
+  loadDailyTokenState,
+  loadRuntimeEndpoints,
+  resolveCikguUserKey,
+  saveDailyTokenState
+} from "../config.js";
 
 export class CikguFailoverClient {
   constructor() {
@@ -108,14 +115,26 @@ export class CikguFailoverClient {
   async fetchStatus() {
     const candidates = this._resolveCandidateOrder();
     const results = {};
+    const userKey = resolveCikguUserKey();
     await Promise.all(
       candidates.map(async (c) => {
         const ctrl = new AbortController();
         const t = setTimeout(() => ctrl.abort(), 5000);
         try {
-          const r = await fetch(`${c.url}/v1/status`, { signal: ctrl.signal });
+          const r = await fetch(`${c.url}/v1/status`, {
+            signal: ctrl.signal,
+            headers: { "X-Etutor-User": userKey }
+          });
           clearTimeout(t);
-          results[c.tier] = r.ok ? await r.json() : { ready: false, status: r.status };
+          if (r.ok) {
+            const j = await r.json();
+            results[c.tier] = j;
+            if (typeof j.daily_remaining === "number") {
+              saveDailyTokenState(j.daily_remaining, j.daily_limit || DAILY_AI_TOKEN_LIMIT);
+            }
+          } else {
+            results[c.tier] = { ready: false, status: r.status };
+          }
         } catch {
           clearTimeout(t);
           results[c.tier] = { ready: false, offline: true };
@@ -147,7 +166,17 @@ export class CikguFailoverClient {
   }
 
   async streamSemak(payload, { onMeta, onToken, onFailover } = {}) {
+    const localTok = loadDailyTokenState();
+    if (localTok.remaining <= 0) {
+      const limErr = new Error(
+        `Kuota ${localTok.limit} token AI harian anda telah penuh untuk hari ini (reset jam 12:00 tengah malam MYT). Anda masih boleh membuka 'Skema Jawapan' tanpa had!`
+      );
+      limErr.isDailyLimit = true;
+      throw limErr;
+    }
+
     const candidates = this._resolveCandidateOrder();
+    const userKey = resolveCikguUserKey();
     let lastErr = null;
 
     for (let i = 0; i < candidates.length; i++) {
@@ -155,8 +184,11 @@ export class CikguFailoverClient {
       try {
         const resp = await fetch(`${candidate.url}/v1/semak`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...payload, stream: true })
+          headers: {
+            "Content-Type": "application/json",
+            "X-Etutor-User": userKey
+          },
+          body: JSON.stringify({ ...payload, id_pengguna: userKey, stream: true })
         });
 
         const failoverHdr = resp.headers.get("X-Cikgu-Failover");
@@ -172,18 +204,43 @@ export class CikguFailoverClient {
 
         if (!resp.ok) {
           let errMsg = `Ralat pelayan (${resp.status})`;
+          let isDailyCap = false;
           try {
             const j = await resp.json();
             if (j.detail) errMsg = j.detail;
+            if (j.error === "daily_token_limit") {
+              isDailyCap = true;
+              saveDailyTokenState(0, j.daily_limit || DAILY_AI_TOKEN_LIMIT);
+            }
           } catch {
             // abaikan
           }
-          throw new Error(errMsg);
+          const eObj = new Error(errMsg);
+          if (isDailyCap) eObj.isDailyLimit = true;
+          throw eObj;
+        }
+
+        const hdrRem = resp.headers.get("X-Cikgu-Daily-Remaining");
+        const hdrLim = resp.headers.get("X-Cikgu-Daily-Limit");
+        let syncedFromServer = false;
+        if (hdrRem !== null && hdrRem !== "" && !isNaN(Number(hdrRem))) {
+          saveDailyTokenState(Number(hdrRem), Number(hdrLim) || DAILY_AI_TOKEN_LIMIT);
+          syncedFromServer = true;
         }
 
         this.activeTier = candidate.tier;
         if (!resp.body) {
           const fallbackJson = await resp.json();
+          if (typeof fallbackJson.daily_remaining === "number") {
+            saveDailyTokenState(
+              fallbackJson.daily_remaining,
+              fallbackJson.daily_limit || DAILY_AI_TOKEN_LIMIT
+            );
+            syncedFromServer = true;
+          } else if (!syncedFromServer) {
+            const cur = loadDailyTokenState();
+            saveDailyTokenState(Math.max(0, cur.remaining - 1), cur.limit);
+          }
           if (onToken && fallbackJson.ulasan) onToken(fallbackJson.ulasan);
           return { tier: candidate.tier };
         }
@@ -191,6 +248,15 @@ export class CikguFailoverClient {
         const reader = resp.body.getReader();
         const decoder = new TextDecoder("utf-8");
         let buffer = "";
+        let politeBlocked = false;
+
+        const finalizeTokensIfNeeded = () => {
+          if (!syncedFromServer && !politeBlocked) {
+            const cur = loadDailyTokenState();
+            saveDailyTokenState(Math.max(0, cur.remaining - 1), cur.limit);
+            syncedFromServer = true;
+          }
+        };
 
         while (true) {
           const { value, done } = await reader.read();
@@ -205,12 +271,21 @@ export class CikguFailoverClient {
             if (!line.startsWith("data:")) continue;
             const dataStr = line.slice(5).trim();
             if (dataStr === "[DONE]") {
+              finalizeTokensIfNeeded();
               return { tier: candidate.tier };
             }
             try {
               const evt = JSON.parse(dataStr);
-              if (evt.type === "meta" && onMeta) {
-                onMeta({ ...evt, tier: candidate.tier });
+              if (evt.type === "meta") {
+                if (evt.sahsiah_signal === "tiada_sapaan_disekat") politeBlocked = true;
+                if (typeof evt.daily_remaining === "number") {
+                  saveDailyTokenState(
+                    evt.daily_remaining,
+                    evt.daily_limit || DAILY_AI_TOKEN_LIMIT
+                  );
+                  syncedFromServer = true;
+                }
+                if (onMeta) onMeta({ ...evt, tier: candidate.tier });
               } else if (evt.type === "token" && evt.token && onToken) {
                 onToken(evt.token);
               }
@@ -219,8 +294,12 @@ export class CikguFailoverClient {
             }
           }
         }
+        finalizeTokensIfNeeded();
         return { tier: candidate.tier };
       } catch (err) {
+        if (err && err.isDailyLimit) {
+          throw err;
+        }
         lastErr = err;
         if (candidate.tier === "cloud-run" && candidates.length > 1) {
           this._markPrimaryFailover();

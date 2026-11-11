@@ -217,6 +217,32 @@
       }
     });
 
+    const fileIdSet = new Set(files.map(function (f) { return f.fileId; }));
+    const fileByTitle = {};
+    files.forEach(function (f) {
+      if (f && f.cleanTitle) {
+        fileByTitle[String(f.cleanTitle).trim().toLowerCase()] = f;
+      }
+    });
+
+    let progMapChanged = false;
+    Object.keys(progMap).forEach(function (fid) {
+      const p = progMap[fid];
+      if (!p) return;
+      if (!fileIdSet.has(fid) && p.quizTitle) {
+        const matched = fileByTitle[String(p.quizTitle).trim().toLowerCase()];
+        if (matched && matched.fileId) {
+          p.fileId = matched.fileId;
+          progMap[matched.fileId] = p;
+          delete progMap[fid];
+          progMapChanged = true;
+        }
+      }
+    });
+    if (progMapChanged) {
+      saveOpenProgressMap(progMap);
+    }
+
     const inProgressList = Object.keys(progMap)
       .map(function (fid) {
         const p = progMap[fid];
@@ -533,7 +559,7 @@
         "Pelayan Google Apps Script belum dipautkan pada config.js. Sila jalankan `npm run clasp:login`, `npm run clasp:create`, dan `npm run deploy:all` pada komputer pentadbir."
       );
     }
-    const endpoint = cfgUrl || "/api";
+    const endpoint = isLocalPreview ? "/api" : (cfgUrl || "/api");
 
     // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
     const resp = await fetch(endpoint, {
@@ -1058,7 +1084,7 @@
     document.body.style.overflow = "hidden";
     if (window.ETutorMotion) window.ETutorMotion.playExamStageOpen();
 
-    iframe.srcdoc = [
+    const loadingSpinnerHtml = [
       '<!DOCTYPE html><html lang="ms"><head><meta charset="utf-8"><style>',
       'progress.loading-spinner:indeterminate::-webkit-progress-bar,progress.loading-spinner:indeterminate::-webkit-progress-value{display:none;background:none}',
       'progress.loading-spinner:indeterminate::-moz-progress-bar{display:none;background:none}',
@@ -1076,6 +1102,16 @@
       '</div></body></html>'
     ].join("");
 
+    // Elakkan isu perlumbaan OOPIF (double-srcdoc navigation abort) apabila respons API sangat pantas:
+    // Hanya papar spinner jika pemuatan mengambil masa melebihi 260ms.
+    let quizResolved = false;
+    iframe.removeAttribute("srcdoc");
+    const spinnerTimer = setTimeout(function () {
+      if (!quizResolved && portalState.activeQuizFileId === fileId) {
+        iframe.srcdoc = loadingSpinnerHtml;
+      }
+    }, 260);
+
     try {
       const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
       let clientSavedStateJson;
@@ -1091,6 +1127,7 @@
 
       const reqBody = {
         fileId: fileId,
+        quizTitle: meta ? meta.cleanTitle : "",
         autoResume: Boolean(autoResume),
         resetStart: Boolean(resetStart)
       };
@@ -1100,6 +1137,8 @@
       }
 
       const res = await callBackend("getQuizHtml", reqBody);
+      quizResolved = true;
+      clearTimeout(spinnerTimer);
 
       if (!res || !res.ok) {
         if (res && res.openAccessDisabled) {
@@ -1119,7 +1158,38 @@
         return;
       }
 
-      iframe.srcdoc = res.html;
+      let safeQuizHtml = String(res.html || "");
+      if (safeQuizHtml && !safeQuizHtml.includes("sanitizeQuestionPlaceholders")) {
+        const closeScriptTag = "<" + "/script>";
+        const clientSanitizer = [
+          "<script>",
+          "(function(){",
+          "  function cleanPlaceholders(){",
+          "    try {",
+          "      if (typeof SUBJECTIVE_QUESTIONS !== 'undefined' && Array.isArray(SUBJECTIVE_QUESTIONS)) {",
+          "        var isEng = /bahasa\\s+inggeris|english/i.test(document.title || '');",
+          "        SUBJECTIVE_QUESTIONS.forEach(function(sq){",
+          "          (sq.subquestions || []).forEach(function(sub){",
+          "            if (Array.isArray(sub.steps)) sub.steps.forEach(function(st){ st.placeholder = isEng ? (st.type === 'K' ? 'Enter your working / equation...' : 'Enter your final value / answer...') : (st.type === 'K' ? 'Taip langkah kiraan / persamaan anda...' : 'Taip nilai / jawapan akhir anda...'); });",
+          "            if (Array.isArray(sub.slots)) sub.slots.forEach(function(sl){ sl.placeholder = isEng ? 'Type your answer here...' : 'Taipkan jawapan / huraian anda di sini...'; });",
+          "            if (Array.isArray(sub.vars)) sub.vars.forEach(function(vd){ vd.placeholder = 'Taipkan jawapan anda di sini...'; });",
+          "            if (Array.isArray(sub.word_bank)) sub.word_bank = [];",
+          "          });",
+          "        });",
+          "        if (typeof renderCurrentQuestion === 'function') renderCurrentQuestion();",
+          "      }",
+          "    } catch(e) {}",
+          "  }",
+          "  cleanPlaceholders();",
+          "  document.addEventListener('DOMContentLoaded', cleanPlaceholders);",
+          "})();",
+          closeScriptTag
+        ].join("\n");
+        safeQuizHtml = /<\/body>/i.test(safeQuizHtml)
+          ? safeQuizHtml.replace(/<\/body>/i, clientSanitizer + "\n</body>")
+          : (safeQuizHtml + "\n" + clientSanitizer);
+      }
+      iframe.srcdoc = safeQuizHtml;
       if (syncEl) {
         syncEl.textContent = autoResume && res.hasSavedState
           ? "Sesi terdahulu disambung automatik"
@@ -1278,7 +1348,8 @@
             topic: String(w.topic || "").trim().slice(0, 120),
             percentage: Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0))),
             obtained: Math.max(0, Math.round(Number(w.obtained) || 0)),
-            total: Math.max(1, Math.round(Number(w.total) || 1))
+            total: Math.max(1, Math.round(Number(w.total) || 1)),
+            attempted: w.attempted === undefined ? true : Boolean(w.attempted)
           };
         });
 
@@ -1392,7 +1463,14 @@
         const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
         const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
         const wTot = Math.max(1, Math.round(Number(w.total) || 1));
-        li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ")";
+        const isAttempted = w.attempted === undefined ? true : Boolean(w.attempted);
+        if (isAttempted) {
+          li.style.color = "var(--status-danger, #b91c1c)";
+          li.style.fontWeight = "600";
+          li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ") • Perlu Ulang Kaji";
+        } else {
+          li.textContent = String(w.topic || "Topik") + " — Belum Dijawab (" + wObt + "/" + wTot + ")";
+        }
         weakListEl.appendChild(li);
       });
     }
@@ -2781,47 +2859,10 @@
     el.setAttribute("data-error", isError ? "true" : "false");
   }
 
-  function decodeGoogleCredentialJwt(idToken, expectedClientId) {
-    try {
-      const parts = String(idToken || "").split(".");
-      if (parts.length !== 3 || !parts[2] || parts[2].length < 40) return null;
-      const b64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
-      const padded = b64 + "===".slice((b64.length + 3) % 4);
-      const bin = atob(padded);
-      let jsonStr = "";
-      if (typeof TextDecoder !== "undefined") {
-        const bytes = new Uint8Array(bin.length);
-        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-        jsonStr = new TextDecoder("utf-8").decode(bytes);
-      } else {
-        jsonStr = decodeURIComponent(escape(bin));
-      }
-      const info = JSON.parse(jsonStr);
-      const okIss = info && (info.iss === "accounts.google.com" || info.iss === "https://accounts.google.com");
-      const email = String((info && info.email) || "").trim().toLowerCase();
-      if (!okIss || info.aud !== expectedClientId || String(info.email_verified) !== "true" || !email || Number(info.exp) * 1000 < Date.now()) {
-        return null;
-      }
-      return {
-        email: email,
-        name: String(info.name || info.given_name || email.split("@")[0] || "").trim().slice(0, 80)
-      };
-    } catch (e) {
-      return null;
-    }
-  }
-
   async function syncNow(opts) {
     opts = opts || {};
     const link = getSyncLink();
     if (!link || syncUi.busy) return false;
-    if (String(link.token || "").indexOf("gsi_local_") === 0) {
-      try { localStorage.setItem(SYNC_LAST_KEY, new Date().toLocaleString("ms-MY")); } catch (e) {}
-      refreshOpenDashboardIfIdle();
-      renderSyncButton();
-      if (!opts.silent) showToast("Progress berjaya disimpan untuk " + link.email + ".");
-      return true;
-    }
     syncUi.busy = true;
     const btn = document.getElementById("syncProgressBtn");
     if (btn) btn.setAttribute("aria-busy", "true");
@@ -2899,36 +2940,9 @@
           setSyncDialogMsg("Mengesahkan akaun Google...");
           try {
             const res = await callBackend("googleSignIn", { idToken: resp.credential });
-            if (res && res.ok) {
-              await onSyncLoggedIn(res);
-              return;
-            }
-            const fallbackInfo = decodeGoogleCredentialJwt(resp && resp.credential, cid);
-            if (fallbackInfo) {
-              await onSyncLoggedIn({
-                ok: true,
-                syncToken: "gsi_local_" + btoa(encodeURIComponent(fallbackInfo.email)),
-                email: fallbackInfo.email,
-                name: fallbackInfo.name,
-                scores: [],
-                progress: []
-              });
-              return;
-            }
-            setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
+            if (res && res.ok) await onSyncLoggedIn(res);
+            else setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
           } catch (e) {
-            const fallbackInfo = decodeGoogleCredentialJwt(resp && resp.credential, cid);
-            if (fallbackInfo) {
-              await onSyncLoggedIn({
-                ok: true,
-                syncToken: "gsi_local_" + btoa(encodeURIComponent(fallbackInfo.email)),
-                email: fallbackInfo.email,
-                name: fallbackInfo.name,
-                scores: [],
-                progress: []
-              });
-              return;
-            }
             setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
           }
         }

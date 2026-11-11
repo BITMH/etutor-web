@@ -104,9 +104,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, [role="heading"] {
+h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 700;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }

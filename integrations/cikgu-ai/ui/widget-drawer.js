@@ -74,9 +74,9 @@ export class CikguWidgetDrawer {
             <div class="cikgu-ai-admin-row">
               <label for="cikguAiRouteMode">Mod Penghalaan:</label>
               <select id="cikguAiRouteMode">
-                <option value="auto"${endpoints.mode === "auto" ? " selected" : ""}>Auto-Failover (Cloud Run → HF Spaces)</option>
-                <option value="cloud-run"${endpoints.mode === "cloud-run" ? " selected" : ""}>Cloud Run Sahaja</option>
-                <option value="hf-spaces"${endpoints.mode === "hf-spaces" ? " selected" : ""}>HF Spaces Sahaja</option>
+                <option value="auto"${endpoints.mode === "auto" ? " selected" : ""}>Auto-Failover (Modal GPU → Cloud Run)</option>
+                <option value="cloud-run"${endpoints.mode === "cloud-run" ? " selected" : ""}>Utama Sahaja (Modal GPU)</option>
+                <option value="hf-spaces"${endpoints.mode === "hf-spaces" ? " selected" : ""}>Sandaran Sahaja (Cloud Run)</option>
               </select>
             </div>
             <div class="cikgu-ai-admin-row">

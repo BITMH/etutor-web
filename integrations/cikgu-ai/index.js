@@ -5,18 +5,18 @@
  * HTML kuiz dimuat turun daripada pelayan jauh Google Apps Script!) tanpa menyentuh app.js.
  */
 
-import { DEFAULT_CIKGU_CONFIG } from "./config.js?v=15";
-import { CikguFailoverClient } from "./api/failover-client.js?v=15";
-import { WarmupStateMachine } from "./state/warmup-machine.js?v=15";
-import { CikguSpeechIO } from "./audio/speech-io.js?v=15";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=15";
+import { DEFAULT_CIKGU_CONFIG } from "./config.js?v=16";
+import { CikguFailoverClient } from "./api/failover-client.js?v=16";
+import { WarmupStateMachine } from "./state/warmup-machine.js?v=16";
+import { CikguSpeechIO } from "./audio/speech-io.js?v=16";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=16";
 
 function injectScopedStylesheet() {
   if (document.getElementById("cikguAiScopedCss")) return;
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=15", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=16", import.meta.url).href;
   document.head.appendChild(link);
 }
 
@@ -450,7 +450,9 @@ export function initCikguAiIntegration() {
     window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
   const hasExplicitEndpoint = Boolean(
     (window.ETUTOR_CONFIG &&
-      (window.ETUTOR_CONFIG.CIKGU_LOCAL_DEV || window.ETUTOR_CONFIG.CIKGU_CLOUD_RUN_URL)) ||
+      (window.ETUTOR_CONFIG.CIKGU_LOCAL_DEV ||
+        window.ETUTOR_CONFIG.CIKGU_MODAL_GPU_URL ||
+        window.ETUTOR_CONFIG.CIKGU_CLOUD_RUN_URL)) ||
       (() => {
         try {
           return Boolean(localStorage.getItem("etutor_cikgu_cloudrun_url_v1"));

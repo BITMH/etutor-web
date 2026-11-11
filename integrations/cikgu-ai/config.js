@@ -18,18 +18,19 @@ const globalCfg =
   typeof window !== "undefined" && window.ETUTOR_CONFIG ? window.ETUTOR_CONFIG : {};
 
 export const DEFAULT_CIKGU_CONFIG = {
-  // URL Pelayan Utama: Google Cloud Run (Singapura asia-southeast1 - 4 vCPU / 8 GiB Always Free)
+  // URL Pelayan Utama (Tier 1 Ultra-Pantas ~3s): Modal Serverless NVIDIA T4 GPU
   // Hanya guna 127.0.0.1:8080 jika CIKGU_LOCAL_DEV diaktifkan secara eksplisit pada config.js
   primaryCloudRunUrl:
     isLocalHost && globalCfg.CIKGU_LOCAL_DEV === true
       ? "http://127.0.0.1:8080"
-      : globalCfg.CIKGU_CLOUD_RUN_URL ||
-        "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
+      : globalCfg.CIKGU_MODAL_GPU_URL ||
+        "https://hanismathussin96--cikgu-ai-spm.modal.run",
 
-  // URL Pelayan Sandaran Automatik: Hugging Face Spaces Docker (diisi jika HF Spaces aktif)
+  // URL Pelayan Sandaran Automatik (Tier 2 Always Free): Google Cloud Run Singapura (asia-southeast1)
   backupHfSpacesUrl:
+    globalCfg.CIKGU_CLOUD_RUN_URL ||
     globalCfg.CIKGU_HF_SPACES_URL ||
-    "",
+    "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
 
   warmupTimeoutMs: 38000,
   failoverCooldownMs: 15 * 60 * 1000, // Kekal pada HF Spaces selama 15 minit jika Cloud Run sibuk/over-quota
@@ -66,12 +67,13 @@ export function loadRuntimeEndpoints() {
   try {
     const mode = localStorage.getItem(CIKGU_STORAGE_KEYS.ROUTING_MODE) || "auto";
     const storedPrimary = localStorage.getItem(CIKGU_STORAGE_KEYS.PRIMARY_URL) || "";
-    const isLegacyPrimary = storedPrimary.includes("cikgu-ai-spm-asia-southeast1.a.run.app");
+    const isLegacyPrimary =
+      storedPrimary.includes("cikgu-ai-spm-asia-southeast1.a.run.app") ||
+      storedPrimary.includes("cikgu-ai-spm-afaauenp7q-as.a.run.app");
     const primary =
       (!isLegacyPrimary && storedPrimary) || DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl;
     const storedBackup = localStorage.getItem(CIKGU_STORAGE_KEYS.BACKUP_URL) || "";
-    const isUnprovisionedDefaultSpace =
-      storedBackup.includes("bitmh-cikgu-ai-spm.hf.space") && !DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl;
+    const isUnprovisionedDefaultSpace = storedBackup.includes("bitmh-cikgu-ai-spm.hf.space");
     const backup =
       (!isUnprovisionedDefaultSpace && storedBackup) || DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl;
     return {

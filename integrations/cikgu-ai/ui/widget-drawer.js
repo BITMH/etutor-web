@@ -239,16 +239,6 @@ export class CikguWidgetDrawer {
       tooltipClose.addEventListener("click", hideTooltip);
     }
 
-    fab.addEventListener(
-      "pointerenter",
-      () => {
-        if (this.warmupMachine.status === "idle") {
-          this.warmupMachine.triggerSilentPrewarm();
-        }
-      },
-      { once: true }
-    );
-
     fab.addEventListener("click", async () => {
       const willOpen = drawer.hidden;
       drawer.hidden = !willOpen;

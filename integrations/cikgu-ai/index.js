@@ -9,18 +9,18 @@ import {
   DEFAULT_CIKGU_CONFIG,
   loadDailyTokenState,
   onDailyTokenChange
-} from "./config.js?v=17";
-import { CikguFailoverClient } from "./api/failover-client.js?v=17";
-import { WarmupStateMachine } from "./state/warmup-machine.js?v=17";
-import { CikguSpeechIO } from "./audio/speech-io.js?v=17";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=17";
+} from "./config.js?v=18";
+import { CikguFailoverClient } from "./api/failover-client.js?v=18";
+import { WarmupStateMachine } from "./state/warmup-machine.js?v=18";
+import { CikguSpeechIO } from "./audio/speech-io.js?v=18";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=18";
 
 function injectScopedStylesheet() {
   if (document.getElementById("cikguAiScopedCss")) return;
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=17", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=18", import.meta.url).href;
   document.head.appendChild(link);
 }
 
@@ -524,28 +524,9 @@ export function initCikguAiIntegration() {
     stageObs.observe(examStageEl, { attributes: true, attributeFilter: ["hidden"] });
   }
 
-  const isLocalPreviewHost =
-    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-  const hasExplicitEndpoint = Boolean(
-    (window.ETUTOR_CONFIG &&
-      (window.ETUTOR_CONFIG.CIKGU_LOCAL_DEV ||
-        window.ETUTOR_CONFIG.CIKGU_MODAL_GPU_URL ||
-        window.ETUTOR_CONFIG.CIKGU_CLOUD_RUN_URL)) ||
-      (() => {
-        try {
-          return Boolean(localStorage.getItem("etutor_cikgu_cloudrun_url_v1"));
-        } catch {
-          return false;
-        }
-      })()
-  );
-
-  if (!isLocalPreviewHost || hasExplicitEndpoint) {
-    setTimeout(() => {
-      warmupMachine.triggerSilentPrewarm();
-    }, DEFAULT_CIKGU_CONFIG.silentPrewarmDelayMs);
-  }
-
+  // Pelayan Serverless (Modal GPU & Cloud Run) HANYA dikejutkan atas permintaan sebenar
+  // (apabila murid klik butang Cikgu AI atau klik Semak Jawapan AI pada Kertas 2),
+  // dan terus dimatikan automatik (scale-to-zero) sebaik sahaja selesai menyemak!
   const api = { client, warmupMachine, speechIO, drawer, getLiveScreenSnapshot };
   window.__CIKGU_AI_INSTANCE__ = api;
   return api;

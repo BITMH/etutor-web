@@ -5,18 +5,18 @@
  * HTML kuiz dimuat turun daripada pelayan jauh Google Apps Script!) tanpa menyentuh app.js.
  */
 
-import { DEFAULT_CIKGU_CONFIG } from "./config.js?v=13";
-import { CikguFailoverClient } from "./api/failover-client.js?v=13";
-import { WarmupStateMachine } from "./state/warmup-machine.js?v=13";
-import { CikguSpeechIO } from "./audio/speech-io.js?v=13";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=13";
+import { DEFAULT_CIKGU_CONFIG } from "./config.js?v=14";
+import { CikguFailoverClient } from "./api/failover-client.js?v=14";
+import { WarmupStateMachine } from "./state/warmup-machine.js?v=14";
+import { CikguSpeechIO } from "./audio/speech-io.js?v=14";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=14";
 
 function injectScopedStylesheet() {
   if (document.getElementById("cikguAiScopedCss")) return;
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=13", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=14", import.meta.url).href;
   document.head.appendChild(link);
 }
 

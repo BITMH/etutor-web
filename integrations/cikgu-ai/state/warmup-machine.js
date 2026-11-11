@@ -62,7 +62,7 @@ export class WarmupStateMachine {
       this._emit();
     }, 2400);
 
-    for (let attempt = 0; attempt < 4; attempt++) {
+    for (let attempt = 0; attempt < 10; attempt++) {
       const res = await this.client.warmup({
         onFailover: (msg) => {
           this.narrativeText = msg;

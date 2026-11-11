@@ -8,6 +8,10 @@ window.ETUTOR_CONFIG = {
   GAS_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbxQakzUqQG5AO2Q6tWDBs1AJ39WNqeir29G3zMyLC69FaUd_A-703i28-P98Ap-Q2Ql/exec",
   BRAND_NAME: "eTutor.my",
 
+  // Endpoint Pelayan Cikgu AI SPM (Google Cloud Run Always Free + Model Hugging Face Hub Percuma)
+  CIKGU_CLOUD_RUN_URL: "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
+  CIKGU_HF_MODEL_REPO: "https://huggingface.co/BITMH/cikgu-spm-qwen35-gguf",
+
   // Suis Utama Mod Akses Portal:
   //   true  = Mod Akses Terbuka (Log Masuk OFF & Pakej Harga OFF — pelajar terus masuk Bank Soalan)
   //   false = Mod Langganan Berdaftar (Log Masuk PIN + Had 2 Peranti + Pakej Harga ON)

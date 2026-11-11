@@ -17,7 +17,9 @@ export class CikguFailoverClient {
   _resolveCandidateOrder() {
     const { mode, primaryUrl, backupUrl } = loadRuntimeEndpoints();
     if (mode === "hf-spaces") {
-      return [{ tier: "hf-spaces", url: backupUrl }];
+      return backupUrl
+        ? [{ tier: "hf-spaces", url: backupUrl }]
+        : [{ tier: "cloud-run", url: primaryUrl }];
     }
     if (mode === "cloud-run") {
       return [{ tier: "cloud-run", url: primaryUrl }];

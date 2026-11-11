@@ -368,6 +368,12 @@ export class CikguWidgetDrawer {
     const studentName = this.getStudentName() || (freshCtx && freshCtx.candidateName) || "";
 
     try {
+      if (this.warmupMachine && this.warmupMachine.status !== "ready") {
+        contentDiv.innerHTML = `<span style="color:#64748b;">Sekejap ya, Cikgu sedang membuka buku rekod KSSM &amp; bersedia di meja...</span>`;
+        await this.warmupMachine.greetCikgu();
+        contentDiv.innerHTML = `<span style="color:#64748b;">Sedang meneliti soalan...</span>`;
+      }
+
       await this.client.streamSemak(
         {
           subjek: detectedSubj || "auto",

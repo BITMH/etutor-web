@@ -36,12 +36,28 @@ export class WarmupStateMachine {
 
   async triggerSilentPrewarm() {
     if (this.status === "ready" || this.status === "warming") return;
-    const res = await this.client.warmup();
-    if (res.ready) {
-      this.status = "ready";
-      this.narrativeText = "Cikgu dah sedia di meja! Pilih subjek dan hantar soalan atau jawapan kamu.";
-      this._emit();
-    }
+    if (this._silentPromise) return this._silentPromise;
+    this._silentPromise = (async () => {
+      try {
+        for (let attempt = 0; attempt < 5; attempt++) {
+          if (this.status === "ready") return true;
+          const res = await this.client.warmup();
+          if (res.ready) {
+            this.status = "ready";
+            this.narrativeText =
+              "Cikgu dah sedia di meja! Pilih subjek dan hantar soalan atau jawapan kamu.";
+            this._emit();
+            return true;
+          }
+          if (!res.waking) break;
+          await new Promise((r) => setTimeout(r, 1500));
+        }
+        return false;
+      } finally {
+        this._silentPromise = null;
+      }
+    })();
+    return this._silentPromise;
   }
 
   async greetCikgu() {

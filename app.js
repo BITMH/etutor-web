@@ -18,6 +18,7 @@
   const SYNC_TOKEN_KEY = "etutor_sync_token_v1";
   const SYNC_EMAIL_KEY = "etutor_sync_email_v1";
   const SYNC_LAST_KEY = "etutor_sync_last_v1";
+  const LIVE_CATALOG_CACHE_KEY = "etutor_live_catalog_v1";
 
   // --- [shared/ui/icons.js] ---
   /**
@@ -148,7 +149,9 @@
     openPortalActive: false,
     rawOpenCatalog: [],
     rawServerLeaderboard: null,
-    deepLinkHandled: false
+    deepLinkHandled: false,
+    catalogFingerprint: "",
+    lastCatalogSyncMs: 0
   };
 
   // --- [shared/ui/toast.js] ---
@@ -218,7 +221,7 @@
    * Klien komunikasi hibrid ke Backend Google Apps Script (google.script.run atau HTTP POST text/plain).
    */
 
-  async function callBackend(action, payload) {
+  async function callBackend(action, payload, options) {
     const reqBody = Object.assign({}, payload || {}, {
       action: action,
       deviceId: portalState.deviceId,
@@ -251,12 +254,16 @@
     const endpoint = isLocalPreview ? "/api" : (cfgUrl || "/api");
 
     // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
-    const resp = await fetch(endpoint, {
+    const fetchInit = {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(reqBody),
       redirect: "follow"
-    });
+    };
+    if (options && options.priority) {
+      fetchInit.priority = options.priority;
+    }
+    const resp = await fetch(endpoint, fetchInit);
 
     if (!resp.ok) {
       throw new Error("Ralat sambungan pelayan (HTTP " + resp.status + ")");
@@ -697,6 +704,7 @@
       if (!window.location || !window.location.search) return false;
       const params = new URLSearchParams(window.location.search);
       return Boolean(
+        (params.get("fileId") || "").trim() ||
         (params.get("set") || "").trim() ||
         (params.get("klon") || "").trim() ||
         (params.get("klonSubject") || "").trim() ||
@@ -721,6 +729,8 @@
       return;
     }
 
+    const fileIdParam = (params.get("fileId") || "").trim();
+    const titleParam = (params.get("title") || "").trim();
     const setParam = (params.get("set") || "").trim();
     const klonParam = (params.get("klon") || "").trim();
     const klonSubParam = (params.get("klonSubject") || "").trim();
@@ -730,7 +740,7 @@
     const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(klonParam) || Boolean(klonSubParam);
 
     portalState.deepLinkHandled = true;
-    if (!setParam && !klonParam && !klonSubParam && !subParam && !qParam && !wantsKlonScroll) return;
+    if (!fileIdParam && !setParam && !klonParam && !klonSubParam && !subParam && !qParam && !wantsKlonScroll) return;
 
     if (klonSubParam) {
       const targetKlonNorm = klonSubParam.toLowerCase();
@@ -765,7 +775,18 @@
     }
 
     let matchedSetItem = null;
-    if (klonParam) {
+    const titleLower = titleParam.toLowerCase();
+    if (fileIdParam) {
+      matchedSetItem = list.find(function (c) {
+        return String(c.fileId || "") === fileIdParam;
+      }) || null;
+    }
+    if (!matchedSetItem && titleLower) {
+      matchedSetItem = list.find(function (c) {
+        return String(c.cleanTitle || "").trim().toLowerCase() === titleLower;
+      }) || null;
+    }
+    if (!matchedSetItem && klonParam) {
       const kDigits = klonParam.replace(/\D/g, "");
       const kCodeNorm = kDigits ? ("KLON " + kDigits.padStart(2, "0")) : klonParam.toUpperCase();
       matchedSetItem = list.find(function (c) {
@@ -780,7 +801,7 @@
         const klonSearchEl = document.getElementById("klonSearchInput");
         if (klonSearchEl) klonSearchEl.value = kFilterText;
       }
-    } else if (setParam) {
+    } else if (!matchedSetItem && setParam) {
       const digits = setParam.replace(/\D/g, "");
       const codeNorm = digits ? ("SET " + digits.padStart(2, "0")) : setParam.toUpperCase();
       matchedSetItem = list.find(function (c) {
@@ -1400,6 +1421,233 @@
     if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
   }
 
+  // --- [features/catalog/liveCatalogSync.js] ---
+  /**
+   * src/features/catalog/liveCatalogSync.js
+   * Penyegerakan langsung (Live Auto-Update) kiraan & katalog set soalan Google Drive
+   * pada halaman utama (etutor.my) dan papan pemuka pelajar (etutor.my/#portal).
+   */
+
+
+
+
+
+
+  const LIVE_POLL_INTERVAL_MS = 60000;
+  const VISIBILITY_STALE_MS = 30000;
+  let liveSyncInFlight = false;
+  let livePollTimer = null;
+
+  function computeCatalogStats(catalog) {
+    const list = Array.isArray(catalog) ? catalog : [];
+    let harianCount = 0;
+    let klonCount = 0;
+    const harianSubs = {};
+    const klonSubs = {};
+    const allSubs = {};
+
+    for (let i = 0; i < list.length; i++) {
+      const item = list[i];
+      if (!item) continue;
+      const sub = String(item.subject || "").trim();
+      if (sub) allSubs[sub] = true;
+      if (item.category === "klon") {
+        klonCount++;
+        if (sub) klonSubs[sub] = true;
+      } else {
+        harianCount++;
+        if (sub) harianSubs[sub] = true;
+      }
+    }
+
+    const fingerprint = list
+      .map(function (c) { return String(c.fileId || "") + ":" + String(c.updatedMs || ""); })
+      .join("|");
+
+    return {
+      totalCount: list.length,
+      harianCount: harianCount,
+      klonCount: klonCount,
+      harianSubjectCount: Object.keys(harianSubs).length,
+      klonSubjectCount: Object.keys(klonSubs).length,
+      totalSubjectCount: Object.keys(allSubs).length,
+      fingerprint: fingerprint
+    };
+  }
+
+  function formatLiveClock_(d) {
+    const dt = d || new Date();
+    const pad = function (n) { return String(n).padStart(2, "0"); };
+    return pad(dt.getHours()) + ":" + pad(dt.getMinutes());
+  }
+
+  function applyLiveCountsToDom(stats, syncedAtStr) {
+    if (!stats || stats.totalCount <= 0 || typeof document === "undefined") return;
+
+    document.querySelectorAll("[data-live-nav-harian]").forEach(function (el) {
+      el.textContent = "Indeks " + stats.harianCount + " Set";
+    });
+
+    document.querySelectorAll("[data-live-nav-klon]").forEach(function (el) {
+      el.textContent = stats.klonCount > 0 ? ("Klon SPM (" + stats.klonCount + ")") : "Klon SPM";
+    });
+
+    document.querySelectorAll("[data-live-footer-klon]").forEach(function (el) {
+      el.textContent = stats.klonCount > 0 ? ("Indeks " + stats.klonCount + " Klon SPM") : "Indeks Klon SPM";
+    });
+
+    document.querySelectorAll("[data-live-trust-sets]").forEach(function (el) {
+      const subCount = Math.max(stats.totalSubjectCount, stats.harianSubjectCount, 1);
+      el.textContent = stats.totalCount + " Set & " + subCount + " Subjek";
+    });
+
+    document.querySelectorAll("[data-live-trust-desc]").forEach(function (el) {
+      if (stats.klonCount > 0) {
+        el.textContent = stats.harianCount + " set percubaan negeri/SBP + " + stats.klonCount + " set Klon SPM";
+      } else {
+        el.textContent = stats.harianCount + " set kertas percubaan negeri & SBP interaktif";
+      }
+    });
+
+    document.querySelectorAll("[data-live-showcase-heading]").forEach(function (el) {
+      const subCount = Math.max(stats.totalSubjectCount, stats.harianSubjectCount, 1);
+      if (stats.klonCount > 0) {
+        el.textContent = stats.harianCount + " Set Percubaan & " + stats.klonCount + " Set Klon Merangkumi " + subCount + " Subjek KSSM SPM";
+      } else {
+        el.textContent = stats.harianCount + " Set Merangkumi " + subCount + " Subjek KSSM SPM Sedia Diakses";
+      }
+    });
+
+    document.querySelectorAll("[data-live-showcase-btn]").forEach(function (el) {
+      el.textContent = "Lihat Indeks " + stats.harianCount + " Set Percubaan \u2192";
+    });
+
+    document.querySelectorAll("[data-live-klon-sub-desc]").forEach(function (el) {
+      if (stats.klonCount > 0) {
+        el.textContent = stats.klonCount + " set merangkumi " + Math.max(1, stats.klonSubjectCount) + " subjek KSSM";
+      }
+    });
+
+    if (syncedAtStr) {
+      document.querySelectorAll("[data-live-sync-badge]").forEach(function (el) {
+        el.textContent = "Live \u2022 " + syncedAtStr;
+      });
+    }
+  }
+
+  function recordLiveCatalogSnapshot(catalog) {
+    const list = Array.isArray(catalog) ? catalog : [];
+    if (list.length === 0) return null;
+    const stats = computeCatalogStats(list);
+    const syncedAtStr = formatLiveClock_(new Date());
+
+    portalState.catalogFingerprint = stats.fingerprint;
+    portalState.lastCatalogSyncMs = Date.now();
+    applyLiveCountsToDom(stats, syncedAtStr);
+
+    try {
+      const slimItems = list.map(function (c) {
+        return {
+          fileId: c.fileId,
+          fileName: c.fileName,
+          category: c.category,
+          setCode: c.setCode,
+          setNumber: c.setNumber,
+          subject: c.subject,
+          stateOrSource: c.stateOrSource,
+          year: c.year,
+          cleanTitle: c.cleanTitle,
+          updatedMs: c.updatedMs || 0
+        };
+      });
+      localStorage.setItem(LIVE_CATALOG_CACHE_KEY, JSON.stringify({
+        savedAt: Date.now(),
+        syncedAtStr: syncedAtStr,
+        stats: stats,
+        items: slimItems
+      }));
+    } catch (e) {}
+
+    return stats;
+  }
+
+  function hydrateCachedLiveCounts() {
+    try {
+      const raw = localStorage.getItem(LIVE_CATALOG_CACHE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.stats && parsed.stats.totalCount > 0) {
+        applyLiveCountsToDom(parsed.stats, parsed.syncedAtStr || "");
+      }
+    } catch (e) {}
+  }
+
+  async function syncCatalogInBackground(forceRefresh) {
+    if (liveSyncInFlight) return;
+    const examStage = document.getElementById("examStage");
+    if (!forceRefresh && examStage && !examStage.hidden) return;
+
+    const hasSession = Boolean(portalState.sessionToken && portalState.user);
+    if (!hasSession && !isOpenAccessMode()) return;
+
+    liveSyncInFlight = true;
+    try {
+      const action = hasSession ? "dashboard" : "publicDashboard";
+      const fetchOpts = forceRefresh ? undefined : { priority: "low" };
+      const res = await callBackend(action, { forceRefresh: Boolean(forceRefresh) }, fetchOpts);
+      if (!res || !res.ok || !Array.isArray(res.catalog)) return;
+
+      const prevFp = portalState.catalogFingerprint;
+      const nextStats = computeCatalogStats(res.catalog);
+      const changed = nextStats.fingerprint !== prevFp;
+
+      if (!hasSession) {
+        portalState.rawOpenCatalog = res.catalog;
+        if (res.leaderboard) portalState.rawServerLeaderboard = res.leaderboard;
+      }
+
+      recordLiveCatalogSnapshot(res.catalog);
+
+      const dashboardView = document.getElementById("dashboardView");
+      const isDashboardVisible = Boolean(dashboardView && !dashboardView.hidden);
+      if (isDashboardVisible && (changed || forceRefresh)) {
+        if (hasSession) {
+          applyDashboardBundle(res);
+        } else {
+          const bundle = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard);
+          applyDashboardBundle(bundle);
+        }
+      }
+    } catch (e) {
+      // Gagal latar belakang senyap — tidak mengganggu pengalaman pengguna
+    } finally {
+      liveSyncInFlight = false;
+    }
+  }
+
+  function initLiveCatalogAutoSync() {
+    hydrateCachedLiveCounts();
+
+    setTimeout(function () {
+      if (Date.now() - portalState.lastCatalogSyncMs > 5000) {
+        syncCatalogInBackground(false);
+      }
+    }, 120);
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && Date.now() - portalState.lastCatalogSyncMs > VISIBILITY_STALE_MS) {
+        syncCatalogInBackground(false);
+      }
+    });
+
+    if (livePollTimer) clearInterval(livePollTimer);
+    livePollTimer = setInterval(function () {
+      if (!document.hidden) {
+        syncCatalogInBackground(false);
+      }
+    }, LIVE_POLL_INTERVAL_MS);
+  }
+
   // --- [features/dashboard/progressOverviewView.js] ---
   /**
    * src/features/dashboard/progressOverviewView.js
@@ -1413,9 +1661,13 @@
 
 
 
+
   function applyDashboardBundle(res) {
     if (res.user) portalState.user = res.user;
-    if (Array.isArray(res.catalog)) portalState.catalog = res.catalog;
+    if (Array.isArray(res.catalog)) {
+      portalState.catalog = res.catalog;
+      recordLiveCatalogSnapshot(res.catalog);
+    }
     if (Array.isArray(res.inProgress)) portalState.inProgress = res.inProgress;
     if (res.progressSummary) portalState.progressSummary = res.progressSummary;
     if (res.leaderboard) portalState.leaderboard = res.leaderboard;
@@ -3895,10 +4147,12 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
     bindCloudSyncEvents();
+    initLiveCatalogAutoSync();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

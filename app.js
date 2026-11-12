@@ -1,15 +1,12 @@
-/**
- * app.js
- * Logik Pelanggan Utama Portal Set Soalan Interaktif Harian (etutor.my)
- * Menyokong:
- *   1. Continue Progress merentas peranti (telefon <-> komputer)
- *   2. Bento Kemajuan Pembelajaran (Progress Ring, Bar Subjek, Streak & Fokus Ulang Kaji)
- *   3. Leaderboard Adil (Podium Top 3, Jadual Responsif @container & Kedudukan Peribadi)
- *   4. Pemapar Kuiz <iframe srcdoc> Anti-Reseller + Cetakan Slip Keputusan Rasmi
- */
-
+/* AUTO-GENERATED DARIPADA src/ OLEH scripts/build-frontend.mjs */
 (function () {
   "use strict";
+
+  // --- [config/storageKeys.js] ---
+  /**
+   * src/config/storageKeys.js
+   * Pemalar kunci storan pelayar (localStorage) merentas sesi portal, mod terbuka & penyegerakan awan.
+   */
 
   const SESSION_STORAGE_KEY = "etutor_portal_session_v1";
   const ADMIN_SESSION_STORAGE_KEY = "etutor_admin_session_v1";
@@ -18,8 +15,16 @@
   const OPEN_SCORES_STORAGE_KEY = "etutor_open_scores_v1";
   const OPEN_STUDENT_NAME_KEY = "etutor_open_student_name_v1";
   const OPEN_MODE_OVERRIDE_KEY = "etutor_open_mode_override_v1";
+  const SYNC_TOKEN_KEY = "etutor_sync_token_v1";
+  const SYNC_EMAIL_KEY = "etutor_sync_email_v1";
+  const SYNC_LAST_KEY = "etutor_sync_last_v1";
 
-  // Ikon Vektor SVG Sebaris (UI/UX Pro Max: Sifar Emoji Struktur, Garisan Seragam)
+  // --- [shared/ui/icons.js] ---
+  /**
+   * src/shared/ui/icons.js
+   * Pendaftaran ikon vektor SVG sebaris (sifar emoji struktur mengikut piawaian UI/UX).
+   */
+
   const ICONS = {
     shield: '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/></svg>',
     play: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>',
@@ -36,116 +41,11 @@
     logout: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/></svg>'
   };
 
-  const portalState = {
-    sessionToken: "",
-    deviceId: getOrCreateDeviceId(),
-    user: null,
-    catalog: [],
-    inProgress: [],
-    progressSummary: null,
-    leaderboard: null,
-    selectedSubject: "ALL",
-    selectedStatus: "ALL",
-    searchQuery: "",
-    klonSelectedSubject: "ALL",
-    klonSelectedStatus: "ALL",
-    klonSearchQuery: "",
-    lpKlonFilter: "ALL",
-    lbPeriod: "all",
-    lbSubject: "ALL",
-    activeQuizFileId: null,
-    latestSlipData: null,
-    pendingProgressPayload: null,
-    progressFlushTimer: null,
-    adminToken: "",
-    adminData: null,
-    adminSearch: "",
-    adminStatusFilter: "ALL",
-    revealedAdminPins: new Set(),
-    openPortalActive: false,
-    rawOpenCatalog: [],
-    rawServerLeaderboard: null,
-    deepLinkHandled: false
-  };
-
-  function isOpenAccessMode() {
-    try {
-      const ov = sessionStorage.getItem(OPEN_MODE_OVERRIDE_KEY);
-      if (ov === "1") return true;
-      if (ov === "0") return false;
-    } catch (e) {}
-    return Boolean(window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.OPEN_ACCESS_MODE);
-  }
-
-  function setOpenAccessOverride(enabled) {
-    try {
-      sessionStorage.setItem(OPEN_MODE_OVERRIDE_KEY, enabled ? "1" : "0");
-    } catch (e) {}
-    syncOpenAccessDom();
-  }
-
-  function syncOpenAccessDom() {
-    const open = isOpenAccessMode();
-    if (typeof document !== "undefined" && document.documentElement) {
-      document.documentElement.setAttribute("data-open-access", open ? "true" : "false");
-      document.querySelectorAll("[data-paid-only]").forEach(function (el) {
-        el.hidden = open;
-      });
-      document.querySelectorAll("[data-open-only]").forEach(function (el) {
-        el.hidden = !open;
-      });
-    }
-    renderHeaderUser();
-  }
-
-  function getOpenStudentName() {
-    try {
-      return String(localStorage.getItem(OPEN_STUDENT_NAME_KEY) || "").trim().slice(0, 80);
-    } catch (e) {
-      return "";
-    }
-  }
-
-  function setOpenStudentName(name) {
-    const clean = String(name || "").trim().slice(0, 80);
-    try {
-      if (clean) localStorage.setItem(OPEN_STUDENT_NAME_KEY, clean);
-      else localStorage.removeItem(OPEN_STUDENT_NAME_KEY);
-    } catch (e) {}
-    return clean;
-  }
-
-  function loadOpenProgressMap() {
-    try {
-      const raw = localStorage.getItem(OPEN_PROGRESS_STORAGE_KEY);
-      const parsed = raw ? JSON.parse(raw) : {};
-      return (parsed && typeof parsed === "object" && !Array.isArray(parsed)) ? parsed : {};
-    } catch (e) {
-      return {};
-    }
-  }
-
-  function saveOpenProgressMap(mapObj) {
-    try {
-      localStorage.setItem(OPEN_PROGRESS_STORAGE_KEY, JSON.stringify(mapObj || {}));
-    } catch (e) {}
-  }
-
-  function loadOpenScoresList() {
-    try {
-      const raw = localStorage.getItem(OPEN_SCORES_STORAGE_KEY);
-      const parsed = raw ? JSON.parse(raw) : [];
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (e) {
-      return [];
-    }
-  }
-
-  function saveOpenScoresList(listArr) {
-    try {
-      localStorage.setItem(OPEN_SCORES_STORAGE_KEY, JSON.stringify(Array.isArray(listArr) ? listArr.slice(-250) : []));
-    } catch (e) {}
-  }
+  // --- [shared/utils/formatters.js] ---
+  /**
+   * src/shared/utils/formatters.js
+   * Fungsi tulen pemformatan teks HTML selamat, gred SPM tempatan, tarikh MYT, streak & ID peranti.
+   */
 
   function computeLocalSpmGrade(pct, hasData) {
     if (!hasData) return "—";
@@ -183,6 +83,242 @@
     }
     return streak;
   }
+
+  function getOrCreateDeviceId() {
+    try {
+      let existing = localStorage.getItem(DEVICE_STORAGE_KEY);
+      if (existing && existing.length >= 8) return existing;
+      const uuid = (window.crypto && window.crypto.randomUUID)
+        ? "dev_" + window.crypto.randomUUID().replace(/-/g, "").slice(0, 16)
+        : "dev_" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36);
+      localStorage.setItem(DEVICE_STORAGE_KEY, uuid);
+      return uuid;
+    } catch (e) {
+      return "dev_session_fallback";
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str == null ? "" : str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatMinutesLeft(sec) {
+    if (sec === null || typeof sec === "undefined" || sec === "" || isNaN(Number(sec))) return "";
+    const mins = Math.max(1, Math.ceil(Number(sec) / 60));
+    return "Baki ~" + mins + " minit";
+  }
+
+  // --- [shared/state/portalStore.js] ---
+  /**
+   * src/shared/state/portalStore.js
+   * Storan keadaan berpusat (Single Source of Truth) untuk portal pelajar, katalog, dan panel admin.
+   */
+
+  const portalState = {
+    sessionToken: "",
+    deviceId: getOrCreateDeviceId(),
+    user: null,
+    catalog: [],
+    inProgress: [],
+    progressSummary: null,
+    leaderboard: null,
+    selectedSubject: "ALL",
+    selectedStatus: "ALL",
+    searchQuery: "",
+    klonSelectedGroup: "ALL",
+    klonSelectedSubject: "ALL",
+    klonSelectedStatus: "ALL",
+    klonSearchQuery: "",
+    lbPeriod: "all",
+    lbSubject: "ALL",
+    activeQuizFileId: null,
+    latestSlipData: null,
+    pendingProgressPayload: null,
+    progressFlushTimer: null,
+    adminToken: "",
+    adminData: null,
+    adminSearch: "",
+    adminStatusFilter: "ALL",
+    revealedAdminPins: new Set(),
+    openPortalActive: false,
+    rawOpenCatalog: [],
+    rawServerLeaderboard: null,
+    deepLinkHandled: false
+  };
+
+  // --- [shared/ui/toast.js] ---
+  /**
+   * src/shared/ui/toast.js
+   * Komponen makluman ringkas (Toast Notification) dengan integrasi animasi masuk.
+   */
+
+  function showToast(msg) {
+    const el = document.getElementById("portalToast");
+    if (!el) return;
+    el.textContent = msg;
+    el.hidden = false;
+    if (window.ETutorMotion) window.ETutorMotion.animateToastIn(el);
+    clearTimeout(el._hideTimer);
+    el._hideTimer = setTimeout(function () {
+      el.hidden = true;
+    }, 4200);
+  }
+
+  // --- [shared/ui/topLayerDialog.js] ---
+  /**
+   * src/shared/ui/topLayerDialog.js
+   * Pengurusan penutupan animasi elemen <dialog> Top-Layer (@starting-style + allow-discrete + fallback).
+   */
+
+  let supportsDisplayTransition;
+  function canTransitionDisplay() {
+    if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
+    if (typeof window === "undefined" || !window.CSS || !window.CSS.supports || !window.CSS.supports("transition-behavior", "allow-discrete") || !document.body) {
+      return false;
+    }
+    const probe = document.createElement("div");
+    probe.style.cssText = "transition: display 1s allow-discrete !important; display: block;";
+    document.body.appendChild(probe);
+    getComputedStyle(probe).display;
+    probe.style.display = "none";
+    supportsDisplayTransition = getComputedStyle(probe).display === "block";
+    probe.remove();
+    return supportsDisplayTransition;
+  }
+
+  function supportsTopLayerExit() {
+    return Boolean(window.CSS && window.CSS.supports && window.CSS.supports("overlay", "auto") && canTransitionDisplay());
+  }
+
+  async function closeTopLayer(dialogEl) {
+    if (!dialogEl || !dialogEl.open) return;
+    if (!supportsTopLayerExit()) {
+      dialogEl.setAttribute("data-closing", "");
+      const animations = typeof dialogEl.getAnimations === "function" ? dialogEl.getAnimations({ subtree: true }) : [];
+      if (animations.length > 0) {
+        await Promise.race([
+          Promise.allSettled(animations.map(function (a) { return a.finished; })),
+          new Promise(function (r) { setTimeout(r, 400); })
+        ]);
+      }
+      if (!dialogEl.hasAttribute("data-closing")) return;
+      dialogEl.removeAttribute("data-closing");
+    }
+    dialogEl.close();
+  }
+
+  // --- [shared/utils/apiClient.js] ---
+  /**
+   * src/shared/utils/apiClient.js
+   * Klien komunikasi hibrid ke Backend Google Apps Script (google.script.run atau HTTP POST text/plain).
+   */
+
+  async function callBackend(action, payload) {
+    const reqBody = Object.assign({}, payload || {}, {
+      action: action,
+      deviceId: portalState.deviceId,
+      sessionToken: portalState.sessionToken || undefined
+    });
+
+    // 1. Jika dibuka terus sebagai Sandaran Google Apps Script (Index.html)
+    if (typeof google !== "undefined" && google.script && google.script.run) {
+      return new Promise(function (resolve, reject) {
+        google.script.run
+          .withSuccessHandler(function (res) { resolve(res); })
+          .withFailureHandler(function (err) { reject(err); })
+          .gasClientBridge(JSON.stringify(reqBody));
+      });
+    }
+
+    // 2. Domain etutor.my atau Pelayan Pratonton Lokal (/api)
+    const cfgUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GAS_WEB_APP_URL)
+      ? window.ETUTOR_CONFIG.GAS_WEB_APP_URL.trim()
+      : "";
+    const hostName = (typeof window !== "undefined" && window.location && window.location.hostname)
+      ? window.location.hostname
+      : "";
+    const isLocalPreview = /^(localhost|127\.0\.0\.1)$/i.test(hostName);
+    if (!cfgUrl && !isLocalPreview) {
+      throw new Error(
+        "Pelayan Google Apps Script belum dipautkan pada config.js. Sila jalankan `npm run clasp:login`, `npm run clasp:create`, dan `npm run deploy:all` pada komputer pentadbir."
+      );
+    }
+    const endpoint = isLocalPreview ? "/api" : (cfgUrl || "/api");
+
+    // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
+    const resp = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(reqBody),
+      redirect: "follow"
+    });
+
+    if (!resp.ok) {
+      throw new Error("Ralat sambungan pelayan (HTTP " + resp.status + ")");
+    }
+    return resp.json();
+  }
+
+  // --- [shared/ui/formValidation.js] ---
+  /**
+   * src/shared/ui/formValidation.js
+   * Pengesahan borang mesra pengguna selepas interaksi (:user-invalid + fallback kelas CSS).
+   */
+
+  function initFormValidation() {
+    const form = document.getElementById("loginForm");
+    if (!form) return;
+
+    const syncAria = function (el) {
+      if (!el || !el.checkValidity) return;
+      try {
+        const invalid = el.matches(":user-invalid") || el.classList.contains("user-invalid-fallback");
+        el.setAttribute("aria-invalid", invalid ? "true" : "false");
+      } catch (e) {}
+    };
+
+    document.addEventListener("blur", function (e) { syncAria(e.target); }, true);
+    document.addEventListener("input", function (e) {
+      if (e.target && e.target.hasAttribute && e.target.hasAttribute("aria-invalid")) {
+        syncAria(e.target);
+      }
+    });
+
+    // Fallback untuk pelayar lama tanpa sokongan :user-invalid
+    if (typeof CSS !== "undefined" && !CSS.supports("selector(:user-invalid)")) {
+      const dirty = new WeakMap();
+      const updateFallback = function (input) {
+        const ok = input.checkValidity();
+        input.classList.toggle("user-invalid-fallback", !ok);
+        input.setAttribute("aria-invalid", ok ? "false" : "true");
+      };
+      form.addEventListener("input", function (e) {
+        const st = dirty.get(e.target) || {};
+        st.typed = true;
+        dirty.set(e.target, st);
+        if (st.blurred) updateFallback(e.target);
+      });
+      form.addEventListener("blur", function (e) {
+        if (!e.target || !e.target.checkValidity) return;
+        const st = dirty.get(e.target) || {};
+        st.blurred = true;
+        dirty.set(e.target, st);
+        if (st.typed) updateFallback(e.target);
+      }, true);
+    }
+  }
+
+  // --- [features/dashboard/openDashboardBuilder.js] ---
+  /**
+   * src/features/dashboard/openDashboardBuilder.js
+   * Pengira kemajuan pembelajaran, XP, streak & gabungan Leaderboard tempatan semasa Mod Akses Terbuka.
+   */
+
 
   function buildOpenDashboardBundle(rawCatalog, serverLb) {
     const files = Array.isArray(rawCatalog) ? rawCatalog : [];
@@ -401,6 +537,97 @@
     };
   }
 
+  // --- [features/auth/openAccessService.js] ---
+  /**
+   * src/features/auth/openAccessService.js
+   * Perkhidmatan Mod Akses Terbuka: suis mod operasi, storan kemajuan/skor setempat & kemasukan terus portal.
+   */
+
+
+
+
+
+
+
+  function isOpenAccessMode() {
+    try {
+      const ov = sessionStorage.getItem(OPEN_MODE_OVERRIDE_KEY);
+      if (ov === "1") return true;
+      if (ov === "0") return false;
+    } catch (e) {}
+    return Boolean(window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.OPEN_ACCESS_MODE);
+  }
+
+  function setOpenAccessOverride(enabled) {
+    try {
+      sessionStorage.setItem(OPEN_MODE_OVERRIDE_KEY, enabled ? "1" : "0");
+    } catch (e) {}
+    syncOpenAccessDom();
+  }
+
+  function syncOpenAccessDom() {
+    const open = isOpenAccessMode();
+    if (typeof document !== "undefined" && document.documentElement) {
+      document.documentElement.setAttribute("data-open-access", open ? "true" : "false");
+      document.querySelectorAll("[data-paid-only]").forEach(function (el) {
+        el.hidden = open;
+      });
+      document.querySelectorAll("[data-open-only]").forEach(function (el) {
+        el.hidden = !open;
+      });
+    }
+    renderHeaderUser();
+  }
+
+  function getOpenStudentName() {
+    try {
+      return String(localStorage.getItem(OPEN_STUDENT_NAME_KEY) || "").trim().slice(0, 80);
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function setOpenStudentName(name) {
+    const clean = String(name || "").trim().slice(0, 80);
+    try {
+      if (clean) localStorage.setItem(OPEN_STUDENT_NAME_KEY, clean);
+      else localStorage.removeItem(OPEN_STUDENT_NAME_KEY);
+    } catch (e) {}
+    return clean;
+  }
+
+  function loadOpenProgressMap() {
+    try {
+      const raw = localStorage.getItem(OPEN_PROGRESS_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return (parsed && typeof parsed === "object" && !Array.isArray(parsed)) ? parsed : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveOpenProgressMap(mapObj) {
+    try {
+      localStorage.setItem(OPEN_PROGRESS_STORAGE_KEY, JSON.stringify(mapObj || {}));
+    } catch (e) {}
+  }
+
+  function loadOpenScoresList() {
+    try {
+      const raw = localStorage.getItem(OPEN_SCORES_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveOpenScoresList(listArr) {
+    try {
+      localStorage.setItem(OPEN_SCORES_STORAGE_KEY, JSON.stringify(Array.isArray(listArr) ? listArr.slice(-250) : []));
+    } catch (e) {}
+  }
+
   async function enterOpenPortal(forceRefresh) {
     if (!isOpenAccessMode()) {
       window.location.hash = "#login";
@@ -457,216 +684,13 @@
     maybeAutoPull();
   }
 
-  function getOrCreateDeviceId() {
-    try {
-      let existing = localStorage.getItem(DEVICE_STORAGE_KEY);
-      if (existing && existing.length >= 8) return existing;
-      const uuid = (window.crypto && window.crypto.randomUUID)
-        ? "dev_" + window.crypto.randomUUID().replace(/-/g, "").slice(0, 16)
-        : "dev_" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36);
-      localStorage.setItem(DEVICE_STORAGE_KEY, uuid);
-      return uuid;
-    } catch (e) {
-      return "dev_session_fallback";
-    }
-  }
+  // --- [features/catalog/deepLinkRouter.js] ---
+  /**
+   * src/features/catalog/deepLinkRouter.js
+   * Penghala pautan dalam (Deep-Link ?set=, ?klon=, ?subject=, ?open=1) dari halaman SEO & kad Klon SPM.
+   */
 
-  function escapeHtml(str) {
-    return String(str == null ? "" : str)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
 
-  function formatMinutesLeft(sec) {
-    if (sec === null || typeof sec === "undefined" || sec === "" || isNaN(Number(sec))) return "";
-    const mins = Math.max(1, Math.ceil(Number(sec) / 60));
-    return "Baki ~" + mins + " minit";
-  }
-
-  function showToast(msg) {
-    const el = document.getElementById("portalToast");
-    if (!el) return;
-    el.textContent = msg;
-    el.hidden = false;
-    if (window.ETutorMotion) window.ETutorMotion.animateToastIn(el);
-    clearTimeout(el._hideTimer);
-    el._hideTimer = setTimeout(function () {
-      el.hidden = true;
-    }, 4200);
-  }
-
-  // Top-Layer <dialog> Exit Transition Detection & Fallback (Firefox Bug 1882408 / Safari)
-  let supportsDisplayTransition;
-  function canTransitionDisplay() {
-    if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
-    if (typeof window === "undefined" || !window.CSS || !window.CSS.supports || !window.CSS.supports("transition-behavior", "allow-discrete") || !document.body) {
-      return false;
-    }
-    const probe = document.createElement("div");
-    probe.style.cssText = "transition: display 1s allow-discrete !important; display: block;";
-    document.body.appendChild(probe);
-    getComputedStyle(probe).display;
-    probe.style.display = "none";
-    supportsDisplayTransition = getComputedStyle(probe).display === "block";
-    probe.remove();
-    return supportsDisplayTransition;
-  }
-
-  function supportsTopLayerExit() {
-    return Boolean(window.CSS && window.CSS.supports && window.CSS.supports("overlay", "auto") && canTransitionDisplay());
-  }
-
-  async function closeTopLayer(dialogEl) {
-    if (!dialogEl || !dialogEl.open) return;
-    if (!supportsTopLayerExit()) {
-      dialogEl.setAttribute("data-closing", "");
-      const animations = typeof dialogEl.getAnimations === "function" ? dialogEl.getAnimations({ subtree: true }) : [];
-      if (animations.length > 0) {
-        await Promise.race([
-          Promise.allSettled(animations.map(function (a) { return a.finished; })),
-          new Promise(function (r) { setTimeout(r, 400); })
-        ]);
-      }
-      if (!dialogEl.hasAttribute("data-closing")) return;
-      dialogEl.removeAttribute("data-closing");
-    }
-    dialogEl.close();
-  }
-
-  // ==========================================================================
-  // TRANSPORT LAYER (GAS WebApp POST text/plain | google.script.run | Local /api)
-  // ==========================================================================
-  async function callBackend(action, payload) {
-    const reqBody = Object.assign({}, payload || {}, {
-      action: action,
-      deviceId: portalState.deviceId,
-      sessionToken: portalState.sessionToken || undefined
-    });
-
-    // 1. Jika dibuka terus sebagai Sandaran Google Apps Script (Index.html)
-    if (typeof google !== "undefined" && google.script && google.script.run) {
-      return new Promise(function (resolve, reject) {
-        google.script.run
-          .withSuccessHandler(function (res) { resolve(res); })
-          .withFailureHandler(function (err) { reject(err); })
-          .gasClientBridge(JSON.stringify(reqBody));
-      });
-    }
-
-    // 2. Domain etutor.my atau Pelayan Pratonton Lokal (/api)
-    const cfgUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GAS_WEB_APP_URL)
-      ? window.ETUTOR_CONFIG.GAS_WEB_APP_URL.trim()
-      : "";
-    const hostName = (typeof window !== "undefined" && window.location && window.location.hostname)
-      ? window.location.hostname
-      : "";
-    const isLocalPreview = /^(localhost|127\.0\.0\.1)$/i.test(hostName);
-    if (!cfgUrl && !isLocalPreview) {
-      throw new Error(
-        "Pelayan Google Apps Script belum dipautkan pada config.js. Sila jalankan `npm run clasp:login`, `npm run clasp:create`, dan `npm run deploy:all` pada komputer pentadbir."
-      );
-    }
-    const endpoint = isLocalPreview ? "/api" : (cfgUrl || "/api");
-
-    // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
-    const resp = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(reqBody),
-      redirect: "follow"
-    });
-
-    if (!resp.ok) {
-      throw new Error("Ralat sambungan pelayan (HTTP " + resp.status + ")");
-    }
-    return resp.json();
-  }
-
-  // ==========================================================================
-  // FORM VALIDATION (:user-invalid + ARIA sync + WeakMap Fallback)
-  // ==========================================================================
-  function initFormValidation() {
-    const form = document.getElementById("loginForm");
-    if (!form) return;
-
-    const syncAria = function (el) {
-      if (!el || !el.checkValidity) return;
-      try {
-        const invalid = el.matches(":user-invalid") || el.classList.contains("user-invalid-fallback");
-        el.setAttribute("aria-invalid", invalid ? "true" : "false");
-      } catch (e) {}
-    };
-
-    document.addEventListener("blur", function (e) { syncAria(e.target); }, true);
-    document.addEventListener("input", function (e) {
-      if (e.target && e.target.hasAttribute && e.target.hasAttribute("aria-invalid")) {
-        syncAria(e.target);
-      }
-    });
-
-    // Fallback untuk pelayar lama tanpa sokongan :user-invalid
-    if (typeof CSS !== "undefined" && !CSS.supports("selector(:user-invalid)")) {
-      const dirty = new WeakMap();
-      const updateFallback = function (input) {
-        const ok = input.checkValidity();
-        input.classList.toggle("user-invalid-fallback", !ok);
-        input.setAttribute("aria-invalid", ok ? "false" : "true");
-      };
-      form.addEventListener("input", function (e) {
-        const st = dirty.get(e.target) || {};
-        st.typed = true;
-        dirty.set(e.target, st);
-        if (st.blurred) updateFallback(e.target);
-      });
-      form.addEventListener("blur", function (e) {
-        if (!e.target || !e.target.checkValidity) return;
-        const st = dirty.get(e.target) || {};
-        st.blurred = true;
-        dirty.set(e.target, st);
-        if (st.typed) updateFallback(e.target);
-      }, true);
-    }
-  }
-
-  // ==========================================================================
-  // RENDERING: DASHBOARD SECTIONS
-  // ==========================================================================
-  function applyDashboardBundle(res) {
-    if (res.user) portalState.user = res.user;
-    if (Array.isArray(res.catalog)) portalState.catalog = res.catalog;
-    if (Array.isArray(res.inProgress)) portalState.inProgress = res.inProgress;
-    if (res.progressSummary) portalState.progressSummary = res.progressSummary;
-    if (res.leaderboard) portalState.leaderboard = res.leaderboard;
-
-    renderHeaderUser();
-    renderContinueProgressSection();
-    renderProgressOverviewSection();
-    populateSubjectSelectors();
-    populateKlonSubjectChips();
-    renderLeaderboardSection();
-    renderKlonCatalogSection();
-    renderCatalogSection();
-    syncLandingKlonCountBadge();
-
-    if (window.ETutorMotion) {
-      window.ETutorMotion.playDashboardEntrance();
-      window.ETutorMotion.animateProgressCounters(portalState.progressSummary);
-    }
-
-    applyDeepLinkParamsOnce();
-  }
-
-  function syncLandingKlonCountBadge() {
-    const badge = document.getElementById("lpKlonTotalBadge");
-    if (!badge) return;
-    const klonCount = (portalState.catalog || []).filter(function (c) { return c.category === "klon"; }).length;
-    if (klonCount > 0) {
-      badge.textContent = klonCount + " Set Klon SPM Interaktif";
-    }
-  }
 
   function hasDeepLinkPortalParams() {
     try {
@@ -791,6 +815,629 @@
       }
     }
   }
+
+  // --- [features/leaderboard/leaderboardView.js] ---
+  /**
+   * src/features/leaderboard/leaderboardView.js
+   * Pemapar UI Podium Top 3, Jadual Kedudukan Pelajar & Kedudukan Semasa Pengguna.
+   */
+
+
+
+  function renderLeaderboardSection() {
+    const lb = portalState.leaderboard || { entries: [], myStanding: null, totalParticipants: 0 };
+    const podiumEl = document.getElementById("leaderboardPodium");
+    const tbodyEl = document.getElementById("leaderboardTableBody");
+    const myFootEl = document.getElementById("myStandingFooter");
+
+    const entries = lb.entries || [];
+
+    if (podiumEl) {
+      if (entries.length === 0) {
+        podiumEl.innerHTML = "";
+        podiumEl.hidden = true;
+      } else {
+        podiumEl.hidden = false;
+        podiumEl.innerHTML = entries.slice(0, 3).map(function (e) {
+          return [
+            '<div class="podium-tile rank-' + e.rank + '">',
+            '  <div class="podium-medal tabular-nums">#' + e.rank + '</div>',
+            '  <div style="min-width:0">',
+            '    <div style="font-weight:700;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">',
+                   escapeHtml(e.displayName) + (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
+            '    </div>',
+            '    <div class="tabular-nums" style="font-size:0.82rem;color:var(--text-secondary);margin-top:2px">',
+                   Number(e.xp).toLocaleString("en-MY") + ' XP • Purata ' + e.averageScore + '% (' + escapeHtml(e.grade) + ')',
+            '    </div>',
+            '  </div>',
+            '</div>'
+          ].join("");
+        }).join("");
+      }
+    }
+
+    if (tbodyEl) {
+      if (entries.length === 0) {
+        tbodyEl.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:24px">Belum ada rekod markah dihantar bagi kategori ini. Jadilah pelajar pertama di tangga #1!</td></tr>';
+      } else {
+        tbodyEl.innerHTML = entries.map(function (e) {
+          return [
+            '<tr class="' + (e.isCurrentUser ? "is-me" : "") + '">',
+            '  <th scope="row">',
+            '    <span class="tabular-nums" style="display:inline-block;min-width:28px;color:var(--text-muted)">#' + e.rank + '</span> ',
+                 escapeHtml(e.displayName),
+                 (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
+            '  </th>',
+            '  <td class="tabular-nums">' + e.setsCompleted + ' set</td>',
+            '  <td class="tabular-nums">' + e.averageScore + '%</td>',
+            '  <td><span class="status-badge badge-done">' + escapeHtml(e.grade) + '</span></td>',
+            '  <td class="tabular-nums" style="font-weight:700;color:var(--brand-primary)">' + Number(e.xp).toLocaleString("en-MY") + ' XP</td>',
+            '</tr>'
+          ].join("");
+        }).join("");
+      }
+    }
+
+    if (myFootEl) {
+      const me = lb.myStanding;
+      if (!me) {
+        myFootEl.hidden = true;
+      } else {
+        myFootEl.hidden = false;
+        const rankText = me.rank
+          ? "Kedudukan Semasa Anda: #" + me.rank + " daripada " + (lb.totalParticipants || 1) + " pelajar"
+          : "Anda belum menghantar markah bagi penapis ini — selesaikan 1 set untuk masuk ke Leaderboard!";
+        myFootEl.innerHTML = [
+          '<span>' + ICONS.trophy + ' ' + escapeHtml(rankText) + '</span>',
+          '<span class="tabular-nums">' + Number(me.xp || 0).toLocaleString("en-MY") + ' XP • ' + (me.setsCompleted || 0) + ' Set • Purata ' + (me.averageScore || 0) + '%</span>'
+        ].join("");
+      }
+    }
+
+    if (window.ETutorMotion) window.ETutorMotion.animateLeaderboardUpdate();
+  }
+
+  // --- [features/catalog/catalogView.js] ---
+  /**
+   * src/features/catalog/catalogView.js
+   * Pemapar UI Katalog Klon SPM 2026 & Katalog Bank Soalan Interaktif Harian di dalam Portal Pelajar (#portal).
+   */
+  const KLON_SUBJECT_META = [
+    {
+      "group": "teras",
+      "klonCode": "KLON 01",
+      "kssmCode": "Kod 1103",
+      "portalHref": "?klon=1&amp;open=1#portal",
+      "subject": "Bahasa Melayu",
+      "title": "Klon SPM Bahasa Melayu 2026",
+      "descriptionHtml": "20 Soalan Kertas 1 + 14 Soalan Kertas 2 (Tatabahasa, Rumusan &amp; Pemahaman KSSM)",
+      "seoSlug": "spm-bahasa-melayu-2026-klon-01",
+      "srLabel": " Klon 01 Bahasa Melayu"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 02",
+      "kssmCode": "Kod 1119",
+      "portalHref": "?klon=2&amp;open=1#portal",
+      "subject": "Bahasa Inggeris",
+      "title": "Klon SPM Bahasa Inggeris 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 8 Soalan Kertas 2 (CEFR Reading &amp; Guided Writing)",
+      "seoSlug": "spm-bahasa-inggeris-2026-klon-02",
+      "srLabel": " Klon 02 Bahasa Inggeris"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 03",
+      "kssmCode": "Kod 1249",
+      "portalHref": "?klon=3&amp;open=1#portal",
+      "subject": "Sejarah",
+      "title": "Klon SPM Sejarah 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 9 Soalan Kertas 2 (Struktur &amp; Esei KBAT Tingkatan 4–5)",
+      "seoSlug": "spm-sejarah-2026-klon-03",
+      "srLabel": " Klon 03 Sejarah"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 04",
+      "kssmCode": "Kod 1449",
+      "portalHref": "?klon=4&amp;open=1#portal",
+      "subject": "Matematik",
+      "title": "Klon SPM Matematik 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 17 Soalan Kertas 2 (Langkah Kiraan K &amp; Jawapan J)",
+      "seoSlug": "spm-matematik-2026-klon-04",
+      "srLabel": " Klon 04 Matematik"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 05",
+      "kssmCode": "Kod 1511",
+      "portalHref": "?klon=5&amp;open=1#portal",
+      "subject": "Sains",
+      "title": "Klon SPM Sains 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 13 Soalan Kertas 2 (Kemahiran Saintifik &amp; Eksperimen)",
+      "seoSlug": "spm-sains-2026-klon-05",
+      "srLabel": " Klon 05 Sains"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 06",
+      "kssmCode": "Kod 1223",
+      "portalHref": "?klon=6&amp;open=1#portal",
+      "subject": "Pendidikan Islam",
+      "title": "Klon SPM Pendidikan Islam 2026",
+      "descriptionHtml": "20 Soalan Objektif + 5 Soalan Struktur &amp; KBAT (Tilawah, Hadis, Akidah &amp; Fiqh)",
+      "seoSlug": "spm-pendidikan-islam-2026-klon-06",
+      "srLabel": " Klon 06 Pendidikan Islam"
+    },
+    {
+      "group": "teras",
+      "klonCode": "KLON 07",
+      "kssmCode": "Kod 1225",
+      "portalHref": "?klon=7&amp;open=1#portal",
+      "subject": "Pendidikan Moral",
+      "title": "Klon SPM Pendidikan Moral 2026",
+      "descriptionHtml": "20 Soalan Pemahaman + 9 Soalan Struktur &amp; Esei Nilai Universal KSSM",
+      "seoSlug": "spm-pendidikan-moral-2026-klon-07",
+      "srLabel": " Klon 07 Pendidikan Moral"
+    },
+    {
+      "group": "sains",
+      "klonCode": "KLON 08",
+      "kssmCode": "Kod 3472",
+      "portalHref": "?klon=8&amp;open=1#portal",
+      "subject": "Matematik Tambahan",
+      "title": "Klon SPM Matematik Tambahan 2026",
+      "descriptionHtml": "20 Soalan Kertas 1 + 30 Soalan Kertas 2 (Kalkulus, Fungsi, Vektor &amp; Taburan)",
+      "seoSlug": "spm-matematik-tambahan-2026-klon-08",
+      "srLabel": " Klon 08 Matematik Tambahan"
+    },
+    {
+      "group": "sains",
+      "klonCode": "KLON 09",
+      "kssmCode": "Kod 4531",
+      "portalHref": "?klon=9&amp;open=1#portal",
+      "subject": "Fizik",
+      "title": "Klon SPM Fizik 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Daya, Gelombang, Elektrik &amp; Kuantum)",
+      "seoSlug": "spm-fizik-2026-klon-09",
+      "srLabel": " Klon 09 Fizik"
+    },
+    {
+      "group": "sains",
+      "klonCode": "KLON 10",
+      "kssmCode": "Kod 4541",
+      "portalHref": "?klon=10&amp;open=1#portal",
+      "subject": "Kimia",
+      "title": "Klon SPM Kimia 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Mol, Redoks, Sebatian Karbon &amp; Termokimia)",
+      "seoSlug": "spm-kimia-2026-klon-10",
+      "srLabel": " Klon 10 Kimia"
+    },
+    {
+      "group": "sains",
+      "klonCode": "KLON 11",
+      "kssmCode": "Kod 4551",
+      "portalHref": "?klon=11&amp;open=1#portal",
+      "subject": "Biologi",
+      "title": "Klon SPM Biologi 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Fisiologi Manusia, Tumbuhan &amp; Genetik)",
+      "seoSlug": "spm-biologi-2026-klon-11",
+      "srLabel": " Klon 11 Biologi"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 12",
+      "kssmCode": "Kod 3756",
+      "portalHref": "?klon=12&amp;open=1#portal",
+      "subject": "Prinsip Perakaunan",
+      "title": "Klon SPM Prinsip Perakaunan 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 6 Soalan Kertas 2 (Penyata Kewangan, Rekonsiliasi &amp; Kelab)",
+      "seoSlug": "spm-prinsip-perakaunan-2026-klon-12",
+      "srLabel": " Klon 12 Prinsip Perakaunan"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 13",
+      "kssmCode": "Kod 3767",
+      "portalHref": "?klon=13&amp;open=1#portal",
+      "subject": "Ekonomi",
+      "title": "Klon SPM Ekonomi 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 7 Soalan Kertas 2 (Pasaran, Keanjalan, Bank &amp; Belanjawan)",
+      "seoSlug": "spm-ekonomi-2026-klon-13",
+      "srLabel": " Klon 13 Ekonomi"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 14",
+      "kssmCode": "Kod 3766",
+      "portalHref": "?klon=14&amp;open=1#portal",
+      "subject": "Perniagaan",
+      "title": "Klon SPM Perniagaan 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 10 Soalan Kertas 2 (Kajian Kes, Pembiayaan &amp; Rancangan)",
+      "seoSlug": "spm-perniagaan-2026-klon-14",
+      "srLabel": " Klon 14 Perniagaan"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 15",
+      "kssmCode": "Kod 2280",
+      "portalHref": "?klon=15&amp;open=1#portal",
+      "subject": "Geografi",
+      "title": "Klon SPM Geografi 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 9 Soalan Kertas 2 (Peta Topografi, Fizikal &amp; Alam Sekitar)",
+      "seoSlug": "spm-geografi-2026-klon-15",
+      "srLabel": " Klon 15 Geografi"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 16",
+      "kssmCode": "Kod 3770",
+      "portalHref": "?klon=16&amp;open=1#portal",
+      "subject": "Sains Komputer",
+      "title": "Klon SPM Sains Komputer 2026",
+      "descriptionHtml": "20 Soalan Objektif + 24 Soalan Struktur (Pengaturcaraan, SQL &amp; Pangkalan Data)",
+      "seoSlug": "spm-sains-komputer-2026-klon-16",
+      "srLabel": " Klon 16 Sains Komputer"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 17",
+      "kssmCode": "Kod 3763",
+      "portalHref": "?klon=17&amp;open=1#portal",
+      "subject": "Reka Cipta",
+      "title": "Klon SPM Reka Cipta 2026",
+      "descriptionHtml": "20 Soalan Objektif + 24 Soalan Struktur (Proses Reka Bentuk, Bahan &amp; Sistem)",
+      "seoSlug": "spm-reka-cipta-2026-klon-17",
+      "srLabel": " Klon 17 Reka Cipta"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 18",
+      "kssmCode": "Kod 4572",
+      "portalHref": "?klon=18&amp;open=1#portal",
+      "subject": "Sains Sukan",
+      "title": "Klon SPM Sains Sukan 2026",
+      "descriptionHtml": "40 Soalan Kertas 1 + 13 Soalan Kertas 2 (Anatomi, Biomekanik &amp; Latihan Sukan)",
+      "seoSlug": "spm-sains-sukan-2026-klon-18",
+      "srLabel": " Klon 18 Sains Sukan"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 19",
+      "kssmCode": "Kod 3769",
+      "portalHref": "?klon=19&amp;open=1#portal",
+      "subject": "Sains Rumah Tangga",
+      "title": "Klon SPM Sains Rumah Tangga 2026",
+      "descriptionHtml": "20 Soalan Objektif + 24 Soalan Struktur (Pemakanan, Tekstil &amp; Keusahawanan)",
+      "seoSlug": "spm-sains-rumah-tangga-2026-klon-19",
+      "srLabel": " Klon 19 Sains Rumah Tangga"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 20",
+      "kssmCode": "Kod 5226",
+      "portalHref": "?klon=20&amp;open=1#portal",
+      "subject": "Tasawwur Islam",
+      "title": "Klon SPM Tasawwur Islam 2026",
+      "descriptionHtml": "20 Soalan Bahagian A + 6 Soalan Bahagian B (Pandangan Hidup &amp; Sistem Islam)",
+      "seoSlug": "spm-tasawwur-islam-2026-klon-20",
+      "srLabel": " Klon 20 Tasawwur Islam"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 21",
+      "kssmCode": "Kod 5227",
+      "portalHref": "?klon=21&amp;open=1#portal",
+      "subject": "Pendidikan Al-Quran &amp; As-Sunnah",
+      "title": "Klon SPM Pendidikan Al-Quran &amp; As-Sunnah",
+      "descriptionHtml": "20 Soalan Objektif + 4 Soalan Subjektif (Ulum Al-Quran, Ulum Hadis &amp; Tamadun)",
+      "seoSlug": "spm-pqs-2026-klon-21",
+      "srLabel": " Klon 21 Pendidikan Al-Quran dan As-Sunnah"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 22",
+      "kssmCode": "Kod 5401",
+      "portalHref": "?klon=22&amp;open=1#portal",
+      "subject": "Usul al-Din",
+      "title": "Klon SPM Usul al-Din 2026",
+      "descriptionHtml": "20 Soalan Objektif + 4 Soalan Subjektif KBD (Tauhid, Tafsir, Hadis &amp; Akhlak)",
+      "seoSlug": "spm-usuluddin-2026-klon-22",
+      "srLabel": " Klon 22 Usul al-Din"
+    },
+    {
+      "group": "elektif",
+      "klonCode": "KLON 23",
+      "kssmCode": "Kod 2361",
+      "portalHref": "?klon=23&amp;open=1#portal",
+      "subject": "Bahasa Arab",
+      "title": "Klon SPM Bahasa Arab 2026",
+      "descriptionHtml": "25 Soalan Qawaid &amp; Balaghah + 11 Soalan Istiab, Ungkapan &amp; Insyak",
+      "seoSlug": "spm-bahasa-arab-2026-klon-23",
+      "srLabel": " Klon 23 Bahasa Arab"
+    }
+  ];
+
+
+
+  function lookupKlonMeta_(subjectName) {
+    const target = String(subjectName || "").replace(/&/g, "&amp;").trim().toLowerCase();
+    const raw = String(subjectName || "").trim().toLowerCase();
+    return (KLON_SUBJECT_META || []).find(function (m) {
+      const ms = String(m.subject || "").trim().toLowerCase();
+      return ms === raw || ms === target || ms.replace(/&amp;/g, "&") === raw;
+    }) || null;
+  }
+
+  function syncLandingKlonCountBadge() {
+    const countLabel = document.getElementById("klonCatalogCountLabel");
+    if (!countLabel) return;
+    const klonCount = (portalState.catalog || []).filter(function (c) { return c.category === "klon"; }).length;
+    if (klonCount > 0) {
+      countLabel.textContent = klonCount + " set klon dipaparkan";
+    }
+  }
+
+  function populateSubjectSelectors() {
+    const harianSubjects = [];
+    const seenHarian = {};
+    const allSubjects = [];
+    const seenAll = {};
+
+    (portalState.catalog || []).forEach(function (c) {
+      if (c.subject && !seenAll[c.subject]) {
+        seenAll[c.subject] = true;
+        allSubjects.push(c.subject);
+      }
+      if (c.category !== "klon" && c.subject && !seenHarian[c.subject]) {
+        seenHarian[c.subject] = true;
+        harianSubjects.push(c.subject);
+      }
+    });
+    harianSubjects.sort();
+    allSubjects.sort();
+
+    const chipRow = document.getElementById("subjectChipsRow");
+    if (chipRow) {
+      const allOpts = ["ALL"].concat(harianSubjects);
+      chipRow.innerHTML = allOpts.map(function (sub) {
+        const active = portalState.selectedSubject === sub;
+        const label = sub === "ALL" ? "Semua Subjek" : sub;
+        return '<button type="button" class="tab-chip js-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
+      }).join("");
+    }
+
+    const lbSelect = document.getElementById("lbSubjectSelect");
+    if (lbSelect) {
+      const prev = portalState.lbSubject || "ALL";
+      lbSelect.innerHTML = ['<option value="ALL">Semua Subjek</option>']
+        .concat(allSubjects.map(function (s) {
+          return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>';
+        }))
+        .join("");
+      lbSelect.value = seenAll[prev] ? prev : "ALL";
+    }
+  }
+
+  function populateKlonSubjectChips() {
+    const klonSubjects = [];
+    const seen = {};
+    const grpFilter = portalState.klonSelectedGroup || "ALL";
+
+    (portalState.catalog || []).forEach(function (c) {
+      if (c.category !== "klon" || !c.subject) return;
+      if (grpFilter !== "ALL") {
+        const meta = lookupKlonMeta_(c.subject);
+        if (!meta || meta.group !== grpFilter) return;
+      }
+      if (!seen[c.subject]) {
+        seen[c.subject] = true;
+        klonSubjects.push(c.subject);
+      }
+    });
+    klonSubjects.sort();
+
+    if (portalState.klonSelectedSubject !== "ALL" && !seen[portalState.klonSelectedSubject]) {
+      portalState.klonSelectedSubject = "ALL";
+    }
+
+    const chipRow = document.getElementById("klonSubjectChipsRow");
+    if (chipRow) {
+      const allOpts = ["ALL"].concat(klonSubjects);
+      chipRow.innerHTML = allOpts.map(function (sub) {
+        const active = portalState.klonSelectedSubject === sub;
+        const label = sub === "ALL" ? "Semua Subjek" : sub;
+        return '<button type="button" class="tab-chip js-klon-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
+      }).join("");
+    }
+  }
+
+  function renderQuizCardMarkup_(item, isKlon) {
+    let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
+    let primaryBtnLabel = isKlon ? "Jawab Klon" : "Mula Latihan";
+    let primaryBtnClass = "btn-primary";
+    let resumeAttr = 'data-resume="0"';
+
+    if (item.inProgress) {
+      const ans = item.inProgress.answeredCount || 0;
+      const tot = item.inProgress.totalQuestions || 45;
+      statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
+      primaryBtnLabel = "Sambung Semula";
+      primaryBtnClass = "btn-emerald";
+      resumeAttr = 'data-resume="1"';
+    } else if (item.bestScore) {
+      statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
+      primaryBtnLabel = "Ulang Latihan";
+      primaryBtnClass = "btn-outline";
+    }
+
+    const klonMeta = isKlon ? lookupKlonMeta_(item.subject) : null;
+    const kssmBadge = klonMeta && klonMeta.kssmCode
+      ? '<span class="badge-kssm-code">' + escapeHtml(klonMeta.kssmCode) + '</span>'
+      : "";
+
+    const leadBadgeHtml = isKlon
+      ? '<span class="badge-klon">' + ICONS.sparkles + ' ' + escapeHtml(item.setCode || "KLON SPM") + '</span><span class="status-badge badge-subject">' + escapeHtml(item.subject) + '</span>' + kssmBadge
+      : '<span class="status-badge badge-subject">' + ICONS.book + ' ' + escapeHtml(item.subject) + '</span>';
+
+    return [
+      '<article class="quiz-card">',
+      '  <div>',
+      '    <div class="quiz-card-badges">',
+             leadBadgeHtml,
+             statusBadgeHtml,
+      '    </div>',
+      '    <h3 class="quiz-card-title">' + escapeHtml(item.cleanTitle) + '</h3>',
+      '    <div class="quiz-card-meta">',
+      (!isKlon && item.setCode ? '<span>' + escapeHtml(item.setCode) + '</span>' : ''),
+      (item.stateOrSource ? '<span>' + (!isKlon && item.setCode ? '• ' : '') + escapeHtml(item.stateOrSource) + '</span>' : ''),
+      (item.year ? '<span class="tabular-nums">• ' + escapeHtml(item.year) + '</span>' : ''),
+      '    </div>',
+      '  </div>',
+      '  <div class="quiz-card-footer">',
+      '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
+             ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
+      '    </button>',
+      (item.inProgress
+        ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
+        : ''),
+      '  </div>',
+      '</article>'
+    ].join("\n");
+  }
+
+  function renderKlonCatalogSection() {
+    const sec = document.getElementById("klonCatalogSection");
+    const grid = document.getElementById("klonCatalogCardsGrid");
+    const countLabel = document.getElementById("klonCatalogCountLabel");
+    if (!sec || !grid) return;
+
+    const allKlon = (portalState.catalog || [])
+      .filter(function (item) { return item.category === "klon"; })
+      .slice()
+      .sort(function (a, b) {
+        return (Number(a.setNumber) || 999) - (Number(b.setNumber) || 999) || String(a.cleanTitle || "").localeCompare(String(b.cleanTitle || ""));
+      });
+
+    if (allKlon.length === 0) {
+      sec.hidden = true;
+      grid.innerHTML = "";
+      return;
+    }
+
+    sec.hidden = false;
+    const grp = portalState.klonSelectedGroup || "ALL";
+    const q = portalState.klonSearchQuery.trim().toLowerCase();
+    const filtered = allKlon.filter(function (item) {
+      const meta = lookupKlonMeta_(item.subject);
+      if (grp !== "ALL" && (!meta || meta.group !== grp)) {
+        return false;
+      }
+      if (portalState.klonSelectedSubject !== "ALL" && item.subject !== portalState.klonSelectedSubject) {
+        return false;
+      }
+      if (portalState.klonSelectedStatus !== "ALL" && item.status !== portalState.klonSelectedStatus) {
+        return false;
+      }
+      if (q) {
+        const kssmStr = meta && meta.kssmCode ? meta.kssmCode : "";
+        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode, kssmStr, "klon"].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (countLabel) {
+      countLabel.textContent = filtered.length + " set klon dipaparkan";
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set Klon SPM sepadan dengan carian atau penapis semasa.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function (item) {
+      return renderQuizCardMarkup_(item, true);
+    }).join("\n");
+  }
+
+  function renderCatalogSection() {
+    const grid = document.getElementById("catalogCardsGrid");
+    const countLabel = document.getElementById("catalogCountLabel");
+    if (!grid) return;
+
+    const q = portalState.searchQuery.trim().toLowerCase();
+    const filtered = (portalState.catalog || []).filter(function (item) {
+      if (item.category === "klon") {
+        return false;
+      }
+      if (portalState.selectedSubject !== "ALL" && item.subject !== portalState.selectedSubject) {
+        return false;
+      }
+      if (portalState.selectedStatus !== "ALL" && item.status !== portalState.selectedStatus) {
+        return false;
+      }
+      if (q) {
+        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (countLabel) {
+      countLabel.textContent = filtered.length + " set dipaparkan";
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set soalan sepadan dengan carian atau penapis semasa.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function (item) {
+      return renderQuizCardMarkup_(item, false);
+    }).join("\n");
+
+    if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
+  }
+
+  // --- [features/dashboard/progressOverviewView.js] ---
+  /**
+   * src/features/dashboard/progressOverviewView.js
+   * Pemapar UI Seksyen Continue Progress, Ringkasan Kemajuan Bento Grid & pengepala pengguna.
+   */
+
+
+
+
+
+
+
+
+  function applyDashboardBundle(res) {
+    if (res.user) portalState.user = res.user;
+    if (Array.isArray(res.catalog)) portalState.catalog = res.catalog;
+    if (Array.isArray(res.inProgress)) portalState.inProgress = res.inProgress;
+    if (res.progressSummary) portalState.progressSummary = res.progressSummary;
+    if (res.leaderboard) portalState.leaderboard = res.leaderboard;
+
+    renderHeaderUser();
+    renderContinueProgressSection();
+    renderProgressOverviewSection();
+    populateSubjectSelectors();
+    populateKlonSubjectChips();
+    renderLeaderboardSection();
+    renderKlonCatalogSection();
+    renderCatalogSection();
+    syncLandingKlonCountBadge();
+
+    if (window.ETutorMotion) {
+      window.ETutorMotion.playDashboardEntrance();
+      window.ETutorMotion.animateProgressCounters(portalState.progressSummary);
+    }
+
+    applyDeepLinkParamsOnce();
+  }
+
 
   function renderHeaderUser() {
     const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
@@ -936,291 +1583,95 @@
     }
   }
 
-  // 3. SEKSYEN LEADERBOARD
-  function renderLeaderboardSection() {
-    const lb = portalState.leaderboard || { entries: [], myStanding: null, totalParticipants: 0 };
-    const podiumEl = document.getElementById("leaderboardPodium");
-    const tbodyEl = document.getElementById("leaderboardTableBody");
-    const myFootEl = document.getElementById("myStandingFooter");
+  // --- [features/quiz-engine/resultSlipModal.js] ---
+  /**
+   * src/features/quiz-engine/resultSlipModal.js
+   * Pengawal dialog Slip Keputusan Rasmi SPM dan fungsi cetakan slip rasmi.
+   */
 
-    const entries = lb.entries || [];
 
-    if (podiumEl) {
-      if (entries.length === 0) {
-        podiumEl.innerHTML = "";
-        podiumEl.hidden = true;
-      } else {
-        podiumEl.hidden = false;
-        podiumEl.innerHTML = entries.slice(0, 3).map(function (e) {
-          return [
-            '<div class="podium-tile rank-' + e.rank + '">',
-            '  <div class="podium-medal tabular-nums">#' + e.rank + '</div>',
-            '  <div style="min-width:0">',
-            '    <div style="font-weight:700;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">',
-                   escapeHtml(e.displayName) + (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
-            '    </div>',
-            '    <div class="tabular-nums" style="font-size:0.82rem;color:var(--text-secondary);margin-top:2px">',
-                   Number(e.xp).toLocaleString("en-MY") + ' XP • Purata ' + e.averageScore + '% (' + escapeHtml(e.grade) + ')',
-            '    </div>',
-            '  </div>',
-            '</div>'
-          ].join("");
-        }).join("");
-      }
+
+  function openResultSlipModal() {
+    const data = portalState.latestSlipData;
+    const dlg = document.getElementById("resultSlipDialog");
+    if (!data || !dlg) return;
+
+    const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
+    const customNameInput = document.getElementById("slipCustomNameInput");
+    const savedOpenName = getOpenStudentName();
+    if (customNameInput && isOpenGuest) {
+      customNameInput.value = savedOpenName;
     }
 
-    if (tbodyEl) {
-      if (entries.length === 0) {
-        tbodyEl.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:24px">Belum ada rekod markah dihantar bagi kategori ini. Jadilah pelajar pertama di tangga #1!</td></tr>';
-      } else {
-        tbodyEl.innerHTML = entries.map(function (e) {
-          return [
-            '<tr class="' + (e.isCurrentUser ? "is-me" : "") + '">',
-            '  <th scope="row">',
-            '    <span class="tabular-nums" style="display:inline-block;min-width:28px;color:var(--text-muted)">#' + e.rank + '</span> ',
-                 escapeHtml(e.displayName),
-                 (e.isCurrentUser ? '<span class="you-badge">Anda</span>' : ''),
-            '  </th>',
-            '  <td class="tabular-nums">' + e.setsCompleted + ' set</td>',
-            '  <td class="tabular-nums">' + e.averageScore + '%</td>',
-            '  <td><span class="status-badge badge-done">' + escapeHtml(e.grade) + '</span></td>',
-            '  <td class="tabular-nums" style="font-weight:700;color:var(--brand-primary)">' + Number(e.xp).toLocaleString("en-MY") + ' XP</td>',
-            '</tr>'
-          ].join("");
-        }).join("");
-      }
-    }
+    const displayStudentName = isOpenGuest
+      ? (savedOpenName || data.buyerName || "Pelajar")
+      : ((portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar");
 
-    if (myFootEl) {
-      const me = lb.myStanding;
-      if (!me) {
-        myFootEl.hidden = true;
-      } else {
-        myFootEl.hidden = false;
-        const rankText = me.rank
-          ? "Kedudukan Semasa Anda: #" + me.rank + " daripada " + (lb.totalParticipants || 1) + " pelajar"
-          : "Anda belum menghantar markah bagi penapis ini — selesaikan 1 set untuk masuk ke Leaderboard!";
-        myFootEl.innerHTML = [
-          '<span>' + ICONS.trophy + ' ' + escapeHtml(rankText) + '</span>',
-          '<span class="tabular-nums">' + Number(me.xp || 0).toLocaleString("en-MY") + ' XP • ' + (me.setsCompleted || 0) + ' Set • Purata ' + (me.averageScore || 0) + '%</span>'
-        ].join("");
-      }
-    }
+    const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
+    document.getElementById("slipStudentName").textContent = displayStudentName;
+    document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
+    document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
+    document.getElementById("slipSubject").textContent = data.subject || "SPM";
+    document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
+    document.getElementById("slipScorePct").textContent = safePct + "%";
+    document.getElementById("slipGrade").textContent = String(data.grade || "—").slice(0, 6);
+    document.getElementById("slipBreakdown").textContent = data.breakdown || ("Markah: " + (data.scoreText || ""));
 
-    if (window.ETutorMotion) window.ETutorMotion.animateLeaderboardUpdate();
-  }
-
-  function populateSubjectSelectors() {
-    const harianSubjects = [];
-    const seenHarian = {};
-    const allSubjects = [];
-    const seenAll = {};
-
-    (portalState.catalog || []).forEach(function (c) {
-      if (c.subject && !seenAll[c.subject]) {
-        seenAll[c.subject] = true;
-        allSubjects.push(c.subject);
-      }
-      if (c.category !== "klon" && c.subject && !seenHarian[c.subject]) {
-        seenHarian[c.subject] = true;
-        harianSubjects.push(c.subject);
-      }
-    });
-    harianSubjects.sort();
-    allSubjects.sort();
-
-    // Cip Subjek Katalog Harian
-    const chipRow = document.getElementById("subjectChipsRow");
-    if (chipRow) {
-      const allOpts = ["ALL"].concat(harianSubjects);
-      chipRow.innerHTML = allOpts.map(function (sub) {
-        const active = portalState.selectedSubject === sub;
-        const label = sub === "ALL" ? "Semua Subjek" : sub;
-        return '<button type="button" class="tab-chip js-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
-      }).join("");
-    }
-
-    // Dropdown Subjek Leaderboard (merangkumi semua subjek Harian + Klon)
-    const lbSelect = document.getElementById("lbSubjectSelect");
-    if (lbSelect) {
-      const prev = portalState.lbSubject || "ALL";
-      lbSelect.innerHTML = ['<option value="ALL">Semua Subjek</option>']
-        .concat(allSubjects.map(function (s) {
-          return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>';
-        }))
-        .join("");
-      lbSelect.value = seenAll[prev] ? prev : "ALL";
-    }
-  }
-
-  function populateKlonSubjectChips() {
-    const klonSubjects = [];
-    const seen = {};
-    (portalState.catalog || []).forEach(function (c) {
-      if (c.category === "klon" && c.subject && !seen[c.subject]) {
-        seen[c.subject] = true;
-        klonSubjects.push(c.subject);
-      }
-    });
-    klonSubjects.sort();
-
-    if (portalState.klonSelectedSubject !== "ALL" && !seen[portalState.klonSelectedSubject]) {
-      portalState.klonSelectedSubject = "ALL";
-    }
-
-    const chipRow = document.getElementById("klonSubjectChipsRow");
-    if (chipRow) {
-      const allOpts = ["ALL"].concat(klonSubjects);
-      chipRow.innerHTML = allOpts.map(function (sub) {
-        const active = portalState.klonSelectedSubject === sub;
-        const label = sub === "ALL" ? "Semua Subjek" : sub;
-        return '<button type="button" class="tab-chip js-klon-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
-      }).join("");
-    }
-  }
-
-  function renderQuizCardMarkup_(item, isKlon) {
-    let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
-    let primaryBtnLabel = isKlon ? "Jawab Klon" : "Mula Latihan";
-    let primaryBtnClass = "btn-primary";
-    let resumeAttr = 'data-resume="0"';
-
-    if (item.inProgress) {
-      const ans = item.inProgress.answeredCount || 0;
-      const tot = item.inProgress.totalQuestions || 45;
-      statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
-      primaryBtnLabel = "Sambung Semula";
-      primaryBtnClass = "btn-emerald";
-      resumeAttr = 'data-resume="1"';
-    } else if (item.bestScore) {
-      statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
-      primaryBtnLabel = "Ulang Latihan";
-      primaryBtnClass = "btn-outline";
-    }
-
-    const leadBadgeHtml = isKlon
-      ? '<span class="badge-klon">' + ICONS.sparkles + ' ' + escapeHtml(item.setCode || "KLON SPM") + '</span><span class="status-badge badge-subject">' + escapeHtml(item.subject) + '</span>'
-      : '<span class="status-badge badge-subject">' + ICONS.book + ' ' + escapeHtml(item.subject) + '</span>';
-
-    return [
-      '<article class="quiz-card">',
-      '  <div>',
-      '    <div class="quiz-card-badges">',
-             leadBadgeHtml,
-             statusBadgeHtml,
-      '    </div>',
-      '    <h3 class="quiz-card-title">' + escapeHtml(item.cleanTitle) + '</h3>',
-      '    <div class="quiz-card-meta">',
-      (!isKlon && item.setCode ? '<span>' + escapeHtml(item.setCode) + '</span>' : ''),
-      (item.stateOrSource ? '<span>' + (!isKlon && item.setCode ? '• ' : '') + escapeHtml(item.stateOrSource) + '</span>' : ''),
-      (item.year ? '<span class="tabular-nums">• ' + escapeHtml(item.year) + '</span>' : ''),
-      '    </div>',
-      '  </div>',
-      '  <div class="quiz-card-footer">',
-      '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
-             ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
-      '    </button>',
-      (item.inProgress
-        ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
-        : ''),
-      '  </div>',
-      '</article>'
-    ].join("\n");
-  }
-
-  // 4A. SEKSYEN SET SOALAN KLON SPM INTERAKTIF
-  function renderKlonCatalogSection() {
-    const sec = document.getElementById("klonCatalogSection");
-    const grid = document.getElementById("klonCatalogCardsGrid");
-    const countLabel = document.getElementById("klonCatalogCountLabel");
-    if (!sec || !grid) return;
-
-    const allKlon = (portalState.catalog || [])
-      .filter(function (item) { return item.category === "klon"; })
-      .slice()
-      .sort(function (a, b) {
-        return (Number(a.setNumber) || 999) - (Number(b.setNumber) || 999) || String(a.cleanTitle || "").localeCompare(String(b.cleanTitle || ""));
+    const weakListEl = document.getElementById("slipWeakTopics");
+    weakListEl.textContent = "";
+    const wt = Array.isArray(data.weakTopics) ? data.weakTopics : [];
+    if (wt.length === 0) {
+      const okLi = document.createElement("li");
+      okLi.style.color = "var(--grade-emerald)";
+      okLi.textContent = "Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.";
+      weakListEl.appendChild(okLi);
+    } else {
+      wt.forEach(function (w) {
+        const li = document.createElement("li");
+        const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
+        const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
+        const wTot = Math.max(1, Math.round(Number(w.total) || 1));
+        const isAttempted = w.attempted === undefined ? true : Boolean(w.attempted);
+        if (isAttempted) {
+          li.style.color = "var(--status-danger, #b91c1c)";
+          li.style.fontWeight = "600";
+          li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ") • Perlu Ulang Kaji";
+        } else {
+          li.textContent = String(w.topic || "Topik") + " — Belum Dijawab (" + wObt + "/" + wTot + ")";
+        }
+        weakListEl.appendChild(li);
       });
-
-    if (allKlon.length === 0) {
-      sec.hidden = true;
-      grid.innerHTML = "";
-      return;
     }
 
-    sec.hidden = false;
-    const q = portalState.klonSearchQuery.trim().toLowerCase();
-    const filtered = allKlon.filter(function (item) {
-      if (portalState.klonSelectedSubject !== "ALL" && item.subject !== portalState.klonSelectedSubject) {
-        return false;
-      }
-      if (portalState.klonSelectedStatus !== "ALL" && item.status !== portalState.klonSelectedStatus) {
-        return false;
-      }
-      if (q) {
-        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode, "klon"].join(" ").toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-
-    if (countLabel) {
-      countLabel.textContent = filtered.length + " set klon dipaparkan";
+    if (typeof dlg.showModal === "function") {
+      dlg.showModal();
+    } else {
+      dlg.setAttribute("open", "");
     }
-
-    if (filtered.length === 0) {
-      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set Klon SPM sepadan dengan carian atau penapis semasa.</div>';
-      return;
-    }
-
-    grid.innerHTML = filtered.map(function (item) {
-      return renderQuizCardMarkup_(item, true);
-    }).join("\n");
+    if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(safePct);
   }
 
-  // 4. SEKSYEN KATALOG BANK SOALAN HARIAN
-  function renderCatalogSection() {
-    const grid = document.getElementById("catalogCardsGrid");
-    const countLabel = document.getElementById("catalogCountLabel");
-    if (!grid) return;
-
-    const q = portalState.searchQuery.trim().toLowerCase();
-    const filtered = (portalState.catalog || []).filter(function (item) {
-      if (item.category === "klon") {
-        return false;
-      }
-      if (portalState.selectedSubject !== "ALL" && item.subject !== portalState.selectedSubject) {
-        return false;
-      }
-      if (portalState.selectedStatus !== "ALL" && item.status !== portalState.selectedStatus) {
-        return false;
-      }
-      if (q) {
-        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode].join(" ").toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-
-    if (countLabel) {
-      countLabel.textContent = filtered.length + " set dipaparkan";
-    }
-
-    if (filtered.length === 0) {
-      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set soalan sepadan dengan carian atau penapis semasa.</div>';
-      return;
-    }
-
-    grid.innerHTML = filtered.map(function (item) {
-      return renderQuizCardMarkup_(item, false);
-    }).join("\n");
-
-    if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
+  function printOfficialSlip() {
+    document.body.classList.add("printing-official-slip");
+    window.print();
+    setTimeout(function () {
+      document.body.classList.remove("printing-official-slip");
+    }, 500);
   }
 
-  // ==========================================================================
-  // OPEN QUIZ IN PROTECTED <iframe srcdoc> & SYNC PROGRESS / SCORE
-  // ==========================================================================
+  // --- [features/quiz-engine/examStageController.js] ---
+  /**
+   * src/features/quiz-engine/examStageController.js
+   * Pengawal Ruang Peperiksaan (<iframe sandbox srcdoc>), muatan kertas soalan & penyegerakan checkpoint.
+   */
+
+
+
+
+
+
+
+
   async function openQuizSet(fileId, autoResume, resetStart) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
@@ -1399,7 +1850,21 @@
     } catch (e) {}
   }
 
-  // Terima mesej postMessage daripada jambatan di dalam <iframe sandbox srcdoc> dengan pengesahan ketat
+  // --- [features/quiz-engine/quizMessageHandler.js] ---
+  /**
+   * src/features/quiz-engine/quizMessageHandler.js
+   * Pengendali mesej postMessage selamat daripada iframe kuiz (checkpoint progress, sekatan cetak & tamat kuiz).
+   */
+
+
+
+
+
+
+
+
+
+
   function handleQuizMessage(event) {
     const iframe = document.getElementById("examIframe");
     if (!iframe || !iframe.contentWindow || !event || event.source !== iframe.contentWindow) return;
@@ -1576,80 +2041,16 @@
     }
   }
 
-  // ==========================================================================
-  // OFFICIAL RESULT SLIP MODAL & SAFE PRINT
-  // ==========================================================================
-  function openResultSlipModal() {
-    const data = portalState.latestSlipData;
-    const dlg = document.getElementById("resultSlipDialog");
-    if (!data || !dlg) return;
+  // --- [features/auth/sessionController.js] ---
+  /**
+   * src/features/auth/sessionController.js
+   * Pengurusan sesi pembeli berdaftar (simpan token tempatan, pulihkan sesi sedia ada & log keluar).
+   */
 
-    const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
-    const customNameInput = document.getElementById("slipCustomNameInput");
-    const savedOpenName = getOpenStudentName();
-    if (customNameInput && isOpenGuest) {
-      customNameInput.value = savedOpenName;
-    }
 
-    const displayStudentName = isOpenGuest
-      ? (savedOpenName || data.buyerName || "Pelajar")
-      : ((portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar");
 
-    const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
-    document.getElementById("slipStudentName").textContent = displayStudentName;
-    document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
-    document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
-    document.getElementById("slipSubject").textContent = data.subject || "SPM";
-    document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
-    document.getElementById("slipScorePct").textContent = safePct + "%";
-    document.getElementById("slipGrade").textContent = String(data.grade || "—").slice(0, 6);
-    document.getElementById("slipBreakdown").textContent = data.breakdown || ("Markah: " + (data.scoreText || ""));
 
-    const weakListEl = document.getElementById("slipWeakTopics");
-    weakListEl.textContent = "";
-    const wt = Array.isArray(data.weakTopics) ? data.weakTopics : [];
-    if (wt.length === 0) {
-      const okLi = document.createElement("li");
-      okLi.style.color = "var(--grade-emerald)";
-      okLi.textContent = "Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.";
-      weakListEl.appendChild(okLi);
-    } else {
-      wt.forEach(function (w) {
-        const li = document.createElement("li");
-        const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
-        const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
-        const wTot = Math.max(1, Math.round(Number(w.total) || 1));
-        const isAttempted = w.attempted === undefined ? true : Boolean(w.attempted);
-        if (isAttempted) {
-          li.style.color = "var(--status-danger, #b91c1c)";
-          li.style.fontWeight = "600";
-          li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ") • Perlu Ulang Kaji";
-        } else {
-          li.textContent = String(w.topic || "Topik") + " — Belum Dijawab (" + wObt + "/" + wTot + ")";
-        }
-        weakListEl.appendChild(li);
-      });
-    }
 
-    if (typeof dlg.showModal === "function") {
-      dlg.showModal();
-    } else {
-      dlg.setAttribute("open", "");
-    }
-    if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(safePct);
-  }
-
-  function printOfficialSlip() {
-    document.body.classList.add("printing-official-slip");
-    window.print();
-    setTimeout(function () {
-      document.body.classList.remove("printing-official-slip");
-    }, 500);
-  }
-
-  // ==========================================================================
-  // AUTHENTICATION & SESSION LIFECYCLE
-  // ==========================================================================
   function saveSessionLocally(token, userObj) {
     try {
       localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify({
@@ -1711,326 +2112,165 @@
     }
   }
 
-  // ==========================================================================
-  // EVENT BINDINGS
-  // ==========================================================================
-  function bindEvents() {
-    initFormValidation();
-    window.addEventListener("message", handleQuizMessage);
+  // --- [features/auth/routeController.js] ---
+  /**
+   * src/features/auth/routeController.js
+   * Penghala paparan utama berasaskan hash URL (#admin, #login, #portal) & Mod Akses Terbuka.
+   */
 
-    // Sekat Ctrl+S / Ctrl+P pada peringkat induk kecuali semasa dialog slip dibuka
-    document.addEventListener("keydown", function (e) {
-      const ctrl = e.ctrlKey || e.metaKey;
-      const k = String(e.key || "").toLowerCase();
-      if (ctrl && (k === "s" || k === "u")) {
-        e.preventDefault();
-      }
-      if (ctrl && k === "p") {
-        const dlg = document.getElementById("resultSlipDialog");
-        if (!dlg || !dlg.open) {
-          e.preventDefault();
-          showToast("Cetakan halaman disekat. Gunakan butang Slip Keputusan selepas tamat menjawab kuiz.");
-        }
-      }
-    });
 
-    // Toggle Show/Hide PIN
-    const pinBtn = document.getElementById("togglePinBtn");
-    const pinInput = document.getElementById("loginPinInput");
-    if (pinBtn && pinInput) {
-      pinBtn.addEventListener("click", function () {
-        const isPwd = pinInput.type === "password";
-        pinInput.type = isPwd ? "text" : "password";
-        pinBtn.setAttribute("aria-pressed", isPwd ? "true" : "false");
-        pinBtn.setAttribute("aria-label", isPwd ? "Sembunyikan Kod PIN" : "Paparkan Kod PIN");
-      });
-    }
 
-    // Submit Login
-    const loginForm = document.getElementById("loginForm");
-    if (loginForm) {
-      loginForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const errBox = document.getElementById("loginAlertBox");
-        const errText = document.getElementById("loginAlertText");
-        const submitBtn = document.getElementById("loginSubmitBtn");
 
-        const userId = document.getElementById("loginUserIdInput").value.trim();
-        const pin = document.getElementById("loginPinInput").value.trim();
 
-        if (!loginForm.checkValidity()) {
-          loginForm.reportValidity();
-          return;
-        }
 
-        errBox.hidden = true;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Mengesahkan Akses...";
-
-        try {
-          const res = await callBackend("login", { userId: userId, pin: pin });
-          if (!res || !res.ok) {
-            errText.textContent = (res && res.error) || "Log masuk gagal. Sila semak ID & PIN anda.";
-            errBox.hidden = false;
-            if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
-            return;
-          }
-
-          portalState.sessionToken = res.sessionToken;
-          saveSessionLocally(res.sessionToken, res.user);
-
-          const landingEl = document.getElementById("landingView");
-          if (landingEl) landingEl.hidden = true;
-          document.getElementById("loginView").hidden = true;
-          document.getElementById("dashboardView").hidden = false;
-          if (window.location.hash.toLowerCase() === "#login") {
-            history.replaceState(null, "", window.location.pathname + window.location.search);
-          }
-          applyDashboardBundle(res);
-        } catch (err) {
-          errText.textContent = "Gagal menghubungi pelayan pengesahan: " + err.message;
-          errBox.hidden = false;
-          if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Log Masuk ke Portal";
-        }
-      });
-    }
-
-    // Logout & Refresh
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
-
-    const refreshBtn = document.getElementById("refreshCatalogBtn");
-    if (refreshBtn) {
-      refreshBtn.addEventListener("click", async function () {
-        refreshBtn.disabled = true;
-        try {
-          if (!portalState.sessionToken && isOpenAccessMode()) {
-            await enterOpenPortal(true);
-            showToast("Bank soalan telah dikemas kini.");
-          } else {
-            const res = await callBackend("dashboard", { forceRefresh: true });
-            if (res && res.ok) {
-              applyDashboardBundle(res);
-              showToast("Bank soalan & Leaderboard telah dikemas kini.");
-            }
-          }
-        } catch (err) {
-          showToast("Gagal menyegarkan data.");
-        } finally {
-          refreshBtn.disabled = false;
-        }
-      });
-    }
-
-    // Delegated Clicks (Open Quiz, Subject Filter Chips, Leaderboard Period)
-    document.addEventListener("click", async function (e) {
-      const openBtn = e.target.closest(".js-open-quiz");
-      if (openBtn) {
-        const fid = openBtn.getAttribute("data-file-id");
-        const resume = openBtn.getAttribute("data-resume") === "1";
-        const reset = openBtn.getAttribute("data-reset") === "1";
-        if (fid) openQuizSet(fid, resume, reset);
-        return;
-      }
-
-      const subChip = e.target.closest(".js-subject-chip");
-      if (subChip) {
-        portalState.selectedSubject = subChip.getAttribute("data-subject") || "ALL";
-        document.querySelectorAll(".js-subject-chip").forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn === subChip ? "true" : "false");
-        });
-        renderCatalogSection();
-        return;
-      }
-
-      const klonChip = e.target.closest(".js-klon-subject-chip");
-      if (klonChip) {
-        portalState.klonSelectedSubject = klonChip.getAttribute("data-subject") || "ALL";
-        document.querySelectorAll(".js-klon-subject-chip").forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn === klonChip ? "true" : "false");
-        });
-        renderKlonCatalogSection();
-        return;
-      }
-
-      const lbTab = e.target.closest(".js-lb-period");
-      if (lbTab) {
-        const period = lbTab.getAttribute("data-period") || "all";
-        portalState.lbPeriod = period;
-        document.querySelectorAll(".js-lb-period").forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn === lbTab ? "true" : "false");
-        });
-        try {
-          const res = await callBackend("getLeaderboard", {
-            period: portalState.lbPeriod,
-            subject: portalState.lbSubject
-          });
-          if (res && res.ok) {
-            if (!portalState.sessionToken && isOpenAccessMode()) {
-              portalState.rawServerLeaderboard = res.leaderboard;
-              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
-            } else {
-              portalState.leaderboard = res.leaderboard;
-            }
-            renderLeaderboardSection();
-          }
-        } catch (err) {}
-      }
-    });
-
-    // Leaderboard Subject Select
-    const lbSubSel = document.getElementById("lbSubjectSelect");
-    if (lbSubSel) {
-      lbSubSel.addEventListener("change", async function () {
-        portalState.lbSubject = lbSubSel.value || "ALL";
-        try {
-          const res = await callBackend("getLeaderboard", {
-            period: portalState.lbPeriod,
-            subject: portalState.lbSubject
-          });
-          if (res && res.ok) {
-            if (!portalState.sessionToken && isOpenAccessMode()) {
-              portalState.rawServerLeaderboard = res.leaderboard;
-              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
-            } else {
-              portalState.leaderboard = res.leaderboard;
-            }
-            renderLeaderboardSection();
-          }
-        } catch (err) {}
-      });
-    }
-
-    // Catalog Search & Status Filter
-    const searchInput = document.getElementById("catalogSearchInput");
-    if (searchInput) {
-      searchInput.addEventListener("input", function () {
-        portalState.searchQuery = searchInput.value;
-        renderCatalogSection();
-      });
-    }
-
-    const statusSelect = document.getElementById("catalogStatusSelect");
-    if (statusSelect) {
-      statusSelect.addEventListener("change", function () {
-        portalState.selectedStatus = statusSelect.value || "ALL";
-        renderCatalogSection();
-      });
-    }
-
-    const klonSearchInput = document.getElementById("klonSearchInput");
-    if (klonSearchInput) {
-      klonSearchInput.addEventListener("input", function () {
-        portalState.klonSearchQuery = klonSearchInput.value;
-        renderKlonCatalogSection();
-      });
-    }
-
-    const klonStatusSelect = document.getElementById("klonStatusSelect");
-    if (klonStatusSelect) {
-      klonStatusSelect.addEventListener("change", function () {
-        portalState.klonSelectedStatus = klonStatusSelect.value || "ALL";
-        renderKlonCatalogSection();
-      });
-    }
-
-    // Exam Stage Controls & Result Slip Dialog
-    const closeStageBtn = document.getElementById("closeExamStageBtn");
-    if (closeStageBtn) closeStageBtn.addEventListener("click", closeQuizStage);
-
-    const openSlipBtn = document.getElementById("openSlipBtn");
-    if (openSlipBtn) openSlipBtn.addEventListener("click", openResultSlipModal);
-
-    const printSlipBtn = document.getElementById("printSlipBtn");
-    if (printSlipBtn) printSlipBtn.addEventListener("click", printOfficialSlip);
-
-    const slipCustomNameInput = document.getElementById("slipCustomNameInput");
-    if (slipCustomNameInput) {
-      slipCustomNameInput.addEventListener("input", function () {
-        if (portalState.sessionToken || !isOpenAccessMode()) return;
-        const clean = setOpenStudentName(slipCustomNameInput.value);
-        const finalName = clean || "Pelajar";
-        const slipNameEl = document.getElementById("slipStudentName");
-        if (slipNameEl) slipNameEl.textContent = finalName;
-        if (portalState.latestSlipData) portalState.latestSlipData.buyerName = finalName;
-        renderHeaderUser();
-      });
-    }
-
-    const closeSlipBtn = document.getElementById("closeSlipBtn");
-    const slipDlg = document.getElementById("resultSlipDialog");
-    if (closeSlipBtn && slipDlg) {
-      closeSlipBtn.addEventListener("click", function () { closeTopLayer(slipDlg); });
-      slipDlg.addEventListener("cancel", function (ev) {
-        ev.preventDefault();
-        closeTopLayer(slipDlg);
-      });
-      if (typeof HTMLDialogElement !== "undefined" && !("closedBy" in HTMLDialogElement.prototype)) {
-        slipDlg.addEventListener("click", function (ev) {
-          if (ev.target !== slipDlg) return;
-          const rect = slipDlg.getBoundingClientRect();
-          const isDialogContent = (
-            rect.top <= ev.clientY &&
-            ev.clientY <= rect.top + rect.height &&
-            rect.left <= ev.clientX &&
-            ev.clientX <= rect.left + rect.width
-          );
-          if (!isDialogContent) {
-            closeTopLayer(slipDlg);
-          }
-        });
-      }
-    }
-
-    initLandingAndOrderBindings();
-    initAdminPanelBindings();
+  function isHashAdmin() {
+    return window.location.hash.toLowerCase() === "#admin";
   }
 
-  // ==========================================================================
-  // LAMAN JUALAN UTAMA (LANDING PAGE), SIMULASI KUIZ DEMO & TEMPAHAN PAKEJ
-  // ==========================================================================
+  function isHashLogin() {
+    return window.location.hash.toLowerCase() === "#login";
+  }
+
+  function isHashPortal() {
+    const h = window.location.hash.toLowerCase();
+    return h === "#portal" || h === "#klon-portal";
+  }
+
+  async function syncRouteMode() {
+    syncOpenAccessDom();
+
+    const landingView = document.getElementById("landingView");
+    const adminView = document.getElementById("adminView");
+    const loginView = document.getElementById("loginView");
+    const dashboardView = document.getElementById("dashboardView");
+    const examStage = document.getElementById("examStage");
+    if (!adminView) return;
+
+    if (isHashAdmin()) {
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = true;
+      dashboardView.hidden = true;
+      examStage.hidden = true;
+      adminView.hidden = false;
+
+      let savedAdminTok = portalState.adminToken;
+      if (!savedAdminTok) {
+        try {
+          savedAdminTok = sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) || "";
+        } catch (e) {}
+      }
+
+      if (savedAdminTok) {
+        portalState.adminToken = savedAdminTok;
+        try {
+          const res = await callBackend("adminDashboard", { adminToken: savedAdminTok });
+          if (res && res.ok) {
+            document.getElementById("adminLoginShell").hidden = true;
+            document.getElementById("adminDashboardShell").hidden = false;
+            applyAdminBundle(res);
+            return;
+          }
+        } catch (e) {}
+      }
+
+      portalState.adminToken = "";
+      document.getElementById("adminDashboardShell").hidden = true;
+      document.getElementById("adminLoginShell").hidden = false;
+      return;
+    }
+
+    adminView.hidden = true;
+    if (portalState.sessionToken && portalState.user) {
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = true;
+      dashboardView.hidden = false;
+      return;
+    }
+
+    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
+      const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal";
+      if (isHashLogin() || wantsKlonScroll) {
+        history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
+      }
+      await enterOpenPortal(false);
+      if (wantsKlonScroll) {
+        const klonHead = document.getElementById("klonCatalogHeading");
+        if (klonHead) setTimeout(function () { klonHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      }
+      return;
+    }
+
+    if (!isOpenAccessMode() && isHashPortal()) {
+      history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
+    }
+
+    dashboardView.hidden = true;
+    if (isHashLogin() || (!isOpenAccessMode() && isHashPortal())) {
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = false;
+      if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
+    } else {
+      loginView.hidden = true;
+      if (landingElExists(landingView)) {
+        landingView.hidden = false;
+        const hashId = window.location.hash ? window.location.hash.slice(1) : "";
+        if (hashId) {
+          const targetSec = document.getElementById(hashId);
+          if (targetSec && !targetSec.hidden) {
+            setTimeout(function () { targetSec.scrollIntoView(); }, 30);
+          }
+        }
+      }
+    }
+  }
+
+  function landingElExists(el) {
+    return Boolean(el);
+  }
+
+  // --- [features/landing/demoQuizWidget.js] ---
+  /**
+   * src/features/landing/demoQuizWidget.js
+   * Komponen interaktif Simulasi Kuiz Demo pada halaman jualan/utama menggunakan data JSON luaran.
+   */
   const DEMO_QUESTIONS = [
     {
-      topic: "Topik: Ungkapan & Persamaan Kuadratik (Matematik Kertas 1)",
-      question: "Diberi persamaan kuadratik (x - 4)(2x + 3) = 0. Nyatakan punca-punca bagi persamaan tersebut.",
-      options: [
+      "topic": "Topik: Ungkapan & Persamaan Kuadratik (Matematik Kertas 1)",
+      "question": "Diberi persamaan kuadratik (x - 4)(2x + 3) = 0. Nyatakan punca-punca bagi persamaan tersebut.",
+      "options": [
         "x = -4 atau x = 3/2",
         "x = 4 atau x = -3/2",
         "x = 4 atau x = 3/2",
         "x = -4 atau x = -3/2"
       ],
-      correctIndex: 1,
-      explanation: "Apabila hasil darab dua faktor ialah sifar: (x - 4) = 0 menghasilkan x = 4, manakala (2x + 3) = 0 menghasilkan 2x = -3, maka x = -3/2."
+      "correctIndex": 1,
+      "explanation": "Apabila hasil darab dua faktor ialah sifar: (x - 4) = 0 menghasilkan x = 4, manakala (2x + 3) = 0 menghasilkan 2x = -3, maka x = -3/2."
     },
     {
-      topic: "Topik: Bab 2 Tingkatan 5 — Perlembagaan Persekutuan (Sejarah Kertas 1)",
-      question: "Apakah kepentingan utama Pindaan Perlembagaan Persekutuan 1963 dalam sejarah pembinaan negara Malaysia?",
-      options: [
+      "topic": "Topik: Bab 2 Tingkatan 5 — Perlembagaan Persekutuan (Sejarah Kertas 1)",
+      "question": "Apakah kepentingan utama Pindaan Perlembagaan Persekutuan 1963 dalam sejarah pembinaan negara Malaysia?",
+      "options": [
         "Memansuhkan jawatan Yang di-Pertuan Agong di peringkat Persekutuan",
         "Menyesuaikan peruntukan perlembagaan bagi kemasukan Sabah, Sarawak dan Singapura",
         "Menyeragamkan semua undang-undang adat negeri di bawah satu mahkamah tunggal",
         "Menggantikan sistem Raja Berperlembagaan kepada sistem Republik"
       ],
-      correctIndex: 1,
-      explanation: "Kata kunci skema KSSM: Pindaan 1963 dilakukan khusus untuk menyesuaikan struktur Mahkamah Tinggi, kedudukan Yang di-Pertua Negeri, dan autonomi imigresen berikutan pembentukan Malaysia."
+      "correctIndex": 1,
+      "explanation": "Kata kunci skema KSSM: Pindaan 1963 dilakukan khusus untuk menyesuaikan struktur Mahkamah Tinggi, kedudukan Yang di-Pertua Negeri, dan autonomi imigresen berikutan pembentukan Malaysia."
     },
     {
-      topic: "Topik: Analisis & Tafsiran Penyata Kewangan (Prinsip Perakaunan)",
-      question: "Perniagaan Wawasan mempunyai Aset Semasa berjumlah RM 54,000 dan Liabiliti Semasa berjumlah RM 18,000. Berapakah Nisbah Semasa perniagaan ini?",
-      options: [
+      "topic": "Topik: Analisis & Tafsiran Penyata Kewangan (Prinsip Perakaunan)",
+      "question": "Perniagaan Wawasan mempunyai Aset Semasa berjumlah RM 54,000 dan Liabiliti Semasa berjumlah RM 18,000. Berapakah Nisbah Semasa perniagaan ini?",
+      "options": [
         "0.33 : 1",
         "1.5 : 1",
         "3 : 1",
         "36,000 : 1"
       ],
-      correctIndex: 2,
-      explanation: "Rumus Nisbah Semasa = Aset Semasa / Liabiliti Semasa = RM 54,000 / RM 18,000 = 3 : 1. Ini bermakna setiap RM 1 liabiliti jangka pendek disokong oleh RM 3 aset semasa."
+      "correctIndex": 2,
+      "explanation": "Rumus Nisbah Semasa = Aset Semasa / Liabiliti Semasa = RM 54,000 / RM 18,000 = 3 : 1. Ini bermakna setiap RM 1 liabiliti jangka pendek disokong oleh RM 3 aset semasa."
     }
   ];
-
   let activeDemoIdx = 0;
   let demoXpEarned = 0;
   const answeredDemoSet = {};
@@ -2108,6 +2348,19 @@
     expEl.hidden = false;
     if (window.ETutorMotion) window.ETutorMotion.animateDemoFeedback(expEl);
   }
+
+  // --- [features/landing/orderLeadModal.js] ---
+  /**
+   * src/features/landing/orderLeadModal.js
+   * Pengikat acara Halaman Utama (penapis Klon SPM, pautan terus portal, dan dialog tempahan WhatsApp).
+   */
+
+
+
+
+
+
+
 
   function initLandingAndOrderBindings() {
     renderLandingDemoQuestion(0);
@@ -2200,24 +2453,10 @@
         return;
       }
 
-      const lpKlonFilterBtn = e.target.closest(".js-lp-klon-filter");
-      if (lpKlonFilterBtn) {
-        const grp = lpKlonFilterBtn.getAttribute("data-klon-filter") || "ALL";
-        portalState.lpKlonFilter = grp;
-        document.querySelectorAll(".js-lp-klon-filter").forEach(function (btn) {
-          btn.setAttribute("aria-pressed", btn === lpKlonFilterBtn ? "true" : "false");
-        });
-        document.querySelectorAll("#lpKlonCardsGrid .klon-card").forEach(function (card) {
-          const cardGrp = card.getAttribute("data-klon-group") || "";
-          card.hidden = grp !== "ALL" && cardGrp !== grp;
-        });
-        return;
-      }
-
       const gotoKlonPortal = e.target.closest(".js-goto-klon-portal");
       if (gotoKlonPortal) {
         e.preventDefault();
-        window.location.hash = isOpenAccessMode() || (portalState.sessionToken && portalState.user) ? "#klon-portal" : "#login";
+        window.location.hash = isOpenAccessMode() || (portalState.sessionToken && portalState.user) ? "#portal" : "#login";
         syncRouteMode().then(function () {
           const klonHead = document.getElementById("klonCatalogHeading");
           if (klonHead && !document.getElementById("dashboardView").hidden) {
@@ -2328,114 +2567,37 @@
     }
   }
 
-  // ==========================================================================
-  // PANEL KAWALAN ADMIN (#admin) & PENGHALAAN PAPARAN (#landing / #login / #admin)
-  // ==========================================================================
-  function isHashAdmin() {
-    return window.location.hash.toLowerCase() === "#admin";
-  }
-
-  function isHashLogin() {
-    return window.location.hash.toLowerCase() === "#login";
-  }
-
-  function isHashPortal() {
-    const h = window.location.hash.toLowerCase();
-    return h === "#portal" || h === "#klon-portal";
-  }
-
-  async function syncRouteMode() {
-    syncOpenAccessDom();
-
-    const landingView = document.getElementById("landingView");
-    const adminView = document.getElementById("adminView");
-    const loginView = document.getElementById("loginView");
-    const dashboardView = document.getElementById("dashboardView");
-    const examStage = document.getElementById("examStage");
-    if (!adminView) return;
-
-    if (isHashAdmin()) {
-      if (landingElExists(landingView)) landingView.hidden = true;
-      loginView.hidden = true;
-      dashboardView.hidden = true;
-      examStage.hidden = true;
-      adminView.hidden = false;
-
-      let savedAdminTok = portalState.adminToken;
-      if (!savedAdminTok) {
-        try {
-          savedAdminTok = sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) || "";
-        } catch (e) {}
-      }
-
-      if (savedAdminTok) {
-        portalState.adminToken = savedAdminTok;
-        try {
-          const res = await callBackend("adminDashboard", { adminToken: savedAdminTok });
-          if (res && res.ok) {
-            document.getElementById("adminLoginShell").hidden = true;
-            document.getElementById("adminDashboardShell").hidden = false;
-            applyAdminBundle(res);
-            return;
-          }
-        } catch (e) {}
-      }
-
-      portalState.adminToken = "";
-      document.getElementById("adminDashboardShell").hidden = true;
-      document.getElementById("adminLoginShell").hidden = false;
-      return;
-    }
-
-    adminView.hidden = true;
-    if (portalState.sessionToken && portalState.user) {
-      if (landingElExists(landingView)) landingView.hidden = true;
-      loginView.hidden = true;
-      dashboardView.hidden = false;
-      return;
-    }
-
-    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
-      if (isHashLogin()) {
-        history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
-      }
-      await enterOpenPortal(false);
-      return;
-    }
-
-    if (!isOpenAccessMode() && isHashPortal()) {
-      history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
-    }
-
-    dashboardView.hidden = true;
-    if (isHashLogin() || (!isOpenAccessMode() && isHashPortal())) {
-      if (landingElExists(landingView)) landingView.hidden = true;
-      loginView.hidden = false;
-      if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
-    } else {
-      loginView.hidden = true;
-      if (landingElExists(landingView)) {
-        landingView.hidden = false;
-        const hashId = window.location.hash ? window.location.hash.slice(1) : "";
-        if (hashId) {
-          const targetSec = document.getElementById(hashId);
-          if (targetSec && !targetSec.hidden) {
-            setTimeout(function () { targetSec.scrollIntoView(); }, 30);
-          }
-        }
-      }
-    }
-  }
-
-  function landingElExists(el) {
-    return Boolean(el);
-  }
-
+  // --- [features/admin/adminSubjectPicker.js] ---
+  /**
+   * src/features/admin/adminSubjectPicker.js
+   * Pemilih pelbagai subjek KSSM (accessible fieldset + preset pakej) untuk Panel Kawalan Admin.
+   */
   const ADMIN_PRESET_SUBJECTS = {
-    TERAS: ["Bahasa Melayu", "Bahasa Inggeris", "Sejarah", "Matematik", "Sains", "Pendidikan Islam", "Pendidikan Moral"],
-    SAINS_TULEN: ["Biologi", "Fizik", "Kimia", "Matematik Tambahan"],
-    IKHTISAS: ["Prinsip Perakaunan", "Perniagaan", "Ekonomi", "Sains Komputer", "Geografi", "Tasawwur Islam"]
+    "TERAS": [
+      "Bahasa Melayu",
+      "Bahasa Inggeris",
+      "Sejarah",
+      "Matematik",
+      "Sains",
+      "Pendidikan Islam",
+      "Pendidikan Moral"
+    ],
+    "SAINS_TULEN": [
+      "Biologi",
+      "Fizik",
+      "Kimia",
+      "Matematik Tambahan"
+    ],
+    "IKHTISAS": [
+      "Prinsip Perakaunan",
+      "Perniagaan",
+      "Ekonomi",
+      "Sains Komputer",
+      "Geografi",
+      "Tasawwur Islam"
+    ]
   };
+
 
   function getMergedSubjectOptions() {
     const defaults = (window.ETUTOR_CONFIG && Array.isArray(window.ETUTOR_CONFIG.DEFAULT_SUBJECTS))
@@ -2543,6 +2705,15 @@
       syncAdminPackageInputFromCheckboxes();
     }
   }
+
+  // --- [features/admin/adminTablesView.js] ---
+  /**
+   * src/features/admin/adminTablesView.js
+   * Pembina mesej pengaktifan WhatsApp pelanggan serta pemapar jadual Pelanggan (PIN dikaburkan) & Log Akses.
+   */
+
+
+
 
   function toMalaysianWhatsAppNumber(rawUserId) {
     const s = String(rawUserId || "").trim();
@@ -2712,6 +2883,119 @@
       ].join("");
     }).join("");
   }
+
+  // --- [features/admin/adminTableActionsController.js] ---
+  /**
+   * src/features/admin/adminTableActionsController.js
+   * Pengawal tindakan baris jadual Admin (Papar PIN, Edit Pakej, Hantar WA, Salin WA, Reset Peranti & Sekat).
+   */
+
+
+
+
+
+  function bindAdminTableRowActions() {
+    document.addEventListener("click", async function (e) {
+      const pinToggleBtn = e.target.closest(".js-adm-toggle-pin");
+      if (pinToggleBtn) {
+        const uid = pinToggleBtn.getAttribute("data-uid");
+        if (uid) {
+          if (portalState.revealedAdminPins.has(uid)) {
+            portalState.revealedAdminPins.delete(uid);
+          } else {
+            portalState.revealedAdminPins.add(uid);
+          }
+          renderAdminUsersTable();
+        }
+        return;
+      }
+
+      const editUserBtn = e.target.closest(".js-adm-edit-user");
+      if (editUserBtn && portalState.adminData) {
+        const uid = editUserBtn.getAttribute("data-uid");
+        const found = (portalState.adminData.users || []).find(function (u) { return u.userId === uid; });
+        if (found) {
+          document.getElementById("admUserId").value = found.userId || "";
+          document.getElementById("admBuyerName").value = found.buyerName || "";
+          document.getElementById("admDeviceLimit").value = String(found.deviceLimit || 2);
+          document.getElementById("admExpiry").value = found.expiryDate || "";
+          document.getElementById("admCustomPin").value = found.pin || "";
+
+          const rawPkg = String(found.aksesPakej || "ALL").trim();
+          if (!rawPkg || rawPkg.toUpperCase() === "ALL") {
+            applyAdminPresetSelection((found.deviceLimit || 2) >= 4 ? "FAMILY" : "ALL", "ALL");
+          } else {
+            applyAdminPresetSelection("CUSTOM", rawPkg);
+          }
+
+          const addHeading = document.getElementById("adminAddHeading");
+          if (addHeading) addHeading.scrollIntoView({ behavior: "smooth", block: "start" });
+          showToast("Rekod " + found.buyerName + " dimuatkan ke borang untuk dikemas kini.");
+        }
+        return;
+      }
+
+      const sendWaBtn = e.target.closest(".js-adm-send-wa");
+      if (sendWaBtn) {
+        const msg = buildCustomerActivationWaText(sendWaBtn);
+        const buyerWa = toMalaysianWhatsAppNumber(sendWaBtn.getAttribute("data-uid"));
+        const targetWaUrl = buyerWa
+          ? "https://wa.me/" + buyerWa + "?text=" + encodeURIComponent(msg)
+          : "https://wa.me/?text=" + encodeURIComponent(msg);
+        try { await navigator.clipboard.writeText(msg); } catch {}
+        window.open(targetWaUrl, "_blank", "noopener");
+        showToast(buyerWa ? "Membuka WhatsApp terus kepada pelanggan..." : "Mesej disalin & membuka WhatsApp...");
+        return;
+      }
+
+      const waBtn = e.target.closest(".js-adm-copy-wa");
+      if (waBtn) {
+        const msg = buildCustomerActivationWaText(waBtn);
+        try {
+          await navigator.clipboard.writeText(msg);
+          showToast("Mesej WhatsApp akses (lengkap No. Admin 013-732 7696) berjaya disalin!");
+        } catch {
+          showToast("PIN Pelanggan: " + waBtn.getAttribute("data-pin"));
+        }
+        return;
+      }
+
+      const resetBtn = e.target.closest(".js-adm-reset-dev");
+      if (resetBtn) {
+        const uid = resetBtn.getAttribute("data-uid");
+        const res = await callBackend("adminResetDevices", { adminToken: portalState.adminToken, userId: uid });
+        if (res && res.ok) {
+          applyAdminBundle(res);
+          showToast("Senarai peranti untuk " + uid + " telah dikosongkan.");
+        }
+        return;
+      }
+
+      const toggleBtn = e.target.closest(".js-adm-toggle-status");
+      if (toggleBtn) {
+        const uid = toggleBtn.getAttribute("data-uid");
+        const res = await callBackend("adminToggleStatus", { adminToken: portalState.adminToken, userId: uid });
+        if (res && res.ok) {
+          applyAdminBundle(res);
+          showToast("Status langganan " + uid + " telah dikemas kini.");
+        }
+      }
+    });
+  }
+
+  // --- [features/admin/adminAuthAndUsersController.js] ---
+  /**
+   * src/features/admin/adminAuthAndUsersController.js
+   * Pengawal Log Masuk Admin (#admin), suis Mod Akses Terbuka tahun hadapan & borang pendaftaran pelanggan.
+   */
+
+
+
+
+
+
+
+
 
   function initAdminPanelBindings() {
     window.addEventListener("hashchange", syncRouteMode);
@@ -2912,102 +3196,342 @@
       });
     }
 
+
+    bindAdminTableRowActions();
+  }
+
+  // --- [features/dashboard/catalogAndLeaderboardEvents.js] ---
+  /**
+   * src/features/dashboard/catalogAndLeaderboardEvents.js
+   * Pengikat acara penapis Katalog Harian, Katalog Klon SPM, Leaderboard, serta kawalan Slip Keputusan.
+   */
+
+
+
+
+
+
+
+
+
+
+  function bindCatalogLeaderboardAndSlipEvents() {
     document.addEventListener("click", async function (e) {
-      const pinToggleBtn = e.target.closest(".js-adm-toggle-pin");
-      if (pinToggleBtn) {
-        const uid = pinToggleBtn.getAttribute("data-uid");
-        if (uid) {
-          if (portalState.revealedAdminPins.has(uid)) {
-            portalState.revealedAdminPins.delete(uid);
-          } else {
-            portalState.revealedAdminPins.add(uid);
-          }
-          renderAdminUsersTable();
-        }
+      const openBtn = e.target.closest(".js-open-quiz");
+      if (openBtn) {
+        const fid = openBtn.getAttribute("data-file-id");
+        const resume = openBtn.getAttribute("data-resume") === "1";
+        const reset = openBtn.getAttribute("data-reset") === "1";
+        if (fid) openQuizSet(fid, resume, reset);
         return;
       }
 
-      const editUserBtn = e.target.closest(".js-adm-edit-user");
-      if (editUserBtn && portalState.adminData) {
-        const uid = editUserBtn.getAttribute("data-uid");
-        const found = (portalState.adminData.users || []).find(function (u) { return u.userId === uid; });
-        if (found) {
-          document.getElementById("admUserId").value = found.userId || "";
-          document.getElementById("admBuyerName").value = found.buyerName || "";
-          document.getElementById("admDeviceLimit").value = String(found.deviceLimit || 2);
-          document.getElementById("admExpiry").value = found.expiryDate || "";
-          document.getElementById("admCustomPin").value = found.pin || "";
-
-          const rawPkg = String(found.aksesPakej || "ALL").trim();
-          if (!rawPkg || rawPkg.toUpperCase() === "ALL") {
-            applyAdminPresetSelection((found.deviceLimit || 2) >= 4 ? "FAMILY" : "ALL", "ALL");
-          } else {
-            applyAdminPresetSelection("CUSTOM", rawPkg);
-          }
-
-          const addHeading = document.getElementById("adminAddHeading");
-          if (addHeading) addHeading.scrollIntoView({ behavior: "smooth", block: "start" });
-          showToast("Rekod " + found.buyerName + " dimuatkan ke borang untuk dikemas kini.");
-        }
+      const klonGroupChip = e.target.closest(".js-klon-group-chip");
+      if (klonGroupChip) {
+        portalState.klonSelectedGroup = klonGroupChip.getAttribute("data-klon-group") || "ALL";
+        document.querySelectorAll(".js-klon-group-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === klonGroupChip ? "true" : "false");
+        });
+        populateKlonSubjectChips();
+        renderKlonCatalogSection();
         return;
       }
 
-      const sendWaBtn = e.target.closest(".js-adm-send-wa");
-      if (sendWaBtn) {
-        const msg = buildCustomerActivationWaText(sendWaBtn);
-        const buyerWa = toMalaysianWhatsAppNumber(sendWaBtn.getAttribute("data-uid"));
-        const targetWaUrl = buyerWa
-          ? "https://wa.me/" + buyerWa + "?text=" + encodeURIComponent(msg)
-          : "https://wa.me/?text=" + encodeURIComponent(msg);
-        try { await navigator.clipboard.writeText(msg); } catch {}
-        window.open(targetWaUrl, "_blank", "noopener");
-        showToast(buyerWa ? "Membuka WhatsApp terus kepada pelanggan..." : "Mesej disalin & membuka WhatsApp...");
+      const subChip = e.target.closest(".js-subject-chip");
+      if (subChip) {
+        portalState.selectedSubject = subChip.getAttribute("data-subject") || "ALL";
+        document.querySelectorAll(".js-subject-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === subChip ? "true" : "false");
+        });
+        renderCatalogSection();
         return;
       }
 
-      const waBtn = e.target.closest(".js-adm-copy-wa");
-      if (waBtn) {
-        const msg = buildCustomerActivationWaText(waBtn);
+      const klonChip = e.target.closest(".js-klon-subject-chip");
+      if (klonChip) {
+        portalState.klonSelectedSubject = klonChip.getAttribute("data-subject") || "ALL";
+        document.querySelectorAll(".js-klon-subject-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === klonChip ? "true" : "false");
+        });
+        renderKlonCatalogSection();
+        return;
+      }
+
+      const lbTab = e.target.closest(".js-lb-period");
+      if (lbTab) {
+        const period = lbTab.getAttribute("data-period") || "all";
+        portalState.lbPeriod = period;
+        document.querySelectorAll(".js-lb-period").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === lbTab ? "true" : "false");
+        });
         try {
-          await navigator.clipboard.writeText(msg);
-          showToast("Mesej WhatsApp akses (lengkap No. Admin 013-732 7696) berjaya disalin!");
-        } catch {
-          showToast("PIN Pelanggan: " + waBtn.getAttribute("data-pin"));
-        }
-        return;
+          const res = await callBackend("getLeaderboard", {
+            period: portalState.lbPeriod,
+            subject: portalState.lbSubject
+          });
+          if (res && res.ok) {
+            if (!portalState.sessionToken && isOpenAccessMode()) {
+              portalState.rawServerLeaderboard = res.leaderboard;
+              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
+            } else {
+              portalState.leaderboard = res.leaderboard;
+            }
+            renderLeaderboardSection();
+          }
+        } catch (err) {}
       }
+    });
 
-      const resetBtn = e.target.closest(".js-adm-reset-dev");
-      if (resetBtn) {
-        const uid = resetBtn.getAttribute("data-uid");
-        const res = await callBackend("adminResetDevices", { adminToken: portalState.adminToken, userId: uid });
-        if (res && res.ok) {
-          applyAdminBundle(res);
-          showToast("Senarai peranti untuk " + uid + " telah dikosongkan.");
-        }
-        return;
+    // Leaderboard Subject Select
+    const lbSubSel = document.getElementById("lbSubjectSelect");
+    if (lbSubSel) {
+      lbSubSel.addEventListener("change", async function () {
+        portalState.lbSubject = lbSubSel.value || "ALL";
+        try {
+          const res = await callBackend("getLeaderboard", {
+            period: portalState.lbPeriod,
+            subject: portalState.lbSubject
+          });
+          if (res && res.ok) {
+            if (!portalState.sessionToken && isOpenAccessMode()) {
+              portalState.rawServerLeaderboard = res.leaderboard;
+              portalState.leaderboard = buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard).leaderboard;
+            } else {
+              portalState.leaderboard = res.leaderboard;
+            }
+            renderLeaderboardSection();
+          }
+        } catch (err) {}
+      });
+    }
+
+    // Catalog Search & Status Filter
+    const searchInput = document.getElementById("catalogSearchInput");
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        portalState.searchQuery = searchInput.value;
+        renderCatalogSection();
+      });
+    }
+
+    const statusSelect = document.getElementById("catalogStatusSelect");
+    if (statusSelect) {
+      statusSelect.addEventListener("change", function () {
+        portalState.selectedStatus = statusSelect.value || "ALL";
+        renderCatalogSection();
+      });
+    }
+
+    const klonSearchInput = document.getElementById("klonSearchInput");
+    if (klonSearchInput) {
+      klonSearchInput.addEventListener("input", function () {
+        portalState.klonSearchQuery = klonSearchInput.value;
+        renderKlonCatalogSection();
+      });
+    }
+
+    const klonStatusSelect = document.getElementById("klonStatusSelect");
+    if (klonStatusSelect) {
+      klonStatusSelect.addEventListener("change", function () {
+        portalState.klonSelectedStatus = klonStatusSelect.value || "ALL";
+        renderKlonCatalogSection();
+      });
+    }
+
+    // Exam Stage Controls & Result Slip Dialog
+    const closeStageBtn = document.getElementById("closeExamStageBtn");
+    if (closeStageBtn) closeStageBtn.addEventListener("click", closeQuizStage);
+
+    const openSlipBtn = document.getElementById("openSlipBtn");
+    if (openSlipBtn) openSlipBtn.addEventListener("click", openResultSlipModal);
+
+    const printSlipBtn = document.getElementById("printSlipBtn");
+    if (printSlipBtn) printSlipBtn.addEventListener("click", printOfficialSlip);
+
+    const slipCustomNameInput = document.getElementById("slipCustomNameInput");
+    if (slipCustomNameInput) {
+      slipCustomNameInput.addEventListener("input", function () {
+        if (portalState.sessionToken || !isOpenAccessMode()) return;
+        const clean = setOpenStudentName(slipCustomNameInput.value);
+        const finalName = clean || "Pelajar";
+        const slipNameEl = document.getElementById("slipStudentName");
+        if (slipNameEl) slipNameEl.textContent = finalName;
+        if (portalState.latestSlipData) portalState.latestSlipData.buyerName = finalName;
+        renderHeaderUser();
+      });
+    }
+
+    const closeSlipBtn = document.getElementById("closeSlipBtn");
+    const slipDlg = document.getElementById("resultSlipDialog");
+    if (closeSlipBtn && slipDlg) {
+      closeSlipBtn.addEventListener("click", function () { closeTopLayer(slipDlg); });
+      slipDlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(slipDlg);
+      });
+      if (typeof HTMLDialogElement !== "undefined" && !("closedBy" in HTMLDialogElement.prototype)) {
+        slipDlg.addEventListener("click", function (ev) {
+          if (ev.target !== slipDlg) return;
+          const rect = slipDlg.getBoundingClientRect();
+          const isDialogContent = (
+            rect.top <= ev.clientY &&
+            ev.clientY <= rect.top + rect.height &&
+            rect.left <= ev.clientX &&
+            ev.clientX <= rect.left + rect.width
+          );
+          if (!isDialogContent) {
+            closeTopLayer(slipDlg);
+          }
+        });
       }
+    }
 
-      const toggleBtn = e.target.closest(".js-adm-toggle-status");
-      if (toggleBtn) {
-        const uid = toggleBtn.getAttribute("data-uid");
-        const res = await callBackend("adminToggleStatus", { adminToken: portalState.adminToken, userId: uid });
-        if (res && res.ok) {
-          applyAdminBundle(res);
-          showToast("Status langganan " + uid + " telah dikemas kini.");
+  }
+
+  // --- [features/dashboard/portalEvents.js] ---
+  /**
+   * src/features/dashboard/portalEvents.js
+   * Pengikat acara utama Borang Log Masuk Pelajar, Segar Semula Katalog, Log Keluar & mesej tetingkap.
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+  function bindEvents() {
+    initFormValidation();
+    window.addEventListener("message", handleQuizMessage);
+
+    // Sekat Ctrl+S / Ctrl+P pada peringkat induk kecuali semasa dialog slip dibuka
+    document.addEventListener("keydown", function (e) {
+      const ctrl = e.ctrlKey || e.metaKey;
+      const k = String(e.key || "").toLowerCase();
+      if (ctrl && (k === "s" || k === "u")) {
+        e.preventDefault();
+      }
+      if (ctrl && k === "p") {
+        const dlg = document.getElementById("resultSlipDialog");
+        if (!dlg || !dlg.open) {
+          e.preventDefault();
+          showToast("Cetakan halaman disekat. Gunakan butang Slip Keputusan selepas tamat menjawab kuiz.");
         }
       }
     });
+
+    // Toggle Show/Hide PIN
+    const pinBtn = document.getElementById("togglePinBtn");
+    const pinInput = document.getElementById("loginPinInput");
+    if (pinBtn && pinInput) {
+      pinBtn.addEventListener("click", function () {
+        const isPwd = pinInput.type === "password";
+        pinInput.type = isPwd ? "text" : "password";
+        pinBtn.setAttribute("aria-pressed", isPwd ? "true" : "false");
+        pinBtn.setAttribute("aria-label", isPwd ? "Sembunyikan Kod PIN" : "Paparkan Kod PIN");
+      });
+    }
+
+    // Submit Login
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const errBox = document.getElementById("loginAlertBox");
+        const errText = document.getElementById("loginAlertText");
+        const submitBtn = document.getElementById("loginSubmitBtn");
+
+        const userId = document.getElementById("loginUserIdInput").value.trim();
+        const pin = document.getElementById("loginPinInput").value.trim();
+
+        if (!loginForm.checkValidity()) {
+          loginForm.reportValidity();
+          return;
+        }
+
+        errBox.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Mengesahkan Akses...";
+
+        try {
+          const res = await callBackend("login", { userId: userId, pin: pin });
+          if (!res || !res.ok) {
+            errText.textContent = (res && res.error) || "Log masuk gagal. Sila semak ID & PIN anda.";
+            errBox.hidden = false;
+            if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
+            return;
+          }
+
+          portalState.sessionToken = res.sessionToken;
+          saveSessionLocally(res.sessionToken, res.user);
+
+          const landingEl = document.getElementById("landingView");
+          if (landingEl) landingEl.hidden = true;
+          document.getElementById("loginView").hidden = true;
+          document.getElementById("dashboardView").hidden = false;
+          if (window.location.hash.toLowerCase() === "#login") {
+            history.replaceState(null, "", window.location.pathname + window.location.search);
+          }
+          applyDashboardBundle(res);
+        } catch (err) {
+          errText.textContent = "Gagal menghubungi pelayan pengesahan: " + err.message;
+          errBox.hidden = false;
+          if (window.ETutorMotion) window.ETutorMotion.shakeLoginAlert();
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Log Masuk ke Portal";
+        }
+      });
+    }
+
+    // Logout & Refresh
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
+
+    const refreshBtn = document.getElementById("refreshCatalogBtn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async function () {
+        refreshBtn.disabled = true;
+        try {
+          if (!portalState.sessionToken && isOpenAccessMode()) {
+            await enterOpenPortal(true);
+            showToast("Bank soalan telah dikemas kini.");
+          } else {
+            const res = await callBackend("dashboard", { forceRefresh: true });
+            if (res && res.ok) {
+              applyDashboardBundle(res);
+              showToast("Bank soalan & Leaderboard telah dikemas kini.");
+            }
+          }
+        } catch (err) {
+          showToast("Gagal menyegarkan data.");
+        } finally {
+          refreshBtn.disabled = false;
+        }
+      });
+    }
+
+
+    bindCatalogLeaderboardAndSlipEvents();
+    initLandingAndOrderBindings();
+    initAdminPanelBindings();
   }
 
-  // ==========================================================================
-  // CLOUD SYNC PROGRESS (Mod Akses Terbuka) — e-mel OTP / Google Sign-In
-  // Simpan setempat dahulu (localStorage); hantar ke awan HANYA bila "Hantar Jawapan"
-  // atau pelajar menekan "Sync Progress".
-  // ==========================================================================
-  const SYNC_TOKEN_KEY = "etutor_sync_token_v1";
-  const SYNC_EMAIL_KEY = "etutor_sync_email_v1";
-  const SYNC_LAST_KEY = "etutor_sync_last_v1";
+  // --- [features/cloud-sync/cloudSyncStorage.js] ---
+  /**
+   * src/features/cloud-sync/cloudSyncStorage.js
+   * Pengurusan token pautan Cloud Sync tempatan & algoritma gabungan rekod awan ke storan pelayar.
+   */
+
+
+
+
+
   const syncUi = { busy: false, pulledOnce: false, otpEmail: "", gsiReady: false };
 
   function getSyncLink() {
@@ -3070,6 +3594,17 @@
     if (portalState.activeQuizFileId) return;
     applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
   }
+
+  // --- [features/cloud-sync/cloudSyncAuth.js] ---
+  /**
+   * src/features/cloud-sync/cloudSyncAuth.js
+   * Pengangkutan penyegerakan awan (syncPush), pengesahan Google Sign-In & kemas kini lencana UI Cloud Sync.
+   */
+
+
+
+
+
 
   function renderSyncButton() {
     const btn = document.getElementById("syncProgressBtn");
@@ -3225,6 +3760,16 @@
     if (syncUi.renderGsi) syncUi.renderGsi();
   }
 
+  // --- [features/cloud-sync/cloudSyncEvents.js] ---
+  /**
+   * src/features/cloud-sync/cloudSyncEvents.js
+   * Pengikat acara modal Cloud Sync (OTP 6-digit, pautan keluar) & pencetus auto-sync selepas hantar kuiz.
+   */
+
+
+
+
+
   function bindCloudSyncEvents() {
     const btn = document.getElementById("syncProgressBtn");
     if (btn) {
@@ -3338,6 +3883,17 @@
     syncUi.pulledOnce = true;
     syncNow({ silent: true });
   }
+
+  // --- [main.js] ---
+  /**
+   * src/main.js
+   * Pintu masuk permulaan aplikasi Portal eTutor.my (mengikat semua modul ciri pada DOMContentLoaded).
+   */
+
+
+
+
+
 
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();

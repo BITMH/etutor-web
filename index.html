@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=19">
 
   <script type="application/ld+json">
   {
@@ -153,6 +153,7 @@
   <!-- =====================================================================
        SKRIN 0: LAMAN JUALAN & KREDIBILITI UTAMA (LANDING PAGE — ui-ux-pro-max)
        ===================================================================== -->
+
   <div id="landingView" class="lp-shell">
     <header class="lp-navbar">
       <div class="lp-navbar-inner">
@@ -169,7 +170,7 @@
         <nav aria-label="Navigasi Halaman Utama">
           <ul class="lp-nav-links">
             <li><a href="./soalan-percubaan-spm/">Indeks 50 Set</a></li>
-            <li><a href="#klon-spm">Klon SPM</a></li>
+            <li><a href="#portal" class="js-goto-klon-portal">Klon SPM</a></li>
             <li><a href="#demo-interaktif">Simulasi Soalan</a></li>
             <li><a href="#perbandingan">Kenapa eTutor</a></li>
             <li><a href="#ciri">Ciri &amp; Subjek</a></li>
@@ -395,6 +396,7 @@
       </section>
 
       <!-- SEKSYEN DEMO INTERAKTIF SEBENAR ("SHOW, DON'T TELL") -->
+
       <section id="demo-interaktif" class="lp-section" aria-labelledby="lpDemoHeading">
         <div class="lp-container">
           <div class="lp-section-head">
@@ -430,508 +432,6 @@
               <p id="lpDemoQuestionText" class="lp-demo-question"></p>
               <div id="lpDemoOptionsGrid" class="lp-demo-options"></div>
               <div id="lpDemoExplainBox" class="lp-demo-explain" hidden></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SEKSYEN BAHARU: KOLEKSI SET SOALAN KLON SPM 2026 INTERAKTIF -->
-      <section id="klon-spm" class="lp-section lp-section-alt" aria-labelledby="lpKlonHeading">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-section-kicker">Koleksi Baharu • Pola Peperiksaan Sebenar KSSM</span>
-            <h2 id="lpKlonHeading" class="lp-section-title">Set Soalan Interaktif Klon SPM 2026 (23 Subjek Lengkap)</h2>
-            <p class="lp-section-sub">
-              Digubal khusus menepati aras kesukaran dan konstruk kertas sebenar SPM terkini. Klik mana-mana subjek di bawah untuk terus menjawab Kertas 1 &amp; Kertas 2 berserta semakan skema automatik.
-            </p>
-          </div>
-
-          <div class="klon-toolbar">
-            <div class="klon-filter-group" role="group" aria-label="Tapis Aliran Subjek Klon SPM">
-              <button type="button" class="tab-chip js-lp-klon-filter" data-klon-filter="ALL" aria-pressed="true">Semua Aliran (23 Subjek)</button>
-              <button type="button" class="tab-chip js-lp-klon-filter" data-klon-filter="teras" aria-pressed="false">Subjek Teras (7)</button>
-              <button type="button" class="tab-chip js-lp-klon-filter" data-klon-filter="sains" aria-pressed="false">Sains Tulen &amp; Add Math (4)</button>
-              <button type="button" class="tab-chip js-lp-klon-filter" data-klon-filter="elektif" aria-pressed="false">Elektif Ikhtisas &amp; Agama (12)</button>
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-              <a href="./soalan-klon-spm/" class="btn btn-outline btn-sm">Indeks Penuh Klon SPM &rarr;</a>
-            </div>
-          </div>
-
-          <div id="lpKlonCardsGrid" class="klon-grid">
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 01</span>
-                  <span class="badge-kssm-code">Kod 1103</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=1&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 01" data-klon-subject="Bahasa Melayu">Klon SPM Bahasa Melayu 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Kertas 1 + 14 Soalan Kertas 2 (Tatabahasa, Rumusan &amp; Pemahaman KSSM)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-bahasa-melayu-2026-klon-01/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 01 Bahasa Melayu</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 02</span>
-                  <span class="badge-kssm-code">Kod 1119</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=2&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 02" data-klon-subject="Bahasa Inggeris">Klon SPM Bahasa Inggeris 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 8 Soalan Kertas 2 (CEFR Reading &amp; Guided Writing)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-bahasa-inggeris-2026-klon-02/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 02 Bahasa Inggeris</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 03</span>
-                  <span class="badge-kssm-code">Kod 1249</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=3&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 03" data-klon-subject="Sejarah">Klon SPM Sejarah 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 9 Soalan Kertas 2 (Struktur &amp; Esei KBAT Tingkatan 4–5)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-sejarah-2026-klon-03/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 03 Sejarah</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 04</span>
-                  <span class="badge-kssm-code">Kod 1449</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=4&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 04" data-klon-subject="Matematik">Klon SPM Matematik 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 17 Soalan Kertas 2 (Langkah Kiraan K &amp; Jawapan J)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-matematik-2026-klon-04/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 04 Matematik</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 05</span>
-                  <span class="badge-kssm-code">Kod 1511</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=5&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 05" data-klon-subject="Sains">Klon SPM Sains 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 13 Soalan Kertas 2 (Kemahiran Saintifik &amp; Eksperimen)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-sains-2026-klon-05/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 05 Sains</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 06</span>
-                  <span class="badge-kssm-code">Kod 1223</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=6&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 06" data-klon-subject="Pendidikan Islam">Klon SPM Pendidikan Islam 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 5 Soalan Struktur &amp; KBAT (Tilawah, Hadis, Akidah &amp; Fiqh)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-pendidikan-islam-2026-klon-06/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 06 Pendidikan Islam</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="teras">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 07</span>
-                  <span class="badge-kssm-code">Kod 1225</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=7&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 07" data-klon-subject="Pendidikan Moral">Klon SPM Pendidikan Moral 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Pemahaman + 9 Soalan Struktur &amp; Esei Nilai Universal KSSM</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-pendidikan-moral-2026-klon-07/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 07 Pendidikan Moral</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="sains">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 08</span>
-                  <span class="badge-kssm-code">Kod 3472</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=8&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 08" data-klon-subject="Matematik Tambahan">Klon SPM Matematik Tambahan 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Kertas 1 + 30 Soalan Kertas 2 (Kalkulus, Fungsi, Vektor &amp; Taburan)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-matematik-tambahan-2026-klon-08/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 08 Matematik Tambahan</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="sains">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 09</span>
-                  <span class="badge-kssm-code">Kod 4531</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=9&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 09" data-klon-subject="Fizik">Klon SPM Fizik 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Daya, Gelombang, Elektrik &amp; Kuantum)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-fizik-2026-klon-09/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 09 Fizik</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="sains">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 10</span>
-                  <span class="badge-kssm-code">Kod 4541</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=10&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 10" data-klon-subject="Kimia">Klon SPM Kimia 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Mol, Redoks, Sebatian Karbon &amp; Termokimia)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-kimia-2026-klon-10/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 10 Kimia</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="sains">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 11</span>
-                  <span class="badge-kssm-code">Kod 4551</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=11&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 11" data-klon-subject="Biologi">Klon SPM Biologi 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 11 Soalan Kertas 2 (Fisiologi Manusia, Tumbuhan &amp; Genetik)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-biologi-2026-klon-11/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 11 Biologi</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 12</span>
-                  <span class="badge-kssm-code">Kod 3756</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=12&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 12" data-klon-subject="Prinsip Perakaunan">Klon SPM Prinsip Perakaunan 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 6 Soalan Kertas 2 (Penyata Kewangan, Rekonsiliasi &amp; Kelab)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-prinsip-perakaunan-2026-klon-12/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 12 Prinsip Perakaunan</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 13</span>
-                  <span class="badge-kssm-code">Kod 3767</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=13&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 13" data-klon-subject="Ekonomi">Klon SPM Ekonomi 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 7 Soalan Kertas 2 (Pasaran, Keanjalan, Bank &amp; Belanjawan)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-ekonomi-2026-klon-13/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 13 Ekonomi</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 14</span>
-                  <span class="badge-kssm-code">Kod 3766</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=14&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 14" data-klon-subject="Perniagaan">Klon SPM Perniagaan 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 10 Soalan Kertas 2 (Kajian Kes, Pembiayaan &amp; Rancangan)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-perniagaan-2026-klon-14/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 14 Perniagaan</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 15</span>
-                  <span class="badge-kssm-code">Kod 2280</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=15&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 15" data-klon-subject="Geografi">Klon SPM Geografi 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 9 Soalan Kertas 2 (Peta Topografi, Fizikal &amp; Alam Sekitar)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-geografi-2026-klon-15/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 15 Geografi</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 16</span>
-                  <span class="badge-kssm-code">Kod 3770</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=16&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 16" data-klon-subject="Sains Komputer">Klon SPM Sains Komputer 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 24 Soalan Struktur (Pengaturcaraan, SQL &amp; Pangkalan Data)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-sains-komputer-2026-klon-16/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 16 Sains Komputer</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 17</span>
-                  <span class="badge-kssm-code">Kod 3763</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=17&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 17" data-klon-subject="Reka Cipta">Klon SPM Reka Cipta 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 24 Soalan Struktur (Proses Reka Bentuk, Bahan &amp; Sistem)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-reka-cipta-2026-klon-17/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 17 Reka Cipta</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 18</span>
-                  <span class="badge-kssm-code">Kod 4572</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=18&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 18" data-klon-subject="Sains Sukan">Klon SPM Sains Sukan 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">40 Soalan Kertas 1 + 13 Soalan Kertas 2 (Anatomi, Biomekanik &amp; Latihan Sukan)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-sains-sukan-2026-klon-18/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 18 Sains Sukan</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 19</span>
-                  <span class="badge-kssm-code">Kod 3769</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=19&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 19" data-klon-subject="Sains Rumah Tangga">Klon SPM Sains Rumah Tangga 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 24 Soalan Struktur (Pemakanan, Tekstil &amp; Keusahawanan)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-sains-rumah-tangga-2026-klon-19/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 19 Sains Rumah Tangga</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 20</span>
-                  <span class="badge-kssm-code">Kod 5226</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=20&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 20" data-klon-subject="Tasawwur Islam">Klon SPM Tasawwur Islam 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Bahagian A + 6 Soalan Bahagian B (Pandangan Hidup &amp; Sistem Islam)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-tasawwur-islam-2026-klon-20/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 20 Tasawwur Islam</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 21</span>
-                  <span class="badge-kssm-code">Kod 5227</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=21&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 21" data-klon-subject="Pendidikan Al-Quran &amp; As-Sunnah">Klon SPM Pendidikan Al-Quran &amp; As-Sunnah</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 4 Soalan Subjektif (Ulum Al-Quran, Ulum Hadis &amp; Tamadun)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-pqs-2026-klon-21/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 21 Pendidikan Al-Quran dan As-Sunnah</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 22</span>
-                  <span class="badge-kssm-code">Kod 5401</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=22&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 22" data-klon-subject="Usul al-Din">Klon SPM Usul al-Din 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">20 Soalan Objektif + 4 Soalan Subjektif KBD (Tauhid, Tafsir, Hadis &amp; Akhlak)</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-usuluddin-2026-klon-22/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 22 Usul al-Din</span></a>
-              </div>
-            </article>
-
-            <article class="klon-card" data-klon-group="elektif">
-              <div class="klon-card-head">
-                <div class="klon-card-badges">
-                  <span class="badge-klon">KLON 23</span>
-                  <span class="badge-kssm-code">Kod 2361</span>
-                </div>
-                <h3 class="klon-card-title">
-                  <a href="?klon=23&amp;open=1#portal" class="card-link js-open-klon-direct" data-klon-code="KLON 23" data-klon-subject="Bahasa Arab">Klon SPM Bahasa Arab 2026</a>
-                </h3>
-                <p class="klon-card-desc tabular-nums">25 Soalan Qawaid &amp; Balaghah + 11 Soalan Istiab, Ungkapan &amp; Insyak</p>
-              </div>
-              <div class="klon-card-foot">
-                <span class="klon-cta-label">
-                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>
-                  <span>Jawab Sekarang</span>
-                </span>
-                <a href="./soalan-klon-spm/spm-bahasa-arab-2026-klon-23/" class="btn btn-outline btn-xs">Contoh &amp; Topik<span class="sr-only"> Klon 23 Bahasa Arab</span></a>
-              </div>
-            </article>
-          </div>
-
-          <div class="klon-summary-strip">
-            <div>
-              <div style="font-weight:800;font-size:1.05rem">
-                <span id="lpKlonTotalBadge" class="tabular-nums">31 Set Klon SPM Interaktif</span> Tersedia &amp; Terus Bertambah Secara Automatik
-              </div>
-              <div style="font-size:0.86rem;color:#cbd5e1;margin-top:4px">
-                Termasuk set tambahan Klon Kedua bagi subjek Teras &amp; Matematik Tambahan di dalam Papan Pemuka Pelajar.
-              </div>
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:10px">
-              <a href="#klon-portal" class="btn btn-emerald js-goto-klon-portal">Buka Semua Set Klon Di Portal &rarr;</a>
-              <a href="./soalan-klon-spm/" class="btn btn-outline" style="background:#ffffff;color:var(--brand-navy)">Direktori Klon SPM</a>
             </div>
           </div>
         </div>
@@ -1150,6 +650,7 @@
       </section>
 
       <!-- SEKSYEN 3 LANGKAH MUDAH & MAKLUM BALAS IBU BAPA / PELAJAR -->
+
       <section id="testimoni" class="lp-section lp-section-alt lp-deferred-section" aria-labelledby="lpFeedbackHeading">
         <div class="lp-container">
           <div class="lp-section-head">
@@ -1385,6 +886,7 @@
       </section>
 
       <!-- SEKSYEN SOALAN LAZIM EKSKLUSIF (<details name="etutor-faq">) -->
+
       <section id="soalan-lazim" class="lp-section lp-section-alt lp-deferred-section" aria-labelledby="lpFaqHeading">
         <div class="lp-container">
           <div class="lp-section-head">
@@ -1535,52 +1037,7 @@
     </div>
   </div>
 
-  <!-- DIALOG CLOUD SYNC PROGRESS (e-mel OTP / Google) -->
-<dialog id="syncDialog" class="slip-dialog" closedby="any" aria-labelledby="syncDialogTitle">
-  <div style="padding:clamp(20px,4vw,30px);max-inline-size:440px">
-    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Log Masuk Pelajar</h2>
-    <p style="margin:0 0 16px;color:var(--text-secondary);font-size:0.92rem;line-height:1.55">
-      Percuma, tanpa kata laluan. Sahkan e-mel atau guna Google supaya markah, XP &amp; kuiz separuh jalan tersimpan dan boleh disambung di telefon atau komputer lain.
-    </p>
-
-    <div id="syncDialogLogin">
-      <div id="syncGoogleWrap" hidden style="margin-block-end:14px">
-        <div id="syncGoogleBtn" style="min-block-size:44px"></div>
-        <p style="text-align:center;color:var(--text-muted);font-size:0.8rem;margin:10px 0 0">atau guna kod e-mel</p>
-      </div>
-
-      <div id="syncStepEmail">
-        <form id="syncEmailForm" novalidate>
-          <label for="syncEmailInput" style="font-weight:600;font-size:0.9rem">Alamat e-mel</label>
-          <input type="email" id="syncEmailInput" class="text-input" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="nama@gmail.com" style="margin-block:6px 12px">
-          <button type="submit" class="btn btn-primary" style="inline-size:100%">Hantar Kod Pengesahan</button>
-        </form>
-      </div>
-
-      <div id="syncStepCode" hidden>
-        <form id="syncCodeForm" novalidate>
-          <label for="syncCodeInput" style="font-weight:600;font-size:0.9rem">Kod 6 digit dari e-mel anda</label>
-          <input type="text" id="syncCodeInput" class="text-input tabular-nums" required autocomplete="one-time-code" inputmode="numeric" maxlength="8" placeholder="123456" style="margin-block:6px 12px;letter-spacing:0.3em;text-align:center">
-          <button type="submit" class="btn btn-primary" style="inline-size:100%">Sahkan &amp; Simpan</button>
-          <button type="button" id="syncCodeBack" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Tukar e-mel</button>
-        </form>
-      </div>
-    </div>
-
-    <div id="syncDialogLinked" hidden>
-      <p style="margin:0 0 4px;font-size:0.92rem">Disambungkan sebagai <strong id="syncLinkedEmail"></strong></p>
-      <p id="syncLastTime" style="margin:0 0 14px;color:var(--text-secondary);font-size:0.84rem"></p>
-      <button type="button" id="syncNowBtn" class="btn btn-primary" style="inline-size:100%">Sync Sekarang</button>
-      <button type="button" id="syncSignOutBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Putuskan sambungan</button>
-    </div>
-
-    <div id="syncDialogMsg" class="sync-dialog-msg" role="status" aria-live="polite" hidden style="margin-block:14px 0"></div>
-
-    <button type="button" id="syncDialogClose" class="btn btn-outline btn-sm" style="margin-block-start:14px;inline-size:100%">Tutup</button>
-  </div>
-</dialog>
-
-<!-- DIALOG PENDAFTARAN / TEMPAHAN PANTAS PAKEJ (<dialog closedby="any">) -->
+  <!-- DIALOG PENDAFTARAN / TEMPAHAN PANTAS PAKEJ (<dialog closedby="any">) -->
   <dialog id="orderDialog" class="slip-dialog" closedby="any" aria-labelledby="orderDialogTitle">
     <div class="slip-paper">
       <div class="slip-header">
@@ -1653,6 +1110,51 @@
   <!-- =====================================================================
        SKRIN 1: LOG MASUK PEMBELI BERDAFTAR
        ===================================================================== -->
+
+<dialog id="syncDialog" class="slip-dialog" closedby="any" aria-labelledby="syncDialogTitle">
+  <div style="padding:clamp(20px,4vw,30px);max-inline-size:440px">
+    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Log Masuk Pelajar</h2>
+    <p style="margin:0 0 16px;color:var(--text-secondary);font-size:0.92rem;line-height:1.55">
+      Percuma, tanpa kata laluan. Sahkan e-mel atau guna Google supaya markah, XP &amp; kuiz separuh jalan tersimpan dan boleh disambung di telefon atau komputer lain.
+    </p>
+
+    <div id="syncDialogLogin">
+      <div id="syncGoogleWrap" hidden style="margin-block-end:14px">
+        <div id="syncGoogleBtn" style="min-block-size:44px"></div>
+        <p style="text-align:center;color:var(--text-muted);font-size:0.8rem;margin:10px 0 0">atau guna kod e-mel</p>
+      </div>
+
+      <div id="syncStepEmail">
+        <form id="syncEmailForm" novalidate>
+          <label for="syncEmailInput" style="font-weight:600;font-size:0.9rem">Alamat e-mel</label>
+          <input type="email" id="syncEmailInput" class="text-input" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="nama@gmail.com" style="margin-block:6px 12px">
+          <button type="submit" class="btn btn-primary" style="inline-size:100%">Hantar Kod Pengesahan</button>
+        </form>
+      </div>
+
+      <div id="syncStepCode" hidden>
+        <form id="syncCodeForm" novalidate>
+          <label for="syncCodeInput" style="font-weight:600;font-size:0.9rem">Kod 6 digit dari e-mel anda</label>
+          <input type="text" id="syncCodeInput" class="text-input tabular-nums" required autocomplete="one-time-code" inputmode="numeric" maxlength="8" placeholder="123456" style="margin-block:6px 12px;letter-spacing:0.3em;text-align:center">
+          <button type="submit" class="btn btn-primary" style="inline-size:100%">Sahkan &amp; Simpan</button>
+          <button type="button" id="syncCodeBack" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Tukar e-mel</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="syncDialogLinked" hidden>
+      <p style="margin:0 0 4px;font-size:0.92rem">Disambungkan sebagai <strong id="syncLinkedEmail"></strong></p>
+      <p id="syncLastTime" style="margin:0 0 14px;color:var(--text-secondary);font-size:0.84rem"></p>
+      <button type="button" id="syncNowBtn" class="btn btn-primary" style="inline-size:100%">Sync Sekarang</button>
+      <button type="button" id="syncSignOutBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Putuskan sambungan</button>
+    </div>
+
+    <div id="syncDialogMsg" class="sync-dialog-msg" role="status" aria-live="polite" hidden style="margin-block:14px 0"></div>
+
+    <button type="button" id="syncDialogClose" class="btn btn-outline btn-sm" style="margin-block-start:14px;inline-size:100%">Tutup</button>
+  </div>
+</dialog>
+
   <div id="loginView" class="login-shell" hidden>
     <div class="login-bg-orbs" aria-hidden="true">
       <span class="orb orb-blue"></span>
@@ -1771,6 +1273,7 @@
        SKRIN 2: MUKA DEPAN PELAJAR SELEPAS LOGIN
        (Continue Progress + Progress Bento + Leaderboard + Katalog Soalan)
        ===================================================================== -->
+
   <div id="dashboardView" hidden>
     <header class="portal-topbar">
       <div class="topbar-inner">
@@ -1963,12 +1466,22 @@
               </svg>
               <h2 id="klonCatalogHeading" class="section-title">Set Soalan Klon SPM Interaktif</h2>
             </div>
-            <p class="section-subtitle">Koleksi khas kertas klon berformat SPM sebenar — disegerakkan automatik daripada folder Klon SPM di Google Drive.</p>
+            <p class="section-subtitle">Koleksi khas kertas klon berformat SPM sebenar KSSM (23 subjek lengkap) — disegerakkan automatik daripada folder Klon SPM di Google Drive.</p>
           </div>
-          <span id="klonCatalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:700;color:var(--brand-primary)">0 set klon</span>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span id="klonCatalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:700;color:var(--brand-primary)">0 set klon</span>
+            <a href="./soalan-klon-spm/" class="btn btn-outline btn-sm">Indeks Topik Klon SPM &rarr;</a>
+          </div>
         </div>
 
         <div class="catalog-toolbar">
+          <div class="klon-filter-group" role="group" aria-label="Tapis Aliran Subjek Klon SPM">
+            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="ALL" aria-pressed="true">Semua Aliran</button>
+            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="teras" aria-pressed="false">Subjek Teras</button>
+            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="sains" aria-pressed="false">Sains Tulen &amp; Add Math</button>
+            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="elektif" aria-pressed="false">Elektif Ikhtisas &amp; Agama</button>
+          </div>
+
           <div class="search-and-status-row">
             <div class="search-box">
               <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
@@ -1979,7 +1492,7 @@
                 type="search"
                 id="klonSearchInput"
                 class="search-input"
-                placeholder="Cari subjek atau kod Klon SPM (cth: Klon 03, Sejarah, Matematik Tambahan)..."
+                placeholder="Cari subjek, kod kertas KSSM, atau nombor Klon (cth: Klon 03, Kod 1249, Sejarah)..."
               >
             </div>
 
@@ -2049,6 +1562,7 @@
   <!-- =====================================================================
        SKRIN 3: MOD KUIZ PENUH SKRIN (100dvh + <iframe srcdoc>)
        ===================================================================== -->
+
   <section id="examStage" class="exam-stage" aria-label="Ruang Peperiksaan Interaktif" hidden>
     <div class="exam-stage-bar">
       <div class="exam-stage-left">
@@ -2161,6 +1675,7 @@
        SKRIN 4: PANEL KAWALAN ADMIN (#admin — Semakan Langganan & Akses)
        Diakses melalui URL `etutor.my/#admin` (atau `http://localhost:4173/#admin`)
        ===================================================================== -->
+
   <div id="adminView" hidden>
     <!-- 4A: Pengesahan Kunci Rahsia Admin -->
     <div id="adminLoginShell" class="login-shell">
@@ -2407,9 +1922,9 @@
   <div id="portalToast" class="toast-banner" role="status" aria-live="polite" hidden></div>
 
   <script src="./vendor/anime.umd.min.js"></script>
-  <script src="./config.js?v=18"></script>
-  <script src="./animations.js"></script>
-  <script src="./app.js"></script>
-  <script type="module" src="./integrations/cikgu-ai/index.js?v=18"></script>
+  <script src="./config.js?v=19"></script>
+  <script src="./animations.js?v=19"></script>
+  <script src="./app.js?v=19"></script>
+  <script type="module" src="./integrations/cikgu-ai/index.js?v=19"></script>
 </body>
 </html>

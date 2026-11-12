@@ -1,17 +1,12 @@
-/**
- * animations.js
- * Enjin Koreografi Animasi Portal eTutor.my berasaskan Anime.js v4.5.0
- * (https://github.com/juliangarnier/anime)
- *
- * Prinsip Prestasi & Aksesibiliti (ui-ux-pro-max + modern-web-guidance):
- * 1. Hanya menganimasikan sifat kompositor GPU (`opacity`, `translateX`, `translateY`, `scale`, `rotate`)
- *    serta pembolehubah CSS / kaunter angka — sifar susun atur bergegar (CLS = 0).
- * 2. Menghormati `prefers-reduced-motion: reduce` secara dinamik tanpa memaksa `0.01ms` global.
- * 3. Degradasi anggun (graceful fallback) jika skrip CDN disekat oleh rangkaian sekolah.
- */
-
+/* AUTO-GENERATED DARIPADA src/features/motion/ OLEH scripts/build-frontend.mjs */
 (function () {
   "use strict";
+
+  // --- [features/motion/motionCore.js] ---
+  /**
+   * src/features/motion/motionCore.js
+   * Teras penyesuai Anime.js v4.5.0, pengesan prefers-reduced-motion, dan pembersih gaya sebaris GPU.
+   */
 
   const reducedMotionQuery =
     typeof window !== "undefined" && typeof window.matchMedia === "function"
@@ -63,9 +58,12 @@
     });
   }
 
-  // ==========================================================================
-  // 1. SKRIN LOG MASUK: Lukisan Vektor SVG + Kemasukan Kad + Orb Ambien Lembut
-  // ==========================================================================
+  // --- [features/motion/loginAndLandingMotion.js] ---
+  /**
+   * src/features/motion/loginAndLandingMotion.js
+   * Koreografi animasi Skrin Log Masuk (orb ambien, kemasukan kad, gegaran ralat) & Hero Halaman Utama.
+   */
+
   function startLoginAmbientOrbs() {
     stopLoginAmbientOrbs();
     const A = getAnime();
@@ -184,9 +182,72 @@
     }
   }
 
-  // ==========================================================================
-  // 2. MUKA DEPAN PELAJAR: Bento Stagger, Kaunter Angka & Continue Progress
-  // ==========================================================================
+  function playLandingEntrance() {
+    const A = getAnime();
+    if (!A || prefersReducedMotion()) return;
+
+    const copyItems = document.querySelectorAll("#landingView .lp-hero-copy > *");
+    const browserFrame = document.querySelector("#landingView .lp-browser-frame");
+    const trustItems = document.querySelectorAll("#landingView .lp-trust-item");
+
+    const tl = A.createTimeline({ defaults: { ease: "outQuart" } });
+    if (copyItems.length) {
+      tl.add(copyItems, {
+        opacity: [0, 1],
+        translateY: [18, 0],
+        duration: 480,
+        delay: A.stagger(65),
+        onComplete: function () {
+          clearInlineTransform(copyItems);
+        }
+      }, 0);
+    }
+    if (browserFrame) {
+      tl.add(browserFrame, {
+        opacity: [0, 1],
+        translateY: [22, 0],
+        scale: [0.97, 1],
+        duration: 560,
+        onComplete: function () {
+          clearInlineTransform(browserFrame);
+        }
+      }, 120);
+    }
+    if (trustItems.length) {
+      tl.add(trustItems, {
+        opacity: [0, 1],
+        translateY: [12, 0],
+        duration: 400,
+        delay: A.stagger(55),
+        onComplete: function () {
+          clearInlineTransform(trustItems);
+        }
+      }, 260);
+    }
+  }
+
+  function animateDemoFeedback(el) {
+    const A = getAnime();
+    if (!A || prefersReducedMotion() || !el) return;
+    A.remove(el);
+    A.animate(el, {
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 320,
+      ease: "outCubic",
+      onComplete: function () {
+        clearInlineTransform(el);
+      }
+    });
+  }
+
+  // --- [features/motion/dashboardAndLeaderboardMotion.js] ---
+  /**
+   * src/features/motion/dashboardAndLeaderboardMotion.js
+   * Koreografi Muka Depan Pelajar (Bento stagger, kaunter XP/purata), Podium Leaderboard & Kad Katalog.
+   */
+
+
   function playDashboardEntrance() {
     stopLoginAmbientOrbs();
     const A = getAnime();
@@ -403,9 +464,14 @@
     });
   }
 
-  // ==========================================================================
-  // 5. RUANG PEPERIKSAAN, SAMBUTAN TAMAT KUIZ & SLIP KEPUTUSAN RASMI
-  // ==========================================================================
+  // --- [features/motion/examAndSlipMotion.js] ---
+  /**
+   * src/features/motion/examAndSlipMotion.js
+   * Animasi Ruang Peperiksaan, konfeti GPU tamat kuiz, Slip Keputusan Rasmi, dan pendaftaran ETutorMotion.
+   */
+
+
+
   function playExamStageOpen() {
     const A = getAnime();
     if (!A || prefersReducedMotion()) return;
@@ -535,65 +601,6 @@
       translateY: [14, 0],
       scale: [0.97, 1],
       duration: 280,
-      ease: "outCubic",
-      onComplete: function () {
-        clearInlineTransform(el);
-      }
-    });
-  }
-
-  function playLandingEntrance() {
-    const A = getAnime();
-    if (!A || prefersReducedMotion()) return;
-
-    const copyItems = document.querySelectorAll("#landingView .lp-hero-copy > *");
-    const browserFrame = document.querySelector("#landingView .lp-browser-frame");
-    const trustItems = document.querySelectorAll("#landingView .lp-trust-item");
-
-    const tl = A.createTimeline({ defaults: { ease: "outQuart" } });
-    if (copyItems.length) {
-      tl.add(copyItems, {
-        opacity: [0, 1],
-        translateY: [18, 0],
-        duration: 480,
-        delay: A.stagger(65),
-        onComplete: function () {
-          clearInlineTransform(copyItems);
-        }
-      }, 0);
-    }
-    if (browserFrame) {
-      tl.add(browserFrame, {
-        opacity: [0, 1],
-        translateY: [22, 0],
-        scale: [0.97, 1],
-        duration: 560,
-        onComplete: function () {
-          clearInlineTransform(browserFrame);
-        }
-      }, 120);
-    }
-    if (trustItems.length) {
-      tl.add(trustItems, {
-        opacity: [0, 1],
-        translateY: [12, 0],
-        duration: 400,
-        delay: A.stagger(55),
-        onComplete: function () {
-          clearInlineTransform(trustItems);
-        }
-      }, 260);
-    }
-  }
-
-  function animateDemoFeedback(el) {
-    const A = getAnime();
-    if (!A || prefersReducedMotion() || !el) return;
-    A.remove(el);
-    A.animate(el, {
-      opacity: [0, 1],
-      translateY: [10, 0],
-      duration: 320,
       ease: "outCubic",
       onComplete: function () {
         clearInlineTransform(el);

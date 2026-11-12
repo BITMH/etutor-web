@@ -21,23 +21,39 @@ const isLocalHost =
 const globalCfg =
   typeof window !== "undefined" && window.ETUTOR_CONFIG ? window.ETUTOR_CONFIG : {};
 
-export const DEFAULT_CIKGU_CONFIG = {
-  // URL Pelayan Utama (Tier 1 Ultra-Pantas ~3s): Modal Serverless NVIDIA T4 GPU
-  // Hanya guna 127.0.0.1:8080 jika CIKGU_LOCAL_DEV diaktifkan secara eksplisit pada config.js
-  primaryCloudRunUrl:
-    isLocalHost && globalCfg.CIKGU_LOCAL_DEV === true
-      ? "http://127.0.0.1:8080"
-      : globalCfg.CIKGU_MODAL_GPU_URL ||
-        "https://hanismathussin96--cikgu-ai-spm.modal.run",
+// Tarikh tamat tempoh promosi kredit $300 Google Cloud: Tepat 3 Bulan (10 Feb 2027)
+export const GCP_TRIAL_EXPIRY_MS = new Date("2027-02-10T23:59:59+08:00").getTime();
 
-  // URL Pelayan Sandaran Automatik (Tier 2 Always Free): Google Cloud Run Singapura (asia-southeast1)
-  backupHfSpacesUrl:
+export function isGcpTrialActive() {
+  return Date.now() < GCP_TRIAL_EXPIRY_MS;
+}
+
+export const DEFAULT_CIKGU_CONFIG = {
+  // Pelayan Google Cloud Run (Singapura):
+  cloudRunUrl:
     globalCfg.CIKGU_CLOUD_RUN_URL ||
-    globalCfg.CIKGU_HF_SPACES_URL ||
     "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
 
+  // Pelayan Modal GPU NVIDIA T4:
+  modalGpuUrl:
+    globalCfg.CIKGU_MODAL_GPU_URL ||
+    "https://hanismathussin96--cikgu-ai-spm.modal.run",
+
+  // URL Pelayan Utama mengikut fasa (Auto-Switch selepas 3 bulan):
+  // 10 Nov 2026 - 10 Feb 2027: Google Cloud Run ($300 Percuma)
+  // Mulai 11 Feb 2027 ke atas: Beralih automatik ke Modal.com
+  get primaryCloudRunUrl() {
+    if (isLocalHost && globalCfg.CIKGU_LOCAL_DEV === true) return "http://127.0.0.1:8080";
+    return isGcpTrialActive() ? this.cloudRunUrl : this.modalGpuUrl;
+  },
+
+  // URL Pelayan Sandaran mengikut fasa (Auto-Switch sebaliknya):
+  get backupHfSpacesUrl() {
+    return isGcpTrialActive() ? this.modalGpuUrl : this.cloudRunUrl;
+  },
+
   warmupTimeoutMs: 38000,
-  failoverCooldownMs: 15 * 60 * 1000, // Kekal pada HF Spaces selama 15 minit jika Cloud Run sibuk/over-quota
+  failoverCooldownMs: 15 * 60 * 1000,
   silentPrewarmDelayMs: 1800,
 
   subjects: [
@@ -70,16 +86,8 @@ export const DEFAULT_CIKGU_CONFIG = {
 export function loadRuntimeEndpoints() {
   try {
     const mode = localStorage.getItem(CIKGU_STORAGE_KEYS.ROUTING_MODE) || "auto";
-    const storedPrimary = localStorage.getItem(CIKGU_STORAGE_KEYS.PRIMARY_URL) || "";
-    const isLegacyPrimary =
-      storedPrimary.includes("cikgu-ai-spm-asia-southeast1.a.run.app") ||
-      storedPrimary.includes("cikgu-ai-spm-afaauenp7q-as.a.run.app");
-    const primary =
-      (!isLegacyPrimary && storedPrimary) || DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl;
-    const storedBackup = localStorage.getItem(CIKGU_STORAGE_KEYS.BACKUP_URL) || "";
-    const isUnprovisionedDefaultSpace = storedBackup.includes("bitmh-cikgu-ai-spm.hf.space");
-    const backup =
-      (!isUnprovisionedDefaultSpace && storedBackup) || DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl;
+    const primary = DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl;
+    const backup = DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl;
     return {
       mode,
       primaryUrl: primary.replace(/\/+$/, ""),

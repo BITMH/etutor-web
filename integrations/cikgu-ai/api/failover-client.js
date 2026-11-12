@@ -205,6 +205,16 @@ export class CikguFailoverClient {
         }
 
         const failoverHdr = resp.headers.get("X-Cikgu-Failover");
+        // Jika Modal penuh (> 8 semakan serentak) atau kuota Cloud Run capai had: beralih ke sandaran serta-merta tanpa cooldown panjang
+        if (resp.status === 429 && (failoverHdr === "cloud-run" || failoverHdr === "google-cloud")) {
+          if (candidates.length > 1) {
+            if (onFailover) {
+              onFailover("Trafik GPU tinggi (>8 serentak) — melencongkan semakan ke Google Cloud secara automatik...");
+            }
+            continue;
+          }
+        }
+
         if ((resp.status === 429 && failoverHdr === "hf-spaces") || resp.status >= 502) {
           if (candidate.tier === "cloud-run" && candidates.length > 1) {
             this._markPrimaryFailover();

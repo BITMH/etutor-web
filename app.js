@@ -47,6 +47,10 @@
     selectedSubject: "ALL",
     selectedStatus: "ALL",
     searchQuery: "",
+    klonSelectedSubject: "ALL",
+    klonSelectedStatus: "ALL",
+    klonSearchQuery: "",
+    lpKlonFilter: "ALL",
     lbPeriod: "all",
     lbSubject: "ALL",
     activeQuizFileId: null,
@@ -416,8 +420,14 @@
     if (dashboardView) dashboardView.hidden = false;
 
     const grid = document.getElementById("catalogCardsGrid");
-    if ((portalState.rawOpenCatalog.length === 0 || forceRefresh) && grid && portalState.rawOpenCatalog.length === 0) {
-      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:32px">Memuatkan Bank Set Soalan Interaktif...</div>';
+    const klonGrid = document.getElementById("klonCatalogCardsGrid");
+    if ((portalState.rawOpenCatalog.length === 0 || forceRefresh) && portalState.rawOpenCatalog.length === 0) {
+      if (grid) {
+        grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:32px">Memuatkan Bank Set Soalan Interaktif...</div>';
+      }
+      if (klonGrid) {
+        klonGrid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-secondary);padding:32px">Memuatkan Set Soalan Klon SPM Interaktif...</div>';
+      }
     }
 
     if (portalState.rawOpenCatalog.length === 0 || forceRefresh) {
@@ -635,8 +645,11 @@
     renderContinueProgressSection();
     renderProgressOverviewSection();
     populateSubjectSelectors();
+    populateKlonSubjectChips();
     renderLeaderboardSection();
+    renderKlonCatalogSection();
     renderCatalogSection();
+    syncLandingKlonCountBadge();
 
     if (window.ETutorMotion) {
       window.ETutorMotion.playDashboardEntrance();
@@ -646,12 +659,23 @@
     applyDeepLinkParamsOnce();
   }
 
+  function syncLandingKlonCountBadge() {
+    const badge = document.getElementById("lpKlonTotalBadge");
+    if (!badge) return;
+    const klonCount = (portalState.catalog || []).filter(function (c) { return c.category === "klon"; }).length;
+    if (klonCount > 0) {
+      badge.textContent = klonCount + " Set Klon SPM Interaktif";
+    }
+  }
+
   function hasDeepLinkPortalParams() {
     try {
       if (!window.location || !window.location.search) return false;
       const params = new URLSearchParams(window.location.search);
       return Boolean(
         (params.get("set") || "").trim() ||
+        (params.get("klon") || "").trim() ||
+        (params.get("klonSubject") || "").trim() ||
         (params.get("subject") || "").trim() ||
         (params.get("q") || "").trim()
       );
@@ -674,18 +698,36 @@
     }
 
     const setParam = (params.get("set") || "").trim();
+    const klonParam = (params.get("klon") || "").trim();
+    const klonSubParam = (params.get("klonSubject") || "").trim();
     const subParam = (params.get("subject") || "").trim();
     const qParam = (params.get("q") || "").trim();
     const autoOpen = params.get("open") === "1" || params.get("open") === "true";
+    const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(klonParam) || Boolean(klonSubParam);
 
     portalState.deepLinkHandled = true;
-    if (!setParam && !subParam && !qParam) return;
+    if (!setParam && !klonParam && !klonSubParam && !subParam && !qParam && !wantsKlonScroll) return;
+
+    if (klonSubParam) {
+      const targetKlonNorm = klonSubParam.toLowerCase();
+      const matchedKlonSub = list
+        .filter(function (c) { return c.category === "klon"; })
+        .map(function (c) { return c.subject; })
+        .find(function (s) { return String(s || "").trim().toLowerCase() === targetKlonNorm; });
+      if (matchedKlonSub) {
+        portalState.klonSelectedSubject = matchedKlonSub;
+        populateKlonSubjectChips();
+      }
+    }
 
     if (subParam) {
       const targetNorm = subParam.toLowerCase();
-      const matchedSub = list.map(function (c) { return c.subject; }).find(function (s) {
-        return String(s || "").trim().toLowerCase() === targetNorm;
-      });
+      const matchedSub = list
+        .filter(function (c) { return c.category !== "klon"; })
+        .map(function (c) { return c.subject; })
+        .find(function (s) {
+          return String(s || "").trim().toLowerCase() === targetNorm;
+        });
       if (matchedSub) {
         portalState.selectedSubject = matchedSub;
         populateSubjectSelectors();
@@ -699,10 +741,27 @@
     }
 
     let matchedSetItem = null;
-    if (setParam) {
+    if (klonParam) {
+      const kDigits = klonParam.replace(/\D/g, "");
+      const kCodeNorm = kDigits ? ("KLON " + kDigits.padStart(2, "0")) : klonParam.toUpperCase();
+      matchedSetItem = list.find(function (c) {
+        return c.category === "klon" && String(c.setCode || "").toUpperCase() === kCodeNorm;
+      }) || list.find(function (c) {
+        return c.category === "klon" && String(c.cleanTitle || "").toLowerCase().indexOf(klonParam.toLowerCase()) !== -1;
+      }) || null;
+
+      if (!autoOpen) {
+        const kFilterText = matchedSetItem && matchedSetItem.setCode ? matchedSetItem.setCode : klonParam;
+        portalState.klonSearchQuery = kFilterText;
+        const klonSearchEl = document.getElementById("klonSearchInput");
+        if (klonSearchEl) klonSearchEl.value = kFilterText;
+      }
+    } else if (setParam) {
       const digits = setParam.replace(/\D/g, "");
       const codeNorm = digits ? ("SET " + digits.padStart(2, "0")) : setParam.toUpperCase();
       matchedSetItem = list.find(function (c) {
+        return c.category !== "klon" && String(c.setCode || "").toUpperCase() === codeNorm;
+      }) || list.find(function (c) {
         return String(c.setCode || "").toUpperCase() === codeNorm;
       }) || list.find(function (c) {
         return String(c.cleanTitle || "").toLowerCase().indexOf(setParam.toLowerCase()) !== -1;
@@ -716,18 +775,19 @@
       }
     }
 
+    renderKlonCatalogSection();
     renderCatalogSection();
 
     try {
-      history.replaceState(null, "", window.location.pathname + "#portal");
+      history.replaceState(null, "", window.location.pathname + (wantsKlonScroll ? "#klon-portal" : "#portal"));
     } catch (e) {}
 
     if (matchedSetItem && autoOpen) {
       openQuizSet(matchedSetItem.fileId, Boolean(matchedSetItem.inProgress), false);
     } else {
-      const catHead = document.getElementById("catalogHeading");
-      if (catHead) {
-        setTimeout(function () { catHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      const targetHead = document.getElementById(wantsKlonScroll ? "klonCatalogHeading" : "catalogHeading");
+      if (targetHead) {
+        setTimeout(function () { targetHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
       }
     }
   }
@@ -951,20 +1011,28 @@
   }
 
   function populateSubjectSelectors() {
-    const subjects = [];
-    const seen = {};
+    const harianSubjects = [];
+    const seenHarian = {};
+    const allSubjects = [];
+    const seenAll = {};
+
     (portalState.catalog || []).forEach(function (c) {
-      if (c.subject && !seen[c.subject]) {
-        seen[c.subject] = true;
-        subjects.push(c.subject);
+      if (c.subject && !seenAll[c.subject]) {
+        seenAll[c.subject] = true;
+        allSubjects.push(c.subject);
+      }
+      if (c.category !== "klon" && c.subject && !seenHarian[c.subject]) {
+        seenHarian[c.subject] = true;
+        harianSubjects.push(c.subject);
       }
     });
-    subjects.sort();
+    harianSubjects.sort();
+    allSubjects.sort();
 
-    // Cip Subjek Katalog
+    // Cip Subjek Katalog Harian
     const chipRow = document.getElementById("subjectChipsRow");
     if (chipRow) {
-      const allOpts = ["ALL"].concat(subjects);
+      const allOpts = ["ALL"].concat(harianSubjects);
       chipRow.innerHTML = allOpts.map(function (sub) {
         const active = portalState.selectedSubject === sub;
         const label = sub === "ALL" ? "Semua Subjek" : sub;
@@ -972,20 +1040,145 @@
       }).join("");
     }
 
-    // Dropdown Subjek Leaderboard
+    // Dropdown Subjek Leaderboard (merangkumi semua subjek Harian + Klon)
     const lbSelect = document.getElementById("lbSubjectSelect");
     if (lbSelect) {
       const prev = portalState.lbSubject || "ALL";
       lbSelect.innerHTML = ['<option value="ALL">Semua Subjek</option>']
-        .concat(subjects.map(function (s) {
+        .concat(allSubjects.map(function (s) {
           return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>';
         }))
         .join("");
-      lbSelect.value = seen[prev] ? prev : "ALL";
+      lbSelect.value = seenAll[prev] ? prev : "ALL";
     }
   }
 
-  // 4. SEKSYEN KATALOG BANK SOALAN
+  function populateKlonSubjectChips() {
+    const klonSubjects = [];
+    const seen = {};
+    (portalState.catalog || []).forEach(function (c) {
+      if (c.category === "klon" && c.subject && !seen[c.subject]) {
+        seen[c.subject] = true;
+        klonSubjects.push(c.subject);
+      }
+    });
+    klonSubjects.sort();
+
+    if (portalState.klonSelectedSubject !== "ALL" && !seen[portalState.klonSelectedSubject]) {
+      portalState.klonSelectedSubject = "ALL";
+    }
+
+    const chipRow = document.getElementById("klonSubjectChipsRow");
+    if (chipRow) {
+      const allOpts = ["ALL"].concat(klonSubjects);
+      chipRow.innerHTML = allOpts.map(function (sub) {
+        const active = portalState.klonSelectedSubject === sub;
+        const label = sub === "ALL" ? "Semua Subjek" : sub;
+        return '<button type="button" class="tab-chip js-klon-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + '</button>';
+      }).join("");
+    }
+  }
+
+  function renderQuizCardMarkup_(item, isKlon) {
+    let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
+    let primaryBtnLabel = isKlon ? "Jawab Klon" : "Mula Latihan";
+    let primaryBtnClass = "btn-primary";
+    let resumeAttr = 'data-resume="0"';
+
+    if (item.inProgress) {
+      const ans = item.inProgress.answeredCount || 0;
+      const tot = item.inProgress.totalQuestions || 45;
+      statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
+      primaryBtnLabel = "Sambung Semula";
+      primaryBtnClass = "btn-emerald";
+      resumeAttr = 'data-resume="1"';
+    } else if (item.bestScore) {
+      statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
+      primaryBtnLabel = "Ulang Latihan";
+      primaryBtnClass = "btn-outline";
+    }
+
+    const leadBadgeHtml = isKlon
+      ? '<span class="badge-klon">' + ICONS.sparkles + ' ' + escapeHtml(item.setCode || "KLON SPM") + '</span><span class="status-badge badge-subject">' + escapeHtml(item.subject) + '</span>'
+      : '<span class="status-badge badge-subject">' + ICONS.book + ' ' + escapeHtml(item.subject) + '</span>';
+
+    return [
+      '<article class="quiz-card">',
+      '  <div>',
+      '    <div class="quiz-card-badges">',
+             leadBadgeHtml,
+             statusBadgeHtml,
+      '    </div>',
+      '    <h3 class="quiz-card-title">' + escapeHtml(item.cleanTitle) + '</h3>',
+      '    <div class="quiz-card-meta">',
+      (!isKlon && item.setCode ? '<span>' + escapeHtml(item.setCode) + '</span>' : ''),
+      (item.stateOrSource ? '<span>' + (!isKlon && item.setCode ? '• ' : '') + escapeHtml(item.stateOrSource) + '</span>' : ''),
+      (item.year ? '<span class="tabular-nums">• ' + escapeHtml(item.year) + '</span>' : ''),
+      '    </div>',
+      '  </div>',
+      '  <div class="quiz-card-footer">',
+      '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
+             ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
+      '    </button>',
+      (item.inProgress
+        ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
+        : ''),
+      '  </div>',
+      '</article>'
+    ].join("\n");
+  }
+
+  // 4A. SEKSYEN SET SOALAN KLON SPM INTERAKTIF
+  function renderKlonCatalogSection() {
+    const sec = document.getElementById("klonCatalogSection");
+    const grid = document.getElementById("klonCatalogCardsGrid");
+    const countLabel = document.getElementById("klonCatalogCountLabel");
+    if (!sec || !grid) return;
+
+    const allKlon = (portalState.catalog || [])
+      .filter(function (item) { return item.category === "klon"; })
+      .slice()
+      .sort(function (a, b) {
+        return (Number(a.setNumber) || 999) - (Number(b.setNumber) || 999) || String(a.cleanTitle || "").localeCompare(String(b.cleanTitle || ""));
+      });
+
+    if (allKlon.length === 0) {
+      sec.hidden = true;
+      grid.innerHTML = "";
+      return;
+    }
+
+    sec.hidden = false;
+    const q = portalState.klonSearchQuery.trim().toLowerCase();
+    const filtered = allKlon.filter(function (item) {
+      if (portalState.klonSelectedSubject !== "ALL" && item.subject !== portalState.klonSelectedSubject) {
+        return false;
+      }
+      if (portalState.klonSelectedStatus !== "ALL" && item.status !== portalState.klonSelectedStatus) {
+        return false;
+      }
+      if (q) {
+        const hay = [item.cleanTitle, item.subject, item.level, item.stateOrSource, item.setCode, "klon"].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (countLabel) {
+      countLabel.textContent = filtered.length + " set klon dipaparkan";
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="bento-card" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:32px">Tiada set Klon SPM sepadan dengan carian atau penapis semasa.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function (item) {
+      return renderQuizCardMarkup_(item, true);
+    }).join("\n");
+  }
+
+  // 4. SEKSYEN KATALOG BANK SOALAN HARIAN
   function renderCatalogSection() {
     const grid = document.getElementById("catalogCardsGrid");
     const countLabel = document.getElementById("catalogCountLabel");
@@ -993,6 +1186,9 @@
 
     const q = portalState.searchQuery.trim().toLowerCase();
     const filtered = (portalState.catalog || []).filter(function (item) {
+      if (item.category === "klon") {
+        return false;
+      }
       if (portalState.selectedSubject !== "ALL" && item.subject !== portalState.selectedSubject) {
         return false;
       }
@@ -1016,48 +1212,7 @@
     }
 
     grid.innerHTML = filtered.map(function (item) {
-      let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
-      let primaryBtnLabel = "Mula Latihan";
-      let primaryBtnClass = "btn-primary";
-      let resumeAttr = 'data-resume="0"';
-
-      if (item.inProgress) {
-        const ans = item.inProgress.answeredCount || 0;
-        const tot = item.inProgress.totalQuestions || 45;
-        statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
-        primaryBtnLabel = "Sambung Semula";
-        primaryBtnClass = "btn-emerald";
-        resumeAttr = 'data-resume="1"';
-      } else if (item.bestScore) {
-        statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
-        primaryBtnLabel = "Ulang Latihan";
-        primaryBtnClass = "btn-outline";
-      }
-
-      return [
-        '<article class="quiz-card">',
-        '  <div>',
-        '    <div class="quiz-card-badges">',
-        '      <span class="status-badge badge-subject">' + ICONS.book + ' ' + escapeHtml(item.subject) + '</span>',
-               statusBadgeHtml,
-        '    </div>',
-        '    <h3 class="quiz-card-title">' + escapeHtml(item.cleanTitle) + '</h3>',
-        '    <div class="quiz-card-meta">',
-        (item.setCode ? '<span>' + escapeHtml(item.setCode) + '</span>' : ''),
-        (item.stateOrSource ? '<span>• ' + escapeHtml(item.stateOrSource) + '</span>' : ''),
-        (item.year ? '<span class="tabular-nums">• ' + escapeHtml(item.year) + '</span>' : ''),
-        '    </div>',
-        '  </div>',
-        '  <div class="quiz-card-footer">',
-        '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
-               ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
-        '    </button>',
-        (item.inProgress
-          ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
-          : ''),
-        '  </div>',
-        '</article>'
-      ].join("\n");
+      return renderQuizCardMarkup_(item, false);
     }).join("\n");
 
     if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
@@ -1199,6 +1354,7 @@
       if (resetStart) {
         portalState.inProgress = (portalState.inProgress || []).filter(function (p) { return p.fileId !== fileId; });
         renderContinueProgressSection();
+        renderKlonCatalogSection();
         renderCatalogSection();
       }
     } catch (err) {
@@ -1690,6 +1846,16 @@
         return;
       }
 
+      const klonChip = e.target.closest(".js-klon-subject-chip");
+      if (klonChip) {
+        portalState.klonSelectedSubject = klonChip.getAttribute("data-subject") || "ALL";
+        document.querySelectorAll(".js-klon-subject-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === klonChip ? "true" : "false");
+        });
+        renderKlonCatalogSection();
+        return;
+      }
+
       const lbTab = e.target.closest(".js-lb-period");
       if (lbTab) {
         const period = lbTab.getAttribute("data-period") || "all";
@@ -1752,6 +1918,22 @@
       statusSelect.addEventListener("change", function () {
         portalState.selectedStatus = statusSelect.value || "ALL";
         renderCatalogSection();
+      });
+    }
+
+    const klonSearchInput = document.getElementById("klonSearchInput");
+    if (klonSearchInput) {
+      klonSearchInput.addEventListener("input", function () {
+        portalState.klonSearchQuery = klonSearchInput.value;
+        renderKlonCatalogSection();
+      });
+    }
+
+    const klonStatusSelect = document.getElementById("klonStatusSelect");
+    if (klonStatusSelect) {
+      klonStatusSelect.addEventListener("change", function () {
+        portalState.klonSelectedStatus = klonStatusSelect.value || "ALL";
+        renderKlonCatalogSection();
       });
     }
 
@@ -2018,6 +2200,68 @@
         return;
       }
 
+      const lpKlonFilterBtn = e.target.closest(".js-lp-klon-filter");
+      if (lpKlonFilterBtn) {
+        const grp = lpKlonFilterBtn.getAttribute("data-klon-filter") || "ALL";
+        portalState.lpKlonFilter = grp;
+        document.querySelectorAll(".js-lp-klon-filter").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === lpKlonFilterBtn ? "true" : "false");
+        });
+        document.querySelectorAll("#lpKlonCardsGrid .klon-card").forEach(function (card) {
+          const cardGrp = card.getAttribute("data-klon-group") || "";
+          card.hidden = grp !== "ALL" && cardGrp !== grp;
+        });
+        return;
+      }
+
+      const gotoKlonPortal = e.target.closest(".js-goto-klon-portal");
+      if (gotoKlonPortal) {
+        e.preventDefault();
+        window.location.hash = isOpenAccessMode() || (portalState.sessionToken && portalState.user) ? "#klon-portal" : "#login";
+        syncRouteMode().then(function () {
+          const klonHead = document.getElementById("klonCatalogHeading");
+          if (klonHead && !document.getElementById("dashboardView").hidden) {
+            setTimeout(function () { klonHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+          }
+        });
+        return;
+      }
+
+      const openKlonDirect = e.target.closest(".js-open-klon-direct");
+      if (openKlonDirect && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) {
+        e.preventDefault();
+        const klonCode = (openKlonDirect.getAttribute("data-klon-code") || "").trim().toUpperCase();
+        const klonSub = (openKlonDirect.getAttribute("data-klon-subject") || "").trim().toLowerCase();
+        (async function () {
+          if (!(portalState.sessionToken && portalState.user)) {
+            if (!isOpenAccessMode()) {
+              window.location.hash = "#login";
+              syncRouteMode();
+              window.scrollTo(0, 0);
+              return;
+            }
+            window.location.hash = "#klon-portal";
+            await enterOpenPortal(false);
+          } else {
+            window.location.hash = "#klon-portal";
+            syncRouteMode();
+          }
+          const list = portalState.catalog || [];
+          const found = list.find(function (c) {
+            return c.category === "klon" && String(c.setCode || "").toUpperCase() === klonCode;
+          }) || list.find(function (c) {
+            return c.category === "klon" && String(c.subject || "").toLowerCase() === klonSub;
+          });
+          if (found && found.fileId) {
+            openQuizSet(found.fileId, Boolean(found.inProgress), false);
+          } else {
+            const klonHead = document.getElementById("klonCatalogHeading");
+            if (klonHead) klonHead.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        })();
+        return;
+      }
+
       const gotoLogin = e.target.closest(".js-goto-login");
       if (gotoLogin) {
         e.preventDefault();
@@ -2096,7 +2340,8 @@
   }
 
   function isHashPortal() {
-    return window.location.hash.toLowerCase() === "#portal";
+    const h = window.location.hash.toLowerCase();
+    return h === "#portal" || h === "#klon-portal";
   }
 
   async function syncRouteMode() {

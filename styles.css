@@ -2884,3 +2884,201 @@ html:not([data-open-access="true"]) [data-open-only] {
 .lp-nav-actions .btn{white-space:nowrap}
 .lp-nav-actions{flex-wrap:nowrap}
 @media (max-width:520px){#landingLoginBtn{padding-inline:12px}}
+
+/* ==========================================================================
+   BAHAGIAN SOALAN INTERAKTIF KLON SPM (LANDING PAGE & PORTAL PELAJAR)
+   Mematuhi modern-web-guidance (card): <article>, container-type: inline-size,
+   single .card-link stretched via ::after, elevated secondary controls, :has() focus/hover
+   ========================================================================== */
+.klon-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-block-end: 22px;
+}
+
+.klon-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.klon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 275px), 1fr));
+  gap: 16px;
+}
+
+.klon-card {
+  container-type: inline-size;
+  background: var(--surface-card, #ffffff);
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: var(--shadow-xs, 0 2px 6px rgb(15 23 42 / 0.04));
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.klon-card[hidden] {
+  display: none !important;
+}
+
+.klon-card:has(a.card-link) {
+  position: relative;
+}
+
+.klon-card a.card-link {
+  color: var(--brand-navy, #0f172a);
+  text-decoration: none;
+}
+
+.klon-card a.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.klon-card a.card-link:focus-visible {
+  outline: none;
+}
+
+.klon-card:has(a.card-link:focus-visible) {
+  outline: 2px solid var(--brand-accent, #2563eb);
+  outline-offset: 2px;
+  border-color: var(--brand-accent, #2563eb);
+}
+
+.klon-card:has(a.card-link:hover) {
+  border-color: var(--brand-accent, #2563eb);
+  box-shadow: 0 12px 28px rgb(37 99 235 / 0.10);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .klon-card:has(a.card-link:hover) {
+    transform: none;
+  }
+}
+
+.klon-card:has(a.card-link) :is(a:not(.card-link), button, input) {
+  position: relative;
+  z-index: 1;
+}
+
+.klon-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.klon-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.badge-klon {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #ffffff;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.badge-kssm-code {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.klon-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  color: var(--brand-navy, #0f172a);
+}
+
+.klon-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary, #475569);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.klon-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-block-start: 12px;
+  border-block-start: 1px dashed var(--border-subtle, #e2e8f0);
+}
+
+.klon-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--grade-emerald, #059669);
+}
+
+.btn-xs {
+  min-block-size: 34px;
+  padding: 5px 11px;
+  font-size: 0.78rem;
+  border-radius: 9px;
+}
+
+@container (width < 290px) {
+  .klon-card-foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .klon-card-foot .btn-xs {
+    justify-content: center;
+  }
+}
+
+.klon-portal-section {
+  background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-xl, 20px);
+  padding: clamp(18px, 3vw, 28px);
+  margin-block-end: 28px;
+}
+
+.klon-summary-strip {
+  margin-block-start: 22px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg, 16px);
+  padding: 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}

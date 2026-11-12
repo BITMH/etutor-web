@@ -33,12 +33,13 @@ export async function executeCikguChatTurn(drawerInstance, userMessage) {
   let detectedMarks = 4;
 
   if (freshCtx && freshCtx.fullQuestion) {
-    screenContextText =
+    screenContextText = (
       `Kertas: ${freshCtx.quizTitle || "Kertas SPM"}\n` +
       `${freshCtx.questionTitle ? "Soalan: " + freshCtx.questionTitle + "\n" : ""}` +
-      `Teks Soalan Pada Skrin:\n${freshCtx.fullQuestion}`;
-    studentDraftText = freshCtx.studentDraft || "";
-    detectedMarks = freshCtx.marks || 4;
+      `Teks Soalan Pada Skrin:\n${freshCtx.fullQuestion}`
+    ).slice(0, 5500);
+    studentDraftText = String(freshCtx.studentDraft || "").slice(0, 7500);
+    detectedMarks = Math.max(1, Math.min(100, Math.round(Number(freshCtx.marks) || 4)));
   }
 
   let rawAccumulated = "";

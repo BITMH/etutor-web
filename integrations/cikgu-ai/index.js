@@ -4,21 +4,21 @@
  * Mengorkestrasi penderia skrin iframe, jambatan penandaan Kertas 2, dan laci sembang Cikgu AI.
  */
 
-import { onDailyTokenChange } from "./config.js?v=19";
-import { CikguFailoverClient } from "./api/failover-client.js?v=19";
-import { WarmupStateMachine } from "./state/warmup-machine.js?v=19";
-import { CikguSpeechIO } from "./audio/speech-io.js?v=19";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=19";
+import { onDailyTokenChange } from "./config.js?v=21";
+import { CikguFailoverClient } from "./api/failover-client.js?v=21";
+import { WarmupStateMachine } from "./state/warmup-machine.js?v=21";
+import { CikguSpeechIO } from "./audio/speech-io.js?v=21";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=21";
 import {
   resolveStudentLoginName,
   installExamIframeSensorHook,
   detectSubjectFromText,
   readMainWebsiteFallbackContext
-} from "./sensor/iframe-screen-sensor.js?v=19";
+} from "./sensor/iframe-screen-sensor.js?v=21";
 import {
   postTokenSyncToIframe,
   handlePaper2SubGradeRequest
-} from "./grading/paper2-bridge.js?v=19";
+} from "./grading/paper2-bridge.js?v=21";
 
 export { resolveStudentLoginName };
 
@@ -27,7 +27,7 @@ function injectScopedStylesheet() {
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=19", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=21", import.meta.url).href;
   document.head.appendChild(link);
 }
 

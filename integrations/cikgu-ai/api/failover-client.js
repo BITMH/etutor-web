@@ -180,14 +180,29 @@ export class CikguFailoverClient {
     for (let i = 0; i < candidates.length; i++) {
       const candidate = candidates[i];
       try {
-        const resp = await fetch(`${candidate.url}/v1/semak`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Etutor-User": userKey
-          },
-          body: JSON.stringify({ ...payload, id_pengguna: userKey, stream: true })
-        });
+        const postSemak = (bodyObj) =>
+          fetch(`${candidate.url}/v1/semak`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Etutor-User": userKey
+            },
+            body: JSON.stringify({ ...bodyObj, id_pengguna: userKey, stream: true })
+          });
+
+        let resp = await postSemak(payload);
+
+        // Keserasian automatik jika pelayan sandaran masih menjalankan skema lama (markah_penuh <= 20)
+        if (resp.status === 422 && (Number(payload.markah_penuh) > 20 || String(payload.jawapan_pelajar || "").length > 3800 || String(payload.skema_rasmi || "").length > 2400)) {
+          resp = await postSemak({
+            ...payload,
+            soalan: String(payload.soalan || "").slice(0, 3800),
+            jawapan_pelajar: String(payload.jawapan_pelajar || "").slice(0, 3800),
+            skema_rasmi: String(payload.skema_rasmi || "").slice(0, 2400),
+            konteks_skrin: String(payload.konteks_skrin || "").slice(0, 4400),
+            markah_penuh: Math.max(1, Math.min(20, Math.round(Number(payload.markah_penuh) || 4)))
+          });
+        }
 
         const failoverHdr = resp.headers.get("X-Cikgu-Failover");
         if ((resp.status === 429 && failoverHdr === "hf-spaces") || resp.status >= 502) {

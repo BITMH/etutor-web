@@ -4136,6 +4136,86 @@
     syncNow({ silent: true });
   }
 
+  // --- [features/aduan/issueController.js] ---
+  /**
+   * src/features/aduan/issueController.js
+   * Pengendali interaksi borang Aduan / Laporkan Isu eTutor.
+   */
+  function bindIssueReportingEvents() {
+    const openBtn = document.getElementById("openIssueModalBtn");
+    const closeBtn = document.getElementById("closeIssueModalBtn");
+    const dialog = document.getElementById("issueDialog");
+    const submitBtn = document.getElementById("submitIssueBtn");
+    const detailsInput = document.getElementById("issueDetailsInput");
+    const contactInput = document.getElementById("issueContactInput");
+    const successToast = document.getElementById("issueToastSuccess");
+
+    if (!openBtn || !dialog || !submitBtn) return;
+
+    openBtn.addEventListener("click", function () {
+      if (successToast) successToast.style.display = "none";
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        <span>Hantar Laporan</span>
+      `;
+      dialog.showModal();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        dialog.close();
+      });
+    }
+
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+
+    submitBtn.addEventListener("click", async function () {
+      const details = (detailsInput && detailsInput.value.trim()) || "";
+      if (!details) {
+        alert("Sila masukkan sedikit keterangan isu yang anda hadapi.");
+        if (detailsInput) detailsInput.focus();
+        return;
+      }
+
+      const selectedRadio = document.querySelector('input[name="issueCategory"]:checked');
+      const cat = (selectedRadio && selectedRadio.value) || "Umum";
+      const contact = (contactInput && contactInput.value.trim()) || "Anonim";
+      const currentUrl = window.location.href;
+      const currentUser = (portalState.user && (portalState.user.userId || portalState.user.buyerName)) || "Guest";
+      const devId = (portalState.user && portalState.user.deviceId) || "";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Menghantar laporan...";
+
+      try {
+        await callBackend("reportIssue", {
+          kategori: cat,
+          keterangan: details,
+          kontak: contact,
+          pageUrl: currentUrl,
+          userId: currentUser,
+          deviceId: devId
+        });
+      } catch (err) {
+        // Teruskan walaupun di luar talian
+      }
+
+      if (successToast) successToast.style.display = "block";
+      submitBtn.textContent = "Laporan Dihantar ✓";
+
+      setTimeout(function () {
+        dialog.close();
+        if (detailsInput) detailsInput.value = "";
+      }, 1600);
+    });
+  }
+
   // --- [main.js] ---
   /**
    * src/main.js
@@ -4148,10 +4228,12 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
     bindCloudSyncEvents();
+    bindIssueReportingEvents();
     initLiveCatalogAutoSync();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)

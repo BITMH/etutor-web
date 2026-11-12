@@ -1931,3 +1931,74 @@
   <script type="module" src="./integrations/cikgu-ai/index.js?v=21"></script>
 </body>
 </html>
+
+  <!-- BUTANG TERAPUNG KECIL ADUAN / ISU (SUDUT BAWAH KIRI) -->
+  <button id="openIssueModalBtn" class="etutor-issue-fab" type="button" aria-label="Buka borang aduan atau laporkan isu">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span>Aduan / Isu</span>
+  </button>
+
+  <!-- POP-UP DIALOG ADUAN / ISU -->
+  <dialog id="issueDialog" class="issue-dialog" closedby="any" aria-labelledby="issueDialogTitle">
+    <div class="dialog-header">
+      <h3 id="issueDialogTitle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        Laporkan Isu / Aduan
+      </h3>
+      <button type="button" id="closeIssueModalBtn" class="close-btn" aria-label="Tutup dialog">&times;</button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="form-group" style="margin-bottom:14px">
+        <label style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Kategori Masalah:</label>
+        <div class="pill-options" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Ralat Soalan/Skema" class="pill-radio" checked style="display:none">
+            <span class="pill-label">📝 Ralat Soalan/Skema</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Teknikal/AI Lambat" class="pill-radio" style="display:none">
+            <span class="pill-label">⚡ AI Loading Lama</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Log Masuk/PIN" class="pill-radio" style="display:none">
+            <span class="pill-label">🔑 Akses / Log Masuk</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Cadangan" class="pill-radio" style="display:none">
+            <span class="pill-label">💡 Cadangan Baru</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:14px">
+        <label for="issueDetailsInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Keterangan Isu:</label>
+        <textarea id="issueDetailsInput" class="form-control" rows="3" placeholder="Contoh: Soalan 3(b) jawapan skema terbalik atau gambar rajah kabur..." style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;resize:vertical;min-height:90px;font-family:inherit"></textarea>
+      </div>
+
+      <div class="form-group" style="margin-bottom:0">
+        <label for="issueContactInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">No. Telefon / Emel (Pilihan):</label>
+        <input type="text" id="issueContactInput" class="form-control" placeholder="Boleh tinggalkan kosong jika tanpa nama" style="width:100%;padding:9px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;font-family:inherit">
+      </div>
+
+      <div id="issueToastSuccess" class="toast-success" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;padding:10px 12px;border-radius:10px;font-size:0.84rem;font-weight:600;text-align:center;margin-top:12px">
+        ✓ Terima kasih! Laporan anda telah direkodkan. Pihak kami akan menyemak isu ini dengan segera.
+      </div>
+    </div>
+
+    <div class="dialog-footer" style="padding:14px 20px 18px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom-left-radius:20px;border-bottom-right-radius:20px">
+      <button type="button" id="submitIssueBtn" class="btn-submit" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:10px;font-size:0.9rem;font-weight:700;border:none;cursor:pointer;background:#1d4ed8;color:#ffffff;box-shadow:0 4px 12px rgba(29,78,216,0.2);transition:all 0.2s ease">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        <span>Hantar Laporan</span>
+      </button>
+    </div>
+  </dialog>

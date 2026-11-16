@@ -14,6 +14,7 @@ window.ETUTOR_CONFIG = {
   SUPABASE_ANON_KEY: "sb_publishable_-VuEWlM2SSKoAelLidXZyw_et9gDZnW",
 
   // Endpoint Pelayan Dwi-Awan Cikgu AI SPM (Utama: Modal T4 GPU -> Sandaran: Google Cloud Run Always Free + HF Model Hub)
+  CIKGU_CHATBOT_ENABLED: false,
   CIKGU_MODAL_GPU_URL: "https://hanismathussin96--cikgu-ai-spm.modal.run",
   CIKGU_CLOUD_RUN_URL: "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
   CIKGU_HF_MODEL_REPO: "https://huggingface.co/BITMH/cikgu-spm-qwen35-gguf",

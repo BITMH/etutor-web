@@ -123,15 +123,20 @@ export function initCikguAiIntegration() {
     return readMainWebsiteFallbackContext();
   }
 
-  drawer = new CikguWidgetDrawer({
-    client,
-    warmupMachine,
-    speechIO,
-    getLiveScreenSnapshot,
-    getStudentName: () =>
-      resolveStudentLoginName(latestIframeQuestion && latestIframeQuestion.candidateName)
-  });
-  drawer.mount();
+  const globalCfg = window.ETUTOR_CONFIG || {};
+  const chatbotEnabled = globalCfg.CIKGU_CHATBOT_ENABLED !== false;
+
+  if (chatbotEnabled) {
+    drawer = new CikguWidgetDrawer({
+      client,
+      warmupMachine,
+      speechIO,
+      getLiveScreenSnapshot,
+      getStudentName: () =>
+        resolveStudentLoginName(latestIframeQuestion && latestIframeQuestion.candidateName)
+    });
+    drawer.mount();
+  }
 
   const examStageEl = document.getElementById("examStage");
   const syncExamStageBodyClass = () => {
@@ -145,7 +150,7 @@ export function initCikguAiIntegration() {
       syncExamStageBodyClass();
       if (examStageEl.hidden) {
         latestIframeQuestion = null;
-        drawer.setActiveScreenQuestion(readMainWebsiteFallbackContext());
+        if (drawer) drawer.setActiveScreenQuestion(readMainWebsiteFallbackContext());
       } else {
         installExamIframeSensorHook();
         const tipEl = document.getElementById("cikguAiTooltip");

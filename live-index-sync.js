@@ -84,12 +84,12 @@
       '      <span class="tabular-nums" style="font-size:0.78rem;font-weight:700;color:var(--grade-emerald)">Live \u2022 ' + esc(metaRight) + '</span>',
       '    </div>',
       '    <h3 style="font-size:1rem;color:var(--brand-navy);margin:0 0 6px;line-height:1.35">',
-      '      <a href="' + esc(launchHref) + '" style="color:inherit;text-decoration:none">' + esc(item.cleanTitle || item.fileName) + '</a>',
+      '      <a href="' + esc(launchHref) + '" rel="nofollow" style="color:inherit;text-decoration:none">' + esc(item.cleanTitle || item.fileName) + '</a>',
       '    </h3>',
       '    <p style="font-size:0.83rem;color:var(--text-secondary);margin:0 0 10px">Set Peperiksaan Interaktif Penuh + Skema Jawapan Automatik</p>',
       '  </div>',
       '  <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">',
-      '    <a href="' + esc(launchHref) + '" data-launch-link class="btn btn-emerald btn-sm" style="flex:1;justify-content:center">' + ctaLabel + '</a>',
+      '    <a href="' + esc(launchHref) + '" rel="nofollow" data-launch-link class="btn btn-emerald btn-sm" style="flex:1;justify-content:center">' + ctaLabel + '</a>',
       '  </div>',
       '</article>'
     ].join("\n");
@@ -118,7 +118,7 @@
       '    <h2 id="' + esc(headId) + '" style="font-size:1.3rem;color:var(--brand-navy);margin:0">' + esc(titlePrefix + subjectName) + '</h2>',
       '    <p data-subject-set-count style="font-size:0.86rem;color:var(--text-secondary);margin:4px 0 0">1 set interaktif lengkap skema pemarkahan</p>',
       '  </div>',
-      '  <a href="' + esc(filterHref) + '" class="btn btn-outline btn-sm">Tapis ' + esc(subjectName) + ' Di Portal &rarr;</a>',
+      '  <a href="' + esc(filterHref) + '" rel="nofollow" class="btn btn-outline btn-sm">Tapis ' + esc(subjectName) + ' Di Portal &rarr;</a>',
       '</div>',
       '<div class="seo-related-grid"></div>'
     ].join("\n");

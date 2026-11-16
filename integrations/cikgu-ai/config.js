@@ -39,17 +39,16 @@ export const DEFAULT_CIKGU_CONFIG = {
     globalCfg.CIKGU_MODAL_GPU_URL ||
     "https://hanismathussin96--cikgu-ai-spm.modal.run",
 
-  // URL Pelayan Utama mengikut fasa (Auto-Switch selepas 3 bulan):
-  // 10 Nov 2026 - 10 Feb 2027: Google Cloud Run ($300 Percuma)
-  // Mulai 11 Feb 2027 ke atas: Beralih automatik ke Modal.com
+  // URL Pelayan Utama: Utamakan Modal Serverless GPU (binaan v3.0.0 terkini + Snap & Check Vision),
+  // manakala Google Cloud Run bertindak sebagai sandaran automatik dwi-awan.
   get primaryCloudRunUrl() {
     if (isLocalHost && globalCfg.CIKGU_LOCAL_DEV === true) return "http://127.0.0.1:8080";
-    return isGcpTrialActive() ? this.cloudRunUrl : this.modalGpuUrl;
+    return this.modalGpuUrl;
   },
 
-  // URL Pelayan Sandaran mengikut fasa (Auto-Switch sebaliknya):
+  // URL Pelayan Sandaran Auto-Failover:
   get backupHfSpacesUrl() {
-    return isGcpTrialActive() ? this.modalGpuUrl : this.cloudRunUrl;
+    return this.cloudRunUrl;
   },
 
   warmupTimeoutMs: 38000,

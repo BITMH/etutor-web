@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /*?set=
+Disallow: /*?klon=
+Disallow: /*?klonSubject=
+Disallow: /*?subject=
+Disallow: /*?fileId=
 
 Sitemap: https://etutor.my/sitemap.xml

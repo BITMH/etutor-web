@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src https://accounts.google.com/gsi/; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src https://accounts.google.com/gsi/ https://*.supabase.co; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; object-src 'none'; base-uri 'self'; form-action 'self';">
   <title>Soalan Percubaan SPM Interaktif &amp; Skema Jawapan | eTutor.my</title>
   <meta name="description" content="Jawab koleksi lengkap Soalan Percubaan SPM negeri, SBP &amp; Klon SPM secara interaktif di telefon atau laptop. Dikemas kini secara langsung lengkap semakan skema &amp; analisis bab lemah.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=21">
+  <link rel="stylesheet" href="./styles.css?v=22">
 
   <script type="application/ld+json">
   {
@@ -1112,30 +1112,48 @@
        ===================================================================== -->
 
 <dialog id="syncDialog" class="slip-dialog" closedby="any" aria-labelledby="syncDialogTitle">
-  <div style="padding:clamp(20px,4vw,30px);max-inline-size:440px">
-    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Log Masuk Pelajar</h2>
+  <div style="padding:clamp(20px,4vw,30px);max-inline-size:460px">
+    <h2 id="syncDialogTitle" style="font-family:var(--font-heading);margin:0 0 6px;color:var(--brand-navy)">Log Masuk &amp; Simpan Progress</h2>
     <p style="margin:0 0 16px;color:var(--text-secondary);font-size:0.92rem;line-height:1.55">
-      Percuma, tanpa kata laluan. Sahkan e-mel atau guna Google supaya markah, XP &amp; kuiz separuh jalan tersimpan dan boleh disambung di telefon atau komputer lain.
+      Sahkan akaun Google atau e-mel anda supaya markah, XP &amp; kuiz separuh jalan tersimpan selamat merentas telefon dan komputer.
     </p>
+
+    <div id="syncWebViewNotice" class="webview-notice" role="region" aria-label="Amaran pelayar dalam aplikasi" hidden>
+      <p class="webview-notice-text">
+        Pelayar aplikasi sosial menyekat log masuk Google. Buka <strong>etutor.my</strong> di Chrome/Safari atau guna kod e-mel di bawah.
+      </p>
+      <button type="button" class="btn btn-outline btn-xs js-copy-portal-url">Salin Pautan</button>
+    </div>
 
     <div id="syncDialogLogin">
       <div id="syncGoogleWrap" hidden style="margin-block-end:14px">
         <div id="syncGoogleBtn" style="min-block-size:44px"></div>
+        <button type="button" id="syncGoogleOAuthBtn" class="btn btn-google-oauth" style="inline-size:100%;margin-block-start:8px" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.68-.22-2.48H12v4.69h6.46a5.52 5.52 0 01-2.4 3.62v3.01h3.88c2.27-2.09 3.58-5.17 3.58-8.84z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.91l-3.88-3.01c-1.07.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.11A12 12 0 0012 24z"/>
+            <path fill="#FBBC05" d="M5.27 14.27A7.2 7.2 0 014.89 12c0-.79.14-1.56.38-2.27V6.62H1.26A12 12 0 000 12c0 1.94.46 3.77 1.26 5.38l4.01-3.11z"/>
+            <path fill="#EA4335" d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.26 6.62l4.01 3.11c.95-2.85 3.6-4.96 6.73-4.96z"/>
+          </svg>
+          <span>Teruskan dengan Google</span>
+        </button>
         <p style="text-align:center;color:var(--text-muted);font-size:0.8rem;margin:10px 0 0">atau guna kod e-mel</p>
       </div>
 
       <div id="syncStepEmail">
         <form id="syncEmailForm" novalidate>
-          <label for="syncEmailInput" style="font-weight:600;font-size:0.9rem">Alamat e-mel</label>
-          <input type="email" id="syncEmailInput" class="text-input" required autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="nama@gmail.com" style="margin-block:6px 12px">
+          <label for="syncEmailInput" style="font-weight:600;font-size:0.9rem;display:block">Alamat e-mel</label>
+          <span id="syncEmailHint" class="field-hint">Kod 6 digit akan dihantar terus ke peti masuk anda.</span>
+          <input type="email" id="syncEmailInput" name="email" class="text-input" required autocomplete="username" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-describedby="syncEmailHint" placeholder="nama@gmail.com" style="margin-block:6px 12px">
           <button type="submit" class="btn btn-primary" style="inline-size:100%">Hantar Kod Pengesahan</button>
         </form>
       </div>
 
       <div id="syncStepCode" hidden>
         <form id="syncCodeForm" novalidate>
-          <label for="syncCodeInput" style="font-weight:600;font-size:0.9rem">Kod 6 digit dari e-mel anda</label>
-          <input type="text" id="syncCodeInput" class="text-input tabular-nums" required autocomplete="one-time-code" inputmode="numeric" maxlength="8" placeholder="123456" style="margin-block:6px 12px;letter-spacing:0.3em;text-align:center">
+          <label for="syncCodeInput" style="font-weight:600;font-size:0.9rem;display:block">Kod 6 digit dari e-mel anda</label>
+          <span id="syncCodeHint" class="field-hint">Masukkan 6 digit kod pengesahan yang diterima.</span>
+          <input type="text" id="syncCodeInput" name="otp" class="text-input otp-code-input tabular-nums" required autocomplete="one-time-code" inputmode="numeric" pattern="\d{6}" maxlength="6" enterkeyhint="done" aria-describedby="syncCodeHint" placeholder="123456" style="margin-block:6px 12px">
           <button type="submit" class="btn btn-primary" style="inline-size:100%">Sahkan &amp; Simpan</button>
           <button type="button" id="syncCodeBack" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Tukar e-mel</button>
         </form>
@@ -1144,10 +1162,26 @@
 
     <div id="syncDialogLinked" hidden>
       <p style="margin:0 0 4px;font-size:0.92rem">Disambungkan sebagai <strong id="syncLinkedEmail"></strong></p>
+      <p id="syncLinkedPackage" style="margin:0 0 4px;font-size:0.84rem;color:var(--brand-accent);font-weight:600" hidden></p>
       <p id="syncLastTime" style="margin:0 0 14px;color:var(--text-secondary);font-size:0.84rem"></p>
       <button type="button" id="syncNowBtn" class="btn btn-primary" style="inline-size:100%">Sync Sekarang</button>
       <button type="button" id="syncSignOutBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Putuskan sambungan</button>
     </div>
+
+    <details id="syncPinDetails" class="sync-pin-details">
+      <summary class="sync-pin-summary">Ada Kod PIN Pembeli? Tebus atau log masuk PIN</summary>
+      <form id="syncPinRedeemForm" novalidate style="margin-block-start:10px">
+        <div class="form-field" style="margin-block-end:10px">
+          <label for="syncPinUserIdInput">ID Pembeli (No. Telefon / E-mel)</label>
+          <input type="text" id="syncPinUserIdInput" name="username" class="text-input" required minlength="5" autocomplete="username" spellcheck="false" autocapitalize="off" placeholder="0123456789">
+        </div>
+        <div class="form-field" style="margin-block-end:12px">
+          <label for="syncPinCodeInput">Kod PIN Akses</label>
+          <input type="password" id="syncPinCodeInput" name="password" class="text-input tabular-nums" required minlength="4" maxlength="20" autocomplete="current-password" placeholder="••••••">
+        </div>
+        <button type="submit" id="syncPinSubmitBtn" class="btn btn-outline btn-sm" style="inline-size:100%">Tebus / Log Masuk Kod PIN</button>
+      </form>
+    </details>
 
     <div id="syncDialogMsg" class="sync-dialog-msg" role="status" aria-live="polite" hidden style="margin-block:14px 0"></div>
 
@@ -1175,7 +1209,7 @@
       </div>
 
       <h2 id="loginHeading" class="login-title">Log Masuk Pelajar</h2>
-      <p class="login-subtitle">Masukkan ID Pengguna dan Kod PIN pembelian anda untuk menyambung latihan harian serta menyemak kedudukan Leaderboard.</p>
+      <p class="login-subtitle">Sambung menggunakan akaun Google, kod e-mel 6-digit, atau Kod PIN pembelian anda.</p>
 
       <div id="loginAlertBox" class="alert-banner alert-danger" role="alert" hidden>
         <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="margin-top:2px">
@@ -1184,88 +1218,180 @@
         <span id="loginAlertText"></span>
       </div>
 
-      <form id="loginForm" novalidate>
-        <div class="form-field">
-          <label for="loginUserIdInput">ID Pengguna (No. Telefon / E-mel)</label>
-          <span id="userIdHint" class="field-hint">Contoh: 0123456789 atau nama@gmail.com</span>
-          <input
-            type="text"
-            id="loginUserIdInput"
-            name="username"
-            class="text-input"
-            required
-            minlength="5"
-            autocomplete="username"
-            aria-describedby="userIdHint"
-            aria-errormessage="userIdError"
-            placeholder="0123456789"
-          >
-          <div id="userIdError" class="field-error">
-            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
-            </svg>
-            <span>Sila masukkan No. Telefon atau alamat e-mel yang sah.</span>
-          </div>
-        </div>
+      <div id="inAppWebViewNotice" class="webview-notice" role="region" aria-label="Amaran pelayar dalam aplikasi" hidden>
+        <p class="webview-notice-text">
+          Anda membuka portal ini melalui pelayar aplikasi sosial (TikTok/Instagram/Facebook). Untuk log masuk Google 1-Klik tanpa sekatan, buka pautan ini dalam <strong>Chrome</strong> atau <strong>Safari</strong>, atau guna tab <strong>Kod E-mel</strong> di bawah.
+        </p>
+        <button type="button" class="btn btn-outline btn-xs js-copy-portal-url">Salin Pautan etutor.my</button>
+      </div>
 
-        <div class="form-field">
-          <label for="loginPinInput">Kod PIN Akses</label>
-          <span id="pinHint" class="field-hint">Masukkan Kod PIN 4–12 aksara daripada mesej pengesahan anda</span>
-          <div class="input-wrap">
-            <input
-              type="password"
-              id="loginPinInput"
-              name="password"
-              class="text-input has-trailing-btn tabular-nums"
-              required
-              minlength="4"
-              maxlength="20"
-              inputmode="text"
-              autocomplete="current-password"
-              aria-describedby="pinHint"
-              aria-errormessage="pinError"
-              placeholder="••••••"
-            >
-            <button
-              type="button"
-              id="togglePinBtn"
-              class="pin-toggle-btn"
-              aria-label="Paparkan Kod PIN"
-              aria-pressed="false"
-            >
-              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-            </button>
-          </div>
-          <div id="pinError" class="field-error">
-            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
-            </svg>
-            <span>Sila masukkan Kod PIN sekurang-kurangnya 4 aksara.</span>
-          </div>
-        </div>
-
-        <button type="submit" id="loginSubmitBtn" class="btn btn-primary" style="inline-size:100%">
-          Log Masuk ke Portal
+      <div id="loginGoogleSection" class="google-auth-block">
+        <div id="loginGoogleGsiBtn" class="google-gsi-slot"></div>
+        <button type="button" id="loginGoogleOAuthBtn" class="btn btn-google-oauth" style="inline-size:100%">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.68-.22-2.48H12v4.69h6.46a5.52 5.52 0 01-2.4 3.62v3.01h3.88c2.27-2.09 3.58-5.17 3.58-8.84z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.91l-3.88-3.01c-1.07.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.11A12 12 0 0012 24z"/>
+            <path fill="#FBBC05" d="M5.27 14.27A7.2 7.2 0 014.89 12c0-.79.14-1.56.38-2.27V6.62H1.26A12 12 0 000 12c0 1.94.46 3.77 1.26 5.38l4.01-3.11z"/>
+            <path fill="#EA4335" d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.26 6.62l4.01 3.11c.95-2.85 3.6-4.96 6.73-4.96z"/>
+          </svg>
+          <span>Teruskan dengan Google</span>
         </button>
+      </div>
 
-        <div style="margin-block-start:16px;padding-block-start:14px;border-block-start:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:0.84rem">
-          <a href="#" class="js-back-to-landing" style="color:var(--text-secondary);text-decoration:none;font-weight:600;min-block-size:36px;display:inline-flex;align-items:center;gap:6px">
-            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/>
-            </svg>
-            <span>Kembali ke Laman Utama</span>
-          </a>
-          <a href="#pakej" class="js-back-to-pricing" style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
-            Belum ada PIN? Dapatkan Akses
-          </a>
-          <a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20perlukan%20bantuan%20log%20masuk%20%2F%20PIN%20portal." target="_blank" rel="noopener" style="color:var(--grade-emerald);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center;inline-size:100%;justify-content:center;border-block-start:1px dashed var(--border-subtle);padding-block-start:10px">
-            Bantuan WhatsApp Admin: 013-732 7696
-          </a>
-        </div>
-      </form>
+      <div class="auth-divider" aria-hidden="true"><span>atau guna kaedah lain</span></div>
+
+      <div class="auth-mode-tabs" role="tablist" aria-label="Kaedah Log Masuk">
+        <button type="button" id="loginTabPinBtn" class="auth-tab-btn" role="tab" aria-selected="true" aria-controls="loginTabPanelPin" data-auth-tab="pin">
+          Kod PIN Pembeli
+        </button>
+        <button type="button" id="loginTabOtpBtn" class="auth-tab-btn" role="tab" aria-selected="false" aria-controls="loginTabPanelOtp" data-auth-tab="otp">
+          Kod E-mel (OTP)
+        </button>
+      </div>
+
+      <div id="loginTabPanelPin" role="tabpanel" aria-labelledby="loginTabPinBtn">
+        <form id="loginForm" novalidate>
+          <div class="form-field">
+            <label for="loginUserIdInput">ID Pengguna (No. Telefon / E-mel)</label>
+            <span id="userIdHint" class="field-hint">Contoh: 0123456789 atau nama@gmail.com</span>
+            <input
+              type="text"
+              id="loginUserIdInput"
+              name="username"
+              class="text-input"
+              required
+              minlength="5"
+              autocomplete="username"
+              spellcheck="false"
+              autocapitalize="off"
+              autocorrect="off"
+              enterkeyhint="next"
+              aria-describedby="userIdHint"
+              aria-errormessage="userIdError"
+              placeholder="0123456789"
+            >
+            <div id="userIdError" class="field-error">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+              </svg>
+              <span>Sila masukkan No. Telefon atau alamat e-mel yang sah.</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="loginPinInput">Kod PIN Akses</label>
+            <span id="pinHint" class="field-hint">Masukkan Kod PIN 4–12 aksara daripada mesej pengesahan anda</span>
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="loginPinInput"
+                name="password"
+                class="text-input has-trailing-btn tabular-nums"
+                required
+                minlength="4"
+                maxlength="20"
+                inputmode="text"
+                autocomplete="current-password"
+                enterkeyhint="done"
+                aria-describedby="pinHint"
+                aria-errormessage="pinError"
+                placeholder="••••••"
+              >
+              <button
+                type="button"
+                id="togglePinBtn"
+                class="pin-toggle-btn"
+                aria-label="Paparkan Kod PIN"
+                aria-pressed="false"
+              >
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+            <div id="pinError" class="field-error">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+              </svg>
+              <span>Sila masukkan Kod PIN sekurang-kurangnya 4 aksara.</span>
+            </div>
+          </div>
+
+          <button type="submit" id="loginSubmitBtn" class="btn btn-primary" style="inline-size:100%">
+            Log Masuk ke Portal
+          </button>
+        </form>
+      </div>
+
+      <div id="loginTabPanelOtp" role="tabpanel" aria-labelledby="loginTabOtpBtn" hidden>
+        <form id="loginOtpRequestForm" novalidate>
+          <div class="form-field">
+            <label for="loginOtpEmailInput">Alamat E-mel Pelajar</label>
+            <span id="loginOtpEmailHint" class="field-hint">Kami akan menghantar kod pengesahan 6-digit tanpa kata laluan ke e-mel anda.</span>
+            <input
+              type="email"
+              id="loginOtpEmailInput"
+              name="email"
+              class="text-input"
+              required
+              autocomplete="username"
+              inputmode="email"
+              spellcheck="false"
+              autocapitalize="off"
+              autocorrect="off"
+              enterkeyhint="send"
+              aria-describedby="loginOtpEmailHint"
+              placeholder="nama@gmail.com"
+            >
+          </div>
+          <button type="submit" id="loginOtpSendBtn" class="btn btn-primary" style="inline-size:100%">
+            Hantar Kod 6-Digit
+          </button>
+        </form>
+
+        <form id="loginOtpVerifyForm" novalidate hidden>
+          <div class="form-field">
+            <label for="loginOtpCodeInput">Kod Pengesahan 6-Digit</label>
+            <span id="loginOtpCodeHint" class="field-hint">Masukkan kod 6 digit yang dihantar ke e-mel anda.</span>
+            <input
+              type="text"
+              id="loginOtpCodeInput"
+              name="otp"
+              class="text-input otp-code-input tabular-nums"
+              required
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              pattern="\d{6}"
+              maxlength="6"
+              enterkeyhint="done"
+              aria-describedby="loginOtpCodeHint"
+              placeholder="123456"
+            >
+          </div>
+          <button type="submit" id="loginOtpVerifyBtn" class="btn btn-primary" style="inline-size:100%">
+            Sahkan &amp; Log Masuk
+          </button>
+          <button type="button" id="loginOtpBackBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">
+            Tukar Alamat E-mel
+          </button>
+        </form>
+      </div>
+
+      <div style="margin-block-start:16px;padding-block-start:14px;border-block-start:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:0.84rem">
+        <a href="#" class="js-back-to-landing" style="color:var(--text-secondary);text-decoration:none;font-weight:600;min-block-size:36px;display:inline-flex;align-items:center;gap:6px">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/>
+          </svg>
+          <span>Kembali ke Laman Utama</span>
+        </a>
+        <a href="#pakej" class="js-back-to-pricing" style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
+          Belum ada PIN? Dapatkan Akses
+        </a>
+        <a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20perlukan%20bantuan%20log%20masuk%20%2F%20PIN%20portal." target="_blank" rel="noopener" style="color:var(--grade-emerald);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center;inline-size:100%;justify-content:center;border-block-start:1px dashed var(--border-subtle);padding-block-start:10px">
+          Bantuan WhatsApp Admin: 013-732 7696
+        </a>
+      </div>
     </section>
   </div>
 
@@ -1925,10 +2051,11 @@
   <div id="portalToast" class="toast-banner" role="status" aria-live="polite" hidden></div>
 
   <script src="./vendor/anime.umd.min.js"></script>
-  <script src="./config.js?v=21"></script>
-  <script src="./animations.js?v=21"></script>
-  <script src="./app.js?v=21"></script>
-  <script type="module" src="./integrations/cikgu-ai/index.js?v=21"></script>
+  <script src="./vendor/supabase.umd.min.js"></script>
+  <script src="./config.js?v=22"></script>
+  <script src="./animations.js?v=22"></script>
+  <script src="./app.js?v=22"></script>
+  <script type="module" src="./integrations/cikgu-ai/index.js?v=22"></script>
 </body>
 </html>
 
@@ -1960,19 +2087,19 @@
         <div class="pill-options" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <label style="margin:0;cursor:pointer">
             <input type="radio" name="issueCategory" value="Ralat Soalan/Skema" class="pill-radio" checked style="display:none">
-            <span class="pill-label">📝 Ralat Soalan/Skema</span>
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Ralat Soalan/Skema</span>
           </label>
           <label style="margin:0;cursor:pointer">
             <input type="radio" name="issueCategory" value="Teknikal/AI Lambat" class="pill-radio" style="display:none">
-            <span class="pill-label">⚡ AI Loading Lama</span>
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>AI Loading Lama</span>
           </label>
           <label style="margin:0;cursor:pointer">
             <input type="radio" name="issueCategory" value="Log Masuk/PIN" class="pill-radio" style="display:none">
-            <span class="pill-label">🔑 Akses / Log Masuk</span>
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>Akses / Log Masuk</span>
           </label>
           <label style="margin:0;cursor:pointer">
             <input type="radio" name="issueCategory" value="Cadangan" class="pill-radio" style="display:none">
-            <span class="pill-label">💡 Cadangan Baru</span>
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Cadangan Baru</span>
           </label>
         </div>
       </div>

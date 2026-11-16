@@ -532,6 +532,85 @@ h1, h2, h3, h4 {
   border: 1px solid var(--status-danger-border);
 }
 
+.google-auth-block {
+  display: grid;
+  gap: 10px;
+  margin-block-end: var(--space-4);
+}
+.google-gsi-slot {
+  display: flex;
+  justify-content: center;
+  min-block-size: 44px;
+}
+.btn-google-oauth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-block-size: 44px;
+  padding-inline: 16px;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  cursor: pointer;
+}
+.btn-google-oauth:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-block: 14px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  block-size: 1px;
+  background: var(--border-subtle);
+}
+
+.auth-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 4px;
+  background: var(--surface-subtle, #f1f5f9);
+  border-radius: var(--radius-md);
+  margin-block-end: var(--space-4);
+}
+.auth-tab-btn {
+  min-block-size: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.86rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.auth-tab-btn[aria-selected="true"] {
+  background: var(--surface-card, #ffffff);
+  color: var(--brand-navy, #0f172a);
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.1);
+}
+
+.otp-code-input {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  text-align: center;
+  min-block-size: 48px;
+}
+
 /* ==========================================================================
    ADMIN SUBSCRIPTION & ACCESS CONTROL PANEL (#admin)
    ========================================================================== */
@@ -3101,6 +3180,12 @@ html:not([data-open-access="true"]) [data-open-only] {
 .lp-nav-actions .btn{white-space:nowrap}
 .lp-nav-actions{flex-wrap:nowrap}
 @media (max-width:520px){#landingLoginBtn{padding-inline:12px}}
+
+.webview-notice{background:#fffbeb;border:1px solid #fcd34d;color:#92400e;border-radius:var(--radius-md);padding:12px 14px;font-size:.84rem;margin-block-end:14px;display:grid;gap:8px}
+.webview-notice[hidden]{display:none}
+.webview-notice-text{margin:0;line-height:1.45}
+.sync-pin-details{margin-block-start:14px;padding-block-start:12px;border-block-start:1px dashed var(--border-subtle,#e2e8f0)}
+.sync-pin-summary{cursor:pointer;font-size:.84rem;font-weight:600;color:var(--brand-accent,#2563eb)}
 
 /* === features/aduan/issue.css === */
 /* ========================================================

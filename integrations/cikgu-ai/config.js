@@ -83,11 +83,17 @@ export const DEFAULT_CIKGU_CONFIG = {
   ]
 };
 
+const LOCAL_LOOPBACK_RE = /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?(?:\/|$)/i;
+
 export function loadRuntimeEndpoints() {
+  const defaultPrimary = DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl.replace(/\/+$/, "");
+  const defaultBackup = DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl.replace(/\/+$/, "");
   try {
     const mode = localStorage.getItem(CIKGU_STORAGE_KEYS.ROUTING_MODE) || "auto";
-    const primary = DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl;
-    const backup = DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl;
+    const storedPrimary = (localStorage.getItem(CIKGU_STORAGE_KEYS.PRIMARY_URL) || "").trim();
+    const storedBackup = (localStorage.getItem(CIKGU_STORAGE_KEYS.BACKUP_URL) || "").trim();
+    const primary = LOCAL_LOOPBACK_RE.test(storedPrimary) ? storedPrimary : defaultPrimary;
+    const backup = LOCAL_LOOPBACK_RE.test(storedBackup) ? storedBackup : defaultBackup;
     return {
       mode,
       primaryUrl: primary.replace(/\/+$/, ""),
@@ -96,8 +102,8 @@ export function loadRuntimeEndpoints() {
   } catch {
     return {
       mode: "auto",
-      primaryUrl: DEFAULT_CIKGU_CONFIG.primaryCloudRunUrl.replace(/\/+$/, ""),
-      backupUrl: DEFAULT_CIKGU_CONFIG.backupHfSpacesUrl.replace(/\/+$/, "")
+      primaryUrl: defaultPrimary,
+      backupUrl: defaultBackup
     };
   }
 }

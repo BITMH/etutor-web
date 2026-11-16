@@ -18,6 +18,8 @@
   const SYNC_TOKEN_KEY = "etutor_sync_token_v1";
   const SYNC_EMAIL_KEY = "etutor_sync_email_v1";
   const SYNC_LAST_KEY = "etutor_sync_last_v1";
+  const SYNC_LB_ID_KEY = "etutor_sync_lb_id_v1";
+  const SYNC_PAKEJ_KEY = "etutor_sync_pakej_v1";
   const LIVE_CATALOG_CACHE_KEY = "etutor_live_catalog_v1";
 
   // --- [shared/ui/icons.js] ---
@@ -151,7 +153,9 @@
     rawServerLeaderboard: null,
     deepLinkHandled: false,
     catalogFingerprint: "",
-    lastCatalogSyncMs: 0
+    lastCatalogSyncMs: 0,
+    pinProgressStateByFileId: {},
+    supabaseAuthenticated: false
   };
 
   // --- [shared/ui/toast.js] ---
@@ -215,20 +219,474 @@
     dialogEl.close();
   }
 
+  function bindLightDismissFallback(dialogEl) {
+    if (!dialogEl || typeof HTMLDialogElement === "undefined") return;
+    if ("closedBy" in HTMLDialogElement.prototype) return;
+    if (dialogEl.dataset.lightDismissBound === "1") return;
+    dialogEl.dataset.lightDismissBound = "1";
+
+    dialogEl.addEventListener("click", function (event) {
+      if (event.target !== dialogEl) return;
+      const rect = dialogEl.getBoundingClientRect();
+      const isDialogContent = (
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+      );
+      if (!isDialogContent) {
+        closeTopLayer(dialogEl);
+      }
+    });
+  }
+
+  // --- [shared/supabase/supabaseClient.js] ---
+  /**
+   * src/shared/supabase/supabaseClient.js
+   * Pengurus klien Supabase singleton, pasangan nonce SHA-256 Google One-Tap & pengesan WebView terhad.
+   */
+
+  let cachedSupabaseClient = null;
+  let cachedSupabaseSignature = "";
+
+  function bytesToHex(bytes) {
+    let hex = "";
+    for (let i = 0; i < bytes.length; i++) {
+      hex += bytes[i].toString(16).padStart(2, "0");
+    }
+    return hex;
+  }
+
+  function isSupabaseConfigured() {
+    if (typeof window === "undefined") return false;
+    const cfg = window.ETUTOR_CONFIG || {};
+    const url = String(cfg.SUPABASE_URL || "").trim();
+    const key = String(cfg.SUPABASE_ANON_KEY || "").trim();
+    return Boolean(url && key && window.supabase && typeof window.supabase.createClient === "function");
+  }
+
+  function getSupabaseClient() {
+    if (!isSupabaseConfigured()) return null;
+    const cfg = window.ETUTOR_CONFIG || {};
+    const url = String(cfg.SUPABASE_URL || "").trim().replace(/\/+$/, "");
+    const key = String(cfg.SUPABASE_ANON_KEY || "").trim();
+    const sig = url + "|" + key.slice(0, 12);
+    if (cachedSupabaseClient && cachedSupabaseSignature === sig) {
+      return cachedSupabaseClient;
+    }
+    cachedSupabaseClient = window.supabase.createClient(url, key, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        flowType: "pkce"
+      }
+    });
+    cachedSupabaseSignature = sig;
+    return cachedSupabaseClient;
+  }
+
+  async function generateGoogleNoncePair() {
+    const cryptoApi = typeof globalThis !== "undefined" ? globalThis.crypto : null;
+    let rawNonce = "";
+    if (cryptoApi && typeof cryptoApi.getRandomValues === "function") {
+      const bytes = new Uint8Array(32);
+      cryptoApi.getRandomValues(bytes);
+      rawNonce = bytesToHex(bytes);
+    } else {
+      rawNonce = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    }
+
+    let hashedNonce = rawNonce;
+    if (cryptoApi && cryptoApi.subtle && typeof cryptoApi.subtle.digest === "function" && typeof TextEncoder !== "undefined") {
+      const encoded = new TextEncoder().encode(rawNonce);
+      const digest = await cryptoApi.subtle.digest("SHA-256", encoded);
+      hashedNonce = bytesToHex(new Uint8Array(digest));
+    }
+    return { rawNonce: rawNonce, hashedNonce: hashedNonce };
+  }
+
+  function isRestrictedInAppWebView(uaString) {
+    const ua = uaString !== undefined
+      ? String(uaString || "")
+      : (typeof navigator !== "undefined" ? String(navigator.userAgent || "") : "");
+    if (!ua) return false;
+    return /(TikTok|BytedanceWebview|musical_ly|Instagram|FBAN|FBAV|FB_IAB|Line\/|MicroMessenger)/i.test(ua);
+  }
+
+  // --- [shared/supabase/supabaseDataService.js] ---
+  /**
+   * src/shared/supabase/supabaseDataService.js
+   * Lapisan perkhidmatan Supabase Auth (Google ID Token, OAuth PKCE, OTP E-mel) & RPC Postgres.
+   */
+
+
+  function mapAuthError(err, fallbackMsg) {
+    const raw = String((err && err.message) || err || "");
+    if (/expired|invalid.*token|otp/i.test(raw)) return "Kod pengesahan tidak sah atau telah tamat tempoh.";
+    if (/rate limit|too many/i.test(raw)) return "Terlalu banyak cubaan. Sila tunggu sebentar sebelum cuba semula.";
+    if (/network|fetch/i.test(raw)) return "Tidak dapat menghubungi pelayan Supabase. Semak sambungan internet anda.";
+    return raw || fallbackMsg || "Pengesahan gagal. Sila cuba lagi.";
+  }
+
+  async function sbSyncStudentBundle(payload) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const sessRes = await sb.auth.getSession();
+    const session = sessRes && sessRes.data ? sessRes.data.session : null;
+    if (!session || !session.user) {
+      return { ok: false, authExpired: true, error: "Sesi tamat. Sila log masuk semula." };
+    }
+
+    const p = payload || {};
+    const { data, error } = await sb.rpc("sync_student_bundle", {
+      p_name: String(p.name || "").trim().slice(0, 80),
+      p_scores: Array.isArray(p.scores) ? p.scores.slice(-250) : [],
+      p_progress: Array.isArray(p.progress) ? p.progress.slice(0, 10) : [],
+      p_completed_file_ids: Array.isArray(p.completedFileIds) ? p.completedFileIds.slice(0, 60) : []
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal menyegerakkan data.") };
+    if (!data || !data.ok) return data || { ok: false, error: "Gagal menyegerakkan data." };
+
+    return Object.assign({}, data, {
+      syncToken: session.access_token || "sb_session",
+      email: data.email || session.user.email || ""
+    });
+  }
+
+  async function sbSignInWithGoogleIdToken(idToken, rawNonce) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const opts = { provider: "google", token: String(idToken || "") };
+    if (rawNonce) opts.nonce = String(rawNonce);
+    const { data, error } = await sb.auth.signInWithIdToken(opts);
+    if (error || !data || !data.session) {
+      return { ok: false, error: mapAuthError(error, "Pengesahan Google gagal.") };
+    }
+    return sbSyncStudentBundle({});
+  }
+
+  async function sbSignInWithGoogleRedirect(redirectHash) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const baseUrl = window.location.origin + window.location.pathname;
+    const targetHash = redirectHash || "#portal";
+    const { error } = await sb.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: baseUrl + targetHash,
+        queryParams: { prompt: "select_account" }
+      }
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal membuka log masuk Google.") };
+    return { ok: true, redirecting: true };
+  }
+
+  async function sbRequestEmailOtp(email) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const cleanEmail = String(email || "").trim().toLowerCase();
+    const { error } = await sb.auth.signInWithOtp({
+      email: cleanEmail,
+      options: { shouldCreateUser: true }
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal menghantar kod e-mel.") };
+    return { ok: true, message: "Kod 6 digit telah dihantar ke " + cleanEmail + ". Semak juga folder Spam." };
+  }
+
+  async function sbVerifyEmailOtp(email, code) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const cleanEmail = String(email || "").trim().toLowerCase();
+    const cleanCode = String(code || "").replace(/\D/g, "");
+    const { data, error } = await sb.auth.verifyOtp({
+      email: cleanEmail,
+      token: cleanCode,
+      type: "email"
+    });
+    if (error || !data || !data.session) {
+      return { ok: false, error: mapAuthError(error, "Kod pengesahan tidak betul atau tamat tempoh.") };
+    }
+    return sbSyncStudentBundle({});
+  }
+
+  async function sbSignOut() {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: true };
+    await sb.auth.signOut();
+    return { ok: true };
+  }
+
+  async function sbFetchLeaderboard(period, subject, userKey, displayName) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const { data, error } = await sb.rpc("get_leaderboard", {
+      p_period: period || "all",
+      p_subject: subject || "ALL",
+      p_current_user_key: userKey || "",
+      p_current_name: displayName || ""
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal memuatkan Leaderboard.") };
+    return { ok: true, leaderboard: data };
+  }
+
+  async function sbRedeemBuyerPin(buyerId, pin, deviceId) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const { data, error } = await sb.rpc("redeem_buyer_pin", {
+      p_buyer_id: String(buyerId || "").trim(),
+      p_pin: String(pin || "").trim(),
+      p_device_id: String(deviceId || portalState.deviceId || "web")
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal menebus Kod PIN.") };
+    return data || { ok: false, error: "Gagal menebus Kod PIN." };
+  }
+
+  async function sbLoginWithBuyerPin(buyerId, pin, deviceId) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const { data, error } = await sb.rpc("login_with_buyer_pin", {
+      p_buyer_id: String(buyerId || "").trim(),
+      p_pin: String(pin || "").trim(),
+      p_device_id: String(deviceId || portalState.deviceId || "web")
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal mengesahkan PIN.") };
+    return data || { ok: false, error: "Log masuk PIN gagal." };
+  }
+
+  async function sbGetPinDashboardData(sessionToken, deviceId) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const { data, error } = await sb.rpc("get_pin_dashboard_data", {
+      p_session_token: String(sessionToken || ""),
+      p_device_id: String(deviceId || portalState.deviceId || "web")
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal memuatkan data sesi.") };
+    return data || { ok: false, authExpired: true, error: "Sesi tamat." };
+  }
+
+  async function sbSavePinProgress(sessionToken, deviceId, payload) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false };
+    const p = payload || {};
+    const { data, error } = await sb.rpc("save_pin_quiz_progress", {
+      p_session_token: String(sessionToken || ""),
+      p_device_id: String(deviceId || portalState.deviceId || "web"),
+      p_file_id: String(p.fileId || ""),
+      p_quiz_title: String(p.quizTitle || ""),
+      p_subject: String(p.subject || ""),
+      p_answered_count: Number(p.answeredCount) || 0,
+      p_total_questions: Number(p.totalQuestions) || 45,
+      p_time_remaining: typeof p.timeRemaining === "number" ? Math.round(p.timeRemaining) : null,
+      p_state_json: String(p.stateJson || "")
+    });
+    if (error) return { ok: false, error: error.message };
+    return data || { ok: true };
+  }
+
+  async function sbClearPinProgress(sessionToken, deviceId, fileId) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false };
+    const { data, error } = await sb.rpc("clear_pin_quiz_progress", {
+      p_session_token: String(sessionToken || ""),
+      p_device_id: String(deviceId || portalState.deviceId || "web"),
+      p_file_id: String(fileId || "")
+    });
+    if (error) return { ok: false, error: error.message };
+    return data || { ok: true };
+  }
+
+  async function sbSavePinScore(sessionToken, deviceId, payload) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false };
+    const p = payload || {};
+    const { data, error } = await sb.rpc("save_pin_quiz_score", {
+      p_session_token: String(sessionToken || ""),
+      p_device_id: String(deviceId || portalState.deviceId || "web"),
+      p_file_id: String(p.fileId || ""),
+      p_quiz_title: String(p.quizTitle || ""),
+      p_subject: String(p.subject || ""),
+      p_score_text: String(p.scoreText || ""),
+      p_percentage: Number(p.percentage) || 0,
+      p_weak_topics: Array.isArray(p.weakTopics) ? p.weakTopics : []
+    });
+    if (error) return { ok: false, error: error.message };
+    return data || { ok: false };
+  }
+
+  async function sbGetPortalSettings() {
+    const sb = getSupabaseClient();
+    if (!sb || !isSupabaseConfigured()) return null;
+    const { data, error } = await sb.from("portal_settings").select("open_access_mode").eq("id", 1).maybeSingle();
+    if (error || !data) return null;
+    return data;
+  }
+
+  // --- [shared/supabase/pinBundleBuilder.js] ---
+  /**
+   * src/shared/supabase/pinBundleBuilder.js
+   * Pembina pakej papan pemuka (Catalog + Continue Progress + KPI Bento) untuk sesi PIN Supabase.
+   */
+
+
+
+  function filterCatalogByPackage(items, aksesPakej) {
+    const list = Array.isArray(items) ? items : [];
+    const pkg = String(aksesPakej || "ALL").trim();
+    if (!pkg || pkg.toUpperCase() === "ALL") return list;
+    const allowedSet = new Set(
+      pkg.split(",").map(function (s) { return s.trim().toLowerCase(); }).filter(Boolean)
+    );
+    if (allowedSet.size === 0) return list;
+    return list.filter(function (item) {
+      return allowedSet.has(String((item && item.subject) || "").trim().toLowerCase());
+    });
+  }
+
+  function getCachedCatalogFallback() {
+    if (Array.isArray(portalState.rawOpenCatalog) && portalState.rawOpenCatalog.length > 0) {
+      return portalState.rawOpenCatalog;
+    }
+    if (Array.isArray(portalState.catalog) && portalState.catalog.length > 0) {
+      return portalState.catalog;
+    }
+    try {
+      const raw = localStorage.getItem(LIVE_CATALOG_CACHE_KEY);
+      const parsed = raw ? JSON.parse(raw) : null;
+      if (parsed && Array.isArray(parsed.items)) return parsed.items;
+    } catch (e) {}
+    return [];
+  }
+
+  function buildPinDashboardBundle(pinDashData, rawCatalog, lbData) {
+    const userObj = (pinDashData && pinDashData.user) || portalState.user || { userId: "PELAJAR", buyerName: "Pelajar", aksesPakej: "ALL" };
+    const allowedFiles = filterCatalogByPackage(rawCatalog, userObj.aksesPakej);
+    const scores = Array.isArray(pinDashData && pinDashData.scores) ? pinDashData.scores : [];
+    const progRows = Array.isArray(pinDashData && pinDashData.inProgress) ? pinDashData.inProgress : [];
+
+    const bestByFile = {};
+    const dateMap = {};
+    const weakCounter = {};
+
+    scores.forEach(function (s) {
+      if (!s || !s.fileId) return;
+      const pct = Math.max(0, Math.min(100, Number(s.percentage) || 0));
+      if (s.dateOnly) dateMap[s.dateOnly] = true;
+      if (!bestByFile[s.fileId] || pct >= bestByFile[s.fileId].percentage) {
+        bestByFile[s.fileId] = {
+          fileId: s.fileId,
+          quizTitle: s.quizTitle || "",
+          subject: s.subject || "",
+          scoreText: s.scoreText || (pct + "%"),
+          percentage: pct,
+          grade: s.grade || computeLocalSpmGrade(pct, true),
+          completedAt: s.completedAt || ""
+        };
+      }
+      if (Array.isArray(s.weakTopics)) {
+        s.weakTopics.forEach(function (w) {
+          if (!w || !w.topic) return;
+          if (!weakCounter[w.topic]) weakCounter[w.topic] = { topic: w.topic, count: 0, lowestPct: 100 };
+          weakCounter[w.topic].count++;
+          if (typeof w.percentage === "number" && w.percentage < weakCounter[w.topic].lowestPct) {
+            weakCounter[w.topic].lowestPct = w.percentage;
+          }
+        });
+      }
+    });
+
+    const progMap = {};
+    const stateByFileId = {};
+    progRows.forEach(function (p) {
+      if (!p || !p.fileId) return;
+      progMap[p.fileId] = {
+        updatedAt: p.updatedAt || "Sebentar tadi",
+        fileId: p.fileId,
+        quizTitle: p.quizTitle || "Set Latihan Interaktif",
+        subject: p.subject || "SPM",
+        answeredCount: Math.max(0, Number(p.answeredCount) || 0),
+        totalQuestions: Math.max(1, Number(p.totalQuestions) || 45),
+        timeRemaining: p.timeRemaining !== undefined ? p.timeRemaining : null
+      };
+      if (p.stateJson) stateByFileId[p.fileId] = p.stateJson;
+    });
+    portalState.pinProgressStateByFileId = stateByFileId;
+
+    const subMap = {};
+    let completedSets = 0;
+    let sumBestPct = 0;
+    let totalXp = 0;
+
+    const enrichedCatalog = allowedFiles.map(function (f) {
+      const best = bestByFile[f.fileId] || null;
+      const prog = progMap[f.fileId] || null;
+      const subName = f.subject || "Umum";
+      if (!subMap[subName]) subMap[subName] = { subject: subName, total: 0, completed: 0 };
+      subMap[subName].total++;
+      if (best) {
+        completedSets++;
+        subMap[subName].completed++;
+        sumBestPct += best.percentage;
+        totalXp += Math.round(best.percentage * 10) + 50;
+      }
+      return Object.assign({}, f, {
+        bestScore: best,
+        inProgress: prog,
+        status: prog ? "in_progress" : (best ? "completed" : "not_started")
+      });
+    });
+
+    const avgScore = completedSets > 0 ? Math.round(sumBestPct / completedSets) : 0;
+    const completionPct = enrichedCatalog.length > 0 ? Math.round((completedSets / enrichedCatalog.length) * 100) : 0;
+    const weakTopics = Object.keys(weakCounter)
+      .map(function (k) { return weakCounter[k]; })
+      .sort(function (a, b) { return a.lowestPct - b.lowestPct || b.count - a.count; })
+      .slice(0, 4);
+
+    const subjectBreakdown = Object.keys(subMap)
+      .map(function (k) {
+        const st = subMap[k];
+        return {
+          subject: st.subject,
+          completed: st.completed,
+          total: st.total,
+          percentage: st.total > 0 ? Math.round((st.completed / st.total) * 100) : 0
+        };
+      })
+      .sort(function (a, b) { return b.total - a.total; });
+
+    return {
+      ok: true,
+      user: userObj,
+      catalog: enrichedCatalog,
+      inProgress: Object.keys(progMap).map(function (k) { return progMap[k]; }),
+      progressSummary: {
+        totalSets: enrichedCatalog.length,
+        completedSets: completedSets,
+        inProgressSets: progRows.length,
+        completionPercentage: completionPct,
+        averageScore: avgScore,
+        averageGrade: computeLocalSpmGrade(avgScore, completedSets > 0),
+        totalXp: totalXp,
+        streakDays: calculateLocalStreakDays(dateMap),
+        subjectBreakdown: subjectBreakdown,
+        weakTopics: weakTopics
+      },
+      leaderboard: lbData || portalState.leaderboard || null
+    };
+  }
+
   // --- [shared/utils/apiClient.js] ---
   /**
    * src/shared/utils/apiClient.js
-   * Klien komunikasi hibrid ke Backend Google Apps Script (google.script.run atau HTTP POST text/plain).
+   * Klien komunikasi hibrid ke Backend Supabase Auth/Postgres (jika aktif) serta Google Apps Script /api.
    */
 
-  async function callBackend(action, payload, options) {
-    const reqBody = Object.assign({}, payload || {}, {
-      action: action,
-      deviceId: portalState.deviceId,
-      sessionToken: portalState.sessionToken || undefined
-    });
 
-    // 1. Jika dibuka terus sebagai Sandaran Google Apps Script (Index.html)
+
+
+
+  async function sendToGasOrPreview(reqBody, options) {
     if (typeof google !== "undefined" && google.script && google.script.run) {
       return new Promise(function (resolve, reject) {
         google.script.run
@@ -238,7 +696,6 @@
       });
     }
 
-    // 2. Domain etutor.my atau Pelayan Pratonton Lokal (/api)
     const cfgUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GAS_WEB_APP_URL)
       ? window.ETUTOR_CONFIG.GAS_WEB_APP_URL.trim()
       : "";
@@ -253,7 +710,6 @@
     }
     const endpoint = isLocalPreview ? "/api" : (cfgUrl || "/api");
 
-    // Guna Content-Type: text/plain;charset=utf-8 bagi mengelakkan CORS OPTIONS preflight pada GAS
     const fetchInit = {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -264,11 +720,132 @@
       fetchInit.priority = options.priority;
     }
     const resp = await fetch(endpoint, fetchInit);
-
     if (!resp.ok) {
       throw new Error("Ralat sambungan pelayan (HTTP " + resp.status + ")");
     }
     return resp.json();
+  }
+
+  async function fetchRawCatalogForSupabase(forceRefresh) {
+    let rawCatalog = forceRefresh ? [] : getCachedCatalogFallback();
+    if (rawCatalog.length === 0 || forceRefresh) {
+      try {
+        const pubRes = await sendToGasOrPreview({
+          action: "publicDashboard",
+          forceRefresh: Boolean(forceRefresh),
+          deviceId: portalState.deviceId
+        });
+        if (pubRes && pubRes.ok && Array.isArray(pubRes.catalog)) {
+          rawCatalog = pubRes.catalog;
+          portalState.rawOpenCatalog = pubRes.catalog;
+        }
+      } catch (e) {}
+    }
+    return rawCatalog;
+  }
+
+  function resolveCurrentLbIdentity() {
+    if (portalState.sessionToken && portalState.sessionToken.indexOf("sbpin_") === 0 && portalState.user) {
+      return {
+        userKey: "pin_" + portalState.user.userId,
+        name: portalState.user.buyerName || ""
+      };
+    }
+    try {
+      const lbId = localStorage.getItem(SYNC_LB_ID_KEY) || "";
+      if (lbId) {
+        return {
+          userKey: lbId,
+          name: (portalState.user && portalState.user.buyerName) || ""
+        };
+      }
+    } catch (e) {}
+    return { userKey: "", name: "" };
+  }
+
+  async function callBackend(action, payload, options) {
+    const reqBody = Object.assign({}, payload || {}, {
+      action: action,
+      deviceId: portalState.deviceId,
+      sessionToken: portalState.sessionToken || undefined
+    });
+
+    if (isSupabaseConfigured()) {
+      const isSbPinSession = Boolean(portalState.sessionToken && String(portalState.sessionToken).indexOf("sbpin_") === 0);
+
+      if (action === "getLeaderboard") {
+        const me = resolveCurrentLbIdentity();
+        return sbFetchLeaderboard(reqBody.period || "all", reqBody.subject || "ALL", me.userKey, me.name);
+      }
+
+      if (action === "login") {
+        const auth = await sbLoginWithBuyerPin(reqBody.userId, reqBody.pin, portalState.deviceId);
+        if (!auth || !auth.ok) {
+          const isLocalPreview = typeof window !== "undefined" &&
+            /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname || "");
+          if (isLocalPreview && !(auth && auth.rateLimited)) {
+            return sendToGasOrPreview(reqBody, options);
+          }
+          return auth;
+        }
+        const pinDash = await sbGetPinDashboardData(auth.sessionToken, portalState.deviceId);
+        if (!pinDash || !pinDash.ok) return pinDash;
+        const rawCat = await fetchRawCatalogForSupabase(false);
+        const lbRes = await sbFetchLeaderboard("all", "ALL", pinDash.userKey, auth.user.buyerName);
+        const bundle = buildPinDashboardBundle(pinDash, rawCat, lbRes && lbRes.ok ? lbRes.leaderboard : null);
+        return Object.assign({ sessionToken: auth.sessionToken }, bundle);
+      }
+
+      if (action === "dashboard" && isSbPinSession) {
+        const pinDash = await sbGetPinDashboardData(portalState.sessionToken, portalState.deviceId);
+        if (!pinDash || !pinDash.ok) return pinDash;
+        const rawCat = await fetchRawCatalogForSupabase(Boolean(reqBody.forceRefresh));
+        const lbRes = await sbFetchLeaderboard(portalState.lbPeriod, portalState.lbSubject, pinDash.userKey, pinDash.user.buyerName);
+        return buildPinDashboardBundle(pinDash, rawCat, lbRes && lbRes.ok ? lbRes.leaderboard : null);
+      }
+
+      if (action === "saveProgress" && isSbPinSession) {
+        return sbSavePinProgress(portalState.sessionToken, portalState.deviceId, reqBody);
+      }
+
+      if (action === "clearProgress" && isSbPinSession) {
+        return sbClearPinProgress(portalState.sessionToken, portalState.deviceId, reqBody.fileId);
+      }
+
+      if (action === "saveScore" && isSbPinSession) {
+        const saved = await sbSavePinScore(portalState.sessionToken, portalState.deviceId, reqBody);
+        if (!saved || !saved.ok) return saved;
+        const rawCat = await fetchRawCatalogForSupabase(false);
+        const lbRes = await sbFetchLeaderboard(portalState.lbPeriod, portalState.lbSubject, saved.userKey, saved.user.buyerName);
+        return buildPinDashboardBundle(saved, rawCat, lbRes && lbRes.ok ? lbRes.leaderboard : null);
+      }
+
+      if (action === "publicDashboard") {
+        const gasPub = await sendToGasOrPreview(reqBody, options);
+        if (gasPub && gasPub.ok) {
+          const me = resolveCurrentLbIdentity();
+          const lbRes = await sbFetchLeaderboard(portalState.lbPeriod || "all", portalState.lbSubject || "ALL", me.userKey, me.name);
+          if (lbRes && lbRes.ok && lbRes.leaderboard) {
+            gasPub.leaderboard = lbRes.leaderboard;
+          }
+        }
+        return gasPub;
+      }
+
+      if (action === "getQuizHtml" && isSbPinSession) {
+        const gasReq = Object.assign({}, reqBody, {
+          sessionToken: undefined,
+          guestName: (portalState.user && portalState.user.buyerName) || "Pelajar"
+        });
+        if (reqBody.autoResume && !reqBody.resetStart && portalState.pinProgressStateByFileId) {
+          const savedJson = portalState.pinProgressStateByFileId[reqBody.fileId];
+          if (savedJson) gasReq.clientSavedStateJson = savedJson;
+        }
+        return sendToGasOrPreview(gasReq, options);
+      }
+    }
+
+    return sendToGasOrPreview(reqBody, options);
   }
 
   // --- [shared/ui/formValidation.js] ---
@@ -2303,6 +2880,11 @@
 
 
 
+
+
+
+
+
   function saveSessionLocally(token, userObj) {
     try {
       localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify({
@@ -2316,7 +2898,14 @@
     portalState.sessionToken = "";
     portalState.user = null;
     portalState.openPortalActive = false;
+    portalState.supabaseAuthenticated = false;
+    portalState.pinProgressStateByFileId = {};
     try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
+    if (isSupabaseConfigured()) {
+      sbSignOut().catch(function () {});
+      clearSyncLink();
+    }
+    renderSyncButton();
     document.getElementById("dashboardView").hidden = true;
     document.getElementById("examStage").hidden = true;
     document.body.style.overflow = "";
@@ -2369,6 +2958,7 @@
    * src/features/auth/routeController.js
    * Penghala paparan utama berasaskan hash URL (#admin, #login, #portal) & Mod Akses Terbuka.
    */
+
 
 
 
@@ -2432,7 +3022,7 @@
     }
 
     adminView.hidden = true;
-    if (portalState.sessionToken && portalState.user) {
+    if ((portalState.sessionToken || portalState.supabaseAuthenticated) && portalState.user) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = true;
       dashboardView.hidden = false;
@@ -2460,6 +3050,7 @@
     if (isHashLogin() || (!isOpenAccessMode() && isHashPortal())) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = false;
+      loadGoogleSignIn();
       if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
     } else {
       loginView.hidden = true;
@@ -3784,19 +4375,35 @@
 
 
 
-  const syncUi = { busy: false, pulledOnce: false, otpEmail: "", gsiReady: false };
+  const syncUi = {
+    busy: false,
+    pulledOnce: false,
+    otpEmail: "",
+    loginOtpEmail: "",
+    gsiReady: false,
+    googleRawNonce: "",
+    otpAbortCtrl: null
+  };
 
   function getSyncLink() {
     try {
       const t = localStorage.getItem(SYNC_TOKEN_KEY);
-      return t ? { token: t, email: localStorage.getItem(SYNC_EMAIL_KEY) || "" } : null;
+      if (!t) return null;
+      return {
+        token: t,
+        email: localStorage.getItem(SYNC_EMAIL_KEY) || "",
+        leaderboardId: localStorage.getItem(SYNC_LB_ID_KEY) || "",
+        aksesPakej: localStorage.getItem(SYNC_PAKEJ_KEY) || "ALL"
+      };
     } catch (e) { return null; }
   }
 
-  function setSyncLink(token, email) {
+  function setSyncLink(token, email, meta) {
     try {
       localStorage.setItem(SYNC_TOKEN_KEY, token);
       localStorage.setItem(SYNC_EMAIL_KEY, email || "");
+      if (meta && meta.leaderboardId) localStorage.setItem(SYNC_LB_ID_KEY, meta.leaderboardId);
+      if (meta && meta.aksesPakej) localStorage.setItem(SYNC_PAKEJ_KEY, meta.aksesPakej);
     } catch (e) {}
   }
 
@@ -3805,6 +4412,8 @@
       localStorage.removeItem(SYNC_TOKEN_KEY);
       localStorage.removeItem(SYNC_EMAIL_KEY);
       localStorage.removeItem(SYNC_LAST_KEY);
+      localStorage.removeItem(SYNC_LB_ID_KEY);
+      localStorage.removeItem(SYNC_PAKEJ_KEY);
     } catch (e) {}
   }
 
@@ -3850,8 +4459,14 @@
   // --- [features/cloud-sync/cloudSyncAuth.js] ---
   /**
    * src/features/cloud-sync/cloudSyncAuth.js
-   * Pengangkutan penyegerakan awan (syncPush), pengesahan Google Sign-In & kemas kini lencana UI Cloud Sync.
+   * Pengangkutan penyegerakan awan (Supabase & GAS fallback), pengesahan Google Sign-In & kemas kini UI.
    */
+
+
+
+
+
+
 
 
 
@@ -3875,6 +4490,12 @@
     if (form) form.hidden = Boolean(link);
     const em = document.getElementById("syncLinkedEmail");
     if (em) em.textContent = link ? link.email : "";
+    const pkgEl = document.getElementById("syncLinkedPackage");
+    if (pkgEl) {
+      const pkg = link && link.aksesPakej ? link.aksesPakej : "";
+      pkgEl.textContent = pkg ? ("Pakej Aktif: " + (pkg.toUpperCase() === "ALL" ? "Semua Subjek SPM" : pkg)) : "";
+      pkgEl.hidden = !pkg;
+    }
     const last = document.getElementById("syncLastTime");
     if (last) {
       let t = "";
@@ -3900,13 +4521,17 @@
     if (btn) btn.setAttribute("aria-busy", "true");
     try {
       const progMap = loadOpenProgressMap();
-      const res = await callBackend("syncPush", {
+      const payload = {
         syncToken: link.token,
         name: getOpenStudentName(),
         scores: loadOpenScoresList().slice(-250),
         progress: Object.keys(progMap).map(function (k) { return progMap[k]; }),
         completedFileIds: opts.completedFileId ? [opts.completedFileId] : []
-      });
+      };
+      const res = isSupabaseConfigured()
+        ? await sbSyncStudentBundle(payload)
+        : await callBackend("syncPush", payload);
+
       if (!res || !res.ok) {
         if (res && res.authExpired) {
           clearSyncLink();
@@ -3917,10 +4542,19 @@
         }
         return false;
       }
+      setSyncLink(res.syncToken || link.token, res.email || link.email, {
+        leaderboardId: res.leaderboardId || link.leaderboardId,
+        aksesPakej: res.aksesPakej || link.aksesPakej
+      });
       mergeRemoteIntoLocal(res);
       try { localStorage.setItem(SYNC_LAST_KEY, res.syncedAt || new Date().toLocaleString("ms-MY")); } catch (e) {}
 
-      if (res.newScoresAdded) {
+      if (isSupabaseConfigured()) {
+        try {
+          const lb = await sbFetchLeaderboard(portalState.lbPeriod, portalState.lbSubject, res.leaderboardId || "", res.name || "");
+          if (lb && lb.ok) portalState.rawServerLeaderboard = lb.leaderboard;
+        } catch (e) {}
+      } else if (res.newScoresAdded) {
         try {
           const lb = await callBackend("getLeaderboard", { period: portalState.lbPeriod, subject: portalState.lbSubject });
           if (lb && lb.ok) portalState.rawServerLeaderboard = lb.leaderboard;
@@ -3939,52 +4573,101 @@
     }
   }
 
-  async function onSyncLoggedIn(res) {
-    setSyncLink(res.syncToken, res.email);
+  async function onSyncLoggedIn(res, opts) {
+    opts = opts || {};
+    setSyncLink(res.syncToken, res.email, {
+      leaderboardId: res.leaderboardId,
+      aksesPakej: res.aksesPakej
+    });
     mergeRemoteIntoLocal(res);
     renderSyncButton();
     setSyncDialogMsg("");
-    await syncNow({ silent: true });
-    refreshOpenDashboardIfIdle();
-    showToast("Disambungkan sebagai " + res.email + ". Progress anda kini disegerakkan.");
-    const dlg = document.getElementById("syncDialog");
-    if (dlg) closeTopLayer(dlg);
-    const landingEl = document.getElementById("landingView");
-    if (landingEl && !landingEl.hidden && isOpenAccessMode()) {
-      window.location.hash = "#portal";
-      enterOpenPortal(false);
+    if (!opts.skipSyncPush) {
+      await syncNow({ silent: true });
     }
+    refreshOpenDashboardIfIdle();
+    if (!opts.quietToast) {
+      showToast("Disambungkan sebagai " + res.email + ". Progress anda kini disegerakkan.");
+    }
+    const dlg = document.getElementById("syncDialog");
+    if (dlg && dlg.open) closeTopLayer(dlg);
+
+    const loginView = document.getElementById("loginView");
+    const landingEl = document.getElementById("landingView");
+    const isFromLogin = Boolean(loginView && !loginView.hidden);
+    const isFromLanding = Boolean(landingEl && !landingEl.hidden);
+
+    if (isOpenAccessMode() && (isFromLogin || isFromLanding)) {
+      window.location.hash = "#portal";
+      await enterOpenPortal(false);
+      return;
+    }
+    if (!isOpenAccessMode() && isFromLogin) {
+      portalState.supabaseAuthenticated = true;
+      portalState.user = { userId: res.email, buyerName: res.name || res.email.split("@")[0], aksesPakej: res.aksesPakej || "ALL" };
+      if (landingEl) landingEl.hidden = true;
+      loginView.hidden = true;
+      document.getElementById("dashboardView").hidden = false;
+      if (portalState.rawOpenCatalog.length === 0) {
+        portalState.rawOpenCatalog = getCachedCatalogFallback();
+      }
+      applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+    }
+  }
+
+  function renderGsiButtonSlots() {
+    if (!window.google || !google.accounts || !google.accounts.id) return;
+    ["syncGoogleBtn", "loginGoogleGsiBtn"].forEach(function (slotId) {
+      const holder = document.getElementById(slotId);
+      if (!holder) return;
+      const w = Math.max(220, Math.min(380, (holder.parentElement ? holder.parentElement.clientWidth : 320) || 320));
+      holder.innerHTML = "";
+      google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: w });
+    });
   }
 
   function loadGoogleSignIn() {
     const cid = window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GOOGLE_CLIENT_ID;
+    const sbActive = isSupabaseConfigured();
     const holder = document.getElementById("syncGoogleBtn");
     const wrap = document.getElementById("syncGoogleWrap");
-    if (!cid || !holder || (typeof google !== "undefined" && google.script)) return;
-    if (wrap) wrap.hidden = false;
+    const oauthSyncBtn = document.getElementById("syncGoogleOAuthBtn");
+    const webView = isRestrictedInAppWebView();
 
-    function init() {
-      if (syncUi.gsiReady || !window.google || !google.accounts || !google.accounts.id) return;
+    if (oauthSyncBtn) oauthSyncBtn.hidden = !sbActive || webView;
+    if (wrap && (cid || sbActive)) wrap.hidden = false;
+    if (!cid || !holder || (typeof google !== "undefined" && google.script) || webView) return;
+
+    async function init() {
+      if (syncUi.gsiReady) {
+        renderGsiButtonSlots();
+        return;
+      }
+      if (!window.google || !google.accounts || !google.accounts.id) return;
       syncUi.gsiReady = true;
-      google.accounts.id.initialize({
+      const gsiOpts = {
         client_id: cid,
         callback: async function (resp) {
           setSyncDialogMsg("Mengesahkan akaun Google...");
           try {
-            const res = await callBackend("googleSignIn", { idToken: resp.credential });
+            const res = isSupabaseConfigured()
+              ? await sbSignInWithGoogleIdToken(resp.credential, syncUi.googleRawNonce)
+              : await callBackend("googleSignIn", { idToken: resp.credential });
             if (res && res.ok) await onSyncLoggedIn(res);
             else setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
           } catch (e) {
             setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
           }
         }
-      });
-      syncUi.renderGsi = function () {
-        const w = Math.max(200, Math.min(400, (holder.parentElement ? holder.parentElement.clientWidth : 320) || 320));
-        holder.innerHTML = "";
-        google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: w });
       };
-      syncUi.renderGsi();
+      if (sbActive) {
+        const noncePair = await generateGoogleNoncePair();
+        syncUi.googleRawNonce = noncePair.rawNonce;
+        gsiOpts.nonce = noncePair.hashedNonce;
+      }
+      google.accounts.id.initialize(gsiOpts);
+      syncUi.renderGsi = renderGsiButtonSlots;
+      renderGsiButtonSlots();
     }
 
     if (window.google && google.accounts) { init(); return; }
@@ -4015,12 +4698,41 @@
   // --- [features/cloud-sync/cloudSyncEvents.js] ---
   /**
    * src/features/cloud-sync/cloudSyncEvents.js
-   * Pengikat acara modal Cloud Sync (OTP 6-digit, pautan keluar) & pencetus auto-sync selepas hantar kuiz.
+   * Pengikat acara modal Cloud Sync (OTP 6-digit, WebOTP AbortController, light-dismiss) & auto-sync.
    */
 
 
 
 
+
+
+
+  function stopSmsOtpListener() {
+    if (syncUi.otpAbortCtrl) {
+      try { syncUi.otpAbortCtrl.abort(); } catch (e) {}
+      syncUi.otpAbortCtrl = null;
+    }
+  }
+
+  async function startSmsOtpListener(otpInputEl, otpFormEl) {
+    if (!otpInputEl || typeof window === "undefined" || !("OTPCredential" in window)) return;
+    stopSmsOtpListener();
+    const ac = new AbortController();
+    syncUi.otpAbortCtrl = ac;
+    try {
+      const otp = await navigator.credentials.get({
+        otp: { transport: ["sms"] },
+        signal: ac.signal
+      });
+      if (!otp || !otp.code) return;
+      otpInputEl.value = otp.code;
+      if (otpFormEl && typeof otpFormEl.requestSubmit === "function") {
+        otpFormEl.requestSubmit();
+      }
+    } catch (err) {
+      if (err && err.name === "AbortError") return;
+    }
+  }
 
   function bindCloudSyncEvents() {
     const btn = document.getElementById("syncProgressBtn");
@@ -4042,7 +4754,21 @@
 
     const dlg = document.getElementById("syncDialog");
     const closeBtn = document.getElementById("syncDialogClose");
-    if (closeBtn && dlg) closeBtn.addEventListener("click", function () { closeTopLayer(dlg); });
+    if (dlg) {
+      bindLightDismissFallback(dlg);
+      dlg.addEventListener("close", stopSmsOtpListener);
+      dlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        stopSmsOtpListener();
+        closeTopLayer(dlg);
+      });
+    }
+    if (closeBtn && dlg) {
+      closeBtn.addEventListener("click", function () {
+        stopSmsOtpListener();
+        closeTopLayer(dlg);
+      });
+    }
 
     const emailForm = document.getElementById("syncEmailForm");
     if (emailForm) {
@@ -4050,7 +4776,7 @@
         e.preventDefault();
         const input = document.getElementById("syncEmailInput");
         const submit = emailForm.querySelector("button[type=submit]");
-        const email = String(input && input.value || "").trim().toLowerCase();
+        const email = String((input && input.value) || "").trim().toLowerCase();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
           setSyncDialogMsg("Sila masukkan e-mel yang sah.", true);
           return;
@@ -4058,13 +4784,17 @@
         if (submit) submit.disabled = true;
         setSyncDialogMsg("Menghantar kod...");
         try {
-          const res = await callBackend("requestEmailOtp", { email: email });
+          const res = isSupabaseConfigured()
+            ? await sbRequestEmailOtp(email)
+            : await callBackend("requestEmailOtp", { email: email });
           if (res && res.ok) {
             syncUi.otpEmail = email;
             document.getElementById("syncStepEmail").hidden = true;
             document.getElementById("syncStepCode").hidden = false;
             const ci = document.getElementById("syncCodeInput");
+            const cf = document.getElementById("syncCodeForm");
             if (ci) { ci.value = ""; ci.focus(); }
+            startSmsOtpListener(ci, cf);
             setSyncDialogMsg(res.message || "Kod telah dihantar.");
           } else {
             setSyncDialogMsg((res && res.error) || "Gagal menghantar kod.", true);
@@ -4081,12 +4811,15 @@
     if (codeForm) {
       codeForm.addEventListener("submit", async function (e) {
         e.preventDefault();
+        stopSmsOtpListener();
         const code = String((document.getElementById("syncCodeInput") || {}).value || "").replace(/\D/g, "");
         const submit = codeForm.querySelector("button[type=submit]");
         if (code.length !== 6) { setSyncDialogMsg("Masukkan kod 6 digit.", true); return; }
         if (submit) submit.disabled = true;
         try {
-          const res = await callBackend("verifyEmailOtp", { email: syncUi.otpEmail, code: code });
+          const res = isSupabaseConfigured()
+            ? await sbVerifyEmailOtp(syncUi.otpEmail, code)
+            : await callBackend("verifyEmailOtp", { email: syncUi.otpEmail, code: code });
           if (res && res.ok) await onSyncLoggedIn(res);
           else setSyncDialogMsg((res && res.error) || "Kod tidak betul.", true);
         } catch (err) {
@@ -4098,28 +4831,37 @@
     }
 
     const backBtn = document.getElementById("syncCodeBack");
-    if (backBtn) backBtn.addEventListener("click", function () {
-      document.getElementById("syncStepCode").hidden = true;
-      document.getElementById("syncStepEmail").hidden = false;
-      setSyncDialogMsg("");
-    });
+    if (backBtn) {
+      backBtn.addEventListener("click", function () {
+        stopSmsOtpListener();
+        document.getElementById("syncStepCode").hidden = true;
+        document.getElementById("syncStepEmail").hidden = false;
+        setSyncDialogMsg("");
+      });
+    }
 
     const nowBtn = document.getElementById("syncNowBtn");
-    if (nowBtn) nowBtn.addEventListener("click", async function () {
-      nowBtn.disabled = true;
-      await syncNow({ silent: false });
-      nowBtn.disabled = false;
-    });
+    if (nowBtn) {
+      nowBtn.addEventListener("click", async function () {
+        nowBtn.disabled = true;
+        await syncNow({ silent: false });
+        nowBtn.disabled = false;
+      });
+    }
 
     const outBtn = document.getElementById("syncSignOutBtn");
-    if (outBtn) outBtn.addEventListener("click", function () {
-      clearSyncLink();
-      renderSyncButton();
-      showToast("Cloud Sync diputuskan. Data kekal di peranti ini.");
-    });
+    if (outBtn) {
+      outBtn.addEventListener("click", async function () {
+        if (isSupabaseConfigured()) {
+          try { await sbSignOut(); } catch (e) {}
+        }
+        clearSyncLink();
+        renderSyncButton();
+        showToast("Cloud Sync diputuskan. Data kekal di peranti ini.");
+      });
+    }
   }
 
-  // Selepas "Hantar Jawapan": segerak senyap jika sudah disambung; jika belum, tarik perhatian ke butang simpan.
   function cloudSyncAfterSubmit(fileId) {
     if (getSyncLink()) {
       syncNow({ silent: true, completedFileId: fileId });
@@ -4129,11 +4871,280 @@
     if (btn) btn.setAttribute("data-nudge", "true");
   }
 
-  // Tarik data awan sekali setiap muat semula halaman (peranti baharu / pelayar berlainan)
   function maybeAutoPull() {
     if (syncUi.pulledOnce || !getSyncLink()) return;
     syncUi.pulledOnce = true;
     syncNow({ silent: true });
+  }
+
+  // --- [features/auth/unifiedAuthController.js] ---
+  /**
+   * src/features/auth/unifiedAuthController.js
+   * Pengawal Log Masuk Bersepadu: Google Sign-In (One-Tap + OAuth PKCE), WebView Guard, OTP E-mel & Tebus PIN.
+   */
+
+
+
+
+
+
+
+
+
+
+
+  function setLoginAlert(msg, isError) {
+    const box = document.getElementById("loginAlertBox");
+    const txt = document.getElementById("loginAlertText");
+    if (!box || !txt) return;
+    if (!msg) {
+      box.hidden = true;
+      txt.textContent = "";
+      return;
+    }
+    txt.textContent = msg;
+    box.hidden = false;
+    box.className = "alert-banner " + (isError === false ? "sync-dialog-msg" : "alert-danger");
+    if (isError !== false && window.ETutorMotion) {
+      window.ETutorMotion.shakeLoginAlert();
+    }
+  }
+
+  function setupInAppWebViewGuard() {
+    const restricted = isRestrictedInAppWebView();
+    const loginNotice = document.getElementById("inAppWebViewNotice");
+    const syncNotice = document.getElementById("syncWebViewNotice");
+    const loginGoogleSec = document.getElementById("loginGoogleSection");
+    if (loginNotice) loginNotice.hidden = !restricted;
+    if (syncNotice) syncNotice.hidden = !restricted;
+    if (loginGoogleSec) loginGoogleSec.hidden = restricted;
+
+    document.addEventListener("click", async function (e) {
+      const copyBtn = e.target.closest(".js-copy-portal-url");
+      if (!copyBtn) return;
+      const targetUrl = "https://etutor.my/";
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(targetUrl);
+        }
+        showToast("Pautan etutor.my disalin! Buka dalam Chrome atau Safari.");
+      } catch (err) {
+        showToast("Buka https://etutor.my/ terus dalam Chrome atau Safari.");
+      }
+    });
+  }
+
+  function bindLoginModeTabsAndOtp() {
+    const tabBtns = document.querySelectorAll("[data-auth-tab]");
+    const pinPanel = document.getElementById("loginTabPanelPin");
+    const otpPanel = document.getElementById("loginTabPanelOtp");
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const target = btn.getAttribute("data-auth-tab");
+        tabBtns.forEach(function (b) {
+          b.setAttribute("aria-selected", b === btn ? "true" : "false");
+        });
+        if (pinPanel) pinPanel.hidden = target !== "pin";
+        if (otpPanel) otpPanel.hidden = target !== "otp";
+        setLoginAlert("");
+        if (target !== "otp") stopSmsOtpListener();
+      });
+    });
+
+    const reqForm = document.getElementById("loginOtpRequestForm");
+    const verForm = document.getElementById("loginOtpVerifyForm");
+    if (reqForm) {
+      reqForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const emailEl = document.getElementById("loginOtpEmailInput");
+        const sendBtn = document.getElementById("loginOtpSendBtn");
+        const email = String((emailEl && emailEl.value) || "").trim().toLowerCase();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          setLoginAlert("Sila masukkan alamat e-mel yang sah.", true);
+          return;
+        }
+        if (sendBtn) sendBtn.disabled = true;
+        setLoginAlert("Menghantar kod pengesahan 6-digit...", false);
+        try {
+          const res = isSupabaseConfigured()
+            ? await sbRequestEmailOtp(email)
+            : await callBackend("requestEmailOtp", { email: email });
+          if (res && res.ok) {
+            syncUi.loginOtpEmail = email;
+            reqForm.hidden = true;
+            if (verForm) verForm.hidden = false;
+            const codeEl = document.getElementById("loginOtpCodeInput");
+            if (codeEl) { codeEl.value = ""; codeEl.focus(); }
+            startSmsOtpListener(codeEl, verForm);
+            setLoginAlert(res.message || "Kod 6 digit telah dihantar ke e-mel anda.", false);
+          } else {
+            setLoginAlert((res && res.error) || "Gagal menghantar kod e-mel.", true);
+          }
+        } catch (err) {
+          setLoginAlert("Ralat rangkaian. Cuba sebentar lagi.", true);
+        } finally {
+          if (sendBtn) sendBtn.disabled = false;
+        }
+      });
+    }
+
+    if (verForm) {
+      verForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        stopSmsOtpListener();
+        const code = String((document.getElementById("loginOtpCodeInput") || {}).value || "").replace(/\D/g, "");
+        const verBtn = document.getElementById("loginOtpVerifyBtn");
+        if (code.length !== 6) {
+          setLoginAlert("Sila masukkan kod 6 digit yang sah.", true);
+          return;
+        }
+        if (verBtn) verBtn.disabled = true;
+        try {
+          const res = isSupabaseConfigured()
+            ? await sbVerifyEmailOtp(syncUi.loginOtpEmail, code)
+            : await callBackend("verifyEmailOtp", { email: syncUi.loginOtpEmail, code: code });
+          if (res && res.ok) {
+            await onSyncLoggedIn(res);
+          } else {
+            setLoginAlert((res && res.error) || "Kod tidak sah atau tamat tempoh.", true);
+          }
+        } catch (err) {
+          setLoginAlert("Ralat rangkaian. Cuba lagi.", true);
+        } finally {
+          if (verBtn) verBtn.disabled = false;
+        }
+      });
+    }
+
+    const backBtn = document.getElementById("loginOtpBackBtn");
+    if (backBtn) {
+      backBtn.addEventListener("click", function () {
+        stopSmsOtpListener();
+        if (verForm) verForm.hidden = true;
+        if (reqForm) reqForm.hidden = false;
+        setLoginAlert("");
+      });
+    }
+  }
+
+  function bindGoogleOAuthAndPinRedeemButtons() {
+    ["loginGoogleOAuthBtn", "syncGoogleOAuthBtn"].forEach(function (btnId) {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      btn.addEventListener("click", async function () {
+        if (isSupabaseConfigured()) {
+          const res = await sbSignInWithGoogleRedirect("#portal");
+          if (res && !res.ok) {
+            if (btnId.startsWith("sync")) setSyncDialogMsg(res.error, true);
+            else setLoginAlert(res.error, true);
+          }
+          return;
+        }
+        if (window.google && google.accounts && google.accounts.id) {
+          google.accounts.id.prompt();
+          return;
+        }
+        setLoginAlert("Log masuk Google memerlukan konfigurasi Supabase atau Client ID aktif.", true);
+      });
+    });
+
+    const pinRedeemForm = document.getElementById("syncPinRedeemForm");
+    if (pinRedeemForm) {
+      pinRedeemForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const uidEl = document.getElementById("syncPinUserIdInput");
+        const pinEl = document.getElementById("syncPinCodeInput");
+        const submitBtn = document.getElementById("syncPinSubmitBtn");
+        const buyerId = String((uidEl && uidEl.value) || "").trim();
+        const pin = String((pinEl && pinEl.value) || "").trim();
+        if (buyerId.length < 5 || pin.length < 4) {
+          setSyncDialogMsg("Masukkan ID Pembeli & Kod PIN yang sah.", true);
+          return;
+        }
+        if (submitBtn) submitBtn.disabled = true;
+        setSyncDialogMsg("Mengesahkan Kod PIN...");
+        try {
+          const sb = getSupabaseClient();
+          const sess = sb ? await sb.auth.getSession() : null;
+          const hasSbAuth = Boolean(sess && sess.data && sess.data.session);
+          if (hasSbAuth) {
+            const redeemRes = await sbRedeemBuyerPin(buyerId, pin, portalState.deviceId);
+            if (!redeemRes || !redeemRes.ok) {
+              setSyncDialogMsg((redeemRes && redeemRes.error) || "Kod PIN tidak sah.", true);
+              return;
+            }
+            await syncNow({ silent: true });
+            const dlg = document.getElementById("syncDialog");
+            if (dlg) closeTopLayer(dlg);
+            showToast("Kod PIN berjaya ditebus & dipautkan ke akaun anda!");
+            return;
+          }
+
+          const loginRes = await callBackend("login", { userId: buyerId, pin: pin });
+          if (!loginRes || !loginRes.ok) {
+            setSyncDialogMsg((loginRes && loginRes.error) || "ID atau Kod PIN tidak sah.", true);
+            return;
+          }
+          portalState.sessionToken = loginRes.sessionToken;
+          saveSessionLocally(loginRes.sessionToken, loginRes.user);
+          const dlg = document.getElementById("syncDialog");
+          if (dlg) closeTopLayer(dlg);
+          const landingEl = document.getElementById("landingView");
+          const loginView = document.getElementById("loginView");
+          if (landingEl) landingEl.hidden = true;
+          if (loginView) loginView.hidden = true;
+          document.getElementById("dashboardView").hidden = false;
+          applyDashboardBundle(loginRes);
+          showToast("Log masuk Kod PIN berjaya!");
+        } catch (err) {
+          setSyncDialogMsg("Ralat rangkaian semasa mengesahkan PIN.", true);
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    }
+  }
+
+  async function hydrateSupabaseAuthSession() {
+    if (!isSupabaseConfigured()) return;
+    const sb = getSupabaseClient();
+    if (!sb) return;
+    let lastSyncedToken = "";
+
+    async function syncFromSession(session) {
+      if (!session || !session.user) return;
+      if (lastSyncedToken === session.access_token && getSyncLink()) return;
+      lastSyncedToken = session.access_token;
+      const bundle = await sbSyncStudentBundle({});
+      if (bundle && bundle.ok) {
+        await onSyncLoggedIn(bundle, { skipSyncPush: true, quietToast: true });
+      }
+    }
+
+    try {
+      const sessRes = await sb.auth.getSession();
+      const session = sessRes && sessRes.data ? sessRes.data.session : null;
+      if (session) await syncFromSession(session);
+    } catch (e) {}
+
+    sb.auth.onAuthStateChange(function (event, session) {
+      if (event === "SIGNED_IN" && session) {
+        syncFromSession(session);
+      } else if (event === "SIGNED_OUT") {
+        lastSyncedToken = "";
+        portalState.supabaseAuthenticated = false;
+        clearSyncLink();
+        renderSyncButton();
+      }
+    });
+  }
+
+  function initUnifiedAuth() {
+    setupInAppWebViewGuard();
+    bindLoginModeTabsAndOtp();
+    bindGoogleOAuthAndPinRedeemButtons();
+    loadGoogleSignIn();
+    hydrateSupabaseAuthSession();
   }
 
   // --- [features/aduan/issueController.js] ---
@@ -4229,10 +5240,12 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
     bindCloudSyncEvents();
+    initUnifiedAuth();
     bindIssueReportingEvents();
     initLiveCatalogAutoSync();
 

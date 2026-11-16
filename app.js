@@ -4479,11 +4479,12 @@
     const landingLbl = document.querySelector("#landingLoginBtn [data-login-label]");
     if (landingLbl) landingLbl.textContent = link && link.email ? link.email.split("@")[0] : "Log Masuk";
     renderHeaderUser();
-    if (!btn) return;
-    const label = btn.querySelector("[data-sync-label]");
-    if (label) label.textContent = link ? "Sync Progress" : "Simpan Progress";
-    btn.setAttribute("data-linked", link ? "true" : "false");
-    btn.title = link ? ("Disambungkan: " + link.email) : "Simpan progress ke awan supaya boleh disambung di peranti lain";
+    if (btn) {
+      const label = btn.querySelector("[data-sync-label]");
+      if (label) label.textContent = link ? "Sync Progress" : "Simpan Progress";
+      btn.setAttribute("data-linked", link ? "true" : "false");
+      btn.title = link ? ("Disambungkan: " + link.email) : "Simpan progress ke awan supaya boleh disambung di peranti lain";
+    }
     const st = document.getElementById("syncDialogLinked");
     const form = document.getElementById("syncDialogLogin");
     if (st) st.hidden = !link;

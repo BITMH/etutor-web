@@ -3173,6 +3173,60 @@ dialog.slip-dialog::backdrop {
   color: #93c5fd;
 }
 
+.lp-footer-stats {
+  margin-block-start: 28px;
+  padding-block-start: 20px;
+  border-block-start: 1px solid rgb(255 255 255 / 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.lp-footer-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.lp-footer-stat-pill strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.lp-footer-stat-live {
+  background: rgb(16 185 129 / 0.14);
+  border-color: rgb(16 185 129 / 0.35);
+  color: #d1fae5;
+}
+
+.lp-live-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgb(52 211 153 / 0.7);
+  animation: lp-live-pulse 2s infinite;
+}
+
+@keyframes lp-live-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(52 211 153 / 0.7); }
+  70% { box-shadow: 0 0 0 7px rgb(52 211 153 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(52 211 153 / 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-live-dot {
+    animation: none;
+  }
+}
+
 /* === features/admin/admin.css === */
 /* Admin Subject Multi-Select Fieldset & Accessible Custom Checkboxes (modern-web-guidance) */
 .adm-subject-fieldset {

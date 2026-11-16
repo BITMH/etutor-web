@@ -5598,6 +5598,7 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
@@ -5605,6 +5606,7 @@
     initUnifiedAuth();
     bindIssueReportingEvents();
     initLiveCatalogAutoSync();
+    initFooterLiveStats();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

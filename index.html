@@ -1229,7 +1229,7 @@
       </div>
 
       <h2 id="loginHeading" class="login-title">Log Masuk Pelajar</h2>
-      <p class="login-subtitle">Sambung menggunakan akaun Google, kod e-mel 6-digit, atau Kod PIN pembelian anda.</p>
+      <p class="login-subtitle">Sila log masuk dengan akaun Google, kod OTP e-mel 6-digit, atau Kod PIN untuk masuk ke Portal Latihan Interaktif.</p>
 
       <div id="loginAlertBox" class="alert-banner alert-danger" role="alert" hidden>
         <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="margin-top:2px">
@@ -1261,15 +1261,15 @@
       <div class="auth-divider" aria-hidden="true"><span>atau guna kaedah lain</span></div>
 
       <div class="auth-mode-tabs" role="tablist" aria-label="Kaedah Log Masuk">
-        <button type="button" id="loginTabPinBtn" class="auth-tab-btn" role="tab" aria-selected="true" aria-controls="loginTabPanelPin" data-auth-tab="pin">
-          Kod PIN Pembeli
-        </button>
-        <button type="button" id="loginTabOtpBtn" class="auth-tab-btn" role="tab" aria-selected="false" aria-controls="loginTabPanelOtp" data-auth-tab="otp">
+        <button type="button" id="loginTabOtpBtn" class="auth-tab-btn" role="tab" aria-selected="true" aria-controls="loginTabPanelOtp" data-auth-tab="otp">
           Kod E-mel (OTP)
+        </button>
+        <button type="button" id="loginTabPinBtn" class="auth-tab-btn" role="tab" aria-selected="false" aria-controls="loginTabPanelPin" data-auth-tab="pin">
+          Kod PIN Pembeli
         </button>
       </div>
 
-      <div id="loginTabPanelPin" role="tabpanel" aria-labelledby="loginTabPinBtn">
+      <div id="loginTabPanelPin" role="tabpanel" aria-labelledby="loginTabPinBtn" hidden>
         <form id="loginForm" novalidate>
           <div class="form-field">
             <label for="loginUserIdInput">ID Pengguna (No. Telefon / E-mel)</label>
@@ -1344,7 +1344,7 @@
         </form>
       </div>
 
-      <div id="loginTabPanelOtp" role="tabpanel" aria-labelledby="loginTabOtpBtn" hidden>
+      <div id="loginTabPanelOtp" role="tabpanel" aria-labelledby="loginTabOtpBtn">
         <form id="loginOtpRequestForm" novalidate>
           <div class="form-field">
             <label for="loginOtpEmailInput">Alamat E-mel Pelajar</label>
@@ -1405,7 +1405,7 @@
           </svg>
           <span>Kembali ke Laman Utama</span>
         </a>
-        <a href="#pakej" class="js-back-to-pricing" style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
+        <a href="#pakej" class="js-back-to-pricing" data-paid-only style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
           Belum ada PIN? Dapatkan Akses
         </a>
         <a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20perlukan%20bantuan%20log%20masuk%20%2F%20PIN%20portal." target="_blank" rel="noopener" style="color:var(--grade-emerald);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center;inline-size:100%;justify-content:center;border-block-start:1px dashed var(--border-subtle);padding-block-start:10px">
@@ -1441,7 +1441,7 @@
             <span id="navBuyerName">Pelajar</span>
           </button>
 
-          <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm" data-paid-only>
+          <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/>
             </svg>

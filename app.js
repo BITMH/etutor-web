@@ -231,6 +231,7 @@
     lastCatalogSyncMs: 0,
     pinProgressStateByFileId: {},
     supabaseAuthenticated: false,
+    pendingKlonScroll: false,
     klonVisibleLimit: 12,
     harianVisibleLimit: 12,
     activeStage: "spm",
@@ -1291,8 +1292,24 @@
     } catch (e) {}
   }
 
+  function isPortalUserAuthenticated() {
+    if (portalState.sessionToken && portalState.user) return true;
+    if (portalState.supabaseAuthenticated) return true;
+    try {
+      return Boolean(localStorage.getItem(SYNC_TOKEN_KEY));
+    } catch (e) {
+      return false;
+    }
+  }
+
   async function enterOpenPortal(forceRefresh) {
     if (!isOpenAccessMode()) {
+      window.location.hash = "#login";
+      syncRouteMode();
+      return;
+    }
+    if (!isPortalUserAuthenticated()) {
+      portalState.openPortalActive = false;
       window.location.hash = "#login";
       syncRouteMode();
       return;
@@ -3216,17 +3233,18 @@
     portalState.user = null;
     portalState.openPortalActive = false;
     portalState.supabaseAuthenticated = false;
+    portalState.pendingKlonScroll = false;
     portalState.pinProgressStateByFileId = {};
     try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
+    clearSyncLink();
     if (isSupabaseConfigured()) {
       sbSignOut().catch(function () {});
-      clearSyncLink();
     }
     renderSyncButton();
     document.getElementById("dashboardView").hidden = true;
     document.getElementById("examStage").hidden = true;
     document.body.style.overflow = "";
-    window.location.hash = isOpenAccessMode() ? "" : "#login";
+    window.location.hash = "#login";
     syncRouteMode();
   }
 
@@ -3340,18 +3358,21 @@
     }
 
     adminView.hidden = true;
-    if ((portalState.sessionToken || portalState.supabaseAuthenticated) && portalState.user) {
+    if (portalState.sessionToken && portalState.user) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = true;
       dashboardView.hidden = false;
       return;
     }
 
-    if (isOpenAccessMode() && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
-      const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal";
-      if (isHashLogin() || wantsKlonScroll) {
+    const authed = isPortalUserAuthenticated();
+    const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(portalState.pendingKlonScroll);
+
+    if (isOpenAccessMode() && authed && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
+      if (isHashLogin() || window.location.hash.toLowerCase() === "#klon-portal") {
         history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
       }
+      portalState.pendingKlonScroll = false;
       await enterOpenPortal(false);
       if (wantsKlonScroll) {
         openPortalModuleDropdown("klon_spm");
@@ -3361,12 +3382,15 @@
       return;
     }
 
-    if (!isOpenAccessMode() && isHashPortal()) {
+    if (isHashPortal() || hasDeepLinkPortalParams()) {
+      if (window.location.hash.toLowerCase() === "#klon-portal") {
+        portalState.pendingKlonScroll = true;
+      }
       history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
     }
 
     dashboardView.hidden = true;
-    if (isHashLogin() || (!isOpenAccessMode() && isHashPortal())) {
+    if (isHashLogin() || (isHashPortal() || (!isOpenAccessMode() && hasDeepLinkPortalParams()))) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = false;
       loadGoogleSignIn();
@@ -3609,7 +3633,7 @@
       const enterOpen = e.target.closest(".js-enter-open-portal");
       if (enterOpen) {
         e.preventDefault();
-        window.location.hash = "#portal";
+        window.location.hash = isPortalUserAuthenticated() ? "#portal" : "#login";
         syncRouteMode();
         window.scrollTo(0, 0);
         return;
@@ -3618,7 +3642,14 @@
       const gotoKlonPortal = e.target.closest(".js-goto-klon-portal");
       if (gotoKlonPortal) {
         e.preventDefault();
-        window.location.hash = isOpenAccessMode() || (portalState.sessionToken && portalState.user) ? "#portal" : "#login";
+        if (!isPortalUserAuthenticated()) {
+          portalState.pendingKlonScroll = true;
+          window.location.hash = "#login";
+          syncRouteMode();
+          window.scrollTo(0, 0);
+          return;
+        }
+        window.location.hash = "#portal";
         syncRouteMode().then(function () {
           const klonHead = document.getElementById("klonCatalogHeading");
           if (klonHead && !document.getElementById("dashboardView").hidden) {
@@ -4925,6 +4956,7 @@
 
   async function onSyncLoggedIn(res, opts) {
     opts = opts || {};
+    portalState.supabaseAuthenticated = true;
     setSyncLink(res.syncToken, res.email, {
       leaderboardId: res.leaderboardId,
       aksesPakej: res.aksesPakej
@@ -4944,11 +4976,16 @@
 
     const loginView = document.getElementById("loginView");
     const landingEl = document.getElementById("landingView");
+    const dashEl = document.getElementById("dashboardView");
     const isFromLogin = Boolean(loginView && !loginView.hidden);
     const isFromLanding = Boolean(landingEl && !landingEl.hidden);
+    const isDashHidden = !dashEl || dashEl.hidden;
+    const h = (window.location.hash || "").toLowerCase();
 
-    if (isOpenAccessMode() && (isFromLogin || isFromLanding)) {
-      window.location.hash = "#portal";
+    if (isOpenAccessMode() && (isFromLogin || isFromLanding || (isDashHidden && (h === "#login" || h === "#portal" || h === "#klon-portal")))) {
+      const wantsKlon = Boolean(portalState.pendingKlonScroll) || h === "#klon-portal";
+      portalState.pendingKlonScroll = false;
+      window.location.hash = wantsKlon ? "#klon-portal" : "#portal";
       await enterOpenPortal(false);
       return;
     }
@@ -5064,6 +5101,9 @@
 
 
 
+
+
+
   function stopSmsOtpListener() {
     if (syncUi.otpAbortCtrl) {
       try { syncUi.otpAbortCtrl.abort(); } catch (e) {}
@@ -5106,7 +5146,15 @@
     renderSyncButton();
 
     document.addEventListener("click", function (e) {
-      if (e.target.closest(".js-open-sync-dialog")) openSyncDialog();
+      const syncTrigger = e.target.closest(".js-open-sync-dialog");
+      if (!syncTrigger) return;
+      if (syncTrigger.id === "landingLoginBtn" && !isPortalUserAuthenticated()) {
+        window.location.hash = "#login";
+        syncRouteMode();
+        window.scrollTo(0, 0);
+        return;
+      }
+      openSyncDialog();
     });
 
     const dlg = document.getElementById("syncDialog");
@@ -5212,9 +5260,18 @@
         if (isSupabaseConfigured()) {
           try { await sbSignOut(); } catch (e) {}
         }
+        portalState.supabaseAuthenticated = false;
+        portalState.openPortalActive = false;
         clearSyncLink();
         renderSyncButton();
-        showToast("Cloud Sync diputuskan. Data kekal di peranti ini.");
+        if (dlg && dlg.open) closeTopLayer(dlg);
+        const dashEl = document.getElementById("dashboardView");
+        if (dashEl && !dashEl.hidden) {
+          dashEl.hidden = true;
+          window.location.hash = "#login";
+          syncRouteMode();
+        }
+        showToast("Anda telah log keluar daripada sesi awan.");
       });
     }
   }
@@ -5239,6 +5296,9 @@
    * src/features/auth/unifiedAuthController.js
    * Pengawal Log Masuk Bersepadu: Google Sign-In (One-Tap + OAuth PKCE), WebView Guard, OTP E-mel & Tebus PIN.
    */
+
+
+
 
 
 
@@ -5472,6 +5532,17 @@
       if (!session || !session.user) return;
       if (lastSyncedToken === session.access_token && getSyncLink()) return;
       lastSyncedToken = session.access_token;
+      const u = session.user;
+      const email = String(u.email || "").trim().toLowerCase();
+      const meta = u.user_metadata || {};
+      const fullName = String(meta.full_name || meta.name || (email ? email.split("@")[0] : "")).trim();
+      portalState.supabaseAuthenticated = true;
+      setSyncLink(session.access_token, email, {});
+      if (fullName && !getOpenStudentName()) setOpenStudentName(fullName);
+      const loginEl = document.getElementById("loginView");
+      if ((loginEl && !loginEl.hidden) || isHashLogin() || isHashPortal() || hasDeepLinkPortalParams()) {
+        await onSyncLoggedIn({ ok: true, syncToken: session.access_token, email: email, name: fullName }, { skipSyncPush: true, quietToast: true });
+      }
       const bundle = await sbSyncStudentBundle({});
       if (bundle && bundle.ok) {
         await onSyncLoggedIn(bundle, { skipSyncPush: true, quietToast: true });

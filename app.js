@@ -22,6 +22,7 @@
   const SYNC_PAKEJ_KEY = "etutor_sync_pakej_v1";
   const LIVE_CATALOG_CACHE_KEY = "etutor_live_catalog_v1";
   const PORTAL_PREFS_STORAGE_KEY = "etutor_portal_prefs_v1";
+  const UNLOCKED_CONTENTS_STORAGE_KEY = "etutor_unlocked_contents_v1";
 
   // --- [config/learningModulesRegistry.js] ---
   /**
@@ -116,6 +117,8 @@
     printer: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/></svg>',
     arrowLeft: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/></svg>',
     alert: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>',
+    lock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 018 0v4"/></svg>',
+    unlock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 017.5-1.9"/></svg>',
     logout: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/></svg>'
   };
 
@@ -625,6 +628,20 @@
     if (!sb || !isSupabaseConfigured()) return { ok: false, unconfigured: true };
     const { data, error } = await sb.rpc("claim_ai_referral_bonus", { p_ref_code: String(refCode || "").trim() });
     if (error) return { ok: false, error: mapAuthError(error, "Gagal menebus bonus rujukan.") };
+    return data || { ok: false };
+  }
+
+  async function sbUnlockPortalContent(contentType, contentId, title) {
+    const sb = getSupabaseClient();
+    if (!sb || !isSupabaseConfigured()) return { ok: false, unconfigured: true };
+    const sessRes = await sb.auth.getSession();
+    if (!sessRes || !sessRes.data || !sessRes.data.session) return { ok: false, authExpired: true };
+    const { data, error } = await sb.rpc("unlock_portal_content", {
+      p_content_type: String(contentType || ""),
+      p_content_id: String(contentId || ""),
+      p_title: String(title || "").slice(0, 180)
+    });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal membuka kunci kandungan.") };
     return data || { ok: false };
   }
 
@@ -1594,6 +1611,360 @@
     });
   }
 
+  // --- [features/dashboard/tokenWalletController.js] ---
+  /**
+   * src/features/dashboard/tokenWalletController.js
+   * Pengawal Dompet Token AI Pelajar (#tokenWalletDialog): paparan baki, tebus baucar top-up & jemputan rakan.
+   */
+
+
+
+
+
+  const WALLET_STORAGE_KEY = "etutor_cikgu_daily_tokens_v1";
+
+  function readWalletLocalSnapshot() {
+    const nowMyt = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+    try {
+      const raw = localStorage.getItem(WALLET_STORAGE_KEY);
+      if (raw) {
+        const p = JSON.parse(raw);
+        const paid = Math.max(0, Math.floor(Number(p && p.paidBalance) || 0));
+        const sameDay = p && p.date === nowMyt;
+        const freeRem = sameDay && typeof p.freeRemaining === "number"
+          ? Math.max(0, Math.floor(p.freeRemaining))
+          : (sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining) - paid) : 30);
+        const rem = sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining)) : (freeRem + paid);
+        return {
+          date: nowMyt,
+          remaining: rem,
+          limit: Number(p && p.limit) || 30,
+          paidBalance: paid,
+          freeRemaining: freeRem,
+          trialVisionRemaining: typeof (p && p.trialVisionRemaining) === "number" ? p.trialVisionRemaining : 2,
+          referralCode: (p && p.referralCode) || buildLocalReferralCode()
+        };
+      }
+    } catch (e) {}
+    return {
+      date: nowMyt,
+      remaining: 30,
+      limit: 30,
+      paidBalance: 0,
+      freeRemaining: 30,
+      trialVisionRemaining: 2,
+      referralCode: buildLocalReferralCode()
+    };
+  }
+
+  function buildLocalReferralCode() {
+    const uid = (portalState.user && portalState.user.userId) || portalState.deviceId || "PELAJAR";
+    let hash = 0;
+    for (let i = 0; i < uid.length; i++) {
+      hash = ((hash << 5) - hash + uid.charCodeAt(i)) | 0;
+    }
+    return "ET" + Math.abs(hash).toString(36).toUpperCase().padStart(6, "0").slice(0, 8);
+  }
+
+  function persistAndBroadcastWallet(st) {
+    const next = Object.assign(readWalletLocalSnapshot(), st || {});
+    next.remaining = Math.max(0, Math.floor(Number(next.freeRemaining || 0)) + Math.floor(Number(next.paidBalance || 0)));
+    try {
+      localStorage.setItem(WALLET_STORAGE_KEY, JSON.stringify(next));
+    } catch (e) {}
+    renderWalletBadgeAndModal(next);
+    try {
+      window.dispatchEvent(new CustomEvent("etutor:wallet-synced", { detail: next }));
+      window.dispatchEvent(new CustomEvent("etutor:cikgu-token-updated", { detail: next }));
+    } catch (e) {}
+    return next;
+  }
+
+  function renderWalletBadgeAndModal(st) {
+    const s = st || readWalletLocalSnapshot();
+    const navTxt = document.getElementById("navTokenBalanceText");
+    if (navTxt) navTxt.textContent = "Token: " + s.remaining;
+
+    const freeEl = document.getElementById("walletFreeBalanceVal");
+    const paidEl = document.getElementById("walletPaidBalanceVal");
+    const visEl = document.getElementById("walletVisionTrialVal");
+    const refEl = document.getElementById("walletReferralCodeText");
+    if (freeEl) freeEl.textContent = String(s.freeRemaining);
+    if (paidEl) paidEl.textContent = String(s.paidBalance);
+    if (visEl) visEl.textContent = s.paidBalance > 0 ? "Aktif" : String(s.trialVisionRemaining);
+    if (refEl) refEl.textContent = s.referralCode || "ET-JEMPUT";
+  }
+
+  async function refreshAiWalletFromServer() {
+    try {
+      const res = await sbGetMyAiWallet();
+      if (res && res.ok) {
+        persistAndBroadcastWallet({
+          freeRemaining: Number(res.freeMonthlyRemaining) || 0,
+          limit: Number(res.freeMonthlyLimit) || 30,
+          paidBalance: Number(res.paidBalance) || 0,
+          trialVisionRemaining: Number(res.trialVisionRemaining) || 0,
+          referralCode: res.referralCode || buildLocalReferralCode()
+        });
+        if (Array.isArray(res.unlockedKeys) && typeof mergeServerUnlockedKeys === "function") {
+          mergeServerUnlockedKeys(res.unlockedKeys);
+          if (typeof renderKlonCatalogSection === "function") renderKlonCatalogSection();
+        }
+        return;
+      }
+    } catch (e) {}
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+  }
+
+  function openTokenWalletDialog() {
+    const dlg = document.getElementById("tokenWalletDialog");
+    if (!dlg) return;
+    const stEl = document.getElementById("aiVoucherStatusMsg");
+    if (stEl) stEl.textContent = "";
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+    refreshAiWalletFromServer();
+    if (!dlg.open && typeof dlg.showModal === "function") {
+      dlg.showModal();
+    }
+  }
+
+  function initTokenWalletBindings() {
+    const dlg = document.getElementById("tokenWalletDialog");
+    const openBtn = document.getElementById("openTokenWalletBtn");
+    const closeBtn = document.getElementById("closeTokenWalletBtn");
+    const redeemForm = document.getElementById("redeemAiVoucherForm");
+    const copyRefBtn = document.getElementById("copyReferralLinkBtn");
+
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+
+    if (openBtn) {
+      openBtn.addEventListener("click", openTokenWalletDialog);
+    }
+    window.addEventListener("etutor:open-token-wallet", openTokenWalletDialog);
+    window.addEventListener("etutor:cikgu-token-updated", function (ev) {
+      if (ev && ev.detail) renderWalletBadgeAndModal(ev.detail);
+    });
+
+    if (dlg) {
+      bindLightDismissFallback(dlg);
+      dlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(dlg);
+      });
+    }
+    if (closeBtn && dlg) {
+      closeBtn.addEventListener("click", function () {
+        closeTopLayer(dlg);
+      });
+    }
+
+    document.querySelectorAll(".js-wallet-buy-pack").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        const packKey = btn.getAttribute("data-pack") || "tokenFocus";
+        if (dlg && dlg.open) await closeTopLayer(dlg);
+        const orderDlg = document.getElementById("orderDialog");
+        const pkgSelect = document.getElementById("orderPackageSelect");
+        if (pkgSelect) {
+          pkgSelect.value = packKey;
+          pkgSelect.dispatchEvent(new Event("change"));
+        }
+        if (orderDlg && typeof orderDlg.showModal === "function") {
+          orderDlg.showModal();
+        }
+      });
+    });
+
+    if (copyRefBtn) {
+      copyRefBtn.addEventListener("click", async function () {
+        const snap = readWalletLocalSnapshot();
+        const url = window.location.origin + window.location.pathname + "?ref=" + encodeURIComponent(snap.referralCode) + "#login";
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast("Pautan jemputan rakan disalin (+10 Token bila rakan siap 1 set).");
+        } catch (e) {
+          showToast("Kod jemputan anda: " + snap.referralCode);
+        }
+      });
+    }
+
+    if (redeemForm) {
+      const voucherInp = document.getElementById("aiVoucherCodeInput");
+      if (voucherInp) {
+        voucherInp.addEventListener("input", function () {
+          voucherInp.setCustomValidity("");
+        });
+      }
+      redeemForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        const inp = document.getElementById("aiVoucherCodeInput");
+        const btn = document.getElementById("redeemAiVoucherBtn");
+        const stEl = document.getElementById("aiVoucherStatusMsg");
+        if (!inp) return;
+        const code = inp.value.trim().toUpperCase();
+        if (code.length < 6) {
+          inp.setCustomValidity("Sila masukkan sekurang-kurangnya 6 aksara kod baucar.");
+          redeemForm.reportValidity();
+          inp.focus();
+          return;
+        }
+        inp.setCustomValidity("");
+
+        btn.disabled = true;
+        btn.textContent = "Menyemak...";
+        if (stEl) stEl.textContent = "";
+
+        try {
+          let res = await sbRedeemAiTopupVoucher(code);
+          if (!res || res.unconfigured || res.authExpired) {
+            res = await callBackend("redeemAiVoucher", { code: code });
+          }
+          if (!res || !res.ok) {
+            const errMsg = (res && res.error) || "Kod baucar tidak sah atau telah ditebus.";
+            if (stEl) {
+              stEl.style.color = "var(--status-danger)";
+              stEl.textContent = errMsg;
+            }
+            showToast(errMsg);
+            return;
+          }
+          const cur = readWalletLocalSnapshot();
+          const added = Number(res.addedTokens) || 0;
+          const nextPaid = typeof res.paidBalance === "number" ? res.paidBalance : (cur.paidBalance + added);
+          persistAndBroadcastWallet({
+            paidBalance: nextPaid,
+            freeRemaining: typeof res.freeMonthlyRemaining === "number" ? res.freeMonthlyRemaining : cur.freeRemaining
+          });
+          inp.value = "";
+          if (stEl) {
+            stEl.style.color = "var(--grade-emerald)";
+            stEl.textContent = "Berjaya! +" + added + " Token AI ditambah ke dompet kekal anda.";
+          }
+          showToast("+" + added + " Token AI berjaya ditebus!");
+        } catch (err) {
+          if (stEl) {
+            stEl.style.color = "var(--status-danger)";
+            stEl.textContent = "Ralat menebus baucar: " + err.message;
+          }
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Tebus Kod";
+        }
+      });
+    }
+  }
+
+  // --- [features/dashboard/tokenUnlockService.js] ---
+  /**
+   * src/features/dashboard/tokenUnlockService.js
+   * Pengurusan buka kunci kekal berasaskan Token (Set Soalan Klon = 2 Token/Set, Nota Bab = 2 Token/Bab).
+   */
+
+
+
+
+
+  const KLON_UNLOCK_COST = 2;
+  const NOTA_UNLOCK_COST = 2;
+
+  function loadUnlockedKeysSet() {
+    try {
+      if (typeof localStorage === "undefined") return new Set();
+      const raw = localStorage.getItem(UNLOCKED_CONTENTS_STORAGE_KEY);
+      if (!raw) return new Set();
+      const arr = JSON.parse(raw);
+      return new Set(Array.isArray(arr) ? arr.filter((k) => typeof k === "string" && k.trim()) : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveUnlockedKeysSet(setObj) {
+    try {
+      if (typeof localStorage === "undefined") return;
+      localStorage.setItem(UNLOCKED_CONTENTS_STORAGE_KEY, JSON.stringify(Array.from(setObj).slice(-400)));
+    } catch (e) {}
+  }
+
+  function mergeServerUnlockedKeys(keys) {
+    if (!Array.isArray(keys) || keys.length === 0) return;
+    const setObj = loadUnlockedKeysSet();
+    keys.forEach((k) => {
+      if (typeof k === "string" && k.trim()) setObj.add(k.trim());
+    });
+    saveUnlockedKeysSet(setObj);
+  }
+
+  function isKlonItemUnlocked(item) {
+    if (!item || item.category !== "klon") return true;
+    if (portalState.sessionToken) return true;
+    if (item.inProgress || item.bestScore) return true;
+    return loadUnlockedKeysSet().has("klon:" + item.fileId);
+  }
+
+  function isNotaItemUnlocked(noteId) {
+    if (portalState.sessionToken) return true;
+    return loadUnlockedKeysSet().has("nota:" + String(noteId || "").trim());
+  }
+
+  async function performContentUnlock_(contentType, contentId, title, cost) {
+    const cleanId = String(contentId || "").trim();
+    const key = contentType + ":" + cleanId;
+    if (!cleanId) return false;
+
+    const unlocked = loadUnlockedKeysSet();
+    if (unlocked.has(key)) return true;
+
+    try {
+      const res = await sbUnlockPortalContent(contentType, cleanId, title);
+      if (res && res.ok) {
+        unlocked.add(res.unlockedKey || key);
+        saveUnlockedKeysSet(unlocked);
+        if (!res.alreadyUnlocked && typeof res.freeMonthlyRemaining === "number") {
+          persistAndBroadcastWallet({
+            freeRemaining: Number(res.freeMonthlyRemaining) || 0,
+            paidBalance: Number(res.paidBalance) || 0
+          });
+          showToast("Dibuka kekal (-" + cost + " Token): " + (title || cleanId));
+        }
+        return true;
+      }
+      if (res && !res.unconfigured && !res.authExpired) {
+        showToast((res && res.detail) || (res && res.error) || "Baki token tidak mencukupi (perlu " + cost + " Token).");
+        openTokenWalletDialog();
+        return false;
+      }
+    } catch (e) {}
+
+    const snap = readWalletLocalSnapshot();
+    if (snap.remaining < cost) {
+      showToast("Baki token tidak mencukupi (perlu " + cost + " Token). Sila tebus baucar atau tambah nilai Token!");
+      openTokenWalletDialog();
+      return false;
+    }
+
+    const useFree = Math.min(cost, Math.max(0, snap.freeRemaining));
+    const usePaid = cost - useFree;
+    persistAndBroadcastWallet({
+      freeRemaining: Math.max(0, snap.freeRemaining - useFree),
+      paidBalance: Math.max(0, snap.paidBalance - usePaid)
+    });
+
+    unlocked.add(key);
+    saveUnlockedKeysSet(unlocked);
+    showToast("Dibuka kekal (-" + cost + " Token): " + (title || cleanId));
+    return true;
+  }
+
+  async function ensureQuizSetUnlocked(item) {
+    if (!item || isKlonItemUnlocked(item)) return true;
+    return performContentUnlock_("klon", item.fileId, item.cleanTitle || item.setCode || "Set Klon SPM", KLON_UNLOCK_COST);
+  }
+
+  async function unlockNotaItem(noteId, title) {
+    if (isNotaItemUnlocked(noteId)) return true;
+    return performContentUnlock_("nota", noteId, title || "Nota Interaktif", NOTA_UNLOCK_COST);
+  }
+
   // --- [features/catalog/deepLinkRouter.js] ---
   /**
    * src/features/catalog/deepLinkRouter.js
@@ -2093,6 +2464,7 @@
 
 
 
+
   function lookupKlonMeta_(subjectName) {
     const target = String(subjectName || "").replace(/&/g, "&amp;").trim().toLowerCase();
     const raw = String(subjectName || "").trim().toLowerCase();
@@ -2186,8 +2558,14 @@
   }
 
   function renderQuizCardMarkup_(item, isKlon) {
-    let statusBadgeHtml = '<span class="status-badge badge-new">Belum Jawab</span>';
-    let primaryBtnLabel = isKlon ? "Jawab Klon" : "Mula Latihan";
+    const klonUnlocked = !isKlon || isKlonItemUnlocked(item);
+    let statusBadgeHtml = isKlon
+      ? (klonUnlocked
+          ? '<span class="status-badge badge-done">Terbuka Kekal</span>'
+          : '<span class="status-badge badge-progress">' + ICONS.lock + ' <span class="tabular-nums">' + KLON_UNLOCK_COST + ' Token • Kekal</span></span>')
+      : '<span class="status-badge badge-new">Belum Jawab</span>';
+    let primaryBtnLabel = isKlon ? (klonUnlocked ? "Jawab Klon" : ("Buka Klon (" + KLON_UNLOCK_COST + " Token)")) : "Mula Latihan";
+    let primaryBtnIcon = isKlon && !klonUnlocked ? ICONS.unlock : ICONS.play;
     let primaryBtnClass = "btn-primary";
     let resumeAttr = 'data-resume="0"';
 
@@ -2196,11 +2574,13 @@
       const tot = item.inProgress.totalQuestions || 45;
       statusBadgeHtml = '<span class="status-badge badge-progress">' + ICONS.clock + ' <span class="tabular-nums">' + ans + '/' + tot + ' Dijawab</span></span>';
       primaryBtnLabel = "Sambung Semula";
+      primaryBtnIcon = ICONS.play;
       primaryBtnClass = "btn-emerald";
       resumeAttr = 'data-resume="1"';
     } else if (item.bestScore) {
       statusBadgeHtml = '<span class="status-badge badge-done">' + ICONS.checkCircle + ' <span class="tabular-nums">' + item.bestScore.percentage + '% • Gred ' + escapeHtml(item.bestScore.grade) + '</span></span>';
       primaryBtnLabel = "Ulang Latihan";
+      primaryBtnIcon = ICONS.play;
       primaryBtnClass = "btn-outline";
     }
 
@@ -2229,7 +2609,7 @@
       '  </div>',
       '  <div class="quiz-card-footer">',
       '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
-             ICONS.play + ' <span>' + primaryBtnLabel + '</span>',
+             primaryBtnIcon + ' <span>' + primaryBtnLabel + '</span>',
       '    </button>',
       (item.inProgress
         ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
@@ -2861,6 +3241,8 @@
 
 
 
+
+
   async function openQuizSet(fileId, autoResume, resetStart) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
@@ -2869,6 +3251,11 @@
     const syncEl = document.getElementById("examSyncStatus");
 
     const meta = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
+    if (meta) {
+      const wasLocked = !isKlonItemUnlocked(meta);
+      if (!(await ensureQuizSetUnlocked(meta))) return;
+      if (wasLocked) renderKlonCatalogSection();
+    }
     if (titleEl) titleEl.textContent = meta ? meta.cleanTitle : "Memuatkan Set Soalan...";
     if (slipBtn) slipBtn.hidden = true;
     if (syncEl) syncEl.textContent = "Memuatkan soalan...";
@@ -4956,243 +5343,6 @@
     bindCatalogLeaderboardAndSlipEvents();
     initLandingAndOrderBindings();
     initAdminPanelBindings();
-  }
-
-  // --- [features/dashboard/tokenWalletController.js] ---
-  /**
-   * src/features/dashboard/tokenWalletController.js
-   * Pengawal Dompet Token AI Pelajar (#tokenWalletDialog): paparan baki, tebus baucar top-up & jemputan rakan.
-   */
-
-
-
-
-
-  const WALLET_STORAGE_KEY = "etutor_cikgu_daily_tokens_v1";
-
-  function readWalletLocalSnapshot() {
-    const nowMyt = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
-    try {
-      const raw = localStorage.getItem(WALLET_STORAGE_KEY);
-      if (raw) {
-        const p = JSON.parse(raw);
-        const paid = Math.max(0, Math.floor(Number(p && p.paidBalance) || 0));
-        const sameDay = p && p.date === nowMyt;
-        const freeRem = sameDay && typeof p.freeRemaining === "number"
-          ? Math.max(0, Math.floor(p.freeRemaining))
-          : (sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining) - paid) : 30);
-        const rem = sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining)) : (freeRem + paid);
-        return {
-          date: nowMyt,
-          remaining: rem,
-          limit: Number(p && p.limit) || 30,
-          paidBalance: paid,
-          freeRemaining: freeRem,
-          trialVisionRemaining: typeof (p && p.trialVisionRemaining) === "number" ? p.trialVisionRemaining : 2,
-          referralCode: (p && p.referralCode) || buildLocalReferralCode()
-        };
-      }
-    } catch (e) {}
-    return {
-      date: nowMyt,
-      remaining: 30,
-      limit: 30,
-      paidBalance: 0,
-      freeRemaining: 30,
-      trialVisionRemaining: 2,
-      referralCode: buildLocalReferralCode()
-    };
-  }
-
-  function buildLocalReferralCode() {
-    const uid = (portalState.user && portalState.user.userId) || portalState.deviceId || "PELAJAR";
-    let hash = 0;
-    for (let i = 0; i < uid.length; i++) {
-      hash = ((hash << 5) - hash + uid.charCodeAt(i)) | 0;
-    }
-    return "ET" + Math.abs(hash).toString(36).toUpperCase().padStart(6, "0").slice(0, 8);
-  }
-
-  function persistAndBroadcastWallet(st) {
-    const next = Object.assign(readWalletLocalSnapshot(), st || {});
-    next.remaining = Math.max(0, Math.floor(Number(next.freeRemaining || 0)) + Math.floor(Number(next.paidBalance || 0)));
-    try {
-      localStorage.setItem(WALLET_STORAGE_KEY, JSON.stringify(next));
-    } catch (e) {}
-    renderWalletBadgeAndModal(next);
-    try {
-      window.dispatchEvent(new CustomEvent("etutor:wallet-synced", { detail: next }));
-    } catch (e) {}
-    return next;
-  }
-
-  function renderWalletBadgeAndModal(st) {
-    const s = st || readWalletLocalSnapshot();
-    const navTxt = document.getElementById("navTokenBalanceText");
-    if (navTxt) navTxt.textContent = "Token AI: " + s.remaining;
-
-    const freeEl = document.getElementById("walletFreeBalanceVal");
-    const paidEl = document.getElementById("walletPaidBalanceVal");
-    const visEl = document.getElementById("walletVisionTrialVal");
-    const refEl = document.getElementById("walletReferralCodeText");
-    if (freeEl) freeEl.textContent = String(s.freeRemaining);
-    if (paidEl) paidEl.textContent = String(s.paidBalance);
-    if (visEl) visEl.textContent = s.paidBalance > 0 ? "Aktif" : String(s.trialVisionRemaining);
-    if (refEl) refEl.textContent = s.referralCode || "ET-JEMPUT";
-  }
-
-  async function refreshAiWalletFromServer() {
-    try {
-      const res = await sbGetMyAiWallet();
-      if (res && res.ok) {
-        persistAndBroadcastWallet({
-          freeRemaining: Number(res.freeMonthlyRemaining) || 0,
-          limit: Number(res.freeMonthlyLimit) || 30,
-          paidBalance: Number(res.paidBalance) || 0,
-          trialVisionRemaining: Number(res.trialVisionRemaining) || 0,
-          referralCode: res.referralCode || buildLocalReferralCode()
-        });
-        return;
-      }
-    } catch (e) {}
-    renderWalletBadgeAndModal(readWalletLocalSnapshot());
-  }
-
-  function openTokenWalletDialog() {
-    const dlg = document.getElementById("tokenWalletDialog");
-    if (!dlg) return;
-    const stEl = document.getElementById("aiVoucherStatusMsg");
-    if (stEl) stEl.textContent = "";
-    renderWalletBadgeAndModal(readWalletLocalSnapshot());
-    refreshAiWalletFromServer();
-    if (!dlg.open && typeof dlg.showModal === "function") {
-      dlg.showModal();
-    }
-  }
-
-  function initTokenWalletBindings() {
-    const dlg = document.getElementById("tokenWalletDialog");
-    const openBtn = document.getElementById("openTokenWalletBtn");
-    const closeBtn = document.getElementById("closeTokenWalletBtn");
-    const redeemForm = document.getElementById("redeemAiVoucherForm");
-    const copyRefBtn = document.getElementById("copyReferralLinkBtn");
-
-    renderWalletBadgeAndModal(readWalletLocalSnapshot());
-
-    if (openBtn) {
-      openBtn.addEventListener("click", openTokenWalletDialog);
-    }
-    window.addEventListener("etutor:open-token-wallet", openTokenWalletDialog);
-    window.addEventListener("etutor:cikgu-token-updated", function (ev) {
-      if (ev && ev.detail) renderWalletBadgeAndModal(ev.detail);
-    });
-
-    if (dlg) {
-      bindLightDismissFallback(dlg);
-      dlg.addEventListener("cancel", function (ev) {
-        ev.preventDefault();
-        closeTopLayer(dlg);
-      });
-    }
-    if (closeBtn && dlg) {
-      closeBtn.addEventListener("click", function () {
-        closeTopLayer(dlg);
-      });
-    }
-
-    document.querySelectorAll(".js-wallet-buy-pack").forEach(function (btn) {
-      btn.addEventListener("click", async function () {
-        const packKey = btn.getAttribute("data-pack") || "tokenFocus";
-        if (dlg && dlg.open) await closeTopLayer(dlg);
-        const orderDlg = document.getElementById("orderDialog");
-        const pkgSelect = document.getElementById("orderPackageSelect");
-        if (pkgSelect) {
-          pkgSelect.value = packKey;
-          pkgSelect.dispatchEvent(new Event("change"));
-        }
-        if (orderDlg && typeof orderDlg.showModal === "function") {
-          orderDlg.showModal();
-        }
-      });
-    });
-
-    if (copyRefBtn) {
-      copyRefBtn.addEventListener("click", async function () {
-        const snap = readWalletLocalSnapshot();
-        const url = window.location.origin + window.location.pathname + "?ref=" + encodeURIComponent(snap.referralCode) + "#login";
-        try {
-          await navigator.clipboard.writeText(url);
-          showToast("Pautan jemputan rakan disalin (+10 Token bila rakan siap 1 set).");
-        } catch (e) {
-          showToast("Kod jemputan anda: " + snap.referralCode);
-        }
-      });
-    }
-
-    if (redeemForm) {
-      const voucherInp = document.getElementById("aiVoucherCodeInput");
-      if (voucherInp) {
-        voucherInp.addEventListener("input", function () {
-          voucherInp.setCustomValidity("");
-        });
-      }
-      redeemForm.addEventListener("submit", async function (ev) {
-        ev.preventDefault();
-        const inp = document.getElementById("aiVoucherCodeInput");
-        const btn = document.getElementById("redeemAiVoucherBtn");
-        const stEl = document.getElementById("aiVoucherStatusMsg");
-        if (!inp) return;
-        const code = inp.value.trim().toUpperCase();
-        if (code.length < 6) {
-          inp.setCustomValidity("Sila masukkan sekurang-kurangnya 6 aksara kod baucar.");
-          redeemForm.reportValidity();
-          inp.focus();
-          return;
-        }
-        inp.setCustomValidity("");
-
-        btn.disabled = true;
-        btn.textContent = "Menyemak...";
-        if (stEl) stEl.textContent = "";
-
-        try {
-          let res = await sbRedeemAiTopupVoucher(code);
-          if (!res || res.unconfigured || res.authExpired) {
-            res = await callBackend("redeemAiVoucher", { code: code });
-          }
-          if (!res || !res.ok) {
-            const errMsg = (res && res.error) || "Kod baucar tidak sah atau telah ditebus.";
-            if (stEl) {
-              stEl.style.color = "var(--status-danger)";
-              stEl.textContent = errMsg;
-            }
-            showToast(errMsg);
-            return;
-          }
-          const cur = readWalletLocalSnapshot();
-          const added = Number(res.addedTokens) || 0;
-          const nextPaid = typeof res.paidBalance === "number" ? res.paidBalance : (cur.paidBalance + added);
-          persistAndBroadcastWallet({
-            paidBalance: nextPaid,
-            freeRemaining: typeof res.freeMonthlyRemaining === "number" ? res.freeMonthlyRemaining : cur.freeRemaining
-          });
-          inp.value = "";
-          if (stEl) {
-            stEl.style.color = "var(--grade-emerald)";
-            stEl.textContent = "Berjaya! +" + added + " Token AI ditambah ke dompet kekal anda.";
-          }
-          showToast("+" + added + " Token AI berjaya ditebus!");
-        } catch (err) {
-          if (stEl) {
-            stEl.style.color = "var(--status-danger)";
-            stEl.textContent = "Ralat menebus baucar: " + err.message;
-          }
-        } finally {
-          btn.disabled = false;
-          btn.textContent = "Tebus Kod";
-        }
-      });
-    }
   }
 
   // --- [features/cloud-sync/cloudSyncStorage.js] ---

@@ -4616,13 +4616,15 @@
   }
 
   function renderGsiButtonSlots() {
-    if (!window.google || !google.accounts || !google.accounts.id) return;
+    if (!syncUi.gsiReady || !window.google || !google.accounts || !google.accounts.id) return;
     ["syncGoogleBtn", "loginGoogleGsiBtn"].forEach(function (slotId) {
       const holder = document.getElementById(slotId);
-      if (!holder) return;
+      if (!holder || holder.offsetParent === null) return;
       const w = Math.max(220, Math.min(380, (holder.parentElement ? holder.parentElement.clientWidth : 320) || 320));
       holder.innerHTML = "";
-      google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: w });
+      try {
+        google.accounts.id.renderButton(holder, { theme: "outline", size: "large", text: "continue_with", shape: "pill", width: w });
+      } catch (e) {}
     });
   }
 
@@ -4643,31 +4645,36 @@
         renderGsiButtonSlots();
         return;
       }
-      if (!window.google || !google.accounts || !google.accounts.id) return;
-      syncUi.gsiReady = true;
-      const gsiOpts = {
-        client_id: cid,
-        callback: async function (resp) {
-          setSyncDialogMsg("Mengesahkan akaun Google...");
-          try {
-            const res = isSupabaseConfigured()
-              ? await sbSignInWithGoogleIdToken(resp.credential, syncUi.googleRawNonce)
-              : await callBackend("googleSignIn", { idToken: resp.credential });
-            if (res && res.ok) await onSyncLoggedIn(res);
-            else setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
-          } catch (e) {
-            setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
+      if (syncUi.gsiInitializing || !window.google || !google.accounts || !google.accounts.id) return;
+      syncUi.gsiInitializing = true;
+      try {
+        const gsiOpts = {
+          client_id: cid,
+          callback: async function (resp) {
+            setSyncDialogMsg("Mengesahkan akaun Google...");
+            try {
+              const res = isSupabaseConfigured()
+                ? await sbSignInWithGoogleIdToken(resp.credential, syncUi.googleRawNonce)
+                : await callBackend("googleSignIn", { idToken: resp.credential });
+              if (res && res.ok) await onSyncLoggedIn(res);
+              else setSyncDialogMsg((res && res.error) || "Pengesahan Google gagal.", true);
+            } catch (e) {
+              setSyncDialogMsg("Ralat rangkaian. Cuba lagi.", true);
+            }
           }
+        };
+        if (sbActive) {
+          const noncePair = await generateGoogleNoncePair();
+          syncUi.googleRawNonce = noncePair.rawNonce;
+          gsiOpts.nonce = noncePair.hashedNonce;
         }
-      };
-      if (sbActive) {
-        const noncePair = await generateGoogleNoncePair();
-        syncUi.googleRawNonce = noncePair.rawNonce;
-        gsiOpts.nonce = noncePair.hashedNonce;
+        google.accounts.id.initialize(gsiOpts);
+        syncUi.gsiReady = true;
+        syncUi.renderGsi = renderGsiButtonSlots;
+        renderGsiButtonSlots();
+      } finally {
+        syncUi.gsiInitializing = false;
       }
-      google.accounts.id.initialize(gsiOpts);
-      syncUi.renderGsi = renderGsiButtonSlots;
-      renderGsiButtonSlots();
     }
 
     if (window.google && google.accounts) { init(); return; }
@@ -4690,8 +4697,8 @@
     const stepEmail = document.getElementById("syncStepEmail");
     if (stepCode) stepCode.hidden = true;
     if (stepEmail) stepEmail.hidden = false;
-    loadGoogleSignIn();
     if (!dlg.open) dlg.showModal();
+    loadGoogleSignIn();
     if (syncUi.renderGsi) syncUi.renderGsi();
   }
 

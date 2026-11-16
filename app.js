@@ -3760,6 +3760,100 @@
     }
   }
 
+  // --- [features/landing/footerLiveStats.js] ---
+  /**
+   * src/features/landing/footerLiveStats.js
+   * Paparan statistik pengguna portal & pelawat aktif masa nyata (Supabase RPC + Realtime Presence) di footer laman utama.
+   */
+
+  let presenceChannel = null;
+  let initialized = false;
+
+  function setStatText(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (typeof value === "number" && Number.isFinite(value)) {
+      el.textContent = value.toLocaleString("ms-MY");
+    } else {
+      el.textContent = String(value || "—");
+    }
+  }
+
+  function getTabPresenceKey() {
+    try {
+      const existing = sessionStorage.getItem("etutor_presence_key");
+      if (existing) return existing;
+      const generated = (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function")
+        ? crypto.randomUUID()
+        : ("v_" + Math.random().toString(36).slice(2) + Date.now().toString(36));
+      sessionStorage.setItem("etutor_presence_key", generated);
+      return generated;
+    } catch (_) {
+      return "v_" + Math.random().toString(36).slice(2);
+    }
+  }
+
+  async function refreshAggregateStats(supabase) {
+    try {
+      const { data, error } = await supabase.rpc("get_public_portal_stats");
+      if (error || !data) return null;
+      setStatText("footerTotalUsersCount", Number(data.total_users || 0));
+      setStatText("footerActive24hCount", Number(data.active_24h || 0));
+      setStatText("footerQuizAttemptsCount", Number(data.quiz_attempts || 0));
+      return data;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function subscribeLivePresence(supabase, fallbackSessions) {
+    if (presenceChannel) return;
+    const presenceKey = getTabPresenceKey();
+    presenceChannel = supabase.channel("etutor-live-presence", {
+      config: {
+        presence: { key: presenceKey }
+      }
+    });
+
+    presenceChannel.on("presence", { event: "sync" }, function () {
+      if (!presenceChannel) return;
+      const state = presenceChannel.presenceState();
+      const onlineCount = Object.keys(state || {}).length;
+      setStatText("footerLiveUsersCount", Math.max(1, onlineCount));
+    });
+
+    presenceChannel.subscribe(async function (status) {
+      if (status === "SUBSCRIBED" && presenceChannel) {
+        try {
+          await presenceChannel.track({
+            page: window.location.hash || "landing",
+            online_at: new Date().toISOString()
+          });
+        } catch (_) {}
+      } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") {
+        if (typeof fallbackSessions === "number") {
+          setStatText("footerLiveUsersCount", Math.max(1, fallbackSessions));
+        }
+      }
+    });
+  }
+
+  async function initFooterLiveStats() {
+    if (initialized) return;
+    if (!document.getElementById("footerLiveUsersCount")) return;
+    initialized = true;
+
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+
+    const stats = await refreshAggregateStats(supabase);
+    const fallbackSessions = stats && typeof stats.active_sessions === "number"
+      ? stats.active_sessions
+      : 1;
+    setStatText("footerLiveUsersCount", Math.max(1, fallbackSessions));
+    subscribeLivePresence(supabase, fallbackSessions);
+  }
+
   // --- [features/admin/adminSubjectPicker.js] ---
   /**
    * src/features/admin/adminSubjectPicker.js

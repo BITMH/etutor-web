@@ -1431,6 +1431,7 @@
   }
 
   function syncPortalDropdownSummaries() {
+    applyPortalPreferencesToDom();
     const cat = portalState.catalog || [];
     let klonCount = 0;
     let praCount = 0;
@@ -2210,7 +2211,6 @@
 
   function renderKlonCatalogSection() {
     const sec = document.getElementById("klonCatalogSection");
-    const wrapDetails = document.getElementById("moduleDropdownKlon");
     const grid = document.getElementById("klonCatalogCardsGrid");
     const countLabel = document.getElementById("klonCatalogCountLabel");
     if (!sec || !grid) return;
@@ -2224,7 +2224,6 @@
 
     if (allKlon.length === 0) {
       sec.hidden = true;
-      if (wrapDetails) wrapDetails.hidden = true;
       grid.innerHTML = "";
       return;
     }
@@ -4802,6 +4801,7 @@
   function refreshOpenDashboardIfIdle() {
     if (portalState.sessionToken || !isOpenAccessMode() || !portalState.openPortalActive) return;
     if (portalState.activeQuizFileId) return;
+    if (!Array.isArray(portalState.rawOpenCatalog) || portalState.rawOpenCatalog.length === 0) return;
     applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
   }
 

@@ -602,6 +602,32 @@
     return data;
   }
 
+  async function sbGetMyAiWallet() {
+    const sb = getSupabaseClient();
+    if (!sb || !isSupabaseConfigured()) return { ok: false, unconfigured: true };
+    const sessRes = await sb.auth.getSession();
+    if (!sessRes || !sessRes.data || !sessRes.data.session) return { ok: false, authExpired: true };
+    const { data, error } = await sb.rpc("get_my_ai_wallet");
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal memuatkan dompet token.") };
+    return data || { ok: false };
+  }
+
+  async function sbRedeemAiTopupVoucher(code) {
+    const sb = getSupabaseClient();
+    if (!sb || !isSupabaseConfigured()) return { ok: false, unconfigured: true };
+    const { data, error } = await sb.rpc("redeem_ai_topup_voucher", { p_code: String(code || "").trim() });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal menebus kod baucar.") };
+    return data || { ok: false, error: "Gagal menebus kod baucar." };
+  }
+
+  async function sbClaimAiReferralBonus(refCode) {
+    const sb = getSupabaseClient();
+    if (!sb || !isSupabaseConfigured()) return { ok: false, unconfigured: true };
+    const { data, error } = await sb.rpc("claim_ai_referral_bonus", { p_ref_code: String(refCode || "").trim() });
+    if (error) return { ok: false, error: mapAuthError(error, "Gagal menebus bonus rujukan.") };
+    return data || { ok: false };
+  }
+
   // --- [shared/supabase/pinBundleBuilder.js] ---
   /**
    * src/shared/supabase/pinBundleBuilder.js
@@ -3731,7 +3757,7 @@
           orderForm.reportValidity();
           return;
         }
-        const p = plans[key] || { name: "Pas Penuh Semua Subjek SPM", price: "RM 59" };
+        const p = plans[key] || { name: "Pek Fokus — 160 Token AI Ekspres", price: "RM 15" };
         const chosenFocusSubject = (key === "single" && focusSelect && focusSelect.value)
           ? focusSelect.value.trim()
           : "";
@@ -3739,14 +3765,19 @@
           ? p.name + " — Subjek: " + chosenFocusSubject + " (" + p.price + ")"
           : p.name + " (" + p.price + ")";
 
+        const isTokenPack = key.indexOf("token") === 0;
         const msgLines = [
-          "Salam Admin eTutor.my, saya berminat untuk mengaktifkan akses portal:",
+          isTokenPack
+            ? "Salam Admin eTutor.my, saya berminat membeli Kod Baucar Top-up Token AI:"
+            : "Salam Admin eTutor.my, saya berminat untuk mengaktifkan akses portal:",
           "",
           "Nama Pelajar: " + studentName,
-          "No. Telefon (ID): " + phone,
-          "Pakej Pilihan: " + packageLabel,
+          "No. Telefon / ID Google: " + phone,
+          "Pilihan Pakej: " + packageLabel,
           "",
-          "Mohon kongsikan maklumat pembayaran untuk pengaktifan Kod PIN. Terima kasih!"
+          isTokenPack
+            ? "Mohon kongsikan maklumat bayaran QR/FPX untuk mendapatkan Kod Baucar Top-up Token AI. Terima kasih!"
+            : "Mohon kongsikan maklumat pembayaran untuk pengaktifan Kod PIN. Terima kasih!"
         ].join("\n");
 
         const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
@@ -4487,6 +4518,95 @@
     bindAdminTableRowActions();
   }
 
+  // --- [features/admin/adminTokenVoucherController.js] ---
+  /**
+   * src/features/admin/adminTokenVoucherController.js
+   * Pengawal Penjana Kod Baucar Top-up Token AI 1-Klik pada Panel Admin (#admin).
+   */
+
+
+
+  function initAdminVoucherBindings() {
+    const form = document.getElementById("adminVoucherForm");
+    const packSel = document.getElementById("admVoucherPackSelect");
+    const noteInp = document.getElementById("admVoucherNoteInput");
+    const genBtn = document.getElementById("admGenerateVoucherBtn");
+    const outBox = document.getElementById("admGeneratedVoucherBox");
+    const outCode = document.getElementById("admGeneratedVoucherCode");
+    const outPack = document.getElementById("admVoucherPackLabel");
+    const copyBtn = document.getElementById("admCopyVoucherWaBtn");
+
+    let lastVoucher = null;
+
+    if (form) {
+      form.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        if (!portalState.adminToken) {
+          showToast("Sesi Admin diperlukan untuk menjana kod baucar.");
+          return;
+        }
+        const packCode = (packSel && packSel.value) || "PEK_FOKUS_160";
+        const buyerNote = (noteInp && noteInp.value.trim()) || "";
+
+        if (genBtn) {
+          genBtn.disabled = true;
+          genBtn.textContent = "Menjana...";
+        }
+        try {
+          const res = await callBackend("adminCreateAiVoucher", {
+            adminToken: portalState.adminToken,
+            packCode: packCode,
+            buyerNote: buyerNote
+          });
+          if (!res || !res.ok) {
+            showToast((res && res.error) || "Gagal menjana kod baucar.");
+            return;
+          }
+          lastVoucher = res;
+          if (outCode) outCode.textContent = res.code;
+          if (outPack) outPack.textContent = res.tokens + " Token AI";
+          if (outBox) outBox.hidden = false;
+          if (noteInp) noteInp.value = "";
+          showToast("Kod baucar " + res.code + " (+" + res.tokens + " Token) berjaya dijana.");
+        } catch (err) {
+          showToast("Ralat: " + err.message);
+        } finally {
+          if (genBtn) {
+            genBtn.disabled = false;
+            genBtn.textContent = "Jana Kod Baucar";
+          }
+        }
+      });
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async function () {
+        if (!lastVoucher || !lastVoucher.code) return;
+        const adminWa = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.ADMIN_WHATSAPP_DISPLAY) || "013-732 7696";
+        const portalUrl = window.location.origin + "/#portal";
+        const msg = [
+          "Terima kasih atas pembelian Top-up Token AI eTutor.my!",
+          "",
+          "Pek: +" + lastVoucher.tokens + " Token AI Ekspres",
+          "Kod Baucar Anda: " + lastVoucher.code,
+          "",
+          "Cara Tebus:",
+          "1. Buka " + portalUrl,
+          "2. Klik butang 'Token AI' di bahagian atas kanan skrin.",
+          "3. Masukkan kod baucar di atas dan tekan 'Tebus Kod'.",
+          "",
+          "Bantuan Admin WhatsApp: " + adminWa
+        ].join("\n");
+        try {
+          await navigator.clipboard.writeText(msg);
+          showToast("Mesej WhatsApp baucar disalin ke papan keratan.");
+        } catch (e) {
+          showToast("Kod Baucar: " + lastVoucher.code);
+        }
+      });
+    }
+  }
+
   // --- [features/dashboard/catalogAndLeaderboardEvents.js] ---
   /**
    * src/features/dashboard/catalogAndLeaderboardEvents.js
@@ -4836,6 +4956,243 @@
     bindCatalogLeaderboardAndSlipEvents();
     initLandingAndOrderBindings();
     initAdminPanelBindings();
+  }
+
+  // --- [features/dashboard/tokenWalletController.js] ---
+  /**
+   * src/features/dashboard/tokenWalletController.js
+   * Pengawal Dompet Token AI Pelajar (#tokenWalletDialog): paparan baki, tebus baucar top-up & jemputan rakan.
+   */
+
+
+
+
+
+  const WALLET_STORAGE_KEY = "etutor_cikgu_daily_tokens_v1";
+
+  function readWalletLocalSnapshot() {
+    const nowMyt = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+    try {
+      const raw = localStorage.getItem(WALLET_STORAGE_KEY);
+      if (raw) {
+        const p = JSON.parse(raw);
+        const paid = Math.max(0, Math.floor(Number(p && p.paidBalance) || 0));
+        const sameDay = p && p.date === nowMyt;
+        const freeRem = sameDay && typeof p.freeRemaining === "number"
+          ? Math.max(0, Math.floor(p.freeRemaining))
+          : (sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining) - paid) : 30);
+        const rem = sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining)) : (freeRem + paid);
+        return {
+          date: nowMyt,
+          remaining: rem,
+          limit: Number(p && p.limit) || 30,
+          paidBalance: paid,
+          freeRemaining: freeRem,
+          trialVisionRemaining: typeof (p && p.trialVisionRemaining) === "number" ? p.trialVisionRemaining : 2,
+          referralCode: (p && p.referralCode) || buildLocalReferralCode()
+        };
+      }
+    } catch (e) {}
+    return {
+      date: nowMyt,
+      remaining: 30,
+      limit: 30,
+      paidBalance: 0,
+      freeRemaining: 30,
+      trialVisionRemaining: 2,
+      referralCode: buildLocalReferralCode()
+    };
+  }
+
+  function buildLocalReferralCode() {
+    const uid = (portalState.user && portalState.user.userId) || portalState.deviceId || "PELAJAR";
+    let hash = 0;
+    for (let i = 0; i < uid.length; i++) {
+      hash = ((hash << 5) - hash + uid.charCodeAt(i)) | 0;
+    }
+    return "ET" + Math.abs(hash).toString(36).toUpperCase().padStart(6, "0").slice(0, 8);
+  }
+
+  function persistAndBroadcastWallet(st) {
+    const next = Object.assign(readWalletLocalSnapshot(), st || {});
+    next.remaining = Math.max(0, Math.floor(Number(next.freeRemaining || 0)) + Math.floor(Number(next.paidBalance || 0)));
+    try {
+      localStorage.setItem(WALLET_STORAGE_KEY, JSON.stringify(next));
+    } catch (e) {}
+    renderWalletBadgeAndModal(next);
+    try {
+      window.dispatchEvent(new CustomEvent("etutor:wallet-synced", { detail: next }));
+    } catch (e) {}
+    return next;
+  }
+
+  function renderWalletBadgeAndModal(st) {
+    const s = st || readWalletLocalSnapshot();
+    const navTxt = document.getElementById("navTokenBalanceText");
+    if (navTxt) navTxt.textContent = "Token AI: " + s.remaining;
+
+    const freeEl = document.getElementById("walletFreeBalanceVal");
+    const paidEl = document.getElementById("walletPaidBalanceVal");
+    const visEl = document.getElementById("walletVisionTrialVal");
+    const refEl = document.getElementById("walletReferralCodeText");
+    if (freeEl) freeEl.textContent = String(s.freeRemaining);
+    if (paidEl) paidEl.textContent = String(s.paidBalance);
+    if (visEl) visEl.textContent = s.paidBalance > 0 ? "Aktif" : String(s.trialVisionRemaining);
+    if (refEl) refEl.textContent = s.referralCode || "ET-JEMPUT";
+  }
+
+  async function refreshAiWalletFromServer() {
+    try {
+      const res = await sbGetMyAiWallet();
+      if (res && res.ok) {
+        persistAndBroadcastWallet({
+          freeRemaining: Number(res.freeMonthlyRemaining) || 0,
+          limit: Number(res.freeMonthlyLimit) || 30,
+          paidBalance: Number(res.paidBalance) || 0,
+          trialVisionRemaining: Number(res.trialVisionRemaining) || 0,
+          referralCode: res.referralCode || buildLocalReferralCode()
+        });
+        return;
+      }
+    } catch (e) {}
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+  }
+
+  function openTokenWalletDialog() {
+    const dlg = document.getElementById("tokenWalletDialog");
+    if (!dlg) return;
+    const stEl = document.getElementById("aiVoucherStatusMsg");
+    if (stEl) stEl.textContent = "";
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+    refreshAiWalletFromServer();
+    if (!dlg.open && typeof dlg.showModal === "function") {
+      dlg.showModal();
+    }
+  }
+
+  function initTokenWalletBindings() {
+    const dlg = document.getElementById("tokenWalletDialog");
+    const openBtn = document.getElementById("openTokenWalletBtn");
+    const closeBtn = document.getElementById("closeTokenWalletBtn");
+    const redeemForm = document.getElementById("redeemAiVoucherForm");
+    const copyRefBtn = document.getElementById("copyReferralLinkBtn");
+
+    renderWalletBadgeAndModal(readWalletLocalSnapshot());
+
+    if (openBtn) {
+      openBtn.addEventListener("click", openTokenWalletDialog);
+    }
+    window.addEventListener("etutor:open-token-wallet", openTokenWalletDialog);
+    window.addEventListener("etutor:cikgu-token-updated", function (ev) {
+      if (ev && ev.detail) renderWalletBadgeAndModal(ev.detail);
+    });
+
+    if (dlg) {
+      bindLightDismissFallback(dlg);
+      dlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(dlg);
+      });
+    }
+    if (closeBtn && dlg) {
+      closeBtn.addEventListener("click", function () {
+        closeTopLayer(dlg);
+      });
+    }
+
+    document.querySelectorAll(".js-wallet-buy-pack").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        const packKey = btn.getAttribute("data-pack") || "tokenFocus";
+        if (dlg && dlg.open) await closeTopLayer(dlg);
+        const orderDlg = document.getElementById("orderDialog");
+        const pkgSelect = document.getElementById("orderPackageSelect");
+        if (pkgSelect) {
+          pkgSelect.value = packKey;
+          pkgSelect.dispatchEvent(new Event("change"));
+        }
+        if (orderDlg && typeof orderDlg.showModal === "function") {
+          orderDlg.showModal();
+        }
+      });
+    });
+
+    if (copyRefBtn) {
+      copyRefBtn.addEventListener("click", async function () {
+        const snap = readWalletLocalSnapshot();
+        const url = window.location.origin + window.location.pathname + "?ref=" + encodeURIComponent(snap.referralCode) + "#login";
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast("Pautan jemputan rakan disalin (+10 Token bila rakan siap 1 set).");
+        } catch (e) {
+          showToast("Kod jemputan anda: " + snap.referralCode);
+        }
+      });
+    }
+
+    if (redeemForm) {
+      const voucherInp = document.getElementById("aiVoucherCodeInput");
+      if (voucherInp) {
+        voucherInp.addEventListener("input", function () {
+          voucherInp.setCustomValidity("");
+        });
+      }
+      redeemForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        const inp = document.getElementById("aiVoucherCodeInput");
+        const btn = document.getElementById("redeemAiVoucherBtn");
+        const stEl = document.getElementById("aiVoucherStatusMsg");
+        if (!inp) return;
+        const code = inp.value.trim().toUpperCase();
+        if (code.length < 6) {
+          inp.setCustomValidity("Sila masukkan sekurang-kurangnya 6 aksara kod baucar.");
+          redeemForm.reportValidity();
+          inp.focus();
+          return;
+        }
+        inp.setCustomValidity("");
+
+        btn.disabled = true;
+        btn.textContent = "Menyemak...";
+        if (stEl) stEl.textContent = "";
+
+        try {
+          let res = await sbRedeemAiTopupVoucher(code);
+          if (!res || res.unconfigured || res.authExpired) {
+            res = await callBackend("redeemAiVoucher", { code: code });
+          }
+          if (!res || !res.ok) {
+            const errMsg = (res && res.error) || "Kod baucar tidak sah atau telah ditebus.";
+            if (stEl) {
+              stEl.style.color = "var(--status-danger)";
+              stEl.textContent = errMsg;
+            }
+            showToast(errMsg);
+            return;
+          }
+          const cur = readWalletLocalSnapshot();
+          const added = Number(res.addedTokens) || 0;
+          const nextPaid = typeof res.paidBalance === "number" ? res.paidBalance : (cur.paidBalance + added);
+          persistAndBroadcastWallet({
+            paidBalance: nextPaid,
+            freeRemaining: typeof res.freeMonthlyRemaining === "number" ? res.freeMonthlyRemaining : cur.freeRemaining
+          });
+          inp.value = "";
+          if (stEl) {
+            stEl.style.color = "var(--grade-emerald)";
+            stEl.textContent = "Berjaya! +" + added + " Token AI ditambah ke dompet kekal anda.";
+          }
+          showToast("+" + added + " Token AI berjaya ditebus!");
+        } catch (err) {
+          if (stEl) {
+            stEl.style.color = "var(--status-danger)";
+            stEl.textContent = "Ralat menebus baucar: " + err.message;
+          }
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Tebus Kod";
+        }
+      });
+    }
   }
 
   // --- [features/cloud-sync/cloudSyncStorage.js] ---
@@ -5764,9 +6121,13 @@
 
 
 
+
+
   document.addEventListener("DOMContentLoaded", async function () {
     syncOpenAccessDom();
     bindEvents();
+    initTokenWalletBindings();
+    initAdminVoucherBindings();
     bindCloudSyncEvents();
     initUnifiedAuth();
     bindIssueReportingEvents();

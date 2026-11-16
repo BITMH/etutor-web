@@ -4,7 +4,7 @@
  * Mengorkestrasi penderia skrin iframe, jambatan penandaan Kertas 2, dan laci sembang Cikgu AI.
  */
 
-import { onDailyTokenChange } from "./config.js?v=21";
+import { onDailyTokenChange, saveDailyTokenState } from "./config.js?v=21";
 import { CikguFailoverClient } from "./api/failover-client.js?v=21";
 import { WarmupStateMachine } from "./state/warmup-machine.js?v=21";
 import { CikguSpeechIO } from "./audio/speech-io.js?v=21";
@@ -51,12 +51,27 @@ export function initCikguAiIntegration() {
 
   onDailyTokenChange((st) => postTokenSyncToIframe(st));
 
+  window.addEventListener("etutor:wallet-synced", (ev) => {
+    const d = ev && ev.detail;
+    if (d && typeof d.remaining === "number") {
+      saveDailyTokenState(d.remaining, d.limit || 30, {
+        paidBalance: Number(d.paidBalance) || 0,
+        freeRemaining: typeof d.freeRemaining === "number" ? d.freeRemaining : undefined
+      });
+    }
+  });
+
   window.addEventListener("message", (ev) => {
     const d = ev && ev.data;
     if (!d || typeof d !== "object") return;
 
     if (d.type === "ETUTOR_REQUEST_TOKEN_SYNC") {
       postTokenSyncToIframe();
+      return;
+    }
+
+    if (d.type === "ETUTOR_OPEN_TOPUP_MODAL") {
+      window.dispatchEvent(new CustomEvent("etutor:open-token-wallet"));
       return;
     }
 

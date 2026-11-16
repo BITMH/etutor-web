@@ -47,10 +47,12 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
   const detectedSubj = d.subject || detectSubjectFromText(`${stageTitle} ${d.quizTitle}`) || "auto";
   const maxMarks = Math.max(1, Math.min(100, Math.round(Number(d.marks) || 2)));
   const rawAnsStr = String(d.studentAnswer || "");
+  const hasImg = Boolean(d.imageBase64 && String(d.imageBase64).length > 30);
+  const needTok = Number(d.tokenCost) || (hasImg ? 3 : 1);
   const emptyPtsMatches = [...rawAnsStr.matchAll(/\((\d+)\s*m\)\]\s*:\s*\(kosong/gi)];
   const emptySlotPts = emptyPtsMatches.reduce((acc, m) => acc + (parseInt(m[1], 10) || 0), 0);
   const emptyCount = (rawAnsStr.match(/\(kosong/gi) || []).length;
-  const cappedMax = Math.max(0, maxMarks - (emptySlotPts > 0 ? emptySlotPts : emptyCount));
+  const cappedMax = hasImg ? maxMarks : Math.max(0, maxMarks - (emptySlotPts > 0 ? emptySlotPts : emptyCount));
 
   const normalizeAiGradeOutput = (raw) => {
     let cleanTxt = String(raw || "").replace(/\*\*/g, "").trim();
@@ -68,21 +70,21 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
   let accText = "";
   try {
     const curTok = loadDailyTokenState();
-    if (curTok.remaining <= 0) {
+    if (curTok.remaining < needTok) {
       targetWin.postMessage(
         {
           type: "ETUTOR_AI_SUB_GRADE_LIMIT",
           subId: d.subId,
-          remaining: 0,
+          remaining: curTok.remaining,
           limit: curTok.limit,
-          message: `Kuota ${curTok.limit} token AI harian anda telah penuh untuk hari ini (reset jam 12:00 tengah malam MYT). Sila klik butang 'Skema Jawapan' untuk menyemak jawapan rasmi tanpa had!`
+          message: `Baki token AI tidak mencukupi (${curTok.remaining} baki, perlukan ${needTok} token). Sila tambah Token AI atau klik butang 'Skema Jawapan' secara terbuka!`
         },
         "*"
       );
       return;
     }
 
-    if (warmupMachine && warmupMachine.status !== "ready") {
+    if (!hasImg && warmupMachine && warmupMachine.status !== "ready") {
       try {
         targetWin.postMessage(
           {
@@ -101,14 +103,17 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
     await client.streamSemak(
       {
         subjek: detectedSubj,
-        mod: "semak_pantask2",
+        mod: hasImg ? "semak_gambar" : "semak_pantask2",
+        sub_id: String(d.subId || "").slice(0, 120),
         soalan: String(d.questionText || "").slice(0, 5500),
         jawapan_pelajar: rawAnsStr.slice(0, 7500),
         skema_rasmi: String(d.officialScheme || "").slice(0, 4500),
+        imej_base64: hasImg ? String(d.imageBase64).slice(0, 255000) : "",
+        imej_mime: hasImg ? String(d.imageMime || "image/jpeg") : "image/jpeg",
         nama_pelajar: resolveStudentLoginName(d.candidateName),
         sesi_sudah_sapa: true,
         markah_penuh: maxMarks,
-        max_tokens: maxMarks >= 20 ? 480 : 340
+        max_tokens: hasImg || maxMarks >= 20 ? 520 : 340
       },
       {
         onToken: (tok) => {

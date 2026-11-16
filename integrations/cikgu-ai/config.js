@@ -163,6 +163,24 @@ export function resolveCikguUserKey() {
   }
 }
 
+export function resolveSupabaseAccessToken() {
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i) || "";
+      if (k.startsWith("sb-") && k.endsWith("-auth-token")) {
+        const parsed = JSON.parse(localStorage.getItem(k) || "{}");
+        if (parsed && parsed.access_token) return String(parsed.access_token);
+        if (parsed && parsed.currentSession && parsed.currentSession.access_token) {
+          return String(parsed.currentSession.access_token);
+        }
+      }
+    }
+  } catch {
+    // abaikan
+  }
+  return "";
+}
+
 const tokenSubscribers = new Set();
 
 export function onDailyTokenChange(fn) {
@@ -176,23 +194,43 @@ export function loadDailyTokenState() {
     const raw = localStorage.getItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS);
     if (raw) {
       const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed.paidBalance === "number") {
+        const paid = Math.max(0, Math.floor(parsed.paidBalance));
+        const sameDay = parsed.date === today;
+        const lim = Number(parsed.limit) || DAILY_AI_TOKEN_LIMIT;
+        const freeRem = sameDay && typeof parsed.freeRemaining === "number"
+          ? Math.max(0, Math.min(lim, Math.floor(parsed.freeRemaining)))
+          : DAILY_AI_TOKEN_LIMIT;
+        const rem = sameDay && typeof parsed.remaining === "number"
+          ? Math.max(0, Math.floor(parsed.remaining))
+          : freeRem + paid;
+        return { date: today, remaining: rem, limit: lim, paidBalance: paid, freeRemaining: freeRem };
+      }
       if (parsed && parsed.date === today && typeof parsed.remaining === "number") {
         const lim = Number(parsed.limit) || DAILY_AI_TOKEN_LIMIT;
         const rem = Math.max(0, Math.min(lim, Math.floor(parsed.remaining)));
-        return { date: today, remaining: rem, limit: lim };
+        return { date: today, remaining: rem, limit: lim, paidBalance: 0, freeRemaining: rem };
       }
     }
   } catch {
     // abaikan
   }
-  return { date: today, remaining: DAILY_AI_TOKEN_LIMIT, limit: DAILY_AI_TOKEN_LIMIT };
+  return { date: today, remaining: DAILY_AI_TOKEN_LIMIT, limit: DAILY_AI_TOKEN_LIMIT, paidBalance: 0, freeRemaining: DAILY_AI_TOKEN_LIMIT };
 }
 
-export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT) {
+export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT, extra = null) {
   const today = getMytDateKey();
+  const prev = loadDailyTokenState();
+  const safePaid = extra && typeof extra.paidBalance === "number"
+    ? Math.max(0, Math.floor(extra.paidBalance))
+    : (prev.paidBalance || 0);
   const safeLim = Math.max(1, Number(limit) || DAILY_AI_TOKEN_LIMIT);
-  const safeRem = Math.max(0, Math.min(safeLim, Math.floor(Number(remaining))));
-  const next = { date: today, remaining: safeRem, limit: safeLim };
+  const maxAllowed = Math.max(safeLim + safePaid, Number(remaining) || 0);
+  const safeRem = Math.max(0, Math.min(maxAllowed, Math.floor(Number(remaining))));
+  const safeFree = extra && typeof extra.freeRemaining === "number"
+    ? Math.max(0, Math.floor(extra.freeRemaining))
+    : Math.max(0, safeRem - safePaid);
+  const next = { date: today, remaining: safeRem, limit: safeLim, paidBalance: safePaid, freeRemaining: safeFree };
   try {
     localStorage.setItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS, JSON.stringify(next));
   } catch {
@@ -205,5 +243,12 @@ export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT) {
       // abaikan
     }
   });
+  try {
+    if (typeof window !== "undefined" && typeof CustomEvent === "function") {
+      window.dispatchEvent(new CustomEvent("etutor:cikgu-token-updated", { detail: next }));
+    }
+  } catch {
+    // abaikan
+  }
   return next;
 }

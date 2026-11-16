@@ -11,6 +11,7 @@ import {
   loadDailyTokenState,
   loadRuntimeEndpoints,
   resolveCikguUserKey,
+  resolveSupabaseAccessToken,
   saveDailyTokenState
 } from "../config.js";
 import { consumeSseSemakStream } from "./sse-stream-reader.js";
@@ -180,13 +181,13 @@ export class CikguFailoverClient {
     for (let i = 0; i < candidates.length; i++) {
       const candidate = candidates[i];
       try {
+        const jwt = resolveSupabaseAccessToken();
+        const hdrs = { "Content-Type": "application/json", "X-Etutor-User": userKey };
+        if (jwt) hdrs.Authorization = `Bearer ${jwt}`;
         const postSemak = (bodyObj) =>
           fetch(`${candidate.url}/v1/semak`, {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Etutor-User": userKey
-            },
+            headers: hdrs,
             body: JSON.stringify({ ...bodyObj, id_pengguna: userKey, stream: true })
           });
 
@@ -228,24 +229,34 @@ export class CikguFailoverClient {
         if (!resp.ok) {
           let errMsg = `Ralat pelayan (${resp.status})`;
           let isDailyCap = false;
+          let isVisCap = resp.status === 402;
           try {
             const j = await resp.json();
             if (j.detail) errMsg = j.detail;
-            if (j.error === "daily_token_limit") {
+            if (j.error === "vision_paid_required") {
+              isDailyCap = true;
+              isVisCap = true;
+            } else if (j.error === "daily_token_limit") {
               isDailyCap = true;
               saveDailyTokenState(0, j.daily_limit || DAILY_AI_TOKEN_LIMIT);
             }
           } catch {}
           const eObj = new Error(errMsg);
           if (isDailyCap) eObj.isDailyLimit = true;
+          if (isVisCap) {
+            eObj.isDailyLimit = true;
+            eObj.isVisionLimit = true;
+          }
           throw eObj;
         }
 
         const hdrRem = resp.headers.get("X-Cikgu-Daily-Remaining");
         const hdrLim = resp.headers.get("X-Cikgu-Daily-Limit");
+        const hdrPaid = resp.headers.get("X-Cikgu-Paid-Balance");
         let syncedFromHeaders = false;
         if (hdrRem !== null && hdrRem !== "" && !isNaN(Number(hdrRem))) {
-          saveDailyTokenState(Number(hdrRem), Number(hdrLim) || DAILY_AI_TOKEN_LIMIT);
+          const extra = hdrPaid !== null && hdrPaid !== "" && !isNaN(Number(hdrPaid)) ? { paidBalance: Number(hdrPaid) } : null;
+          saveDailyTokenState(Number(hdrRem), Number(hdrLim) || DAILY_AI_TOKEN_LIMIT, extra);
           syncedFromHeaders = true;
         }
 

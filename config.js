@@ -86,6 +86,34 @@ window.ETUTOR_CONFIG = {
       originalPrice: "RM 240",
       period: "2 ID Pelajar berasingan • 4 peranti",
       badge: "Terbaik Untuk Ibu Bapa"
+    },
+    tokenStarter: {
+      code: "PEK_CUBA_45",
+      name: "Pek Cuba — 45 Token AI Ekspres",
+      price: "RM 5",
+      tokens: 45,
+      period: "sah sehingga tamat SPM • Snap & Check aktif"
+    },
+    tokenFocus: {
+      code: "PEK_FOKUS_160",
+      name: "Pek Fokus — 160 Token AI Ekspres",
+      price: "RM 15",
+      tokens: 160,
+      period: "jimat 12% • sah sehingga tamat SPM"
+    },
+    tokenSprint: {
+      code: "PEK_PECUTAN_500",
+      name: "Pek Pecutan SPM — 500 Token AI Ekspres",
+      price: "RM 39",
+      tokens: 500,
+      period: "jimat 30% • sokongan 2 akaun"
+    },
+    tokenClass: {
+      code: "PEK_KELAS_1500",
+      name: "Pek Panitia / Kelas Cikgu — 1,500 Token AI",
+      price: "RM 99",
+      tokens: 1500,
+      period: "baucar untuk 30-40 pelajar"
     }
   }
 };

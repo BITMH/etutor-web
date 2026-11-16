@@ -62,9 +62,11 @@ export async function consumeSseSemakStream(resp, tier, { syncedFromHeaders = fa
         if (evt.type === "meta") {
           if (evt.sahsiah_signal === "tiada_sapaan_disekat") politeBlocked = true;
           if (typeof evt.daily_remaining === "number") {
+            const extra = typeof evt.paid_balance === "number" ? { paidBalance: evt.paid_balance } : null;
             saveDailyTokenState(
               evt.daily_remaining,
-              evt.daily_limit || DAILY_AI_TOKEN_LIMIT
+              evt.daily_limit || DAILY_AI_TOKEN_LIMIT,
+              extra
             );
             syncedFromServer = true;
           }

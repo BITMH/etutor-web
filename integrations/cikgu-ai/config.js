@@ -29,26 +29,24 @@ export function isGcpTrialActive() {
 }
 
 export const DEFAULT_CIKGU_CONFIG = {
-  // Pelayan Google Cloud Run (Singapura):
-  cloudRunUrl:
-    globalCfg.CIKGU_CLOUD_RUN_URL ||
-    "https://cikgu-ai-spm-afaauenp7q-as.a.run.app",
+  // Pelayan Utama: Supabase Edge Function (0ms cold-start, 500k panggilan percuma/bulan):
+  supabaseEdgeUrl:
+    globalCfg.CIKGU_SUPABASE_EDGE_URL ||
+    "https://ktesekiguardgfdgrmlp.supabase.co/functions/v1/cikgu-semak",
 
-  // Pelayan Modal GPU NVIDIA T4:
+  // Pelayan Sandaran Darurat: Modal GPU NVIDIA T4 (Qwen 3.5 GGUF, tidur pada kos $0):
   modalGpuUrl:
     globalCfg.CIKGU_MODAL_GPU_URL ||
     "https://hanismathussin96--cikgu-ai-spm.modal.run",
 
-  // URL Pelayan Utama: Utamakan Modal Serverless GPU (binaan v3.0.0 terkini + Snap & Check Vision),
-  // manakala Google Cloud Run bertindak sebagai sandaran automatik dwi-awan.
   get primaryCloudRunUrl() {
     if (isLocalHost && globalCfg.CIKGU_LOCAL_DEV === true) return "http://127.0.0.1:8080";
-    return this.modalGpuUrl;
+    return this.supabaseEdgeUrl;
   },
 
-  // URL Pelayan Sandaran Auto-Failover:
+  // URL Pelayan Sandaran Auto-Failover (hanya dipanggil jika Supabase gagal / penyedia API habis):
   get backupHfSpacesUrl() {
-    return this.cloudRunUrl;
+    return this.modalGpuUrl;
   },
 
   warmupTimeoutMs: 38000,

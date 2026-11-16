@@ -1446,9 +1446,9 @@
           <div>
             <div class="section-title-group">
               <svg class="icon" style="color:var(--brand-accent)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8"/>
+                <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/>
               </svg>
-              <h2 id="continueHeading" class="section-title">Sambung Latihan Terakhir (Continue Progress)</h2>
+              <h2 id="continueHeading" class="section-title">Sambung Semula Latihan Terakhir</h2>
             </div>
             <p class="section-subtitle">Jawapan &amp; baki masa anda disimpan automatik merentas telefon dan komputer.</p>
           </div>
@@ -1456,221 +1456,356 @@
         <div id="continueProgressGrid" class="continue-grid"></div>
       </section>
 
-      <!-- 2. SEKSYEN KEMAJUAN PEMBELAJARAN SAYA (PROGRESS BENTO GRID) -->
-      <section aria-labelledby="progressHeading">
-        <div class="section-header">
-          <div>
-            <div class="section-title-group">
-              <svg class="icon" style="color:var(--grade-emerald-fill)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/>
-              </svg>
-              <h2 id="progressHeading" class="section-title">Kemajuan Pembelajaran Saya</h2>
+      <!-- BAR TAHAP PENDIDIKAN & SUAI MODUL PELAJAR -->
+      <section id="portalCustomizerBar" class="portal-customizer-card" aria-label="Tahap Pendidikan dan Penyesuaian Modul">
+        <div class="customizer-top-row">
+          <div class="stage-selector-wrap">
+            <span class="customizer-eyebrow">Tahap Pembelajaran</span>
+            <div class="stage-pills-row" role="group" aria-label="Pilih Tahap Pendidikan">
+              <button type="button" class="stage-pill js-stage-pill" data-stage-id="spm" data-stage-active="true" aria-pressed="true">
+                <span>SPM (Ting. 4–5)</span>
+                <span class="stage-pill-tag stage-tag-live">Aktif</span>
+              </button>
+              <button type="button" class="stage-pill stage-pill-soon js-stage-pill" data-stage-id="menengah_rendah" data-stage-active="false" aria-pressed="false">
+                <span>Menengah Rendah (Ting. 1–3)</span>
+                <span class="stage-pill-tag">Akan Datang</span>
+              </button>
+              <button type="button" class="stage-pill stage-pill-soon js-stage-pill" data-stage-id="sekolah_rendah" data-stage-active="false" aria-pressed="false">
+                <span>Sekolah Rendah (Thn 1–6)</span>
+                <span class="stage-pill-tag">Akan Datang</span>
+              </button>
             </div>
-            <p class="section-subtitle">Jejaki penguasaan set harian, purata gred SPM, dan bab fokus ulang kaji anda.</p>
           </div>
+
+          <button type="button" id="toggleModuleCustomizerBtn" class="btn btn-outline btn-sm" aria-expanded="false" aria-controls="portalModuleCustomizerPanel">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 17h16M9 4v6M15 14v6"/>
+            </svg>
+            <span>Suai Modul</span>
+          </button>
         </div>
 
-        <div class="bento-grid">
-          <!-- Kad A: Progress Ring Keseluruhan -->
-          <div class="bento-card bento-completion">
-            <div class="progress-ring-wrapper">
-              <progress id="overallProgressRing" class="progress-ring" value="0" max="100" aria-label="Peratus keseluruhan set selesai"></progress>
-              <div class="progress-ring-inner" aria-hidden="true">
-                <span id="overallProgressPct" class="progress-ring-value tabular-nums">0%</span>
-                <span class="progress-ring-caption">Siap</span>
+        <div id="portalModuleCustomizerPanel" class="customizer-panel" hidden>
+          <p class="customizer-panel-hint">Pilih kategori yang ingin dipaparkan di portal anda. Tetapan ini disimpan automatik pada peranti anda.</p>
+          <div class="module-vis-chips" role="group" aria-label="Tunjukkan atau sembunyikan kategori modul">
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="klon_spm" aria-pressed="true">Soalan Klon SPM</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="pra_spm" aria-pressed="true">Soalan Pra-SPM Negeri</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="progress" aria-pressed="true">Kemajuan Saya</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="leaderboard" aria-pressed="true">Leaderboard</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="nota_interaktif" aria-pressed="false">Nota Interaktif (Akan Datang)</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="flashcard" aria-pressed="false">Flashcard (Akan Datang)</button>
+          </div>
+          <div class="customizer-behavior-row">
+            <button type="button" id="toggleSingleAccordionBtn" class="tab-chip" aria-pressed="true">Mod Fokus: Buka 1 kategori pada satu masa</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="portal-modules-stack">
+
+        <!-- DROPDOWN 1: SET SOALAN KLON SPM INTERAKTIF -->
+        <details id="moduleDropdownKlon" class="portal-module-dropdown" data-module-id="klon_spm" open>
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-klon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3zM5 17l.8 1.8L7.6 19.6 5.8 20.4 5 22.2l-.8-1.8-1.8-.8 1.8-.8L5 17z"/>
+                </svg>
+              </span>
+              <div>
+                <h2 id="klonCatalogHeading" class="portal-dropdown-title">Set Soalan Klon SPM Interaktif</h2>
+                <p class="portal-dropdown-desc">Koleksi khas kertas klon berformat SPM sebenar KSSM (<span data-live-klon-sub-desc>semua subjek KSSM</span>).</p>
               </div>
             </div>
-            <div>
-              <h3 style="font-size:1rem;color:var(--text-primary)">Penguasaan Bank Soalan</h3>
-              <p id="overallSetsDoneText" class="tabular-nums" style="font-size:0.88rem;color:var(--text-muted);margin-top:4px">0 daripada 0 set selesai</p>
-              <p style="font-size:0.78rem;color:var(--grade-emerald);font-weight:600;margin-top:8px">Sasaran: Selesaikan 1 set setiap hari</p>
-            </div>
-          </div>
-
-          <!-- Kad B: 4 KPI Utama -->
-          <div class="bento-card bento-kpis">
-            <div class="kpi-tile">
-              <span class="kpi-label">Purata Markah</span>
-              <span id="kpiAvgScore" class="kpi-value tabular-nums">0%</span>
-            </div>
-            <div class="kpi-tile">
-              <span class="kpi-label">Gred Semasa</span>
-              <span id="kpiAvgGrade" class="kpi-value" style="color:var(--grade-emerald)">—</span>
-            </div>
-            <div class="kpi-tile">
-              <span class="kpi-label">Jumlah Mata XP</span>
-              <span id="kpiTotalXp" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0 XP</span>
-            </div>
-            <div class="kpi-tile">
-              <span class="kpi-label">Streak Harian</span>
-              <span id="kpiStreakDays" class="kpi-value tabular-nums" style="color:var(--grade-gold)">0 Hari</span>
-            </div>
-          </div>
-
-          <!-- Kad C: Pecahan Mengikut Subjek -->
-          <div class="bento-card bento-subjects">
-            <h3 style="font-size:0.95rem;color:var(--text-primary)">Kemajuan Mengikut Subjek</h3>
-            <div id="subjectBreakdownList" class="subject-bar-list"></div>
-          </div>
-
-          <!-- Kad D: Bab / Topik Perlu Diulang Kaji -->
-          <div id="weakTopicsBanner" class="bento-card bento-weak-topics" hidden>
-            <h3 style="font-size:0.95rem;color:var(--text-primary)">Fokus Ulang Kaji Segera (Topik &lt; 60%)</h3>
-            <p style="font-size:0.83rem;color:var(--text-muted)">Berdasarkan analisis jawapan kuiz yang telah anda hantar:</p>
-            <div id="weakTopicsPills" class="weak-pills-row"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. SEKSYEN LEADERBOARD PELAJAR -->
-      <section aria-labelledby="leaderboardHeading">
-        <div class="section-header">
-          <div>
-            <div class="section-title-group">
-              <svg class="icon" style="color:var(--grade-gold-fill)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 01-10 0V4zM7 6H4v2a3 3 0 003 3m10-5h3v2a3 3 0 01-3 3"/>
+            <div class="portal-dropdown-right">
+              <span id="klonSummaryPill" class="dropdown-meta-pill pill-accent tabular-nums">71 set klon</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
               </svg>
-              <h2 id="leaderboardHeading" class="section-title">Carta Kedudukan Pelajar (Leaderboard)</h2>
             </div>
-            <p class="section-subtitle">Dikira secara adil berdasarkan Skor Terbaik setiap Set Unik (1% = 10 XP + 50 XP bonus siap).</p>
-          </div>
+          </summary>
 
-          <div class="leaderboard-controls">
-            <button type="button" class="tab-chip js-lb-period" data-period="all" aria-pressed="true">Keseluruhan</button>
-            <button type="button" class="tab-chip js-lb-period" data-period="weekly" aria-pressed="false">Minggu Ini</button>
-            <label for="lbSubjectSelect" class="sr-only">Tapis Subjek Leaderboard</label>
-            <select id="lbSubjectSelect" class="select-control">
-              <option value="ALL">Semua Subjek</option>
-            </select>
-          </div>
-        </div>
+          <section id="klonCatalogSection" class="klon-portal-section portal-dropdown-body" aria-labelledby="klonCatalogHeading">
+            <div class="dropdown-subactions">
+              <span id="klonCatalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:700;color:var(--brand-primary)" aria-live="polite">0 set klon</span>
+              <a href="./soalan-klon-spm/" class="btn btn-outline btn-sm">Indeks Topik Klon SPM &rarr;</a>
+            </div>
 
-        <div class="leaderboard-card">
-          <div id="leaderboardPodium" class="podium-grid"></div>
+            <div class="catalog-toolbar">
+              <div class="klon-filter-group" role="group" aria-label="Tapis Aliran Subjek Klon SPM">
+                <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="ALL" aria-pressed="true">Semua Aliran</button>
+                <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="teras" aria-pressed="false">Subjek Teras</button>
+                <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="sains" aria-pressed="false">Sains Tulen &amp; Add Math</button>
+                <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="elektif" aria-pressed="false">Elektif Ikhtisas &amp; Agama</button>
+              </div>
 
-          <div tabindex="0" role="region" aria-labelledby="lbTableCaption" class="table-wrapper">
-            <table class="lb-table">
-              <caption id="lbTableCaption" class="sr-only">Senarai 10 pelajar terbaik eTutor.my</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Kedudukan &amp; Pelajar</th>
-                  <th scope="col">Set Selesai</th>
-                  <th scope="col">Purata Markah</th>
-                  <th scope="col">Gred</th>
-                  <th scope="col">Mata XP</th>
-                </tr>
-              </thead>
-              <tbody id="leaderboardTableBody"></tbody>
-            </table>
-          </div>
+              <div class="search-and-status-row">
+                <div class="search-box">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+                  </svg>
+                  <label for="klonSearchInput" class="sr-only">Cari tajuk set klon atau subjek</label>
+                  <input type="search" id="klonSearchInput" class="search-input" placeholder="Cari subjek, kod kertas KSSM, atau nombor Klon (cth: Klon 03, Kod 1249, Sejarah)...">
+                </div>
 
-          <div id="myStandingFooter" class="my-standing-footer" hidden></div>
-        </div>
-      </section>
+                <label for="klonStatusSelect" class="sr-only">Tapis Status Latihan Klon SPM</label>
+                <select id="klonStatusSelect" class="select-control">
+                  <option value="ALL">Semua Status</option>
+                  <option value="in_progress">Sedang Dijawab</option>
+                  <option value="not_started">Belum Jawab</option>
+                  <option value="completed">Telah Selesai</option>
+                </select>
+              </div>
 
-      <!-- 4A. SEKSYEN SET SOALAN KLON SPM INTERAKTIF -->
-      <section id="klonCatalogSection" class="klon-portal-section" aria-labelledby="klonCatalogHeading">
-        <div class="section-header">
-          <div>
-            <div class="section-title-group">
-              <svg class="icon" style="color:var(--brand-accent)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3zM5 17l.8 1.8L7.6 19.6 5.8 20.4 5 22.2l-.8-1.8-1.8-.8 1.8-.8L5 17z"/>
+              <div id="klonSubjectChipsRow" class="chip-scroll-row" role="group" aria-label="Penapis Subjek Klon SPM"></div>
+            </div>
+
+            <div id="klonCatalogCardsGrid" class="catalog-grid"></div>
+          </section>
+        </details>
+
+        <!-- DROPDOWN 2: BANK SET SOALAN PERCUBAAN / PRA-SPM NEGERI -->
+        <details id="moduleDropdownPraSpm" class="portal-module-dropdown" data-module-id="pra_spm">
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-praspm" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+                </svg>
+              </span>
+              <div>
+                <h2 id="catalogHeading" class="portal-dropdown-title">Soalan Percubaan / Pra-SPM Negeri</h2>
+                <p class="portal-dropdown-desc">Koleksi set soalan percubaan negeri &amp; pra-SPM interaktif — disegerakkan automatik.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span id="praSpmSummaryPill" class="dropdown-meta-pill tabular-nums">120 set</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
               </svg>
-              <h2 id="klonCatalogHeading" class="section-title">Set Soalan Klon SPM Interaktif</h2>
             </div>
-            <p class="section-subtitle">Koleksi khas kertas klon berformat SPM sebenar KSSM (<span data-live-klon-sub-desc>semua subjek KSSM</span>) — disegerakkan automatik daripada folder Klon SPM di Google Drive.</p>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <span id="klonCatalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:700;color:var(--brand-primary)">0 set klon</span>
-            <a href="./soalan-klon-spm/" class="btn btn-outline btn-sm">Indeks Topik Klon SPM &rarr;</a>
-          </div>
-        </div>
+          </summary>
 
-        <div class="catalog-toolbar">
-          <div class="klon-filter-group" role="group" aria-label="Tapis Aliran Subjek Klon SPM">
-            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="ALL" aria-pressed="true">Semua Aliran</button>
-            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="teras" aria-pressed="false">Subjek Teras</button>
-            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="sains" aria-pressed="false">Sains Tulen &amp; Add Math</button>
-            <button type="button" class="tab-chip js-klon-group-chip" data-klon-group="elektif" aria-pressed="false">Elektif Ikhtisas &amp; Agama</button>
-          </div>
+          <section class="portal-dropdown-body" aria-labelledby="catalogHeading">
+            <div class="dropdown-subactions">
+              <span id="liveCatalogSyncBadge" class="tabular-nums" style="font-size:0.78rem;font-weight:600;color:var(--grade-emerald)" data-live-sync-badge>Auto-segerak aktif</span>
+              <span id="catalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:600;color:var(--text-muted)" aria-live="polite">0 set</span>
+            </div>
 
-          <div class="search-and-status-row">
-            <div class="search-box">
-              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+            <div class="catalog-toolbar">
+              <div class="search-and-status-row">
+                <div class="search-box">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+                  </svg>
+                  <label for="catalogSearchInput" class="sr-only">Cari tajuk set, subjek atau negeri</label>
+                  <input type="search" id="catalogSearchInput" class="search-input" placeholder="Cari subjek, negeri, atau nombor set (cth: Sejarah Johor, Set 01)...">
+                </div>
+
+                <label for="catalogStatusSelect" class="sr-only">Tapis Status Latihan</label>
+                <select id="catalogStatusSelect" class="select-control">
+                  <option value="ALL">Semua Status</option>
+                  <option value="in_progress">Sedang Dijawab</option>
+                  <option value="not_started">Belum Jawab</option>
+                  <option value="completed">Telah Selesai</option>
+                </select>
+              </div>
+
+              <div id="subjectChipsRow" class="chip-scroll-row" role="group" aria-label="Penapis Subjek"></div>
+            </div>
+
+            <div id="catalogCardsGrid" class="catalog-grid"></div>
+          </section>
+        </details>
+
+        <!-- DROPDOWN 3: KEMAJUAN PEMBELAJARAN SAYA (PROGRESS BENTO GRID) -->
+        <details id="moduleDropdownProgress" class="portal-module-dropdown" data-module-id="progress">
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-progress" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/>
+                </svg>
+              </span>
+              <div>
+                <h2 id="progressHeading" class="portal-dropdown-title">Kemajuan Pembelajaran Saya</h2>
+                <p class="portal-dropdown-desc">Penguasaan set, purata gred SPM, mata XP, dan bab fokus ulang kaji.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span id="progressSummaryPill" class="dropdown-meta-pill pill-emerald tabular-nums">0% siap • 0 XP</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
               </svg>
-              <label for="klonSearchInput" class="sr-only">Cari tajuk set klon atau subjek</label>
-              <input
-                type="search"
-                id="klonSearchInput"
-                class="search-input"
-                placeholder="Cari subjek, kod kertas KSSM, atau nombor Klon (cth: Klon 03, Kod 1249, Sejarah)..."
-              >
             </div>
+          </summary>
 
-            <label for="klonStatusSelect" class="sr-only">Tapis Status Latihan Klon SPM</label>
-            <select id="klonStatusSelect" class="select-control">
-              <option value="ALL">Semua Status</option>
-              <option value="in_progress">Sedang Dijawab</option>
-              <option value="not_started">Belum Jawab</option>
-              <option value="completed">Telah Selesai</option>
-            </select>
-          </div>
+          <section class="portal-dropdown-body" aria-labelledby="progressHeading">
+            <div class="bento-grid">
+              <!-- Kad A: Progress Ring Keseluruhan -->
+              <div class="bento-card bento-completion">
+                <div class="progress-ring-wrapper">
+                  <progress id="overallProgressRing" class="progress-ring" value="0" max="100" aria-label="Peratus keseluruhan set selesai"></progress>
+                  <div class="progress-ring-inner" aria-hidden="true">
+                    <span id="overallProgressPct" class="progress-ring-value tabular-nums">0%</span>
+                    <span class="progress-ring-caption">Siap</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 style="font-size:1rem;color:var(--text-primary)">Penguasaan Bank Soalan</h3>
+                  <p id="overallSetsDoneText" class="tabular-nums" style="font-size:0.88rem;color:var(--text-muted);margin-top:4px">0 daripada 0 set selesai</p>
+                  <p style="font-size:0.78rem;color:var(--grade-emerald);font-weight:600;margin-top:8px">Sasaran: Selesaikan 1 set setiap hari</p>
+                </div>
+              </div>
 
-          <div id="klonSubjectChipsRow" class="chip-scroll-row" role="group" aria-label="Penapis Subjek Klon SPM"></div>
-        </div>
+              <!-- Kad B: 4 KPI Utama -->
+              <div class="bento-card bento-kpis">
+                <div class="kpi-tile">
+                  <span class="kpi-label">Purata Markah</span>
+                  <span id="kpiAvgScore" class="kpi-value tabular-nums">0%</span>
+                </div>
+                <div class="kpi-tile">
+                  <span class="kpi-label">Gred Semasa</span>
+                  <span id="kpiAvgGrade" class="kpi-value" style="color:var(--grade-emerald)">—</span>
+                </div>
+                <div class="kpi-tile">
+                  <span class="kpi-label">Jumlah Mata XP</span>
+                  <span id="kpiTotalXp" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0 XP</span>
+                </div>
+                <div class="kpi-tile">
+                  <span class="kpi-label">Streak Harian</span>
+                  <span id="kpiStreakDays" class="kpi-value tabular-nums" style="color:var(--grade-gold)">0 Hari</span>
+                </div>
+              </div>
 
-        <div id="klonCatalogCardsGrid" class="catalog-grid"></div>
-      </section>
+              <!-- Kad C: Pecahan Mengikut Subjek -->
+              <div class="bento-card bento-subjects">
+                <h3 style="font-size:0.95rem;color:var(--text-primary)">Kemajuan Mengikut Subjek</h3>
+                <div id="subjectBreakdownList" class="subject-bar-list"></div>
+              </div>
 
-      <!-- 4. SEKSYEN KATALOG SET SOALAN INTERAKTIF HARIAN -->
-      <section aria-labelledby="catalogHeading">
-        <div class="section-header">
-          <div>
-            <div class="section-title-group">
-              <svg class="icon" style="color:var(--brand-primary)" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+              <!-- Kad D: Bab / Topik Perlu Diulang Kaji -->
+              <div id="weakTopicsBanner" class="bento-card bento-weak-topics" hidden>
+                <h3 style="font-size:0.95rem;color:var(--text-primary)">Fokus Ulang Kaji Segera (Topik &lt; 60%)</h3>
+                <p style="font-size:0.83rem;color:var(--text-muted)">Berdasarkan analisis jawapan kuiz yang telah anda hantar:</p>
+                <div id="weakTopicsPills" class="weak-pills-row"></div>
+              </div>
+            </div>
+          </section>
+        </details>
+
+        <!-- DROPDOWN 4: LEADERBOARD PELAJAR -->
+        <details id="moduleDropdownLeaderboard" class="portal-module-dropdown" data-module-id="leaderboard">
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-leaderboard" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 01-10 0V4zM7 6H4v2a3 3 0 003 3m10-5h3v2a3 3 0 01-3 3"/>
+                </svg>
+              </span>
+              <div>
+                <h2 id="leaderboardHeading" class="portal-dropdown-title">Carta Kedudukan Pelajar (Leaderboard)</h2>
+                <p class="portal-dropdown-desc">Skor Terbaik setiap Set Unik (1% = 10 XP + 50 XP bonus siap).</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span id="leaderboardSummaryPill" class="dropdown-meta-pill pill-gold tabular-nums">Top 10 Aktif</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
               </svg>
-              <h2 id="catalogHeading" class="section-title">Bank Set Soalan Interaktif Harian</h2>
             </div>
-            <p class="section-subtitle">Fail baharu di Google Drive muncul secara automatik di dalam senarai ini.</p>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-            <span id="liveCatalogSyncBadge" class="tabular-nums" style="font-size:0.78rem;font-weight:600;color:var(--grade-emerald)" data-live-sync-badge>Auto-segerak aktif</span>
-            <span id="catalogCountLabel" class="tabular-nums" style="font-size:0.85rem;font-weight:600;color:var(--text-muted)">0 set</span>
-          </div>
-        </div>
+          </summary>
 
-        <div class="catalog-toolbar">
-          <div class="search-and-status-row">
-            <div class="search-box">
-              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+          <section class="portal-dropdown-body" aria-labelledby="leaderboardHeading">
+            <div class="leaderboard-controls" style="margin-block-end:var(--space-4)">
+              <button type="button" class="tab-chip js-lb-period" data-period="all" aria-pressed="true">Keseluruhan</button>
+              <button type="button" class="tab-chip js-lb-period" data-period="weekly" aria-pressed="false">Minggu Ini</button>
+              <label for="lbSubjectSelect" class="sr-only">Tapis Subjek Leaderboard</label>
+              <select id="lbSubjectSelect" class="select-control">
+                <option value="ALL">Semua Subjek</option>
+              </select>
+            </div>
+
+            <div class="leaderboard-card">
+              <div id="leaderboardPodium" class="podium-grid"></div>
+
+              <div tabindex="0" role="region" aria-labelledby="lbTableCaption" class="table-wrapper">
+                <table class="lb-table">
+                  <caption id="lbTableCaption" class="sr-only">Senarai 10 pelajar terbaik eTutor.my</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Kedudukan &amp; Pelajar</th>
+                      <th scope="col">Set Selesai</th>
+                      <th scope="col">Purata Markah</th>
+                      <th scope="col">Gred</th>
+                      <th scope="col">Mata XP</th>
+                    </tr>
+                  </thead>
+                  <tbody id="leaderboardTableBody"></tbody>
+                </table>
+              </div>
+
+              <div id="myStandingFooter" class="my-standing-footer" hidden></div>
+            </div>
+          </section>
+        </details>
+
+        <!-- SLOT MODUL MASA DEPAN: NOTA INTERAKTIF & FLASHCARD -->
+        <details id="moduleDropdownNota" class="portal-module-dropdown" data-module-id="nota_interaktif" hidden>
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10a2 2 0 012 2v14l-5-3-5 3-5-3V6a2 2 0 012-2z"/>
+                </svg>
+              </span>
+              <div>
+                <h2 class="portal-dropdown-title">Nota Interaktif Visual</h2>
+                <p class="portal-dropdown-desc">Peta minda, formula pantas, dan nota padat mengikut bab KSSM &amp; KSSR.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span class="dropdown-meta-pill">Akan Datang</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
               </svg>
-              <label for="catalogSearchInput" class="sr-only">Cari tajuk set, subjek atau negeri</label>
-              <input
-                type="search"
-                id="catalogSearchInput"
-                class="search-input"
-                placeholder="Cari subjek, negeri, atau nombor set (cth: Sejarah Johor, Set 01)..."
-              >
             </div>
-
-            <label for="catalogStatusSelect" class="sr-only">Tapis Status Latihan</label>
-            <select id="catalogStatusSelect" class="select-control">
-              <option value="ALL">Semua Status</option>
-              <option value="in_progress">Sedang Dijawab</option>
-              <option value="not_started">Belum Jawab</option>
-              <option value="completed">Telah Selesai</option>
-            </select>
+          </summary>
+          <div class="portal-dropdown-body">
+            <div class="future-module-placeholder">
+              <p>Modul Nota Interaktif sedang dibangunkan dalam fasa seterusnya untuk pelajar SPM, Menengah Rendah, dan Sekolah Rendah.</p>
+            </div>
           </div>
+        </details>
 
-          <div id="subjectChipsRow" class="chip-scroll-row" role="group" aria-label="Penapis Subjek"></div>
-        </div>
+        <details id="moduleDropdownFlashcard" class="portal-module-dropdown" data-module-id="flashcard" hidden>
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h12v13H4zM8 4h12v13"/>
+                </svg>
+              </span>
+              <div>
+                <h2 class="portal-dropdown-title">Latihan Flashcard Pantas</h2>
+                <p class="portal-dropdown-desc">Ulangan aktif istilah sains, fakta sejarah, definisi &amp; perbendaharaan kata.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span class="dropdown-meta-pill">Akan Datang</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+              </svg>
+            </div>
+          </summary>
+          <div class="portal-dropdown-body">
+            <div class="future-module-placeholder">
+              <p>Modul Flashcard Interaktif sedang dibangunkan dalam fasa seterusnya untuk menyokong hafalan pantas harian.</p>
+            </div>
+          </div>
+        </details>
 
-        <div id="catalogCardsGrid" class="catalog-grid"></div>
-      </section>
-
+      </div>
     </div>
   </div>
 

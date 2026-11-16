@@ -921,6 +921,221 @@ progress.etutor-progress::-moz-progress-bar {
   transition: inline-size 0.3s var(--ease-standard);
 }
 
+/* === features/dashboard/portal-dropdowns.css === */
+/* ==========================================================================
+   PORTAL STAGE CUSTOMIZER & CATEGORY MODULE DROPDOWNS
+   ========================================================================== */
+.portal-customizer-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.customizer-top-row,
+.stage-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.customizer-top-row { justify-content: space-between; }
+
+.customizer-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.stage-pills-row,
+.module-vis-chips,
+.customizer-behavior-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.stage-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-block-size: 44px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-page);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+.stage-pill[aria-pressed="true"] { background: var(--brand-soft); border-color: var(--brand-accent); color: var(--brand-primary); }
+.stage-pill-soon { border-style: dashed; color: var(--text-muted); }
+.stage-pill-soon:hover { background: var(--surface-subtle); }
+
+.stage-pill-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-subtle);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.stage-pill-tag.stage-tag-live { background: var(--grade-emerald-soft); color: var(--grade-emerald); }
+
+.customizer-panel {
+  border-block-start: 1px solid var(--border-subtle);
+  padding-block-start: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.customizer-panel-hint { font-size: 0.83rem; color: var(--text-muted); }
+
+.portal-modules-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+details.portal-module-dropdown {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  overflow: clip;
+  transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+}
+details.portal-module-dropdown[open] { border-color: var(--brand-border); box-shadow: var(--shadow-sm); }
+
+summary.portal-dropdown-summary {
+  list-style: none;
+  min-block-size: 68px;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+summary.portal-dropdown-summary:hover { background: var(--surface-page); }
+summary.portal-dropdown-summary::-webkit-details-marker { display: none; }
+
+.portal-dropdown-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-inline-size: 0;
+}
+
+.portal-dropdown-icon {
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  color: var(--brand-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.portal-dropdown-icon.icon-klon { background: var(--brand-soft); color: var(--brand-accent); }
+.portal-dropdown-icon.icon-progress { background: var(--grade-emerald-soft); color: var(--grade-emerald); }
+.portal-dropdown-icon.icon-leaderboard { background: var(--grade-gold-soft); color: var(--grade-gold); }
+
+.portal-dropdown-title { font-size: clamp(1rem, 0.95rem + 0.35vw, 1.2rem); color: var(--text-primary); }
+.portal-dropdown-desc { font-size: 0.83rem; color: var(--text-muted); margin-block-start: 2px; }
+
+.portal-dropdown-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.dropdown-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-subtle);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.dropdown-meta-pill.pill-accent { background: var(--brand-soft); color: var(--brand-primary); }
+.dropdown-meta-pill.pill-emerald { background: var(--grade-emerald-soft); color: var(--grade-emerald); }
+.dropdown-meta-pill.pill-gold { background: var(--grade-gold-soft); color: var(--grade-gold); }
+
+.portal-dropdown-chevron { color: var(--text-muted); transition: transform 0.25s var(--ease-standard); }
+details.portal-module-dropdown[open] .portal-dropdown-chevron { transform: rotate(180deg); color: var(--brand-accent); }
+
+@media (prefers-reduced-motion: no-preference) {
+  details.portal-module-dropdown::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.28s ease, content-visibility 0.28s allow-discrete;
+  }
+  details.portal-module-dropdown[open]::details-content { block-size: auto; }
+}
+
+.portal-dropdown-body {
+  border-block-start: 1px solid var(--border-subtle);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.dropdown-subactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-block-end: var(--space-3);
+}
+
+.catalog-load-more-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-4);
+  background: var(--surface-page);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+}
+.catalog-load-more-meta { font-size: 0.86rem; font-weight: 600; color: var(--text-secondary); }
+.catalog-load-more-actions { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+
+.future-module-placeholder {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+  border: 1px dashed var(--border-strong);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  summary.portal-dropdown-summary { align-items: flex-start; flex-direction: column; padding: var(--space-4); }
+  .portal-dropdown-right { inline-size: 100%; justify-content: space-between; }
+  .portal-dropdown-body { padding: var(--space-4); }
+}
+
 /* === features/dashboard/bento-overview.css === */
 /* ==========================================================================
    2. BENTO PROGRESS OVERVIEW (Progress Ring + KPIs + Subject Bars + Weak Topics)

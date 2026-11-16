@@ -21,6 +21,81 @@
   const SYNC_LB_ID_KEY = "etutor_sync_lb_id_v1";
   const SYNC_PAKEJ_KEY = "etutor_sync_pakej_v1";
   const LIVE_CATALOG_CACHE_KEY = "etutor_live_catalog_v1";
+  const PORTAL_PREFS_STORAGE_KEY = "etutor_portal_prefs_v1";
+
+  // --- [config/learningModulesRegistry.js] ---
+  /**
+   * src/config/learningModulesRegistry.js
+   * Pendaftaran berpusat Tahap Pendidikan (Sekolah Rendah -> Menengah / SPM),
+   * modul program pembelajaran (aktif & masa depan), serta simpanan keutamaan pelajar.
+   */
+
+  const PORTAL_BATCH_SIZE = 12;
+
+  const EDUCATION_STAGES = [
+    { id: "spm", label: "SPM (Tingkatan 4–5)", shortLabel: "SPM", active: true, badge: "Aktif" },
+    { id: "menengah_rendah", label: "Menengah Rendah (Tingkatan 1–3)", shortLabel: "Ting. 1–3", active: false, badge: "Akan Datang" },
+    { id: "sekolah_rendah", label: "Sekolah Rendah (Tahun 1–6)", shortLabel: "Tahun 1–6", active: false, badge: "Akan Datang" }
+  ];
+
+  const PORTAL_MODULES = [
+    { id: "klon_spm", stage: "spm", title: "Set Soalan Klon SPM Interaktif", active: true, defaultOpen: true, defaultVisible: true },
+    { id: "pra_spm", stage: "spm", title: "Soalan Percubaan / Pra-SPM Negeri", active: true, defaultOpen: false, defaultVisible: true },
+    { id: "progress", stage: "all", title: "Kemajuan Pembelajaran & Analisis", active: true, defaultOpen: false, defaultVisible: true },
+    { id: "leaderboard", stage: "all", title: "Carta Kedudukan Pelajar (Leaderboard)", active: true, defaultOpen: false, defaultVisible: true },
+    { id: "nota_interaktif", stage: "spm", title: "Nota Interaktif Visual", active: false, defaultOpen: false, defaultVisible: false, badge: "Akan Datang" },
+    { id: "flashcard", stage: "spm", title: "Latihan Flashcard Pantas", active: false, defaultOpen: false, defaultVisible: false, badge: "Akan Datang" }
+  ];
+
+  function getDefaultPortalPrefs() {
+    const visibleModules = {};
+    PORTAL_MODULES.forEach(function (m) {
+      visibleModules[m.id] = Boolean(m.defaultVisible);
+    });
+    return {
+      stage: "spm",
+      singleOpenAccordion: true,
+      openModuleId: "klon_spm",
+      visibleModules: visibleModules
+    };
+  }
+
+  function loadPortalPrefs() {
+    const base = getDefaultPortalPrefs();
+    try {
+      if (typeof localStorage === "undefined") return base;
+      const raw = localStorage.getItem(PORTAL_PREFS_STORAGE_KEY);
+      if (!raw) return base;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return base;
+      const vis = Object.assign({}, base.visibleModules);
+      if (parsed.visibleModules && typeof parsed.visibleModules === "object") {
+        PORTAL_MODULES.forEach(function (m) {
+          if (typeof parsed.visibleModules[m.id] === "boolean") {
+            vis[m.id] = parsed.visibleModules[m.id];
+          }
+        });
+      }
+      const validStage = EDUCATION_STAGES.some(function (s) { return s.id === parsed.stage && s.active; })
+        ? parsed.stage
+        : "spm";
+      return {
+        stage: validStage,
+        singleOpenAccordion: typeof parsed.singleOpenAccordion === "boolean" ? parsed.singleOpenAccordion : true,
+        openModuleId: typeof parsed.openModuleId === "string" ? parsed.openModuleId : "klon_spm",
+        visibleModules: vis
+      };
+    } catch (e) {
+      return base;
+    }
+  }
+
+  function savePortalPrefs(prefs) {
+    try {
+      if (typeof localStorage === "undefined") return;
+      localStorage.setItem(PORTAL_PREFS_STORAGE_KEY, JSON.stringify(prefs));
+    } catch (e) {}
+  }
 
   // --- [shared/ui/icons.js] ---
   /**
@@ -155,7 +230,11 @@
     catalogFingerprint: "",
     lastCatalogSyncMs: 0,
     pinProgressStateByFileId: {},
-    supabaseAuthenticated: false
+    supabaseAuthenticated: false,
+    klonVisibleLimit: 12,
+    harianVisibleLimit: 12,
+    activeStage: "spm",
+    portalPrefs: null
   };
 
   // --- [shared/ui/toast.js] ---
@@ -1268,11 +1347,215 @@
     maybeAutoPull();
   }
 
+  // --- [features/dashboard/portalModuleDropdowns.js] ---
+  /**
+   * src/features/dashboard/portalModuleDropdowns.js
+   * Pengawal dropdown akordion kategori modul, penyesuaian pelajar & ringkasan KPI pada pengepala.
+   */
+
+
+
+  let syncingDropdownState = false;
+  let dropdownListenersBound = false;
+
+  function getPortalPrefsSafe() {
+    if (!portalState.portalPrefs) {
+      portalState.portalPrefs = loadPortalPrefs();
+    }
+    return portalState.portalPrefs;
+  }
+
+  function getAllModuleDropdowns() {
+    return Array.prototype.slice.call(document.querySelectorAll("details.portal-module-dropdown[data-module-id]"));
+  }
+
+  function applyPortalPreferencesToDom() {
+    const prefs = getPortalPrefsSafe();
+    portalState.activeStage = prefs.stage || "spm";
+    syncingDropdownState = true;
+    try {
+      getAllModuleDropdowns().forEach(function (el) {
+        const mid = el.getAttribute("data-module-id");
+        const isVisible = Boolean(prefs.visibleModules && prefs.visibleModules[mid]);
+        el.hidden = !isVisible;
+        if (!isVisible) {
+          el.open = false;
+        } else if (prefs.singleOpenAccordion) {
+          el.open = mid === prefs.openModuleId;
+        }
+      });
+
+      document.querySelectorAll(".js-toggle-module-vis").forEach(function (btn) {
+        const mid = btn.getAttribute("data-module-id");
+        const active = Boolean(prefs.visibleModules && prefs.visibleModules[mid]);
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+
+      const accBtn = document.getElementById("toggleSingleAccordionBtn");
+      if (accBtn) {
+        accBtn.setAttribute("aria-pressed", prefs.singleOpenAccordion ? "true" : "false");
+      }
+
+      document.querySelectorAll(".js-stage-pill").forEach(function (btn) {
+        const sid = btn.getAttribute("data-stage-id");
+        btn.setAttribute("aria-pressed", sid === prefs.stage ? "true" : "false");
+      });
+    } finally {
+      syncingDropdownState = false;
+    }
+  }
+
+  function openPortalModuleDropdown(moduleId) {
+    if (!moduleId) return;
+    const prefs = getPortalPrefsSafe();
+    if (prefs.visibleModules && !prefs.visibleModules[moduleId]) {
+      prefs.visibleModules[moduleId] = true;
+    }
+    prefs.openModuleId = moduleId;
+    savePortalPrefs(prefs);
+
+    syncingDropdownState = true;
+    try {
+      getAllModuleDropdowns().forEach(function (el) {
+        const mid = el.getAttribute("data-module-id");
+        if (mid === moduleId) {
+          el.hidden = false;
+          el.open = true;
+        } else if (prefs.singleOpenAccordion) {
+          el.open = false;
+        }
+      });
+    } finally {
+      syncingDropdownState = false;
+    }
+  }
+
+  function syncPortalDropdownSummaries() {
+    const cat = portalState.catalog || [];
+    let klonCount = 0;
+    let praCount = 0;
+    cat.forEach(function (c) {
+      if (c.category === "klon") klonCount++;
+      else praCount++;
+    });
+
+    const klonPill = document.getElementById("klonSummaryPill");
+    if (klonPill && cat.length > 0) {
+      klonPill.textContent = klonCount + " set klon";
+    }
+
+    const praPill = document.getElementById("praSpmSummaryPill");
+    if (praPill && cat.length > 0) {
+      praPill.textContent = praCount + " set";
+    }
+
+    const ps = portalState.progressSummary;
+    const progPill = document.getElementById("progressSummaryPill");
+    if (progPill && ps) {
+      const pct = Number(ps.completionPercentage) || 0;
+      const xp = Number(ps.totalXp || 0).toLocaleString("en-MY");
+      progPill.textContent = pct + "% siap • " + xp + " XP";
+    }
+
+    const lb = portalState.leaderboard;
+    const lbPill = document.getElementById("leaderboardSummaryPill");
+    if (lbPill && lb) {
+      const total = Number(lb.totalParticipants) || 0;
+      lbPill.textContent = total > 0 ? (total + " peserta") : "Top 10 Aktif";
+    }
+  }
+
+  function initPortalModuleDropdowns() {
+    applyPortalPreferencesToDom();
+    if (dropdownListenersBound) return;
+    dropdownListenersBound = true;
+
+    getAllModuleDropdowns().forEach(function (el) {
+      el.addEventListener("toggle", function () {
+        if (syncingDropdownState) return;
+        const mid = el.getAttribute("data-module-id");
+        const prefs = getPortalPrefsSafe();
+        if (el.open) {
+          prefs.openModuleId = mid;
+          savePortalPrefs(prefs);
+          if (prefs.singleOpenAccordion) {
+            syncingDropdownState = true;
+            try {
+              getAllModuleDropdowns().forEach(function (other) {
+                if (other !== el) other.open = false;
+              });
+            } finally {
+              syncingDropdownState = false;
+            }
+          }
+        } else if (prefs.openModuleId === mid) {
+          prefs.openModuleId = "";
+          savePortalPrefs(prefs);
+        }
+      });
+    });
+
+    const customizerBtn = document.getElementById("toggleModuleCustomizerBtn");
+    const customizerPanel = document.getElementById("portalModuleCustomizerPanel");
+    if (customizerBtn && customizerPanel) {
+      customizerBtn.addEventListener("click", function () {
+        const nextOpen = customizerPanel.hidden;
+        customizerPanel.hidden = !nextOpen;
+        customizerBtn.setAttribute("aria-expanded", nextOpen ? "true" : "false");
+      });
+    }
+
+    document.addEventListener("click", function (e) {
+      const visBtn = e.target.closest(".js-toggle-module-vis");
+      if (visBtn) {
+        const mid = visBtn.getAttribute("data-module-id");
+        const prefs = getPortalPrefsSafe();
+        const visibleCount = Object.keys(prefs.visibleModules).filter(function (k) { return prefs.visibleModules[k]; }).length;
+        const nextVal = !prefs.visibleModules[mid];
+        if (!nextVal && visibleCount <= 1) {
+          showToast("Sekurang-kurangnya satu modul mesti dikekalkan pada portal.");
+          return;
+        }
+        prefs.visibleModules[mid] = nextVal;
+        if (nextVal && prefs.singleOpenAccordion) {
+          prefs.openModuleId = mid;
+        }
+        savePortalPrefs(prefs);
+        applyPortalPreferencesToDom();
+        return;
+      }
+
+      const stageBtn = e.target.closest(".js-stage-pill");
+      if (stageBtn) {
+        const sid = stageBtn.getAttribute("data-stage-id");
+        const stMeta = EDUCATION_STAGES.find(function (s) { return s.id === sid; });
+        if (stMeta && !stMeta.active) {
+          showToast("Tahap " + stMeta.label + " sedang dibangunkan dan akan dibuka dalam fasa seterusnya.");
+          return;
+        }
+        const prefs = getPortalPrefsSafe();
+        prefs.stage = sid || "spm";
+        savePortalPrefs(prefs);
+        applyPortalPreferencesToDom();
+        return;
+      }
+
+      const accBtn = e.target.closest("#toggleSingleAccordionBtn");
+      if (accBtn) {
+        const prefs = getPortalPrefsSafe();
+        prefs.singleOpenAccordion = !prefs.singleOpenAccordion;
+        savePortalPrefs(prefs);
+        applyPortalPreferencesToDom();
+      }
+    });
+  }
+
   // --- [features/catalog/deepLinkRouter.js] ---
   /**
    * src/features/catalog/deepLinkRouter.js
    * Penghala pautan dalam (Deep-Link ?set=, ?klon=, ?subject=, ?open=1) dari halaman SEO & kad Klon SPM.
    */
+
 
 
 
@@ -1400,11 +1683,18 @@
     renderKlonCatalogSection();
     renderCatalogSection();
 
+    if (wantsKlonScroll) {
+      openPortalModuleDropdown("klon_spm");
+    } else if (setParam || subParam || qParam || fileIdParam) {
+      openPortalModuleDropdown("pra_spm");
+    }
+
     try {
       history.replaceState(null, "", window.location.pathname + (wantsKlonScroll ? "#klon-portal" : "#portal"));
     } catch (e) {}
 
     if (matchedSetItem && autoOpen) {
+      if (matchedSetItem.category === "klon") openPortalModuleDropdown("klon_spm");
       openQuizSet(matchedSetItem.fileId, Boolean(matchedSetItem.inProgress), false);
     } else {
       const targetHead = document.getElementById(wantsKlonScroll ? "klonCatalogHeading" : "catalogHeading");
@@ -1758,6 +2048,7 @@
 
 
 
+
   function lookupKlonMeta_(subjectName) {
     const target = String(subjectName || "").replace(/&/g, "&amp;").trim().toLowerCase();
     const raw = String(subjectName || "").trim().toLowerCase();
@@ -1904,8 +2195,22 @@
     ].join("\n");
   }
 
+  function renderLoadMoreBarHtml_(shownCount, totalCount, moreCls, allCls) {
+    if (shownCount >= totalCount) return "";
+    return [
+      '<div class="catalog-load-more-bar" style="grid-column:1/-1">',
+      '  <span class="catalog-load-more-meta tabular-nums">Memaparkan ' + shownCount + ' daripada ' + totalCount + ' set</span>',
+      '  <div class="catalog-load-more-actions">',
+      '    <button type="button" class="btn btn-primary btn-sm ' + moreCls + '">Papar Lagi (+' + PORTAL_BATCH_SIZE + ' Set)</button>',
+      '    <button type="button" class="btn btn-outline btn-sm ' + allCls + '">Papar Semua (' + totalCount + ')</button>',
+      '  </div>',
+      '</div>'
+    ].join("\n");
+  }
+
   function renderKlonCatalogSection() {
     const sec = document.getElementById("klonCatalogSection");
+    const wrapDetails = document.getElementById("moduleDropdownKlon");
     const grid = document.getElementById("klonCatalogCardsGrid");
     const countLabel = document.getElementById("klonCatalogCountLabel");
     if (!sec || !grid) return;
@@ -1919,6 +2224,7 @@
 
     if (allKlon.length === 0) {
       sec.hidden = true;
+      if (wrapDetails) wrapDetails.hidden = true;
       grid.innerHTML = "";
       return;
     }
@@ -1945,8 +2251,13 @@
       return true;
     });
 
+    const klonLimit = Number(portalState.klonVisibleLimit) || PORTAL_BATCH_SIZE;
+    const visible = q ? filtered : filtered.slice(0, klonLimit);
+
     if (countLabel) {
-      countLabel.textContent = filtered.length + " set klon dipaparkan";
+      countLabel.textContent = filtered.length === visible.length
+        ? (filtered.length + " set klon dipaparkan")
+        : ("Memaparkan " + visible.length + " / " + filtered.length + " set klon");
     }
 
     if (filtered.length === 0) {
@@ -1954,9 +2265,9 @@
       return;
     }
 
-    grid.innerHTML = filtered.map(function (item) {
+    grid.innerHTML = visible.map(function (item) {
       return renderQuizCardMarkup_(item, true);
-    }).join("\n");
+    }).join("\n") + renderLoadMoreBarHtml_(visible.length, filtered.length, "js-load-more-klon", "js-show-all-klon");
   }
 
   function renderCatalogSection() {
@@ -1982,8 +2293,13 @@
       return true;
     });
 
+    const harianLimit = Number(portalState.harianVisibleLimit) || PORTAL_BATCH_SIZE;
+    const visible = q ? filtered : filtered.slice(0, harianLimit);
+
     if (countLabel) {
-      countLabel.textContent = filtered.length + " set dipaparkan";
+      countLabel.textContent = filtered.length === visible.length
+        ? (filtered.length + " set dipaparkan")
+        : ("Memaparkan " + visible.length + " / " + filtered.length + " set");
     }
 
     if (filtered.length === 0) {
@@ -1991,9 +2307,9 @@
       return;
     }
 
-    grid.innerHTML = filtered.map(function (item) {
+    grid.innerHTML = visible.map(function (item) {
       return renderQuizCardMarkup_(item, false);
-    }).join("\n");
+    }).join("\n") + renderLoadMoreBarHtml_(visible.length, filtered.length, "js-load-more-harian", "js-show-all-harian");
 
     if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
   }
@@ -2239,6 +2555,7 @@
 
 
 
+
   function applyDashboardBundle(res) {
     if (res.user) portalState.user = res.user;
     if (Array.isArray(res.catalog)) {
@@ -2258,6 +2575,7 @@
     renderKlonCatalogSection();
     renderCatalogSection();
     syncLandingKlonCountBadge();
+    syncPortalDropdownSummaries();
 
     if (window.ETutorMotion) {
       window.ETutorMotion.playDashboardEntrance();
@@ -2965,6 +3283,7 @@
 
 
 
+
   function isHashAdmin() {
     return window.location.hash.toLowerCase() === "#admin";
   }
@@ -3036,6 +3355,7 @@
       }
       await enterOpenPortal(false);
       if (wantsKlonScroll) {
+        openPortalModuleDropdown("klon_spm");
         const klonHead = document.getElementById("klonCatalogHeading");
         if (klonHead) setTimeout(function () { klonHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
       }
@@ -4058,6 +4378,8 @@
 
 
 
+
+
   function bindCatalogLeaderboardAndSlipEvents() {
     document.addEventListener("click", async function (e) {
       const openBtn = e.target.closest(".js-open-quiz");
@@ -4069,9 +4391,31 @@
         return;
       }
 
+      if (e.target.closest(".js-load-more-klon")) {
+        portalState.klonVisibleLimit = (Number(portalState.klonVisibleLimit) || PORTAL_BATCH_SIZE) + PORTAL_BATCH_SIZE;
+        renderKlonCatalogSection();
+        return;
+      }
+      if (e.target.closest(".js-show-all-klon")) {
+        portalState.klonVisibleLimit = 9999;
+        renderKlonCatalogSection();
+        return;
+      }
+      if (e.target.closest(".js-load-more-harian")) {
+        portalState.harianVisibleLimit = (Number(portalState.harianVisibleLimit) || PORTAL_BATCH_SIZE) + PORTAL_BATCH_SIZE;
+        renderCatalogSection();
+        return;
+      }
+      if (e.target.closest(".js-show-all-harian")) {
+        portalState.harianVisibleLimit = 9999;
+        renderCatalogSection();
+        return;
+      }
+
       const klonGroupChip = e.target.closest(".js-klon-group-chip");
       if (klonGroupChip) {
         portalState.klonSelectedGroup = klonGroupChip.getAttribute("data-klon-group") || "ALL";
+        portalState.klonVisibleLimit = PORTAL_BATCH_SIZE;
         document.querySelectorAll(".js-klon-group-chip").forEach(function (btn) {
           btn.setAttribute("aria-pressed", btn === klonGroupChip ? "true" : "false");
         });
@@ -4083,6 +4427,7 @@
       const subChip = e.target.closest(".js-subject-chip");
       if (subChip) {
         portalState.selectedSubject = subChip.getAttribute("data-subject") || "ALL";
+        portalState.harianVisibleLimit = PORTAL_BATCH_SIZE;
         document.querySelectorAll(".js-subject-chip").forEach(function (btn) {
           btn.setAttribute("aria-pressed", btn === subChip ? "true" : "false");
         });
@@ -4093,6 +4438,7 @@
       const klonChip = e.target.closest(".js-klon-subject-chip");
       if (klonChip) {
         portalState.klonSelectedSubject = klonChip.getAttribute("data-subject") || "ALL";
+        portalState.klonVisibleLimit = PORTAL_BATCH_SIZE;
         document.querySelectorAll(".js-klon-subject-chip").forEach(function (btn) {
           btn.setAttribute("aria-pressed", btn === klonChip ? "true" : "false");
         });
@@ -4161,6 +4507,7 @@
     if (statusSelect) {
       statusSelect.addEventListener("change", function () {
         portalState.selectedStatus = statusSelect.value || "ALL";
+        portalState.harianVisibleLimit = PORTAL_BATCH_SIZE;
         renderCatalogSection();
       });
     }
@@ -4177,6 +4524,7 @@
     if (klonStatusSelect) {
       klonStatusSelect.addEventListener("change", function () {
         portalState.klonSelectedStatus = klonStatusSelect.value || "ALL";
+        portalState.klonVisibleLimit = PORTAL_BATCH_SIZE;
         renderKlonCatalogSection();
       });
     }
@@ -4229,6 +4577,7 @@
       }
     }
 
+    initPortalModuleDropdowns();
   }
 
   // --- [features/dashboard/portalEvents.js] ---

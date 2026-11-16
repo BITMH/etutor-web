@@ -464,6 +464,27 @@
     });
   }
 
+  function animateSpmCountdownCards(selector) {
+    const A = getAnime();
+    if (!A || prefersReducedMotion()) return;
+
+    const cards = document.querySelectorAll(selector || "#lpSpmMountGrid .spm-cd-card");
+    if (!cards.length) return;
+
+    const slice = Array.prototype.slice.call(cards, 0, 12);
+    A.remove(slice);
+    A.animate(slice, {
+      opacity: [0, 1],
+      translateY: [14, 0],
+      duration: 340,
+      delay: A.stagger(28, { start: 10 }),
+      ease: "outQuart",
+      onComplete: function () {
+        clearInlineTransform(slice);
+      }
+    });
+  }
+
   // --- [features/motion/examAndSlipMotion.js] ---
   /**
    * src/features/motion/examAndSlipMotion.js
@@ -626,6 +647,7 @@
     animateProgressCounters: animateProgressCounters,
     animateLeaderboardUpdate: animateLeaderboardUpdate,
     animateCatalogCards: animateCatalogCards,
+    animateSpmCountdownCards: animateSpmCountdownCards,
     playExamStageOpen: playExamStageOpen,
     celebrateQuizCompletion: celebrateQuizCompletion,
     animateSlipScore: animateSlipScore,

@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./styles.css?v=22">
+  <link rel="stylesheet" href="./styles.css?v=24">
 
   <script type="application/ld+json">
   {
@@ -173,7 +173,7 @@
           <ul class="lp-nav-links">
             <li><a href="./soalan-percubaan-spm/" data-live-nav-harian>Indeks Set Soalan</a></li>
             <li><a href="#portal" class="js-goto-klon-portal" data-live-nav-klon>Klon SPM</a></li>
-            <li><a href="#demo-interaktif">Simulasi Soalan</a></li>
+            <li><a href="#countdown-spm">Countdown SPM</a></li>
             <li><a href="#perbandingan">Kenapa eTutor</a></li>
             <li><a href="#ciri">Ciri &amp; Subjek</a></li>
             <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
@@ -239,11 +239,11 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
                 </svg>
               </a>
-              <a href="#demo-interaktif" class="btn btn-outline btn-lg">
+              <a href="#countdown-spm" class="btn btn-outline btn-lg">
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/>
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18M12 14v3l2 1.5"/>
                 </svg>
-                <span>Cuba Simulasi Soalan</span>
+                <span>Countdown &amp; Jadual SPM</span>
               </a>
             </div>
 
@@ -399,42 +399,74 @@
 
       <!-- SEKSYEN DEMO INTERAKTIF SEBENAR ("SHOW, DON'T TELL") -->
 
-      <section id="demo-interaktif" class="lp-section" aria-labelledby="lpDemoHeading">
+      <!-- SEKSYEN COUNTDOWN RASMI SPM 2026 & JADUAL SUBJEK -->
+      <section id="countdown-spm" class="lp-section lp-spm-cd-section" aria-labelledby="lpSpmCdHeading">
         <div class="lp-container">
           <div class="lp-section-head">
-            <span class="lp-section-kicker">Uji Sendiri Kualiti Sistem Kami</span>
-            <h2 id="lpDemoHeading" class="lp-section-title">Cuba Jawab 1 Soalan Demo Interaktif Sekarang</h2>
+            <span class="lp-section-kicker">Jadual Rasmi Lembaga Peperiksaan (LP/SPM/2026)</span>
+            <h2 id="lpSpmCdHeading" class="lp-section-title">Countdown SPM 2026 &amp; Semua Subjek Peperiksaan</h2>
             <p class="lp-section-sub">
-              Pilih subjek di bawah dan klik mana-mana jawapan untuk merasai sendiri kepantasan semakan skema automatik seperti di dalam portal penuh.
+              Pantau baki masa sebenar hingga ke dewan peperiksaan mengikut waktu Malaysia, tandakan subjek pilihan anda, dan teruskan latih tubi mengikut subjek sasaran.
             </p>
           </div>
 
-          <div class="lp-demo-card">
-            <div class="lp-demo-topbar">
-              <div style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:0.94rem">
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Simulasi Enjin Kuiz eTutor.my (Tanpa Log Masuk)</span>
+          <div id="lpSpmHeroCard" class="spm-hero-card"></div>
+
+          <div id="lpSpmExplorerWrap" class="spm-explorer-shell">
+            <div class="spm-explorer-toolbar">
+              <div class="spm-preset-row" role="group" aria-label="Pratetap Aliran Subjek Saya">
+                <span class="spm-toolbar-lbl">Pratetap Pantas:</span>
+                <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="SAINS_TULEN">Sains Tulen</button>
+                <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="AKAUN_PERNIAGAAN">Perakaunan &amp; Perniagaan</button>
+                <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="IKHTISAS_TEKNIKAL">Ikhtisas &amp; Teknikal</button>
+                <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="AGAMA_KBD">Pengajian Islam &amp; KBD</button>
+                <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="TERAS">Teras Sahaja</button>
               </div>
-              <span id="lpDemoXpBadge" class="status-badge" style="background:rgb(255 255 255 / 0.16);color:#ffffff;font-family:var(--font-mono)">+0 XP Dicuba</span>
+
+              <div class="spm-controls-grid">
+                <div class="search-box">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+                  </svg>
+                  <label for="lpSpmSearchInput" class="sr-only">Cari subjek, kod kertas atau tarikh SPM 2026</label>
+                  <input type="search" id="lpSpmSearchInput" class="search-input" placeholder="Cari subjek, kod kertas (cth: 1249, Fizik, 23 Nov, MPV)...">
+                </div>
+
+                <div class="spm-toggle-actions">
+                  <button type="button" class="tab-chip js-spm-toggle-mine" aria-pressed="false">Subjek Saya (9)</button>
+                  <button type="button" class="tab-chip js-spm-toggle-hide-done" aria-pressed="false">Sembunyi Selesai</button>
+                  <div class="spm-view-seg" role="group" aria-label="Mod paparan jadual SPM">
+                    <button type="button" class="spm-seg-btn js-spm-view-mode" data-view-mode="cards" aria-pressed="true">
+                      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                      </svg>
+                      <span>Kad Subjek</span>
+                    </button>
+                    <button type="button" class="spm-seg-btn js-spm-view-mode" data-view-mode="timeline" aria-pressed="false">
+                      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                      </svg>
+                      <span>Garis Masa</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spm-stream-row">
+                <div class="chip-scroll-row" role="group" aria-label="Tapis Aliran Subjek SPM">
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="ALL" aria-pressed="true">Semua Aliran</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="teras" aria-pressed="false">Subjek Teras</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="sains" aria-pressed="false">Sains Tulen &amp; Add Math</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="ikhtisas" aria-pressed="false">Elektif Ikhtisas &amp; Teknikal</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="agama" aria-pressed="false">Pengajian Islam &amp; KBD</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="bahasa" aria-pressed="false">Bahasa &amp; Kesusasteraan</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="mpv" aria-pressed="false">Vokasional (MPV)</button>
+                </div>
+                <span id="lpSpmMatchCount" class="spm-match-count tabular-nums"></span>
+              </div>
             </div>
 
-            <div class="lp-demo-tabs" role="tablist" aria-label="Pilih Subjek Demo">
-              <button type="button" class="lp-demo-tab" role="tab" aria-selected="true" data-demo-idx="0">Matematik SPM</button>
-              <button type="button" class="lp-demo-tab" role="tab" aria-selected="false" data-demo-idx="1">Sejarah SPM</button>
-              <button type="button" class="lp-demo-tab" role="tab" aria-selected="false" data-demo-idx="2">Prinsip Perakaunan</button>
-            </div>
-
-            <div class="lp-demo-body">
-              <div class="lp-demo-q-meta">
-                <span id="lpDemoTopicLabel">Topik: Ungkapan &amp; Persamaan Kuadratik (Kertas 1)</span>
-                <span class="tabular-nums" style="color:var(--text-muted)">Aras Peperiksaan Sebenar</span>
-              </div>
-              <p id="lpDemoQuestionText" class="lp-demo-question"></p>
-              <div id="lpDemoOptionsGrid" class="lp-demo-options"></div>
-              <div id="lpDemoExplainBox" class="lp-demo-explain" hidden></div>
-            </div>
+            <div id="lpSpmMountGrid" class="spm-mount-area"></div>
           </div>
         </div>
       </section>
@@ -669,8 +701,8 @@
           <div class="lp-steps-grid" style="margin-block-end:var(--space-10)" data-paid-only>
             <div class="lp-step-card">
               <div class="lp-step-num">1</div>
-              <h3 style="font-size:1.02rem;margin-block-end:6px">Pilih Pakej Akses</h3>
-              <p style="font-size:0.88rem;color:var(--text-secondary)">Pilih sama ada Pas Fokus Subjek atau Pas Penuh Semua Subjek SPM mengikut keperluan anak anda.</p>
+              <h3 style="font-size:1.02rem;margin-block-end:6px">Pilih Pek Token AI</h3>
+              <p style="font-size:0.88rem;color:var(--text-secondary)">Pilih Pek Cuba, Pek Fokus, atau Pek Pecutan mengikut keperluan ulang kaji anda.</p>
             </div>
             <div class="lp-step-card">
               <div class="lp-step-num">2</div>
@@ -763,130 +795,6 @@
         </div>
       </section>
 
-      <!-- SEKSYEN PAKEJ HARGA TELUS (#pakej) -->
-      <section id="pakej" class="lp-section lp-deferred-section" aria-labelledby="lpPricingHeading" data-paid-only>
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-section-kicker">Pelaburan Pendidikan Mampu Milik</span>
-            <h2 id="lpPricingHeading" class="lp-section-title">Pilih Pakej Akses Portal eTutor.my Anda</h2>
-            <p class="lp-section-sub">
-              Sekali bayaran sahaja — lebih jimat berbanding membeli berjilid-jilid buku kertas percubaan, lengkap semua set baharu yang dimasukkan setiap minggu.
-            </p>
-          </div>
-
-          <div class="lp-pricing-grid">
-            <!-- PAKEJ 1 -->
-            <article class="lp-price-card">
-              <div>
-                <span class="status-badge badge-subject">Pilihan Ulang Kaji Terfokus</span>
-                <h3 style="font-size:1.18rem;margin-top:12px;color:var(--brand-navy)">Pas Fokus Subjek Pilihan</h3>
-                <div class="lp-price-amount tabular-nums">
-                  <span id="lpPriceSingle">RM 29</span>
-                </div>
-                <div class="lp-price-period">Akses sehingga tamat peperiksaan SPM</div>
-
-                <ul class="lp-price-perks">
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Akses penuh <strong>2 subjek pilihan</strong> (Teras atau Elektif)</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Semakan markah &amp; huraian jawapan serta-merta</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Continue Progress pada 2 peranti peribadi</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Jana Slip Keputusan Rasmi PDF tanpa had</span>
-                  </li>
-                </ul>
-              </div>
-
-              <button type="button" class="btn btn-outline btn-lg js-select-plan" data-plan-key="single" style="inline-size:100%">
-                Pilih Pas Fokus
-              </button>
-            </article>
-
-            <!-- PAKEJ 2: PALING POPULAR -->
-            <article class="lp-price-card is-featured">
-              <div>
-                <span class="lp-popular-ribbon">Paling Popular • Pilihan 85% Ibu Bapa</span>
-                <h3 style="font-size:1.22rem;margin-top:12px;color:var(--brand-navy)">Pas Penuh Semua Subjek SPM</h3>
-                <div class="lp-price-amount tabular-nums">
-                  <span class="lp-price-strike">RM 120</span><span id="lpPriceAll">RM 59</span>
-                </div>
-                <div class="lp-price-period">Sekali bayar • Tiada caj bulanan tersembunyi</div>
-
-                <ul class="lp-price-perks">
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>Akses Tanpa Had Semua 10+ Subjek SPM</strong> sedia ada &amp; akan datang</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Kemas kini automatik set soalan percubaan negeri terkini</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Radar Pengesanan Topik Lemah (&lt; 60%) &amp; Analisis Gred</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Akses penuh Carta Kedudukan Leaderboard XP Malaysia</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Sokongan 2 peranti serentak (Telefon + Laptop/Tablet)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <button type="button" class="btn btn-primary btn-lg js-select-plan" data-plan-key="allAccess" style="inline-size:100%">
-                Dapatkan Pas Penuh Sekarang
-              </button>
-            </article>
-
-            <!-- PAKEJ 3: ADIK-BERADIK / RAKAN -->
-            <article class="lp-price-card">
-              <div>
-                <span class="status-badge badge-done">Jimat Berganda Untuk 2 Pelajar</span>
-                <h3 style="font-size:1.18rem;margin-top:12px;color:var(--brand-navy)">Pas Kembar / Adik-Beradik</h3>
-                <div class="lp-price-amount tabular-nums">
-                  <span class="lp-price-strike">RM 240</span><span id="lpPriceFamily">RM 99</span>
-                </div>
-                <div class="lp-price-period">2 Akaun Pelajar Berasingan (RM 49.50 / pelajar)</div>
-
-                <ul class="lp-price-perks">
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span><strong>2 ID Pengguna &amp; 2 Kod PIN berbeza</strong> (rekod kemajuan tidak bercampur)</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Semua 10+ Subjek SPM dibuka penuh untuk kedua-dua pelajar</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Jumlah 4 peranti dibenarkan (2 peranti setiap akaun)</span>
-                  </li>
-                  <li>
-                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Sesuai untuk adik-beradik atau berkongsi bersama rakan sekelas</span>
-                  </li>
-                </ul>
-              </div>
-
-              <button type="button" class="btn btn-outline btn-lg js-select-plan" data-plan-key="family" style="inline-size:100%">
-                Pilih Pas 2 Pelajar
-              </button>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <!-- SEKSYEN SOALAN LAZIM EKSKLUSIF (<details name="etutor-faq">) -->
 
       <!-- SEKSYEN PELAN FREEMIUM & PEK TOKEN AI PRABAYAR (#pelan-token) -->
@@ -896,16 +804,16 @@
             <span class="lp-section-kicker">Sistem Token Bersepadu • Mata Wang Tunggal eTutor.my</span>
             <h2 id="lpTokenPricingHeading" class="lp-section-title">Soalan Negeri Terbuka — Guna Token Untuk Set Klon, Nota &amp; Cikgu AI</h2>
             <p class="lp-section-sub">
-              Jawab set Pra-SPM Negeri secara terbuka (<strong>0 Token</strong>). Setiap pelajar mendapat <strong>30 Token Asas sebulan</strong> (had 5 token/hari) serta <strong>2 imbasan Snap &amp; Check</strong> — cukup untuk membuka <strong>Set Soalan Klon (2 Token/Set, kekal selamanya)</strong>, <strong>Nota Bab (2 Token/Bab, akan datang)</strong>, serta semakan AI Kertas 2 (1–3 Token).
+              Jawab set Pra-SPM Negeri secara terbuka (<strong>0 Token</strong>). Setiap akaun pelajar berdaftar menerima <strong>30 Token Asas sebulan</strong> (had penggunaan <strong>5 Token/hari</strong>) serta <strong>2 cubaan Snap &amp; Check</strong> — cukup untuk membuka <strong>Set Soalan Klon (2 Token/Set, kekal selamanya)</strong>, <strong>Nota Bab (2 Token/Bab, akan datang)</strong>, serta semakan AI Kertas 2 (1–3 Token).
             </p>
           </div>
 
           <div class="bento-card" style="margin-block-end:var(--space-6);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#f8fafc 0%,#eff6ff 100%)">
             <div style="max-inline-size:66ch">
               <span class="status-badge badge-done">Pelan Asas Pelajar • RM 0</span>
-              <h3 style="font-size:1.1rem;margin-top:8px;color:var(--brand-navy)">Set Negeri Terbuka + 30 Token Bulanan (Set Klon, Nota &amp; Cikgu AI)</h3>
+              <h3 style="font-size:1.1rem;margin-top:8px;color:var(--brand-navy)">Set Negeri Terbuka + 30 Token Bulanan (Had 5 Token / Hari)</h3>
               <p style="font-size:0.86rem;color:var(--text-secondary);margin-top:4px">
-                Akses 120+ set Pra-SPM Negeri tanpa token, buka kekal Set Soalan Klon (2 Token) &amp; Nota Bab (2 Token, akan datang), Radar Penguasaan, serta Leaderboard XP.
+                Akses 120+ set Pra-SPM Negeri tanpa token, buka kekal Set Soalan Klon (2 Token) &amp; Nota Bab (2 Token, akan datang), Radar Penguasaan, serta Leaderboard XP. Tetamu tanpa log masuk dihadkan 5 Token/hari.
               </p>
             </div>
             <a href="#portal" class="btn btn-emerald js-enter-open-portal">Buka Portal Pelajar</a>
@@ -929,7 +837,7 @@
                   </li>
                   <li>
                     <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span>Baki tidak hangus pada hujung bulan</span>
+                    <span>Baki kekal tidak hangus pada hujung bulan</span>
                   </li>
                 </ul>
               </div>
@@ -969,7 +877,7 @@
                 <span class="status-badge badge-done">Jimat 30% • Pecutan Penuh</span>
                 <h3 style="font-size:1.18rem;margin-top:12px;color:var(--brand-navy)">Pek Pecutan — 500 Token AI</h3>
                 <div class="lp-price-amount tabular-nums"><span class="lp-price-strike">RM 55</span><span>RM 39</span></div>
-                <div class="lp-price-period">7.8 sen / token • Sesuai sehingga tamat peperiksaan SPM</div>
+                <div class="lp-price-period">7.8 sen / token • Sah sehingga tamat peperiksaan SPM</div>
                 <ul class="lp-price-perks">
                   <li>
                     <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -991,11 +899,67 @@
             </article>
           </div>
 
-          <div style="text-align:center;margin-block-start:var(--space-6);font-size:0.86rem;color:var(--text-secondary)">
-            <span>Untuk Guru &amp; Panitia Sekolah:</span>
-            <button type="button" class="btn btn-ghost btn-sm js-select-plan" data-plan-key="tokenClass" style="font-weight:700;color:var(--brand-primary)">
-              Pek Kelas Cikgu (1,500 Token AI — RM 99) &rarr;
-            </button>
+          <div class="lp-token-rules-grid">
+            <article class="lp-token-rules-card">
+              <div class="lp-token-rules-head">
+                <h3>Jadual Kadar Penggunaan Token &amp; Susunan Tolakan</h3>
+                <span class="status-badge badge-subject">Telus &amp; Adil</span>
+              </div>
+              <table class="lp-rate-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Ciri &amp; Kegunaan Portal</th>
+                    <th scope="col">Kadar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Set Soalan Pra-SPM Negeri, Skema Jawapan, Slip PDF, Countdown &amp; Leaderboard</td>
+                    <td><span class="lp-rate-pill is-free">0 Token</span></td>
+                  </tr>
+                  <tr>
+                    <td>Buka Set Soalan Klon SPM atau Nota Bab (kekal selamanya &amp; ulang tanpa had)</td>
+                    <td><span class="lp-rate-pill tabular-nums">2 Token / Set</span></td>
+                  </tr>
+                  <tr>
+                    <td>Semakan Cikgu AI Kertas 2 Teks (&lt;5m: 1 Token, 5–14m: 2 Token, Esei 15m+: 3 Token)</td>
+                    <td><span class="lp-rate-pill tabular-nums">1–3 Token</span></td>
+                  </tr>
+                  <tr>
+                    <td>Imbasan Tulisan Tangan Snap &amp; Check Gambar (termasuk 2 cubaan asas berdaftar)</td>
+                    <td><span class="lp-rate-pill tabular-nums">3 Token</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="lp-token-order-note">
+                <strong>Susunan Tolakan Token:</strong> Sistem sentiasa menolak <strong>Kuota Asas Harian (5/hari, maks 30/bulan) dahulu</strong> untuk semua ciri biasa. <strong>Token Top-up Kekal</strong> hanya ditolak apabila kuota asas harian habis atau selepas 2 cubaan imbasan gambar selesai. Token dipulangkan 100% automatik jika pelayan AI gagal membalas.
+              </div>
+            </article>
+
+            <article class="lp-token-rules-card">
+              <div class="lp-token-rules-head">
+                <h3>Aturcara Pembelian, Tebusan &amp; Ajak Rakan</h3>
+                <span class="status-badge badge-done">SOP 4 Langkah</span>
+              </div>
+              <ol class="lp-sop-steps">
+                <li class="lp-sop-step">
+                  <span class="lp-sop-num tabular-nums">1</span>
+                  <span><strong>Wajib Log Masuk Akaun Awan:</strong> Log masuk dengan <strong>Google</strong> atau <strong>OTP E-mel</strong> dahulu supaya Token Top-up Kekal &amp; Set Klon yang dibuka tersimpan kekal pada profil anda.</span>
+                </li>
+                <li class="lp-sop-step">
+                  <span class="lp-sop-num tabular-nums">2</span>
+                  <span><strong>Tempah Pek Individu:</strong> Klik pek pilihan (<code>RM 5</code>, <code>RM 15</code>, atau <code>RM 39</code>) dan selesaikan pengesahan QR/FPX terus melalui WhatsApp Admin (<code>013-732 7696</code>).</span>
+                </li>
+                <li class="lp-sop-step">
+                  <span class="lp-sop-num tabular-nums">3</span>
+                  <span><strong>Tebus Kod Baucar Unik:</strong> Buka <strong>Dompet Token</strong> di bahagian atas portal, masukkan kod <code>ET-XXXXXXXXXX</code> sekali guna daripada Admin, dan klik <strong>Tebus Kod</strong>.</span>
+                </li>
+                <li class="lp-sop-step">
+                  <span class="lp-sop-num tabular-nums">4</span>
+                  <span><strong>Pautan Rujukan Automatik (Had 20 Rakan/Bulan):</strong> Setiap pengguna log masuk mendapat pautan unik <code>?ref=ET...</code> secara automatik. Kedua-dua akaun menerima <strong>+10 Token Asas</strong> apabila rakan log masuk dan menyiapkan 1 set latihan.</span>
+                </li>
+              </ol>
+            </article>
           </div>
         </div>
       </section>
@@ -1032,6 +996,26 @@
               </summary>
               <div class="lp-faq-answer">
                 Ya. Ciri <em>Continue Progress</em> menyimpan jawapan dan baki masa latihan anda secara automatik pada pelayar peranti yang sedang digunakan supaya anda boleh menyambung semula pada bila-bila masa.
+              </div>
+            </details>
+
+            <details class="lp-faq-item" name="etutor-faq">
+              <summary class="lp-faq-summary">
+                <span>Bagaimana sistem Token eTutor.my berfungsi dan apakah susunan tolakan token?</span>
+                <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </summary>
+              <div class="lp-faq-answer">
+                Semua set Pra-SPM Negeri dan Skema Jawapan Rasmi menggunakan <strong>0 Token</strong>. Untuk Set Soalan Klon SPM (2 Token/Set, terbuka kekal selamanya) dan semakan Cikgu AI Kertas 2 (1–3 Token), sistem akan menolak <strong>Kuota Asas Harian (had 5 Token/hari, 30/bulan) dahulu</strong>. Token Top-up Kekal hanya digunakan apabila kuota asas harian habis atau untuk imbasan gambar Snap &amp; Check selepas 2 cubaan asas selesai.
+              </div>
+            </details>
+
+            <details class="lp-faq-item" name="etutor-faq">
+              <summary class="lp-faq-summary">
+                <span>Bagaimana aturcara menebus kod baucar Top-up Token dan adakah baki akan luput?</span>
+                <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </summary>
+              <div class="lp-faq-answer">
+                Pelajar wajib <strong>Log Masuk Google atau OTP E-mel</strong> dahulu supaya baki disimpan di akaun awan. Selepas menerima kod baucar <code>ET-XXXXXXXXXX</code> daripada Admin (<code>013-732 7696</code>), buka <strong>Dompet Token</strong> dan klik <strong>Tebus Kod</strong>. Baki Token Top-up Kekal tiada had harian dan sah sehingga tamat peperiksaan SPM.
               </div>
             </details>
 
@@ -1097,8 +1081,8 @@
               Jangan tunggu sehingga minggu terakhir sebelum peperiksaan. Bentuk disiplin menjawab satu set soalan berfokus setiap hari dengan semakan serta-merta di <strong>eTutor.my</strong>.
             </p>
             <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="allAccess" data-paid-only>
-                <span>Daftar Pas Penuh Semua Subjek</span>
+              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="tokenFocus" data-paid-only>
+                <span>Pilih Pek Token AI</span>
               </button>
               <a href="#login" class="btn btn-outline btn-lg js-goto-login" style="background:rgb(255 255 255 / 0.1);color:#ffffff;border-color:rgb(255 255 255 / 0.35)" data-paid-only>
                 <span>Sudah Ada PIN? Log Masuk Pelajar</span>
@@ -1129,7 +1113,7 @@
         <ul class="lp-footer-links">
           <li><a href="./soalan-percubaan-spm/" data-live-nav-harian>Indeks Set Soalan</a></li>
           <li><a href="./soalan-klon-spm/" data-live-footer-klon>Indeks Klon SPM</a></li>
-          <li><a href="#demo-interaktif">Simulasi Soalan</a></li>
+          <li><a href="#countdown-spm">Countdown &amp; Jadual SPM</a></li>
           <li data-open-only><a href="#portal" class="js-enter-open-portal">Bank Soalan</a></li>
           <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
           <li><a href="#soalan-lazim">Soalan Lazim</a></li>
@@ -1179,58 +1163,36 @@
             <use href="#etutor-brand-emblem"></use>
           </svg>
           <div>
-            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)" id="orderDialogTitle">Pendaftaran Akses eTutor.my</div>
-            <div id="orderPlanBadge" style="font-size:0.82rem;color:var(--grade-emerald);font-weight:700;margin-top:2px">Pas Penuh Semua Subjek SPM — RM 59</div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)" id="orderDialogTitle">Tempahan Pek Token AI eTutor.my</div>
+            <div id="orderPlanBadge" style="font-size:0.82rem;color:var(--grade-emerald);font-weight:700;margin-top:2px">Pek Fokus — 160 Token AI Ekspres — RM 15</div>
           </div>
         </div>
         <span class="status-badge badge-done">Pengaktifan Pantas</span>
       </div>
 
       <form id="orderLeadForm" novalidate>
+        <div id="orderAuthPrompt" class="alert-banner" style="background:#eff6ff;border-color:#bfdbfe;color:var(--brand-navy);margin-block-end:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap" hidden>
+          <span style="font-size:0.8rem">Log masuk dahulu supaya Nama &amp; ID Pengguna anda diisi automatik.</span>
+          <button type="button" id="orderLoginNowBtn" class="btn btn-primary btn-xs">Log Masuk Akaun</button>
+        </div>
         <div class="form-field">
-          <label for="orderStudentName">Nama Penuh Pelajar</label>
-          <span class="field-hint">Nama ini akan dipaparkan pada profil portal &amp; Slip Keputusan Rasmi</span>
+          <label for="orderStudentName">Nama Pelajar / Pemilik Akaun</label>
+          <span class="field-hint">Diisi automatik daripada profil eTutor.my anda jika sudah log masuk</span>
           <input type="text" id="orderStudentName" class="text-input" required minlength="2" autocomplete="name" placeholder="Contoh: Ahmad Danial bin Razak">
         </div>
 
         <div class="form-field">
-          <label for="orderPhoneInput">No. Telefon WhatsApp (Untuk ID Pengguna &amp; Penghantaran PIN)</label>
-          <input type="tel" id="orderPhoneInput" class="text-input tabular-nums" required minlength="8" inputmode="tel" autocomplete="tel" placeholder="Contoh: 0123456789">
+          <label for="orderPhoneInput">ID Pengguna eTutor.my (E-mel Log Masuk / No. WhatsApp)</label>
+          <span class="field-hint">Digunakan dalam pautan kelulusan Admin supaya baucar terus dipadankan dengan akaun anda</span>
+          <input type="text" id="orderPhoneInput" class="text-input" required minlength="5" autocomplete="email" placeholder="Contoh: pelajar@gmail.com atau 0123456789">
         </div>
 
-        <div class="form-field">
-          <label for="orderPackageSelect">Pilihan Pakej</label>
+        <div class="form-field" style="margin-block-end:0">
+          <label for="orderPackageSelect">Pilihan Pek Token AI</label>
           <select id="orderPackageSelect" name="packagePlan" class="select-input" style="inline-size:100%">
             <option value="tokenFocus">Pek Fokus — 160 Token AI Ekspres (RM 15)</option>
             <option value="tokenStarter">Pek Cuba — 45 Token AI Ekspres (RM 5)</option>
             <option value="tokenSprint">Pek Pecutan — 500 Token AI Ekspres (RM 39)</option>
-            <option value="tokenClass">Pek Kelas Cikgu — 1,500 Token AI (RM 99)</option>
-            <option value="allAccess">Pas Penuh Semua Subjek SPM — RM 59 (Paling Popular)</option>
-            <option value="single">Pas Fokus Subjek Pilihan — RM 29</option>
-            <option value="family">Pas Kembar / Adik-Beradik (2 Akaun) — RM 99</option>
-          </select>
-        </div>
-
-        <div id="orderFocusSubjectWrap" class="form-field" style="margin-block-end:0" hidden>
-          <label for="orderFocusSubjectSelect">Subjek Pilihan (Bagi Pas Fokus Subjek)</label>
-          <select id="orderFocusSubjectSelect" name="focusSubject" class="select-input" style="inline-size:100%">
-            <option value="Sejarah">Sejarah</option>
-            <option value="Bahasa Melayu">Bahasa Melayu</option>
-            <option value="Bahasa Inggeris">Bahasa Inggeris</option>
-            <option value="Matematik">Matematik</option>
-            <option value="Sains">Sains</option>
-            <option value="Pendidikan Islam">Pendidikan Islam</option>
-            <option value="Pendidikan Moral">Pendidikan Moral</option>
-            <option value="Prinsip Perakaunan">Prinsip Perakaunan</option>
-            <option value="Perniagaan">Perniagaan</option>
-            <option value="Ekonomi">Ekonomi</option>
-            <option value="Sains Komputer">Sains Komputer</option>
-            <option value="Geografi">Geografi</option>
-            <option value="Tasawwur Islam">Tasawwur Islam</option>
-            <option value="Biologi">Biologi</option>
-            <option value="Fizik">Fizik</option>
-            <option value="Kimia">Kimia</option>
-            <option value="Matematik Tambahan">Matematik Tambahan</option>
           </select>
         </div>
 
@@ -1584,6 +1546,9 @@
 
     <div class="dashboard-main">
 
+      <!-- 0. BAR KOMANDO COUNTDOWN RASMI SPM 2026 -->
+      <section id="portalSpmCountdownHero" class="spm-portal-hero-card" aria-labelledby="portalSpmHeroTitle"></section>
+
       <!-- 1. SEKSYEN CONTINUE PROGRESS (Muncul automatik apabila ada kuiz separuh jalan) -->
       <section id="continueProgressSection" class="continue-section" aria-labelledby="continueHeading" hidden>
         <div class="section-header">
@@ -1634,6 +1599,7 @@
           <div class="module-vis-chips" role="group" aria-label="Tunjukkan atau sembunyikan kategori modul">
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="klon_spm" aria-pressed="true">Soalan Klon SPM</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="pra_spm" aria-pressed="true">Soalan Pra-SPM Negeri</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="countdown_spm" aria-pressed="true">Countdown &amp; Jadual SPM</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="progress" aria-pressed="true">Kemajuan Saya</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="leaderboard" aria-pressed="true">Leaderboard</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="nota_interaktif" aria-pressed="false">Nota Interaktif (Akan Datang)</button>
@@ -1759,6 +1725,89 @@
             </div>
 
             <div id="catalogCardsGrid" class="catalog-grid"></div>
+          </section>
+        </details>
+
+        <!-- DROPDOWN 2B: COUNTDOWN RASMI SPM 2026 & JADUAL SUBJEK -->
+        <details id="moduleDropdownCountdown" class="portal-module-dropdown" data-module-id="countdown_spm">
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-countdown" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18M12 14v3l2 1.5"/>
+                </svg>
+              </span>
+              <div>
+                <span id="countdownHeading" class="portal-dropdown-title">Countdown &amp; Jadual Waktu SPM 2026</span>
+                <p class="portal-dropdown-desc">Kira detik setiap kertas rasmi (LP/SPM/2026) dan terus latih subjek sasaran.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span id="countdownSummaryPill" class="dropdown-meta-pill pill-accent tabular-nums">SPM 2026</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+              </svg>
+            </div>
+          </summary>
+
+          <section class="portal-dropdown-body" aria-labelledby="countdownHeading">
+            <div id="ptSpmExplorerWrap" class="spm-explorer-shell is-in-portal">
+              <div class="dropdown-subactions">
+                <span id="ptSpmMatchCount" class="tabular-nums" style="font-size:0.85rem;font-weight:700;color:var(--brand-primary)"></span>
+              </div>
+
+              <div class="spm-explorer-toolbar">
+                <div class="spm-preset-row" role="group" aria-label="Pratetap Aliran Subjek Portal">
+                  <span class="spm-toolbar-lbl">Pratetap:</span>
+                  <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="SAINS_TULEN">Sains Tulen</button>
+                  <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="AKAUN_PERNIAGAAN">Perakaunan &amp; Perniagaan</button>
+                  <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="IKHTISAS_TEKNIKAL">Ikhtisas &amp; Teknikal</button>
+                  <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="AGAMA_KBD">Pengajian Islam &amp; KBD</button>
+                  <button type="button" class="spm-preset-btn js-spm-preset-btn" data-preset="TERAS">Teras Sahaja</button>
+                </div>
+
+                <div class="spm-controls-grid">
+                  <div class="search-box">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                      <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+                    </svg>
+                    <label for="ptSpmSearchInput" class="sr-only">Cari subjek atau kod kertas SPM dalam portal</label>
+                    <input type="search" id="ptSpmSearchInput" class="search-input" placeholder="Cari subjek, kod kertas (cth: 1249, Kimia, 30 Nov)...">
+                  </div>
+
+                  <div class="spm-toggle-actions">
+                    <button type="button" class="tab-chip js-spm-toggle-mine" aria-pressed="false">Subjek Saya</button>
+                    <button type="button" class="tab-chip js-spm-toggle-hide-done" aria-pressed="false">Sembunyi Selesai</button>
+                    <div class="spm-view-seg" role="group" aria-label="Mod paparan jadual portal">
+                      <button type="button" class="spm-seg-btn js-spm-view-mode" data-view-mode="cards" aria-pressed="true">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                          <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                        </svg>
+                        <span>Kad Subjek</span>
+                      </button>
+                      <button type="button" class="spm-seg-btn js-spm-view-mode" data-view-mode="timeline" aria-pressed="false">
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                        </svg>
+                        <span>Garis Masa</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chip-scroll-row" role="group" aria-label="Tapis Aliran Subjek Portal">
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="ALL" aria-pressed="true">Semua Aliran</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="teras" aria-pressed="false">Subjek Teras</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="sains" aria-pressed="false">Sains Tulen &amp; Add Math</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="ikhtisas" aria-pressed="false">Elektif Ikhtisas &amp; Teknikal</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="agama" aria-pressed="false">Pengajian Islam &amp; KBD</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="bahasa" aria-pressed="false">Bahasa &amp; Kesusasteraan</button>
+                  <button type="button" class="tab-chip js-spm-stream-chip" data-stream="mpv" aria-pressed="false">Vokasional (MPV)</button>
+                </div>
+              </div>
+
+              <div id="ptSpmMountGrid" class="spm-mount-area"></div>
+            </div>
           </section>
         </details>
 
@@ -1957,7 +2006,7 @@
        SKRIN 3: MOD KUIZ PENUH SKRIN (100dvh + <iframe srcdoc>)
        ===================================================================== -->
 
-  <!-- DIALOG DOMPET TOKEN AI & TEBUS BAUCAR TOP-UP (<dialog closedby="any">) -->
+  <!-- DIALOG DOMPET TOKEN AI & TAMBAH NILAI TERUS (<dialog closedby="any">) -->
   <dialog id="tokenWalletDialog" class="slip-dialog" closedby="any" aria-labelledby="tokenWalletTitle">
     <div class="slip-paper">
       <div class="slip-header">
@@ -1973,49 +2022,32 @@
         <button type="button" id="closeTokenWalletBtn" class="btn btn-ghost btn-sm" aria-label="Tutup dompet token">&times;</button>
       </div>
 
-      <div class="admin-kpi-grid" style="margin-block-end:16px">
+      <div class="admin-kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(118px,1fr));margin-block-end:14px">
         <div class="kpi-tile">
-          <span class="kpi-label">Kuota Asas Bulan Ini</span>
-          <span id="walletFreeBalanceVal" class="kpi-value tabular-nums" style="font-size:1.35rem;color:var(--brand-primary)">30</span>
+          <span class="kpi-label">Boleh Guna Hari Ini</span>
+          <span id="walletTodayAvailableVal" class="kpi-value tabular-nums" style="font-size:1.3rem;color:var(--brand-primary)">5</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-label">Asas Bulan (Had 5/Hari)</span>
+          <span id="walletFreeBalanceVal" class="kpi-value tabular-nums" style="font-size:1.3rem;color:var(--brand-navy)">30 / 30</span>
         </div>
         <div class="kpi-tile">
           <span class="kpi-label">Token Top-up Kekal</span>
-          <span id="walletPaidBalanceVal" class="kpi-value tabular-nums" style="font-size:1.35rem;color:var(--grade-emerald)">0</span>
+          <span id="walletPaidBalanceVal" class="kpi-value tabular-nums" style="font-size:1.3rem;color:var(--grade-emerald)">0</span>
         </div>
         <div class="kpi-tile">
-          <span class="kpi-label">Cubaan Snap &amp; Check</span>
-          <span id="walletVisionTrialVal" class="kpi-value tabular-nums" style="font-size:1.35rem;color:var(--brand-navy)">2</span>
+          <span class="kpi-label">Snap &amp; Check</span>
+          <span id="walletVisionTrialVal" class="kpi-value tabular-nums" style="font-size:1.3rem;color:var(--brand-navy)">2</span>
         </div>
       </div>
 
-      <form id="redeemAiVoucherForm" novalidate style="margin-block-end:16px">
-        <div class="form-field" style="margin-block-end:10px">
-          <label for="aiVoucherCodeInput">Kod Baucar Top-up Token AI</label>
-          <span id="aiVoucherHint" class="field-hint">Masukkan kod baucar 10+ aksara yang diterima daripada Admin selepas bayaran disahkan.</span>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <input
-              type="text"
-              id="aiVoucherCodeInput"
-              name="voucherCode"
-              class="text-input tabular-nums"
-              style="flex:1 1 200px;min-height:48px"
-              required
-              minlength="6"
-              autocorrect="off"
-              autocapitalize="none"
-              spellcheck="false"
-              enterkeyhint="done"
-              aria-describedby="aiVoucherHint"
-              placeholder="Contoh: ET-A1B2C3D4E5"
-            >
-            <button type="submit" id="redeemAiVoucherBtn" class="btn btn-primary" style="min-height:48px">Tebus Kod</button>
-          </div>
-        </div>
-        <div id="aiVoucherStatusMsg" role="status" aria-live="polite" style="font-size:0.84rem;font-weight:600;color:var(--brand-primary);min-height:20px"></div>
-      </form>
+      <div id="walletAuthRequiredNotice" class="alert-banner" style="background:#eff6ff;border-color:#bfdbfe;color:var(--brand-navy);margin-block-end:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap" hidden>
+        <span style="font-size:0.8rem"><strong>Log Masuk Akaun Disyorkan:</strong> Log masuk Google / E-mel supaya baki token dan pengaktifan pelan oleh Admin terus masuk ke akaun anda.</span>
+        <button type="button" id="walletOpenSyncLoginBtn" class="btn btn-primary btn-xs">Log Masuk Akaun</button>
+      </div>
 
-      <div style="border-top:1px solid var(--border-subtle);padding-top:14px;margin-block-end:14px">
-        <div style="font-size:0.84rem;font-weight:700;color:var(--brand-navy);margin-bottom:8px">Tambah Nilai Token AI Ekspres (Tiada Tarikh Luput Hingga SPM)</div>
+      <div style="border-top:1px solid var(--border-subtle);padding-top:12px;margin-block-end:14px">
+        <div style="font-size:0.84rem;font-weight:700;color:var(--brand-navy);margin-bottom:8px">Tambah Nilai Pelan Token AI (Aktif Terus ke Akaun, Tiada Tarikh Luput Hingga SPM)</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           <button type="button" class="btn btn-outline btn-sm js-wallet-buy-pack" data-pack="tokenStarter">Pek Cuba (45 Token — RM 5)</button>
           <button type="button" class="btn btn-primary btn-sm js-wallet-buy-pack" data-pack="tokenFocus">Pek Fokus (160 Token — RM 15)</button>
@@ -2023,14 +2055,55 @@
         </div>
       </div>
 
-      <div style="background:var(--surface-subtle);border:1px solid var(--border-subtle);border-radius:12px;padding:12px">
-        <div style="font-size:0.82rem;font-weight:700;color:var(--brand-navy)">Ajak Rakan (+10 Token Asas Setiap Rakan)</div>
-        <p style="font-size:0.78rem;color:var(--text-secondary);margin:4px 0 8px">Kongsi pautan jemputan ini ke grup kelas. Kedua-dua akaun menerima +10 Token apabila rakan menyiapkan 1 set latihan.</p>
+      <div style="background:var(--surface-subtle);border:1px solid var(--border-subtle);border-radius:12px;padding:12px;margin-block-end:12px">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
-          <code id="walletReferralCodeText" class="tabular-nums" style="font-size:0.82rem;font-weight:700;color:var(--brand-primary)">ET-JEMPUT</code>
+          <span style="font-size:0.82rem;font-weight:700;color:var(--brand-navy)">Pautan Jemputan Rakan (+10 Token Asas / Rakan)</span>
+          <span id="walletReferralQuotaBadge" class="status-badge badge-subject tabular-nums">0 / 20 rakan bulan ini</span>
+        </div>
+        <p style="font-size:0.78rem;color:var(--text-secondary);margin:4px 0 8px">Kongsi pautan unik anda (dijana automatik selepas log masuk). Kedua-dua akaun menerima +10 Token Asas apabila rakan log masuk &amp; siap 1 set latihan.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+          <code id="walletReferralCodeText" class="tabular-nums" style="font-size:0.82rem;font-weight:700;color:var(--brand-primary)">Log Masuk Dahulu</code>
           <button type="button" id="copyReferralLinkBtn" class="btn btn-outline btn-xs">Salin Pautan Jemputan</button>
         </div>
       </div>
+
+      <details class="wallet-rules-accordion" style="margin-block-end:8px">
+        <summary>Peraturan Tolakan Token &amp; Pengaktifan Terus</summary>
+        <ul>
+          <li><strong>Susunan Tolakan:</strong> Kuota Asas Harian (<code>5 Token/hari</code>, maks <code>30/bulan</code>) ditolak dahulu sebelum Token Top-up Kekal.</li>
+          <li><strong>Tempoh Sah:</strong> Kuota Asas diset semula setiap hari/bulan; Token Top-up Kekal tiada had harian dan sah sehingga tamat SPM.</li>
+          <li><strong>Pengaktifan Terus:</strong> Selepas bayaran disahkan oleh Admin, Token Top-up Kekal terus dikreditkan ke akaun anda tanpa perlu kod baucar.</li>
+        </ul>
+      </details>
+
+      <details class="wallet-rules-accordion">
+        <summary>Ada Kod Baucar Lama / Promosi? Tebus di Sini</summary>
+        <form id="redeemAiVoucherForm" novalidate style="margin-top:10px">
+          <div class="form-field" style="margin-block-end:6px">
+            <label for="aiVoucherCodeInput">Kod Baucar Promosi (Pilihan)</label>
+            <span id="aiVoucherHint" class="field-hint">Hanya untuk kod baucar promosi khas sekali guna selepas log masuk akaun.</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <input
+                type="text"
+                id="aiVoucherCodeInput"
+                name="voucherCode"
+                class="text-input tabular-nums"
+                style="flex:1 1 200px;min-height:48px"
+                required
+                minlength="6"
+                autocorrect="off"
+                autocapitalize="none"
+                spellcheck="false"
+                enterkeyhint="done"
+                aria-describedby="aiVoucherHint"
+                placeholder="Contoh: ET-A1B2C3D4E5"
+              >
+              <button type="submit" id="redeemAiVoucherBtn" class="btn btn-primary" style="min-height:48px">Tebus Kod</button>
+            </div>
+          </div>
+          <div id="aiVoucherStatusMsg" role="status" aria-live="polite" style="font-size:0.84rem;font-weight:600;color:var(--brand-primary);min-height:20px"></div>
+        </form>
+      </details>
     </div>
   </dialog>
 
@@ -2164,7 +2237,7 @@
         </div>
 
         <h2 id="adminLoginHeading" class="login-title">Akses Pentadbir</h2>
-        <p class="login-subtitle">Masukkan Kunci Rahsia Admin (<code>ADMIN_PIN</code>) untuk menyemak status langganan, menambah pembeli, atau mereset had peranti.</p>
+        <p class="login-subtitle">Masukkan Kunci Rahsia Admin (<code>ADMIN_PIN</code>) untuk mengurus akaun pelajar, baki token AI, bajet &amp; aduan.</p>
 
         <div id="adminLoginError" class="alert-banner alert-danger" role="alert" hidden>
           <span id="adminLoginErrorText"></span>
@@ -2173,17 +2246,8 @@
         <form id="adminLoginForm" novalidate>
           <div class="form-field">
             <label for="adminKeyInput">Kunci Rahsia Admin</label>
-            <span id="adminKeyHint" class="field-hint">Pratonton lokal: <code>admin123</code> • Produksi: nilai <code>ADMIN_PIN</code> dalam ScriptProperties</span>
-            <input
-              type="password"
-              id="adminKeyInput"
-              class="text-input tabular-nums"
-              required
-              minlength="4"
-              autocomplete="current-password"
-              aria-describedby="adminKeyHint"
-              placeholder="Masukkan ADMIN_PIN"
-            >
+            <span id="adminKeyHint" class="field-hint">Pratonton lokal: <code>admin123</code> • Produksi: nilai <code>ADMIN_PIN</code> dalam Supabase Edge Function Secret</span>
+            <input type="password" id="adminKeyInput" class="text-input tabular-nums" required minlength="4" autocomplete="current-password" aria-describedby="adminKeyHint" placeholder="Masukkan ADMIN_PIN">
           </div>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <button type="submit" id="adminLoginBtn" class="btn btn-primary" style="flex:1">Buka Panel Admin</button>
@@ -2193,7 +2257,7 @@
       </section>
     </div>
 
-    <!-- 4B: Papan Pemuka Langganan & Kawalan Akses Admin -->
+    <!-- 4B: Pusat Kawalan Operasi eTutor.my -->
     <div id="adminDashboardShell" hidden>
       <header class="portal-topbar">
         <div class="topbar-inner">
@@ -2203,230 +2267,205 @@
             </svg>
             <div class="etutor-logo-text">
               <div class="etutor-wordmark" style="font-size:1.22rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
-              <div class="topbar-brand-sub">Kawalan Pentadbir, Pakej &amp; Log Peranti</div>
+              <div class="topbar-brand-sub">Pusat Kawalan Langganan Token, Bajet AI &amp; Operasi Portal</div>
             </div>
           </div>
 
-          <div class="topbar-user-area">
-            <a id="adminOpenSheetLink" href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm" hidden>
-              <span>Buka Google Sheets</span>
-            </a>
+          <div class="topbar-user-area" style="flex-wrap:wrap;gap:6px">
+            <button type="button" id="admForceSyncCatalogBtn" class="btn btn-outline btn-sm">Segar Semula Katalog</button>
+            <button type="button" id="admExportCsvBtn" class="btn btn-outline btn-sm">Eksport CSV</button>
             <button type="button" id="adminRefreshBtn" class="btn btn-outline btn-sm">Segarkan</button>
-            <button type="button" id="adminLogoutBtn" class="btn btn-ghost btn-sm">Log Keluar Admin</button>
+            <button type="button" id="adminLogoutBtn" class="btn btn-ghost btn-sm">Log Keluar</button>
           </div>
         </div>
       </header>
 
       <div class="dashboard-main">
-        <!-- Suis Utama Mod Akses Portal (Akses Terbuka vs Mod Langganan Berbayar) -->
-        <section class="bento-card adm-mode-switch-card" aria-labelledby="adminPortalModeHeading">
-          <div style="max-inline-size:68ch">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px">
-              <h2 id="adminPortalModeHeading" class="section-title" style="margin:0">Mod Operasi Portal Semasa</h2>
-              <span id="admPortalModeBadge" class="status-badge badge-done">Mod Akses Terbuka Aktif</span>
-            </div>
-            <p id="admPortalModeDesc" class="section-subtitle" style="margin:0">
-              Pakej harga dan skrin log masuk ditutup buat masa ini — pelajar boleh terus masuk ke Bank Soalan. Klik butang di sebelah pada tahun hadapan apabila anda sedia mengaktifkan semula harga &amp; log masuk PIN.
-            </p>
-          </div>
-          <div>
-            <button type="button" id="admToggleOpenModeBtn" class="btn btn-primary">
-              Tukar ke Mod Langganan &amp; Log Masuk PIN
-            </button>
-          </div>
-        </section>
-
-        <!-- Penjana Kod Baucar Token AI 1-Klik -->
+        <!-- 1. Pengaktifan & Kredit Pelan Token Terus ke Akaun Pelajar -->
         <section class="bento-card" aria-labelledby="adminVoucherHeading">
-          <h2 id="adminVoucherHeading" class="section-title" style="margin-bottom:4px">Penjana Kod Baucar Top-up Token AI (1-Klik)</h2>
-          <p class="section-subtitle" style="margin-bottom:12px">Jana kod baucar prabayar selepas bayaran pelanggan disahkan untuk ditebus terus di Dompet Token AI pelajar.</p>
+          <h2 id="adminVoucherHeading" class="section-title" style="margin-bottom:4px">Aktifkan &amp; Kredit Pelan Token Pelajar (Terus ke Akaun)</h2>
+          <p class="section-subtitle" style="margin-bottom:12px">Selepas bayaran disahkan, terus aktifkan pelan &amp; kreditkan Token Top-up Kekal ke akaun pelajar tanpa perlu kod baucar.</p>
           <form id="adminVoucherForm" style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+            <div style="flex:1 1 230px">
+              <label for="admDirectStudentInput" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">E-mel / ID Pelajar *</label>
+              <input type="text" id="admDirectStudentInput" name="studentIdentifier" class="text-input" required autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="cth: pelajar@gmail.com">
+            </div>
             <div style="flex:1 1 220px">
-              <label for="admVoucherPackSelect" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Pilih Pek Token AI</label>
+              <label for="admVoucherPackSelect" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Pilih Pek Langganan Token AI</label>
               <select id="admVoucherPackSelect" name="packCode" class="select-input" style="inline-size:100%">
-                <option value="PEK_FOKUS_160">Pek Fokus — 160 Token AI (RM 15)</option>
-                <option value="PEK_CUBA_45">Pek Cuba — 45 Token AI (RM 5)</option>
-                <option value="PEK_PECUTAN_500">Pek Pecutan SPM — 500 Token AI (RM 39)</option>
-                <option value="PEK_KELAS_1500">Pek Kelas Cikgu — 1,500 Token AI (RM 99)</option>
+                <option value="PEK_FOKUS_160">Pek Fokus — +160 Token AI (RM 15)</option>
+                <option value="PEK_CUBA_45">Pek Cuba — +45 Token AI (RM 5)</option>
+                <option value="PEK_PECUTAN_500">Pek Pecutan SPM — +500 Token AI (RM 39)</option>
               </select>
             </div>
-            <div style="flex:1 1 220px">
-              <label for="admVoucherNoteInput" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Nota Pembeli / No. Resit (Pilihan)</label>
-              <input type="text" id="admVoucherNoteInput" name="buyerNote" class="text-input" placeholder="cth: Danial 012-3456789">
+            <div style="flex:1 1 190px">
+              <label for="admVoucherNoteInput" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Nama / Rujukan Bayaran (Pilihan)</label>
+              <input type="text" id="admVoucherNoteInput" name="buyerNote" class="text-input" placeholder="cth: Ahmad / Resit FPX">
             </div>
-            <button type="submit" id="admGenerateVoucherBtn" class="btn btn-primary">Jana Kod Baucar</button>
+            <button type="submit" id="admGenerateVoucherBtn" class="btn btn-primary">Terus Aktifkan &amp; Kredit Token</button>
           </form>
           <div id="admGeneratedVoucherBox" hidden style="margin-top:12px;padding:12px;border-radius:10px;background:var(--surface-subtle);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
             <div>
-              <div style="font-size:0.78rem;color:var(--text-secondary)">Kod Baucar Sedia Dihantar (<span id="admVoucherPackLabel"></span>):</div>
-              <code id="admGeneratedVoucherCode" class="tabular-nums" style="font-size:1.05rem;font-weight:800;color:var(--brand-primary)"></code>
+              <div style="font-size:0.78rem;color:var(--text-secondary)">Pelan Diaktifkan Terus (<span id="admVoucherPackLabel"></span>):</div>
+              <div id="admGeneratedVoucherCode" class="tabular-nums" style="font-size:0.98rem;font-weight:800;color:var(--brand-primary)"></div>
             </div>
-            <button type="button" id="admCopyVoucherWaBtn" class="btn btn-emerald btn-sm">Salin Mesej WhatsApp Baucar</button>
+            <button type="button" id="admCopyVoucherWaBtn" class="btn btn-emerald btn-sm">Salin Mesej Pengesahan WhatsApp</button>
           </div>
         </section>
 
-        <!-- Ringkasan KPI Langganan -->
+        <!-- 2. Ringkasan Ekosistem & Kutipan -->
         <section aria-labelledby="adminStatsHeading">
           <div class="section-header">
-            <h2 id="adminStatsHeading" class="section-title">Ringkasan Langganan &amp; Akses</h2>
+            <h2 id="adminStatsHeading" class="section-title">Ringkasan Ekosistem &amp; Kutipan</h2>
           </div>
-          <div class="admin-kpi-grid">
+          <div class="admin-kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
             <div class="kpi-tile">
-              <span class="kpi-label">Jumlah Pelanggan</span>
+              <span class="kpi-label">Pelajar Berdaftar</span>
               <span id="admTotalUsers" class="kpi-value tabular-nums">0</span>
+              <span class="adm-kpi-sub">Aktif: <strong id="admActiveUsers" style="color:var(--grade-emerald)">0</strong></span>
             </div>
             <div class="kpi-tile">
-              <span class="kpi-label">Langganan Aktif</span>
-              <span id="admActiveUsers" class="kpi-value tabular-nums" style="color:var(--grade-emerald)">0</span>
+              <span class="kpi-label">Baki Token Top-up</span>
+              <span id="admTotalTopupTokens" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0</span>
+              <span class="adm-kpi-sub">Jumlah kekal pelajar</span>
             </div>
             <div class="kpi-tile">
-              <span class="kpi-label">Disekat / Tamat Tempoh</span>
-              <span id="admBlockedUsers" class="kpi-value tabular-nums" style="color:var(--status-danger)">0</span>
+              <span class="kpi-label">Kutipan Bulan Ini</span>
+              <span id="admMonthRevenueVal" class="kpi-value tabular-nums" style="color:var(--grade-emerald)">RM 0</span>
+              <span id="admTodayPlansSub" class="adm-kpi-sub">Hari ini: 0 pelan (RM 0)</span>
             </div>
             <div class="kpi-tile">
-              <span class="kpi-label">Jumlah Kuiz Dihantar</span>
+              <span class="kpi-label">Bajet Harian Cikgu AI</span>
+              <span id="admAiBudgetVal" class="kpi-value tabular-nums" style="color:var(--brand-navy);font-size:clamp(1.15rem,1.7vw,1.45rem)">RM 0.00 / 2.00</span>
+              <span id="admVisionUsedSub" class="adm-kpi-sub">Snap &amp; Check: 0 / 100</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Aduan Terbuka</span>
+              <span id="admOpenIssuesCount" class="kpi-value tabular-nums" style="color:var(--status-danger)">0</span>
+              <span class="adm-kpi-sub">Laporan isu baharu</span>
+            </div>
+            <div class="kpi-tile">
+              <span class="kpi-label">Kuiz Dihantar</span>
               <span id="admTotalScores" class="kpi-value tabular-nums" style="color:var(--brand-primary)">0</span>
+              <span class="adm-kpi-sub">Rekod markah portal</span>
             </div>
           </div>
         </section>
 
-        <!-- Borang Daftar / Kemas Kini Pelanggan -->
-        <section class="bento-card" aria-labelledby="adminAddHeading">
-          <h2 id="adminAddHeading" class="section-title" style="margin-bottom:4px">Daftar Pelanggan Baharu / Kemas Kini Langganan</h2>
-          <p class="section-subtitle" style="margin-bottom:16px">Jika ID Pengguna sudah wujud, maklumat pakej, tarikh tamat &amp; PIN akan dikemas kini dan diaktifkan semula.</p>
-
-          <form id="adminUpsertForm" class="admin-upsert-grid">
-            <div>
-              <label for="admUserId" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">ID Pengguna (Telefon / E-mel) *</label>
-              <input type="text" id="admUserId" name="userId" class="text-input" required autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="0123456789">
-            </div>
-            <div>
-              <label for="admBuyerName" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Nama Pembeli *</label>
-              <input type="text" id="admBuyerName" name="buyerName" class="text-input" required placeholder="Ali bin Ahmad">
-            </div>
-            <div>
-              <label for="admPackagePreset" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Jenis Pakej Langganan *</label>
-              <select id="admPackagePreset" name="packagePreset" class="select-input" style="inline-size:100%">
-                <option value="ALL">Pas Penuh Semua Subjek SPM (ALL — 2 Peranti)</option>
-                <option value="FAMILY">Pas Kembar / Adik-Beradik (ALL — 4 Peranti)</option>
-                <option value="CUSTOM">Pas Fokus Subjek Pilihan (Pilih Subjek di Bawah)</option>
-                <option value="TERAS">Pakej Subjek Teras SPM (6 Subjek Teras)</option>
-                <option value="SAINS_TULEN">Pakej Aliran Sains Tulen (Biologi, Fizik, Kimia, Add Math)</option>
-                <option value="IKHTISAS">Pakej Perniagaan &amp; Ikhtisas (Perakaunan, Perniagaan, Ekonomi, SK, Geo, Tasawwur)</option>
-              </select>
-            </div>
-            <div>
-              <label for="admDeviceLimit" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Had Peranti</label>
-              <input type="number" id="admDeviceLimit" name="deviceLimit" class="text-input tabular-nums" min="1" max="10" value="2">
-            </div>
-            <div>
-              <label for="admExpiry" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Tarikh Tamat (Pilihan)</label>
-              <input type="date" id="admExpiry" name="expiryDate" class="text-input tabular-nums">
-            </div>
-            <div>
-              <label for="admCustomPin" style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Kod PIN (Kosong = Auto 6-Digit)</label>
-              <input type="text" id="admCustomPin" name="pin" class="text-input tabular-nums" inputmode="numeric" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Auto-jana">
-            </div>
-
-            <fieldset id="admSubjectFieldset" class="adm-subject-fieldset" style="grid-column:1/-1" hidden>
-              <legend class="adm-subject-legend">Pilih Subjek Yang Dibenarkan untuk Pelanggan Ini:</legend>
-              <div class="adm-subject-toolbar">
-                <span class="field-hint" style="margin:0">Tandakan satu atau lebih subjek (disegerakkan terus dengan Bank Soalan Google Drive).</span>
-                <div style="display:flex;gap:8px">
-                  <button type="button" id="admSelectAllSubBtn" class="btn btn-outline btn-xs">Tandakan Semua</button>
-                  <button type="button" id="admClearAllSubBtn" class="btn btn-ghost btn-xs">Kosongkan</button>
+        <!-- 3. Kawalan Pelarasan Token (+/-) & Had Bajet Harian AI -->
+        <section class="adm-ops-grid" aria-label="Kawalan Pelarasan Token dan Bajet AI">
+          <div class="bento-card">
+            <h2 class="section-title" style="margin-bottom:4px">Pelarasan Manual / Tolak Token (+/-)</h2>
+            <p class="section-subtitle" style="margin-bottom:12px">Gunakan nilai negatif (cth: <code>-45</code>) untuk kes tersalah kredit/refund atau nilai positif untuk pampasan.</p>
+            <form id="adminAdjustTokensForm" style="display:flex;flex-direction:column;gap:10px">
+              <div>
+                <label for="admAdjustStudentInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">E-mel / ID Pelajar *</label>
+                <input type="text" id="admAdjustStudentInput" class="text-input" required autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Klik butang Pilih pada jadual atau taip e-mel">
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="flex:0 0 120px">
+                  <label for="admAdjustDeltaInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">Jumlah (+/-) *</label>
+                  <input type="number" id="admAdjustDeltaInput" class="text-input tabular-nums" required min="-5000" max="5000" placeholder="-45">
+                </div>
+                <div style="flex:1 1 160px">
+                  <label for="admAdjustReasonInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">Nota / Sebab Pelarasan *</label>
+                  <input type="text" id="admAdjustReasonInput" class="text-input" required placeholder="cth: Tersalah kredit berganda">
                 </div>
               </div>
-              <div id="admSubjectPillsGrid" class="adm-subject-pills-grid"></div>
-            </fieldset>
+              <button type="submit" id="admAdjustSubmitBtn" class="btn btn-outline">Laksanakan Pelarasan Token</button>
+            </form>
+          </div>
 
-            <div style="grid-column:1/-1">
-              <label for="admPackage" style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:4px">Nilai Akses Pakej Sebenar (Disimpan ke Pangkalan Data)</label>
-              <input type="text" id="admPackage" name="aksesPakej" class="text-input" value="ALL" required placeholder="ALL atau Sejarah, Sains">
-            </div>
-
-            <div style="grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-              <span style="font-size:0.8rem;color:var(--text-muted)">Nombor Sokongan Admin dalam Mesej WhatsApp: <strong class="tabular-nums">013-732 7696</strong></span>
-              <div style="display:flex;gap:8px">
-                <button type="button" id="admResetFormBtn" class="btn btn-outline">Kosongkan Borang</button>
-                <button type="submit" id="admSaveUserBtn" class="btn btn-primary">Simpan &amp; Aktifkan Akses</button>
+          <div class="bento-card">
+            <h2 class="section-title" style="margin-bottom:4px">Kawalan Had Bajet Harian Cikgu AI</h2>
+            <p class="section-subtitle" style="margin-bottom:12px">Naikkan had kos harian apabila trafik peperiksaan SPM meningkat atau hadkan kos laluan asas.</p>
+            <form id="adminAiBudgetForm" style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <div style="flex:1 1 130px">
+                  <label for="admBudgetCapInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">Had Kos Harian (RM)</label>
+                  <input type="number" id="admBudgetCapInput" class="text-input tabular-nums" required min="0.5" max="500" step="0.5" value="2.00">
+                </div>
+                <div style="flex:1 1 140px">
+                  <label for="admVisionCapInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">Had Snap &amp; Check / Hari</label>
+                  <input type="number" id="admVisionCapInput" class="text-input tabular-nums" required min="0" max="5000" step="10" value="100">
+                </div>
               </div>
-            </div>
-          </form>
+              <button type="submit" id="admSaveBudgetBtn" class="btn btn-primary">Simpan Had Bajet Harian</button>
+            </form>
+          </div>
         </section>
 
-        <!-- Senarai Semakan Langganan & Kawalan Akses Pelanggan -->
+        <!-- 4. Senarai Akaun Pelajar & Dompet Token -->
         <section class="leaderboard-card" aria-labelledby="adminUsersHeading">
           <div class="section-header">
             <div>
-              <h2 id="adminUsersHeading" class="section-title">Senarai Pelanggan, Status Langganan &amp; Peranti</h2>
-              <p class="section-subtitle">Kawal status AKTIF/SEKAT, semak tarikh tamat langganan, atau reset peranti pelanggan dengan 1 klik.</p>
+              <h2 id="adminUsersHeading" class="section-title">Senarai Akaun Pelajar &amp; Dompet Token AI</h2>
+              <p class="section-subtitle">Pilih akaun untuk isi borang, kredit pantas (+45 / +160 / +500), WhatsApp terus, atau sekat/aktifkan akaun.</p>
             </div>
             <div class="leaderboard-controls">
-              <label for="adminSearchInput" class="sr-only">Cari pelanggan</label>
-              <input type="search" id="adminSearchInput" class="search-input" style="min-inline-size:240px;padding-inline-start:14px" placeholder="Cari nama, telefon atau pakej...">
-              <label for="adminStatusFilter" class="sr-only">Tapis status langganan</label>
+              <label for="adminSearchInput" class="sr-only">Cari pelajar</label>
+              <input type="search" id="adminSearchInput" class="search-input" style="min-inline-size:230px;padding-inline-start:14px" placeholder="Cari nama, e-mel atau kod rujukan...">
+              <label for="adminStatusFilter" class="sr-only">Tapis akaun pelajar</label>
               <select id="adminStatusFilter" class="select-control">
-                <option value="ALL">Semua Status</option>
+                <option value="ALL">Semua Pelajar</option>
+                <option value="TOPUP">Ada Token Top-up</option>
                 <option value="AKTIF">Aktif Sahaja</option>
-                <option value="SEKAT">Disekat / Tamat</option>
+                <option value="SEKAT">Disekat Sahaja</option>
               </select>
             </div>
           </div>
 
           <div tabindex="0" role="region" aria-labelledby="adminUsersHeading" class="table-wrapper">
             <table class="lb-table admin-users-table">
-              <thead>
-                <tr>
-                  <th scope="col">Pelanggan &amp; ID</th>
-                  <th scope="col">PIN</th>
-                  <th scope="col">Pakej</th>
-                  <th scope="col">Status &amp; Tamat</th>
-                  <th scope="col">Peranti</th>
-                  <th scope="col">Akses Terakhir</th>
-                  <th scope="col">Tindakan</th>
-                </tr>
-              </thead>
+              <thead><tr><th scope="col">Pelajar &amp; E-mel</th><th scope="col">Dompet Token</th><th scope="col">Rujukan &amp; Set</th><th scope="col">Status &amp; Akses</th><th scope="col">Tindakan</th></tr></thead>
               <tbody id="adminUsersTableBody"></tbody>
             </table>
           </div>
         </section>
 
-        <!-- Log Keselamatan & Akses Terkini -->
-        <section class="leaderboard-card" aria-labelledby="adminLogsHeading">
-          <div class="section-header">
-            <div>
-              <h2 id="adminLogsHeading" class="section-title">Log Akses &amp; Sekatan Peranti Terkini</h2>
-              <p class="section-subtitle">Memaparkan cubaan log masuk, PIN salah, dan sekatan melebihi had 2 peranti secara langsung.</p>
-            </div>
+        <!-- 5. Peti Masuk Aduan & Laporan Isu Pelajar -->
+        <section class="leaderboard-card" aria-labelledby="adminIssuesHeading">
+          <div class="section-header"><div><h2 id="adminIssuesHeading" class="section-title">Peti Masuk Aduan &amp; Laporan Isu Pelajar</h2><p class="section-subtitle">Semak aduan teknikal atau kesilapan soalan daripada pelajar dan tandakan selesai selepas tindakan.</p></div></div>
+          <div tabindex="0" role="region" aria-labelledby="adminIssuesHeading" class="table-wrapper">
+            <table class="lb-table admin-issues-table">
+              <thead><tr><th scope="col">Masa &amp; Status</th><th scope="col">Kategori</th><th scope="col">Butiran &amp; Halaman</th><th scope="col">Pengadu</th><th scope="col">Tindakan</th></tr></thead>
+              <tbody id="adminIssuesTableBody"></tbody>
+            </table>
           </div>
+        </section>
+
+        <!-- 6. Log Aktiviti Admin & Sistem Terkini -->
+        <section class="leaderboard-card" aria-labelledby="adminLogsHeading">
+          <div class="section-header"><div><h2 id="adminLogsHeading" class="section-title">Log Aktiviti Admin &amp; Sistem Terkini</h2><p class="section-subtitle">Memaparkan pengaktifan pelan terus, pelarasan token, perubahan bajet AI, dan status akaun.</p></div></div>
           <div tabindex="0" role="region" aria-labelledby="adminLogsHeading" class="table-wrapper">
             <table class="lb-table admin-logs-table">
-              <thead>
-                <tr>
-                  <th scope="col">Masa</th>
-                  <th scope="col">ID Pengguna</th>
-                  <th scope="col">Peristiwa</th>
-                  <th scope="col">Peranti</th>
-                  <th scope="col">Butiran</th>
-                </tr>
-              </thead>
+              <thead><tr><th scope="col">Masa</th><th scope="col">ID Pengguna</th><th scope="col">Peristiwa</th><th scope="col">Sumber</th><th scope="col">Butiran</th></tr></thead>
               <tbody id="adminLogsTableBody"></tbody>
             </table>
           </div>
+        </section>
+
+        <!-- 7. Zon Berhati-hati: Kawalan Mod Operasi Portal -->
+        <section class="bento-card adm-mode-switch-card adm-danger-zone" aria-labelledby="adminPortalModeHeading">
+          <div style="max-inline-size:68ch">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px"><h2 id="adminPortalModeHeading" class="section-title" style="margin:0">Mod Operasi Portal Semasa (Zon Penting)</h2><span id="admPortalModeBadge" class="status-badge badge-done">Mod Terbuka Aktif</span></div>
+            <p id="admPortalModeDesc" class="section-subtitle" style="margin:0">Menukar mod akan terus menjejaskan akses log masuk pelajar di halaman utama. Sila pastikan tindakan sebelum menukar mod.</p>
+          </div>
+          <div><button type="button" id="admToggleOpenModeBtn" class="btn btn-primary">Tukar ke Mod Log Masuk Wajib</button></div>
         </section>
       </div>
     </div>
   </div>
 
+  <div id="spmCountdownLiveAnnouncer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
   <div id="portalToast" class="toast-banner" role="status" aria-live="polite" hidden></div>
 
   <script src="./vendor/anime.umd.min.js"></script>
   <script src="./vendor/supabase.umd.min.js"></script>
-  <script src="./config.js?v=22"></script>
-  <script src="./animations.js?v=22"></script>
-  <script src="./app.js?v=22"></script>
-  <script type="module" src="./integrations/cikgu-ai/index.js?v=22"></script>
+  <script src="./config.js?v=24"></script>
+  <script src="./animations.js?v=24"></script>
+  <script src="./app.js?v=24"></script>
+  <script type="module" src="./integrations/cikgu-ai/index.js?v=24"></script>
 </body>
 </html>
 

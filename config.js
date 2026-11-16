@@ -65,29 +65,6 @@ window.ETUTOR_CONFIG = {
   ],
 
   PRICING_PLANS: {
-    single: {
-      code: "PAKEJ_FOKUS",
-      name: "Pas Fokus Subjek",
-      price: "RM 29",
-      period: "akses penuh sehingga tamat SPM",
-      badge: "Pilihan Ulang Kaji Terfokus"
-    },
-    allAccess: {
-      code: "PAKEJ_SEMUA_SUBJEK",
-      name: "Pas Penuh Semua Subjek SPM",
-      price: "RM 59",
-      originalPrice: "RM 120",
-      period: "sekali bayar • akses penuh sehingga SPM",
-      badge: "Paling Popular • Jimat 50%"
-    },
-    family: {
-      code: "PAKEJ_KELUARGA",
-      name: "Pas Kembar / Adik-Beradik (2 Akaun)",
-      price: "RM 99",
-      originalPrice: "RM 240",
-      period: "2 ID Pelajar berasingan • 4 peranti",
-      badge: "Terbaik Untuk Ibu Bapa"
-    },
     tokenStarter: {
       code: "PEK_CUBA_45",
       name: "Pek Cuba — 45 Token AI Ekspres",
@@ -107,14 +84,7 @@ window.ETUTOR_CONFIG = {
       name: "Pek Pecutan SPM — 500 Token AI Ekspres",
       price: "RM 39",
       tokens: 500,
-      period: "jimat 30% • sokongan 2 akaun"
-    },
-    tokenClass: {
-      code: "PEK_KELAS_1500",
-      name: "Pek Panitia / Kelas Cikgu — 1,500 Token AI",
-      price: "RM 99",
-      tokens: 1500,
-      period: "baucar untuk 30-40 pelajar"
+      period: "jimat 30% • sah sehingga tamat SPM"
     }
   }
 };

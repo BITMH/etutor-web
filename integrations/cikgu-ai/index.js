@@ -4,7 +4,7 @@
  * Mengorkestrasi penderia skrin iframe, jambatan penandaan Kertas 2, dan laci sembang Cikgu AI.
  */
 
-import { onDailyTokenChange, saveDailyTokenState } from "./config.js?v=21";
+import { DAILY_AI_TOKEN_LIMIT, onDailyTokenChange, saveDailyTokenState } from "./config.js";
 import { CikguFailoverClient } from "./api/failover-client.js?v=21";
 import { WarmupStateMachine } from "./state/warmup-machine.js?v=21";
 import { CikguSpeechIO } from "./audio/speech-io.js?v=21";
@@ -54,9 +54,10 @@ export function initCikguAiIntegration() {
   window.addEventListener("etutor:wallet-synced", (ev) => {
     const d = ev && ev.detail;
     if (d && typeof d.remaining === "number") {
-      saveDailyTokenState(d.remaining, d.limit || 30, {
+      saveDailyTokenState(d.remaining, d.limit || DAILY_AI_TOKEN_LIMIT, {
         paidBalance: Number(d.paidBalance) || 0,
-        freeRemaining: typeof d.freeRemaining === "number" ? d.freeRemaining : undefined
+        freeRemaining: typeof d.freeDailyRemaining === "number" ? d.freeDailyRemaining : (typeof d.freeRemaining === "number" ? d.freeRemaining : undefined),
+        freeMonthlyRemaining: typeof d.freeMonthlyRemaining === "number" ? d.freeMonthlyRemaining : undefined
       });
     }
   });

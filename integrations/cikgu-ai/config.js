@@ -12,7 +12,7 @@ export const CIKGU_STORAGE_KEYS = {
   CLIENT_UID: "etutor_cikgu_client_uid_v1"
 };
 
-export const DAILY_AI_TOKEN_LIMIT = 30;
+export const DAILY_AI_TOKEN_LIMIT = 5;
 
 const isLocalHost =
   typeof window !== "undefined" &&
@@ -187,36 +187,62 @@ export function onDailyTokenChange(fn) {
 
 export function loadDailyTokenState() {
   const today = getMytDateKey();
+  const curMonth = today.slice(0, 7);
   try {
     const raw = localStorage.getItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (parsed && typeof parsed.paidBalance === "number") {
         const paid = Math.max(0, Math.floor(parsed.paidBalance));
+        const sameMonth = parsed.monthKey === curMonth;
+        const monthlyRem = sameMonth && typeof parsed.freeMonthlyRemaining === "number"
+          ? Math.max(0, Math.min(230, Math.floor(parsed.freeMonthlyRemaining)))
+          : 30;
         const sameDay = parsed.date === today;
         const lim = Number(parsed.limit) || DAILY_AI_TOKEN_LIMIT;
-        const freeRem = sameDay && typeof parsed.freeRemaining === "number"
-          ? Math.max(0, Math.min(lim, Math.floor(parsed.freeRemaining)))
-          : DAILY_AI_TOKEN_LIMIT;
+        const rawDaily = typeof parsed.freeDailyRemaining === "number" ? parsed.freeDailyRemaining : parsed.freeRemaining;
+        const freeRem = sameDay && typeof rawDaily === "number"
+          ? Math.max(0, Math.min(DAILY_AI_TOKEN_LIMIT, Math.min(monthlyRem, Math.floor(rawDaily))))
+          : Math.min(DAILY_AI_TOKEN_LIMIT, monthlyRem);
         const rem = sameDay && typeof parsed.remaining === "number"
           ? Math.max(0, Math.floor(parsed.remaining))
           : freeRem + paid;
-        return { date: today, remaining: rem, limit: lim, paidBalance: paid, freeRemaining: freeRem };
+        return {
+          ...parsed,
+          date: today,
+          monthKey: parsed.monthKey || curMonth,
+          freeMonthlyRemaining: monthlyRem,
+          freeDailyRemaining: freeRem,
+          remaining: rem,
+          limit: lim,
+          paidBalance: paid,
+          freeRemaining: freeRem
+        };
       }
       if (parsed && parsed.date === today && typeof parsed.remaining === "number") {
         const lim = Number(parsed.limit) || DAILY_AI_TOKEN_LIMIT;
         const rem = Math.max(0, Math.min(lim, Math.floor(parsed.remaining)));
-        return { date: today, remaining: rem, limit: lim, paidBalance: 0, freeRemaining: rem };
+        return { ...parsed, date: today, monthKey: curMonth, remaining: rem, limit: lim, paidBalance: 0, freeDailyRemaining: rem, freeRemaining: rem };
       }
     }
   } catch {
     // abaikan
   }
-  return { date: today, remaining: DAILY_AI_TOKEN_LIMIT, limit: DAILY_AI_TOKEN_LIMIT, paidBalance: 0, freeRemaining: DAILY_AI_TOKEN_LIMIT };
+  return {
+    date: today,
+    monthKey: curMonth,
+    freeMonthlyRemaining: 30,
+    freeDailyRemaining: DAILY_AI_TOKEN_LIMIT,
+    remaining: DAILY_AI_TOKEN_LIMIT,
+    limit: DAILY_AI_TOKEN_LIMIT,
+    paidBalance: 0,
+    freeRemaining: DAILY_AI_TOKEN_LIMIT
+  };
 }
 
 export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT, extra = null) {
   const today = getMytDateKey();
+  const curMonth = today.slice(0, 7);
   const prev = loadDailyTokenState();
   const safePaid = extra && typeof extra.paidBalance === "number"
     ? Math.max(0, Math.floor(extra.paidBalance))
@@ -226,8 +252,24 @@ export function saveDailyTokenState(remaining, limit = DAILY_AI_TOKEN_LIMIT, ext
   const safeRem = Math.max(0, Math.min(maxAllowed, Math.floor(Number(remaining))));
   const safeFree = extra && typeof extra.freeRemaining === "number"
     ? Math.max(0, Math.floor(extra.freeRemaining))
-    : Math.max(0, safeRem - safePaid);
-  const next = { date: today, remaining: safeRem, limit: safeLim, paidBalance: safePaid, freeRemaining: safeFree };
+    : Math.max(0, Math.min(DAILY_AI_TOKEN_LIMIT, safeRem - safePaid));
+  const prevFree = typeof prev.freeDailyRemaining === "number" ? prev.freeDailyRemaining : (prev.freeRemaining || DAILY_AI_TOKEN_LIMIT);
+  const freeSpentDelta = Math.max(0, prevFree - safeFree);
+  const prevMonthly = typeof prev.freeMonthlyRemaining === "number" ? prev.freeMonthlyRemaining : 30;
+  const safeMonthly = extra && typeof extra.freeMonthlyRemaining === "number"
+    ? Math.max(0, Math.floor(extra.freeMonthlyRemaining))
+    : Math.max(0, prevMonthly - freeSpentDelta);
+  const next = {
+    ...prev,
+    date: today,
+    monthKey: prev.monthKey || curMonth,
+    freeMonthlyRemaining: safeMonthly,
+    freeDailyRemaining: safeFree,
+    remaining: safeRem,
+    limit: safeLim,
+    paidBalance: safePaid,
+    freeRemaining: safeFree
+  };
   try {
     localStorage.setItem(CIKGU_STORAGE_KEYS.DAILY_TOKENS, JSON.stringify(next));
   } catch {

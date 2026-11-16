@@ -23,6 +23,9 @@
   const LIVE_CATALOG_CACHE_KEY = "etutor_live_catalog_v1";
   const PORTAL_PREFS_STORAGE_KEY = "etutor_portal_prefs_v1";
   const UNLOCKED_CONTENTS_STORAGE_KEY = "etutor_unlocked_contents_v1";
+  const SPM_COUNTDOWN_PREFS_KEY = "etutor_spm2026_countdown_prefs_v1";
+  const PENDING_REFERRAL_STORAGE_KEY = "etutor_pending_ref_code_v1";
+  const ATTRIBUTED_REFERRAL_STORAGE_KEY = "etutor_attributed_ref_v1";
 
   // --- [config/learningModulesRegistry.js] ---
   /**
@@ -42,6 +45,7 @@
   const PORTAL_MODULES = [
     { id: "klon_spm", stage: "spm", title: "Set Soalan Klon SPM Interaktif", active: true, defaultOpen: true, defaultVisible: true },
     { id: "pra_spm", stage: "spm", title: "Soalan Percubaan / Pra-SPM Negeri", active: true, defaultOpen: false, defaultVisible: true },
+    { id: "countdown_spm", stage: "spm", title: "Countdown & Jadual Waktu SPM 2026", active: true, defaultOpen: false, defaultVisible: true },
     { id: "progress", stage: "all", title: "Kemajuan Pembelajaran & Analisis", active: true, defaultOpen: false, defaultVisible: true },
     { id: "leaderboard", stage: "all", title: "Carta Kedudukan Pelajar (Leaderboard)", active: true, defaultOpen: false, defaultVisible: true },
     { id: "nota_interaktif", stage: "spm", title: "Nota Interaktif Visual", active: false, defaultOpen: false, defaultVisible: false, badge: "Akan Datang" },
@@ -119,7 +123,13 @@
     alert: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>',
     lock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 018 0v4"/></svg>',
     unlock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 017.5-1.9"/></svg>',
-    logout: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/></svg>'
+    logout: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 17l5-5-5-5M21 12H9m4 9H5a2 2 0 01-2-2V5a2 2 0 012-2h8"/></svg>',
+    calendar: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18"/></svg>',
+    starOutline: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-linejoin="round"/></svg>',
+    starSolid: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-linejoin="round"/></svg>',
+    download: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>',
+    listTimeline: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>',
+    gridCards: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
   };
 
   // --- [shared/utils/formatters.js] ---
@@ -235,6 +245,7 @@
     pinProgressStateByFileId: {},
     supabaseAuthenticated: false,
     pendingKlonScroll: false,
+    pendingCountdownScroll: false,
     klonVisibleLimit: 12,
     harianVisibleLimit: 12,
     activeStage: "spm",
@@ -1020,6 +1031,25 @@
     }
   }
 
+
+  function setFormBusy(formEl, isBusy, busyLabel) {
+    if (!formEl) return;
+    const submitBtn = formEl.querySelector('button[type="submit"], input[type="submit"]');
+    if (!submitBtn) return;
+    if (isBusy) {
+      if (!submitBtn.dataset.origLabel) {
+        submitBtn.dataset.origLabel = submitBtn.textContent || "";
+      }
+      submitBtn.disabled = true;
+      if (busyLabel) submitBtn.textContent = busyLabel;
+    } else {
+      submitBtn.disabled = false;
+      if (submitBtn.dataset.origLabel) {
+        submitBtn.textContent = submitBtn.dataset.origLabel;
+      }
+    }
+  }
+
   // --- [features/dashboard/openDashboardBuilder.js] ---
   /**
    * src/features/dashboard/openDashboardBuilder.js
@@ -1611,64 +1641,229 @@
     });
   }
 
-  // --- [features/dashboard/tokenWalletController.js] ---
+  // --- [features/dashboard/tokenReferralService.js] ---
   /**
-   * src/features/dashboard/tokenWalletController.js
-   * Pengawal Dompet Token AI Pelajar (#tokenWalletDialog): paparan baki, tebus baucar top-up & jemputan rakan.
+   * src/features/dashboard/tokenReferralService.js
+   * Penangkapan kod rujukan (?ref=ET...), tuntutan bonus rujukan (had 20/bulan),
+   * dan penebusan baucar bersepadu dengan pengawal log masuk & jambatan GAS->Supabase.
    */
 
 
 
 
 
+
+
+  const REF_CODE_REGEX = /^ET[A-Z0-9]{6,12}$/;
+
+  function extractRefParamFromLocation() {
+    try {
+      const sp = new URLSearchParams(window.location.search || "");
+      let raw = sp.get("ref") || "";
+      if (!raw && window.location.hash && window.location.hash.indexOf("?") !== -1) {
+        const hashQuery = window.location.hash.slice(window.location.hash.indexOf("?") + 1);
+        raw = new URLSearchParams(hashQuery).get("ref") || "";
+      }
+      const clean = String(raw).trim().toUpperCase();
+      return REF_CODE_REGEX.test(clean) ? clean : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function initTokenReferralCapture() {
+    const code = extractRefParamFromLocation();
+    if (!code) return "";
+    try {
+      localStorage.setItem(PENDING_REFERRAL_STORAGE_KEY, code);
+      localStorage.setItem(ATTRIBUTED_REFERRAL_STORAGE_KEY, code);
+    } catch (e) {}
+    return code;
+  }
+
+  function getAttributedReferralCode() {
+    try {
+      const raw = (localStorage.getItem(ATTRIBUTED_REFERRAL_STORAGE_KEY) || "").trim().toUpperCase();
+      return REF_CODE_REGEX.test(raw) ? raw : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  async function tryClaimPendingReferralBonus() {
+    let pendingCode = "";
+    try {
+      pendingCode = (localStorage.getItem(PENDING_REFERRAL_STORAGE_KEY) || "").trim().toUpperCase();
+    } catch (e) {}
+    if (!pendingCode || !REF_CODE_REGEX.test(pendingCode)) {
+      return { ok: false, skipped: true };
+    }
+    if (!isSupabaseConfigured()) return { ok: false, unconfigured: true };
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, unconfigured: true };
+    const sessRes = await sb.auth.getSession();
+    const session = sessRes && sessRes.data ? sessRes.data.session : null;
+    if (!session || !session.user) return { ok: false, authRequired: true };
+
+    const localCompleted = loadOpenScoresList().length;
+    const stateCompleted = Array.isArray(portalState.scores) ? portalState.scores.length : 0;
+    if (localCompleted < 1 && stateCompleted < 1) {
+      return { ok: false, waitingQuiz: true };
+    }
+
+    const res = await sbClaimAiReferralBonus(pendingCode);
+    if (res && res.ok) {
+      try { localStorage.removeItem(PENDING_REFERRAL_STORAGE_KEY); } catch (e) {}
+      try { window.dispatchEvent(new CustomEvent("etutor:refresh-wallet-requested")); } catch (e) {}
+      showToast("Bonus Rujukan Aktif! +10 Token Asas ditambah ke dompet anda & rakan.");
+      return res;
+    }
+
+    const errMsg = String((res && res.error) || "");
+    if (/telah ditebus|sendiri|tidak sah|mencapai had|20 rujukan/i.test(errMsg)) {
+      try {
+        localStorage.removeItem(PENDING_REFERRAL_STORAGE_KEY);
+        if (/sendiri/i.test(errMsg)) localStorage.removeItem(ATTRIBUTED_REFERRAL_STORAGE_KEY);
+      } catch (e) {}
+    }
+    return res || { ok: false };
+  }
+
+  async function redeemTopupVoucherUnified(rawCode) {
+    const cleanCode = String(rawCode || "").replace(/\s+/g, "").toUpperCase();
+    if (cleanCode.length < 6) {
+      return { ok: false, error: "Sila masukkan sekurang-kurangnya 6 aksara kod baucar." };
+    }
+
+    if (!isSupabaseConfigured()) {
+      return callBackend("redeemAiVoucher", { code: cleanCode });
+    }
+
+    const sb = getSupabaseClient();
+    const sessRes = sb ? await sb.auth.getSession() : null;
+    const session = sessRes && sessRes.data ? sessRes.data.session : null;
+    if (!session || !session.access_token) {
+      return {
+        ok: false,
+        requiresAuth: true,
+        error: "Sila log masuk Google atau E-mel dahulu supaya Token Top-up Kekal disimpan selamat dalam akaun anda (kod anda belum digunakan)."
+      };
+    }
+
+    const sbRes = await sbRedeemAiTopupVoucher(cleanCode);
+    if (sbRes && sbRes.ok) {
+      return sbRes;
+    }
+
+    const errTxt = String((sbRes && sbRes.error) || "");
+    if (!/tidak ditemui/i.test(errTxt)) {
+      return sbRes || { ok: false, error: "Kod baucar tidak sah atau telah ditebus." };
+    }
+
+    const edgeBase = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.CIKGU_SUPABASE_EDGE_URL) || "https://ktesekiguardgfdgrmlp.supabase.co/functions/v1/cikgu-semak").replace(/\/+$/, "");
+    try {
+      const resp = await fetch(edgeBase + "/v1/redeem-voucher", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + session.access_token
+        },
+        body: JSON.stringify({ code: cleanCode })
+      });
+      const parsed = await resp.json();
+      return parsed || { ok: false, error: "Kod baucar tidak ditemui atau telah ditebus sebelum ini." };
+    } catch (e) {
+      return { ok: false, error: "Gagal menghubungi pelayan pengesahan baucar. Semak sambungan internet anda." };
+    }
+  }
+
+  // --- [features/dashboard/tokenWalletController.js] ---
+  /**
+   * src/features/dashboard/tokenWalletController.js
+   * Pengawal Dompet Token AI Pelajar (#tokenWalletDialog): paparan baki tepat (5/hari, 30/bulan, Top-up Kekal),
+   * pengawal wajib log masuk sebelum tebus baucar, dan pautan rujukan automatik (had 20/bulan).
+   */
+
+
+
+
+
+
+
   const WALLET_STORAGE_KEY = "etutor_cikgu_daily_tokens_v1";
+  const REF_MONTHLY_LIMIT = 20;
+
+  function getMytDayAndMonthKeys() {
+    const iso = new Date(Date.now() + 8 * 3600 * 1000).toISOString();
+    return { day: iso.slice(0, 10), month: iso.slice(0, 7) };
+  }
 
   function readWalletLocalSnapshot() {
-    const nowMyt = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+    const { day: nowMyt, month: nowMonth } = getMytDayAndMonthKeys();
+    let monthlyRem = 30;
+    let dailyFree = 5;
+    let paid = 0;
+    let trialVis = 2;
+    let serverRef = "";
+    let refCnt = 0;
+
     try {
       const raw = localStorage.getItem(WALLET_STORAGE_KEY);
       if (raw) {
         const p = JSON.parse(raw);
-        const paid = Math.max(0, Math.floor(Number(p && p.paidBalance) || 0));
+        paid = Math.max(0, Math.floor(Number(p && p.paidBalance) || 0));
+        const sameMonth = p && p.monthKey === nowMonth;
         const sameDay = p && p.date === nowMyt;
-        const freeRem = sameDay && typeof p.freeRemaining === "number"
-          ? Math.max(0, Math.floor(p.freeRemaining))
-          : (sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining) - paid) : 30);
-        const rem = sameDay && typeof p.remaining === "number" ? Math.max(0, Math.floor(p.remaining)) : (freeRem + paid);
-        return {
-          date: nowMyt,
-          remaining: rem,
-          limit: Number(p && p.limit) || 30,
-          paidBalance: paid,
-          freeRemaining: freeRem,
-          trialVisionRemaining: typeof (p && p.trialVisionRemaining) === "number" ? p.trialVisionRemaining : 2,
-          referralCode: (p && p.referralCode) || buildLocalReferralCode()
-        };
+        monthlyRem = sameMonth && typeof p.freeMonthlyRemaining === "number"
+          ? Math.max(0, Math.min(230, Math.floor(p.freeMonthlyRemaining)))
+          : 30;
+        if (sameDay) {
+          const storedDaily = typeof p.freeDailyRemaining === "number" ? p.freeDailyRemaining : p.freeRemaining;
+          if (typeof storedDaily === "number") {
+            dailyFree = Math.max(0, Math.min(5, Math.min(monthlyRem, Math.floor(storedDaily))));
+          } else {
+            dailyFree = Math.min(5, monthlyRem);
+          }
+        } else {
+          dailyFree = Math.min(5, monthlyRem);
+        }
+        if (typeof (p && p.trialVisionRemaining) === "number") trialVis = Math.max(0, Math.floor(p.trialVisionRemaining));
+        if (p && p.serverReferralCode) serverRef = String(p.serverReferralCode).trim().toUpperCase();
+        if (typeof (p && p.monthlyReferralsCount) === "number") refCnt = Math.max(0, Math.floor(p.monthlyReferralsCount));
       }
     } catch (e) {}
+
     return {
       date: nowMyt,
-      remaining: 30,
-      limit: 30,
-      paidBalance: 0,
-      freeRemaining: 30,
-      trialVisionRemaining: 2,
-      referralCode: buildLocalReferralCode()
+      monthKey: nowMonth,
+      remaining: dailyFree + paid,
+      limit: Math.max(5, 5 + paid),
+      paidBalance: paid,
+      freeDailyRemaining: dailyFree,
+      freeRemaining: dailyFree,
+      freeMonthlyRemaining: monthlyRem,
+      trialVisionRemaining: trialVis,
+      serverReferralCode: serverRef,
+      monthlyReferralsCount: refCnt,
+      monthlyReferralsLimit: REF_MONTHLY_LIMIT
     };
   }
 
-  function buildLocalReferralCode() {
-    const uid = (portalState.user && portalState.user.userId) || portalState.deviceId || "PELAJAR";
-    let hash = 0;
-    for (let i = 0; i < uid.length; i++) {
-      hash = ((hash << 5) - hash + uid.charCodeAt(i)) | 0;
-    }
-    return "ET" + Math.abs(hash).toString(36).toUpperCase().padStart(6, "0").slice(0, 8);
-  }
-
   function persistAndBroadcastWallet(st) {
-    const next = Object.assign(readWalletLocalSnapshot(), st || {});
-    next.remaining = Math.max(0, Math.floor(Number(next.freeRemaining || 0)) + Math.floor(Number(next.paidBalance || 0)));
+    const base = readWalletLocalSnapshot();
+    const next = Object.assign(base, st || {});
+    const monthlyRem = Math.max(0, Math.min(230, Math.floor(Number(next.freeMonthlyRemaining) || 0)));
+    const rawDaily = typeof next.freeDailyRemaining === "number" ? next.freeDailyRemaining : next.freeRemaining;
+    const dailyFree = Math.max(0, Math.min(5, Math.min(monthlyRem, Math.floor(Number(rawDaily) || 0))));
+    const paid = Math.max(0, Math.floor(Number(next.paidBalance) || 0));
+
+    next.freeMonthlyRemaining = monthlyRem;
+    next.freeDailyRemaining = dailyFree;
+    next.freeRemaining = dailyFree;
+    next.paidBalance = paid;
+    next.remaining = dailyFree + paid;
+    next.limit = Math.max(5, 5 + paid);
+
     try {
       localStorage.setItem(WALLET_STORAGE_KEY, JSON.stringify(next));
     } catch (e) {}
@@ -1680,19 +1875,38 @@
     return next;
   }
 
+  function hasActiveSupabaseSessionSyncHint() {
+    return Boolean(portalState.supabaseAuthenticated || portalState.sessionToken);
+  }
+
   function renderWalletBadgeAndModal(st) {
     const s = st || readWalletLocalSnapshot();
+    const isLoggedIn = hasActiveSupabaseSessionSyncHint();
     const navTxt = document.getElementById("navTokenBalanceText");
     if (navTxt) navTxt.textContent = "Token: " + s.remaining;
 
+    const todayEl = document.getElementById("walletTodayAvailableVal");
     const freeEl = document.getElementById("walletFreeBalanceVal");
     const paidEl = document.getElementById("walletPaidBalanceVal");
     const visEl = document.getElementById("walletVisionTrialVal");
     const refEl = document.getElementById("walletReferralCodeText");
-    if (freeEl) freeEl.textContent = String(s.freeRemaining);
+    const refQuotaEl = document.getElementById("walletReferralQuotaBadge");
+    const authNotice = document.getElementById("walletAuthRequiredNotice");
+
+    if (todayEl) todayEl.textContent = String(s.remaining);
+    if (freeEl) freeEl.textContent = s.freeMonthlyRemaining + " / 30";
     if (paidEl) paidEl.textContent = String(s.paidBalance);
-    if (visEl) visEl.textContent = s.paidBalance > 0 ? "Aktif" : String(s.trialVisionRemaining);
-    if (refEl) refEl.textContent = s.referralCode || "ET-JEMPUT";
+    if (visEl) visEl.textContent = s.paidBalance >= 3 ? "Aktif" : String(s.trialVisionRemaining);
+    if (authNotice) authNotice.hidden = isLoggedIn || !isSupabaseConfigured();
+
+    if (refEl) {
+      refEl.textContent = (portalState.supabaseAuthenticated && s.serverReferralCode)
+        ? s.serverReferralCode
+        : "Log Masuk Dahulu";
+    }
+    if (refQuotaEl) {
+      refQuotaEl.textContent = (s.monthlyReferralsCount || 0) + " / " + REF_MONTHLY_LIMIT + " rakan bulan ini";
+    }
   }
 
   async function refreshAiWalletFromServer() {
@@ -1700,15 +1914,20 @@
       const res = await sbGetMyAiWallet();
       if (res && res.ok) {
         persistAndBroadcastWallet({
-          freeRemaining: Number(res.freeMonthlyRemaining) || 0,
-          limit: Number(res.freeMonthlyLimit) || 30,
+          freeDailyRemaining: Number(res.freeDailyRemaining) || 0,
+          freeRemaining: Number(res.freeDailyRemaining) || 0,
+          freeMonthlyRemaining: Number(res.freeMonthlyRemaining) || 0,
           paidBalance: Number(res.paidBalance) || 0,
           trialVisionRemaining: Number(res.trialVisionRemaining) || 0,
-          referralCode: res.referralCode || buildLocalReferralCode()
+          serverReferralCode: res.referralCode || "",
+          monthlyReferralsCount: Number(res.monthlyReferralsCount) || 0,
+          monthKey: res.monthKey || getMytDayAndMonthKeys().month,
+          date: res.dayKey || getMytDayAndMonthKeys().day
         });
-        if (Array.isArray(res.unlockedKeys) && typeof mergeServerUnlockedKeys === "function") {
-          mergeServerUnlockedKeys(res.unlockedKeys);
-          if (typeof renderKlonCatalogSection === "function") renderKlonCatalogSection();
+        if (Array.isArray(res.unlockedKeys)) {
+          try {
+            window.dispatchEvent(new CustomEvent("etutor:server-unlocked-keys", { detail: { keys: res.unlockedKeys } }));
+          } catch (e) {}
         }
         return;
       }
@@ -1723,38 +1942,36 @@
     if (stEl) stEl.textContent = "";
     renderWalletBadgeAndModal(readWalletLocalSnapshot());
     refreshAiWalletFromServer();
-    if (!dlg.open && typeof dlg.showModal === "function") {
-      dlg.showModal();
-    }
+    if (!dlg.open && typeof dlg.showModal === "function") dlg.showModal();
   }
 
   function initTokenWalletBindings() {
     const dlg = document.getElementById("tokenWalletDialog");
     const openBtn = document.getElementById("openTokenWalletBtn");
     const closeBtn = document.getElementById("closeTokenWalletBtn");
+    const loginBtn = document.getElementById("walletOpenSyncLoginBtn");
     const redeemForm = document.getElementById("redeemAiVoucherForm");
     const copyRefBtn = document.getElementById("copyReferralLinkBtn");
 
     renderWalletBadgeAndModal(readWalletLocalSnapshot());
-
-    if (openBtn) {
-      openBtn.addEventListener("click", openTokenWalletDialog);
-    }
+    if (openBtn) openBtn.addEventListener("click", openTokenWalletDialog);
     window.addEventListener("etutor:open-token-wallet", openTokenWalletDialog);
+    window.addEventListener("etutor:refresh-wallet-requested", refreshAiWalletFromServer);
     window.addEventListener("etutor:cikgu-token-updated", function (ev) {
       if (ev && ev.detail) renderWalletBadgeAndModal(ev.detail);
     });
 
     if (dlg) {
       bindLightDismissFallback(dlg);
-      dlg.addEventListener("cancel", function (ev) {
-        ev.preventDefault();
-        closeTopLayer(dlg);
-      });
+      dlg.addEventListener("cancel", function (ev) { ev.preventDefault(); closeTopLayer(dlg); });
     }
     if (closeBtn && dlg) {
-      closeBtn.addEventListener("click", function () {
-        closeTopLayer(dlg);
+      closeBtn.addEventListener("click", function () { closeTopLayer(dlg); });
+    }
+    if (loginBtn && dlg) {
+      loginBtn.addEventListener("click", async function () {
+        if (dlg.open) await closeTopLayer(dlg);
+        openSyncDialog();
       });
     }
 
@@ -1764,36 +1981,37 @@
         if (dlg && dlg.open) await closeTopLayer(dlg);
         const orderDlg = document.getElementById("orderDialog");
         const pkgSelect = document.getElementById("orderPackageSelect");
-        if (pkgSelect) {
-          pkgSelect.value = packKey;
-          pkgSelect.dispatchEvent(new Event("change"));
-        }
-        if (orderDlg && typeof orderDlg.showModal === "function") {
-          orderDlg.showModal();
-        }
+        if (pkgSelect) { pkgSelect.value = packKey; pkgSelect.dispatchEvent(new Event("change")); }
+        window.dispatchEvent(new CustomEvent("etutor:prefill-order-modal"));
+        if (orderDlg && typeof orderDlg.showModal === "function") orderDlg.showModal();
       });
     });
 
     if (copyRefBtn) {
       copyRefBtn.addEventListener("click", async function () {
+        const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+        const sessRes = sb ? await sb.auth.getSession() : null;
+        const hasSess = Boolean(sessRes && sessRes.data && sessRes.data.session);
         const snap = readWalletLocalSnapshot();
-        const url = window.location.origin + window.location.pathname + "?ref=" + encodeURIComponent(snap.referralCode) + "#login";
+        if (!hasSess || !snap.serverReferralCode) {
+          if (dlg && dlg.open) await closeTopLayer(dlg);
+          openSyncDialog();
+          showToast("Log masuk Google / E-mel dahulu untuk mengaktifkan pautan jemputan unik anda.");
+          return;
+        }
+        const url = window.location.origin + window.location.pathname + "?ref=" + encodeURIComponent(snap.serverReferralCode) + "#login";
         try {
           await navigator.clipboard.writeText(url);
-          showToast("Pautan jemputan rakan disalin (+10 Token bila rakan siap 1 set).");
+          showToast("Pautan jemputan unik disalin! (+10 Token bila rakan log masuk & siap 1 set, had 20/bulan).");
         } catch (e) {
-          showToast("Kod jemputan anda: " + snap.referralCode);
+          showToast("Pautan jemputan anda: " + snap.serverReferralCode);
         }
       });
     }
 
     if (redeemForm) {
       const voucherInp = document.getElementById("aiVoucherCodeInput");
-      if (voucherInp) {
-        voucherInp.addEventListener("input", function () {
-          voucherInp.setCustomValidity("");
-        });
-      }
+      if (voucherInp) voucherInp.addEventListener("input", function () { voucherInp.setCustomValidity(""); });
       redeemForm.addEventListener("submit", async function (ev) {
         ev.preventDefault();
         const inp = document.getElementById("aiVoucherCodeInput");
@@ -1808,43 +2026,31 @@
           return;
         }
         inp.setCustomValidity("");
-
         btn.disabled = true;
         btn.textContent = "Menyemak...";
         if (stEl) stEl.textContent = "";
-
         try {
-          let res = await sbRedeemAiTopupVoucher(code);
-          if (!res || res.unconfigured || res.authExpired) {
-            res = await callBackend("redeemAiVoucher", { code: code });
-          }
+          const res = await redeemTopupVoucherUnified(code);
           if (!res || !res.ok) {
             const errMsg = (res && res.error) || "Kod baucar tidak sah atau telah ditebus.";
-            if (stEl) {
-              stEl.style.color = "var(--status-danger)";
-              stEl.textContent = errMsg;
-            }
+            if (stEl) { stEl.style.color = "var(--status-danger)"; stEl.textContent = errMsg; }
             showToast(errMsg);
             return;
           }
           const cur = readWalletLocalSnapshot();
           const added = Number(res.addedTokens) || 0;
-          const nextPaid = typeof res.paidBalance === "number" ? res.paidBalance : (cur.paidBalance + added);
           persistAndBroadcastWallet({
-            paidBalance: nextPaid,
-            freeRemaining: typeof res.freeMonthlyRemaining === "number" ? res.freeMonthlyRemaining : cur.freeRemaining
+            paidBalance: typeof res.paidBalance === "number" ? res.paidBalance : (cur.paidBalance + added),
+            freeDailyRemaining: typeof res.freeDailyRemaining === "number" ? res.freeDailyRemaining : cur.freeDailyRemaining,
+            freeMonthlyRemaining: typeof res.freeMonthlyRemaining === "number" ? res.freeMonthlyRemaining : cur.freeMonthlyRemaining,
+            serverReferralCode: res.referralCode || cur.serverReferralCode,
+            monthlyReferralsCount: typeof res.monthlyReferralsCount === "number" ? res.monthlyReferralsCount : cur.monthlyReferralsCount
           });
           inp.value = "";
-          if (stEl) {
-            stEl.style.color = "var(--grade-emerald)";
-            stEl.textContent = "Berjaya! +" + added + " Token AI ditambah ke dompet kekal anda.";
-          }
+          if (stEl) { stEl.style.color = "var(--grade-emerald)"; stEl.textContent = "Berjaya! +" + added + " Token Top-up Kekal ditambah ke akaun anda."; }
           showToast("+" + added + " Token AI berjaya ditebus!");
         } catch (err) {
-          if (stEl) {
-            stEl.style.color = "var(--status-danger)";
-            stEl.textContent = "Ralat menebus baucar: " + err.message;
-          }
+          if (stEl) { stEl.style.color = "var(--status-danger)"; stEl.textContent = "Ralat menebus baucar: " + err.message; }
         } finally {
           btn.disabled = false;
           btn.textContent = "Tebus Kod";
@@ -1862,6 +2068,17 @@
 
 
 
+
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("etutor:server-unlocked-keys", function (ev) {
+      const keys = ev && ev.detail && ev.detail.keys;
+      if (Array.isArray(keys)) {
+        mergeServerUnlockedKeys(keys);
+        if (typeof renderKlonCatalogSection === "function") renderKlonCatalogSection();
+      }
+    });
+  }
 
   const KLON_UNLOCK_COST = 2;
   const NOTA_UNLOCK_COST = 2;
@@ -1921,7 +2138,9 @@
         saveUnlockedKeysSet(unlocked);
         if (!res.alreadyUnlocked && typeof res.freeMonthlyRemaining === "number") {
           persistAndBroadcastWallet({
-            freeRemaining: Number(res.freeMonthlyRemaining) || 0,
+            freeDailyRemaining: typeof res.freeDailyRemaining === "number" ? Number(res.freeDailyRemaining) : Math.min(5, Number(res.freeMonthlyRemaining) || 0),
+            freeRemaining: typeof res.freeDailyRemaining === "number" ? Number(res.freeDailyRemaining) : Math.min(5, Number(res.freeMonthlyRemaining) || 0),
+            freeMonthlyRemaining: Number(res.freeMonthlyRemaining) || 0,
             paidBalance: Number(res.paidBalance) || 0
           });
           showToast("Dibuka kekal (-" + cost + " Token): " + (title || cleanId));
@@ -1942,10 +2161,12 @@
       return false;
     }
 
-    const useFree = Math.min(cost, Math.max(0, snap.freeRemaining));
+    const useFree = Math.min(cost, Math.max(0, snap.freeDailyRemaining));
     const usePaid = cost - useFree;
     persistAndBroadcastWallet({
-      freeRemaining: Math.max(0, snap.freeRemaining - useFree),
+      freeDailyRemaining: Math.max(0, snap.freeDailyRemaining - useFree),
+      freeRemaining: Math.max(0, snap.freeDailyRemaining - useFree),
+      freeMonthlyRemaining: Math.max(0, snap.freeMonthlyRemaining - useFree),
       paidBalance: Math.max(0, snap.paidBalance - usePaid)
     });
 
@@ -3715,7 +3936,8 @@
 
 
   function isHashAdmin() {
-    return window.location.hash.toLowerCase() === "#admin";
+    const h = window.location.hash.toLowerCase();
+    return h === "#admin" || h.indexOf("#admin?") === 0;
   }
 
   function isHashLogin() {
@@ -3754,7 +3976,7 @@
       if (savedAdminTok) {
         portalState.adminToken = savedAdminTok;
         try {
-          const res = await callBackend("adminDashboard", { adminToken: savedAdminTok });
+          const res = await callAdminBackend("adminDashboard", { adminToken: savedAdminTok });
           if (res && res.ok) {
             document.getElementById("adminLoginShell").hidden = true;
             document.getElementById("adminDashboardShell").hidden = false;
@@ -3780,17 +4002,23 @@
 
     const authed = isPortalUserAuthenticated();
     const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(portalState.pendingKlonScroll);
+    const wantsCountdownScroll = Boolean(portalState.pendingCountdownScroll);
 
     if (isOpenAccessMode() && authed && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
       if (isHashLogin() || window.location.hash.toLowerCase() === "#klon-portal") {
         history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
       }
       portalState.pendingKlonScroll = false;
+      portalState.pendingCountdownScroll = false;
       await enterOpenPortal(false);
       if (wantsKlonScroll) {
         openPortalModuleDropdown("klon_spm");
         const klonHead = document.getElementById("klonCatalogHeading");
         if (klonHead) setTimeout(function () { klonHead.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      } else if (wantsCountdownScroll) {
+        openPortalModuleDropdown("countdown_spm");
+        const cdEl = document.getElementById("moduleDropdownCountdown");
+        if (cdEl) setTimeout(function () { cdEl.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
       }
       return;
     }
@@ -3827,131 +4055,10 @@
     return Boolean(el);
   }
 
-  // --- [features/landing/demoQuizWidget.js] ---
-  /**
-   * src/features/landing/demoQuizWidget.js
-   * Komponen interaktif Simulasi Kuiz Demo pada halaman jualan/utama menggunakan data JSON luaran.
-   */
-  const DEMO_QUESTIONS = [
-    {
-      "topic": "Topik: Ungkapan & Persamaan Kuadratik (Matematik Kertas 1)",
-      "question": "Diberi persamaan kuadratik (x - 4)(2x + 3) = 0. Nyatakan punca-punca bagi persamaan tersebut.",
-      "options": [
-        "x = -4 atau x = 3/2",
-        "x = 4 atau x = -3/2",
-        "x = 4 atau x = 3/2",
-        "x = -4 atau x = -3/2"
-      ],
-      "correctIndex": 1,
-      "explanation": "Apabila hasil darab dua faktor ialah sifar: (x - 4) = 0 menghasilkan x = 4, manakala (2x + 3) = 0 menghasilkan 2x = -3, maka x = -3/2."
-    },
-    {
-      "topic": "Topik: Bab 2 Tingkatan 5 — Perlembagaan Persekutuan (Sejarah Kertas 1)",
-      "question": "Apakah kepentingan utama Pindaan Perlembagaan Persekutuan 1963 dalam sejarah pembinaan negara Malaysia?",
-      "options": [
-        "Memansuhkan jawatan Yang di-Pertuan Agong di peringkat Persekutuan",
-        "Menyesuaikan peruntukan perlembagaan bagi kemasukan Sabah, Sarawak dan Singapura",
-        "Menyeragamkan semua undang-undang adat negeri di bawah satu mahkamah tunggal",
-        "Menggantikan sistem Raja Berperlembagaan kepada sistem Republik"
-      ],
-      "correctIndex": 1,
-      "explanation": "Kata kunci skema KSSM: Pindaan 1963 dilakukan khusus untuk menyesuaikan struktur Mahkamah Tinggi, kedudukan Yang di-Pertua Negeri, dan autonomi imigresen berikutan pembentukan Malaysia."
-    },
-    {
-      "topic": "Topik: Analisis & Tafsiran Penyata Kewangan (Prinsip Perakaunan)",
-      "question": "Perniagaan Wawasan mempunyai Aset Semasa berjumlah RM 54,000 dan Liabiliti Semasa berjumlah RM 18,000. Berapakah Nisbah Semasa perniagaan ini?",
-      "options": [
-        "0.33 : 1",
-        "1.5 : 1",
-        "3 : 1",
-        "36,000 : 1"
-      ],
-      "correctIndex": 2,
-      "explanation": "Rumus Nisbah Semasa = Aset Semasa / Liabiliti Semasa = RM 54,000 / RM 18,000 = 3 : 1. Ini bermakna setiap RM 1 liabiliti jangka pendek disokong oleh RM 3 aset semasa."
-    }
-  ];
-  let activeDemoIdx = 0;
-  let demoXpEarned = 0;
-  const answeredDemoSet = {};
-
-  function renderLandingDemoQuestion(idx) {
-    activeDemoIdx = idx;
-    const q = DEMO_QUESTIONS[idx] || DEMO_QUESTIONS[0];
-    const topicEl = document.getElementById("lpDemoTopicLabel");
-    const textEl = document.getElementById("lpDemoQuestionText");
-    const gridEl = document.getElementById("lpDemoOptionsGrid");
-    const expEl = document.getElementById("lpDemoExplainBox");
-
-    document.querySelectorAll(".lp-demo-tab").forEach(function (btn) {
-      const bIdx = parseInt(btn.getAttribute("data-demo-idx"), 10);
-      btn.setAttribute("aria-selected", bIdx === idx ? "true" : "false");
-    });
-
-    if (topicEl) topicEl.textContent = q.topic;
-    if (textEl) textEl.textContent = q.question;
-    if (expEl) expEl.hidden = true;
-    if (!gridEl) return;
-
-    const letters = ["A", "B", "C", "D"];
-    gridEl.innerHTML = q.options.map(function (optText, optIdx) {
-      return [
-        '<button type="button" class="lp-demo-opt" data-opt-idx="' + optIdx + '">',
-        '  <span class="lp-demo-opt-letter">' + letters[optIdx] + "</span>",
-        "  <span>" + escapeHtml(optText) + "</span>",
-        "</button>"
-      ].join("");
-    }).join("");
-  }
-
-  function handleDemoOptionSelect(optIdx) {
-    const q = DEMO_QUESTIONS[activeDemoIdx] || DEMO_QUESTIONS[0];
-    const gridEl = document.getElementById("lpDemoOptionsGrid");
-    const expEl = document.getElementById("lpDemoExplainBox");
-    const xpBadge = document.getElementById("lpDemoXpBadge");
-    if (!gridEl || !expEl) return;
-
-    const isRight = optIdx === q.correctIndex;
-    gridEl.querySelectorAll(".lp-demo-opt").forEach(function (btn) {
-      const idx = parseInt(btn.getAttribute("data-opt-idx"), 10);
-      btn.classList.remove("is-correct", "is-wrong");
-      if (idx === q.correctIndex) {
-        btn.classList.add("is-correct");
-      } else if (idx === optIdx && !isRight) {
-        btn.classList.add("is-wrong");
-      }
-    });
-
-    if (!answeredDemoSet[activeDemoIdx]) {
-      answeredDemoSet[activeDemoIdx] = true;
-      demoXpEarned += isRight ? 100 : 40;
-      if (xpBadge) xpBadge.textContent = "+" + demoXpEarned + " XP Dicuba";
-    }
-
-    const statusHead = isRight
-      ? "<strong>Jawapan Tepat! (+100 XP)</strong> — Beginilah kepantasan semakan sebenar di dalam eTutor.my:"
-      : "<strong>Kurang Tepat — Jom Semak Skema Sebenar:</strong> Jawapan betul telah ditandakan hijau di atas.";
-
-    const demoCtaHtml = isOpenAccessMode()
-      ? '  <a href="#portal" class="btn btn-primary btn-sm js-enter-open-portal">Buka Bank Soalan Penuh</a>'
-      : '  <a href="#pakej" class="btn btn-primary btn-sm">Buka Akses Penuh Sekarang</a>';
-
-    expEl.className = isRight ? "lp-demo-explain" : "lp-demo-explain is-wrong-box";
-    expEl.innerHTML = [
-      '<div style="margin-bottom:6px">' + statusHead + "</div>",
-      "<div>" + escapeHtml(q.explanation) + "</div>",
-      '<div style="margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">',
-      '  <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary)">Di dalam portal penuh, setiap set mengandungi 40–45 soalan lengkap analisis bab lemah.</span>',
-      demoCtaHtml,
-      "</div>"
-    ].join("");
-    expEl.hidden = false;
-    if (window.ETutorMotion) window.ETutorMotion.animateDemoFeedback(expEl);
-  }
-
   // --- [features/landing/orderLeadModal.js] ---
   /**
    * src/features/landing/orderLeadModal.js
-   * Pengikat acara Halaman Utama (penapis Klon SPM, pautan terus portal, dan dialog tempahan WhatsApp).
+   * Pengikat acara Halaman Utama (pautan terus portal, auto-isi ID pengguna & pautan kelulusan Admin pada dialog tempahan).
    */
 
 
@@ -3961,51 +4068,96 @@
 
 
 
+
+
+  async function resolveLoggedInOrderIdentity() {
+    let loginId = "";
+    let studentName = "";
+    try { loginId = (localStorage.getItem(SYNC_EMAIL_KEY) || "").trim(); } catch (e) {}
+    studentName = (getOpenStudentName() || "").trim();
+
+    if (!loginId || !studentName) {
+      try {
+        const sb = getSupabaseClient();
+        const sessRes = sb ? await sb.auth.getSession() : null;
+        const u = sessRes && sessRes.data && sessRes.data.session ? sessRes.data.session.user : null;
+        if (u) {
+          if (!loginId && u.email) loginId = String(u.email).trim();
+          const meta = u.user_metadata || {};
+          if (!studentName) studentName = String(meta.full_name || meta.name || "").trim();
+        }
+      } catch (e) {}
+    }
+
+    if (!loginId) {
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i) || "";
+          if (k.indexOf("sb-") === 0 && k.slice(-11) === "-auth-token") {
+            const parsed = JSON.parse(localStorage.getItem(k) || "{}");
+            const u = (parsed && parsed.user) || (parsed && parsed.currentSession && parsed.currentSession.user) || null;
+            if (u && u.email) { loginId = String(u.email).trim(); break; }
+          }
+        }
+      } catch (e) {}
+    }
+
+    if (!loginId && portalState.user && portalState.user.userId && String(portalState.user.userId).toUpperCase() !== "PELAJAR") {
+      loginId = String(portalState.user.userId).trim();
+    }
+    if (!studentName && portalState.user && portalState.user.buyerName && String(portalState.user.buyerName).toUpperCase() !== "PELAJAR") {
+      studentName = String(portalState.user.buyerName).trim();
+    }
+    if (!studentName && loginId) {
+      studentName = loginId.indexOf("@") !== -1 ? loginId.split("@")[0] : loginId;
+    }
+    return { studentName: studentName, loginId: loginId };
+  }
+
+  async function prefillOrderUserFields() {
+    const nameInp = document.getElementById("orderStudentName");
+    const phoneInp = document.getElementById("orderPhoneInput");
+    const authBanner = document.getElementById("orderAuthPrompt");
+    const idInfo = await resolveLoggedInOrderIdentity();
+    if (nameInp && !nameInp.value.trim() && idInfo.studentName) {
+      nameInp.value = idInfo.studentName;
+    }
+    if (phoneInp && !phoneInp.value.trim() && idInfo.loginId) {
+      phoneInp.value = idInfo.loginId;
+    }
+    if (authBanner) {
+      authBanner.hidden = Boolean(idInfo.loginId);
+    }
+  }
+
   function initLandingAndOrderBindings() {
-    renderLandingDemoQuestion(0);
-
-    // Segerakkan harga pakej daripada config.js jika diubah pentadbir
     const plans = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PRICING_PLANS) || {};
-    if (plans.single && document.getElementById("lpPriceSingle")) {
-      document.getElementById("lpPriceSingle").textContent = plans.single.price;
-    }
-    if (plans.allAccess && document.getElementById("lpPriceAll")) {
-      document.getElementById("lpPriceAll").textContent = plans.allAccess.price;
-    }
-    if (plans.family && document.getElementById("lpPriceFamily")) {
-      document.getElementById("lpPriceFamily").textContent = plans.family.price;
-    }
-
     const orderDlg = document.getElementById("orderDialog");
     const closeOrderBtn = document.getElementById("closeOrderDialogBtn");
     const pkgSelect = document.getElementById("orderPackageSelect");
-    const focusWrap = document.getElementById("orderFocusSubjectWrap");
-    const focusSelect = document.getElementById("orderFocusSubjectSelect");
     const planBadge = document.getElementById("orderPlanBadge");
     const orderForm = document.getElementById("orderLeadForm");
 
     const syncOrderPlanBadge = function () {
       if (!pkgSelect || !planBadge) return;
-      const key = pkgSelect.value || "allAccess";
+      const key = pkgSelect.value || "tokenFocus";
       const p = plans[key];
-      if (p) {
-        planBadge.textContent = p.name + " — " + p.price;
-      }
-      if (focusWrap) {
-        focusWrap.hidden = key !== "single";
-      }
+      if (p) planBadge.textContent = p.name + " — " + p.price;
     };
 
-    if (pkgSelect) {
-      pkgSelect.addEventListener("change", syncOrderPlanBadge);
+    if (pkgSelect) pkgSelect.addEventListener("change", syncOrderPlanBadge);
+    window.addEventListener("etutor:prefill-order-modal", prefillOrderUserFields);
+    const orderLoginBtn = document.getElementById("orderLoginNowBtn");
+    if (orderLoginBtn && orderDlg) {
+      orderLoginBtn.addEventListener("click", async function () {
+        if (orderDlg.open) await closeTopLayer(orderDlg);
+        openSyncDialog();
+      });
     }
 
     if (closeOrderBtn && orderDlg) {
       closeOrderBtn.addEventListener("click", function () { closeTopLayer(orderDlg); });
-      orderDlg.addEventListener("cancel", function (ev) {
-        ev.preventDefault();
-        closeTopLayer(orderDlg);
-      });
+      orderDlg.addEventListener("cancel", function (ev) { ev.preventDefault(); closeTopLayer(orderDlg); });
       if (typeof HTMLDialogElement !== "undefined" && !("closedBy" in HTMLDialogElement.prototype)) {
         orderDlg.addEventListener("click", function (ev) {
           if (ev.target !== orderDlg) return;
@@ -4017,28 +4169,14 @@
     }
 
     document.addEventListener("click", function (e) {
-      const demoTab = e.target.closest(".lp-demo-tab");
-      if (demoTab) {
-        renderLandingDemoQuestion(parseInt(demoTab.getAttribute("data-demo-idx"), 10) || 0);
-        return;
-      }
-
-      const demoOpt = e.target.closest(".lp-demo-opt");
-      if (demoOpt) {
-        handleDemoOptionSelect(parseInt(demoOpt.getAttribute("data-opt-idx"), 10) || 0);
-        return;
-      }
-
       const planBtn = e.target.closest(".js-select-plan");
       if (planBtn && orderDlg) {
-        const key = planBtn.getAttribute("data-plan-key") || "allAccess";
+        const key = planBtn.getAttribute("data-plan-key") || "tokenFocus";
         const directPayUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PAYMENT_URL) ? window.ETUTOR_CONFIG.PAYMENT_URL.trim() : "";
-        if (directPayUrl) {
-          window.open(directPayUrl, "_blank", "noopener");
-          return;
-        }
-        if (pkgSelect) pkgSelect.value = key;
+        if (directPayUrl) { window.open(directPayUrl, "_blank", "noopener"); return; }
+        if (pkgSelect) pkgSelect.value = plans[key] ? key : "tokenFocus";
         syncOrderPlanBadge();
+        prefillOrderUserFields();
         orderDlg.showModal();
         return;
       }
@@ -4079,12 +4217,7 @@
         const klonSub = (openKlonDirect.getAttribute("data-klon-subject") || "").trim().toLowerCase();
         (async function () {
           if (!(portalState.sessionToken && portalState.user)) {
-            if (!isOpenAccessMode()) {
-              window.location.hash = "#login";
-              syncRouteMode();
-              window.scrollTo(0, 0);
-              return;
-            }
+            if (!isOpenAccessMode()) { window.location.hash = "#login"; syncRouteMode(); window.scrollTo(0, 0); return; }
             window.location.hash = "#klon-portal";
             await enterOpenPortal(false);
           } else {
@@ -4097,9 +4230,8 @@
           }) || list.find(function (c) {
             return c.category === "klon" && String(c.subject || "").toLowerCase() === klonSub;
           });
-          if (found && found.fileId) {
-            openQuizSet(found.fileId, Boolean(found.inProgress), false);
-          } else {
+          if (found && found.fileId) openQuizSet(found.fileId, Boolean(found.inProgress), false);
+          else {
             const klonHead = document.getElementById("klonCatalogHeading");
             if (klonHead) klonHead.scrollIntoView({ behavior: "smooth", block: "start" });
           }
@@ -4129,7 +4261,7 @@
       const backPricing = e.target.closest(".js-back-to-pricing");
       if (backPricing) {
         e.preventDefault();
-        window.location.hash = "#pakej";
+        window.location.hash = "#pelan-token";
         syncRouteMode();
       }
     });
@@ -4138,38 +4270,36 @@
       orderForm.addEventListener("submit", async function (e) {
         e.preventDefault();
         const studentName = document.getElementById("orderStudentName").value.trim();
-        const phone = document.getElementById("orderPhoneInput").value.trim();
-        const key = (pkgSelect && pkgSelect.value) || "allAccess";
-        if (!studentName || phone.length < 7) {
+        const userIdInput = document.getElementById("orderPhoneInput").value.trim();
+        const key = (pkgSelect && pkgSelect.value) || "tokenFocus";
+        if (!studentName || userIdInput.length < 5) {
           orderForm.reportValidity();
           return;
         }
-        const p = plans[key] || { name: "Pek Fokus — 160 Token AI Ekspres", price: "RM 15" };
-        const chosenFocusSubject = (key === "single" && focusSelect && focusSelect.value)
-          ? focusSelect.value.trim()
-          : "";
-        const packageLabel = chosenFocusSubject
-          ? p.name + " — Subjek: " + chosenFocusSubject + " (" + p.price + ")"
-          : p.name + " (" + p.price + ")";
+        const p = plans[key] || { code: "PEK_FOKUS_160", name: "Pek Fokus — 160 Token AI Ekspres", price: "RM 15" };
+        const packageLabel = p.name + " (" + p.price + ")";
+        const refCode = getAttributedReferralCode();
+        const baseUrl = ((window.location.origin && window.location.origin !== "null") ? window.location.origin : "https://etutor.my") + "/";
+        const adminApprovalUrl = baseUrl + "admin/?student=" + encodeURIComponent(userIdInput) +
+          "&pack=" + encodeURIComponent(p.code || "PEK_FOKUS_160") +
+          "&note=" + encodeURIComponent(studentName.slice(0, 80));
 
-        const isTokenPack = key.indexOf("token") === 0;
         const msgLines = [
-          isTokenPack
-            ? "Salam Admin eTutor.my, saya berminat membeli Kod Baucar Top-up Token AI:"
-            : "Salam Admin eTutor.my, saya berminat untuk mengaktifkan akses portal:",
+          "Salam Admin eTutor.my, saya berminat melanggan Pek Token AI berikut:",
           "",
           "Nama Pelajar: " + studentName,
-          "No. Telefon / ID Google: " + phone,
-          "Pilihan Pakej: " + packageLabel,
+          "ID Pengguna eTutor.my: " + userIdInput,
+          "Pilihan Pek: " + packageLabel,
+          ...(refCode ? ["Kod Rujukan Rakan: " + refCode] : []),
           "",
-          isTokenPack
-            ? "Mohon kongsikan maklumat bayaran QR/FPX untuk mendapatkan Kod Baucar Top-up Token AI. Terima kasih!"
-            : "Mohon kongsikan maklumat pembayaran untuk pengaktifan Kod PIN. Terima kasih!"
+          "Link Pantas Admin (Terus Aktifkan & Kredit Token ke Akaun):",
+          adminApprovalUrl,
+          "",
+          "Mohon kongsikan maklumat bayaran QR/FPX supaya token dapat terus dikreditkan ke akaun saya. Terima kasih!"
         ].join("\n");
 
         const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
         const waUrl = "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(msgLines);
-
         try { await navigator.clipboard.writeText(msgLines); } catch (err) {}
         await closeTopLayer(orderDlg);
         window.open(waUrl, "_blank", "noopener");
@@ -4270,6 +4400,944 @@
       : 1;
     setStatText("footerLiveUsersCount", Math.max(1, fallbackSessions));
     subscribeLivePresence(supabase, fallbackSessions);
+  }
+
+  // --- [features/spm-countdown/spmTimeEngine.js] ---
+  /**
+   * src/features/spm-countdown/spmTimeEngine.js
+   * Enjin pengiraan masa Temporal API (Asia/Kuala_Lumpur) berserta sandaran tepat UTC+08:00
+   * dan pemformatan tarikh/waktu rasmi Malaysia.
+   */
+  const SPM_SCHEDULE = {
+    "meta": {
+      "docRef": "LP/SPM/2026 (18 Ogos 2026)",
+      "timeZone": "Asia/Kuala_Lumpur",
+      "writtenStart": { "date": "2026-11-23", "hadir": "08:30", "start": "09:00", "label": "Peperiksaan Bertulis & Ujian Mendengar SPM 2026" },
+      "writtenEnd": { "date": "2026-12-17", "end": "17:00" },
+      "phases": [
+        { "id": "bertutur_bm", "label": "Ujian Bertutur BM", "shortDate": "26–29 Okt", "startDate": "2026-10-26", "startTime": "08:00", "endDate": "2026-10-29", "endTime": "16:10" },
+        { "id": "bertutur_bi", "label": "Ujian Bertutur BI", "shortDate": "2–5 Nov", "startDate": "2026-11-02", "startTime": "08:00", "endDate": "2026-11-05", "endTime": "16:15" },
+        { "id": "amali_sains", "label": "Ujian Amali Sains", "shortDate": "16–18 Nov", "startDate": "2026-11-16", "startTime": "08:00", "endDate": "2026-11-18", "endTime": "14:15" },
+        { "id": "bertulis", "label": "Peperiksaan Bertulis", "shortDate": "23 Nov–17 Dis", "startDate": "2026-11-23", "startTime": "09:00", "endDate": "2026-12-17", "endTime": "17:00" }
+      ],
+      "notices": [
+        { "date": "2026-11-24", "type": "notice", "title": "Edaran Kertas 2611/2 PSV", "text": "Calon berdaftar kertas 2611/2 Pendidikan Seni Visual – Ujian Melukis Kertas 2 hendaklah mengambil kertas peperiksaan daripada Ketua Pengawas Peperiksaan pada 24 November 2026 (Selasa)." },
+        { "date": "2026-12-11", "type": "holiday", "title": "Cuti Sempena Hari Keputeraan Sultan Selangor", "text": "Tiada kertas peperiksaan bertulis SPM dijadualkan pada Jumaat, 11 Disember 2026." }
+      ]
+    },
+    "presets": {
+      "TERAS": ["1103", "1119", "1223", "1225", "1449", "1249", "1511"],
+      "SAINS_TULEN": ["1103", "1119", "1223", "1449", "1249", "3472", "4531", "4541", "4551"],
+      "AKAUN_PERNIAGAAN": ["1103", "1119", "1223", "1449", "1249", "1511", "3756", "3766", "3767"],
+      "IKHTISAS_TEKNIKAL": ["1103", "1119", "1223", "1449", "1249", "1511", "2280", "3770", "3763", "3769", "4572", "2611"],
+      "AGAMA_KBD": ["1103", "1119", "1449", "1249", "1511", "2361", "5226", "5227", "5228", "5401", "5402"],
+      "ETUTOR_UTAMA": ["1103", "1119", "1223", "1225", "1449", "1249", "1511", "3472", "4531", "4541", "4551", "3756", "3767", "3766", "2280", "3770", "3763", "4572", "3769", "5226", "5227", "5228", "5401", "2361"]
+    },
+    "subjects": [
+      { "code": "1103", "name": "Bahasa Melayu", "stream": "teras", "etutorSubject": "Bahasa Melayu", "papers": [{ "code": "1103/3", "title": "Ujian Bertutur (Kertas 3)", "date": "2026-10-26", "endDate": "2026-10-29", "hadir": "07:40", "start": "08:00", "end": "16:10", "duration": "Sidang 1–3", "type": "bertutur" }, { "code": "1103/4", "title": "Ujian Mendengar (Kertas 4)", "date": "2026-11-23", "hadir": "08:30", "start": "09:00", "end": "09:30", "duration": "30 minit", "type": "mendengar" }, { "code": "1103/1", "title": "Kertas 1", "date": "2026-11-23", "hadir": "10:15", "start": "10:45", "end": "12:45", "duration": "2 jam", "type": "bertulis" }, { "code": "1103/2", "title": "Kertas 2", "date": "2026-11-23", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1119", "name": "Bahasa Inggeris", "stream": "teras", "etutorSubject": "Bahasa Inggeris", "papers": [{ "code": "1119/3", "title": "Ujian Bertutur (Kertas 3)", "date": "2026-11-02", "endDate": "2026-11-05", "hadir": "07:40", "start": "08:00", "end": "16:15", "duration": "Sidang 1–3", "type": "bertutur" }, { "code": "1119/4", "title": "Ujian Mendengar (Kertas 4)", "date": "2026-11-24", "hadir": "08:30", "start": "09:00", "end": "09:40", "duration": "40 minit", "type": "mendengar" }, { "code": "1119/1", "title": "Kertas 1", "date": "2026-11-24", "hadir": "10:30", "start": "11:00", "end": "12:30", "duration": "1 jam 30 minit", "type": "bertulis" }, { "code": "1119/2", "title": "Kertas 2", "date": "2026-11-24", "hadir": "14:00", "start": "14:30", "end": "16:00", "duration": "1 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1223", "name": "Pendidikan Islam", "stream": "teras", "etutorSubject": "Pendidikan Islam", "papers": [{ "code": "1223/1", "title": "Kertas 1", "date": "2026-11-25", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1225", "name": "Pendidikan Moral", "stream": "teras", "etutorSubject": "Pendidikan Moral", "papers": [{ "code": "1225", "title": "Kertas Peperiksaan", "date": "2026-11-25", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1449", "name": "Matematik", "stream": "teras", "etutorSubject": "Matematik", "papers": [{ "code": "1449/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-11-26", "hadir": "07:45", "start": "08:15", "end": "09:45", "duration": "1 jam 30 minit", "type": "bertulis" }, { "code": "1449/2", "title": "Kertas 2", "date": "2026-11-26", "hadir": "10:15", "start": "10:45", "end": "13:15", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1249", "name": "Sejarah", "stream": "teras", "etutorSubject": "Sejarah", "papers": [{ "code": "1249/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-11-30", "hadir": "07:45", "start": "08:15", "end": "09:15", "duration": "1 jam", "type": "bertulis" }, { "code": "1249/2", "title": "Kertas 2", "date": "2026-11-30", "hadir": "10:00", "start": "10:30", "end": "13:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "1511", "name": "Sains", "stream": "teras", "etutorSubject": "Sains", "papers": [{ "code": "1511/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-03", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "1511/2", "title": "Kertas 2", "date": "2026-12-03", "hadir": "10:00", "start": "10:30", "end": "13:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "4531", "name": "Fizik", "stream": "sains", "etutorSubject": "Fizik", "papers": [{ "code": "4531/3", "title": "Ujian Amali Sains (Kertas 3)", "date": "2026-11-16", "hadir": "07:30", "start": "08:00", "end": "13:00", "duration": "45 minit / sidang", "type": "amali" }, { "code": "4531/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-03", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "4531/2", "title": "Kertas 2", "date": "2026-12-03", "hadir": "10:00", "start": "10:30", "end": "13:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "4541", "name": "Kimia", "stream": "sains", "etutorSubject": "Kimia", "papers": [{ "code": "4541/3", "title": "Ujian Amali Sains (Kertas 3)", "date": "2026-11-17", "hadir": "07:30", "start": "08:00", "end": "13:00", "duration": "45 minit / sidang", "type": "amali" }, { "code": "4541/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-15", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "4541/2", "title": "Kertas 2", "date": "2026-12-15", "hadir": "10:15", "start": "10:45", "end": "13:15", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "4551", "name": "Biologi", "stream": "sains", "etutorSubject": "Biologi", "papers": [{ "code": "4551/3", "title": "Ujian Amali Sains (Kertas 3)", "date": "2026-11-18", "hadir": "07:30", "start": "08:00", "end": "13:00", "duration": "45 minit / sidang", "type": "amali" }, { "code": "4551/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-02", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "4551/2", "title": "Kertas 2", "date": "2026-12-02", "hadir": "10:15", "start": "10:45", "end": "13:15", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "4561", "name": "Sains Tambahan", "stream": "sains", "etutorSubject": "", "papers": [{ "code": "4561/3", "title": "Ujian Amali Sains (Kertas 3)", "date": "2026-11-18", "hadir": "07:30", "start": "08:00", "end": "14:15", "duration": "1 jam 30 minit / sidang", "type": "amali" }, { "code": "4561/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-15", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "4561/2", "title": "Kertas 2", "date": "2026-12-15", "hadir": "10:15", "start": "10:45", "end": "13:15", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3472", "name": "Matematik Tambahan", "stream": "sains", "etutorSubject": "Matematik Tambahan", "papers": [{ "code": "3472/1", "title": "Kertas 1", "date": "2026-12-17", "hadir": "07:45", "start": "08:15", "end": "10:15", "duration": "2 jam", "type": "bertulis" }, { "code": "3472/2", "title": "Kertas 2", "date": "2026-12-17", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3729", "name": "Pertanian", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3729/1", "title": "Kertas 1", "date": "2026-11-25", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "2611", "name": "Pendidikan Seni Visual", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "2611/2", "title": "Ujian Melukis Kertas 2", "date": "2026-12-01", "hadir": "07:45", "start": "08:15", "end": "11:15", "duration": "3 jam", "type": "bertulis" }, { "code": "2611/1", "title": "Teori Seni Kertas 1 (Aneka Pilihan)", "date": "2026-12-01", "hadir": "07:45", "start": "12:00", "end": "13:00", "duration": "1 jam", "type": "bertulis" }] },
+      { "code": "2621", "name": "Pendidikan Muzik", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "2621/1", "title": "Kertas 1", "date": "2026-12-01", "hadir": "14:00", "start": "14:30", "end": "16:00", "duration": "1 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3763", "name": "Reka Cipta", "stream": "ikhtisas", "etutorSubject": "Reka Cipta", "papers": [{ "code": "3763/1", "title": "Kertas 1", "date": "2026-12-01", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3766", "name": "Perniagaan", "stream": "ikhtisas", "etutorSubject": "Perniagaan", "papers": [{ "code": "3766/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-02", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "3766/2", "title": "Kertas 2", "date": "2026-12-02", "hadir": "10:15", "start": "10:45", "end": "13:00", "duration": "2 jam 15 minit", "type": "bertulis" }, { "code": "3766/4", "title": "Kertas 4 (Calon Persendirian)", "date": "2026-12-02", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3769", "name": "Sains Rumah Tangga", "stream": "ikhtisas", "etutorSubject": "Sains Rumah Tangga", "papers": [{ "code": "3769/1", "title": "Kertas 1", "date": "2026-12-03", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3767", "name": "Ekonomi", "stream": "ikhtisas", "etutorSubject": "Ekonomi", "papers": [{ "code": "3767/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-07", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "3767/2", "title": "Kertas 2", "date": "2026-12-07", "hadir": "10:15", "start": "10:45", "end": "13:00", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "3759", "name": "Lukisan Kejuruteraan", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3759/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3771", "name": "Grafik Komunikasi Teknikal", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3771/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "4572", "name": "Sains Sukan", "stream": "ikhtisas", "etutorSubject": "Sains Sukan", "papers": [{ "code": "4572/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-09", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "4572/2", "title": "Kertas 2", "date": "2026-12-09", "hadir": "10:00", "start": "10:30", "end": "13:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3754", "name": "Pengajian Keusahawanan", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3754/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3760", "name": "Pengajian Kejuruteraan Mekanikal", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3760/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3761", "name": "Pengajian Kejuruteraan Awam", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3761/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3762", "name": "Pengajian Kejuruteraan Elektrik dan Elektronik", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3762/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3768", "name": "Asas Kelestarian", "stream": "ikhtisas", "etutorSubject": "", "papers": [{ "code": "3768/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3770", "name": "Sains Komputer", "stream": "ikhtisas", "etutorSubject": "Sains Komputer", "papers": [{ "code": "3770/1", "title": "Kertas 1", "date": "2026-12-10", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "3756", "name": "Prinsip Perakaunan", "stream": "ikhtisas", "etutorSubject": "Prinsip Perakaunan", "papers": [{ "code": "3756/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-14", "hadir": "07:45", "start": "08:15", "end": "09:30", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "3756/2", "title": "Kertas 2", "date": "2026-12-14", "hadir": "10:15", "start": "10:45", "end": "13:15", "duration": "2 jam 30 minit", "type": "bertulis" }, { "code": "3756/4", "title": "Kertas 4 (Calon Persendirian)", "date": "2026-12-14", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "2280", "name": "Geografi", "stream": "ikhtisas", "etutorSubject": "Geografi", "papers": [{ "code": "2280/1", "title": "Kertas 1 (Aneka Pilihan)", "date": "2026-12-16", "hadir": "11:15", "start": "11:45", "end": "13:00", "duration": "1 jam 15 minit", "type": "bertulis" }, { "code": "2280/2", "title": "Kertas 2", "date": "2026-12-16", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5402", "name": "Al-Syariah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5402/1", "title": "Kertas 1", "date": "2026-11-25", "hadir": "07:45", "start": "08:15", "end": "10:30", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "5228", "name": "Pendidikan Syari'ah Islamiah", "stream": "agama", "etutorSubject": "Pendidikan Syariah Islamiah", "papers": [{ "code": "5228", "title": "Kertas Peperiksaan", "date": "2026-11-25", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5304", "name": "Turath Dirasat Islamiah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5304/1", "title": "Kertas 1", "date": "2026-11-25", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5302", "name": "Maharat Al-Quran", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5302/2", "title": "Kertas 2", "date": "2026-11-25", "hadir": "14:00", "start": "14:30", "end": "16:00", "duration": "1 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5226", "name": "Tasawwur Islam", "stream": "agama", "etutorSubject": "Tasawwur Islam", "papers": [{ "code": "5226", "title": "Kertas Peperiksaan", "date": "2026-11-30", "hadir": "14:00", "start": "14:30", "end": "17:00", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5404", "name": "Manahij al-'Ulum al-Islamiah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5404/1", "title": "Kertas 1", "date": "2026-12-01", "hadir": "07:45", "start": "08:15", "end": "10:30", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "2361", "name": "Bahasa Arab", "stream": "agama", "etutorSubject": "Bahasa Arab", "papers": [{ "code": "2361/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5403", "name": "Al-Lughah al-Arabiah al-Mu'asirah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5403/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5305", "name": "Turath Bahasa Arab", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5305/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5401", "name": "Usul al-Din", "stream": "agama", "etutorSubject": "Usul al-Din", "papers": [{ "code": "5401/1", "title": "Kertas 1", "date": "2026-12-09", "hadir": "07:45", "start": "08:15", "end": "10:30", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "5227", "name": "Pendidikan Al-Quran dan Al-Sunnah", "stream": "agama", "etutorSubject": "Pendidikan Al-Quran & As-Sunnah", "papers": [{ "code": "5227/1", "title": "Kertas 1", "date": "2026-12-10", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5303", "name": "Turath Al-Quran dan Al-Sunnah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5303/1", "title": "Kertas 1", "date": "2026-12-10", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "5405", "name": "Al-Adab wa al-Balaghah", "stream": "agama", "etutorSubject": "", "papers": [{ "code": "5405/1", "title": "Kertas 1", "date": "2026-12-14", "hadir": "14:00", "start": "14:30", "end": "16:45", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "6351", "name": "Bahasa Cina", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "6351/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:00", "duration": "1 jam 45 minit", "type": "bertulis" }, { "code": "6351/2", "title": "Kertas 2", "date": "2026-12-08", "hadir": "14:00", "start": "14:30", "end": "16:45", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "6354", "name": "Bahasa Tamil", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "6354/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:00", "duration": "1 jam 45 minit", "type": "bertulis" }, { "code": "6354/2", "title": "Kertas 2", "date": "2026-12-08", "hadir": "14:00", "start": "14:30", "end": "16:45", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "6356", "name": "Bahasa Iban", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "6356/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:00", "duration": "1 jam 45 minit", "type": "bertulis" }, { "code": "6356/2", "title": "Kertas 2", "date": "2026-12-08", "hadir": "14:00", "start": "14:30", "end": "16:45", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "6357", "name": "Bahasa Kadazandusun", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "6357/1", "title": "Kertas 1", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:00", "duration": "1 jam 45 minit", "type": "bertulis" }, { "code": "6357/2", "title": "Kertas 2", "date": "2026-12-08", "hadir": "14:00", "start": "14:30", "end": "16:45", "duration": "2 jam 15 minit", "type": "bertulis" }] },
+      { "code": "6358", "name": "Bahasa Semai", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "6358", "title": "Kertas Peperiksaan", "date": "2026-12-08", "hadir": "07:45", "start": "08:15", "end": "10:00", "duration": "1 jam 45 minit", "type": "bertulis" }] },
+      { "code": "9221", "name": "Bible Knowledge", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "9221", "title": "Kertas Peperiksaan", "date": "2026-12-10", "hadir": "07:45", "start": "08:15", "end": "10:15", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "9378", "name": "Bahasa Punjabi", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "9378", "title": "Kertas Peperiksaan", "date": "2026-12-10", "hadir": "07:45", "start": "08:15", "end": "10:15", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "2206", "name": "Kesusasteraan Inggeris", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "2206", "title": "Kertas Peperiksaan", "date": "2026-12-16", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "2216", "name": "Kesusasteraan Melayu Komunikatif", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "2216/1", "title": "Kertas 1", "date": "2026-12-16", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "9216", "name": "Kesusasteraan Cina", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "9216", "title": "Kertas Peperiksaan", "date": "2026-12-16", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "9217", "name": "Kesusasteraan Tamil", "stream": "bahasa", "etutorSubject": "", "papers": [{ "code": "9217", "title": "Kertas Peperiksaan", "date": "2026-12-16", "hadir": "07:45", "start": "08:15", "end": "10:45", "duration": "2 jam 30 minit", "type": "bertulis" }] },
+      { "code": "7101", "name": "Pembinaan Domestik", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7101/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7103", "name": "Kerja Paip Domestik", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7103/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7104", "name": "Pendawaian Domestik", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7104/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7105", "name": "Kimpalan Arka dan Gas", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7105/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7106", "name": "Menservis Automobil", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7106/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7107", "name": "Menservis Motosikal", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7107/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7108", "name": "Menservis Peralatan Penyejukan dan Penyamanan Udara", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7108/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7109", "name": "Menservis Peralatan Elektrik Domestik", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7109/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7110", "name": "Pembuatan Perabot", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7110/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7201", "name": "Rekaan dan Jahitan Pakaian", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7201/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7202", "name": "Katering dan Penyajian", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7202/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7203", "name": "Pemprosesan Makanan", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7203/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7205", "name": "Asuhan dan Pendidikan Awal Kanak-Kanak", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7205/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7207", "name": "Penjagaan Muka dan Penggayaan Rambut", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7207/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7208", "name": "Gerontologi Asas dan Geriatrik", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7208/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7301", "name": "Landskap dan Nurseri", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7301/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7302", "name": "Akuakultur dan Haiwan Rekreasi", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7302/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7303", "name": "Tanaman Makanan", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7303/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7403", "name": "Produksi Multimedia", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7403/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7405", "name": "Produksi Reka Tanda", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7405/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7406", "name": "Hiasan Dalaman", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7406/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] },
+      { "code": "7407", "name": "Reka Bentuk Grafik Digital", "stream": "mpv", "etutorSubject": "", "papers": [{ "code": "7407/1", "title": "Kertas 1", "date": "2026-12-07", "hadir": "14:00", "start": "14:30", "end": "16:30", "duration": "2 jam", "type": "bertulis" }] }
+    ]
+  };
+  const MY_TIMEZONE = (SPM_SCHEDULE.meta && SPM_SCHEDULE.meta.timeZone) || "Asia/Kuala_Lumpur";
+  const MY_OFFSET_MS = 8 * 60 * 60 * 1000;
+
+  function hasNativeTemporal() {
+    return typeof Temporal !== "undefined" && typeof Temporal.Now !== "undefined" && typeof Temporal.PlainDate !== "undefined";
+  }
+
+  function getNowEpochMs(overrideMs) {
+    if (typeof overrideMs === "number" && !Number.isNaN(overrideMs)) return overrideMs;
+    if (hasNativeTemporal()) {
+      try { return Temporal.Now.instant().epochMilliseconds; } catch (e) {}
+    }
+    return Date.now();
+  }
+
+  function parseMytToEpochMs(dateStr, timeStr) {
+    const cleanTime = (timeStr || "08:00").slice(0, 5);
+    if (hasNativeTemporal()) {
+      try {
+        return Temporal.PlainDate.from(dateStr).toPlainDateTime(cleanTime + ":00").toZonedDateTime(MY_TIMEZONE).epochMilliseconds;
+      } catch (e) {}
+    }
+    const dParts = String(dateStr || "2026-11-23").split("-").map(Number);
+    const tParts = cleanTime.split(":").map(Number);
+    return Date.UTC(dParts[0], (dParts[1] || 1) - 1, dParts[2] || 1, (tParts[0] || 0) - 8, tParts[1] || 0, 0);
+  }
+
+  function getMytDateKey(epochMs) {
+    return new Date(epochMs + MY_OFFSET_MS).toISOString().slice(0, 10);
+  }
+
+  function formatDurationHumanMs(days, hours, minutes) {
+    if (days > 0) return days + " hari " + hours + " jam";
+    if (hours > 0) return hours + " jam " + minutes + " minit";
+    return Math.max(1, minutes) + " minit";
+  }
+
+  function computeCountdownParts(dateStr, timeStr, nowOverrideMs) {
+    const cleanTime = (timeStr || "08:00").slice(0, 5);
+    const isoTarget = dateStr + "T" + cleanTime + ":00+08:00";
+
+    if (hasNativeTemporal() && typeof nowOverrideMs !== "number") {
+      try {
+        const nowZdt = Temporal.Now.zonedDateTimeISO(MY_TIMEZONE);
+        const targetZdt = Temporal.PlainDate.from(dateStr).toPlainDateTime(cleanTime + ":00").toZonedDateTime(MY_TIMEZONE);
+        const dur = nowZdt.until(targetZdt, { largestUnit: "day", smallestUnit: "second" });
+        if (dur.sign <= 0) {
+          return { sign: dur.sign, days: 0, hours: 0, minutes: 0, seconds: 0, totalSeconds: 0, isoTarget: isoTarget, humanLabel: "Tiba masa" };
+        }
+        let humanLabel = "";
+        try {
+          humanLabel = dur.toLocaleString("ms-MY", { style: "long" });
+        } catch (e) {
+          humanLabel = formatDurationHumanMs(dur.days, dur.hours, dur.minutes);
+        }
+        return {
+          sign: 1,
+          days: dur.days,
+          hours: dur.hours,
+          minutes: dur.minutes,
+          seconds: dur.seconds,
+          totalSeconds: Math.max(0, Math.floor((targetZdt.epochMilliseconds - nowZdt.epochMilliseconds) / 1000)),
+          isoTarget: isoTarget,
+          humanLabel: humanLabel
+        };
+      } catch (e) {}
+    }
+
+    const nowMs = getNowEpochMs(nowOverrideMs);
+    const targetMs = parseMytToEpochMs(dateStr, cleanTime);
+    const diffSec = Math.floor((targetMs - nowMs) / 1000);
+    if (diffSec <= 0) {
+      return { sign: diffSec === 0 ? 0 : -1, days: 0, hours: 0, minutes: 0, seconds: 0, totalSeconds: 0, isoTarget: isoTarget, humanLabel: "Tiba masa" };
+    }
+    const days = Math.floor(diffSec / 86400);
+    const hours = Math.floor((diffSec % 86400) / 3600);
+    const minutes = Math.floor((diffSec % 3600) / 60);
+    const seconds = diffSec % 60;
+    return {
+      sign: 1, days: days, hours: hours, minutes: minutes, seconds: seconds,
+      totalSeconds: diffSec, isoTarget: isoTarget, humanLabel: formatDurationHumanMs(days, hours, minutes)
+    };
+  }
+
+  function formatMalayDateShort(dateStr, endDateStr) {
+    const fmt = new Intl.DateTimeFormat("ms-MY", { timeZone: MY_TIMEZONE, weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    const startLabel = fmt.format(new Date(parseMytToEpochMs(dateStr, "12:00")));
+    if (!endDateStr || endDateStr === dateStr) return startLabel;
+    const endFmt = new Intl.DateTimeFormat("ms-MY", { timeZone: MY_TIMEZONE, day: "numeric", month: "short" });
+    return startLabel.replace(/\s+\d{4}$/, "") + " – " + endFmt.format(new Date(parseMytToEpochMs(endDateStr, "12:00"))) + " " + dateStr.slice(0, 4);
+  }
+
+  function formatMalayTimeLabel(hhmm) {
+    const parts = String(hhmm || "08:00").split(":").map(Number);
+    const hh = parts[0] || 0;
+    const mm = String(parts[1] || 0).padStart(2, "0");
+    const period = hh < 12 ? "pg" : (hh < 14 ? "tgh" : "ptg");
+    const h12 = hh % 12 === 0 ? 12 : hh % 12;
+    return h12 + ":" + mm + " " + period;
+  }
+
+  // --- [features/spm-countdown/spmCountdownService.js] ---
+  /**
+   * src/features/spm-countdown/spmCountdownService.js
+   * Storan keutamaan Subjek Saya, penilai status kertas SPM 2026 & ringkasan Hero.
+   */
+
+
+  const STREAM_LABELS = {
+    ALL: "Semua Aliran",
+    teras: "Subjek Teras",
+    sains: "Sains Tulen & Add Math",
+    ikhtisas: "Elektif Ikhtisas & Teknikal",
+    agama: "Pengajian Islam & KBD",
+    bahasa: "Bahasa & Kesusasteraan",
+    mpv: "Vokasional (MPV)"
+  };
+
+  function getDefaultSpmCountdownPrefs() {
+    const defaults = (SPM_SCHEDULE.presets && SPM_SCHEDULE.presets.SAINS_TULEN) || ["1103", "1119", "1223", "1449", "1249"];
+    return {
+      selectedCodes: defaults.slice(),
+      stream: "ALL",
+      onlyMine: false,
+      hideCompleted: false,
+      viewMode: "cards",
+      heroMode: "written",
+      search: ""
+    };
+  }
+
+  function loadSpmCountdownPrefs() {
+    const base = getDefaultSpmCountdownPrefs();
+    try {
+      if (typeof localStorage === "undefined") return base;
+      const raw = localStorage.getItem(SPM_COUNTDOWN_PREFS_KEY);
+      if (!raw) return base;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return base;
+      return {
+        selectedCodes: Array.isArray(parsed.selectedCodes) ? parsed.selectedCodes.map(String) : base.selectedCodes,
+        stream: STREAM_LABELS[parsed.stream] ? parsed.stream : "ALL",
+        onlyMine: Boolean(parsed.onlyMine),
+        hideCompleted: Boolean(parsed.hideCompleted),
+        viewMode: parsed.viewMode === "timeline" ? "timeline" : "cards",
+        heroMode: parsed.heroMode === "mine" ? "mine" : "written",
+        search: ""
+      };
+    } catch (e) {
+      return base;
+    }
+  }
+
+  function saveSpmCountdownPrefs(prefs) {
+    try {
+      if (typeof localStorage === "undefined" || !prefs) return;
+      localStorage.setItem(SPM_COUNTDOWN_PREFS_KEY, JSON.stringify({
+        selectedCodes: Array.isArray(prefs.selectedCodes) ? prefs.selectedCodes : [],
+        stream: prefs.stream || "ALL",
+        onlyMine: Boolean(prefs.onlyMine),
+        hideCompleted: Boolean(prefs.hideCompleted),
+        viewMode: prefs.viewMode === "timeline" ? "timeline" : "cards",
+        heroMode: prefs.heroMode === "mine" ? "mine" : "written"
+      }));
+    } catch (e) {}
+  }
+
+  function evaluatePaperStatus(paper, nowOverrideMs) {
+    const nowMs = getNowEpochMs(nowOverrideMs);
+    const startMs = parseMytToEpochMs(paper.date, paper.start);
+    const endDate = paper.endDate || paper.date;
+    const endMs = parseMytToEpochMs(endDate, paper.end);
+    const todayKey = getMytDateKey(nowMs);
+    const tomorrowKey = getMytDateKey(nowMs + 86400000);
+
+    let status = "upcoming";
+    let statusLabel = "Akan Datang";
+    if (nowMs >= endMs) {
+      status = "completed";
+      statusLabel = "Selesai";
+    } else if (nowMs >= startMs) {
+      status = "live";
+      statusLabel = "Sedang Berlangsung";
+    } else if (paper.date === todayKey) {
+      status = "today";
+      statusLabel = "Hari Ini";
+    } else if (paper.date === tomorrowKey) {
+      status = "imminent";
+      statusLabel = "Esok";
+    } else {
+      const diffDays = (startMs - nowMs) / 86400000;
+      if (diffDays <= 3) {
+        status = "imminent";
+        statusLabel = "Pecutan Akhir";
+      } else if (diffDays <= 7) {
+        status = "soon";
+        statusLabel = "Minggu Ini";
+      }
+    }
+
+    return Object.assign({}, paper, {
+      startMs: startMs,
+      endMs: endMs,
+      status: status,
+      statusLabel: statusLabel,
+      countdownTargetDate: status === "live" ? endDate : paper.date,
+      countdownTargetTime: status === "live" ? paper.end : paper.start,
+      dateDisplay: formatMalayDateShort(paper.date, paper.endDate),
+      timeDisplay: formatMalayTimeLabel(paper.start) + " – " + formatMalayTimeLabel(paper.end),
+      hadirDisplay: formatMalayTimeLabel(paper.hadir)
+    });
+  }
+
+  function getEvaluatedSubjects(prefs, nowOverrideMs) {
+    const selectedSet = new Set((prefs && prefs.selectedCodes) || []);
+    const out = (SPM_SCHEDULE.subjects || []).map(function (sub) {
+      const papers = (sub.papers || []).map(function (p) {
+        return evaluatePaperStatus(p, nowOverrideMs);
+      }).sort(function (a, b) { return a.startMs - b.startMs; });
+
+      const completedCount = papers.filter(function (p) { return p.status === "completed"; }).length;
+      const nextPaper = papers.find(function (p) { return p.status !== "completed"; }) || null;
+      const refPaper = nextPaper || papers[papers.length - 1];
+      const allCompleted = completedCount === papers.length;
+
+      return {
+        code: sub.code,
+        name: sub.name,
+        stream: sub.stream,
+        streamLabel: STREAM_LABELS[sub.stream] || sub.stream,
+        etutorSubject: sub.etutorSubject || "",
+        selected: selectedSet.has(sub.code),
+        papers: papers,
+        nextPaper: nextPaper,
+        completedCount: completedCount,
+        totalCount: papers.length,
+        allCompleted: allCompleted,
+        urgency: allCompleted ? "completed" : (nextPaper ? nextPaper.status : "upcoming"),
+        sortKey: allCompleted ? (9e15 + (refPaper ? refPaper.endMs : 0)) : (nextPaper ? nextPaper.startMs : 9e15)
+      };
+    });
+
+    out.sort(function (a, b) {
+      if (a.sortKey !== b.sortKey) return a.sortKey - b.sortKey;
+      return a.name.localeCompare(b.name, "ms");
+    });
+    return out;
+  }
+
+  function getHeroCountdownSummary(prefs, nowOverrideMs) {
+    const nowMs = getNowEpochMs(nowOverrideMs);
+    const subjects = getEvaluatedSubjects(prefs, nowMs);
+    const meta = SPM_SCHEDULE.meta || {};
+    const written = meta.writtenStart || { date: "2026-11-23", start: "09:00", hadir: "08:30", label: "Peperiksaan Bertulis SPM 2026" };
+    const writtenStartMs = parseMytToEpochMs(written.date, written.start);
+    const writtenEndMs = parseMytToEpochMs((meta.writtenEnd && meta.writtenEnd.date) || "2026-12-17", (meta.writtenEnd && meta.writtenEnd.end) || "17:00");
+
+    const allPapers = [];
+    subjects.forEach(function (sub) {
+      sub.papers.forEach(function (p) {
+        allPapers.push(Object.assign({ subjectCode: sub.code, subjectName: sub.name, selected: sub.selected, etutorSubject: sub.etutorSubject }, p));
+      });
+    });
+    allPapers.sort(function (a, b) { return a.startMs - b.startMs; });
+
+    const myNextPaper = allPapers.find(function (p) { return p.selected && p.status !== "completed"; }) || null;
+    const anyNextPaper = allPapers.find(function (p) { return p.status !== "completed"; }) || null;
+    const useMine = prefs && prefs.heroMode === "mine" && Boolean(myNextPaper);
+
+    let heroTarget = { date: written.date, time: written.start, title: written.label, subtitle: "Kertas Pertama: 1103/4 Bahasa Melayu (Ujian Mendengar) • Lapor diri 8:30 pg", statusLabel: "Menjelang Peperiksaan Bertulis", finishedAll: false };
+    if (useMine) {
+      heroTarget = { date: myNextPaper.countdownTargetDate, time: myNextPaper.countdownTargetTime, title: myNextPaper.subjectName + " — " + myNextPaper.title + " (" + myNextPaper.code + ")", subtitle: myNextPaper.dateDisplay + " • Hadir " + myNextPaper.hadirDisplay + " • Masa " + myNextPaper.timeDisplay, statusLabel: myNextPaper.status === "live" ? "Sedang Berlangsung" : "Kertas Pilihan Saya Seterusnya", finishedAll: false };
+    } else if (nowMs >= writtenEndMs) {
+      heroTarget = { date: written.date, time: written.start, title: "Peperiksaan SPM 2026 Tamat Sepenuhnya", subtitle: "Tahniah kepada semua calon SPM 2026 atas usaha gigih anda!", statusLabel: "Tamat", finishedAll: true };
+    } else if (nowMs >= writtenStartMs && anyNextPaper) {
+      heroTarget = { date: anyNextPaper.countdownTargetDate, time: anyNextPaper.countdownTargetTime, title: anyNextPaper.subjectName + " — " + anyNextPaper.title + " (" + anyNextPaper.code + ")", subtitle: anyNextPaper.dateDisplay + " • Hadir " + anyNextPaper.hadirDisplay + " • Masa " + anyNextPaper.timeDisplay, statusLabel: anyNextPaper.status === "live" ? "Peperiksaan Sedang Berlangsung" : "Kertas Bertulis Seterusnya", finishedAll: false };
+    }
+
+    const phases = (meta.phases || []).map(function (ph) {
+      const sMs = parseMytToEpochMs(ph.startDate, ph.startTime);
+      const eMs = parseMytToEpochMs(ph.endDate, ph.endTime);
+      return Object.assign({}, ph, { state: nowMs >= eMs ? "completed" : (nowMs >= sMs ? "active" : "upcoming") });
+    });
+
+    const donePapers = allPapers.filter(function (p) { return p.status === "completed"; }).length;
+    return {
+      heroTarget: heroTarget,
+      heroParts: computeCountdownParts(heroTarget.date, heroTarget.time, nowOverrideMs),
+      writtenParts: computeCountdownParts(written.date, written.start, nowOverrideMs),
+      myNextPaper: myNextPaper,
+      phases: phases,
+      subjects: subjects,
+      allPapers: allPapers,
+      selectedCount: subjects.filter(function (s) { return s.selected; }).length,
+      completedPapers: donePapers,
+      totalPapers: allPapers.length
+    };
+  }
+
+  // --- [features/spm-countdown/spmCountdownView.js] ---
+  /**
+   * src/features/spm-countdown/spmCountdownView.js
+   * Pemapar UI Countdown Rasmi SPM 2026 & Peneroka Semua Subjek (Laman Utama & Portal Pelajar).
+   * Mematuhi ui-ux-pro-max (sifar emoji, >=44px touch targets, @container cards) & WCAG AA.
+   */
+
+
+
+
+  function pad2(n) {
+    return String(Math.max(0, Number(n) || 0)).padStart(2, "0");
+  }
+
+  function renderStatusBadge(status, label) {
+    let icon = ICONS.clock;
+    if (status === "completed") icon = ICONS.checkCircle;
+    else if (status === "live" || status === "today" || status === "imminent") icon = ICONS.flame;
+    else if (status === "soon") icon = ICONS.sparkles;
+    return '<span class="spm-status-pill is-' + escapeHtml(status) + '">' + icon + "<span>" + escapeHtml(label) + "</span></span>";
+  }
+
+  function renderDigitTiles(dateStr, timeStr, parts, sizeClass) {
+    const srText = parts.sign <= 0 ? "Tiba masa peperiksaan" : ("Baki " + parts.humanLabel);
+    return [
+      '<div class="spm-cd-digits ' + (sizeClass || "") + '" data-cd-digits="1" data-cd-date="' + escapeHtml(dateStr) + '" data-cd-time="' + escapeHtml(timeStr) + '" data-cd-active="' + (parts.sign > 0 ? "1" : "0") + '">',
+      '  <span class="sr-only" data-cd-sr>' + escapeHtml(srText) + "</span>",
+      '  <div class="spm-digit-box" aria-hidden="true"><strong class="cd-v-d tabular-nums">' + pad2(parts.days) + '</strong><span>Hari</span></div>',
+      '  <div class="spm-digit-box" aria-hidden="true"><strong class="cd-v-h tabular-nums">' + pad2(parts.hours) + '</strong><span>Jam</span></div>',
+      '  <div class="spm-digit-box" aria-hidden="true"><strong class="cd-v-m tabular-nums">' + pad2(parts.minutes) + '</strong><span>Minit</span></div>',
+      '  <div class="spm-digit-box is-sec" aria-hidden="true"><strong class="cd-v-s tabular-nums">' + pad2(parts.seconds) + '</strong><span>Saat</span></div>',
+      "</div>"
+    ].join("");
+  }
+
+  function renderModeSwitchButtons(prefs, hasMine) {
+    const isMine = prefs.heroMode === "mine" && hasMine;
+    return [
+      '<div class="spm-hero-switch" role="group" aria-label="Sasaran kira detik utama">',
+      '  <button type="button" class="spm-switch-btn js-spm-hero-mode" data-hero-mode="written" aria-pressed="' + (!isMine ? "true" : "false") + '">Peperiksaan Bertulis (23 Nov)</button>',
+      '  <button type="button" class="spm-switch-btn js-spm-hero-mode" data-hero-mode="mine" aria-pressed="' + (isMine ? "true" : "false") + '"' + (hasMine ? "" : " disabled") + ">Subjek Saya Seterusnya</button>",
+      "</div>"
+    ].join("");
+  }
+
+  function renderSpmHeroWidgets(prefs, summary) {
+    const target = summary.heroTarget;
+    const parts = summary.heroParts;
+    const hasMine = Boolean(summary.myNextPaper);
+
+    const lpHero = document.getElementById("lpSpmHeroCard");
+    if (lpHero) {
+      const phasesHtml = (summary.phases || []).map(function (ph) {
+        const icon = ph.state === "completed" ? ICONS.checkCircle : (ph.state === "active" ? ICONS.flame : ICONS.calendar);
+        const stTxt = ph.state === "completed" ? "Selesai" : (ph.state === "active" ? "Sedang Berjalan" : "Akan Datang");
+        return [
+          '<div class="spm-phase-chip is-' + escapeHtml(ph.state) + '">',
+          "  " + icon,
+          '  <div class="spm-phase-copy"><strong>' + escapeHtml(ph.label) + '</strong><span>' + escapeHtml(ph.shortDate) + " • " + escapeHtml(stTxt) + "</span></div>",
+          "</div>"
+        ].join("");
+      }).join("");
+
+      lpHero.innerHTML = [
+        '<div class="spm-hero-top">',
+        '  <div class="spm-hero-eyebrow"><span class="spm-live-dot" aria-hidden="true"></span><span>' + escapeHtml(target.statusLabel) + " • " + escapeHtml(SPM_SCHEDULE.meta.docRef) + "</span></div>",
+        renderModeSwitchButtons(prefs, hasMine),
+        "</div>",
+        '<div class="spm-hero-main">',
+        '  <div class="spm-hero-copy">',
+        '    <h3 class="spm-hero-target-title">' + escapeHtml(target.title) + "</h3>",
+        '    <p class="spm-hero-target-sub">' + escapeHtml(target.subtitle) + "</p>",
+        '    <div class="spm-hero-meta-row">',
+        '      <span class="spm-hero-stat tabular-nums">' + ICONS.checkCircle + " <span>" + summary.completedPapers + "/" + summary.totalPapers + " kertas fasa semasa</span></span>",
+        '      <span class="spm-hero-stat tabular-nums">' + ICONS.starSolid + " <span>" + summary.selectedCount + " subjek saya ditanda</span></span>",
+        "    </div>",
+        "  </div>",
+        '  <div class="spm-hero-timer-col">',
+        renderDigitTiles(target.date, target.time, parts, "is-hero"),
+        '    <div class="spm-hero-cta-row">',
+        '      <a href="#portal" class="btn btn-continue-white btn-sm js-open-portal-countdown">' + ICONS.play + "<span>Buka di Portal</span></a>",
+        "    </div>",
+        "  </div>",
+        "</div>",
+        '<div class="spm-phases-strip" aria-label="Fasa Peperiksaan SPM 2026">' + phasesHtml + "</div>"
+      ].join("\n");
+    }
+
+    const ptHero = document.getElementById("portalSpmCountdownHero");
+    if (ptHero) {
+      const practiceTarget = (prefs.heroMode === "mine" && summary.myNextPaper && summary.myNextPaper.etutorSubject)
+        ? summary.myNextPaper.etutorSubject
+        : ((summary.myNextPaper && summary.myNextPaper.etutorSubject) || "Bahasa Melayu");
+      ptHero.innerHTML = [
+        '<div class="spm-portal-hero-left">',
+        '  <div class="spm-portal-hero-top">',
+        '    <span class="spm-portal-badge"><span class="spm-live-dot" aria-hidden="true"></span> ' + escapeHtml(target.statusLabel) + "</span>",
+        renderModeSwitchButtons(prefs, hasMine),
+        "  </div>",
+        '  <h2 id="portalSpmHeroTitle" class="spm-portal-hero-title">' + escapeHtml(target.title) + "</h2>",
+        '  <p class="spm-portal-hero-sub">' + escapeHtml(target.subtitle) + "</p>",
+        "</div>",
+        '<div class="spm-portal-hero-right">',
+        renderDigitTiles(target.date, target.time, parts, "is-portal"),
+        '  <div class="spm-portal-hero-actions">',
+        '    <button type="button" class="btn btn-continue-white btn-sm js-open-portal-countdown">' + ICONS.calendar + "<span>Semua Subjek &amp; Jadual</span></button>",
+        '    <button type="button" class="btn btn-emerald btn-sm js-practice-spm-subject" data-etutor-subject="' + escapeHtml(practiceTarget) + '">' + ICONS.play + "<span>Latih " + escapeHtml(practiceTarget) + "</span></button>",
+        "  </div>",
+        "</div>"
+      ].join("\n");
+    }
+
+    const pill = document.getElementById("countdownSummaryPill");
+    if (pill) {
+      pill.textContent = parts.sign <= 0
+        ? "Sedang Berlangsung"
+        : (parts.days > 0 ? (parts.days + " hari lagi • 23 Nov") : (parts.hours + "j " + parts.minutes + "m lagi"));
+    }
+  }
+
+  function filterSubjects(subjects, prefs) {
+    const q = String(prefs.search || "").trim().toLowerCase();
+    return subjects.filter(function (sub) {
+      if (prefs.onlyMine && !sub.selected) return false;
+      if (prefs.hideCompleted && sub.allCompleted) return false;
+      if (prefs.stream !== "ALL" && sub.stream !== prefs.stream) return false;
+      if (q) {
+        const paperStr = sub.papers.map(function (p) { return p.code + " " + p.title + " " + p.dateDisplay; }).join(" ");
+        const hay = (sub.code + " " + sub.name + " " + sub.streamLabel + " " + paperStr).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderSubjectCard(sub) {
+    const np = sub.nextPaper;
+    const cdHtml = np
+      ? '<div class="spm-card-countdown"><div class="spm-card-next-head">' + renderStatusBadge(np.status, np.statusLabel) + '<span class="spm-card-next-name">' + escapeHtml(np.code + " • " + np.title) + "</span></div>" + renderDigitTiles(np.countdownTargetDate, np.countdownTargetTime, computeCountdownParts(np.countdownTargetDate, np.countdownTargetTime), "is-card") + "</div>"
+      : '<div class="spm-card-countdown is-done">' + renderStatusBadge("completed", "Semua Kertas Selesai") + '<p class="spm-card-done-note">Semua ' + sub.totalCount + " kertas peperiksaan subjek ini telah tamat.</p></div>";
+
+    const papersHtml = sub.papers.map(function (p) {
+      return [
+        '<li class="spm-paper-row is-' + escapeHtml(p.status) + '">',
+        '  <div class="spm-paper-main"><strong class="tabular-nums">' + escapeHtml(p.code) + "</strong><span>" + escapeHtml(p.title) + "</span></div>",
+        '  <div class="spm-paper-meta tabular-nums"><span>' + escapeHtml(p.dateDisplay) + "</span><span>Hadir " + escapeHtml(p.hadirDisplay) + " • " + escapeHtml(p.timeDisplay) + " (" + escapeHtml(p.duration) + ")</span></div>",
+        "</li>"
+      ].join("");
+    }).join("");
+
+    const practiceBtn = sub.etutorSubject
+      ? '<button type="button" class="btn btn-primary btn-sm js-practice-spm-subject" data-etutor-subject="' + escapeHtml(sub.etutorSubject) + '">' + ICONS.play + "<span>Latih " + escapeHtml(sub.etutorSubject) + "</span></button>"
+      : "";
+    const footerHtml = practiceBtn
+      ? ('  <footer class="spm-cd-card-foot">' + practiceBtn + "</footer>")
+      : "";
+
+    return [
+      '<article class="spm-cd-card" data-urgency="' + escapeHtml(sub.urgency) + '" data-sub-code="' + escapeHtml(sub.code) + '">',
+      '  <header class="spm-cd-card-head">',
+      '    <div class="spm-cd-title-col">',
+      '      <div class="spm-cd-code-row"><span class="badge-kssm-code tabular-nums">Kod ' + escapeHtml(sub.code) + '</span><span class="spm-stream-tag">' + escapeHtml(sub.streamLabel) + "</span></div>",
+      '      <h4 class="spm-cd-subject-name">' + escapeHtml(sub.name) + "</h4>",
+      "    </div>",
+      '    <button type="button" class="spm-star-btn js-spm-toggle-sub" data-sub-code="' + escapeHtml(sub.code) + '" aria-pressed="' + (sub.selected ? "true" : "false") + '" aria-label="Tandakan ' + escapeHtml(sub.name) + ' dalam Subjek Saya">' + (sub.selected ? ICONS.starSolid : ICONS.starOutline) + "</button>",
+      "  </header>",
+      cdHtml,
+      '  <ul class="spm-paper-list">' + papersHtml + "</ul>",
+      footerHtml,
+      "</article>"
+    ].filter(Boolean).join("\n");
+  }
+
+  function renderTimelineView(filteredSubjects) {
+    const byDate = {};
+    filteredSubjects.forEach(function (sub) {
+      sub.papers.forEach(function (p) {
+        if (!byDate[p.date]) byDate[p.date] = { date: p.date, dateDisplay: p.dateDisplay, items: [], notices: [] };
+        byDate[p.date].items.push({ sub: sub, paper: p });
+      });
+    });
+    (SPM_SCHEDULE.meta.notices || []).forEach(function (n) {
+      if (!byDate[n.date]) byDate[n.date] = { date: n.date, dateDisplay: formatMalayDateShort(n.date), items: [], notices: [] };
+      byDate[n.date].notices.push(n);
+    });
+
+    const days = Object.keys(byDate).sort().filter(function (dk) {
+      return byDate[dk].items.length > 0 || byDate[dk].notices.some(function (n) { return n.type === "holiday"; });
+    });
+    if (days.length === 0) return "";
+
+    return '<div class="spm-timeline-wrap">' + days.map(function (dk) {
+      const grp = byDate[dk];
+      grp.items.sort(function (a, b) { return a.paper.startMs - b.paper.startMs || a.paper.code.localeCompare(b.paper.code); });
+      const noticesHtml = grp.notices.map(function (n) {
+        return '<div class="spm-timeline-notice is-' + escapeHtml(n.type) + '">' + ICONS.alert + "<div><strong>" + escapeHtml(n.title) + ":</strong> " + escapeHtml(n.text) + "</div></div>";
+      }).join("");
+      const rowsHtml = grp.items.map(function (entry) {
+        const sub = entry.sub;
+        const p = entry.paper;
+        const actBtn = sub.etutorSubject ? '<button type="button" class="btn btn-outline btn-sm js-practice-spm-subject" data-etutor-subject="' + escapeHtml(sub.etutorSubject) + '">' + ICONS.play + "<span>Latih</span></button>" : "";
+        return [
+          '<div class="spm-tl-row is-' + escapeHtml(p.status) + '">',
+          '  <div class="spm-tl-time tabular-nums"><strong>' + escapeHtml(p.timeDisplay) + "</strong><span>Hadir " + escapeHtml(p.hadirDisplay) + " • " + escapeHtml(p.duration) + "</span></div>",
+          '  <div class="spm-tl-sub"><span class="badge-kssm-code tabular-nums">' + escapeHtml(p.code) + "</span><strong>" + escapeHtml(sub.name) + "</strong><span class=\"spm-tl-paper\">" + escapeHtml(p.title) + "</span></div>",
+          '  <div class="spm-tl-actions">' + renderStatusBadge(p.status, p.statusLabel) + actBtn + "</div>",
+          "</div>"
+        ].join("");
+      }).join("");
+      return '<section class="spm-tl-day"><header class="spm-tl-day-head"><h4>' + escapeHtml(grp.dateDisplay) + '</h4><span class="tabular-nums">' + grp.items.length + " kertas</span></header>" + noticesHtml + '<div class="spm-tl-rows">' + rowsHtml + "</div></section>";
+    }).join("") + "</div>";
+  }
+
+  function renderSpmExplorerMount(prefix, prefs, summary) {
+    const wrap = document.getElementById(prefix + "SpmExplorerWrap");
+    const mount = document.getElementById(prefix + "SpmMountGrid");
+    if (!wrap || !mount) return;
+
+    wrap.querySelectorAll(".js-spm-stream-chip").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-stream") === prefs.stream ? "true" : "false"); });
+    wrap.querySelectorAll(".js-spm-toggle-mine").forEach(function (b) { b.setAttribute("aria-pressed", prefs.onlyMine ? "true" : "false"); b.textContent = "Subjek Saya (" + summary.selectedCount + ")"; });
+    wrap.querySelectorAll(".js-spm-toggle-hide-done").forEach(function (b) { b.setAttribute("aria-pressed", prefs.hideCompleted ? "true" : "false"); });
+    wrap.querySelectorAll(".js-spm-view-mode").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-view-mode") === prefs.viewMode ? "true" : "false"); });
+
+    const filtered = filterSubjects(summary.subjects, prefs);
+    const countEl = document.getElementById(prefix + "SpmMatchCount");
+    if (countEl) countEl.textContent = filtered.length + " daripada " + summary.subjects.length + " subjek SPM";
+
+    if (filtered.length === 0) {
+      mount.innerHTML = '<div class="bento-card" style="text-align:center;color:var(--text-muted);padding:32px">Tiada subjek SPM sepadan dengan penapis atau carian semasa. Cuba matikan tapis "Subjek Saya" atau kosongkan carian.</div>';
+      return;
+    }
+
+    mount.innerHTML = prefs.viewMode === "timeline" ? renderTimelineView(filtered) : ('<div class="spm-cd-grid">' + filtered.map(renderSubjectCard).join("\n") + "</div>");
+    if (window.ETutorMotion && typeof window.ETutorMotion.animateSpmCountdownCards === "function") {
+      window.ETutorMotion.animateSpmCountdownCards("#" + prefix + "SpmMountGrid .spm-cd-card");
+    }
+  }
+
+  function renderAllSpmCountdowns(prefs) {
+    const summary = getHeroCountdownSummary(prefs);
+    renderSpmHeroWidgets(prefs, summary);
+    renderSpmExplorerMount("lp", prefs, summary);
+    renderSpmExplorerMount("pt", prefs, summary);
+    return summary;
+  }
+
+  function tickSpmCountdownDigitsOnly() {
+    let needsFullRerender = false;
+    document.querySelectorAll("[data-cd-digits][data-cd-date][data-cd-time]").forEach(function (box) {
+      const parts = computeCountdownParts(box.getAttribute("data-cd-date"), box.getAttribute("data-cd-time"));
+      if (box.getAttribute("data-cd-active") === "1" && parts.sign <= 0) needsFullRerender = true;
+      const dEl = box.querySelector(".cd-v-d");
+      const hEl = box.querySelector(".cd-v-h");
+      const mEl = box.querySelector(".cd-v-m");
+      const sEl = box.querySelector(".cd-v-s");
+      if (dEl) dEl.textContent = pad2(parts.days);
+      if (hEl) hEl.textContent = pad2(parts.hours);
+      if (mEl) mEl.textContent = pad2(parts.minutes);
+      if (sEl) sEl.textContent = pad2(parts.seconds);
+    });
+    return needsFullRerender;
+  }
+
+  // --- [features/spm-countdown/spmCountdownController.js] ---
+  /**
+   * src/features/spm-countdown/spmCountdownController.js
+   * Pengawal acara Countdown Rasmi SPM 2026: penapis aliran, pratetap, Subjek Saya,
+   * jambatan terus ke latihan portal & pengemas kini masa 1-saat.
+   */
+
+
+
+
+
+
+
+
+
+  let spmPrefs = loadSpmCountdownPrefs();
+  let spmTickTimer = null;
+  let spmBound = false;
+
+  function announceSpmStatus(message) {
+    const el = document.getElementById("spmCountdownLiveAnnouncer");
+    if (el && message) el.textContent = message;
+  }
+
+  async function navigateToSubjectPractice(subjectName) {
+    if (!subjectName) return;
+    const authed = isPortalUserAuthenticated();
+    if (!authed) {
+      const paramKey = subjectName === "Pendidikan Syariah Islamiah" ? "subject" : "klonSubject";
+      try {
+        history.replaceState(null, "", window.location.pathname + "?" + paramKey + "=" + encodeURIComponent(subjectName) + "#login");
+      } catch (e) {}
+      portalState.deepLinkHandled = false;
+      await syncRouteMode();
+      window.scrollTo(0, 0);
+      showToast("Log masuk untuk terus menjawab soalan " + subjectName + ".");
+      return;
+    }
+
+    const dashEl = document.getElementById("dashboardView");
+    if (!dashEl || dashEl.hidden) {
+      window.location.hash = "#portal";
+      await syncRouteMode();
+    }
+
+    const catalog = portalState.catalog || [];
+    const hasKlon = catalog.some(function (c) {
+      return c.category === "klon" && String(c.subject || "").toLowerCase() === subjectName.toLowerCase();
+    });
+
+    if (hasKlon) {
+      portalState.klonSelectedGroup = "ALL";
+      portalState.klonSelectedSubject = subjectName;
+      document.querySelectorAll(".js-klon-group-chip").forEach(function (btn) {
+        btn.setAttribute("aria-pressed", btn.getAttribute("data-klon-group") === "ALL" ? "true" : "false");
+      });
+      populateKlonSubjectChips();
+      renderKlonCatalogSection();
+      openPortalModuleDropdown("klon_spm");
+      const target = document.getElementById("klonCatalogHeading");
+      if (target) setTimeout(function () { target.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      showToast("Memaparkan Set Klon SPM: " + subjectName);
+    } else {
+      portalState.selectedSubject = subjectName;
+      populateSubjectSelectors();
+      renderCatalogSection();
+      openPortalModuleDropdown("pra_spm");
+      const target = document.getElementById("catalogHeading");
+      if (target) setTimeout(function () { target.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      showToast("Memaparkan Set Percubaan SPM: " + subjectName);
+    }
+  }
+
+  function syncSearchInputs(value) {
+    ["lpSpmSearchInput", "ptSpmSearchInput"].forEach(function (id) {
+      const inp = document.getElementById(id);
+      if (inp && inp.value !== value) inp.value = value;
+    });
+  }
+
+  function bindSpmCountdownEvents() {
+    if (spmBound) return;
+    spmBound = true;
+
+    document.addEventListener("click", async function (e) {
+      const streamBtn = e.target.closest(".js-spm-stream-chip");
+      if (streamBtn) {
+        spmPrefs.stream = streamBtn.getAttribute("data-stream") || "ALL";
+        saveSpmCountdownPrefs(spmPrefs);
+        const sum = renderAllSpmCountdowns(spmPrefs);
+        announceSpmStatus("Menapis aliran " + streamBtn.textContent.trim() + ", " + sum.subjects.length + " subjek tersedia.");
+        return;
+      }
+
+      const presetBtn = e.target.closest(".js-spm-preset-btn");
+      if (presetBtn) {
+        const key = presetBtn.getAttribute("data-preset") || "SAINS_TULEN";
+        const list = (SPM_SCHEDULE.presets && SPM_SCHEDULE.presets[key]) || [];
+        spmPrefs.selectedCodes = list.slice();
+        spmPrefs.onlyMine = true;
+        spmPrefs.stream = "ALL";
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        announceSpmStatus("Pratetap " + presetBtn.textContent.trim() + " digunakan (" + list.length + " subjek).");
+        showToast("Subjek Saya dikemas kini: " + presetBtn.textContent.trim() + " (" + list.length + " subjek)");
+        return;
+      }
+
+      const toggleSubBtn = e.target.closest(".js-spm-toggle-sub");
+      if (toggleSubBtn) {
+        const code = toggleSubBtn.getAttribute("data-sub-code");
+        if (!code) return;
+        const idx = spmPrefs.selectedCodes.indexOf(code);
+        if (idx === -1) spmPrefs.selectedCodes.push(code);
+        else spmPrefs.selectedCodes.splice(idx, 1);
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        announceSpmStatus(idx === -1 ? "Subjek ditambah ke senarai Subjek Saya." : "Subjek dikeluarkan daripada senarai Subjek Saya.");
+        return;
+      }
+
+      if (e.target.closest(".js-spm-toggle-mine")) {
+        spmPrefs.onlyMine = !spmPrefs.onlyMine;
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        announceSpmStatus(spmPrefs.onlyMine ? "Memaparkan Subjek Saya sahaja." : "Memaparkan semua subjek SPM.");
+        return;
+      }
+
+      if (e.target.closest(".js-spm-toggle-hide-done")) {
+        spmPrefs.hideCompleted = !spmPrefs.hideCompleted;
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        announceSpmStatus(spmPrefs.hideCompleted ? "Kertas selesai disembunyikan." : "Semua kertas dipaparkan.");
+        return;
+      }
+
+      const viewBtn = e.target.closest(".js-spm-view-mode");
+      if (viewBtn) {
+        spmPrefs.viewMode = viewBtn.getAttribute("data-view-mode") === "timeline" ? "timeline" : "cards";
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        return;
+      }
+
+      const heroBtn = e.target.closest(".js-spm-hero-mode");
+      if (heroBtn && !heroBtn.disabled) {
+        spmPrefs.heroMode = heroBtn.getAttribute("data-hero-mode") === "mine" ? "mine" : "written";
+        saveSpmCountdownPrefs(spmPrefs);
+        renderAllSpmCountdowns(spmPrefs);
+        return;
+      }
+
+      const pracBtn = e.target.closest(".js-practice-spm-subject");
+      if (pracBtn) {
+        const subName = pracBtn.getAttribute("data-etutor-subject");
+        if (subName) await navigateToSubjectPractice(subName);
+        return;
+      }
+
+      const openCdBtn = e.target.closest(".js-open-portal-countdown");
+      if (openCdBtn) {
+        e.preventDefault();
+        const dashEl = document.getElementById("dashboardView");
+        if (dashEl && !dashEl.hidden) {
+          openPortalModuleDropdown("countdown_spm");
+          const dd = document.getElementById("moduleDropdownCountdown");
+          if (dd) setTimeout(function () { dd.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+        } else if (isPortalUserAuthenticated()) {
+          portalState.pendingCountdownScroll = true;
+          window.location.hash = "#portal";
+          syncRouteMode();
+        } else {
+          const lpEx = document.getElementById("lpSpmExplorerWrap");
+          if (lpEx) lpEx.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+
+    document.addEventListener("input", function (e) {
+      if (e.target && (e.target.id === "lpSpmSearchInput" || e.target.id === "ptSpmSearchInput")) {
+        spmPrefs.search = e.target.value || "";
+        syncSearchInputs(spmPrefs.search);
+        renderAllSpmCountdowns(spmPrefs);
+      }
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && tickSpmCountdownDigitsOnly()) {
+        renderAllSpmCountdowns(spmPrefs);
+      }
+    });
+  }
+
+  function initSpmCountdown() {
+    spmPrefs = loadSpmCountdownPrefs();
+    renderAllSpmCountdowns(spmPrefs);
+    bindSpmCountdownEvents();
+
+    if (!spmTickTimer) {
+      spmTickTimer = setInterval(function () {
+        if (document.hidden) return;
+        if (tickSpmCountdownDigitsOnly()) {
+          renderAllSpmCountdowns(spmPrefs);
+        }
+      }, 1000);
+    }
+  }
+
+  // --- [features/admin/adminApiService.js] ---
+  /**
+   * src/features/admin/adminApiService.js
+   * Penghala komunikasi Admin: /api untuk pratonton tempatan dan Edge Function Supabase /v1/admin untuk produksi.
+   */
+
+
+  function resolveAdminEndpoint() {
+    if (typeof window === "undefined") return "";
+    const hostName = (window.location && window.location.hostname) ? window.location.hostname : "";
+    if (/^(localhost|127\.0\.0\.1)$/i.test(hostName)) {
+      return "/api";
+    }
+    const cfg = window.ETUTOR_CONFIG || {};
+    const edgeBase = String(cfg.CIKGU_SUPABASE_EDGE_URL || "").trim().replace(/\/+$/, "");
+    if (edgeBase) {
+      return edgeBase + "/v1/admin";
+    }
+    const supaUrl = String(cfg.SUPABASE_URL || "").trim().replace(/\/+$/, "");
+    if (supaUrl && isSupabaseConfigured()) {
+      return supaUrl + "/functions/v1/cikgu-semak/v1/admin";
+    }
+    return "";
+  }
+
+  async function callAdminBackend(action, payload) {
+    const endpoint = resolveAdminEndpoint();
+    if (!endpoint) {
+      return callBackend(action, payload);
+    }
+    const reqBody = Object.assign({}, payload || {}, { action: action });
+    const headers = { "Content-Type": "application/json" };
+    if (endpoint !== "/api") {
+      const cfg = window.ETUTOR_CONFIG || {};
+      const anonKey = String(cfg.SUPABASE_ANON_KEY || "").trim();
+      if (anonKey) {
+        headers.apikey = anonKey;
+        headers.Authorization = "Bearer " + anonKey;
+      }
+    }
+    const resp = await fetch(endpoint, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(reqBody)
+    });
+    let data = null;
+    try {
+      data = await resp.json();
+    } catch (e) {
+      data = null;
+    }
+    if (!resp.ok) {
+      throw new Error((data && data.error) || ("Ralat pelayan Admin (HTTP " + resp.status + ")"));
+    }
+    return data;
   }
 
   // --- [features/admin/adminSubjectPicker.js] ---
@@ -4414,157 +5482,167 @@
   // --- [features/admin/adminTablesView.js] ---
   /**
    * src/features/admin/adminTablesView.js
-   * Pembina mesej pengaktifan WhatsApp pelanggan serta pemapar jadual Pelanggan (PIN dikaburkan) & Log Akses.
+   * Paparan statistik ekosistem, kutipan RM, bajet AI, dompet token pelajar, peti aduan, eksport CSV & log Admin.
    */
 
 
 
 
-  function toMalaysianWhatsAppNumber(rawUserId) {
-    const s = String(rawUserId || "").trim();
-    if (!s || s.indexOf("@") !== -1) return "";
-    const digits = s.replace(/\D/g, "");
-    if (/^601\d{7,9}$/.test(digits)) return digits;
-    if (/^01\d{7,9}$/.test(digits)) return "6" + digits;
-    if (/^1\d{7,9}$/.test(digits)) return "60" + digits;
-    return "";
+  function toMalaysianWhatsAppNumber(rawId) {
+    let digits = String(rawId || "").replace(/\D/g, "");
+    if (!digits) return "";
+    if (digits.indexOf("0") === 0) digits = "6" + digits;
+    else if (digits.indexOf("1") === 0) digits = "60" + digits;
+    return (digits.indexOf("601") === 0 && digits.length >= 10 && digits.length <= 12) ? digits : "";
   }
 
-  function buildCustomerActivationWaText(btnEl) {
-    const basePortalUrl = ((portalState.adminData && portalState.adminData.portalUrl) || window.location.origin).replace(/\/$/, "");
-    const adminWaDigits = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "") || "60137327696";
-    const adminWaDisplay = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.ADMIN_WHATSAPP_DISPLAY) || "013-732 7696";
-    const pkgVal = btnEl.getAttribute("data-pkg") || "ALL";
-    const pkgReadable = pkgVal.toUpperCase() === "ALL" ? "Semua Subjek SPM (ALL)" : pkgVal;
-
+  function buildCustomerActivationWaText(btnOrStudent) {
+    const name = btnOrStudent && btnOrStudent.getAttribute
+      ? (btnOrStudent.getAttribute("data-name") || "Pelajar")
+      : ((btnOrStudent && (btnOrStudent.displayName || btnOrStudent.fullName)) || "Pelajar");
+    const email = btnOrStudent && btnOrStudent.getAttribute
+      ? (btnOrStudent.getAttribute("data-email") || "")
+      : ((btnOrStudent && btnOrStudent.email) || "");
+    const portalUrl = (portalState.adminData && portalState.adminData.portalUrl) || "https://etutor.my/#portal";
     return [
-      "Assalamualaikum & Salam Sejahtera " + (btnEl.getAttribute("data-name") || "Pelajar") + ",",
+      "Assalamualaikum & Salam Sejahtera " + name + ",",
       "",
-      "Akses Portal Latihan Interaktif eTutor.my anda telah DIAKTIFKAN:",
-      "URL Log Masuk: " + basePortalUrl + "/#login",
-      "ID Pengguna: " + btnEl.getAttribute("data-uid"),
-      "Kod PIN: " + btnEl.getAttribute("data-pin"),
-      "Pakej Akses: " + pkgReadable,
+      "Makluman akaun eTutor.my anda:",
+      "ID / E-mel: " + email,
+      "Pautan Portal: " + portalUrl,
       "",
-      "Bantuan Sokongan Admin WhatsApp: " + adminWaDisplay + " (https://wa.me/" + adminWaDigits + ")",
-      "",
-      "Selamat maju jaya!"
+      "Jika ada sebarang pertanyaan, hubungi Admin: 013-732 7696.",
+      "Terima kasih!"
     ].join("\n");
   }
 
-  function applyAdminBundle(res) {
-    portalState.adminData = res;
-    if (typeof res.openAccessMode === "boolean") {
-      setOpenAccessOverride(res.openAccessMode);
-      const modeBadge = document.getElementById("admPortalModeBadge");
-      const modeDesc = document.getElementById("admPortalModeDesc");
-      const modeBtn = document.getElementById("admToggleOpenModeBtn");
-      if (modeBadge) {
-        modeBadge.textContent = res.openAccessMode
-          ? "Mod Akses Terbuka Aktif"
-          : "Mod Langganan & Log Masuk PIN Aktif";
-        modeBadge.className = "status-badge " + (res.openAccessMode ? "badge-done" : "badge-subject");
-      }
-      if (modeDesc) {
-        modeDesc.textContent = res.openAccessMode
-          ? "Pakej harga dan skrin log masuk ditutup buat masa ini — pelajar boleh terus masuk ke Bank Soalan. Klik butang di sebelah pada tahun hadapan apabila anda sedia mengaktifkan semula harga & log masuk PIN."
-          : "Pakej harga dan pengesahan ID + Kod PIN sedang aktif sepenuhnya. Hanya pelanggan berdaftar yang mempunyai PIN sah boleh membuka set soalan.";
-      }
-      if (modeBtn) {
-        modeBtn.textContent = res.openAccessMode
-          ? "Tukar ke Mod Langganan & Log Masuk PIN"
-          : "Tukar ke Mod Akses Terbuka (Tutup Harga & Login)";
-        modeBtn.className = res.openAccessMode ? "btn btn-primary" : "btn btn-outline";
-      }
-    }
-    const st = res.stats || {};
-    const elTot = document.getElementById("admTotalUsers");
-    const elAct = document.getElementById("admActiveUsers");
-    const elBlk = document.getElementById("admBlockedUsers");
-    const elScr = document.getElementById("admTotalScores");
-    if (elTot) elTot.textContent = String(st.totalUsers || 0);
-    if (elAct) elAct.textContent = String(st.activeUsers || 0);
-    if (elBlk) elBlk.textContent = String(st.blockedOrExpiredUsers || 0);
-    if (elScr) elScr.textContent = String(st.totalScoreSubmissions || 0);
+  function applyAdminBundle(data) {
+    portalState.adminData = data;
+    if (typeof data.openAccessMode === "boolean") portalState.openAccessMode = data.openAccessMode;
 
-    const sheetLink = document.getElementById("adminOpenSheetLink");
-    if (sheetLink) {
-      if (res.spreadsheetUrl) {
-        sheetLink.href = res.spreadsheetUrl;
-        sheetLink.hidden = false;
+    const modeBadge = document.getElementById("admPortalModeBadge");
+    const modeDesc = document.getElementById("admPortalModeDesc");
+    const modeToggleBtn = document.getElementById("admToggleOpenModeBtn");
+    if (modeBadge && modeDesc && modeToggleBtn) {
+      if (data.openAccessMode) {
+        modeBadge.textContent = "MOD TERBUKA AKTIF";
+        modeBadge.className = "status-badge badge-done";
+        modeDesc.textContent = "Semua pelajar boleh terus meneroka katalog dan mencuba soalan tanpa sekatan akaun wajib.";
+        modeToggleBtn.textContent = "Tukar ke Mod Token & Akaun Wajib";
+        modeToggleBtn.className = "btn btn-outline";
       } else {
-        sheetLink.hidden = true;
+        modeBadge.textContent = "MOD AKAUN & TOKEN AI AKTIF";
+        modeBadge.className = "status-badge badge-progress";
+        modeDesc.textContent = "Pelajar log masuk melalui Google / E-mel OTP dan menggunakan kuota asas serta Token Top-up Kekal.";
+        modeToggleBtn.textContent = "Aktifkan Mod Terbuka (Tanpa Sekatan)";
+        modeToggleBtn.className = "btn btn-primary";
       }
     }
 
-    const fieldset = document.getElementById("admSubjectFieldset");
-    if (fieldset && !fieldset.hidden) {
-      const currentRaw = (document.getElementById("admPackage") || {}).value || "";
-      const currentTokens = currentRaw.split(",").map(function (t) { return t.trim(); }).filter(Boolean);
-      renderAdminSubjectCheckboxes(currentTokens);
-    } else {
-      renderAdminSubjectCheckboxes([]);
-    }
+    const stats = data.stats || {};
+    const studentsList = Array.isArray(data.students) ? data.students : [];
+    const totalTopup = Number.isFinite(Number(stats.totalTopupTokens))
+      ? Number(stats.totalTopupTokens)
+      : studentsList.reduce(function (sum, s) { return sum + (Number(s.paidBalance) || 0); }, 0);
+
+    const setText = function (id, txt) { const el = document.getElementById(id); if (el) el.textContent = txt; };
+    setText("admTotalUsers", String(stats.totalUsers != null ? stats.totalUsers : studentsList.length));
+    setText("admActiveUsers", String(stats.activeUsers || 0));
+    setText("admTotalTopupTokens", String(totalTopup));
+    setText("admMonthRevenueVal", "RM " + (Number(stats.estRevenueMonthMyr) || 0));
+    setText("admTodayPlansSub", "Hari ini: " + (Number(stats.plansTodayCount) || 0) + " pelan (RM " + (Number(stats.estRevenueTodayMyr) || 0) + ")");
+    setText("admOpenIssuesCount", String(stats.openIssuesCount || 0));
+    setText("admTotalScores", String(stats.totalScoreSubmissions || 0));
+
+    const budget = data.aiBudget || {};
+    const spentMyr = Number(budget.spentMyr) || 0;
+    const capMyr = Number(budget.hardCapMyr) || 2;
+    setText("admAiBudgetVal", "RM " + spentMyr.toFixed(2) + " / " + capMyr.toFixed(2));
+    setText("admVisionUsedSub", "Snap & Check: " + (Number(budget.freeVisionUsed) || 0) + " / " + (Number(budget.freeVisionCap) || 100));
+    const capInp = document.getElementById("admBudgetCapInput");
+    const visInp = document.getElementById("admVisionCapInput");
+    if (capInp && document.activeElement !== capInp) capInp.value = capMyr.toFixed(2);
+    if (visInp && document.activeElement !== visInp) visInp.value = String(budget.freeVisionCap != null ? budget.freeVisionCap : 100);
 
     renderAdminUsersTable();
+    renderAdminIssuesTable();
     renderAdminLogsTable();
+    if (typeof renderAdminRecentVouchers === "function") renderAdminRecentVouchers(data.recentVouchers || []);
   }
 
   function renderAdminUsersTable() {
     const tbody = document.getElementById("adminUsersTableBody");
     if (!tbody || !portalState.adminData) return;
 
-    const q = portalState.adminSearch.trim().toLowerCase();
-    const sf = portalState.adminStatusFilter;
-    const list = (portalState.adminData.users || []).filter(function (u) {
-      const effectivelyActive = u.status === "AKTIF" && !u.isExpired;
-      if (sf === "AKTIF" && !effectivelyActive) return false;
-      if (sf === "SEKAT" && effectivelyActive) return false;
-      if (q) {
-        const hay = [u.userId, u.buyerName, u.aksesPakej, u.status].join(" ").toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
-      return true;
+    const query = (document.getElementById("adminSearchInput")?.value || "").trim().toLowerCase();
+    const statusFilter = document.getElementById("adminStatusFilter")?.value || "ALL";
+    const source = Array.isArray(portalState.adminData.students) ? portalState.adminData.students : [];
+
+    const filtered = source.filter(function (s) {
+      const st = String(s.status || "AKTIF").toUpperCase();
+      const paid = Number(s.paidBalance) || 0;
+      if (statusFilter === "TOPUP" && paid <= 0) return false;
+      if (statusFilter === "AKTIF" && st === "SEKAT") return false;
+      if (statusFilter === "SEKAT" && st !== "SEKAT") return false;
+      if (!query) return true;
+      const displayName = s.displayName || s.fullName || "";
+      const uid = s.userId || s.id || "";
+      return String(displayName).toLowerCase().includes(query) || String(s.email || "").toLowerCase().includes(query) ||
+        String(s.referralCode || "").toLowerCase().includes(query) || String(uid).toLowerCase().includes(query);
     });
 
-    if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:20px">Tiada rekod pelanggan sepadan.</td></tr>';
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:24px">Tiada akaun pelajar sepadan dengan carian atau penapis.</td></tr>';
       return;
     }
 
-    tbody.innerHTML = list.map(function (u) {
-      const isOk = u.status === "AKTIF" && !u.isExpired;
-      const badgeClass = isOk ? "badge-done" : "badge-progress";
-      const statusLabel = u.isExpired ? "TAMAT TEMPOH" : u.status;
-      const toggleLabel = u.status === "AKTIF" ? "Sekat" : "Aktifkan";
-      const expText = u.expiryDate ? " (Tamat: " + escapeHtml(u.expiryDate) + ")" : " (Tiada had tarikh)";
-
-      const isPinVisible = portalState.revealedAdminPins.has(u.userId);
-      const pinDisplay = isPinVisible ? escapeHtml(u.pin || "—") : "••••••";
-      const pinBtnLabel = isPinVisible ? "Tutup" : "Lihat";
-
-      return [
-        "<tr>",
-        '  <th scope="row">',
-        '    <div style="font-weight:700;color:var(--text-primary)">' + escapeHtml(u.buyerName || "Pelajar") + "</div>",
-        '    <div class="tabular-nums" style="font-size:0.8rem;color:var(--text-muted)">' + escapeHtml(u.userId) + "</div>",
-        "  </th>",
-        '  <td class="tabular-nums"><div style="display:inline-flex;align-items:center;gap:6px"><code>' + pinDisplay + '</code><button type="button" class="btn btn-ghost btn-xs js-adm-toggle-pin" data-uid="' + escapeHtml(u.userId) + '" aria-label="Papar atau sembunyi PIN">' + pinBtnLabel + "</button></div></td>",
-        "  <td>" + escapeHtml(u.aksesPakej || "ALL") + "</td>",
-        '  <td><span class="status-badge ' + badgeClass + '">' + escapeHtml(statusLabel) + '</span><div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">' + expText + "</div></td>",
-        '  <td class="tabular-nums">' + u.devicesUsed + " / " + u.deviceLimit + " peranti</td>",
-        '  <td class="tabular-nums" style="font-size:0.8rem;color:var(--text-secondary)">' + escapeHtml(u.lastAccess || "Belum log masuk") + "</td>",
-        "  <td>",
-        '    <div class="admin-row-actions">',
-        '      <button type="button" class="btn btn-outline btn-xs js-adm-edit-user" data-uid="' + escapeHtml(u.userId) + '">Edit Pakej</button>',
-        '      <button type="button" class="btn btn-emerald btn-xs js-adm-send-wa" data-uid="' + escapeHtml(u.userId) + '" data-name="' + escapeHtml(u.buyerName) + '" data-pin="' + escapeHtml(u.pin) + '" data-pkg="' + escapeHtml(u.aksesPakej) + '">Hantar WA</button>',
-        '      <button type="button" class="btn btn-outline btn-xs js-adm-copy-wa" data-uid="' + escapeHtml(u.userId) + '" data-name="' + escapeHtml(u.buyerName) + '" data-pin="' + escapeHtml(u.pin) + '" data-pkg="' + escapeHtml(u.aksesPakej) + '">Salin WA</button>',
-        '      <button type="button" class="btn btn-outline btn-xs js-adm-reset-dev" data-uid="' + escapeHtml(u.userId) + '">Reset Peranti</button>',
-        '      <button type="button" class="btn btn-outline btn-xs js-adm-toggle-status" data-uid="' + escapeHtml(u.userId) + '">' + toggleLabel + "</button>",
-        "    </div>",
-        "  </td>",
+    tbody.innerHTML = filtered.map(function (s) {
+      const isBlocked = String(s.status || "AKTIF").toUpperCase() === "SEKAT";
+      const statusBadge = '<span class="status-badge ' + (isBlocked ? "badge-progress" : "badge-done") + '">' + (isBlocked ? "DISEKAT" : "AKTIF") + "</span>";
+      const safeId = escapeHtml(s.userId || s.id || "");
+      const safeName = escapeHtml(s.displayName || s.fullName || "Pelajar");
+      const safeEmail = escapeHtml(s.email || "-");
+      const identAttr = escapeHtml(s.email || s.userId || s.id || "");
+      return (
+        "<tr>" +
+          '<td><div style="font-weight:700;color:var(--text-primary)">' + safeName + "</div>" +
+          '<div style="font-size:0.78rem;color:var(--text-muted)">' + safeEmail + '<span class="adm-provider-tag">' + escapeHtml(String(s.authProvider || "google").toUpperCase()) + "</span></div></td>" +
+          '<td class="tabular-nums"><div style="font-weight:700;color:var(--brand-primary)">' + (Number(s.paidBalance) || 0) + ' Token Kekal</div>' +
+          '<div style="font-size:0.76rem;color:var(--text-muted)">Asas: ' + (s.freeMonthlyRemaining != null ? s.freeMonthlyRemaining : 30) + "/30 bln &bull; " + (s.freeDailyRemaining != null ? s.freeDailyRemaining : 5) + "/5 hari</div></td>" +
+          '<td class="tabular-nums"><div style="font-weight:600">' + escapeHtml(s.referralCode || "-") + '</div><div style="font-size:0.76rem;color:var(--text-muted)">Set: ' + (Number(s.completedSets) || 0) + " &bull; Rujuk: " + (Number(s.monthlyReferralsCount) || 0) + "/20</div></td>" +
+          "<td>" + statusBadge + '<div style="font-size:0.74rem;color:var(--text-muted);margin-top:4px">' + escapeHtml(s.lastAccess || "Akaun Supabase") + "</div></td>" +
+          '<td><div class="admin-row-actions">' +
+            '<button type="button" class="btn btn-outline btn-xs js-adm-pick-student" data-ident="' + identAttr + '" data-name="' + safeName + '">Pilih</button>' +
+            '<button type="button" class="btn btn-outline btn-xs js-adm-topup" data-uid="' + safeId + '" data-delta="45" data-name="' + safeName + '">+45</button>' +
+            '<button type="button" class="btn btn-outline btn-xs js-adm-topup" data-uid="' + safeId + '" data-delta="160" data-name="' + safeName + '">+160</button>' +
+            '<button type="button" class="btn btn-outline btn-xs js-adm-topup" data-uid="' + safeId + '" data-delta="500" data-name="' + safeName + '">+500</button>' +
+            '<button type="button" class="btn btn-outline btn-xs js-adm-wa-student" data-ident="' + identAttr + '" data-email="' + safeEmail + '" data-name="' + safeName + '">WA</button>' +
+            '<button type="button" class="btn ' + (isBlocked ? "btn-primary" : "btn-ghost") + ' btn-xs js-adm-toggle-student" data-uid="' + safeId + '">' + (isBlocked ? "Aktifkan" : "Sekat") + "</button>" +
+          "</div></td>" +
         "</tr>"
-      ].join("");
+      );
+    }).join("");
+  }
+
+  function renderAdminIssuesTable() {
+    const tbody = document.getElementById("adminIssuesTableBody");
+    if (!tbody || !portalState.adminData) return;
+    const issues = Array.isArray(portalState.adminData.recentIssues) ? portalState.adminData.recentIssues : [];
+    if (issues.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:20px">Tiada aduan atau laporan isu pelajar buat masa ini.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = issues.map(function (it) {
+      const isDone = String(it.status || "BARU").toUpperCase() === "SELESAI";
+      return (
+        "<tr>" +
+          '<td><div class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(it.timestamp || "") + '</div><span class="status-badge ' + (isDone ? "badge-done" : "badge-progress") + '">' + (isDone ? "SELESAI" : "BARU") + "</span></td>" +
+          '<td><span class="status-badge badge-subject">' + escapeHtml(it.category || "Umum") + "</span></td>" +
+          '<td style="font-size:0.82rem;max-inline-size:320px"><div>' + escapeHtml(it.details || "") + '</div><div style="font-size:0.72rem;color:var(--text-muted)">' + escapeHtml(it.pageUrl || "") + "</div></td>" +
+          '<td style="font-size:0.78rem"><div>' + escapeHtml(it.contact || "-") + '</div><div style="color:var(--text-muted)">' + escapeHtml(it.userKey || "Guest") + "</div></td>" +
+          '<td><button type="button" class="btn ' + (isDone ? "btn-outline" : "btn-primary") + ' btn-xs js-adm-resolve-issue" data-issue-id="' + escapeHtml(String(it.id || "")) + '">' + (isDone ? "Buka Semula" : "Tanda Selesai") + "</button></td>" +
+        "</tr>"
+      );
     }).join("");
   }
 
@@ -4573,117 +5651,275 @@
     if (!tbody || !portalState.adminData) return;
     const logs = portalState.adminData.recentLogs || [];
     if (logs.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:18px">Belum ada log akses direkodkan.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:20px">Belum ada log aktiviti terkini.</td></tr>';
       return;
     }
-    tbody.innerHTML = logs.slice(0, 30).map(function (l) {
-      return [
-        "<tr>",
-        '  <th scope="row" class="tabular-nums" style="font-size:0.8rem">' + escapeHtml(l.timestamp) + "</th>",
-        '  <td class="tabular-nums">' + escapeHtml(l.userId) + "</td>",
-        '  <td><span class="status-badge badge-subject">' + escapeHtml(l.eventType) + "</span></td>",
-        '  <td class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(l.deviceId) + "</td>",
-        '  <td style="font-size:0.82rem;color:var(--text-secondary)">' + escapeHtml(l.details) + "</td>",
+    tbody.innerHTML = logs.slice(0, 40).map(function (log) {
+      const evt = String(log.eventType || "");
+      const isWarn = evt.includes("SEKAT") || evt.includes("DENIED") || evt.includes("LIMIT") || evt.includes("BLOCK") || evt.includes("FAIL");
+      return (
+        "<tr>" +
+          '<td class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(log.timestamp || "") + "</td>" +
+          '<td class="tabular-nums" style="font-weight:600">' + escapeHtml(log.userId || "") + "</td>" +
+          '<td><span class="status-badge ' + (isWarn ? "badge-progress" : "badge-done") + '">' + escapeHtml(evt) + "</span></td>" +
+          '<td style="font-size:0.76rem;color:var(--text-muted)">' + escapeHtml(log.deviceId || "-") + "</td>" +
+          '<td style="font-size:0.8rem">' + escapeHtml(log.details || "") + "</td>" +
         "</tr>"
-      ].join("");
+      );
     }).join("");
+  }
+
+  function exportAdminStudentsCsv() {
+    const list = (portalState.adminData && Array.isArray(portalState.adminData.students)) ? portalState.adminData.students : [];
+    if (!list.length) { showToast("Tiada data pelajar untuk dieksport.", true); return; }
+    const esc = function (v) {
+      let s = String(v == null ? "" : v);
+      if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
+      return '"' + s.replace(/"/g, '""') + '"';
+    };
+    const rows = [["Nama", "Emel", "Penyedia", "Status", "Token Kekal", "Asas Bulan", "Kod Rujukan", "Set Selesai", "Akses Terakhir"].map(esc).join(",")];
+    list.forEach(function (s) {
+      rows.push([s.displayName || s.fullName || "", s.email || "", s.authProvider || "", s.status || "", s.paidBalance || 0, s.freeMonthlyRemaining != null ? s.freeMonthlyRemaining : 30, s.referralCode || "", s.completedSets || 0, s.lastAccess || ""].map(esc).join(","));
+    });
+    const blob = new Blob(["\ufeff" + rows.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "etutor_pelajar_" + new Date(Date.now() + 8 * 3600000).toISOString().slice(0, 10) + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+    showToast("Senarai " + list.length + " pelajar dieksport ke CSV.");
   }
 
   // --- [features/admin/adminTableActionsController.js] ---
   /**
    * src/features/admin/adminTableActionsController.js
-   * Pengawal tindakan baris jadual Admin (Papar PIN, Edit Pakej, Hantar WA, Salin WA, Reset Peranti & Sekat).
+   * Pengawal tindakan baris jadual pelajar (Pilih, Kredit +45/+160/+500, WhatsApp Terus, Sekat/Aktifkan).
    */
-
 
 
 
 
   function bindAdminTableRowActions() {
     document.addEventListener("click", async function (e) {
-      const pinToggleBtn = e.target.closest(".js-adm-toggle-pin");
-      if (pinToggleBtn) {
-        const uid = pinToggleBtn.getAttribute("data-uid");
-        if (uid) {
-          if (portalState.revealedAdminPins.has(uid)) {
-            portalState.revealedAdminPins.delete(uid);
-          } else {
-            portalState.revealedAdminPins.add(uid);
-          }
-          renderAdminUsersTable();
-        }
+      const pickBtn = e.target.closest(".js-adm-pick-student");
+      if (pickBtn) {
+        const ident = pickBtn.getAttribute("data-ident") || "";
+        const name = pickBtn.getAttribute("data-name") || "";
+        const planInp = document.getElementById("admDirectStudentInput");
+        const noteInp = document.getElementById("admVoucherNoteInput");
+        const adjInp = document.getElementById("admAdjustStudentInput");
+        if (planInp && ident) planInp.value = ident;
+        if (noteInp && name) noteInp.value = name;
+        if (adjInp && ident) adjInp.value = ident;
+        const heading = document.getElementById("adminVoucherHeading");
+        if (heading) heading.scrollIntoView({ behavior: "smooth", block: "start" });
+        showToast("Akaun " + (ident || name) + " dimuatkan ke borang Admin.");
         return;
       }
 
-      const editUserBtn = e.target.closest(".js-adm-edit-user");
-      if (editUserBtn && portalState.adminData) {
-        const uid = editUserBtn.getAttribute("data-uid");
-        const found = (portalState.adminData.users || []).find(function (u) { return u.userId === uid; });
-        if (found) {
-          document.getElementById("admUserId").value = found.userId || "";
-          document.getElementById("admBuyerName").value = found.buyerName || "";
-          document.getElementById("admDeviceLimit").value = String(found.deviceLimit || 2);
-          document.getElementById("admExpiry").value = found.expiryDate || "";
-          document.getElementById("admCustomPin").value = found.pin || "";
-
-          const rawPkg = String(found.aksesPakej || "ALL").trim();
-          if (!rawPkg || rawPkg.toUpperCase() === "ALL") {
-            applyAdminPresetSelection((found.deviceLimit || 2) >= 4 ? "FAMILY" : "ALL", "ALL");
-          } else {
-            applyAdminPresetSelection("CUSTOM", rawPkg);
-          }
-
-          const addHeading = document.getElementById("adminAddHeading");
-          if (addHeading) addHeading.scrollIntoView({ behavior: "smooth", block: "start" });
-          showToast("Rekod " + found.buyerName + " dimuatkan ke borang untuk dikemas kini.");
-        }
-        return;
-      }
-
-      const sendWaBtn = e.target.closest(".js-adm-send-wa");
-      if (sendWaBtn) {
-        const msg = buildCustomerActivationWaText(sendWaBtn);
-        const buyerWa = toMalaysianWhatsAppNumber(sendWaBtn.getAttribute("data-uid"));
-        const targetWaUrl = buyerWa
-          ? "https://wa.me/" + buyerWa + "?text=" + encodeURIComponent(msg)
-          : "https://wa.me/?text=" + encodeURIComponent(msg);
-        try { await navigator.clipboard.writeText(msg); } catch {}
-        window.open(targetWaUrl, "_blank", "noopener");
-        showToast(buyerWa ? "Membuka WhatsApp terus kepada pelanggan..." : "Mesej disalin & membuka WhatsApp...");
-        return;
-      }
-
-      const waBtn = e.target.closest(".js-adm-copy-wa");
+      const waBtn = e.target.closest(".js-adm-wa-student");
       if (waBtn) {
         const msg = buildCustomerActivationWaText(waBtn);
+        const waPhone = toMalaysianWhatsAppNumber(waBtn.getAttribute("data-ident") || waBtn.getAttribute("data-email") || "");
+        const waUrl = waPhone
+          ? "https://wa.me/" + waPhone + "?text=" + encodeURIComponent(msg)
+          : "https://wa.me/?text=" + encodeURIComponent(msg);
+        try { await navigator.clipboard.writeText(msg); } catch (err) {}
+        window.open(waUrl, "_blank", "noopener");
+        showToast(waPhone ? "Membuka WhatsApp pelajar..." : "Mesej disalin & membuka WhatsApp...");
+        return;
+      }
+
+      const topupBtn = e.target.closest(".js-adm-topup");
+      if (topupBtn) {
+        const uid = topupBtn.getAttribute("data-uid");
+        const delta = parseInt(topupBtn.getAttribute("data-delta") || "0", 10);
+        const name = topupBtn.getAttribute("data-name") || "Pelajar";
+        if (!uid || !delta) return;
+
+        topupBtn.disabled = true;
         try {
-          await navigator.clipboard.writeText(msg);
-          showToast("Mesej WhatsApp akses (lengkap No. Admin 013-732 7696) berjaya disalin!");
-        } catch {
-          showToast("PIN Pelanggan: " + waBtn.getAttribute("data-pin"));
+          const res = await callAdminBackend("adminTopupStudent", {
+            adminToken: portalState.adminToken,
+            userId: uid,
+            delta: delta,
+            note: "Kredit pantas Admin (+" + delta + " Token)"
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            showToast("+" + delta + " Token dikreditkan ke akaun " + name + ".");
+          } else {
+            showToast((res && res.error) || "Gagal mengkreditkan token.", true);
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Ralat pelayan semasa mengkreditkan token.", true);
+        } finally {
+          topupBtn.disabled = false;
         }
         return;
       }
 
-      const resetBtn = e.target.closest(".js-adm-reset-dev");
-      if (resetBtn) {
-        const uid = resetBtn.getAttribute("data-uid");
-        const res = await callBackend("adminResetDevices", { adminToken: portalState.adminToken, userId: uid });
-        if (res && res.ok) {
-          applyAdminBundle(res);
-          showToast("Senarai peranti untuk " + uid + " telah dikosongkan.");
-        }
-        return;
-      }
-
-      const toggleBtn = e.target.closest(".js-adm-toggle-status");
+      const toggleBtn = e.target.closest(".js-adm-toggle-student");
       if (toggleBtn) {
         const uid = toggleBtn.getAttribute("data-uid");
-        const res = await callBackend("adminToggleStatus", { adminToken: portalState.adminToken, userId: uid });
+        if (!uid) return;
+        toggleBtn.disabled = true;
+        try {
+          const res = await callAdminBackend("adminToggleStudentStatus", {
+            adminToken: portalState.adminToken,
+            userId: uid
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            showToast("Status akaun pelajar berjaya dikemas kini.");
+          } else {
+            showToast((res && res.error) || "Gagal menukar status akaun.", true);
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Ralat pelayan semasa menukar status akaun.", true);
+        } finally {
+          toggleBtn.disabled = false;
+        }
+      }
+    });
+  }
+
+  // --- [features/admin/adminOpsController.js] ---
+  /**
+   * src/features/admin/adminOpsController.js
+   * Pengawal operasi lanjutan Admin: pelarasan +/- token manual, bajet harian AI, aduan pelajar, segar katalog & eksport CSV.
+   */
+
+
+
+
+
+
+  function initAdminOpsBindings() {
+    const adjustForm = document.getElementById("adminAdjustTokensForm");
+    if (adjustForm) {
+      adjustForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        if (!portalState.adminToken) {
+          showToast("Sila log masuk sebagai Admin terlebih dahulu.", true);
+          return;
+        }
+        const idInp = document.getElementById("admAdjustStudentInput");
+        const deltaInp = document.getElementById("admAdjustDeltaInput");
+        const reasonInp = document.getElementById("admAdjustReasonInput");
+        const btn = document.getElementById("admAdjustSubmitBtn");
+        const ident = idInp ? idInp.value.trim() : "";
+        const delta = parseInt(deltaInp ? deltaInp.value : "0", 10) || 0;
+        const reason = reasonInp ? reasonInp.value.trim() : "";
+        if (!ident || delta === 0 || !reason) {
+          showToast("Sila isi E-mel/ID, jumlah (+/-), dan sebab pelarasan.", true);
+          return;
+        }
+        if (btn) btn.disabled = true;
+        try {
+          const res = await callAdminBackend("adminAdjustTokens", {
+            adminToken: portalState.adminToken,
+            studentIdentifier: ident,
+            delta: delta,
+            note: reason
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            if (deltaInp) deltaInp.value = "";
+            if (reasonInp) reasonInp.value = "";
+            showToast("Pelarasan " + (delta > 0 ? "+" : "") + delta + " Token untuk " + (res.studentEmail || ident) + " berjaya.");
+          } else {
+            showToast((res && res.error) || "Gagal melaras baki token.", true);
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Ralat sambungan semasa pelarasan token.", true);
+        } finally {
+          if (btn) btn.disabled = false;
+        }
+      });
+    }
+
+    const budgetForm = document.getElementById("adminAiBudgetForm");
+    if (budgetForm) {
+      budgetForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        if (!portalState.adminToken) return;
+        const capInp = document.getElementById("admBudgetCapInput");
+        const visInp = document.getElementById("admVisionCapInput");
+        const btn = document.getElementById("admSaveBudgetBtn");
+        const capVal = Number(capInp ? capInp.value : 2);
+        const visVal = parseInt(visInp ? visInp.value : "100", 10);
+        if (btn) btn.disabled = true;
+        try {
+          const res = await callAdminBackend("adminUpdateAiBudget", {
+            adminToken: portalState.adminToken,
+            hardCapMyr: capVal,
+            freeVisionCap: visVal
+          });
+          if (res && res.ok) {
+            applyAdminBundle(res);
+            showToast("Had bajet harian Cikgu AI (RM " + capVal.toFixed(2) + ") disimpan.");
+          } else {
+            showToast((res && res.error) || "Gagal menyimpan had bajet AI.", true);
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Ralat mengemas kini bajet harian AI.", true);
+        } finally {
+          if (btn) btn.disabled = false;
+        }
+      });
+    }
+
+    const syncCatBtn = document.getElementById("admForceSyncCatalogBtn");
+    if (syncCatBtn) {
+      syncCatBtn.addEventListener("click", async function () {
+        syncCatBtn.disabled = true;
+        try {
+          try { localStorage.removeItem(LIVE_CATALOG_CACHE_KEY); } catch (e) {}
+          const pubRes = await callBackend("publicDashboard", { forceRefresh: true });
+          if (pubRes && pubRes.ok && Array.isArray(pubRes.catalog)) {
+            portalState.rawOpenCatalog = pubRes.catalog;
+            showToast("Katalog disegar semula (" + pubRes.catalog.length + " set soalan aktif).");
+          } else {
+            showToast("Segerakkan katalog selesai.");
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Gagal menyegar semula katalog Drive.", true);
+        } finally {
+          syncCatBtn.disabled = false;
+        }
+      });
+    }
+
+    const exportBtn = document.getElementById("admExportCsvBtn");
+    if (exportBtn) {
+      exportBtn.addEventListener("click", function () {
+        exportAdminStudentsCsv();
+      });
+    }
+
+    document.addEventListener("click", async function (e) {
+      const issueBtn = e.target.closest(".js-adm-resolve-issue");
+      if (!issueBtn || !portalState.adminToken) return;
+      const issueId = issueBtn.getAttribute("data-issue-id");
+      if (!issueId) return;
+      issueBtn.disabled = true;
+      try {
+        const res = await callAdminBackend("adminResolveIssue", {
+          adminToken: portalState.adminToken,
+          issueId: Number(issueId)
+        });
         if (res && res.ok) {
           applyAdminBundle(res);
-          showToast("Status langganan " + uid + " telah dikemas kini.");
+          showToast("Status aduan #" + issueId + " dikemas kini.");
+        } else {
+          showToast((res && res.error) || "Gagal mengemas kini status aduan.", true);
         }
+      } catch (err) {
+        showToast((err && err.message) || "Ralat pelayan semasa kemas kini aduan.", true);
+      } finally {
+        issueBtn.disabled = false;
       }
     });
   }
@@ -4691,7 +5927,7 @@
   // --- [features/admin/adminAuthAndUsersController.js] ---
   /**
    * src/features/admin/adminAuthAndUsersController.js
-   * Pengawal Log Masuk Admin (#admin), suis Mod Akses Terbuka tahun hadapan & borang pendaftaran pelanggan.
+   * Pengawal pengesahan Admin eTutor.my, ralat log masuk, carian/tapis akaun pelajar & kawalan mod portal.
    */
 
 
@@ -4702,293 +5938,271 @@
 
 
 
+
+  function setAdminLoginError(msg) {
+    const box = document.getElementById("adminLoginError");
+    const txt = document.getElementById("adminLoginErrorText");
+    if (!box || !txt) return;
+    if (!msg) {
+      box.hidden = true;
+      txt.textContent = "";
+      return;
+    }
+    txt.textContent = msg;
+    box.hidden = false;
+  }
+
+  function showAdminView(isLoggedIn) {
+    const loginCard = document.getElementById("adminLoginShell");
+    const dashCont = document.getElementById("adminDashboardShell");
+    if (loginCard) loginCard.hidden = Boolean(isLoggedIn);
+    if (dashCont) dashCont.hidden = !isLoggedIn;
+  }
+
+  function handleAdminLogout() {
+    portalState.adminToken = "";
+    portalState.adminData = null;
+    try { sessionStorage.removeItem(ADMIN_SESSION_STORAGE_KEY); } catch (e) {}
+    setAdminLoginError("");
+    showAdminView(false);
+    showToast("Sesi Admin telah ditamatkan.");
+  }
+
   function initAdminPanelBindings() {
-    window.addEventListener("hashchange", syncRouteMode);
+    const adminLoginForm = document.getElementById("adminLoginForm");
+    if (adminLoginForm) {
+      adminLoginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const keyInput = document.getElementById("adminKeyInput");
+        const keyVal = keyInput ? keyInput.value.trim() : "";
+        if (!keyVal) {
+          setAdminLoginError("Sila masukkan Kata Laluan Admin.");
+          showToast("Sila masukkan Kata Laluan Admin.", true);
+          return;
+        }
+
+        setAdminLoginError("");
+        setFormBusy(adminLoginForm, true, "Mengesahkan...");
+        try {
+          const res = await callAdminBackend("adminLogin", { adminKey: keyVal });
+          if (res && res.ok) {
+            portalState.adminToken = res.adminToken;
+            try { sessionStorage.setItem(ADMIN_SESSION_STORAGE_KEY, res.adminToken); } catch (err) {}
+            if (keyInput) keyInput.value = "";
+            setAdminLoginError("");
+            applyAdminBundle(res);
+            showAdminView(true);
+            showToast("Log masuk Admin berjaya.");
+          } else {
+            const errMsg = (res && res.error) || "Kata laluan Admin tidak sah.";
+            setAdminLoginError(errMsg);
+            showToast(errMsg, true);
+          }
+        } catch (err) {
+          const errMsg = (err && err.message) || "Ralat pengesahan Admin.";
+          setAdminLoginError(errMsg);
+          showToast(errMsg, true);
+        } finally {
+          setFormBusy(adminLoginForm, false);
+        }
+      });
+    }
 
     const exitLink = document.getElementById("exitAdminToStudentLink");
     if (exitLink) {
       exitLink.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.hash = "";
+        history.pushState("", document.title, window.location.pathname);
         syncRouteMode();
+        window.scrollTo(0, 0);
       });
     }
 
-    const adminForm = document.getElementById("adminLoginForm");
-    if (adminForm) {
-      adminForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const keyInput = document.getElementById("adminKeyInput");
-        const errBox = document.getElementById("adminLoginError");
-        const errTxt = document.getElementById("adminLoginErrorText");
-        const btn = document.getElementById("adminLoginBtn");
-
-        errBox.hidden = true;
-        btn.disabled = true;
-        btn.textContent = "Mengesahkan...";
+    const refreshBtn = document.getElementById("adminRefreshBtn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async function () {
+        if (!portalState.adminToken) return;
+        refreshBtn.disabled = true;
         try {
-          const res = await callBackend("adminLogin", { adminKey: keyInput.value.trim() });
-          if (!res || !res.ok) {
-            errTxt.textContent = (res && res.error) || "Kunci Rahsia Admin tidak sah.";
-            errBox.hidden = false;
-            return;
-          }
-          portalState.adminToken = res.adminToken;
-          try { sessionStorage.setItem(ADMIN_SESSION_STORAGE_KEY, res.adminToken); } catch (e2) {}
-          keyInput.value = "";
-          document.getElementById("adminLoginShell").hidden = true;
-          document.getElementById("adminDashboardShell").hidden = false;
-          applyAdminBundle(res);
-        } catch (err) {
-          errTxt.textContent = "Ralat pelayan: " + err.message;
-          errBox.hidden = false;
-        } finally {
-          btn.disabled = false;
-          btn.textContent = "Buka Panel Admin";
-        }
-      });
-    }
-
-    const admLogout = document.getElementById("adminLogoutBtn");
-    if (admLogout) {
-      admLogout.addEventListener("click", function () {
-        portalState.adminToken = "";
-        try { sessionStorage.removeItem(ADMIN_SESSION_STORAGE_KEY); } catch (e) {}
-        window.location.hash = "";
-        syncRouteMode();
-      });
-    }
-
-    const admRefresh = document.getElementById("adminRefreshBtn");
-    if (admRefresh) {
-      admRefresh.addEventListener("click", async function () {
-        const res = await callBackend("adminDashboard", { adminToken: portalState.adminToken });
-        if (res && res.ok) {
-          applyAdminBundle(res);
-          showToast("Data langganan & log akses telah disegarkan.");
-        }
-      });
-    }
-
-    const admToggleOpenBtn = document.getElementById("admToggleOpenModeBtn");
-    if (admToggleOpenBtn) {
-      admToggleOpenBtn.addEventListener("click", async function () {
-        const currentOpen = portalState.adminData && typeof portalState.adminData.openAccessMode === "boolean"
-          ? portalState.adminData.openAccessMode
-          : isOpenAccessMode();
-        const nextOpen = !currentOpen;
-        admToggleOpenBtn.disabled = true;
-        try {
-          const res = await callBackend("adminSetOpenAccessMode", {
-            adminToken: portalState.adminToken,
-            enabled: nextOpen
-          });
+          const res = await callAdminBackend("adminDashboard", { adminToken: portalState.adminToken });
           if (res && res.ok) {
             applyAdminBundle(res);
-            showToast(nextOpen
-              ? "Mod Akses Terbuka diaktifkan — harga & skrin log masuk kini disembunyikan."
-              : "Mod Langganan & Log Masuk PIN diaktifkan semula sepenuhnya.");
+            showToast("Data Admin berjaya disegar semula.");
           } else {
-            showToast((res && res.error) || "Gagal menukar mod operasi portal.");
+            handleAdminLogout();
           }
         } catch (err) {
-          showToast("Ralat: " + err.message);
+          showToast((err && err.message) || "Gagal menyegar semula data Admin.", true);
         } finally {
-          admToggleOpenBtn.disabled = false;
+          refreshBtn.disabled = false;
         }
       });
     }
 
-    const admPresetSelect = document.getElementById("admPackagePreset");
-    if (admPresetSelect) {
-      admPresetSelect.addEventListener("change", function () {
-        applyAdminPresetSelection(admPresetSelect.value || "ALL", "");
-      });
-    }
+    const logoutBtn = document.getElementById("adminLogoutBtn");
+    if (logoutBtn) logoutBtn.addEventListener("click", handleAdminLogout);
 
-    const admPillsGrid = document.getElementById("admSubjectPillsGrid");
-    if (admPillsGrid) {
-      admPillsGrid.addEventListener("change", function (e) {
-        if (e.target && e.target.classList.contains("adm-subject-cb")) {
-          const presetEl = document.getElementById("admPackagePreset");
-          if (presetEl && presetEl.value !== "CUSTOM") {
-            presetEl.value = "CUSTOM";
-          }
-          syncAdminPackageInputFromCheckboxes();
-        }
-      });
-    }
-
-    const admSelectAllSubBtn = document.getElementById("admSelectAllSubBtn");
-    if (admSelectAllSubBtn) {
-      admSelectAllSubBtn.addEventListener("click", function () {
-        renderAdminSubjectCheckboxes(getMergedSubjectOptions());
-        syncAdminPackageInputFromCheckboxes();
-      });
-    }
-
-    const admClearAllSubBtn = document.getElementById("admClearAllSubBtn");
-    if (admClearAllSubBtn) {
-      admClearAllSubBtn.addEventListener("click", function () {
-        renderAdminSubjectCheckboxes([]);
-        syncAdminPackageInputFromCheckboxes();
-      });
-    }
-
-    const admResetFormBtn = document.getElementById("admResetFormBtn");
-    if (admResetFormBtn) {
-      admResetFormBtn.addEventListener("click", function () {
-        const f = document.getElementById("adminUpsertForm");
-        if (f) f.reset();
-        document.getElementById("admDeviceLimit").value = "2";
-        applyAdminPresetSelection("ALL", "");
-      });
-    }
-
-    const upsertForm = document.getElementById("adminUpsertForm");
-    if (upsertForm) {
-      upsertForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const presetVal = (document.getElementById("admPackagePreset") || {}).value || "ALL";
-        const pkgRaw = document.getElementById("admPackage").value.trim();
-        if (presetVal !== "ALL" && presetVal !== "FAMILY" && !pkgRaw) {
-          showToast("Sila tandakan sekurang-kurangnya satu subjek bagi pakej pilihan.");
-          return;
-        }
-
-        const btn = document.getElementById("admSaveUserBtn");
-        btn.disabled = true;
+    const modeToggleBtn = document.getElementById("admToggleOpenModeBtn");
+    if (modeToggleBtn) {
+      modeToggleBtn.addEventListener("click", async function () {
+        if (!portalState.adminToken || !portalState.adminData) return;
+        const nextEnabled = !Boolean(portalState.adminData.openAccessMode);
+        const msgConfirm = nextEnabled
+          ? "Adakah anda pasti mahu menukar portal kepada Mod Terbuka (tanpa sekatan log masuk wajib)?"
+          : "Adakah anda pasti mahu mengaktifkan Mod Akaun & Token AI Wajib untuk semua pengguna?";
+        if (typeof window.confirm === "function" && !window.confirm(msgConfirm)) return;
+        modeToggleBtn.disabled = true;
         try {
-          const res = await callBackend("adminUpsertUser", {
+          const res = await callAdminBackend("adminSetOpenAccessMode", {
             adminToken: portalState.adminToken,
-            userId: document.getElementById("admUserId").value.trim(),
-            buyerName: document.getElementById("admBuyerName").value.trim(),
-            aksesPakej: pkgRaw || "ALL",
-            deviceLimit: document.getElementById("admDeviceLimit").value,
-            expiryDate: document.getElementById("admExpiry").value,
-            pin: document.getElementById("admCustomPin").value.trim()
+            enabled: nextEnabled
           });
           if (res && res.ok) {
+            setOpenAccessOverride(nextEnabled);
+            syncOpenAccessDom();
             applyAdminBundle(res);
-            showToast("Pelanggan disimpan! Kod PIN: " + res.savedPin);
-            upsertForm.reset();
-            document.getElementById("admDeviceLimit").value = "2";
-            applyAdminPresetSelection("ALL", "");
+            showToast(nextEnabled ? "Mod Terbuka diaktifkan." : "Mod Akaun & Token AI diaktifkan.");
           } else {
-            showToast((res && res.error) || "Gagal menyimpan pelanggan.");
+            showToast((res && res.error) || "Gagal menukar mod portal.", true);
           }
         } catch (err) {
-          showToast("Ralat: " + err.message);
+          showToast((err && err.message) || "Ralat menukar mod portal.", true);
         } finally {
-          btn.disabled = false;
+          modeToggleBtn.disabled = false;
         }
       });
     }
 
-    const admSearch = document.getElementById("adminSearchInput");
-    if (admSearch) {
-      admSearch.addEventListener("input", function () {
-        portalState.adminSearch = admSearch.value;
-        renderAdminUsersTable();
-      });
-    }
-
-    const admStatus = document.getElementById("adminStatusFilter");
-    if (admStatus) {
-      admStatus.addEventListener("change", function () {
-        portalState.adminStatusFilter = admStatus.value || "ALL";
-        renderAdminUsersTable();
-      });
-    }
-
+    const searchInput = document.getElementById("adminSearchInput");
+    if (searchInput) searchInput.addEventListener("input", renderAdminUsersTable);
+    const statusFilter = document.getElementById("adminStatusFilter");
+    if (statusFilter) statusFilter.addEventListener("change", renderAdminUsersTable);
 
     bindAdminTableRowActions();
+    initAdminOpsBindings();
   }
 
   // --- [features/admin/adminTokenVoucherController.js] ---
   /**
    * src/features/admin/adminTokenVoucherController.js
-   * Pengawal Penjana Kod Baucar Top-up Token AI 1-Klik pada Panel Admin (#admin).
+   * Pengawal pengaktifan & kredit pelan Token AI terus ke akaun pelajar (tanpa kod baucar) serta mesej pengesahan WhatsApp.
    */
 
 
 
+
+  function buildPlanConfirmationWaText(info) {
+    const adminWa = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.ADMIN_WHATSAPP_DISPLAY) || "013-732 7696";
+    const portalUrl = window.location.origin + "/#portal";
+    return [
+      "Terima kasih! Langganan Pek Token AI eTutor.my anda telah DIAKTIFKAN:",
+      "",
+      "Akaun Pelajar: " + (info.studentEmail || "-"),
+      "Kredit Ditambah: +" + (info.addedTokens || 0) + " Token Top-up Kekal",
+      "Baki Token Kekal Terkini: " + (info.paidBalance != null ? info.paidBalance : info.addedTokens) + " Token",
+      "",
+      "Anda boleh terus guna sekarang:",
+      "1. Buka " + portalUrl + " dan pastikan anda log masuk menggunakan akaun di atas.",
+      "2. Baki Token Top-up Kekal anda sudah dikreditkan secara automatik (tiada kod baucar diperlukan).",
+      "",
+      "Bantuan Admin WhatsApp: " + adminWa
+    ].join("\n");
+  }
+
+  function renderAdminRecentVouchers() {
+    // Tidak lagi memaparkan jadual baucar; semua pengaktifan pelan direkodkan dalam Log Aktiviti Admin.
+  }
+
   function initAdminVoucherBindings() {
     const form = document.getElementById("adminVoucherForm");
+    const studentInp = document.getElementById("admDirectStudentInput");
     const packSel = document.getElementById("admVoucherPackSelect");
     const noteInp = document.getElementById("admVoucherNoteInput");
-    const genBtn = document.getElementById("admGenerateVoucherBtn");
+    const submitBtn = document.getElementById("admGenerateVoucherBtn");
     const outBox = document.getElementById("admGeneratedVoucherBox");
-    const outCode = document.getElementById("admGeneratedVoucherCode");
+    const outMsg = document.getElementById("admGeneratedVoucherCode");
     const outPack = document.getElementById("admVoucherPackLabel");
     const copyBtn = document.getElementById("admCopyVoucherWaBtn");
 
-    let lastVoucher = null;
+    let lastApplied = null;
+
+    try {
+      const hashQ = (window.location.hash && window.location.hash.indexOf("?") !== -1)
+        ? window.location.hash.slice(window.location.hash.indexOf("?") + 1)
+        : "";
+      const sp = new URLSearchParams(window.location.search || hashQ || "");
+      const preStudent = (sp.get("student") || sp.get("email") || "").trim().slice(0, 120);
+      const prePack = (sp.get("pack") || "").trim().toUpperCase();
+      const preNote = (sp.get("note") || "").trim().slice(0, 120);
+      if (studentInp && preStudent && !studentInp.value) {
+        studentInp.value = preStudent;
+      }
+      if (packSel && ["PEK_CUBA_45", "PEK_FOKUS_160", "PEK_PECUTAN_500"].indexOf(prePack) !== -1) {
+        packSel.value = prePack;
+      }
+      if (noteInp && preNote && !noteInp.value) {
+        noteInp.value = preNote;
+      }
+    } catch (e) {}
 
     if (form) {
       form.addEventListener("submit", async function (ev) {
         ev.preventDefault();
         if (!portalState.adminToken) {
-          showToast("Sesi Admin diperlukan untuk menjana kod baucar.");
+          showToast("Sila log masuk sebagai Admin terlebih dahulu.", true);
           return;
         }
-        const packCode = (packSel && packSel.value) || "PEK_FOKUS_160";
-        const buyerNote = (noteInp && noteInp.value.trim()) || "";
-
-        if (genBtn) {
-          genBtn.disabled = true;
-          genBtn.textContent = "Menjana...";
+        const studentIdentifier = studentInp ? studentInp.value.trim() : "";
+        const packCode = packSel ? packSel.value : "PEK_FOKUS_160";
+        const note = noteInp ? noteInp.value.trim() : "";
+        if (!studentIdentifier) {
+          showToast("Sila masukkan E-mel atau ID Pelajar.", true);
+          if (studentInp) studentInp.focus();
+          return;
         }
+        if (submitBtn) submitBtn.disabled = true;
         try {
-          const res = await callBackend("adminCreateAiVoucher", {
+          const res = await callAdminBackend("adminApplyPlan", {
             adminToken: portalState.adminToken,
+            studentIdentifier: studentIdentifier,
             packCode: packCode,
-            buyerNote: buyerNote
+            note: note
           });
           if (!res || !res.ok) {
-            showToast((res && res.error) || "Gagal menjana kod baucar.");
+            showToast((res && res.error) || "Gagal mengaktifkan pelan pelajar.", true);
             return;
           }
-          lastVoucher = res;
-          if (outCode) outCode.textContent = res.code;
-          if (outPack) outPack.textContent = res.tokens + " Token AI";
-          if (outBox) outBox.hidden = false;
-          if (noteInp) noteInp.value = "";
-          showToast("Kod baucar " + res.code + " (+" + res.tokens + " Token) berjaya dijana.");
-        } catch (err) {
-          showToast("Ralat: " + err.message);
-        } finally {
-          if (genBtn) {
-            genBtn.disabled = false;
-            genBtn.textContent = "Jana Kod Baucar";
+          lastApplied = {
+            studentEmail: res.studentEmail || studentIdentifier,
+            studentName: res.studentName || "Pelajar",
+            packCode: res.packCode || packCode,
+            addedTokens: res.addedTokens || 0,
+            paidBalance: res.paidBalance
+          };
+          if (outBox && outMsg && outPack) {
+            outPack.textContent = "+" + lastApplied.addedTokens + " Token";
+            outMsg.textContent = lastApplied.studentEmail + " (Baki Kekal: " + (lastApplied.paidBalance != null ? lastApplied.paidBalance : lastApplied.addedTokens) + " Token)";
+            outBox.hidden = false;
           }
+          applyAdminBundle(res);
+          showToast("+" + lastApplied.addedTokens + " Token terus dikreditkan ke " + lastApplied.studentEmail + "!");
+        } catch (err) {
+          showToast((err && err.message) || "Ralat sambungan pelayan.", true);
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
         }
       });
     }
 
     if (copyBtn) {
       copyBtn.addEventListener("click", async function () {
-        if (!lastVoucher || !lastVoucher.code) return;
-        const adminWa = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.ADMIN_WHATSAPP_DISPLAY) || "013-732 7696";
-        const portalUrl = window.location.origin + "/#portal";
-        const msg = [
-          "Terima kasih atas pembelian Top-up Token AI eTutor.my!",
-          "",
-          "Pek: +" + lastVoucher.tokens + " Token AI Ekspres",
-          "Kod Baucar Anda: " + lastVoucher.code,
-          "",
-          "Cara Tebus:",
-          "1. Buka " + portalUrl,
-          "2. Klik butang 'Token AI' di bahagian atas kanan skrin.",
-          "3. Masukkan kod baucar di atas dan tekan 'Tebus Kod'.",
-          "",
-          "Bantuan Admin WhatsApp: " + adminWa
-        ].join("\n");
+        if (!lastApplied) return;
+        const txt = buildPlanConfirmationWaText(lastApplied);
         try {
-          await navigator.clipboard.writeText(msg);
-          showToast("Mesej WhatsApp baucar disalin ke papan keratan.");
+          await navigator.clipboard.writeText(txt);
+          showToast("Mesej pengesahan WhatsApp berjaya disalin!");
         } catch (e) {
-          showToast("Kod Baucar: " + lastVoucher.code);
+          showToast("Sila salin pengesahan secara manual.");
         }
       });
     }
@@ -5454,6 +6668,8 @@
 
 
 
+
+
   function renderSyncButton() {
     const btn = document.getElementById("syncProgressBtn");
     const link = getSyncLink();
@@ -5544,6 +6760,8 @@
       }
       refreshOpenDashboardIfIdle();
       renderSyncButton();
+      refreshAiWalletFromServer();
+      tryClaimPendingReferralBonus().catch(function () {});
       if (!opts.silent) showToast("Progress berjaya disimpan ke awan.");
       return true;
     } catch (err) {
@@ -5567,6 +6785,9 @@
     setSyncDialogMsg("");
     if (!opts.skipSyncPush) {
       await syncNow({ silent: true });
+    } else {
+      refreshAiWalletFromServer();
+      tryClaimPendingReferralBonus().catch(function () {});
     }
     refreshOpenDashboardIfIdle();
     if (!opts.quietToast) {
@@ -6234,6 +7455,21 @@
       submitBtn.textContent = "Menghantar laporan...";
 
       try {
+        if (isSupabaseConfigured()) {
+          const sb = getSupabaseClient();
+          if (sb) {
+            await sb.rpc("submit_issue_report", {
+              p_category: cat,
+              p_details: details,
+              p_contact: contact,
+              p_page_url: currentUrl,
+              p_user_key: currentUser
+            });
+          }
+        }
+      } catch (err) {}
+
+      try {
         await callBackend("reportIssue", {
           kategori: cat,
           keterangan: details,
@@ -6247,7 +7483,7 @@
       }
 
       if (successToast) successToast.style.display = "block";
-      submitBtn.textContent = "Laporan Dihantar ✓";
+      submitBtn.textContent = "Laporan Dihantar";
 
       setTimeout(function () {
         dialog.close();
@@ -6273,7 +7509,10 @@
 
 
 
+
+
   document.addEventListener("DOMContentLoaded", async function () {
+    initTokenReferralCapture();
     syncOpenAccessDom();
     bindEvents();
     initTokenWalletBindings();
@@ -6283,6 +7522,7 @@
     bindIssueReportingEvents();
     initLiveCatalogAutoSync();
     initFooterLiveStats();
+    initSpmCountdown();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

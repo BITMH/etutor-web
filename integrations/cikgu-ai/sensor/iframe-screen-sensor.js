@@ -65,7 +65,7 @@ const IFRAME_SCREEN_SENSOR_SNIPPET = `
 
       var headerH1 = ((document.querySelector("header h1") || {}).textContent || "").trim();
       var clone = qc.cloneNode(true);
-      var ignoreEls = clone.querySelectorAll("script, style, .math-strip, .skema-pre");
+      var ignoreEls = clone.querySelectorAll("script, style, .math-strip, .skema-pre, .etutor-k2-btnbar, .etutor-ai-subbox, .etutor-snap-preview-wrap, .subq-actions, .hybrid-details, .flag-btn, .chip-bank");
       for (var i = 0; i < ignoreEls.length; i++) { ignoreEls[i].remove(); }
 
       var imgNotes = [];

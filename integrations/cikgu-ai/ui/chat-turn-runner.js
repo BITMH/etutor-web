@@ -93,7 +93,7 @@ export async function executeCikguChatTurn(drawerInstance, userMessage) {
     if (drawerInstance.speechIO && drawerInstance.speechIO.isTtsSupported()) {
       const footer = document.createElement("div");
       footer.className = "cikgu-ai-msg-footer";
-      footer.innerHTML = `<button type="button" class="cikgu-ai-tts-btn">🔊 Dengar</button>`;
+      footer.innerHTML = `<button type="button" class="cikgu-ai-tts-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>Dengar</button>`;
       const ttsBtn = footer.querySelector(".cikgu-ai-tts-btn");
       ttsBtn.addEventListener("click", () => {
         drawerInstance.speechIO.speakText(rawAccumulated, detectedSubj, ttsBtn);

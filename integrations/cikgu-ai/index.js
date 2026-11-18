@@ -146,9 +146,44 @@ export function initCikguAiIntegration() {
   };
   syncExamStageBodyClass();
 
+  const syncCikguRootVisibility = () => {
+    if (!drawer || !drawer.rootEl) return;
+    const isPhoneShell =
+      document.documentElement.getAttribute("data-phone-app") === "true" ||
+      document.documentElement.getAttribute("data-native-store-shell") === "true";
+    const dashEl = document.getElementById("dashboardView");
+    const adminEl = document.getElementById("adminView");
+    const dashOpen = Boolean(dashEl && !dashEl.hidden);
+    const examOpen = Boolean(examStageEl && !examStageEl.hidden);
+    const adminOpen = Boolean(adminEl && !adminEl.hidden) || (window.location.hash || "").toLowerCase().startsWith("#admin");
+    const show = !isPhoneShell && !adminOpen && (dashOpen || examOpen);
+    drawer.rootEl.hidden = !show;
+    if (!show) {
+      const innerDrawer = drawer.rootEl.querySelector("#cikguAiDrawer");
+      const fab = drawer.rootEl.querySelector("#cikguAiFab");
+      if (innerDrawer) innerDrawer.hidden = true;
+      if (fab) fab.setAttribute("aria-expanded", "false");
+    }
+  };
+  syncCikguRootVisibility();
+
+  window.addEventListener("hashchange", syncCikguRootVisibility);
+  if (window.MutationObserver) {
+    const rootObs = new MutationObserver(() => {
+      syncExamStageBodyClass();
+      syncCikguRootVisibility();
+    });
+    rootObs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-phone-app", "data-native-store-shell"] });
+    ["dashboardView", "examStage", "adminView", "loginView", "landingView"].forEach((id) => {
+      const node = document.getElementById(id);
+      if (node) rootObs.observe(node, { attributes: true, attributeFilter: ["hidden"] });
+    });
+  }
+
   if (examStageEl && window.MutationObserver) {
     const stageObs = new MutationObserver(() => {
       syncExamStageBodyClass();
+      syncCikguRootVisibility();
       if (examStageEl.hidden) {
         latestIframeQuestion = null;
         if (drawer) drawer.setActiveScreenQuestion(readMainWebsiteFallbackContext());

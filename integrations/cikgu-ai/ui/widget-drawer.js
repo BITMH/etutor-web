@@ -208,6 +208,7 @@ export class CikguWidgetDrawer {
     });
 
     chatInput.addEventListener("keydown", (e) => {
+      if (e.isComposing || e.keyCode === 229) return;
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         form.requestSubmit();
@@ -226,6 +227,28 @@ export class CikguWidgetDrawer {
       chatInput.style.height = "auto";
       await this._handleChatTurn(msg);
     });
+  }
+
+  openWithPrompt(promptText, subjectHint = "") {
+    if (!this.rootEl) return;
+    const fab = this.rootEl.querySelector("#cikguAiFab");
+    const drawer = this.rootEl.querySelector("#cikguAiDrawer");
+    const tooltip = this.rootEl.querySelector("#cikguAiTooltip");
+    const chatInput = this.rootEl.querySelector("#cikguAiChatInput");
+    this.rootEl.hidden = false;
+    if (drawer) drawer.hidden = false;
+    if (fab) fab.setAttribute("aria-expanded", "true");
+    if (tooltip) tooltip.hidden = true;
+    this.warmupMachine.triggerWarmupIfNeeded();
+    if (subjectHint && (!this.activeScreenQuestion || !this.activeScreenQuestion.subject)) {
+      this.setActiveScreenQuestion({ subject: subjectHint, quizTitle: `Latih Tubi ${subjectHint}` });
+    }
+    if (chatInput) {
+      if (promptText) chatInput.value = String(promptText);
+      chatInput.style.height = "auto";
+      chatInput.style.height = Math.min(chatInput.scrollHeight, 110) + "px";
+      chatInput.focus();
+    }
   }
 
   async _handleChatTurn(userMessage) {

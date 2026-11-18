@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self';">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7216597758789088"
-       crossorigin="anonymous"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://toyyibpay.com https://dev.toyyibpay.com;">
   <title>Soalan Percubaan SPM Interaktif &amp; Skema Jawapan | eTutor.my</title>
   <meta name="description" content="Jawab koleksi lengkap Soalan Percubaan SPM negeri, SBP &amp; Klon SPM secara interaktif di telefon atau laptop. Dikemas kini secara langsung lengkap semakan skema &amp; analisis bab lemah.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -37,6 +35,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#121e48">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="eTutor SPM">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css?v=24">
 
   <script type="application/ld+json">
@@ -176,19 +181,19 @@
             <li><a href="#countdown-spm">Countdown SPM</a></li>
             <li><a href="#perbandingan">Kenapa eTutor</a></li>
             <li><a href="#ciri">Ciri &amp; Subjek</a></li>
-            <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
+            <li data-paid-only hidden><a href="#pelan-token">Pakej Akses</a></li>
             <li><a href="#soalan-lazim">Soalan Lazim</a></li>
           </ul>
         </nav>
 
         <div class="lp-nav-actions">
-          <a href="#login" class="btn btn-outline js-goto-login" data-paid-only>
+          <a href="#login" class="btn btn-outline js-goto-login" data-paid-only hidden>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
             </svg>
             <span>Log Masuk</span>
           </a>
-          <a href="#pakej" class="btn btn-primary lp-hide-xs" data-paid-only>Dapatkan Akses</a>
+          <a href="#pelan-token" class="btn btn-primary lp-hide-xs" data-paid-only hidden>Dapatkan Akses</a>
           <button type="button" id="landingLoginBtn" class="btn btn-outline js-open-sync-dialog" data-open-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
@@ -227,7 +232,7 @@
             </p>
 
             <div class="lp-hero-cta-group">
-              <a href="#pakej" class="btn btn-emerald btn-lg" data-paid-only>
+              <a href="#pelan-token" class="btn btn-emerald btn-lg" data-paid-only hidden>
                 <span>Lihat Pakej &amp; Daftar Sekarang</span>
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
@@ -248,7 +253,7 @@
             </div>
 
             <ul class="lp-micro-guarantees">
-              <li data-paid-only>
+              <li data-paid-only hidden>
                 <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
@@ -359,7 +364,7 @@
             </div>
           </div>
 
-          <div class="lp-trust-item" data-paid-only>
+          <div class="lp-trust-item" data-paid-only hidden>
             <div class="lp-trust-icon" aria-hidden="true">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/>
@@ -690,7 +695,7 @@
           <div class="lp-section-head">
             <span class="lp-section-kicker">3 Langkah Mudah &amp; Maklum Balas Pengguna</span>
             <h2 id="lpFeedbackHeading" class="lp-section-title">Dipercayai Ibu Bapa &amp; Calon SPM Untuk Ulang Kaji Harian</h2>
-            <p class="lp-section-sub" data-paid-only>
+            <p class="lp-section-sub" data-paid-only hidden>
               Pendaftaran ringkas tanpa pemasangan rumit — akaun boleh terus digunakan dalam masa beberapa minit.
             </p>
             <p class="lp-section-sub" data-open-only>
@@ -698,7 +703,7 @@
             </p>
           </div>
 
-          <div class="lp-steps-grid" style="margin-block-end:var(--space-10)" data-paid-only>
+          <div class="lp-steps-grid" style="margin-block-end:var(--space-10)" data-paid-only hidden>
             <div class="lp-step-card">
               <div class="lp-step-num">1</div>
               <h3 style="font-size:1.02rem;margin-block-end:6px">Pilih Pek Token AI</h3>
@@ -783,7 +788,7 @@
                   <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
                 <blockquote style="margin-top:12px">
-                  <p>"Susun atur sangat kemas di telefon pintar, tiada iklan mengganggu fokus pelajar, dan soalan percubaan negeri disusun rapi mengikut format sebenar. Pelajar lebih bersemangat sebab ada Leaderboard XP."</p>
+                  <p>"Susun atur sangat kemas di telefon pintar, mod peperiksaan bebas gangguan iklan untuk fokus pelajar, dan soalan percubaan negeri disusun rapi mengikut format sebenar. Pelajar lebih bersemangat sebab ada Leaderboard XP."</p>
                 </blockquote>
               </div>
               <figcaption class="lp-quote-author">
@@ -948,11 +953,11 @@
                 </li>
                 <li class="lp-sop-step">
                   <span class="lp-sop-num tabular-nums">2</span>
-                  <span><strong>Tempah Pek Individu:</strong> Klik pek pilihan (<code>RM 5</code>, <code>RM 15</code>, atau <code>RM 39</code>) dan selesaikan pengesahan QR/FPX terus melalui WhatsApp Admin (<code>013-732 7696</code>).</span>
+                  <span><strong>Bayar Terus FPX / DuitNow QR:</strong> Klik pek pilihan (<code>RM 5</code>, <code>RM 15</code>, atau <code>RM 39</code>) dan selesaikan bayaran automatik ToyyibPay — atau hubungi WhatsApp Admin (<code>013-732 7696</code>) untuk bantuan manual.</span>
                 </li>
                 <li class="lp-sop-step">
                   <span class="lp-sop-num tabular-nums">3</span>
-                  <span><strong>Tebus Kod Baucar Unik:</strong> Buka <strong>Dompet Token</strong> di bahagian atas portal, masukkan kod <code>ET-XXXXXXXXXX</code> sekali guna daripada Admin, dan klik <strong>Tebus Kod</strong>.</span>
+                  <span><strong>Kredit Automatik Serta-Merta:</strong> Sejurus bayaran FPX / DuitNow QR disahkan, Token Top-up Kekal terus masuk ke <strong>Dompet Token</strong> akaun anda tanpa perlu menunggu. Kod baucar <code>ET-XXXXXXXXXX</code> juga boleh ditebus bila-bila masa.</span>
                 </li>
                 <li class="lp-sop-step">
                   <span class="lp-sop-num tabular-nums">4</span>
@@ -967,10 +972,10 @@
       <section id="soalan-lazim" class="lp-section lp-section-alt lp-deferred-section" aria-labelledby="lpFaqHeading">
         <div class="lp-container">
           <div class="lp-section-head">
-            <span class="lp-section-kicker" data-paid-only>Jawapan Telus Sebelum Melanggan</span>
+            <span class="lp-section-kicker" data-paid-only hidden>Jawapan Telus Sebelum Melanggan</span>
             <span class="lp-section-kicker" data-open-only>Panduan Penggunaan Portal</span>
             <h2 id="lpFaqHeading" class="lp-section-title">Soalan Lazim Ibu Bapa &amp; Pelajar (FAQ)</h2>
-            <p class="lp-section-sub" data-paid-only>
+            <p class="lp-section-sub" data-paid-only hidden>
               Segala maklumat penting mengenai pengaktifan akaun, peranti, dan kandungan soalan di dalam eTutor.my.
             </p>
             <p class="lp-section-sub" data-open-only>
@@ -1011,15 +1016,15 @@
 
             <details class="lp-faq-item" name="etutor-faq">
               <summary class="lp-faq-summary">
-                <span>Bagaimana aturcara menebus kod baucar Top-up Token dan adakah baki akan luput?</span>
+                <span>Bagaimana cara membeli Top-up Token (FPX / DuitNow QR) atau menebus kod baucar?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
               </summary>
               <div class="lp-faq-answer">
-                Pelajar wajib <strong>Log Masuk Google atau OTP E-mel</strong> dahulu supaya baki disimpan di akaun awan. Selepas menerima kod baucar <code>ET-XXXXXXXXXX</code> daripada Admin (<code>013-732 7696</code>), buka <strong>Dompet Token</strong> dan klik <strong>Tebus Kod</strong>. Baki Token Top-up Kekal tiada had harian dan sah sehingga tamat peperiksaan SPM.
+                Pelajar wajib <strong>Log Masuk Google atau OTP E-mel</strong> dahulu supaya baki disimpan di akaun awan. Pilih pek di bahagian <strong>Pek Token AI</strong> dan bayar terus melalui <strong>FPX / DuitNow QR (ToyyibPay)</strong> untuk kredit automatik serta-merta, atau tebus kod baucar promosi <code>ET-XXXXXXXXXX</code> di dalam <strong>Dompet Token</strong>. Baki Token Top-up Kekal tiada had harian dan sah sehingga tamat SPM.
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only hidden>
               <summary class="lp-faq-summary">
                 <span>Berapa cepat saya akan menerima akses selepas membuat tempahan?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -1029,7 +1034,7 @@
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only hidden>
               <summary class="lp-faq-summary">
                 <span>Bolehkah pelajar membuka akaun yang sama di telefon dan komputer riba?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -1059,7 +1064,7 @@
               </div>
             </details>
 
-            <details class="lp-faq-item" name="etutor-faq" data-paid-only>
+            <details class="lp-faq-item" name="etutor-faq" data-paid-only hidden>
               <summary class="lp-faq-summary">
                 <span>Bagaimana jika anak saya menukar telefon baharu nanti?</span>
                 <svg class="icon icon-sm lp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
@@ -1081,10 +1086,10 @@
               Jangan tunggu sehingga minggu terakhir sebelum peperiksaan. Bentuk disiplin menjawab satu set soalan berfokus setiap hari dengan semakan serta-merta di <strong>eTutor.my</strong>.
             </p>
             <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="tokenFocus" data-paid-only>
+              <button type="button" class="btn btn-emerald btn-lg js-select-plan" data-plan-key="tokenFocus" data-paid-only hidden>
                 <span>Pilih Pek Token AI</span>
               </button>
-              <a href="#login" class="btn btn-outline btn-lg js-goto-login" style="background:rgb(255 255 255 / 0.1);color:#ffffff;border-color:rgb(255 255 255 / 0.35)" data-paid-only>
+              <a href="#login" class="btn btn-outline btn-lg js-goto-login" style="background:rgb(255 255 255 / 0.1);color:#ffffff;border-color:rgb(255 255 255 / 0.35)" data-paid-only hidden>
                 <span>Sudah Ada PIN? Log Masuk Pelajar</span>
               </a>
               <a href="#portal" class="btn btn-emerald btn-lg js-enter-open-portal" data-open-only>
@@ -1115,13 +1120,13 @@
           <li><a href="./soalan-klon-spm/" data-live-footer-klon>Indeks Klon SPM</a></li>
           <li><a href="#countdown-spm">Countdown &amp; Jadual SPM</a></li>
           <li data-open-only><a href="#portal" class="js-enter-open-portal">Bank Soalan</a></li>
-          <li data-paid-only><a href="#pakej">Pakej Akses</a></li>
+          <li data-paid-only hidden><a href="#pelan-token">Pakej Akses</a></li>
           <li><a href="#soalan-lazim">Soalan Lazim</a></li>
-          <li data-paid-only><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20tentang%20pakej%20akses%20portal." target="_blank" rel="noopener">WhatsApp Admin (013-732 7696)</a></li>
+          <li data-paid-only hidden><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20tentang%20pakej%20akses%20portal." target="_blank" rel="noopener">WhatsApp Admin (013-732 7696)</a></li>
           <li data-open-only><a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20ingin%20bertanya%20mengenai%20portal%20latihan%20interaktif." target="_blank" rel="noopener">Hubungi Admin (013-732 7696)</a></li>
           <li><a href="./privasi/">Dasar Privasi</a></li>
           <li><a href="./terma/">Terma Perkhidmatan</a></li>
-          <li data-paid-only><a href="#login" class="js-goto-login">Log Masuk Pelajar</a></li>
+          <li data-paid-only hidden><a href="#login" class="js-goto-login">Log Masuk Pelajar</a></li>
         </ul>
       </div>
 
@@ -1148,8 +1153,8 @@
 
     <!-- BAR TINDAKAN PANTAS MUDAH ALIH -->
     <div class="lp-mobile-cta-bar" aria-label="Tindakan Pantas Mudah Alih">
-      <a href="#login" class="btn btn-outline js-goto-login" style="flex:0 0 auto" data-paid-only>Log Masuk</a>
-      <a href="#pakej" class="btn btn-emerald" style="flex:1;justify-content:center" data-paid-only>Dapatkan Akses</a>
+      <a href="#login" class="btn btn-outline js-goto-login" style="flex:0 0 auto" data-paid-only hidden>Log Masuk</a>
+      <a href="#pelan-token" class="btn btn-emerald" style="flex:1;justify-content:center" data-paid-only hidden>Dapatkan Akses</a>
       <a href="#portal" class="btn btn-emerald js-enter-open-portal" style="flex:1;justify-content:center" data-open-only>Mula Menjawab Sekarang</a>
     </div>
   </div>
@@ -1163,28 +1168,36 @@
             <use href="#etutor-brand-emblem"></use>
           </svg>
           <div>
-            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)" id="orderDialogTitle">Tempahan Pek Token AI eTutor.my</div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.05rem;color:var(--brand-primary)" id="orderDialogTitle">Tambah Nilai Token AI eTutor.my</div>
             <div id="orderPlanBadge" style="font-size:0.82rem;color:var(--grade-emerald);font-weight:700;margin-top:2px">Pek Fokus — 160 Token AI Ekspres — RM 15</div>
           </div>
         </div>
-        <span class="status-badge badge-done">Pengaktifan Pantas</span>
+        <span class="status-badge badge-done">FPX / DuitNow QR</span>
       </div>
 
       <form id="orderLeadForm" novalidate>
         <div id="orderAuthPrompt" class="alert-banner" style="background:#eff6ff;border-color:#bfdbfe;color:var(--brand-navy);margin-block-end:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap" hidden>
-          <span style="font-size:0.8rem">Log masuk dahulu supaya Nama &amp; ID Pengguna anda diisi automatik.</span>
+          <span style="font-size:0.8rem">Log masuk Google atau E-mel terlebih dahulu supaya Token terus dikreditkan ke akaun anda.</span>
           <button type="button" id="orderLoginNowBtn" class="btn btn-primary btn-xs">Log Masuk Akaun</button>
         </div>
         <div class="form-field">
-          <label for="orderStudentName">Nama Pelajar / Pemilik Akaun</label>
+          <label for="orderStudentName">Nama Pelajar / Pembayar</label>
           <span class="field-hint">Diisi automatik daripada profil eTutor.my anda jika sudah log masuk</span>
-          <input type="text" id="orderStudentName" class="text-input" required minlength="2" autocomplete="name" placeholder="Contoh: Ahmad Danial bin Razak">
+          <input type="text" id="orderStudentName" name="buyerName" class="text-input" required minlength="2" autocomplete="name" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Contoh: Ahmad Danial bin Razak">
+          <div id="orderStudentNameError" class="field-error-msg" data-error hidden>Sila masukkan nama sekurang-kurangnya 2 huruf.</div>
         </div>
 
         <div class="form-field">
-          <label for="orderPhoneInput">ID Pengguna eTutor.my (E-mel Log Masuk / No. WhatsApp)</label>
-          <span class="field-hint">Digunakan dalam pautan kelulusan Admin supaya baucar terus dipadankan dengan akaun anda</span>
-          <input type="text" id="orderPhoneInput" class="text-input" required minlength="5" autocomplete="email" placeholder="Contoh: pelajar@gmail.com atau 0123456789">
+          <label for="orderPhoneInput">E-mel Akaun / ID Pelajar</label>
+          <span class="field-hint">Digunakan untuk resit pembayaran &amp; pengesahan akaun eTutor.my</span>
+          <input type="text" id="orderPhoneInput" name="buyerEmail" class="text-input" required minlength="5" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Contoh: pelajar@gmail.com">
+          <div id="orderPhoneInputError" class="field-error-msg" data-error hidden>Sila masukkan e-mel akaun atau ID pelajar yang sah.</div>
+        </div>
+
+        <div class="form-field">
+          <label for="orderMobileTelInput">No. Telefon Bimbit (Untuk Resit FPX)</label>
+          <input type="tel" id="orderMobileTelInput" name="buyerPhone" class="text-input tabular-nums" required minlength="9" inputmode="tel" autocomplete="tel" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="Contoh: 0123456789">
+          <div id="orderMobileTelInputError" class="field-error-msg" data-error hidden>Masukkan nombor telefon Malaysia yang sah (cth: 0123456789).</div>
         </div>
 
         <div class="form-field" style="margin-block-end:0">
@@ -1196,11 +1209,10 @@
           </select>
         </div>
 
-        <div class="slip-actions" style="margin-inline:-24px;margin-block-end:-24px;margin-block-start:20px">
+        <div class="slip-actions" style="margin-inline:-24px;margin-block-end:-24px;margin-block-start:20px;flex-wrap:wrap">
           <button type="button" id="closeOrderDialogBtn" class="btn btn-outline">Batal</button>
-          <button type="submit" id="submitOrderWhatsAppBtn" class="btn btn-emerald">
-            <span>Hantar WhatsApp ke Admin (013-732 7696)</span>
-          </button>
+          <button type="button" id="submitOrderWhatsAppBtn" class="btn btn-outline btn-sm">WhatsApp Admin</button>
+          <button type="submit" id="submitOrderPayBtn" class="btn btn-emerald">Bayar FPX / DuitNow QR — RM 15</button>
         </div>
       </form>
     </div>
@@ -1265,6 +1277,7 @@
       <p id="syncLastTime" style="margin:0 0 14px;color:var(--text-secondary);font-size:0.84rem"></p>
       <button type="button" id="syncNowBtn" class="btn btn-primary" style="inline-size:100%">Sync Sekarang</button>
       <button type="button" id="syncSignOutBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:8px">Putuskan sambungan</button>
+      <button type="button" id="openDeleteAccountBtn" class="btn btn-ghost btn-sm" style="inline-size:100%;margin-block-start:6px;color:var(--status-danger)">Padam Akaun &amp; Data</button>
     </div>
 
     <details id="syncPinDetails" class="sync-pin-details">
@@ -1484,7 +1497,7 @@
           </svg>
           <span>Kembali ke Laman Utama</span>
         </a>
-        <a href="#pakej" class="js-back-to-pricing" data-paid-only style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
+        <a href="#pelan-token" class="js-back-to-pricing" data-paid-only hidden style="color:var(--brand-accent);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center">
           Belum ada PIN? Dapatkan Akses
         </a>
         <a href="https://wa.me/60137327696?text=Salam%20Admin%20eTutor.my%2C%20saya%20perlukan%20bantuan%20log%20masuk%20%2F%20PIN%20portal." target="_blank" rel="noopener" style="color:var(--grade-emerald);text-decoration:none;font-weight:700;min-block-size:36px;display:inline-flex;align-items:center;inline-size:100%;justify-content:center;border-block-start:1px dashed var(--border-subtle);padding-block-start:10px">
@@ -2006,6 +2019,444 @@
        SKRIN 3: MOD KUIZ PENUH SKRIN (100dvh + <iframe srcdoc>)
        ===================================================================== -->
 
+  <!-- =====================================================================
+       SKRIN ALU-ALUAN APLIKASI TELEFON (#phoneWelcomeView)
+       ===================================================================== -->
+  <section id="phoneWelcomeView" class="phone-welcome-view" aria-labelledby="phoneWelcomeHeading" hidden>
+    <div class="phone-welcome-inner">
+      <div class="phone-welcome-top">
+        <div class="phone-welcome-brand">
+          <svg width="56" height="44" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div>
+            <div class="etutor-wordmark" style="font-size:1.45rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <div class="phone-brand-sub">Portal Aplikasi Calon SPM</div>
+          </div>
+        </div>
+        <span id="phoneWelcomeCountdownPill" class="phone-welcome-pill tabular-nums">SPM 2026 • Sedia Diuji</span>
+
+        <h2 id="phoneWelcomeHeading" class="phone-welcome-title">Ulang Kaji Pantas SPM &amp; Bimbingan Cikgu AI</h2>
+        <p class="phone-welcome-lead">Jawab kertas Pra-SPM Negeri serta Klon SPM secara interaktif dengan semakan skema KSSM terus di telefon pintar anda.</p>
+
+        <ul class="phone-welcome-features" aria-label="Kelebihan Utama Aplikasi">
+          <li class="phone-welcome-feat">
+            <span class="phone-welcome-icon" aria-hidden="true">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Bank Kertas Pra-SPM &amp; Klon SPM</strong>
+              <p>Set objektif &amp; subjektif interaktif lengkap simpanan kemajuan automatik.</p>
+            </div>
+          </li>
+          <li class="phone-welcome-feat">
+            <span class="phone-welcome-icon" aria-hidden="true">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Chat &amp; Snap Gambar Cikgu AI</strong>
+              <p>Tanya langkah penyelesaian (1 Token) atau semak foto jalan kerja Kertas 2 (3 Token).</p>
+            </div>
+          </li>
+          <li class="phone-welcome-feat">
+            <span class="phone-welcome-icon" aria-hidden="true">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 5-6"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Segerak Awan &amp; Slip Rasmi</strong>
+              <p>Rekod gred semasa, Streak Harian, dan kedudukan pelajar merentas peranti.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="phone-welcome-actions">
+        <button type="button" id="phoneWelcomeStartGuestBtn" class="phone-welcome-btn-primary">Mula Terus</button>
+        <button type="button" id="phoneWelcomeLoginBtn" class="phone-welcome-btn-secondary">Log Masuk Akaun</button>
+        <p class="phone-welcome-note">5 Token AI harian tersedia serta-merta. Log masuk pada bila-bila masa untuk segerak awan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       APLIKASI TELEFON KHUSUS eTutor SPM (4-TAB MOBILE APP SHELL + CHAT 3T)
+       ===================================================================== -->
+  <section id="phoneAppShell" class="phone-app-shell" aria-label="Aplikasi Telefon eTutor SPM">
+    <header id="phoneAppHeader" class="phone-app-header">
+      <div class="phone-brand">
+        <svg class="phone-emblem" width="38" height="30" aria-hidden="true">
+          <use href="#etutor-brand-emblem"></use>
+        </svg>
+        <div class="phone-brand-text">
+          <div class="etutor-wordmark" style="font-size:1.12rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+          <div class="phone-brand-sub">Aplikasi Calon SPM</div>
+        </div>
+      </div>
+
+      <button type="button" id="phoneHeaderTokenBtn" class="phone-token-pill" aria-label="Buka Dompet Token AI">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+        <span id="phoneHeaderTokenText" class="tabular-nums">30 Token</span>
+      </button>
+    </header>
+
+    <div id="phoneViewport" class="phone-viewport">
+      <!-- TAB 1: UTAMA -->
+      <div id="phoneTabUtama" class="phone-tab-panel" data-phone-panel="utama">
+        <button type="button" id="phoneCountdownStripBtn" class="phone-countdown-strip">
+          <span class="phone-countdown-left">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+            <span id="phoneCountdownText" class="tabular-nums">SPM 2026: Menyemak kira detik...</span>
+          </span>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+          </svg>
+        </button>
+
+        <section class="phone-card phone-kpi-card" aria-label="Ringkasan Prestasi Pelajar">
+          <div class="phone-kpi-grid">
+            <div class="phone-kpi-cell">
+              <span class="phone-kpi-label">Set Selesai</span>
+              <strong id="phoneKpiDone" class="phone-kpi-value tabular-nums">0</strong>
+            </div>
+            <div class="phone-kpi-cell">
+              <span class="phone-kpi-label">Purata Gred</span>
+              <strong id="phoneKpiGrade" class="phone-kpi-value phone-grade-emerald">—</strong>
+            </div>
+            <div class="phone-kpi-cell">
+              <span class="phone-kpi-label">Streak Harian</span>
+              <strong id="phoneKpiStreak" class="phone-kpi-value tabular-nums">0 Hari</strong>
+            </div>
+            <div class="phone-kpi-cell">
+              <span class="phone-kpi-label">Mata XP</span>
+              <strong id="phoneKpiXp" class="phone-kpi-value tabular-nums">0 XP</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="phonePrimaryQuizCard" class="phone-hero-card" aria-labelledby="phoneHeroTitle">
+          <div class="phone-hero-head">
+            <span id="phoneHeroBadge" class="phone-hero-badge">Latihan Seterusnya</span>
+            <span id="phoneHeroSubject" class="phone-hero-subj tabular-nums">SPM</span>
+          </div>
+          <h2 id="phoneHeroTitle" class="phone-hero-title">Memuatkan set latihan anda...</h2>
+          <p id="phoneHeroMeta" class="phone-hero-meta tabular-nums">Sedia dijawab dengan auto-simpan merentas peranti.</p>
+          <progress id="phoneHeroProgress" class="etutor-progress on-dark" value="0" max="40" aria-label="Kemajuan kuiz semasa"></progress>
+          <button type="button" id="phonePrimaryQuizBtn" class="phone-hero-cta">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <polygon points="6 4 20 12 6 20 6 4"/>
+            </svg>
+            <span id="phonePrimaryQuizBtnText">Mula Menjawab Kuiz</span>
+          </button>
+        </section>
+
+        <section id="phoneWeakTopicCard" class="phone-weak-card" aria-labelledby="phoneWeakTopicTitle">
+          <div class="phone-weak-eyebrow">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            </svg>
+            <span>Fokus Ulang Kaji Segera (&lt; 60%)</span>
+          </div>
+          <h3 id="phoneWeakTopicTitle" class="phone-weak-title">Semak Topik Kritikal Dengan Cikgu AI</h3>
+          <p id="phoneWeakTopicMeta" class="phone-weak-meta">Tanya konsep sukar atau muat naik gambar jalan kerja Kertas 2 (3 Token).</p>
+          <button type="button" id="phoneAskWeakTopicBtn" class="phone-weak-cta">
+            <span>Ulang Kaji Bersama Cikgu AI</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
+            </svg>
+          </button>
+        </section>
+
+        <section class="phone-home-subjects" aria-label="Pintasan Subjek SPM">
+          <h3 class="phone-section-kicker">Pintasan Subjek</h3>
+          <div id="phoneHomeSubjectsRow" class="phone-chip-row" role="group" aria-label="Pilih Subjek Pantas"></div>
+        </section>
+      </div>
+
+      <!-- TAB 2: KERTAS SOALAN -->
+      <div id="phoneTabKertas" class="phone-tab-panel" data-phone-panel="kertas" hidden>
+        <div class="phone-seg-wrap" role="group" aria-label="Kategori Kertas Soalan">
+          <button type="button" id="phoneSegHarianBtn" class="phone-seg-btn" data-phone-cat="harian" aria-pressed="true">
+            Pra-SPM Negeri <span id="phoneSegHarianCount" class="tabular-nums">(0T)</span>
+          </button>
+          <button type="button" id="phoneSegKlonBtn" class="phone-seg-btn" data-phone-cat="klon" aria-pressed="false">
+            Set Klon SPM <span id="phoneSegKlonCount" class="tabular-nums">(2T)</span>
+          </button>
+        </div>
+
+        <div class="phone-search-wrap">
+          <svg class="icon icon-sm phone-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+          </svg>
+          <label for="phonePaperSearchInput" class="sr-only">Cari set kertas soalan</label>
+          <input type="search" id="phonePaperSearchInput" class="phone-search-input" placeholder="Cari subjek, negeri atau kod set...">
+        </div>
+
+        <div id="phonePaperSubjectsRow" class="phone-chip-row" role="group" aria-label="Tapis Subjek"></div>
+        <div id="phonePaperList" class="phone-paper-list"></div>
+      </div>
+
+      <!-- TAB 3: CHAT CIKGU AI (1T TEKS / 3T SNAP GAMBAR) -->
+      <div id="phoneTabCikgu" class="phone-tab-panel phone-chat-shell" data-phone-panel="cikgu" hidden>
+        <div class="phone-chat-toolbar">
+          <label for="phoneCikguSubjectSelect" class="sr-only">Pilih Subjek Cikgu AI</label>
+          <select id="phoneCikguSubjectSelect" class="phone-cikgu-select"></select>
+          <button type="button" id="phoneClearChatBtn" class="phone-icon-btn" aria-label="Kosongkan perbualan Cikgu AI">
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M8 6V4h8v2m-1 0v14a2 2 0 01-2 2H9a2 2 0 01-2-2V6h10z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div id="phoneChatMessages" class="phone-chat-messages" role="log" aria-live="polite" aria-label="Perbualan bersama Cikgu AI"></div>
+
+        <div class="phone-chat-dock">
+          <div id="phoneChatImageBar" class="phone-image-bar" hidden>
+            <img id="phoneChatImageThumb" alt="Pratonton gambar jawapan" class="phone-image-thumb">
+            <div class="phone-image-meta">
+              <strong id="phoneChatImageName">jawapan.jpg</strong>
+              <span>Kos Semakan Gambar Kertas 2: 3 Token</span>
+            </div>
+            <button type="button" id="phoneRemoveImageBtn" class="phone-icon-btn" aria-label="Buang lampiran gambar">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="phone-prompt-row" aria-label="Soalan Pantas Cikgu AI">
+            <button type="button" class="phone-prompt-chip" data-cikgu-prompt="Terangkan langkah demi langkah soalan ini.">Langkah Demi Langkah</button>
+            <button type="button" class="phone-prompt-chip" data-cikgu-prompt="Semak jawapan Kertas 2 saya mengikut skema LPM.">Semak Skema LPM</button>
+            <button type="button" class="phone-prompt-chip" data-cikgu-prompt="Berikan contoh soalan latihan baharu mengikut bab ini.">Beri Soalan Latihan</button>
+          </div>
+
+          <form id="phoneChatForm" class="phone-chat-form">
+            <input type="file" id="phoneChatFileInput" accept="image/*" hidden>
+            <button type="button" id="phoneSnapBtn" class="phone-icon-btn phone-snap-btn" aria-label="Muat naik atau tangkap gambar jawapan Kertas 2 (3 Token)">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h3l2-3h6l2 3h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2z"/><circle cx="12" cy="13" r="3.5"/>
+              </svg>
+            </button>
+            <label for="phoneChatInput" class="sr-only">Mesej atau jawapan kepada Cikgu AI</label>
+            <textarea id="phoneChatInput" class="phone-chat-input" rows="1" placeholder="Tanya Cikgu AI atau taip jawapan..."></textarea>
+            <button type="submit" id="phoneChatSendBtn" class="phone-send-btn" aria-label="Hantar mesej ke Cikgu AI">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+              <span id="phoneChatCostBadge" class="phone-cost-pill tabular-nums">1T</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- TAB 4: AKAUN & DOMPET -->
+      <div id="phoneTabAkaun" class="phone-tab-panel" data-phone-panel="akaun" hidden>
+        <section class="phone-card phone-profile-card" aria-label="Profil Pelajar">
+          <div class="phone-profile-row">
+            <div id="phoneUserAvatar" class="phone-avatar" aria-hidden="true">E</div>
+            <div class="phone-profile-meta">
+              <h2 id="phoneUserName" class="phone-profile-name">Pelajar eTutor</h2>
+              <span id="phoneUserStatusBadge" class="phone-status-pill">Mod Tetamu Aktif</span>
+              <div id="phoneDeviceIdText" class="phone-device-id tabular-nums">ID Peranti: —</div>
+            </div>
+          </div>
+          <button type="button" id="phoneOpenAuthBtn" class="btn btn-primary phone-full-btn">Log Masuk / Urus Segerak Awan</button>
+        </section>
+
+        <section class="phone-card phone-wallet-card" aria-label="Ringkasan Dompet Token AI">
+          <div class="phone-wallet-head">
+            <h3>Dompet Token AI</h3>
+            <strong id="phoneWalletReadyVal" class="tabular-nums">Sedia Guna: 30 Token</strong>
+          </div>
+          <div class="phone-wallet-stats">
+            <div><span>Harian</span><strong id="phoneWalletDailyVal" class="tabular-nums">5 / 5</strong></div>
+            <div><span>Bulanan</span><strong id="phoneWalletMonthlyVal" class="tabular-nums">30 / 30</strong></div>
+            <div><span>Top-up Kekal</span><strong id="phoneWalletPaidVal" class="tabular-nums">0</strong></div>
+            <div><span>Snap Gambar (3T)</span><strong id="phoneWalletVisionVal" class="tabular-nums">2 Percubaan</strong></div>
+          </div>
+          <button type="button" id="phoneOpenWalletBtn" class="btn btn-outline phone-full-btn">Buka Butiran Dompet Token</button>
+        </section>
+
+        <section class="phone-card phone-ref-card" aria-label="Program Rujukan Rakan">
+          <div class="phone-wallet-head">
+            <h3>Ajak Rakan (+10 Token)</h3>
+            <span id="phoneReferralQuotaVal" class="phone-ref-quota tabular-nums">0 / 20 rakan bulan ini</span>
+          </div>
+          <p class="phone-ref-desc">Kongsi pautan jemputan unik anda. Kedua-dua akaun menerima +10 Token Asas selepas rakan log masuk dan menyiapkan 1 set latihan.</p>
+          <div class="phone-ref-code-box">
+            <span>Kod Anda</span>
+            <code id="phoneReferralCodeVal" class="phone-ref-code tabular-nums">Log Masuk Dahulu</code>
+          </div>
+          <button type="button" id="phoneShareReferralBtn" class="btn btn-primary phone-full-btn">Kongsi / Salin Pautan Jemputan</button>
+        </section>
+
+        <section class="phone-card phone-action-list" aria-label="Alat & Papan Pendahulu">
+          <button type="button" id="phoneOpenLeaderboardBtn" class="phone-action-row">
+            <span>Carta Kedudukan Pelajar (Top 10)</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <button type="button" id="phoneOpenScheduleBtn" class="phone-action-row">
+            <span>Countdown &amp; Jadual Rasmi SPM 2026</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <button type="button" id="phoneOpenSyncBtn" class="phone-action-row">
+            <span>Segerak Kemajuan Merentas Peranti</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <button type="button" id="phoneOpenIssueBtn" class="phone-action-row">
+            <span>Laporkan Isu Soalan / Bantuan</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </section>
+
+        <section id="phoneAccountDangerCard" class="phone-card phone-danger-card" aria-label="Zon Pemadaman Akaun" hidden>
+          <p>Padam profil, sejarah kuiz, baki token dan akses set terbuka secara kekal daripada pelayan.</p>
+          <button type="button" id="phoneDeleteAccountBtn" class="phone-danger-btn">Padam Akaun Secara Kekal</button>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEPANDUK PEMASANGAN APLIKASI MUDAH ALIH (PWA) -->
+  <aside id="mobileInstallBanner" class="mobile-install-banner" aria-label="Pasang Aplikasi Mudah Alih eTutor" hidden>
+    <div class="mobile-install-copy">
+      <strong>Pasang Aplikasi eTutor SPM</strong>
+      <span>Akses pantas dari skrin utama telefon dengan mod skrin penuh.</span>
+    </div>
+    <div class="mobile-install-actions">
+      <button type="button" id="installPwaBtn" class="btn btn-primary btn-xs">Pasang</button>
+      <button type="button" id="dismissInstallBannerBtn" class="btn btn-ghost btn-xs" aria-label="Tutup cadangan pemasangan">&times;</button>
+    </div>
+    <p id="installPwaStatus" class="sr-only" role="status" aria-live="polite"></p>
+  </aside>
+
+  <!-- BAR NAVIGASI BAWAH MUDAH ALIH 4-TAB (#mobileBottomNav — Tersembunyi semasa #examStage & Papan Kekunci) -->
+  <nav id="mobileBottomNav" class="mobile-bottom-nav" aria-label="Navigasi Aplikasi Telefon">
+    <button type="button" class="mobile-nav-item" data-phone-tab="utama" aria-current="page">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/>
+      </svg>
+      <span>Utama</span>
+    </button>
+    <button type="button" class="mobile-nav-item" data-phone-tab="kertas">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+      </svg>
+      <span>Kertas</span>
+    </button>
+    <button type="button" class="mobile-nav-item" data-phone-tab="cikgu">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/>
+      </svg>
+      <span>Cikgu AI</span>
+    </button>
+    <button type="button" id="mobileNavWalletBtn" class="mobile-nav-item" data-phone-tab="akaun" aria-label="Buka Tab Akaun dan Dompet Token">
+      <span class="mobile-nav-badge-wrap">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/>
+        </svg>
+        <span id="mobileNavTokenBadge" class="mobile-nav-token-badge tabular-nums">30</span>
+      </span>
+      <span>Akaun</span>
+    </button>
+  </nav>
+
+  <!-- DIALOG PRATONTON SET SOALAN (#phonePaperDialog) -->
+  <dialog id="phonePaperDialog" class="slip-dialog phone-sheet-dialog" closedby="any" aria-labelledby="phonePaperDialogTitle">
+    <div class="slip-paper phone-sheet-paper">
+      <div class="phone-sheet-grip" aria-hidden="true"></div>
+      <div class="phone-sheet-head">
+        <span id="phoneSheetBadge" class="phone-sheet-badge">Pra-SPM Negeri • 0 Token</span>
+        <button type="button" id="closePhonePaperDialogBtn" class="phone-icon-btn" aria-label="Tutup pratonton set">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <h2 id="phonePaperDialogTitle" class="phone-sheet-title">Tajuk Set Soalan</h2>
+      <p id="phoneSheetMeta" class="phone-sheet-meta tabular-nums">Auto-simpan aktif merentas peranti.</p>
+      <div id="phoneSheetProgress" class="phone-sheet-progress tabular-nums">Belum dijawab lagi.</div>
+      <div class="phone-sheet-actions">
+        <button type="button" id="phoneConfirmStartQuizBtn" class="btn btn-primary phone-full-btn">Mula Menjawab Sekarang</button>
+        <button type="button" id="phoneRestartQuizBtn" class="btn btn-outline phone-full-btn" hidden>Mula Semula Dari Awal</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG CARTA KEDUDUKAN PELAJAR (#phoneLeaderboardDialog) -->
+  <dialog id="phoneLeaderboardDialog" class="slip-dialog phone-sheet-dialog" closedby="any" aria-labelledby="phoneLbDialogTitle">
+    <div class="slip-paper phone-sheet-paper">
+      <div class="phone-sheet-grip" aria-hidden="true"></div>
+      <div class="phone-sheet-head">
+        <h2 id="phoneLbDialogTitle" class="phone-sheet-title" style="margin:0">Carta Kedudukan Pelajar</h2>
+        <button type="button" id="closePhoneLbDialogBtn" class="phone-icon-btn" aria-label="Tutup carta kedudukan">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="phone-seg-wrap" role="group" aria-label="Tempoh Carta Kedudukan" style="margin-block:12px">
+        <button type="button" class="phone-seg-btn js-phone-lb-period" data-phone-lb-period="all" aria-pressed="true">Keseluruhan</button>
+        <button type="button" class="phone-seg-btn js-phone-lb-period" data-phone-lb-period="weekly" aria-pressed="false">Minggu Ini</button>
+      </div>
+      <div id="phoneLbList" class="phone-lb-list"></div>
+      <div id="phoneLbStanding" class="phone-lb-standing" hidden></div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG COUNTDOWN & JADUAL RASMI SPM 2026 (#phoneScheduleDialog) -->
+  <dialog id="phoneScheduleDialog" class="slip-dialog phone-sheet-dialog" closedby="any" aria-labelledby="phoneSchedDialogTitle">
+    <div class="slip-paper phone-sheet-paper">
+      <div class="phone-sheet-grip" aria-hidden="true"></div>
+      <div class="phone-sheet-head">
+        <h2 id="phoneSchedDialogTitle" class="phone-sheet-title" style="margin:0">Jadual &amp; Kira Detik SPM 2026</h2>
+        <button type="button" id="closePhoneSchedDialogBtn" class="phone-icon-btn" aria-label="Tutup jadual SPM">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <div id="phoneSchedHero" class="phone-sched-hero tabular-nums">Memuatkan kira detik SPM 2026...</div>
+      <div id="phoneSchedList" class="phone-sched-list"></div>
+    </div>
+  </dialog>
+
+  <!-- DIALOG PANDUAN PASANG APLIKASI DI SAFARI iOS (<dialog closedby="any">) -->
+  <dialog id="iosInstallHelpDialog" class="slip-dialog" closedby="any" aria-labelledby="iosInstallHelpTitle">
+    <div class="slip-paper" style="max-inline-size:420px">
+      <h2 id="iosInstallHelpTitle" style="font-family:var(--font-heading);font-size:1.08rem;color:var(--brand-navy);margin:0 0 8px">Pasang eTutor.my pada Skrin Utama iPhone / iPad</h2>
+      <ol style="margin:0 0 16px;padding-left:20px;font-size:0.9rem;line-height:1.6;color:var(--text-secondary)">
+        <li>Tekan butang <strong>Kongsi (Share)</strong> di bar bawah Safari.</li>
+        <li>Tatal ke bawah dan pilih <strong>Tambah ke Skrin Utama (Add to Home Screen)</strong>, kemudian tekan <strong>Tambah (Add)</strong>.</li>
+      </ol>
+      <button type="button" id="closeIosInstallHelpBtn" class="btn btn-primary" style="inline-size:100%" autofocus>Faham</button>
+    </div>
+  </dialog>
+
+  <!-- DIALOG PENGESAHAN PADAM AKAUN (Apple 5.1.1(v) & Google Play) (<dialog closedby="any">) -->
+  <dialog id="deleteAccountDialog" class="slip-dialog" closedby="any" aria-labelledby="deleteAccountTitle">
+    <div class="slip-paper" style="max-inline-size:440px">
+      <h2 id="deleteAccountTitle" style="font-family:var(--font-heading);font-size:1.1rem;color:var(--status-danger);margin:0 0 8px">Padam Akaun &amp; Semua Rekod Secara Kekal?</h2>
+      <p style="font-size:0.88rem;line-height:1.55;color:var(--text-secondary);margin:0 0 14px">
+        Tindakan ini akan memadamkan profil pengguna, sejarah markah kuiz, kemajuan latihan, baki Token AI, dan akses set yang dibuka kunci daripada sistem kami. Rekod yang dipadam <strong>tidak boleh dipulihkan semula</strong>.
+      </p>
+      <div id="deleteAccountStatusMsg" role="status" aria-live="polite" style="font-size:0.84rem;font-weight:600;color:var(--status-danger);min-height:20px;margin-bottom:10px"></div>
+      <div class="slip-actions" style="margin-inline:-24px;margin-block-end:-24px">
+        <button type="button" id="cancelDeleteAccountBtn" class="btn btn-outline" autofocus>Batal</button>
+        <button type="button" id="confirmPermanentDeleteAccountBtn" class="btn" style="background:var(--status-danger);color:#ffffff;border-color:var(--status-danger)">Padam Akaun Secara Kekal</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- DIALOG DOMPET TOKEN AI & TAMBAH NILAI TERUS (<dialog closedby="any">) -->
   <dialog id="tokenWalletDialog" class="slip-dialog" closedby="any" aria-labelledby="tokenWalletTitle">
     <div class="slip-paper">
@@ -2046,7 +2497,7 @@
         <button type="button" id="walletOpenSyncLoginBtn" class="btn btn-primary btn-xs">Log Masuk Akaun</button>
       </div>
 
-      <div style="border-top:1px solid var(--border-subtle);padding-top:12px;margin-block-end:14px">
+      <div id="walletTopupPlansSection" style="border-top:1px solid var(--border-subtle);padding-top:12px;margin-block-end:14px">
         <div style="font-size:0.84rem;font-weight:700;color:var(--brand-navy);margin-bottom:8px">Tambah Nilai Pelan Token AI (Aktif Terus ke Akaun, Tiada Tarikh Luput Hingga SPM)</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           <button type="button" class="btn btn-outline btn-sm js-wallet-buy-pack" data-pack="tokenStarter">Pek Cuba (45 Token — RM 5)</button>
@@ -2072,11 +2523,11 @@
         <ul>
           <li><strong>Susunan Tolakan:</strong> Kuota Asas Harian (<code>5 Token/hari</code>, maks <code>30/bulan</code>) ditolak dahulu sebelum Token Top-up Kekal.</li>
           <li><strong>Tempoh Sah:</strong> Kuota Asas diset semula setiap hari/bulan; Token Top-up Kekal tiada had harian dan sah sehingga tamat SPM.</li>
-          <li><strong>Pengaktifan Terus:</strong> Selepas bayaran disahkan oleh Admin, Token Top-up Kekal terus dikreditkan ke akaun anda tanpa perlu kod baucar.</li>
+          <li data-store-hide="true"><strong>Kredit Automatik ToyyibPay:</strong> Selepas pembayaran FPX / DuitNow QR berjaya disahkan, Token Top-up Kekal terus dikreditkan ke akaun anda secara automatik tanpa perlu menunggu baucar manual.</li>
         </ul>
       </details>
 
-      <details class="wallet-rules-accordion">
+      <details id="walletVoucherDetails" class="wallet-rules-accordion">
         <summary>Ada Kod Baucar Lama / Promosi? Tebus di Sini</summary>
         <form id="redeemAiVoucherForm" novalidate style="margin-top:10px">
           <div class="form-field" style="margin-block-end:6px">
@@ -2104,6 +2555,10 @@
           <div id="aiVoucherStatusMsg" role="status" aria-live="polite" style="font-size:0.84rem;font-weight:600;color:var(--brand-primary);min-height:20px"></div>
         </form>
       </details>
+
+      <div id="walletAccountDangerRow" hidden style="border-top:1px solid var(--border-subtle);margin-top:10px;padding-top:10px;text-align:right">
+        <button type="button" id="walletDeleteAccountBtn" class="btn btn-ghost btn-xs" style="color:var(--status-danger)">Padam Akaun Saya</button>
+      </div>
     </div>
   </dialog>
 
@@ -2179,7 +2634,7 @@
           <div style="color:var(--text-muted);font-size:0.76rem">Nama Pelajar</div>
           <div id="slipStudentName" style="font-weight:700">—</div>
         </div>
-        <div data-paid-only>
+        <div data-paid-only hidden>
           <div style="color:var(--text-muted);font-size:0.76rem">ID Berdaftar</div>
           <div id="slipUserId" class="tabular-nums" style="font-weight:600">—</div>
         </div>
@@ -2219,6 +2674,77 @@
        SKRIN 4: PANEL KAWALAN ADMIN (#admin — Semakan Langganan & Akses)
        Diakses melalui URL `etutor.my/#admin` (atau `http://localhost:4173/#admin`)
        ===================================================================== -->
+
+  <!-- BUTANG TERAPUNG KECIL ADUAN / ISU (SUDUT BAWAH KIRI) -->
+  <button id="openIssueModalBtn" class="etutor-issue-fab" type="button" aria-label="Buka borang aduan atau laporkan isu">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span>Aduan / Isu</span>
+  </button>
+
+  <!-- POP-UP DIALOG ADUAN / ISU -->
+  <dialog id="issueDialog" class="issue-dialog" closedby="any" aria-labelledby="issueDialogTitle">
+    <div class="dialog-header">
+      <h3 id="issueDialogTitle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        Laporkan Isu / Aduan
+      </h3>
+      <button type="button" id="closeIssueModalBtn" class="close-btn" aria-label="Tutup dialog">&times;</button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="form-group" style="margin-bottom:14px">
+        <label style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Kategori Masalah:</label>
+        <div class="pill-options" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Ralat Soalan/Skema" class="pill-radio" checked style="display:none">
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Ralat Soalan/Skema</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Teknikal/AI Lambat" class="pill-radio" style="display:none">
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>AI Loading Lama</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Log Masuk/PIN" class="pill-radio" style="display:none">
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>Akses / Log Masuk</span>
+          </label>
+          <label style="margin:0;cursor:pointer">
+            <input type="radio" name="issueCategory" value="Cadangan" class="pill-radio" style="display:none">
+            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Cadangan Baru</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:14px">
+        <label for="issueDetailsInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Keterangan Isu:</label>
+        <textarea id="issueDetailsInput" class="form-control" rows="3" placeholder="Contoh: Soalan 3(b) jawapan skema terbalik atau gambar rajah kabur..." style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;resize:vertical;min-height:90px;font-family:inherit"></textarea>
+      </div>
+
+      <div class="form-group" style="margin-bottom:0">
+        <label for="issueContactInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">No. Telefon / Emel (Pilihan):</label>
+        <input type="text" id="issueContactInput" class="form-control" placeholder="Boleh tinggalkan kosong jika tanpa nama" style="width:100%;padding:9px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;font-family:inherit">
+      </div>
+
+      <div id="issueToastSuccess" class="toast-success" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;padding:10px 12px;border-radius:10px;font-size:0.84rem;font-weight:600;text-align:center;margin-top:12px">
+        ✓ Terima kasih! Laporan anda telah direkodkan. Pihak kami akan menyemak isu ini dengan segera.
+      </div>
+    </div>
+
+    <div class="dialog-footer" style="padding:14px 20px 18px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom-left-radius:20px;border-bottom-right-radius:20px">
+      <button type="button" id="submitIssueBtn" class="btn-submit" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:10px;font-size:0.9rem;font-weight:700;border:none;cursor:pointer;background:#1d4ed8;color:#ffffff;box-shadow:0 4px 12px rgba(29,78,216,0.2);transition:all 0.2s ease">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        <span>Hantar Laporan</span>
+      </button>
+    </div>
+  </dialog>
 
   <div id="adminView" hidden>
     <!-- 4A: Pengesahan Kunci Rahsia Admin -->
@@ -2395,6 +2921,43 @@
           </div>
         </section>
 
+        <!-- 3B. Tetapan Gerbang Pembayaran Automatik ToyyibPay (FPX & DuitNow QR) -->
+        <section id="adminPaymentConfigSection" class="bento-card" aria-labelledby="adminPayCfgHeading">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+            <div>
+              <h2 id="adminPayCfgHeading" class="section-title" style="margin:0">Tetapan Gerbang Pembayaran ToyyibPay (FPX &amp; DuitNow QR)</h2>
+              <p class="section-subtitle" style="margin:2px 0 0">Token Top-up Kekal akan dikreditkan automatik ke akaun pelajar sejurus bayaran FPX berjaya.</p>
+            </div>
+            <span id="admPayStatusBadge" class="status-badge badge-progress">BELUM DIKONFIGURASI</span>
+          </div>
+          <form id="adminPaymentConfigForm" style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:16px;flex-wrap:wrap">
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:0.84rem;font-weight:600;cursor:pointer">
+                <input type="checkbox" id="admPayEnabledInput">
+                <span>Aktifkan Pembayaran Automatik ToyyibPay (FPX &amp; DuitNow QR)</span>
+              </label>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:0.84rem;font-weight:600;cursor:pointer">
+                <input type="checkbox" id="admPaySandboxInput">
+                <span>Mod Ujian Sandbox (dev.toyyibpay.com)</span>
+              </label>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <div style="flex:1 1 200px">
+                <label for="admPayCategoryInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">Category Code ToyyibPay</label>
+                <input type="text" id="admPayCategoryInput" class="text-input tabular-nums" autocorrect="off" autocapitalize="none" spellcheck="false" placeholder="Kosongkan untuk jana automatik, atau masukkan Category Code sedia ada">
+              </div>
+              <div style="flex:1 1 240px">
+                <label for="admPaySecretInput" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px">User Secret Key ToyyibPay</label>
+                <input type="password" id="admPaySecretInput" class="text-input" autocomplete="new-password" placeholder="Masukkan Secret Key baharu (biarkan kosong untuk kekalkan sedia ada)">
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button type="submit" id="admSavePaymentConfigBtn" class="btn btn-primary">Simpan Tetapan ToyyibPay</button>
+              <button type="button" id="admCopyWebhookUrlBtn" class="btn btn-outline">Salin URL Webhook Callback</button>
+            </div>
+          </form>
+        </section>
+
         <!-- 4. Senarai Akaun Pelajar & Dompet Token -->
         <section class="leaderboard-card" aria-labelledby="adminUsersHeading">
           <div class="section-header">
@@ -2423,6 +2986,17 @@
           </div>
         </section>
 
+        <!-- 4B. Rekod Pembayaran ToyyibPay Terkini -->
+        <section class="leaderboard-card" aria-labelledby="adminPaymentsHeading">
+          <div class="section-header"><div><h2 id="adminPaymentsHeading" class="section-title">Rekod Pembayaran ToyyibPay Terkini</h2><p class="section-subtitle">Transaksi FPX / DuitNow QR dan status pengkreditan automatik Token Top-up Kekal.</p></div></div>
+          <div tabindex="0" role="region" aria-labelledby="adminPaymentsHeading" class="table-wrapper">
+            <table class="lb-table">
+              <thead><tr><th scope="col">Masa &amp; Rujukan</th><th scope="col">Pembeli</th><th scope="col">Pek &amp; Jumlah</th><th scope="col">Kod Bil / Invois</th><th scope="col">Status</th></tr></thead>
+              <tbody id="adminPaymentsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
         <!-- 5. Peti Masuk Aduan & Laporan Isu Pelajar -->
         <section class="leaderboard-card" aria-labelledby="adminIssuesHeading">
           <div class="section-header"><div><h2 id="adminIssuesHeading" class="section-title">Peti Masuk Aduan &amp; Laporan Isu Pelajar</h2><p class="section-subtitle">Semak aduan teknikal atau kesilapan soalan daripada pelajar dan tandakan selesai selepas tindakan.</p></div></div>
@@ -2436,7 +3010,7 @@
 
         <!-- 6. Log Aktiviti Admin & Sistem Terkini -->
         <section class="leaderboard-card" aria-labelledby="adminLogsHeading">
-          <div class="section-header"><div><h2 id="adminLogsHeading" class="section-title">Log Aktiviti Admin &amp; Sistem Terkini</h2><p class="section-subtitle">Memaparkan pengaktifan pelan terus, pelarasan token, perubahan bajet AI, dan status akaun.</p></div></div>
+          <div class="section-header"><div><h2 id="adminLogsHeading" class="section-title">Log Aktiviti Admin &amp; Sistem Terkini</h2><p class="section-subtitle">Memaparkan pengaktifan pelan terus, pembayaran ToyyibPay, pelarasan token, bajet AI &amp; status akaun.</p></div></div>
           <div tabindex="0" role="region" aria-labelledby="adminLogsHeading" class="table-wrapper">
             <table class="lb-table admin-logs-table">
               <thead><tr><th scope="col">Masa</th><th scope="col">ID Pengguna</th><th scope="col">Peristiwa</th><th scope="col">Sumber</th><th scope="col">Butiran</th></tr></thead>
@@ -2468,74 +3042,3 @@
   <script type="module" src="./integrations/cikgu-ai/index.js?v=24"></script>
 </body>
 </html>
-
-  <!-- BUTANG TERAPUNG KECIL ADUAN / ISU (SUDUT BAWAH KIRI) -->
-  <button id="openIssueModalBtn" class="etutor-issue-fab" type="button" aria-label="Buka borang aduan atau laporkan isu">
-    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-      <line x1="12" y1="9" x2="12" y2="13"/>
-      <line x1="12" y1="17" x2="12.01" y2="17"/>
-    </svg>
-    <span>Aduan / Isu</span>
-  </button>
-
-  <!-- POP-UP DIALOG ADUAN / ISU -->
-  <dialog id="issueDialog" class="issue-dialog" closedby="any" aria-labelledby="issueDialogTitle">
-    <div class="dialog-header">
-      <h3 id="issueDialogTitle">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        Laporkan Isu / Aduan
-      </h3>
-      <button type="button" id="closeIssueModalBtn" class="close-btn" aria-label="Tutup dialog">&times;</button>
-    </div>
-
-    <div class="dialog-body">
-      <div class="form-group" style="margin-bottom:14px">
-        <label style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Kategori Masalah:</label>
-        <div class="pill-options" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <label style="margin:0;cursor:pointer">
-            <input type="radio" name="issueCategory" value="Ralat Soalan/Skema" class="pill-radio" checked style="display:none">
-            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Ralat Soalan/Skema</span>
-          </label>
-          <label style="margin:0;cursor:pointer">
-            <input type="radio" name="issueCategory" value="Teknikal/AI Lambat" class="pill-radio" style="display:none">
-            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>AI Loading Lama</span>
-          </label>
-          <label style="margin:0;cursor:pointer">
-            <input type="radio" name="issueCategory" value="Log Masuk/PIN" class="pill-radio" style="display:none">
-            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>Akses / Log Masuk</span>
-          </label>
-          <label style="margin:0;cursor:pointer">
-            <input type="radio" name="issueCategory" value="Cadangan" class="pill-radio" style="display:none">
-            <span class="pill-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>Cadangan Baru</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group" style="margin-bottom:14px">
-        <label for="issueDetailsInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">Keterangan Isu:</label>
-        <textarea id="issueDetailsInput" class="form-control" rows="3" placeholder="Contoh: Soalan 3(b) jawapan skema terbalik atau gambar rajah kabur..." style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;resize:vertical;min-height:90px;font-family:inherit"></textarea>
-      </div>
-
-      <div class="form-group" style="margin-bottom:0">
-        <label for="issueContactInput" style="display:block;font-size:0.82rem;font-weight:700;color:#334155;margin-bottom:6px">No. Telefon / Emel (Pilihan):</label>
-        <input type="text" id="issueContactInput" class="form-control" placeholder="Boleh tinggalkan kosong jika tanpa nama" style="width:100%;padding:9px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:0.88rem;font-family:inherit">
-      </div>
-
-      <div id="issueToastSuccess" class="toast-success" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;padding:10px 12px;border-radius:10px;font-size:0.84rem;font-weight:600;text-align:center;margin-top:12px">
-        ✓ Terima kasih! Laporan anda telah direkodkan. Pihak kami akan menyemak isu ini dengan segera.
-      </div>
-    </div>
-
-    <div class="dialog-footer" style="padding:14px 20px 18px;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom-left-radius:20px;border-bottom-right-radius:20px">
-      <button type="button" id="submitIssueBtn" class="btn-submit" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:10px;font-size:0.9rem;font-weight:700;border:none;cursor:pointer;background:#1d4ed8;color:#ffffff;box-shadow:0 4px 12px rgba(29,78,216,0.2);transition:all 0.2s ease">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-        </svg>
-        <span>Hantar Laporan</span>
-      </button>
-    </div>
-  </dialog>

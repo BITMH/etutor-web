@@ -14,7 +14,7 @@ window.ETUTOR_CONFIG = {
   SUPABASE_ANON_KEY: "sb_publishable_-VuEWlM2SSKoAelLidXZyw_et9gDZnW",
 
   // Endpoint Pelayan Cikgu AI SPM (Utama: Supabase Edge Function -> Sandaran Darurat: Modal GPU Qwen 3.5)
-  CIKGU_CHATBOT_ENABLED: false,
+  CIKGU_CHATBOT_ENABLED: true,
   CIKGU_SUPABASE_EDGE_URL: "https://ktesekiguardgfdgrmlp.supabase.co/functions/v1/cikgu-semak",
   CIKGU_MODAL_GPU_URL: "https://hanismathussin96--cikgu-ai-spm.modal.run",
   CIKGU_HF_MODEL_REPO: "https://huggingface.co/BITMH/cikgu-spm-qwen35-gguf",
@@ -36,6 +36,10 @@ window.ETUTOR_CONFIG = {
   // Tetapan Penutupan Jualan & Sokongan Langsung WhatsApp Admin (format antarabangsa tanpa '+'):
   SALES_WHATSAPP: "60137327696",
   PAYMENT_URL: "",
+
+  // Polisi Gedung Aplikasi (Apple Guideline 3.1.1 & 3.1.3(b)):
+  // Kekalkan false supaya borang tebus baucar kekal tersembunyi dalam binaan asli Capacitor (App Store / Play Store).
+  allowNativeVoucher: false,
 
   // Senarai Subjek Standard SPM (digabungkan secara dinamik dengan subjek sebenar di Google Drive)
   DEFAULT_SUBJECTS: [

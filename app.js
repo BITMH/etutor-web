@@ -26,6 +26,7 @@
   const SPM_COUNTDOWN_PREFS_KEY = "etutor_spm2026_countdown_prefs_v1";
   const PENDING_REFERRAL_STORAGE_KEY = "etutor_pending_ref_code_v1";
   const ATTRIBUTED_REFERRAL_STORAGE_KEY = "etutor_attributed_ref_v1";
+  const PHONE_WELCOME_DONE_KEY = "etutor_phone_welcome_done_v1";
 
   // --- [config/learningModulesRegistry.js] ---
   /**
@@ -249,7 +250,9 @@
     klonVisibleLimit: 12,
     harianVisibleLimit: 12,
     activeStage: "spm",
-    portalPrefs: null
+    portalPrefs: null,
+    examHistoryPushed: false,
+    suppressNextExamPopstate: false
   };
 
   // --- [shared/ui/toast.js] ---
@@ -408,11 +411,229 @@
     return /(TikTok|BytedanceWebview|musical_ly|Instagram|FBAN|FBAV|FB_IAB|Line\/|MicroMessenger)/i.test(ua);
   }
 
+  // --- [features/mobile-app/capacitorAuthAndAccountService.js] ---
+  /**
+   * src/features/mobile-app/capacitorAuthAndAccountService.js
+   * Aliran Google OAuth pelayar luaran Capacitor (@capacitor/browser + Deep Link my.etutor.app://auth/callback)
+   * serta pemadaman akaun kekal pengguna (pematuhan Apple 5.1.1(v) & Google Play).
+   */
+
+
+
+
+
+
+
+
+  const CAPACITOR_OAUTH_CALLBACK = "my.etutor.app://auth/callback";
+  let deepLinkListenerBound = false;
+  let accountDeletionBound = false;
+
+  function isNativeCapacitorPlatform() {
+    if (typeof window === "undefined") return false;
+    return Boolean(
+      window.Capacitor &&
+      typeof window.Capacitor.isNativePlatform === "function" &&
+      window.Capacitor.isNativePlatform()
+    );
+  }
+
+  async function startCapacitorExternalGoogleOAuth(sb) {
+    if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    const { data, error } = await sb.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: CAPACITOR_OAUTH_CALLBACK,
+        skipBrowserRedirect: true,
+        queryParams: { prompt: "select_account" }
+      }
+    });
+    if (error || !data || !data.url) {
+      return { ok: false, error: (error && error.message) || "Gagal membuka log masuk Google." };
+    }
+    const browserPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Browser;
+    if (browserPlugin && typeof browserPlugin.open === "function") {
+      await browserPlugin.open({ url: data.url, presentationStyle: "popover" });
+    } else {
+      window.open(data.url, "_blank", "noopener,noreferrer");
+    }
+    return { ok: true, redirecting: true };
+  }
+
+  function bindCapacitorOAuthDeepLinkListener() {
+    if (deepLinkListenerBound || !isNativeCapacitorPlatform()) return;
+    const appPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+    if (!appPlugin || typeof appPlugin.addListener !== "function") return;
+    deepLinkListenerBound = true;
+
+    appPlugin.addListener("appUrlOpen", async function (event) {
+      const rawUrl = String((event && event.url) || "");
+      if (
+        rawUrl.indexOf(CAPACITOR_OAUTH_CALLBACK) !== 0 &&
+        rawUrl.indexOf("https://etutor.my/auth/callback") !== 0
+      ) {
+        return;
+      }
+
+      try {
+        const browserPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Browser;
+        if (browserPlugin && typeof browserPlugin.close === "function") {
+          await browserPlugin.close();
+        }
+      } catch (e) {}
+
+      const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+      if (!sb) return;
+      try {
+        const parsed = new URL(rawUrl);
+        const code = parsed.searchParams.get("code");
+        if (code) {
+          await sb.auth.exchangeCodeForSession(code);
+        } else if (parsed.hash) {
+          const hp = new URLSearchParams(parsed.hash.replace(/^#/, ""));
+          const accessTok = hp.get("access_token");
+          const refreshTok = hp.get("refresh_token");
+          if (accessTok && refreshTok) {
+            await sb.auth.setSession({ access_token: accessTok, refresh_token: refreshTok });
+          }
+        }
+        window.location.hash = "#portal";
+      } catch (err) {
+        showToast("Pengesahan log masuk Google tidak selesai. Sila cuba semula.");
+      }
+    });
+  }
+
+  function clearLocalStudentAccountData() {
+    const keys = [
+      SESSION_STORAGE_KEY,
+      OPEN_PROGRESS_STORAGE_KEY,
+      OPEN_SCORES_STORAGE_KEY,
+      OPEN_STUDENT_NAME_KEY,
+      SYNC_LAST_KEY,
+      UNLOCKED_CONTENTS_STORAGE_KEY,
+      PHONE_WELCOME_DONE_KEY,
+      "etutor_cikgu_daily_tokens_v1"
+    ];
+    keys.forEach(function (k) {
+      try { localStorage.removeItem(k); } catch (e) {}
+    });
+    clearSyncLink();
+  }
+
+  async function deleteCurrentUserAccountUnified() {
+    const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+    if (sb) {
+      try {
+        const sessRes = await sb.auth.getSession();
+        if (sessRes && sessRes.data && sessRes.data.session) {
+          const rpcRes = await sb.rpc("delete_my_account");
+          if (rpcRes.error || !rpcRes.data || !rpcRes.data.ok) {
+            return {
+              ok: false,
+              error: (rpcRes.data && rpcRes.data.error) || (rpcRes.error && rpcRes.error.message) || "Gagal memadam akaun awan."
+            };
+          }
+          try { await sb.auth.signOut(); } catch (e) {}
+          clearLocalStudentAccountData();
+          handleLogout();
+          return { ok: true };
+        }
+      } catch (err) {
+        return { ok: false, error: err && err.message ? err.message : "Ralat rangkaian semasa memadam akaun." };
+      }
+    }
+
+    if (portalState.sessionToken) {
+      if (sb && String(portalState.sessionToken).indexOf("sbpin_") === 0) {
+        const pinDel = await sb.rpc("delete_my_pin_account", {
+          p_session_token: portalState.sessionToken,
+          p_device_id: portalState.deviceId
+        });
+        if (pinDel.error || !pinDel.data || !pinDel.data.ok) {
+          return {
+            ok: false,
+            error: (pinDel.data && pinDel.data.error) || (pinDel.error && pinDel.error.message) || "Gagal memadam akaun PIN."
+          };
+        }
+      } else {
+        const res = await callBackend("deleteAccount", {});
+        if (!res || !res.ok) {
+          return { ok: false, error: (res && res.error) || "Gagal memadam rekod akaun." };
+        }
+      }
+    }
+
+    clearLocalStudentAccountData();
+    handleLogout();
+    return { ok: true };
+  }
+
+  function openDeleteAccountConfirmation() {
+    const dlg = document.getElementById("deleteAccountDialog");
+    const stEl = document.getElementById("deleteAccountStatusMsg");
+    if (!dlg) return;
+    if (stEl) stEl.textContent = "";
+    if (!dlg.open && typeof dlg.showModal === "function") dlg.showModal();
+  }
+
+  function bindAccountDeletionEvents() {
+    if (accountDeletionBound) return;
+    accountDeletionBound = true;
+
+    const delDlg = document.getElementById("deleteAccountDialog");
+    const cancelBtn = document.getElementById("cancelDeleteAccountBtn");
+    const confirmBtn = document.getElementById("confirmPermanentDeleteAccountBtn");
+    const stEl = document.getElementById("deleteAccountStatusMsg");
+
+    if (delDlg) {
+      bindLightDismissFallback(delDlg);
+      delDlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(delDlg);
+      });
+    }
+    if (cancelBtn && delDlg) {
+      cancelBtn.addEventListener("click", function () { closeTopLayer(delDlg); });
+    }
+
+    document.addEventListener("click", async function (e) {
+      if (e.target.closest("#openDeleteAccountBtn") || e.target.closest("#walletDeleteAccountBtn")) {
+        const syncDlg = document.getElementById("syncDialog");
+        const walletDlg = document.getElementById("tokenWalletDialog");
+        if (syncDlg && syncDlg.open) await closeTopLayer(syncDlg);
+        if (walletDlg && walletDlg.open) await closeTopLayer(walletDlg);
+        openDeleteAccountConfirmation();
+      }
+    });
+
+    if (confirmBtn && delDlg) {
+      confirmBtn.addEventListener("click", async function () {
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = "Memadam Akaun...";
+        if (stEl) stEl.textContent = "";
+        try {
+          const res = await deleteCurrentUserAccountUnified();
+          if (!res || !res.ok) {
+            if (stEl) stEl.textContent = (res && res.error) || "Gagal memadam akaun.";
+            return;
+          }
+          await closeTopLayer(delDlg);
+          showToast("Akaun dan semua rekod peribadi anda telah dipadamkan.");
+        } finally {
+          confirmBtn.disabled = false;
+          confirmBtn.textContent = "Padam Akaun Secara Kekal";
+        }
+      });
+    }
+  }
+
   // --- [shared/supabase/supabaseDataService.js] ---
   /**
    * src/shared/supabase/supabaseDataService.js
    * Lapisan perkhidmatan Supabase Auth (Google ID Token, OAuth PKCE, OTP E-mel) & RPC Postgres.
    */
+
 
 
   function mapAuthError(err, fallbackMsg) {
@@ -463,6 +684,9 @@
   async function sbSignInWithGoogleRedirect(redirectHash) {
     const sb = getSupabaseClient();
     if (!sb) return { ok: false, error: "Supabase belum dikonfigurasi." };
+    if (isNativeCapacitorPlatform()) {
+      return startCapacitorExternalGoogleOAuth(sb);
+    }
     const baseUrl = window.location.origin + window.location.pathname;
     const targetHash = redirectHash || "#portal";
     const { error } = await sb.auth.signInWithOAuth({
@@ -985,52 +1209,101 @@
   // --- [shared/ui/formValidation.js] ---
   /**
    * src/shared/ui/formValidation.js
-   * Pengesahan borang mesra pengguna selepas interaksi (:user-invalid + fallback kelas CSS).
+   * Pengesahan borang mesra pengguna selepas interaksi (:user-invalid + data-error bersyarat + fallback CSS).
    */
 
-  function initFormValidation() {
-    const form = document.getElementById("loginForm");
-    if (!form) return;
+  function findErrorEl(el) {
+    if (!el || !el.closest) return null;
+    const group = el.closest(".field-group, .form-group, .lp-field, .modal-field, .input-wrap, label, div");
+    if (!group) return null;
+    if (el.id) {
+      const byId = document.getElementById(el.id + "Error");
+      if (byId) return byId;
+    }
+    return group.querySelector("[data-error]");
+  }
 
-    const syncAria = function (el) {
-      if (!el || !el.checkValidity) return;
-      try {
-        const invalid = el.matches(":user-invalid") || el.classList.contains("user-invalid-fallback");
-        el.setAttribute("aria-invalid", invalid ? "true" : "false");
-      } catch (e) {}
-    };
+  function syncFieldState(el, forceShow) {
+    if (!el || !el.checkValidity) return;
+    let userInvalid = false;
+    try {
+      userInvalid = el.matches(":user-invalid");
+    } catch (e) {}
+    const invalid = forceShow ? !el.checkValidity() : (userInvalid || el.classList.contains("user-invalid-fallback"));
+    el.setAttribute("aria-invalid", invalid ? "true" : "false");
 
-    document.addEventListener("blur", function (e) { syncAria(e.target); }, true);
-    document.addEventListener("input", function (e) {
-      if (e.target && e.target.hasAttribute && e.target.hasAttribute("aria-invalid")) {
-        syncAria(e.target);
+    const errEl = findErrorEl(el);
+    if (!errEl) return;
+    if (invalid) {
+      if (errEl.dataset && errEl.dataset.defaultMsg && !errEl.textContent.trim()) {
+        errEl.textContent = errEl.dataset.defaultMsg;
       }
-    });
-
-    // Fallback untuk pelayar lama tanpa sokongan :user-invalid
-    if (typeof CSS !== "undefined" && !CSS.supports("selector(:user-invalid)")) {
-      const dirty = new WeakMap();
-      const updateFallback = function (input) {
-        const ok = input.checkValidity();
-        input.classList.toggle("user-invalid-fallback", !ok);
-        input.setAttribute("aria-invalid", ok ? "false" : "true");
-      };
-      form.addEventListener("input", function (e) {
-        const st = dirty.get(e.target) || {};
-        st.typed = true;
-        dirty.set(e.target, st);
-        if (st.blurred) updateFallback(e.target);
-      });
-      form.addEventListener("blur", function (e) {
-        if (!e.target || !e.target.checkValidity) return;
-        const st = dirty.get(e.target) || {};
-        st.blurred = true;
-        dirty.set(e.target, st);
-        if (st.typed) updateFallback(e.target);
-      }, true);
+      if (errEl.id) el.setAttribute("aria-describedby", errEl.id);
+      errEl.hidden = false;
+    } else {
+      errEl.hidden = true;
+      if (errEl.id && el.getAttribute("aria-describedby") === errEl.id) {
+        el.removeAttribute("aria-describedby");
+      }
     }
   }
 
+  function initFormValidation() {
+    if (initFormValidation._bound) return;
+    initFormValidation._bound = true;
+
+    const touched = new WeakSet();
+    const supportsUserInvalid = typeof CSS !== "undefined" && CSS.supports("selector(:user-invalid)");
+
+    document.addEventListener("blur", function (e) {
+      const el = e.target;
+      if (!el || !el.checkValidity || el.type === "hidden" || el.disabled) return;
+      if ((el.value || "").trim().length > 0 || touched.has(el)) {
+        touched.add(el);
+        if (!supportsUserInvalid) {
+          el.classList.toggle("user-invalid-fallback", !el.checkValidity());
+        }
+        syncFieldState(el, false);
+      }
+    }, true);
+
+    document.addEventListener("input", function (e) {
+      const el = e.target;
+      if (!el || !el.checkValidity) return;
+      if (touched.has(el) || el.getAttribute("aria-invalid") === "true") {
+        touched.add(el);
+        const valid = el.checkValidity();
+        if (!supportsUserInvalid || el.classList.contains("user-invalid-fallback")) {
+          el.classList.toggle("user-invalid-fallback", !valid);
+        }
+        syncFieldState(el, valid ? false : touched.has(el));
+      }
+    });
+
+    document.addEventListener("invalid", function (e) {
+      const el = e.target;
+      if (!el || !el.checkValidity) return;
+      touched.add(el);
+      if (!supportsUserInvalid) el.classList.add("user-invalid-fallback");
+      syncFieldState(el, true);
+    }, true);
+
+    document.addEventListener("reset", function (e) {
+      const form = e.target;
+      if (!form || !form.querySelectorAll) return;
+      form.querySelectorAll("input, select, textarea").forEach(function (el) {
+        el.classList.remove("user-invalid-fallback");
+        el.removeAttribute("aria-invalid");
+        const errEl = findErrorEl(el);
+        if (errEl) {
+          errEl.hidden = true;
+          if (errEl.id && el.getAttribute("aria-describedby") === errEl.id) {
+            el.removeAttribute("aria-describedby");
+          }
+        }
+      });
+    });
+  }
 
   function setFormBusy(formEl, isBusy, busyLabel) {
     if (!formEl) return;
@@ -1274,11 +1547,48 @@
     };
   }
 
+  // --- [features/catalog/supabaseCatalogCache.js] ---
+  /**
+   * src/features/catalog/supabaseCatalogCache.js
+   * Pembaca pantas cache katalog set soalan dari Supabase RPC (get_cached_quiz_catalog) tanpa melalui kelewatan GAS cold-start.
+   */
+
+  function isLocalPreviewHost() {
+    const h = (typeof window !== "undefined" && window.location && window.location.hostname) || "";
+    return /^(localhost|127\.0\.0\.1)$/i.test(h);
+  }
+
+  async function fetchSupabaseCachedCatalog() {
+    if (isLocalPreviewHost() || !isSupabaseConfigured()) return null;
+    const supabase = getSupabaseClient();
+    if (!supabase) return null;
+
+    try {
+      const rpcPromise = supabase.rpc("get_cached_quiz_catalog");
+      const timeoutPromise = new Promise(function (resolve) {
+        setTimeout(function () { resolve({ data: null, error: new Error("timeout") }); }, 4500);
+      });
+      const res = await Promise.race([rpcPromise, timeoutPromise]);
+      if (!res || res.error || !res.data || !res.data.ok) return null;
+      if (!Array.isArray(res.data.catalog) || res.data.catalog.length === 0) return null;
+      return {
+        ok: true,
+        catalog: res.data.catalog,
+        syncedAt: res.data.syncedAt || "",
+        count: Number(res.data.count || res.data.catalog.length)
+      };
+    } catch (e) {
+      return null;
+    }
+  }
+
   // --- [features/auth/openAccessService.js] ---
   /**
    * src/features/auth/openAccessService.js
    * Perkhidmatan Mod Akses Terbuka: suis mod operasi, storan kemajuan/skor setempat & kemasukan terus portal.
    */
+
+
 
 
 
@@ -1365,6 +1675,38 @@
     } catch (e) {}
   }
 
+  function isPhoneAppLaunchEnv() {
+    if (isNativeCapacitorPlatform()) return true;
+    if (typeof window === "undefined") return false;
+    try {
+      if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) return true;
+      const q = new URLSearchParams(window.location.search || "");
+      if (q.get("phoneApp") === "1" || q.get("storeShell") === "1") return true;
+    } catch (e) {}
+    return false;
+  }
+
+  function hasCompletedPhoneWelcome() {
+    if (portalState.phoneGuestActive) return true;
+    try {
+      return localStorage.getItem(PHONE_WELCOME_DONE_KEY) === "1";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPhoneWelcomeCompleted(done) {
+    portalState.phoneGuestActive = Boolean(done);
+    try {
+      if (done) localStorage.setItem(PHONE_WELCOME_DONE_KEY, "1");
+      else localStorage.removeItem(PHONE_WELCOME_DONE_KEY);
+    } catch (e) {}
+  }
+
+  function isPhoneGuestAllowed() {
+    return Boolean(isOpenAccessMode() && isPhoneAppLaunchEnv() && hasCompletedPhoneWelcome());
+  }
+
   function isPortalUserAuthenticated() {
     if (portalState.sessionToken && portalState.user) return true;
     if (portalState.supabaseAuthenticated) return true;
@@ -1381,7 +1723,7 @@
       syncRouteMode();
       return;
     }
-    if (!isPortalUserAuthenticated()) {
+    if (isPhoneAppLaunchEnv() && !isPortalUserAuthenticated() && !isPhoneGuestAllowed()) {
       portalState.openPortalActive = false;
       window.location.hash = "#login";
       syncRouteMode();
@@ -1390,11 +1732,13 @@
 
     portalState.openPortalActive = true;
     const landingView = document.getElementById("landingView");
+    const phoneWelcomeView = document.getElementById("phoneWelcomeView");
     const loginView = document.getElementById("loginView");
     const adminView = document.getElementById("adminView");
     const dashboardView = document.getElementById("dashboardView");
 
     if (landingView) landingView.hidden = true;
+    if (phoneWelcomeView) phoneWelcomeView.hidden = true;
     if (loginView) loginView.hidden = true;
     if (adminView) adminView.hidden = true;
     if (dashboardView) dashboardView.hidden = false;
@@ -1411,24 +1755,34 @@
     }
 
     if (portalState.rawOpenCatalog.length === 0 || forceRefresh) {
-      try {
-        const res = await callBackend("publicDashboard", { forceRefresh: Boolean(forceRefresh) });
-        if (res && res.openAccessDisabled) {
-          portalState.openPortalActive = false;
-          setOpenAccessOverride(false);
-          window.location.hash = "#login";
-          syncRouteMode();
-          showToast("Portal kini beroperasi dalam mod akses berdaftar.");
-          return;
+      let loadedFromCache = false;
+      if (!forceRefresh) {
+        const cached = await fetchSupabaseCachedCatalog();
+        if (cached && cached.ok) {
+          portalState.rawOpenCatalog = cached.catalog;
+          loadedFromCache = true;
         }
-        if (res && res.ok) {
-          portalState.rawOpenCatalog = Array.isArray(res.catalog) ? res.catalog : [];
-          portalState.rawServerLeaderboard = res.leaderboard || null;
-        } else if (res && res.error) {
-          showToast(res.error);
+      }
+      if (!loadedFromCache) {
+        try {
+          const res = await callBackend("publicDashboard", { forceRefresh: Boolean(forceRefresh) });
+          if (res && res.openAccessDisabled) {
+            portalState.openPortalActive = false;
+            setOpenAccessOverride(false);
+            window.location.hash = "#login";
+            syncRouteMode();
+            showToast("Portal kini beroperasi dalam mod akses berdaftar.");
+            return;
+          }
+          if (res && res.ok) {
+            portalState.rawOpenCatalog = Array.isArray(res.catalog) ? res.catalog : [];
+            portalState.rawServerLeaderboard = res.leaderboard || null;
+          } else if (res && res.error) {
+            showToast(res.error);
+          }
+        } catch (err) {
+          showToast("Gagal memuatkan senarai bank soalan: " + err.message);
         }
-      } catch (err) {
-        showToast("Gagal memuatkan senarai bank soalan: " + err.message);
       }
     }
 
@@ -2055,6 +2409,94 @@
           btn.disabled = false;
           btn.textContent = "Tebus Kod";
         }
+      });
+    }
+  }
+
+  // --- [shared/ui/adsenseController.js] ---
+  /**
+   * src/shared/ui/adsenseController.js
+   * Kawalan pintar Google AdSense: menyekat iklan semasa peperiksaan (#examStage),
+   * paparan Admin (#adminView), aplikasi mudah alih Capacitor, dan pemegang Token berbayar.
+   */
+
+  const ADSENSE_CLIENT_ID = "ca-pub-7216597758789088";
+  const ADSENSE_SCRIPT_SRC = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
+
+  let scriptRequested = false;
+  let adsObserverStarted = false;
+
+  function isNativeAppShell() {
+    try {
+      if (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform()) {
+        return true;
+      }
+    } catch (e) {}
+    return document.documentElement.getAttribute("data-phone-app") === "true" ||
+      document.documentElement.getAttribute("data-native-store-shell") === "true";
+  }
+
+  function shouldSuppressAds() {
+    if (isNativeAppShell()) return true;
+    if (document.documentElement.getAttribute("data-exam-active") === "true") return true;
+
+    const examStage = document.getElementById("examStage");
+    if (examStage && !examStage.hidden) return true;
+
+    const adminView = document.getElementById("adminView");
+    if (adminView && !adminView.hidden) return true;
+    if ((window.location.hash || "").toLowerCase().startsWith("#admin")) return true;
+
+    try {
+      const snap = readWalletLocalSnapshot();
+      if (snap && Number(snap.paidBalance) > 0) return true;
+    } catch (e) {}
+
+    return false;
+  }
+
+  function loadAdSenseOnce() {
+    if (scriptRequested) return;
+    if (document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+      scriptRequested = true;
+      return;
+    }
+    const host = (window.location.hostname || "").toLowerCase();
+    if (!/^https?:$/i.test(window.location.protocol) || host === "localhost" || host === "127.0.0.1") {
+      return;
+    }
+    scriptRequested = true;
+    const s = document.createElement("script");
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.src = ADSENSE_SCRIPT_SRC;
+    document.head.appendChild(s);
+  }
+
+  function syncAdSenseVisibility() {
+    const suppressed = shouldSuppressAds();
+    document.documentElement.setAttribute("data-ads-suppressed", suppressed ? "true" : "false");
+    if (!suppressed) {
+      loadAdSenseOnce();
+    }
+    return suppressed;
+  }
+
+  function initAdSenseController() {
+    syncAdSenseVisibility();
+    if (adsObserverStarted) return;
+    adsObserverStarted = true;
+
+    window.addEventListener("etutor:wallet-synced", syncAdSenseVisibility);
+    window.addEventListener("etutor:cikgu-token-updated", syncAdSenseVisibility);
+    window.addEventListener("hashchange", syncAdSenseVisibility);
+
+    if (typeof MutationObserver === "function") {
+      const obs = new MutationObserver(syncAdSenseVisibility);
+      obs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-exam-active", "data-phone-app"] });
+      ["examStage", "adminView"].forEach(function (id) {
+        const node = document.getElementById(id);
+        if (node) obs.observe(node, { attributes: true, attributeFilter: ["hidden"] });
       });
     }
   }
@@ -3226,6 +3668,10 @@
     }
 
     applyDeepLinkParamsOnce();
+
+    try {
+      window.dispatchEvent(new CustomEvent("etutor:dashboard-bundle-applied"));
+    } catch (e) {}
   }
 
 
@@ -3367,7 +3813,7 @@
       } else {
         weakCard.hidden = false;
         weakRow.innerHTML = wList.map(function (w) {
-          return '<span class="weak-pill">' + ICONS.alert + ' ' + escapeHtml(w.topic) + ' <strong class="tabular-nums">(' + w.lowestPct + '%)</strong></span>';
+          return '<button type="button" class="weak-pill weak-pill-btn js-weak-topic-drill" data-topic="' + escapeHtml(w.topic) + '">' + ICONS.alert + ' <span>' + escapeHtml(w.topic) + '</span> <strong class="tabular-nums">(' + w.lowestPct + '%)</strong></button>';
         }).join("");
       }
     }
@@ -3464,6 +3910,7 @@
 
 
 
+
   async function openQuizSet(fileId, autoResume, resetStart) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
@@ -3484,7 +3931,14 @@
     portalState.activeQuizFileId = fileId;
     portalState.latestSlipData = null;
     stage.hidden = false;
+    document.documentElement.setAttribute("data-exam-active", "true");
     document.body.style.overflow = "hidden";
+    if (!isNativeCapacitorPlatform() && !portalState.examHistoryPushed && window.history && typeof window.history.pushState === "function") {
+      try {
+        window.history.pushState({ etutorExamStage: true, fileId: fileId }, "");
+        portalState.examHistoryPushed = true;
+      } catch (e) {}
+    }
     if (window.ETutorMotion) window.ETutorMotion.playExamStageOpen();
 
     const loadingSpinnerHtml = [
@@ -3623,15 +4077,29 @@
     } catch (e) {}
   }
 
-  async function closeQuizStage() {
+  async function closeQuizStage(opts) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
     await flushPendingProgressNow();
 
     if (iframe) iframe.srcdoc = "";
     if (stage) stage.hidden = true;
+    document.documentElement.setAttribute("data-exam-active", "false");
+    document.documentElement.setAttribute("data-virtual-keyboard", "closed");
     document.body.style.overflow = "";
     portalState.activeQuizFileId = null;
+
+    if (!isNativeCapacitorPlatform() && portalState.examHistoryPushed) {
+      const manualClose = !(opts && opts.fromHistoryBack);
+      portalState.examHistoryPushed = false;
+      if (manualClose && window.history && window.history.state && window.history.state.etutorExamStage) {
+        portalState.suppressNextExamPopstate = true;
+        window.history.back();
+        setTimeout(function () { portalState.suppressNextExamPopstate = false; }, 160);
+      }
+    } else {
+      portalState.examHistoryPushed = false;
+    }
 
     if (!portalState.sessionToken && isOpenAccessMode()) {
       applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
@@ -3866,10 +4334,12 @@
     portalState.sessionToken = "";
     portalState.user = null;
     portalState.openPortalActive = false;
+    portalState.phoneGuestActive = false;
     portalState.supabaseAuthenticated = false;
     portalState.pendingKlonScroll = false;
     portalState.pinProgressStateByFileId = {};
     try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
+    try { localStorage.removeItem(PHONE_WELCOME_DONE_KEY); } catch (e) {}
     clearSyncLink();
     if (isSupabaseConfigured()) {
       sbSignOut().catch(function () {});
@@ -3878,7 +4348,11 @@
     document.getElementById("dashboardView").hidden = true;
     document.getElementById("examStage").hidden = true;
     document.body.style.overflow = "";
-    window.location.hash = "#login";
+    if (isPhoneAppLaunchEnv()) {
+      try { history.replaceState(null, "", window.location.pathname + window.location.search); } catch (e) {}
+    } else {
+      window.location.hash = "#login";
+    }
     syncRouteMode();
   }
 
@@ -3925,7 +4399,7 @@
   // --- [features/auth/routeController.js] ---
   /**
    * src/features/auth/routeController.js
-   * Penghala paparan utama berasaskan hash URL (#admin, #login, #portal) & Mod Akses Terbuka.
+   * Penghala paparan utama berasaskan hash URL (#admin, #login, #portal) & Mod Akses Terbuka + Skrin Alu-Aluan Telefon.
    */
 
 
@@ -3953,11 +4427,14 @@
     syncOpenAccessDom();
 
     const landingView = document.getElementById("landingView");
+    const phoneWelcomeView = document.getElementById("phoneWelcomeView");
     const adminView = document.getElementById("adminView");
     const loginView = document.getElementById("loginView");
     const dashboardView = document.getElementById("dashboardView");
     const examStage = document.getElementById("examStage");
     if (!adminView) return;
+
+    if (phoneWelcomeView) phoneWelcomeView.hidden = true;
 
     if (isHashAdmin()) {
       if (landingElExists(landingView)) landingView.hidden = true;
@@ -3968,11 +4445,8 @@
 
       let savedAdminTok = portalState.adminToken;
       if (!savedAdminTok) {
-        try {
-          savedAdminTok = sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) || "";
-        } catch (e) {}
+        try { savedAdminTok = sessionStorage.getItem(ADMIN_SESSION_STORAGE_KEY) || ""; } catch (e) {}
       }
-
       if (savedAdminTok) {
         portalState.adminToken = savedAdminTok;
         try {
@@ -3985,7 +4459,6 @@
           }
         } catch (e) {}
       }
-
       portalState.adminToken = "";
       document.getElementById("adminDashboardShell").hidden = true;
       document.getElementById("adminLoginShell").hidden = false;
@@ -4004,7 +4477,38 @@
     const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(portalState.pendingKlonScroll);
     const wantsCountdownScroll = Boolean(portalState.pendingCountdownScroll);
 
-    if (isOpenAccessMode() && authed && (isHashPortal() || isHashLogin() || hasDeepLinkPortalParams() || portalState.openPortalActive)) {
+    if (isPhoneAppLaunchEnv()) {
+      if (isHashLogin()) {
+        if (landingElExists(landingView)) landingView.hidden = true;
+        dashboardView.hidden = true;
+        loginView.hidden = false;
+        loadGoogleSignIn();
+        if (window.ETutorMotion) window.ETutorMotion.playLoginEntrance();
+        return;
+      }
+      if (isOpenAccessMode() && (authed || isPhoneGuestAllowed())) {
+        if (!isHashPortal()) {
+          history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
+        }
+        portalState.pendingKlonScroll = false;
+        portalState.pendingCountdownScroll = false;
+        await enterOpenPortal(false);
+        return;
+      }
+      if (landingElExists(landingView)) landingView.hidden = true;
+      loginView.hidden = true;
+      dashboardView.hidden = true;
+      if (phoneWelcomeView) phoneWelcomeView.hidden = false;
+      return;
+    }
+
+    const wantsOpenPortal = isOpenAccessMode() && (
+      (authed && isHashLogin()) ||
+      isHashPortal() ||
+      hasDeepLinkPortalParams() ||
+      portalState.openPortalActive
+    );
+    if (wantsOpenPortal) {
       if (isHashLogin() || window.location.hash.toLowerCase() === "#klon-portal") {
         history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
       }
@@ -4023,10 +4527,8 @@
       return;
     }
 
-    if (isHashPortal() || hasDeepLinkPortalParams()) {
-      if (window.location.hash.toLowerCase() === "#klon-portal") {
-        portalState.pendingKlonScroll = true;
-      }
+    if (!isOpenAccessMode() && (isHashPortal() || hasDeepLinkPortalParams())) {
+      if (window.location.hash.toLowerCase() === "#klon-portal") portalState.pendingKlonScroll = true;
       history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
     }
 
@@ -4043,9 +4545,7 @@
         const hashId = window.location.hash ? window.location.hash.slice(1) : "";
         if (hashId) {
           const targetSec = document.getElementById(hashId);
-          if (targetSec && !targetSec.hidden) {
-            setTimeout(function () { targetSec.scrollIntoView(); }, 30);
-          }
+          if (targetSec && !targetSec.hidden) setTimeout(function () { targetSec.scrollIntoView(); }, 30);
         }
       }
     }
@@ -4053,6 +4553,225 @@
 
   function landingElExists(el) {
     return Boolean(el);
+  }
+
+  // --- [features/payment/toyyibpayCheckoutService.js] ---
+  /**
+   * src/features/payment/toyyibpayCheckoutService.js
+   * Perkhidmatan pembayaran automatik ToyyibPay (FPX & DuitNow QR), pulangan pengesahan bil, dan fallback WhatsApp Admin bersih.
+   */
+
+
+
+
+
+
+  const PENDING_ORDER_KEY = "etutor_pending_toyyibpay_order_v1";
+
+  const PLAN_TO_PACK_CODE = {
+    tokenStarter: "PEK_CUBA_45",
+    tokenFocus: "PEK_FOKUS_160",
+    tokenSprint: "PEK_PECUTAN_500"
+  };
+
+  function isLocalHostEnv() {
+    const h = (typeof window !== "undefined" && window.location && window.location.hostname) || "";
+    return /^(localhost|127\.0\.0\.1)$/i.test(h);
+  }
+
+  function resolvePaymentBaseUrl() {
+    if (isLocalHostEnv()) return "";
+    const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) || {};
+    return String(cfg.CIKGU_SUPABASE_EDGE_URL || "").trim().replace(/\/+$/, "");
+  }
+
+  function buildCleanWhatsAppUrl(opts) {
+    const plans = opts.plans || {};
+    const p = plans[opts.pkgKey] || { code: "PEK_FOKUS_160", name: "Pek Fokus — 160 Token AI Ekspres", price: "RM 15" };
+    const refCode = getAttributedReferralCode();
+    const lines = [
+      "Salam Admin eTutor.my, saya perlukan bantuan tambah nilai Pek Token AI:",
+      "",
+      "Nama Pelajar: " + opts.studentName,
+      "ID / E-mel Akaun: " + opts.userIdInput,
+      ...(opts.phoneInput ? ["No. Telefon: " + opts.phoneInput] : []),
+      "Pilihan Pek: " + p.name + " (" + p.price + ")",
+      ...(refCode ? ["Kod Rujukan Rakan: " + refCode] : []),
+      "",
+      "Mohon bantuan pengaktifan pek ini ke akaun eTutor.my saya. Terima kasih!"
+    ].join("\n");
+    const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
+    return {
+      waUrl: "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(lines),
+      msgText: lines
+    };
+  }
+
+  async function openCleanWhatsAppFallback(opts, orderDlg) {
+    const built = buildCleanWhatsAppUrl(opts);
+    try { await navigator.clipboard.writeText(built.msgText); } catch (e) {}
+    if (orderDlg && orderDlg.open) await closeTopLayer(orderDlg);
+    window.open(built.waUrl, "_blank", "noopener");
+    showToast("Membuka WhatsApp Admin (013-732 7696)...");
+  }
+
+  async function resolveBearerToken() {
+    if (!isSupabaseConfigured()) return "";
+    try {
+      const sb = getSupabaseClient();
+      const res = sb ? await sb.auth.getSession() : null;
+      return String(res && res.data && res.data.session ? res.data.session.access_token || "" : "");
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function isAllowedPaymentRedirectUrl(urlStr) {
+    if (!urlStr) return false;
+    if (isLocalHostEnv() && urlStr.indexOf("/api/mock-toyyibpay") === 0) return true;
+    return /^https:\/\/(?:dev\.)?toyyibpay\.com\/[a-zA-Z0-9_-]+/.test(urlStr);
+  }
+
+  async function startToyyibPayCheckout(opts) {
+    const baseUrl = resolvePaymentBaseUrl();
+    if (!baseUrl && !isLocalHostEnv()) {
+      await openCleanWhatsAppFallback(opts, opts.orderDlg);
+      return { ok: false, fallbackWhatsApp: true };
+    }
+
+    let jwt = await resolveBearerToken();
+    if (!jwt && !isLocalHostEnv()) {
+      showToast("Sila log masuk Google atau E-mel terlebih dahulu supaya Token dikreditkan ke akaun anda.");
+      if (opts.orderDlg && opts.orderDlg.open) await closeTopLayer(opts.orderDlg);
+      openSyncDialog();
+      return { ok: false, authRequired: true };
+    }
+
+    const packCode = PLAN_TO_PACK_CODE[opts.pkgKey] || "PEK_FOKUS_160";
+    const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) || {};
+    const headers = { "Content-Type": "application/json" };
+    if (jwt) headers.Authorization = "Bearer " + jwt;
+    if (cfg.SUPABASE_ANON_KEY) headers.apikey = cfg.SUPABASE_ANON_KEY;
+
+    const btn = opts.submitBtn;
+    const origLabel = btn ? btn.textContent : "";
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Menjana Bil FPX ToyyibPay...";
+    }
+
+    try {
+      const resp = await fetch(baseUrl + "/v1/payment/create-bill", {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({
+          packCode: packCode,
+          buyerName: opts.studentName,
+          buyerEmail: opts.userIdInput,
+          buyerPhone: opts.phoneInput,
+          referralCode: getAttributedReferralCode(),
+          returnOrigin: window.location.origin
+        })
+      });
+      const data = await resp.json().catch(function () { return {}; });
+
+      if (data && data.authRequired) {
+        showToast(data.error || "Sila log masuk akaun dahulu sebelum membuat pembayaran.");
+        if (opts.orderDlg && opts.orderDlg.open) await closeTopLayer(opts.orderDlg);
+        openSyncDialog();
+        return data;
+      }
+      if (data && data.fallbackWhatsApp) {
+        showToast(data.error || "Membuka tempahan pantas WhatsApp...");
+        await openCleanWhatsAppFallback(opts, opts.orderDlg);
+        return data;
+      }
+      if (!resp.ok || !data.ok || !isAllowedPaymentRedirectUrl(data.paymentUrl)) {
+        showToast((data && data.error) || "Gagal menjana bil ToyyibPay. Anda boleh guna WhatsApp Admin buat sementara.");
+        return data || { ok: false };
+      }
+
+      try {
+        sessionStorage.setItem(PENDING_ORDER_KEY, JSON.stringify({
+          orderRef: data.orderRef || "",
+          billCode: data.billCode || "",
+          packCode: packCode
+        }));
+      } catch (e) {}
+
+      showToast("Mengalihkan ke halaman pembayaran selamat ToyyibPay (FPX / DuitNow QR)...");
+      window.location.assign(data.paymentUrl);
+      return data;
+    } catch (err) {
+      showToast("Sambungan ke gerbang bayaran terganggu. Membuka WhatsApp Admin...");
+      await openCleanWhatsAppFallback(opts, opts.orderDlg);
+      return { ok: false, error: err && err.message };
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        if (origLabel) btn.textContent = origLabel;
+      }
+    }
+  }
+
+  async function handleToyyibPayReturnIfPresent() {
+    if (typeof window === "undefined") return false;
+    const params = new URLSearchParams(window.location.search || "");
+    const hashStr = String(window.location.hash || "");
+    const hqIdx = hashStr.indexOf("?");
+    const haIdx = hashStr.indexOf("&");
+    const hashExtra = hqIdx !== -1 ? hashStr.slice(hqIdx + 1) : (haIdx !== -1 ? hashStr.slice(haIdx + 1) : "");
+    const hashParams = new URLSearchParams(hashExtra);
+    if (params.get("payment_return") !== "toyyibpay" && hashParams.get("payment_return") !== "toyyibpay") return false;
+
+    let pending = {};
+    try {
+      pending = JSON.parse(sessionStorage.getItem(PENDING_ORDER_KEY) || "{}");
+    } catch (e) {}
+
+    const billCode = (params.get("billcode") || params.get("billCode") || hashParams.get("billcode") || hashParams.get("billCode") || pending.billCode || "").trim();
+    const orderRef = (params.get("order_id") || params.get("orderRef") || hashParams.get("order_id") || hashParams.get("orderRef") || pending.orderRef || "").trim();
+    const statusId = (params.get("status_id") || params.get("statusId") || hashParams.get("status_id") || hashParams.get("statusId") || "").trim();
+
+    try {
+      ["payment_return", "billcode", "billCode", "order_id", "orderRef", "status_id", "statusId", "transaction_id", "msg"]
+        .forEach(function (k) { params.delete(k); });
+      const q = params.toString();
+      const cleanUrl = window.location.pathname + (q ? "?" + q : "") + "#portal";
+      history.replaceState(null, "", cleanUrl);
+    } catch (e) {}
+
+    const baseUrl = resolvePaymentBaseUrl();
+    if ((!baseUrl && !isLocalHostEnv()) || (!billCode && !orderRef)) return true;
+
+    try {
+      const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) || {};
+      const headers = { "Content-Type": "application/json" };
+      if (cfg.SUPABASE_ANON_KEY) headers.apikey = cfg.SUPABASE_ANON_KEY;
+      const resp = await fetch(baseUrl + "/v1/payment/verify", {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify({ billCode: billCode, orderRef: orderRef, statusId: statusId })
+      });
+      const res = await resp.json().catch(function () { return {}; });
+      if (res && res.ok) {
+        try { sessionStorage.removeItem(PENDING_ORDER_KEY); } catch (e) {}
+        await refreshAiWalletFromServer();
+        const qty = Number(res.addedTokens || 0);
+        showToast(qty > 0
+          ? "Pembayaran disahkan! +" + qty + " Token Top-up Kekal telah dikreditkan ke dompet anda."
+          : "Pembayaran disahkan! Baki Token Top-up Kekal anda telah dikemas kini.");
+      } else if (res && res.status === "FAILED") {
+        try { sessionStorage.removeItem(PENDING_ORDER_KEY); } catch (e) {}
+        showToast(res.error || "Pembayaran FPX dibatalkan. Tiada caj dikenakan.");
+      } else {
+        await refreshAiWalletFromServer();
+        showToast((res && res.error) || "Pembayaran masih disahkan bank. Sila semak dompet anda sebentar lagi.");
+      }
+    } catch (err) {
+      showToast("Gagal menyemak pengesahan bayaran buat sementara. Cuba segarkan halaman.");
+    }
+    return true;
   }
 
   // --- [features/landing/orderLeadModal.js] ---
@@ -4138,11 +4857,17 @@
     const planBadge = document.getElementById("orderPlanBadge");
     const orderForm = document.getElementById("orderLeadForm");
 
+    const payBtn = document.getElementById("submitOrderPayBtn");
+    const waFallbackBtn = document.getElementById("submitOrderWhatsAppBtn");
+
     const syncOrderPlanBadge = function () {
       if (!pkgSelect || !planBadge) return;
       const key = pkgSelect.value || "tokenFocus";
       const p = plans[key];
-      if (p) planBadge.textContent = p.name + " — " + p.price;
+      if (p) {
+        planBadge.textContent = p.name + " — " + p.price;
+        if (payBtn) payBtn.textContent = "Bayar FPX / DuitNow QR — " + p.price;
+      }
     };
 
     if (pkgSelect) pkgSelect.addEventListener("change", syncOrderPlanBadge);
@@ -4184,7 +4909,7 @@
       const enterOpen = e.target.closest(".js-enter-open-portal");
       if (enterOpen) {
         e.preventDefault();
-        window.location.hash = isPortalUserAuthenticated() ? "#portal" : "#login";
+        window.location.hash = (isOpenAccessMode() || isPortalUserAuthenticated()) ? "#portal" : "#login";
         syncRouteMode();
         window.scrollTo(0, 0);
         return;
@@ -4193,14 +4918,15 @@
       const gotoKlonPortal = e.target.closest(".js-goto-klon-portal");
       if (gotoKlonPortal) {
         e.preventDefault();
-        if (!isPortalUserAuthenticated()) {
+        if (!isOpenAccessMode() && !isPortalUserAuthenticated()) {
           portalState.pendingKlonScroll = true;
           window.location.hash = "#login";
           syncRouteMode();
           window.scrollTo(0, 0);
           return;
         }
-        window.location.hash = "#portal";
+        portalState.pendingKlonScroll = true;
+        window.location.hash = "#klon-portal";
         syncRouteMode().then(function () {
           const klonHead = document.getElementById("klonCatalogHeading");
           if (klonHead && !document.getElementById("dashboardView").hidden) {
@@ -4252,7 +4978,7 @@
       if (backLanding) {
         e.preventDefault();
         portalState.openPortalActive = false;
-        history.pushState("", document.title, window.location.pathname);
+        history.pushState("", document.title, window.location.pathname + window.location.search);
         syncRouteMode();
         window.scrollTo(0, 0);
         return;
@@ -4266,44 +4992,45 @@
       }
     });
 
+    if (waFallbackBtn) {
+      waFallbackBtn.addEventListener("click", async function () {
+        const studentName = (document.getElementById("orderStudentName")?.value || "").trim() || "Pelajar eTutor.my";
+        const userIdInput = (document.getElementById("orderPhoneInput")?.value || "").trim() || "Belum dinyatakan";
+        const phoneInput = (document.getElementById("orderMobileTelInput")?.value || "").trim();
+        const key = (pkgSelect && pkgSelect.value) || "tokenFocus";
+        await openCleanWhatsAppFallback({
+          studentName: studentName,
+          userIdInput: userIdInput,
+          phoneInput: phoneInput,
+          pkgKey: key,
+          plans: plans
+        }, orderDlg);
+      });
+    }
+
     if (orderForm) {
       orderForm.addEventListener("submit", async function (e) {
         e.preventDefault();
-        const studentName = document.getElementById("orderStudentName").value.trim();
-        const userIdInput = document.getElementById("orderPhoneInput").value.trim();
+        const nameInp = document.getElementById("orderStudentName");
+        const idInp = document.getElementById("orderPhoneInput");
+        const mobileInp = document.getElementById("orderMobileTelInput");
+        const studentName = nameInp ? nameInp.value.trim() : "";
+        const userIdInput = idInp ? idInp.value.trim() : "";
+        const phoneInput = mobileInp ? mobileInp.value.trim() : "";
         const key = (pkgSelect && pkgSelect.value) || "tokenFocus";
-        if (!studentName || userIdInput.length < 5) {
+        if (studentName.length < 2 || userIdInput.length < 5 || (mobileInp && phoneInput.length < 9)) {
           orderForm.reportValidity();
           return;
         }
-        const p = plans[key] || { code: "PEK_FOKUS_160", name: "Pek Fokus — 160 Token AI Ekspres", price: "RM 15" };
-        const packageLabel = p.name + " (" + p.price + ")";
-        const refCode = getAttributedReferralCode();
-        const baseUrl = ((window.location.origin && window.location.origin !== "null") ? window.location.origin : "https://etutor.my") + "/";
-        const adminApprovalUrl = baseUrl + "admin/?student=" + encodeURIComponent(userIdInput) +
-          "&pack=" + encodeURIComponent(p.code || "PEK_FOKUS_160") +
-          "&note=" + encodeURIComponent(studentName.slice(0, 80));
-
-        const msgLines = [
-          "Salam Admin eTutor.my, saya berminat melanggan Pek Token AI berikut:",
-          "",
-          "Nama Pelajar: " + studentName,
-          "ID Pengguna eTutor.my: " + userIdInput,
-          "Pilihan Pek: " + packageLabel,
-          ...(refCode ? ["Kod Rujukan Rakan: " + refCode] : []),
-          "",
-          "Link Pantas Admin (Terus Aktifkan & Kredit Token ke Akaun):",
-          adminApprovalUrl,
-          "",
-          "Mohon kongsikan maklumat bayaran QR/FPX supaya token dapat terus dikreditkan ke akaun saya. Terima kasih!"
-        ].join("\n");
-
-        const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
-        const waUrl = "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(msgLines);
-        try { await navigator.clipboard.writeText(msgLines); } catch (err) {}
-        await closeTopLayer(orderDlg);
-        window.open(waUrl, "_blank", "noopener");
-        showToast("Membuka WhatsApp Admin (013-732 7696)...");
+        await startToyyibPayCheckout({
+          studentName: studentName,
+          userIdInput: userIdInput,
+          phoneInput: phoneInput,
+          pkgKey: key,
+          plans: plans,
+          orderDlg: orderDlg,
+          submitBtn: payBtn
+        });
       });
     }
   }
@@ -4317,14 +5044,28 @@
   let presenceChannel = null;
   let initialized = false;
 
-  function setStatText(id, value) {
+  function setLiveOnlineText(onlineCount) {
+    const el = document.getElementById("footerLiveUsersCount");
+    if (!el) return;
+    const n = Number(onlineCount);
+    if (!Number.isFinite(n) || n < 5) {
+      el.textContent = "Aktif 24/7";
+    } else {
+      el.textContent = n.toLocaleString("ms-MY");
+    }
+  }
+
+  function setAggregateStat(id, value) {
     const el = document.getElementById(id);
     if (!el) return;
-    if (typeof value === "number" && Number.isFinite(value)) {
-      el.textContent = value.toLocaleString("ms-MY");
-    } else {
-      el.textContent = String(value || "—");
+    const pill = el.closest(".lp-footer-stat-pill");
+    const n = Number(value) || 0;
+    if (n < 10) {
+      if (pill) pill.hidden = true;
+      return;
     }
+    if (pill) pill.hidden = false;
+    el.textContent = n.toLocaleString("ms-MY");
   }
 
   function getTabPresenceKey() {
@@ -4345,9 +5086,9 @@
     try {
       const { data, error } = await supabase.rpc("get_public_portal_stats");
       if (error || !data) return null;
-      setStatText("footerTotalUsersCount", Number(data.total_users || 0));
-      setStatText("footerActive24hCount", Number(data.active_24h || 0));
-      setStatText("footerQuizAttemptsCount", Number(data.quiz_attempts || 0));
+      setAggregateStat("footerTotalUsersCount", Number(data.total_users || 0));
+      setAggregateStat("footerActive24hCount", Number(data.active_24h || 0));
+      setAggregateStat("footerQuizAttemptsCount", Number(data.quiz_attempts || 0));
       return data;
     } catch (_) {
       return null;
@@ -4367,7 +5108,7 @@
       if (!presenceChannel) return;
       const state = presenceChannel.presenceState();
       const onlineCount = Object.keys(state || {}).length;
-      setStatText("footerLiveUsersCount", Math.max(1, onlineCount));
+      setLiveOnlineText(onlineCount);
     });
 
     presenceChannel.subscribe(async function (status) {
@@ -4380,7 +5121,7 @@
         } catch (_) {}
       } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") {
         if (typeof fallbackSessions === "number") {
-          setStatText("footerLiveUsersCount", Math.max(1, fallbackSessions));
+          setLiveOnlineText(fallbackSessions);
         }
       }
     });
@@ -4398,7 +5139,7 @@
     const fallbackSessions = stats && typeof stats.active_sessions === "number"
       ? stats.active_sessions
       : 1;
-    setStatText("footerLiveUsersCount", Math.max(1, fallbackSessions));
+    setLiveOnlineText(fallbackSessions);
     subscribeLivePresence(supabase, fallbackSessions);
   }
 
@@ -5564,10 +6305,50 @@
     if (capInp && document.activeElement !== capInp) capInp.value = capMyr.toFixed(2);
     if (visInp && document.activeElement !== visInp) visInp.value = String(budget.freeVisionCap != null ? budget.freeVisionCap : 100);
 
+    const pg = data.paymentGateway || {};
+    const payEn = document.getElementById("admPayEnabledInput");
+    const paySb = document.getElementById("admPaySandboxInput");
+    const payCat = document.getElementById("admPayCategoryInput");
+    const paySec = document.getElementById("admPaySecretInput");
+    const payBadge = document.getElementById("admPayStatusBadge");
+    if (payEn) payEn.checked = Boolean(pg.enabled);
+    if (paySb) paySb.checked = Boolean(pg.sandbox);
+    if (payCat && document.activeElement !== payCat) payCat.value = String(pg.categoryCode || "");
+    if (paySec && pg.hasSecretKey) paySec.placeholder = "Secret Key tersimpan (isi jika mahu tukar)";
+    if (payBadge) {
+      const ready = Boolean(pg.enabled && pg.categoryCode && pg.hasSecretKey);
+      payBadge.textContent = ready ? (pg.sandbox ? "SANDBOX AKTIF" : "PRODUKSI AKTIF") : "BELUM DIKONFIGURASI";
+      payBadge.className = "status-badge " + (ready ? "badge-done" : "badge-progress");
+    }
+
     renderAdminUsersTable();
+    renderAdminPaymentsTable();
     renderAdminIssuesTable();
     renderAdminLogsTable();
     if (typeof renderAdminRecentVouchers === "function") renderAdminRecentVouchers(data.recentVouchers || []);
+  }
+
+  function renderAdminPaymentsTable() {
+    const tbody = document.getElementById("adminPaymentsTableBody");
+    if (!tbody || !portalState.adminData) return;
+    const rows = Array.isArray(portalState.adminData.recentPayments) ? portalState.adminData.recentPayments : [];
+    if (rows.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:20px">Belum ada transaksi ToyyibPay direkodkan.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = rows.slice(0, 25).map(function (p) {
+      const st = String(p.status || "PENDING").toUpperCase();
+      const cls = st === "PAID" ? "badge-done" : (st === "FAILED" ? "badge-progress" : "badge-subject");
+      return (
+        "<tr>" +
+          '<td><div class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(p.paidAt || p.createdAt || "-") + '</div><div class="tabular-nums" style="font-size:0.74rem;color:var(--text-muted)">' + escapeHtml(p.orderRef || "-") + "</div></td>" +
+          '<td style="font-size:0.8rem"><div>' + escapeHtml(p.buyerName || "Pelajar") + '</div><div style="color:var(--text-muted)">' + escapeHtml(p.buyerEmail || "-") + "</div></td>" +
+          '<td class="tabular-nums"><div style="font-weight:700">' + escapeHtml(p.packCode || "-") + ' (+' + (Number(p.tokensAmount) || 0) + ')</div><div style="font-size:0.76rem;color:var(--text-muted)">RM ' + escapeHtml(String(p.amountMyr || 0)) + "</div></td>" +
+          '<td class="tabular-nums" style="font-size:0.78rem"><div>' + escapeHtml(p.billCode || "-") + '</div><div style="color:var(--text-muted)">' + escapeHtml(p.gatewayTxId || "-") + "</div></td>" +
+          '<td><span class="status-badge ' + cls + '">' + escapeHtml(st) + "</span></td>" +
+        "</tr>"
+      );
+    }).join("");
   }
 
   function renderAdminUsersTable() {
@@ -5880,7 +6661,17 @@
           const pubRes = await callBackend("publicDashboard", { forceRefresh: true });
           if (pubRes && pubRes.ok && Array.isArray(pubRes.catalog)) {
             portalState.rawOpenCatalog = pubRes.catalog;
-            showToast("Katalog disegar semula (" + pubRes.catalog.length + " set soalan aktif).");
+            let cacheMsg = "";
+            if (portalState.adminToken) {
+              try {
+                const syncRes = await callAdminBackend("adminSyncCatalogCache", {
+                  adminToken: portalState.adminToken,
+                  items: pubRes.catalog
+                });
+                if (syncRes && syncRes.ok) cacheMsg = " & disegar ke cache Supabase";
+              } catch (err) {}
+            }
+            showToast("Katalog disegar semula (" + pubRes.catalog.length + " set soalan aktif" + cacheMsg + ").");
           } else {
             showToast("Segerakkan katalog selesai.");
           }
@@ -5888,6 +6679,58 @@
           showToast((err && err.message) || "Gagal menyegar semula katalog Drive.", true);
         } finally {
           syncCatBtn.disabled = false;
+        }
+      });
+    }
+
+    const payForm = document.getElementById("adminPaymentConfigForm");
+    if (payForm) {
+      payForm.addEventListener("submit", async function (ev) {
+        ev.preventDefault();
+        if (!portalState.adminToken) {
+          showToast("Sila log masuk sebagai Admin terlebih dahulu.", true);
+          return;
+        }
+        const enInp = document.getElementById("admPayEnabledInput");
+        const sbInp = document.getElementById("admPaySandboxInput");
+        const catInp = document.getElementById("admPayCategoryInput");
+        const secInp = document.getElementById("admPaySecretInput");
+        const btn = document.getElementById("admSavePaymentConfigBtn");
+        if (btn) btn.disabled = true;
+        try {
+          const res = await callAdminBackend("adminSavePaymentConfig", {
+            adminToken: portalState.adminToken,
+            enabled: Boolean(enInp && enInp.checked),
+            sandbox: Boolean(sbInp && sbInp.checked),
+            categoryCode: catInp ? catInp.value.trim() : "",
+            secretKey: secInp ? secInp.value.trim() : ""
+          });
+          if (res && res.ok) {
+            if (secInp) secInp.value = "";
+            applyAdminBundle(res);
+            showToast("Tetapan gerbang pembayaran ToyyibPay disimpan.");
+          } else {
+            showToast((res && res.error) || "Gagal menyimpan tetapan ToyyibPay.", true);
+          }
+        } catch (err) {
+          showToast((err && err.message) || "Ralat menyimpan tetapan ToyyibPay.", true);
+        } finally {
+          if (btn) btn.disabled = false;
+        }
+      });
+    }
+
+    const copyWhBtn = document.getElementById("admCopyWebhookUrlBtn");
+    if (copyWhBtn) {
+      copyWhBtn.addEventListener("click", async function () {
+        const cfg = window.ETUTOR_CONFIG || {};
+        const edgeBase = String(cfg.CIKGU_SUPABASE_EDGE_URL || "https://ktesekiguardgfdgrmlp.supabase.co/functions/v1/cikgu-semak").trim().replace(/\/+$/, "");
+        const hookUrl = edgeBase + "/v1/payment/toyyibpay-callback";
+        try {
+          await navigator.clipboard.writeText(hookUrl);
+          showToast("URL Webhook ToyyibPay disalin: " + hookUrl);
+        } catch (e) {
+          showToast("URL Webhook: " + hookUrl);
         }
       });
     }
@@ -6227,6 +7070,30 @@
 
   function bindCatalogLeaderboardAndSlipEvents() {
     document.addEventListener("click", async function (e) {
+      const weakBtn = e.target.closest(".js-weak-topic-drill");
+      if (weakBtn) {
+        const topic = (weakBtn.getAttribute("data-topic") || "").trim();
+        if (!topic) return;
+        const topicLower = topic.toLowerCase();
+        const hasMatch = (portalState.catalog || []).some(function (item) {
+          return String(item.title || "").toLowerCase().includes(topicLower) ||
+            String(item.subject || "").toLowerCase().includes(topicLower);
+        });
+        const searchInp = document.getElementById("catalogSearchInput");
+        const gridEl = document.getElementById("catalogCardsGrid");
+        const cikguDrawer = window.__CIKGU_AI_INSTANCE__ && window.__CIKGU_AI_INSTANCE__.drawer;
+        if (hasMatch || !cikguDrawer || typeof cikguDrawer.openWithPrompt !== "function") {
+          if (searchInp) searchInp.value = topic;
+          portalState.searchQuery = topic;
+          portalState.selectedSubject = "ALL";
+          renderCatalogSection();
+          if (gridEl) gridEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          cikguDrawer.openWithPrompt('Assalamualaikum Cikgu, saya masih lemah dalam topik "' + topic + '". Boleh tolong terangkan isi penting dan satu contoh soalan latihan SPM?');
+        }
+        return;
+      }
+
       const openBtn = e.target.closest(".js-open-quiz");
       if (openBtn) {
         const fid = openBtn.getAttribute("data-file-id");
@@ -6847,6 +7714,7 @@
 
     if (oauthSyncBtn) oauthSyncBtn.hidden = !sbActive || webView;
     if (wrap && (cid || sbActive)) wrap.hidden = false;
+    if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) return;
     if (!cid || !holder || (typeof google !== "undefined" && google.script) || webView) return;
 
     async function init() {
@@ -7492,11 +8360,1009 @@
     });
   }
 
+  // --- [features/mobile-app/pwaInstallController.js] ---
+  /**
+   * src/features/mobile-app/pwaInstallController.js
+   * Pendaftaran Service Worker pintar (dilencongkan apabila dalam Capacitor asli)
+   * serta aliran pemasangan PWA berpandukan modern-web-guidance (navigator.install & beforeinstallprompt).
+   */
+
+
+  const PWA_DISMISS_STORAGE_KEY = "etutor_pwa_banner_dismissed_v1";
+  let deferredInstallPromptEvent = null;
+  let pwaFlowBound = false;
+
+  function isStandaloneAppMode() {
+    if (typeof window === "undefined") return false;
+    return Boolean(
+      (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) ||
+      window.navigator.standalone === true
+    );
+  }
+
+  function isIosSafariBrowser() {
+    if (typeof navigator === "undefined") return false;
+    const ua = String(navigator.userAgent || "");
+    const isIos = /iPad|iPhone|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    return isIos && /Safari/i.test(ua) && !/CriOS|FxiOS|EdgiOS/i.test(ua);
+  }
+
+  function registerSmartServiceWorker() {
+    if (typeof window === "undefined" || !("serviceWorker" in navigator)) return;
+    if (isNativeCapacitorPlatform()) return;
+
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(function () {});
+    });
+  }
+
+  function shouldShowInstallBanner() {
+    if (isNativeCapacitorPlatform() || isStandaloneAppMode()) return false;
+    try {
+      if (sessionStorage.getItem(PWA_DISMISS_STORAGE_KEY) === "1") return false;
+    } catch (e) {}
+    return true;
+  }
+
+  function initPwaInstallFlow() {
+    registerSmartServiceWorker();
+    if (pwaFlowBound) return;
+    pwaFlowBound = true;
+
+    const bannerEl = document.getElementById("mobileInstallBanner");
+    const installBtn = document.getElementById("installPwaBtn");
+    const dismissBtn = document.getElementById("dismissInstallBannerBtn");
+    const statusEl = document.getElementById("installPwaStatus");
+    const iosDlg = document.getElementById("iosInstallHelpDialog");
+    const closeIosBtn = document.getElementById("closeIosInstallHelpBtn");
+
+    if (iosDlg) {
+      bindLightDismissFallback(iosDlg);
+      iosDlg.addEventListener("cancel", function (ev) {
+        ev.preventDefault();
+        closeTopLayer(iosDlg);
+      });
+    }
+    if (closeIosBtn && iosDlg) {
+      closeIosBtn.addEventListener("click", function () { closeTopLayer(iosDlg); });
+    }
+
+    if (!bannerEl || !installBtn) return;
+
+    const supportsWebInstall = typeof Navigator !== "undefined" &&
+      Navigator.prototype &&
+      typeof Navigator.prototype.install === "function";
+    const iosNeedsGuide = isIosSafariBrowser() && !isStandaloneAppMode();
+
+    const revealIfEligible = function () {
+      if (shouldShowInstallBanner() && (supportsWebInstall || deferredInstallPromptEvent || iosNeedsGuide)) {
+        bannerEl.hidden = false;
+      } else {
+        bannerEl.hidden = true;
+      }
+    };
+
+    if (supportsWebInstall || iosNeedsGuide) {
+      revealIfEligible();
+    }
+
+    window.addEventListener("beforeinstallprompt", function (event) {
+      event.preventDefault();
+      deferredInstallPromptEvent = event;
+      if (!supportsWebInstall) revealIfEligible();
+    });
+
+    window.addEventListener("appinstalled", function () {
+      deferredInstallPromptEvent = null;
+      bannerEl.hidden = true;
+      if (statusEl) statusEl.textContent = "Aplikasi eTutor.my berjaya dipasang.";
+    });
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener("click", function () {
+        bannerEl.hidden = true;
+        try { sessionStorage.setItem(PWA_DISMISS_STORAGE_KEY, "1"); } catch (e) {}
+      });
+    }
+
+    installBtn.addEventListener("click", async function () {
+      if (installBtn.getAttribute("aria-disabled") === "true") return;
+
+      if (!supportsWebInstall && !deferredInstallPromptEvent && iosNeedsGuide && iosDlg) {
+        if (!iosDlg.open && typeof iosDlg.showModal === "function") iosDlg.showModal();
+        return;
+      }
+
+      installBtn.setAttribute("aria-disabled", "true");
+      try {
+        if (supportsWebInstall) {
+          await navigator.install();
+          if (statusEl) statusEl.textContent = "Aplikasi telah dipasang atau dibuka.";
+          bannerEl.hidden = true;
+        } else if (deferredInstallPromptEvent) {
+          const promptEvent = deferredInstallPromptEvent;
+          deferredInstallPromptEvent = null;
+          await promptEvent.prompt();
+          const choice = await promptEvent.userChoice;
+          if (statusEl) {
+            statusEl.textContent = (choice && choice.outcome === "accepted")
+              ? "Aplikasi berjaya dipasang."
+              : "Pemasangan dibatalkan.";
+          }
+          if (!deferredInstallPromptEvent) bannerEl.hidden = true;
+        }
+      } catch (err) {
+        if (err && err.name === "AbortError") {
+          if (statusEl) statusEl.textContent = "Pemasangan dibatalkan.";
+        } else if (statusEl) {
+          statusEl.textContent = "Pemasangan tidak dapat dimulakan.";
+        }
+      } finally {
+        installBtn.removeAttribute("aria-disabled");
+      }
+    });
+  }
+
+  // --- [features/mobile-app/phoneAppViewRenderer.js] ---
+  /**
+   * src/features/mobile-app/phoneAppViewRenderer.js
+   * Pemeta DOM langsung bagi 4 tab Aplikasi Telefon (#phoneAppShell) serta kandungan
+   * 3 dialog Bottom Sheet (<dialog>: Pratonton Kertas, Leaderboard, dan Jadual SPM 2026).
+   */
+
+
+
+
+
+
+
+  const phoneUiState = {
+    activeTab: "utama",
+    paperCategory: "harian",
+    paperSubject: "ALL",
+    paperSearch: "",
+    selectedFileId: "",
+    lbPeriod: "all",
+    primaryQuizFileId: ""
+  };
+
+  function renderPhoneHeaderAndNavTokens(snapshot) {
+    const snap = snapshot || readWalletLocalSnapshot();
+    const rem = snap && typeof snap.remaining === "number" ? snap.remaining : 30;
+    const topTxt = document.getElementById("phoneHeaderTokenText");
+    const navBadge = document.getElementById("mobileNavTokenBadge");
+    if (topTxt) topTxt.textContent = rem + " Token";
+    if (navBadge) navBadge.textContent = String(rem);
+  }
+
+  function renderPhoneHomeTab() {
+    const cdEl = document.getElementById("phoneCountdownText");
+    if (cdEl) {
+      const parts = computeCountdownParts("2026-11-23", "08:00");
+      cdEl.textContent = parts.sign > 0
+        ? ("SPM 2026: " + parts.days + " hari " + parts.hours + " jam lagi")
+        : "Peperiksaan Bertulis SPM 2026 Sedang Berlangsung";
+    }
+
+    const ps = portalState.progressSummary || {};
+    const doneEl = document.getElementById("phoneKpiDone");
+    const gradeEl = document.getElementById("phoneKpiGrade");
+    const streakEl = document.getElementById("phoneKpiStreak");
+    const xpEl = document.getElementById("phoneKpiXp");
+    if (doneEl) doneEl.textContent = String(ps.completedSets || 0);
+    if (gradeEl) gradeEl.textContent = ps.averageGrade || "—";
+    if (streakEl) streakEl.textContent = (ps.streakDays || 0) + " Hari";
+    if (xpEl) xpEl.textContent = Number(ps.totalXp || 0).toLocaleString("en-MY") + " XP";
+
+    const catalog = Array.isArray(portalState.catalog) ? portalState.catalog : [];
+    const activeProg = Array.isArray(portalState.inProgress) && portalState.inProgress[0] ? portalState.inProgress[0] : null;
+    const fallbackItem = catalog.find(function (c) { return c.category !== "klon"; }) || catalog[0] || null;
+
+    const badgeEl = document.getElementById("phoneHeroBadge");
+    const subjEl = document.getElementById("phoneHeroSubject");
+    const titleEl = document.getElementById("phoneHeroTitle");
+    const metaEl = document.getElementById("phoneHeroMeta");
+    const progEl = document.getElementById("phoneHeroProgress");
+    const ctaEl = document.getElementById("phonePrimaryQuizBtnText");
+
+    if (activeProg) {
+      phoneUiState.primaryQuizFileId = activeProg.fileId;
+      const ans = Math.max(0, Number(activeProg.answeredCount) || 0);
+      const tot = Math.max(1, Number(activeProg.totalQuestions) || 40);
+      if (badgeEl) badgeEl.textContent = "Sedang Dijawab";
+      if (subjEl) subjEl.textContent = activeProg.subject || "SPM";
+      if (titleEl) titleEl.textContent = activeProg.quizTitle || "Set Latihan Terakhir";
+      if (metaEl) metaEl.textContent = ans + " / " + tot + " soalan siap • Disimpan " + (activeProg.updatedAt || "tadi");
+      if (progEl) { progEl.max = tot; progEl.value = Math.min(ans, tot); }
+      if (ctaEl) ctaEl.textContent = "Sambung Menjawab Kuiz";
+    } else if (fallbackItem) {
+      phoneUiState.primaryQuizFileId = fallbackItem.fileId;
+      if (badgeEl) badgeEl.textContent = fallbackItem.category === "klon" ? "Set Klon SPM" : "Set Pra-SPM Negeri";
+      if (subjEl) subjEl.textContent = fallbackItem.subject || "SPM";
+      if (titleEl) titleEl.textContent = fallbackItem.cleanTitle || "Set Latihan Interaktif";
+      if (metaEl) metaEl.textContent = "Skema automatik KSSM & Slip Keputusan Rasmi selepas tamat.";
+      if (progEl) { progEl.max = 40; progEl.value = 0; }
+      if (ctaEl) ctaEl.textContent = "Mula Menjawab Kuiz";
+    }
+
+    const weakArr = Array.isArray(ps.weakTopics) ? ps.weakTopics : [];
+    const weakTop = weakArr[0] || null;
+    const wTitle = document.getElementById("phoneWeakTopicTitle");
+    const wMeta = document.getElementById("phoneWeakTopicMeta");
+    const wBtn = document.getElementById("phoneAskWeakTopicBtn");
+    if (weakTop && wTitle && wMeta && wBtn) {
+      wTitle.textContent = weakTop.topic + " (" + weakTop.lowestPct + "%)";
+      wMeta.textContent = "Skor terkini di bawah 60%. Ulang kaji terus langkah demi langkah bersama Cikgu AI.";
+      wBtn.setAttribute("data-weak-topic", weakTop.topic);
+    } else if (wBtn) {
+      wBtn.setAttribute("data-weak-topic", "Terangkan teknik menjawab soalan KBAT Kertas 2 agar mendapat markah penuh.");
+    }
+
+    const subRow = document.getElementById("phoneHomeSubjectsRow");
+    if (subRow) {
+      const subs = Array.from(new Set(catalog.map(function (c) { return c.subject; }).filter(Boolean))).sort().slice(0, 8);
+      subRow.innerHTML = subs.map(function (s) {
+        return '<button type="button" class="phone-subj-chip js-phone-quick-subj" data-subj="' + escapeHtml(s) + '">' + escapeHtml(s) + "</button>";
+      }).join("");
+    }
+  }
+
+  function renderPhoneKertasTab() {
+    const catalog = Array.isArray(portalState.catalog) ? portalState.catalog : [];
+    const isHarian = phoneUiState.paperCategory === "harian";
+    const hBtn = document.getElementById("phoneSegHarianBtn");
+    const kBtn = document.getElementById("phoneSegKlonBtn");
+    if (hBtn) hBtn.setAttribute("aria-pressed", isHarian ? "true" : "false");
+    if (kBtn) kBtn.setAttribute("aria-pressed", isHarian ? "false" : "true");
+
+    const harianCount = catalog.filter(function (c) { return c.category !== "klon"; }).length;
+    const klonCount = catalog.filter(function (c) { return c.category === "klon"; }).length;
+    const hcEl = document.getElementById("phoneSegHarianCount");
+    const kcEl = document.getElementById("phoneSegKlonCount");
+    if (hcEl) hcEl.textContent = "(" + harianCount + " • 0T)";
+    if (kcEl) kcEl.textContent = "(" + klonCount + " • 2T)";
+
+    const catItems = catalog.filter(function (c) {
+      return isHarian ? c.category !== "klon" : c.category === "klon";
+    });
+    const subjects = ["ALL"].concat(Array.from(new Set(catItems.map(function (c) { return c.subject; }).filter(Boolean))).sort());
+    if (phoneUiState.paperSubject !== "ALL" && subjects.indexOf(phoneUiState.paperSubject) === -1) {
+      phoneUiState.paperSubject = "ALL";
+    }
+
+    const chipRow = document.getElementById("phonePaperSubjectsRow");
+    if (chipRow) {
+      chipRow.innerHTML = subjects.map(function (s) {
+        const pressed = phoneUiState.paperSubject === s ? "true" : "false";
+        const label = s === "ALL" ? "Semua Subjek" : s;
+        return '<button type="button" class="phone-subj-chip js-phone-filter-subj" data-subj="' + escapeHtml(s) + '" aria-pressed="' + pressed + '">' + escapeHtml(label) + "</button>";
+      }).join("");
+    }
+
+    const q = phoneUiState.paperSearch.trim().toLowerCase();
+    const filtered = catItems.filter(function (item) {
+      if (phoneUiState.paperSubject !== "ALL" && item.subject !== phoneUiState.paperSubject) return false;
+      if (q) {
+        const hay = [item.cleanTitle, item.subject, item.setCode, item.stateOrSource].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    const listEl = document.getElementById("phonePaperList");
+    if (!listEl) return;
+    if (filtered.length === 0) {
+      listEl.innerHTML = '<div class="phone-card" style="text-align:center;color:#475569">Tiada set kertas soalan sepadan dengan penapis semasa.</div>';
+      return;
+    }
+
+    listEl.innerHTML = filtered.slice(0, 60).map(function (item) {
+      const isKlon = item.category === "klon";
+      const unlocked = !isKlon || isKlonItemUnlocked(item);
+      const costLabel = isKlon ? (unlocked ? "Dibuka Kunci" : (KLON_UNLOCK_COST + " Token")) : "0 Token";
+      const costCls = isKlon && !unlocked ? "phone-badge-cost is-klon" : "phone-badge-cost";
+      const progText = item.inProgress
+        ? ((item.inProgress.answeredCount || 0) + "/" + (item.inProgress.totalQuestions || 40) + " soalan dijawab")
+        : (item.bestScore ? ("Terbaik: " + item.bestScore.percentage + "% (" + escapeHtml(item.bestScore.grade) + ")") : (item.stateOrSource || "Sedia dijawab"));
+
+      return [
+        '<button type="button" class="phone-paper-card" data-phone-file-id="' + escapeHtml(item.fileId) + '">',
+        '  <div>',
+        '    <div class="phone-paper-badges">',
+        '      <span class="phone-badge-code tabular-nums">' + escapeHtml((item.setCode || (isKlon ? "KLON" : "SET")) + " • " + item.subject) + "</span>",
+        '      <span class="' + costCls + '">' + escapeHtml(costLabel) + "</span>",
+        "    </div>",
+        '    <h3 class="phone-paper-title">' + escapeHtml(item.cleanTitle) + "</h3>",
+        '    <p class="phone-paper-meta tabular-nums">' + escapeHtml(progText) + "</p>",
+        "  </div>",
+        '  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>',
+        "</button>"
+      ].join("");
+    }).join("");
+  }
+
+  function renderPhoneAkaunTab() {
+    const lnk = getSyncLink();
+    const displayName = (portalState.user && portalState.user.buyerName) || getOpenStudentName() || (lnk && lnk.email ? lnk.email.split("@")[0] : "Pelajar eTutor");
+    const avatarEl = document.getElementById("phoneUserAvatar");
+    const nameEl = document.getElementById("phoneUserName");
+    const statusEl = document.getElementById("phoneUserStatusBadge");
+    const devEl = document.getElementById("phoneDeviceIdText");
+    if (avatarEl) avatarEl.textContent = String(displayName || "E").trim().charAt(0).toUpperCase();
+    if (nameEl) nameEl.textContent = displayName;
+    if (statusEl) {
+      statusEl.textContent = portalState.supabaseAuthenticated ? "Akaun Awan Disahkan" : (portalState.sessionToken ? "Akses PIN Berdaftar" : "Mod Tetamu Aktif");
+    }
+    if (devEl) devEl.textContent = "ID Peranti: " + getOrCreateDeviceId();
+
+    const s = readWalletLocalSnapshot();
+    const setText = function (id, val) { const el = document.getElementById(id); if (el) el.textContent = val; };
+    setText("phoneWalletReadyVal", "Sedia Guna: " + s.remaining + " Token");
+    setText("phoneWalletDailyVal", s.freeDailyRemaining + " / 5");
+    setText("phoneWalletMonthlyVal", s.freeMonthlyRemaining + " / 30");
+    setText("phoneWalletPaidVal", String(s.paidBalance));
+    setText("phoneWalletVisionVal", s.paidBalance >= 3 ? "Aktif" : (s.trialVisionRemaining + " Percubaan"));
+    setText("phoneReferralCodeVal", (portalState.supabaseAuthenticated && s.serverReferralCode) ? s.serverReferralCode : "Log Masuk Dahulu");
+    setText("phoneReferralQuotaVal", (s.monthlyReferralsCount || 0) + " / 20 rakan bulan ini");
+
+    const dangerCard = document.getElementById("phoneAccountDangerCard");
+    if (dangerCard) dangerCard.hidden = !Boolean(portalState.supabaseAuthenticated || portalState.sessionToken);
+  }
+
+  function populatePhonePaperDialog(fileId) {
+    phoneUiState.selectedFileId = fileId;
+    const item = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
+    if (!item) return false;
+    const isKlon = item.category === "klon";
+    const unlocked = !isKlon || isKlonItemUnlocked(item);
+    document.getElementById("phoneSheetBadge").textContent = isKlon ? (unlocked ? "Set Klon SPM • Dibuka Kekal" : ("Set Klon SPM • " + KLON_UNLOCK_COST + " Token")) : "Pra-SPM Negeri • 0 Token";
+    document.getElementById("phonePaperDialogTitle").textContent = item.cleanTitle;
+    document.getElementById("phoneSheetMeta").textContent = item.subject + (item.stateOrSource ? " • " + item.stateOrSource : "");
+    document.getElementById("phoneSheetProgress").textContent = item.inProgress
+      ? ("Kemajuan disimpan: " + (item.inProgress.answeredCount || 0) + " / " + (item.inProgress.totalQuestions || 40) + " soalan")
+      : (item.bestScore ? ("Rekod terbaik: " + item.bestScore.percentage + "% (Gred " + item.bestScore.grade + ")") : "Belum dijawab lagi.");
+    document.getElementById("phoneConfirmStartQuizBtn").textContent = item.inProgress ? "Sambung Menjawab" : (unlocked ? "Mula Menjawab Sekarang" : ("Buka Kunci Kekal (" + KLON_UNLOCK_COST + " Token) & Mula"));
+    const restartBtn = document.getElementById("phoneRestartQuizBtn");
+    if (restartBtn) restartBtn.hidden = !Boolean(item.inProgress);
+    return true;
+  }
+
+  function populatePhoneLeaderboardDialog() {
+    const lb = portalState.leaderboard || { entries: [], myStanding: null };
+    document.querySelectorAll(".js-phone-lb-period").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-phone-lb-period") === phoneUiState.lbPeriod ? "true" : "false");
+    });
+    const listEl = document.getElementById("phoneLbList");
+    if (listEl) {
+      const entries = Array.isArray(lb.entries) ? lb.entries : [];
+      listEl.innerHTML = entries.length === 0
+        ? '<p style="color:#475569;text-align:center;margin:12px 0">Belum ada rekod markah dihantar.</p>'
+        : entries.map(function (e) {
+            return '<div class="phone-lb-row"><div><strong>#' + e.rank + " " + escapeHtml(e.displayName) + (e.isCurrentUser ? " (Anda)" : "") + '</strong><div style="font-size:0.74rem;color:#475569" class="tabular-nums">' + e.setsCompleted + " set • Purata " + e.averageScore + '%</div></div><strong class="tabular-nums" style="color:var(--brand-primary)">' + Number(e.xp).toLocaleString("en-MY") + " XP</strong></div>";
+          }).join("");
+    }
+  }
+
+  function populatePhoneScheduleDialog() {
+    const parts = computeCountdownParts("2026-11-23", "08:00");
+    const hero = document.getElementById("phoneSchedHero");
+    if (hero) {
+      hero.textContent = parts.sign > 0
+        ? ("Peperiksaan Bertulis SPM 2026 bermula dalam " + parts.days + " hari " + parts.hours + " jam (23 Nov – 17 Dis 2026)")
+        : "Peperiksaan Bertulis SPM 2026 (23 Nov – 17 Dis 2026)";
+    }
+    const listEl = document.getElementById("phoneSchedList");
+    if (listEl && SPM_SCHEDULE && Array.isArray(SPM_SCHEDULE.subjects)) {
+      const rows = [];
+      SPM_SCHEDULE.subjects.slice(0, 12).forEach(function (subj) {
+        const p = (subj.papers || [])[0];
+        if (!p) return;
+        rows.push('<div class="phone-sched-row"><div><strong>' + escapeHtml(p.code + " " + subj.name) + '</strong><div style="font-size:0.74rem;color:#475569">' + escapeHtml(p.title) + '</div></div><span class="tabular-nums" style="font-weight:700;color:var(--brand-primary)">' + escapeHtml(formatMalayDateShort(p.date, p.endDate) + " • " + formatMalayTimeLabel(p.start)) + "</span></div>");
+      });
+      listEl.innerHTML = rows.join("");
+    }
+  }
+
+  // --- [features/mobile-app/phoneCikguChatController.js] ---
+  /**
+   * src/features/mobile-app/phoneCikguChatController.js
+   * Pengawal Tab Chat Cikgu AI Aplikasi Telefon: mesej teks (1 Token), muat naik / tangkap
+   * gambar Kertas 2 (kekal 3 Token), perlindungan XSS/Matematik, dan IME-safe Enter submit.
+   */
+
+
+
+  const SNAP_IMAGE_TOKEN_COST = 3;
+  const TEXT_CHAT_TOKEN_COST = 1;
+
+  const phoneChatState = {
+    subject: "Matematik",
+    isStreaming: false,
+    pendingImage: null,
+    history: [],
+    messages: [{
+      role: "bot",
+      subject: "Umum",
+      time: "Sekarang",
+      text: "Hai! Saya Cikgu AI eTutor SPM.\n\nTaip soalan (1 Token) atau tekan ikon kamera di kiri untuk semak foto jalan kerja Kertas 2 anda (3 Token)."
+    }]
+  };
+
+  function formatSafeCikguHtml(rawText) {
+    let safe = escapeHtml(String(rawText || ""));
+    safe = safe.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    safe = safe.replace(/\[(\d+\s*(?:m|markah))\]/gi, '<span class="cikgu-ai-mark-pill">$1</span>');
+    return safe.split(/\r?\n/).map(function (line) {
+      const t = line.trim();
+      if (!t) return '<div style="height:6px"></div>';
+      if (/^[-•]\s+/.test(t)) return '<div style="padding-left:10px">• ' + t.replace(/^[-•]\s+/, "") + "</div>";
+      return '<p style="margin:0 0 4px">' + line + "</p>";
+    }).join("");
+  }
+
+  function nowTimeShort() {
+    try { return new Date().toLocaleTimeString("ms-MY", { hour: "2-digit", minute: "2-digit", hour12: false }); }
+    catch (e) { return "Kini"; }
+  }
+
+  function syncChatImageBarAndCost() {
+    const bar = document.getElementById("phoneChatImageBar");
+    const thumb = document.getElementById("phoneChatImageThumb");
+    const nameEl = document.getElementById("phoneChatImageName");
+    const costEl = document.getElementById("phoneChatCostBadge");
+    const img = phoneChatState.pendingImage;
+    if (bar && thumb && nameEl) {
+      if (img) { thumb.src = img.dataUrl; nameEl.textContent = img.name || "jawapan_kertas2.jpg"; bar.hidden = false; }
+      else { thumb.removeAttribute("src"); bar.hidden = true; }
+    }
+    if (costEl) costEl.textContent = (img ? SNAP_IMAGE_TOKEN_COST : TEXT_CHAT_TOKEN_COST) + "T";
+  }
+
+  function renderPhoneChatMessages() {
+    const box = document.getElementById("phoneChatMessages");
+    if (!box) return;
+    box.innerHTML = phoneChatState.messages.map(function (m) {
+      if (m.role === "user") {
+        return [
+          '<div class="phone-msg-row is-user"><div class="phone-msg-bubble">',
+          m.imageUrl ? ('<img src="' + escapeHtml(m.imageUrl) + '" alt="Lampiran jawapan murid" class="phone-msg-img">') : "",
+          '<div>' + formatSafeCikguHtml(m.text) + "</div>",
+          '<div class="phone-msg-foot tabular-nums"><span>' + escapeHtml(m.time) + "</span><span>• -" + (m.cost || TEXT_CHAT_TOKEN_COST) + " Token</span></div>",
+          "</div></div>"
+        ].join("");
+      }
+      return [
+        '<div class="phone-msg-row is-bot"><div class="phone-msg-bubble">',
+        '<div class="phone-msg-head"><span>Cikgu AI • ' + escapeHtml(m.subject || phoneChatState.subject) + '</span><span class="tabular-nums">' + escapeHtml(m.time) + "</span></div>",
+        '<div class="phone-msg-body">' + formatSafeCikguHtml(m.text) + "</div>",
+        "</div></div>"
+      ].join("");
+    }).join("");
+    setTimeout(function () { box.scrollTop = box.scrollHeight; }, 20);
+  }
+
+  function compressPhoneImageFile(file) {
+    return new Promise(function (resolve, reject) {
+      const reader = new FileReader();
+      reader.onerror = function () { reject(new Error("Gagal membaca gambar.")); };
+      reader.onload = function () {
+        const img = new Image();
+        img.onerror = function () { reject(new Error("Format gambar tidak disokong.")); };
+        img.onload = function () {
+          const scale = Math.min(1, 1280 / Math.max(img.width || 1, img.height || 1));
+          const w = Math.max(1, Math.round((img.width || 1) * scale));
+          const h = Math.max(1, Math.round((img.height || 1) * scale));
+          const canvas = document.createElement("canvas");
+          canvas.width = w;
+          canvas.height = h;
+          canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+          const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+          resolve({ dataUrl: dataUrl, base64: dataUrl.split(",")[1] || "", mime: "image/jpeg", name: file.name || "jawapan_kertas2.jpg" });
+        };
+        img.src = String(reader.result || "");
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function submitPhoneCikguTurn() {
+    if (phoneChatState.isStreaming) return;
+    const inputEl = document.getElementById("phoneChatInput");
+    const sendBtn = document.getElementById("phoneChatSendBtn");
+    const subjSel = document.getElementById("phoneCikguSubjectSelect");
+    if (!inputEl) return;
+
+    const hasImg = Boolean(phoneChatState.pendingImage && phoneChatState.pendingImage.base64);
+    const rawText = inputEl.value.trim();
+    if (!rawText && !hasImg) { inputEl.focus(); return; }
+
+    const needTok = hasImg ? SNAP_IMAGE_TOKEN_COST : TEXT_CHAT_TOKEN_COST;
+    const snap = readWalletLocalSnapshot();
+    if (snap.remaining < needTok) {
+      showToast("Baki token AI tidak mencukupi (perlu " + needTok + " Token).");
+      openTokenWalletDialog();
+      return;
+    }
+
+    const subj = (subjSel && subjSel.value) || phoneChatState.subject || "auto";
+    const promptText = rawText || "Sila semak dan berikan markah mengikut skema LPM bagi gambar jawapan ini.";
+    const imgCopy = phoneChatState.pendingImage ? Object.assign({}, phoneChatState.pendingImage) : null;
+
+    inputEl.value = "";
+    inputEl.style.height = "auto";
+    phoneChatState.pendingImage = null;
+    syncChatImageBarAndCost();
+
+    phoneChatState.messages.push({
+      role: "user", subject: subj, time: nowTimeShort(),
+      text: promptText, imageUrl: imgCopy ? imgCopy.dataUrl : "", cost: needTok
+    });
+    const botMsg = { role: "bot", subject: subj, time: nowTimeShort(), text: "Cikgu sedang meneliti soalan anda..." };
+    phoneChatState.messages.push(botMsg);
+    phoneChatState.isStreaming = true;
+    if (sendBtn) sendBtn.disabled = true;
+    renderPhoneChatMessages();
+
+    try {
+      const aiApi = window.__CIKGU_AI_INSTANCE__;
+      if (!aiApi || !aiApi.client) throw new Error("Pelayan Cikgu AI sedang dimulakan. Sila cuba sebentar lagi.");
+      if (aiApi.warmupMachine && aiApi.warmupMachine.status !== "ready" && !hasImg) await aiApi.warmupMachine.greetCikgu();
+
+      let acc = "";
+      const streamRes = await aiApi.client.streamSemak({
+        subjek: subj, mod: hasImg ? "semak_gambar" : "auto",
+        soalan: promptText.slice(0, 5500), jawapan_pelajar: hasImg ? promptText.slice(0, 3500) : "",
+        imej_base64: hasImg ? imgCopy.base64.slice(0, 255000) : "", imej_mime: hasImg ? imgCopy.mime : "image/jpeg",
+        sesi_sudah_sapa: phoneChatState.history.length > 0, sejarah_sembang: phoneChatState.history.slice(-6),
+        markah_penuh: hasImg ? 6 : 4, max_tokens: hasImg ? 520 : 360
+      }, { onToken: function (tok) { acc += tok; botMsg.text = acc; renderPhoneChatMessages(); } });
+
+      if (acc.trim()) {
+        botMsg.text = acc.trim();
+        phoneChatState.history.push({ role: "user", content: promptText.slice(0, 500) }, { role: "assistant", content: acc.trim().slice(0, 700) });
+        if (!streamRes || !streamRes.syncedFromHeaders) {
+          const cur = readWalletLocalSnapshot();
+          const useFree = Math.min(needTok, Math.max(0, cur.freeDailyRemaining));
+          persistAndBroadcastWallet({
+            freeDailyRemaining: Math.max(0, cur.freeDailyRemaining - useFree),
+            freeRemaining: Math.max(0, cur.freeDailyRemaining - useFree),
+            freeMonthlyRemaining: Math.max(0, cur.freeMonthlyRemaining - useFree),
+            paidBalance: Math.max(0, cur.paidBalance - (needTok - useFree))
+          });
+        }
+      }
+    } catch (err) {
+      botMsg.text = "Maaf, semakan tidak dapat diselesaikan buat masa ini (" + ((err && err.message) || "Ralat rangkaian") + "). Token anda tidak dipotong.";
+    } finally {
+      phoneChatState.isStreaming = false;
+      if (sendBtn) sendBtn.disabled = false;
+      renderPhoneChatMessages();
+    }
+  }
+
+  function jumpToPhoneCikguTopic(topicText, subj) {
+    const inputEl = document.getElementById("phoneChatInput");
+    const subjSel = document.getElementById("phoneCikguSubjectSelect");
+    if (subj && subjSel) {
+      for (let i = 0; i < subjSel.options.length; i++) {
+        if (subjSel.options[i].value === subj) { subjSel.value = subj; break; }
+      }
+    }
+    if (inputEl) { inputEl.value = "Cikgu, bantu saya faham topik ini: " + String(topicText || ""); inputEl.focus(); }
+  }
+
+  function initPhoneCikguChat() {
+    const sel = document.getElementById("phoneCikguSubjectSelect");
+    const cfgSubjs = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.DEFAULT_SUBJECTS) || ["Bahasa Melayu", "Bahasa Inggeris", "Sejarah", "Matematik", "Sains", "Fizik", "Kimia", "Biologi", "Matematik Tambahan"];
+    if (sel && sel.options.length === 0) {
+      sel.innerHTML = cfgSubjs.map(function (s) { return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + "</option>"; }).join("");
+      sel.value = phoneChatState.subject;
+      sel.addEventListener("change", function () { phoneChatState.subject = sel.value; });
+    }
+    const form = document.getElementById("phoneChatForm");
+    const inputEl = document.getElementById("phoneChatInput");
+    const fileEl = document.getElementById("phoneChatFileInput");
+    const snapBtn = document.getElementById("phoneSnapBtn");
+    const rmImgBtn = document.getElementById("phoneRemoveImageBtn");
+    const clearBtn = document.getElementById("phoneClearChatBtn");
+
+    if (snapBtn && fileEl) snapBtn.addEventListener("click", function () { fileEl.click(); });
+    if (rmImgBtn) rmImgBtn.addEventListener("click", function () { phoneChatState.pendingImage = null; if (fileEl) fileEl.value = ""; syncChatImageBarAndCost(); });
+    if (fileEl) {
+      fileEl.addEventListener("change", async function () {
+        const f = fileEl.files && fileEl.files[0];
+        if (!f) return;
+        try { phoneChatState.pendingImage = await compressPhoneImageFile(f); syncChatImageBarAndCost(); showToast("Gambar sedia disemak (3 Token apabila dihantar)."); }
+        catch (err) { showToast((err && err.message) || "Gagal memproses gambar."); }
+      });
+    }
+    if (clearBtn) clearBtn.addEventListener("click", function () { phoneChatState.history = []; phoneChatState.messages = [phoneChatState.messages[0]]; renderPhoneChatMessages(); });
+    document.querySelectorAll("[data-cikgu-prompt]").forEach(function (btn) {
+      btn.addEventListener("click", function () { if (inputEl) { inputEl.value = btn.getAttribute("data-cikgu-prompt") || ""; inputEl.focus(); } });
+    });
+    if (inputEl && form) {
+      let lastCompositionEndAt = null;
+      inputEl.addEventListener("compositionend", function (ev) { lastCompositionEndAt = ev.timeStamp; });
+      inputEl.addEventListener("input", function () { inputEl.style.height = "auto"; inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + "px"; });
+      inputEl.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" && !ev.shiftKey) {
+          ev.preventDefault();
+          if (ev.isComposing || ev.keyCode === 229) return;
+          if (lastCompositionEndAt !== null && Math.abs(ev.timeStamp - lastCompositionEndAt) < 50) return;
+          form.requestSubmit();
+        }
+      });
+    }
+    if (form) form.addEventListener("submit", function (ev) { ev.preventDefault(); submitPhoneCikguTurn(); });
+    syncChatImageBarAndCost();
+    renderPhoneChatMessages();
+  }
+
+  // --- [features/mobile-app/phoneAppEvents.js] ---
+  /**
+   * src/features/mobile-app/phoneAppEvents.js
+   * Pengikat acara DOM bagi Aplikasi Telefon 4-Tab (#phoneAppShell, #mobileBottomNav)
+   * serta kawalan 3 Bottom Sheet <dialog> (Pratonton Kertas, Leaderboard, Jadual SPM).
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function switchPhoneTab(tabName) {
+    const valid = ["utama", "kertas", "cikgu", "akaun"].indexOf(tabName) !== -1 ? tabName : "utama";
+    phoneUiState.activeTab = valid;
+    ["utama", "kertas", "cikgu", "akaun"].forEach(function (t) {
+      const cap = t.charAt(0).toUpperCase() + t.slice(1);
+      const panel = document.getElementById("phoneTab" + cap);
+      if (panel) panel.hidden = t !== valid;
+    });
+    const nav = document.getElementById("mobileBottomNav");
+    if (nav) {
+      nav.querySelectorAll("[data-phone-tab]").forEach(function (btn) {
+        if (btn.getAttribute("data-phone-tab") === valid) btn.setAttribute("aria-current", "page");
+        else btn.removeAttribute("aria-current");
+      });
+    }
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  function bindPhoneDialogControls() {
+    [
+      ["phonePaperDialog", "closePhonePaperDialogBtn"],
+      ["phoneLeaderboardDialog", "closePhoneLbDialogBtn"],
+      ["phoneScheduleDialog", "closePhoneSchedDialogBtn"]
+    ].forEach(function (pair) {
+      const dlg = document.getElementById(pair[0]);
+      const closeBtn = document.getElementById(pair[1]);
+      if (dlg) {
+        bindLightDismissFallback(dlg);
+        dlg.addEventListener("cancel", function (ev) { ev.preventDefault(); closeTopLayer(dlg); });
+      }
+      if (dlg && closeBtn) closeBtn.addEventListener("click", function () { closeTopLayer(dlg); });
+    });
+
+    const startBtn = document.getElementById("phoneConfirmStartQuizBtn");
+    const resetBtn = document.getElementById("phoneRestartQuizBtn");
+    const paperDlg = document.getElementById("phonePaperDialog");
+    if (startBtn) {
+      startBtn.addEventListener("click", async function () {
+        const fId = phoneUiState.selectedFileId;
+        if (paperDlg && paperDlg.open) await closeTopLayer(paperDlg);
+        if (fId) openQuizSet(fId, true, false);
+      });
+    }
+    if (resetBtn) {
+      resetBtn.addEventListener("click", async function () {
+        const fId = phoneUiState.selectedFileId;
+        if (paperDlg && paperDlg.open) await closeTopLayer(paperDlg);
+        if (fId) openQuizSet(fId, false, true);
+      });
+    }
+
+    document.querySelectorAll(".js-phone-lb-period").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        phoneUiState.lbPeriod = btn.getAttribute("data-phone-lb-period") || "all";
+        populatePhoneLeaderboardDialog();
+        try {
+          const res = await callBackend("getLeaderboard", { period: phoneUiState.lbPeriod, subject: "ALL" });
+          if (res && res.ok && res.leaderboard) {
+            portalState.leaderboard = res.leaderboard;
+            populatePhoneLeaderboardDialog();
+          }
+        } catch (e) {}
+      });
+    });
+  }
+
+  async function handlePhoneReferralShare() {
+    const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+    const sess = sb ? await sb.auth.getSession() : null;
+    const snap = readWalletLocalSnapshot();
+    if (!sess || !sess.data || !sess.data.session || !snap.serverReferralCode) {
+      openSyncDialog();
+      showToast("Log masuk Google / E-mel dahulu untuk mengaktifkan pautan jemputan unik anda.");
+      return;
+    }
+    const shareUrl = "https://etutor.my/?ref=" + encodeURIComponent(snap.serverReferralCode) + "#portal";
+    if (navigator.share) {
+      try { await navigator.share({ title: "eTutor.my SPM", text: "Jom ulang kaji SPM & dapatkan +10 Token Cikgu AI:", url: shareUrl }); return; } catch (err) {}
+    }
+    try { await navigator.clipboard.writeText(shareUrl); showToast("Pautan jemputan disalin! (+10 Token apabila rakan siap 1 set)."); } catch (err) { showToast("Kod anda: " + snap.serverReferralCode); }
+  }
+
+  function bindPhoneShellInteractions({ onOpenWalletShield } = {}) {
+    const nav = document.getElementById("mobileBottomNav");
+    if (nav) {
+      nav.addEventListener("click", function (e) {
+        const btn = e.target.closest("[data-phone-tab]");
+        if (btn) switchPhoneTab(btn.getAttribute("data-phone-tab"));
+      });
+    }
+    const shell = document.getElementById("phoneAppShell");
+    if (!shell) return;
+
+    shell.addEventListener("click", async function (e) {
+      if (e.target.closest("#phoneHeaderTokenBtn") || e.target.closest("#phoneOpenWalletBtn")) {
+        if (typeof onOpenWalletShield === "function") onOpenWalletShield();
+        openTokenWalletDialog();
+        return;
+      }
+      if (e.target.closest("#phonePrimaryQuizBtn") && phoneUiState.primaryQuizFileId) {
+        openQuizSet(phoneUiState.primaryQuizFileId, true, false);
+        return;
+      }
+      const weakBtn = e.target.closest("#phoneAskWeakTopicBtn");
+      if (weakBtn) { switchPhoneTab("cikgu"); jumpToPhoneCikguTopic(weakBtn.getAttribute("data-weak-topic") || ""); return; }
+      const quickSub = e.target.closest(".js-phone-quick-subj");
+      if (quickSub) { phoneUiState.paperSubject = quickSub.getAttribute("data-subj") || "ALL"; switchPhoneTab("kertas"); renderPhoneKertasTab(); return; }
+      const catBtn = e.target.closest("[data-phone-cat]");
+      if (catBtn) { phoneUiState.paperCategory = catBtn.getAttribute("data-phone-cat") || "harian"; renderPhoneKertasTab(); return; }
+      const subjBtn = e.target.closest(".js-phone-filter-subj");
+      if (subjBtn) { phoneUiState.paperSubject = subjBtn.getAttribute("data-subj") || "ALL"; renderPhoneKertasTab(); return; }
+      const paperBtn = e.target.closest("[data-phone-file-id]");
+      if (paperBtn) {
+        const fId = paperBtn.getAttribute("data-phone-file-id");
+        if (fId && populatePhonePaperDialog(fId)) {
+          const dlg = document.getElementById("phonePaperDialog");
+          if (dlg && typeof dlg.showModal === "function") dlg.showModal();
+        }
+        return;
+      }
+      if (e.target.closest("#phoneOpenAuthBtn") || e.target.closest("#phoneOpenSyncBtn")) { openSyncDialog(); return; }
+      if (e.target.closest("#phoneOpenLeaderboardBtn")) {
+        populatePhoneLeaderboardDialog();
+        const dlg = document.getElementById("phoneLeaderboardDialog");
+        if (dlg && typeof dlg.showModal === "function") dlg.showModal();
+        return;
+      }
+      if (e.target.closest("#phoneCountdownStripBtn") || e.target.closest("#phoneOpenScheduleBtn")) {
+        populatePhoneScheduleDialog();
+        const dlg = document.getElementById("phoneScheduleDialog");
+        if (dlg && typeof dlg.showModal === "function") dlg.showModal();
+        return;
+      }
+      if (e.target.closest("#phoneOpenIssueBtn")) { const d = document.getElementById("issueDialog"); if (d && d.showModal) d.showModal(); return; }
+      if (e.target.closest("#phoneDeleteAccountBtn")) { const d = document.getElementById("deleteAccountDialog"); if (d && d.showModal) d.showModal(); return; }
+      if (e.target.closest("#phoneShareReferralBtn")) await handlePhoneReferralShare();
+    });
+
+    const searchEl = document.getElementById("phonePaperSearchInput");
+    if (searchEl) searchEl.addEventListener("input", function () { phoneUiState.paperSearch = searchEl.value || ""; renderPhoneKertasTab(); });
+
+    const pillEl = document.getElementById("phoneWelcomeCountdownPill");
+    if (pillEl) {
+      const p = computeCountdownParts("2026-11-23", "08:00");
+      pillEl.textContent = p.sign > 0 ? ("SPM 2026 • " + p.days + " Hari Lagi") : "Peperiksaan SPM 2026 Sedang Berlangsung";
+    }
+
+    const startGuestBtn = document.getElementById("phoneWelcomeStartGuestBtn");
+    if (startGuestBtn) {
+      startGuestBtn.addEventListener("click", async function () {
+        markPhoneWelcomeCompleted(true);
+        try { history.replaceState(null, "", window.location.pathname + window.location.search + "#portal"); } catch (e) {}
+        await syncRouteMode();
+        switchPhoneTab("utama");
+      });
+    }
+
+    const welcomeLoginBtn = document.getElementById("phoneWelcomeLoginBtn");
+    if (welcomeLoginBtn) {
+      welcomeLoginBtn.addEventListener("click", async function () {
+        window.location.hash = "#login";
+        await syncRouteMode();
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
+    }
+  }
+
+  // --- [features/mobile-app/mobileAppController.js] ---
+  /**
+   * src/features/mobile-app/mobileAppController.js
+   * Pengawal Teras Aplikasi Telefon: pelindung polisi gedung Apple 3.1.1 / 3.1.3(b),
+   * butang Back perkakasan Android / PWA, dan mod fokus papan kekunci maya.
+   */
+
+
+
+
+
+
+
+  const MOBILE_DIALOG_IDS = [
+    "deleteAccountDialog",
+    "iosInstallHelpDialog",
+    "phonePaperDialog",
+    "phoneLeaderboardDialog",
+    "phoneScheduleDialog",
+    "tokenWalletDialog",
+    "resultSlipDialog",
+    "syncDialog",
+    "issueDialog",
+    "orderDialog"
+  ];
+  let mobileAppBound = false;
+
+  function isPhoneAppRuntime() {
+    if (isNativeCapacitorPlatform()) return true;
+    if (typeof window === "undefined") return false;
+    try {
+      if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) return true;
+      const q = new URLSearchParams(window.location.search || "");
+      if (q.get("phoneApp") === "1" || q.get("storeShell") === "1") return true;
+    } catch (e) {}
+    return false;
+  }
+
+  function isStoreShellEnvActive() {
+    if (isNativeCapacitorPlatform()) return true;
+    if (typeof window === "undefined") return false;
+    try {
+      const q = new URLSearchParams(window.location.search || "");
+      if (q.get("storeShell") === "1") return true;
+    } catch (e) {}
+    return document.documentElement.getAttribute("data-native-store-shell") === "true";
+  }
+
+  function syncNativeStorePaymentShield() {
+    if (typeof document === "undefined" || !document.documentElement) return;
+    const storeMode = isStoreShellEnvActive();
+    const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) ? window.ETUTOR_CONFIG : {};
+    document.documentElement.setAttribute("data-native-store-shell", storeMode ? "true" : "false");
+    document.documentElement.setAttribute("data-allow-native-voucher", cfg.allowNativeVoucher === true ? "true" : "false");
+    document.documentElement.setAttribute("data-phone-app", isPhoneAppRuntime() ? "true" : "false");
+
+    const dangerRow = document.getElementById("walletAccountDangerRow");
+    if (dangerRow) {
+      dangerRow.hidden = !Boolean(portalState.supabaseAuthenticated || portalState.sessionToken);
+    }
+  }
+
+  function closeTopmostOpenDialog() {
+    for (let i = 0; i < MOBILE_DIALOG_IDS.length; i++) {
+      const dlg = document.getElementById(MOBILE_DIALOG_IDS[i]);
+      if (dlg && dlg.open) {
+        closeTopLayer(dlg);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function bindMobileBackNavigation() {
+    if (isNativeCapacitorPlatform()) {
+      const appPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+      if (appPlugin && typeof appPlugin.addListener === "function") {
+        appPlugin.addListener("backButton", async function () {
+          if (closeTopmostOpenDialog()) return;
+          const stage = document.getElementById("examStage");
+          if (stage && !stage.hidden) {
+            await closeQuizStage({ fromHistoryBack: true });
+            return;
+          }
+          if (phoneUiState.activeTab !== "utama") {
+            switchPhoneTab("utama");
+            return;
+          }
+          if (typeof appPlugin.minimizeApp === "function") appPlugin.minimizeApp();
+        });
+      }
+      return;
+    }
+
+    window.addEventListener("popstate", async function () {
+      if (portalState.suppressNextExamPopstate) {
+        portalState.suppressNextExamPopstate = false;
+        return;
+      }
+      if (closeTopmostOpenDialog()) return;
+      const stage = document.getElementById("examStage");
+      if (stage && !stage.hidden) {
+        portalState.examHistoryPushed = false;
+        await closeQuizStage({ fromHistoryBack: true });
+      }
+    });
+  }
+
+  function bindVirtualKeyboardFocusGuard() {
+    const root = document.documentElement;
+    let baselineHeight = typeof window !== "undefined" ? window.innerHeight : 800;
+    const isTextEntryEl = function (el) {
+      if (!el) return false;
+      if (el.isContentEditable) return true;
+      const tag = String(el.tagName || "").toUpperCase();
+      if (tag === "TEXTAREA" || tag === "SELECT") return true;
+      if (tag !== "INPUT") return false;
+      return ["checkbox", "radio", "button", "submit", "reset", "range", "file"].indexOf(String(el.type || "text").toLowerCase()) === -1;
+    };
+    document.addEventListener("focusin", function (e) {
+      if (isTextEntryEl(e.target)) root.setAttribute("data-virtual-keyboard", "open");
+    });
+    document.addEventListener("focusout", function () {
+      setTimeout(function () {
+        if (!isTextEntryEl(document.activeElement)) root.setAttribute("data-virtual-keyboard", "closed");
+      }, 80);
+    });
+    if (typeof window !== "undefined" && window.visualViewport) {
+      window.visualViewport.addEventListener("resize", function () {
+        if (window.innerHeight > baselineHeight) baselineHeight = window.innerHeight;
+        const ratio = window.visualViewport.height / Math.max(1, baselineHeight);
+        root.setAttribute("data-virtual-keyboard", ratio < 0.76 ? "open" : "closed");
+      });
+    }
+  }
+
+  function refreshAllPhoneViews(snapshot) {
+    syncNativeStorePaymentShield();
+    renderPhoneHeaderAndNavTokens(snapshot);
+    renderPhoneHomeTab();
+    renderPhoneKertasTab();
+    renderPhoneAkaunTab();
+  }
+
+  function initMobileAppExperience() {
+    if (mobileAppBound) return;
+    mobileAppBound = true;
+
+    syncNativeStorePaymentShield();
+    initPhoneCikguChat();
+    bindCapacitorOAuthDeepLinkListener();
+    bindAccountDeletionEvents();
+    bindPhoneDialogControls();
+    bindPhoneShellInteractions({ onOpenWalletShield: syncNativeStorePaymentShield });
+    bindMobileBackNavigation();
+    bindVirtualKeyboardFocusGuard();
+    refreshAllPhoneViews();
+
+    window.addEventListener("etutor:dashboard-bundle-applied", function () { refreshAllPhoneViews(); });
+    window.addEventListener("etutor:wallet-synced", function (ev) { refreshAllPhoneViews(ev && ev.detail); });
+    window.addEventListener("etutor:cikgu-token-updated", function (ev) { refreshAllPhoneViews(ev && ev.detail); });
+    window.addEventListener("etutor:server-unlocked-keys", function () { renderPhoneKertasTab(); });
+    window.addEventListener("etutor:open-token-wallet", syncNativeStorePaymentShield);
+
+    const statusBar = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.StatusBar;
+    if (isNativeCapacitorPlatform() && statusBar && typeof statusBar.setBackgroundColor === "function") {
+      statusBar.setBackgroundColor({ color: "#121e48" }).catch(function () {});
+    }
+  }
+
   // --- [main.js] ---
   /**
    * src/main.js
    * Pintu masuk permulaan aplikasi Portal eTutor.my (mengikat semua modul ciri pada DOMContentLoaded).
    */
+
+
+
+
 
 
 
@@ -7523,6 +9389,9 @@
     initLiveCatalogAutoSync();
     initFooterLiveStats();
     initSpmCountdown();
+    initPwaInstallFlow();
+    initMobileAppExperience();
+    initAdSenseController();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {
@@ -7534,6 +9403,12 @@
         }
       }
     }).catch(function () {});
+
+    try {
+      if (new URLSearchParams(window.location.search || "").get("payment_return") === "toyyibpay" && !window.location.hash) {
+        window.location.hash = "#portal";
+      }
+    } catch (e) {}
 
     if (isHashAdmin()) {
       syncRouteMode();
@@ -7547,5 +9422,6 @@
         window.ETutorMotion.playLandingEntrance();
       }
     }
+    await handleToyyibPayReturnIfPresent();
   });
 })();

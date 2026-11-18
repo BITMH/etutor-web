@@ -42,7 +42,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="eTutor SPM">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="./styles.css?v=24">
+  <link rel="stylesheet" href="./styles.css?v=25">
 
   <script type="application/ld+json">
   {
@@ -162,10 +162,39 @@
        ===================================================================== -->
 
   <div id="landingView" class="lp-shell">
+    <!-- Simbol Vektor 3D Khusus Hero (Tanpa Emoji Unicode) -->
+    <svg class="etutor-svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="lpGoldStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fde047"/>
+          <stop offset="55%" stop-color="#fbbf24"/>
+          <stop offset="100%" stop-color="#ea580c"/>
+        </linearGradient>
+        <linearGradient id="lpPencilBody" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fde047"/>
+          <stop offset="100%" stop-color="#f59e0b"/>
+        </linearGradient>
+      </defs>
+      <symbol id="lp-sparkle-star" viewBox="0 0 64 64">
+        <path d="M32 3 C34.5 22 42 29.5 61 32 C42 34.5 34.5 42 32 61 C29.5 42 22 34.5 3 32 C22 29.5 29.5 22 32 3 Z" fill="url(#lpGoldStarGrad)" stroke="#d97706" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M32 10 C33.4 23 39 28.6 52 32 C39 30.8 33.4 25 32 10 Z" fill="#fef9c3" opacity="0.72"/>
+      </symbol>
+      <symbol id="lp-pencil-3d" viewBox="0 0 48 48">
+        <g transform="rotate(-38 24 24)">
+          <rect x="18" y="6" width="12" height="7" rx="3" fill="#fb7185"/>
+          <rect x="18" y="12" width="12" height="3.5" fill="#cbd5e1"/>
+          <rect x="18" y="15.5" width="12" height="20" fill="url(#lpPencilBody)"/>
+          <rect x="24" y="15.5" width="6" height="20" fill="#f59e0b" opacity="0.45"/>
+          <polygon points="18,35.5 30,35.5 24,45" fill="#fed7aa"/>
+          <polygon points="22,41.8 26,41.8 24,45" fill="#1e293b"/>
+        </g>
+      </symbol>
+    </svg>
+
     <header class="lp-navbar">
       <div class="lp-navbar-inner">
         <a href="#" class="lp-brand-link etutor-logo-lockup" aria-label="eTutor.my Portal Set Soalan Interaktif">
-          <svg class="etutor-emblem-svg" width="52" height="41" aria-hidden="true">
+          <svg class="etutor-emblem-svg" width="44" height="35" aria-hidden="true">
             <use href="#etutor-brand-emblem"></use>
           </svg>
           <div class="etutor-logo-text">
@@ -176,9 +205,7 @@
 
         <nav aria-label="Navigasi Halaman Utama">
           <ul class="lp-nav-links">
-            <li><a href="./soalan-percubaan-spm/" data-live-nav-harian>Indeks Set Soalan</a></li>
             <li><a href="#portal" class="js-goto-klon-portal" data-live-nav-klon>Klon SPM</a></li>
-            <li><a href="#countdown-spm">Countdown SPM</a></li>
             <li><a href="#perbandingan">Kenapa eTutor</a></li>
             <li><a href="#ciri">Ciri &amp; Subjek</a></li>
             <li data-paid-only hidden><a href="#pelan-token">Pakej Akses</a></li>
@@ -187,20 +214,20 @@
         </nav>
 
         <div class="lp-nav-actions">
-          <a href="#login" class="btn btn-outline js-goto-login" data-paid-only hidden>
+          <a href="#login" class="btn btn-outline lp-pill-btn js-goto-login" data-paid-only hidden>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
             </svg>
             <span>Log Masuk</span>
           </a>
-          <a href="#pelan-token" class="btn btn-primary lp-hide-xs" data-paid-only hidden>Dapatkan Akses</a>
-          <button type="button" id="landingLoginBtn" class="btn btn-outline js-open-sync-dialog" data-open-only>
+          <a href="#pelan-token" class="btn btn-primary lp-pill-btn lp-hide-xs" data-paid-only hidden>Dapatkan Akses</a>
+          <button type="button" id="landingLoginBtn" class="btn btn-outline lp-pill-btn js-open-sync-dialog" data-open-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
             </svg>
             <span data-login-label>Log Masuk</span>
           </button>
-          <a href="#portal" class="btn btn-primary js-enter-open-portal" data-open-only>
+          <a href="#portal" class="btn btn-primary lp-pill-btn js-enter-open-portal" data-open-only>
             <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/>
             </svg>
@@ -211,198 +238,260 @@
     </header>
 
     <main>
-      <!-- SEKSYEN HERO: KREDIBILITI + PREVIEW PORTAL SEBENAR -->
-      <section class="lp-hero" aria-labelledby="lpHeroHeading">
+      <!-- SEKSYEN HERO: REKA BENTUK INTERAKTIF BERANIMASI 3D -->
+      <section id="lpHeroSection" class="lp-hero" aria-labelledby="lpHeroHeading">
+        <div class="lp-hero-decor" aria-hidden="true">
+          <span class="lp-geo-shape lp-geo-tri"></span>
+          <span class="lp-geo-shape lp-geo-circle"></span>
+          <span class="lp-geo-shape lp-geo-wedge"></span>
+          <svg class="lp-sparkle-star star-1" viewBox="0 0 64 64"><use href="#lp-sparkle-star"></use></svg>
+          <svg class="lp-sparkle-star star-2" viewBox="0 0 64 64"><use href="#lp-sparkle-star"></use></svg>
+          <svg class="lp-sparkle-star star-3" viewBox="0 0 64 64"><use href="#lp-sparkle-star"></use></svg>
+          <svg class="lp-sparkle-star star-4" viewBox="0 0 64 64"><use href="#lp-sparkle-star"></use></svg>
+        </div>
+
         <div class="lp-container lp-hero-grid">
           <div class="lp-hero-copy">
             <div class="lp-trust-eyebrow">
-              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V6l7-3z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
               </svg>
-              <span>Selaras Format Terkini KSSM SPM • Kertas Percubaan Negeri</span>
+              <span>Selaras Format KSSM SPM</span>
             </div>
 
             <h1 id="lpHeroHeading" class="lp-hero-title">
-              Ubah Latih Tubi SPM Anak Anda Daripada Kertas Statik Kepada <span class="lp-text-highlight">Portal Peperiksaan Interaktif Harian.</span>
+              Latih Tubi SPM Jadi Lebih<br>Seronok &amp; <span class="lp-text-highlight-warm">Interaktif</span><span class="lp-text-bang">!</span>
             </h1>
 
             <p class="lp-hero-lead">
-              Tak perlu cetak beratus helai PDF atau tunggu cikgu menanda. Pelajar menjawab terus di telefon pintar atau laptop — disemak serta-merta lengkap skema jawapan, radar pengesanan topik lemah, dan Slip Keputusan Rasmi untuk rujukan ibu bapa.
+              Jawab terus dari telefon atau laptop. Dapatkan semakan, markah, dan analisis dalam 1 saat!
             </p>
 
-            <div class="lp-hero-cta-group">
-              <a href="#pelan-token" class="btn btn-emerald btn-lg" data-paid-only hidden>
+            <div class="lp-hero-cta-stack">
+              <a href="#pelan-token" class="btn btn-emerald btn-hero-cta btn-lg" data-paid-only hidden>
                 <span>Lihat Pakej &amp; Daftar Sekarang</span>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
                 </svg>
               </a>
-              <a href="#portal" class="btn btn-emerald btn-lg js-enter-open-portal" data-open-only>
-                <span>Mula Menjawab Sekarang</span>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <a href="#portal" class="btn btn-emerald btn-hero-cta btn-lg js-enter-open-portal" data-open-only>
+                <span>Mula Belajar Sekarang</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/>
                 </svg>
               </a>
-              <a href="#countdown-spm" class="btn btn-outline btn-lg">
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18M12 14v3l2 1.5"/>
-                </svg>
-                <span>Countdown &amp; Jadual SPM</span>
-              </a>
+              <p class="lp-hero-noapp-note">Tanpa perlu muat turun aplikasi</p>
             </div>
-
-            <ul class="lp-micro-guarantees">
-              <li data-paid-only hidden>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Aktif Serta-Merta (ID + PIN 6-Digit)</span>
-              </li>
-              <li data-open-only>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Terus Jawab &amp; Semak Serta-Merta</span>
-              </li>
-              <li>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Tiada Aplikasi Perlu Dimuat Turun</span>
-              </li>
-              <li>
-                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Boleh Guna di Telefon &amp; Komputer</span>
-              </li>
-            </ul>
           </div>
 
-          <!-- PAPARAN SEBENAR ANTARAMUKA PORTAL PELAJAR -->
-          <div class="lp-browser-frame" aria-label="Pratonton Papan Pemuka Pelajar eTutor.my">
-            <div class="lp-browser-bar">
-              <div class="lp-browser-dots" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="lp-browser-url">
-                <svg class="icon icon-sm" style="inline-size:14px;block-size:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/>
+          <!-- PENTAS ILUSTRASI PELAJAR 3D & KAD GAMIFIKASI TERAPUNG -->
+          <div id="lpHeroStage" class="lp-hero-stage">
+            <div class="lp-stage-orbit-ring" aria-hidden="true"></div>
+            <div class="lp-stage-blue-disc" aria-hidden="true"></div>
+            <svg class="lp-stage-burst" viewBox="0 0 44 44" aria-hidden="true">
+              <path d="M12 28 L6 16 M22 22 L19 8 M31 27 L39 17" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+
+            <picture class="lp-student-picture">
+              <source srcset="./images/hero-student-3d.webp" type="image/webp">
+              <img src="./images/hero-student-3d.png" alt="Pelajar SPM menjawab soalan interaktif menggunakan tablet di eTutor.my" class="lp-student-img" width="360" height="390" fetchpriority="high" decoding="async">
+            </picture>
+
+            <div class="lp-float-card lp-card-grade">
+              <span class="lp-float-lbl">Score <strong>A</strong></span>
+              <strong class="lp-float-grade">Gred A!</strong>
+            </div>
+
+            <div class="lp-float-tile lp-tile-pencil-tr" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><use href="#lp-pencil-3d"></use></svg>
+            </div>
+
+            <div class="lp-float-card lp-card-streak">
+              <span class="lp-float-lbl">Streak</span>
+              <div class="lp-streak-val">
+                <strong class="tabular-nums">7 Hari</strong>
+                <svg class="lp-flame-svg" viewBox="0 0 32 32" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="lpFlameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fde047"/>
+                      <stop offset="55%" stop-color="#f97316"/>
+                      <stop offset="100%" stop-color="#dc2626"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M16 2 C19.5 8 25 11.5 25 19 A9 9 0 1 1 7 19 C7 14 10 10.5 12 8 C12.5 11 14 12.2 15.2 12 C14.4 8.5 14.8 5 16 2 Z" fill="url(#lpFlameGrad)"/>
+                  <path d="M16 14 C18 17 20 19 20 22 A4 4 0 1 1 12 22 C12 19.5 13.8 17.2 16 14 Z" fill="#fef08a"/>
                 </svg>
-                <span>https://etutor.my</span>
-              </div>
-              <span class="status-badge badge-done" style="font-size:0.7rem">Sesi Pelajar Aktif</span>
-            </div>
-
-            <div class="lp-preview-body">
-              <div class="lp-preview-resume">
-                <div>
-                  <div style="font-size:0.72rem;font-weight:700;color:var(--brand-accent);text-transform:uppercase">Continue Progress • Merentas Peranti</div>
-                  <div style="font-weight:700;font-size:0.92rem;color:var(--brand-navy)">Set 10 SPM Matematik Johor</div>
-                  <div class="tabular-nums" style="font-size:0.78rem;color:var(--text-secondary)">28 / 40 soalan dijawab • Baki 22 minit</div>
-                </div>
-                <span class="btn btn-primary btn-sm" style="pointer-events:none">Sambung</span>
-              </div>
-
-              <div class="lp-preview-top">
-                <div class="lp-mini-ring" aria-hidden="true">
-                  <div class="lp-mini-ring-inner">88%</div>
-                </div>
-                <div>
-                  <div style="font-weight:700;font-size:0.95rem;color:var(--brand-navy)">Analisis Kemajuan Pelajar</div>
-                  <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:2px">10 set selesai • Gred Purata Semasa: <strong style="color:var(--grade-emerald)">A (Cemerlang)</strong></div>
-                  <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
-                    <span class="weak-pill" style="font-size:0.74rem;padding:4px 10px">Fokus Ulang Kaji: Bab Nisbah (54%)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="lp-preview-kpis">
-                <div class="lp-preview-kpi">
-                  <div class="lp-preview-kpi-lbl">Mata Terkumpul</div>
-                  <div class="lp-preview-kpi-val" style="color:var(--brand-accent)">2,840 XP</div>
-                </div>
-                <div class="lp-preview-kpi">
-                  <div class="lp-preview-kpi-lbl">Streak Latihan</div>
-                  <div class="lp-preview-kpi-val" style="color:var(--grade-emerald)">7 Hari</div>
-                </div>
-                <div class="lp-preview-kpi">
-                  <div class="lp-preview-kpi-lbl">Leaderboard</div>
-                  <div class="lp-preview-kpi-val" style="color:var(--grade-gold)">Top 3</div>
-                </div>
               </div>
             </div>
+
+            <div class="lp-float-card lp-card-xp">
+              <svg class="lp-xp-coin" viewBox="0 0 40 40" aria-hidden="true">
+                <defs>
+                  <linearGradient id="lpCoinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fef08a"/>
+                    <stop offset="50%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#b45309"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="20" cy="20" r="18" fill="url(#lpCoinGrad)" stroke="#d97706" stroke-width="2"/>
+                <circle cx="20" cy="20" r="14" fill="none" stroke="#fef9c3" stroke-width="1.4" opacity="0.8"/>
+                <text x="20" y="24.5" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="800" font-size="12" fill="#78350f">XP</text>
+              </svg>
+              <strong id="lpHeroXpVal" class="lp-xp-val tabular-nums">+150</strong>
+            </div>
+
+            <div class="lp-float-tile lp-tile-pencil-ml" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><use href="#lp-pencil-3d"></use></svg>
+            </div>
+
+            <div class="lp-float-tile lp-tile-calc-bl" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <rect x="11" y="6" width="26" height="36" rx="5" fill="#475569"/>
+                <rect x="15" y="10" width="18" height="8" rx="2" fill="#bae6fd"/>
+                <rect x="15" y="22" width="5" height="5" rx="1.5" fill="#e2e8f0"/>
+                <rect x="22" y="22" width="5" height="5" rx="1.5" fill="#e2e8f0"/>
+                <rect x="29" y="22" width="4" height="5" rx="1.5" fill="#fb923c"/>
+                <rect x="15" y="29" width="5" height="5" rx="1.5" fill="#e2e8f0"/>
+                <rect x="22" y="29" width="5" height="5" rx="1.5" fill="#e2e8f0"/>
+                <rect x="29" y="29" width="4" height="10" rx="1.5" fill="#3b82f6"/>
+                <rect x="15" y="36" width="12" height="3" rx="1.5" fill="#e2e8f0"/>
+              </svg>
+            </div>
+
+            <div class="lp-float-sheet" aria-hidden="true">
+              <svg viewBox="0 0 96 108">
+                <g transform="rotate(-7 48 54)">
+                  <rect x="14" y="10" width="66" height="84" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+                  <rect x="24" y="22" width="12" height="12" rx="3" fill="#2563eb"/>
+                  <path d="M27 28 l2.5 2.5 l4.5 -5" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="42" y="24" width="28" height="5" rx="2.5" fill="#cbd5e1"/>
+                  <rect x="24" y="42" width="12" height="12" rx="3" fill="#2563eb"/>
+                  <path d="M27 48 l2.5 2.5 l4.5 -5" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="42" y="44" width="24" height="5" rx="2.5" fill="#cbd5e1"/>
+                  <rect x="24" y="62" width="12" height="12" rx="3" fill="#e2e8f0"/>
+                  <rect x="42" y="64" width="28" height="5" rx="2.5" fill="#cbd5e1"/>
+                  <path d="M58 84 L82 60 L87 65 L63 89 L55 91 Z" fill="#6366f1"/>
+                </g>
+              </svg>
+            </div>
+
+            <button type="button" id="lpHeroMotionToggleBtn" class="lp-motion-toggle">
+              <svg class="icon icon-sm lp-motion-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/>
+              </svg>
+              <svg class="icon icon-sm lp-motion-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="7 5 19 12 7 19 7 5"/>
+              </svg>
+              <span data-motion-label>Jeda Animasi</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- JALUR FAKTA SISTEM & KREDIBILITI -->
-      <section class="lp-trust-strip" aria-label="Ringkasan Keupayaan Sistem">
-        <div class="lp-container lp-trust-grid">
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/>
+      <!-- JALUR 4 KAD CIRI PUTIH BERTINDIH -->
+      <section class="lp-feature-strip" aria-label="Ringkasan Keupayaan Sistem">
+        <div class="lp-container lp-feature-cards-grid">
+          <div class="lp-strip-card lp-trust-item">
+            <div class="lp-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <defs>
+                  <linearGradient id="lpBookCover" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#93c5fd"/>
+                    <stop offset="55%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#1d4ed8"/>
+                  </linearGradient>
+                </defs>
+                <rect x="16" y="10" width="34" height="44" rx="6" fill="#1e40af"/>
+                <rect x="14" y="8" width="32" height="42" rx="6" fill="url(#lpBookCover)"/>
+                <rect x="18" y="42" width="28" height="7" rx="3" fill="#eff6ff"/>
+                <rect x="22" y="17" width="16" height="4" rx="2" fill="#dbeafe"/>
+                <circle cx="24" cy="30" r="3.5" fill="#fde047"/>
               </svg>
             </div>
             <div>
-              <div class="lp-trust-num tabular-nums" data-live-trust-sets>Koleksi Penuh &amp; 20+ Subjek</div>
-              <div class="lp-trust-desc" data-live-trust-desc>Kertas percubaan negeri, SBP &amp; Klon SPM (dikemas kini langsung)</div>
+              <div class="lp-trust-num tabular-nums" data-live-trust-sets>231+ Set &amp; Subjek</div>
+              <div class="lp-trust-desc" data-live-trust-desc>24 Subjek Terpilih</div>
             </div>
           </div>
 
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/>
+          <div class="lp-strip-card lp-trust-item">
+            <div class="lp-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <defs>
+                  <linearGradient id="lpBoltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fde047"/>
+                    <stop offset="100%" stop-color="#f97316"/>
+                  </linearGradient>
+                </defs>
+                <rect x="24" y="7" width="10" height="4" rx="2" fill="#2563eb"/>
+                <circle cx="29" cy="34" r="19" fill="#bfdbfe" stroke="#3b82f6" stroke-width="3"/>
+                <circle cx="29" cy="34" r="14" fill="#ffffff"/>
+                <path d="M29 34 L29 24 M29 34 L35 37" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round"/>
+                <circle cx="29" cy="34" r="2.2" fill="#ef4444"/>
+                <polygon points="46,16 36,33 43,33 38,49 54,28 46,28" fill="url(#lpBoltGrad)" stroke="#ea580c" stroke-width="1.2" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
-              <div class="lp-trust-num">Semakan 1 Saat</div>
-              <div class="lp-trust-desc">Markah, gred &amp; ulasan jawapan terus dipaparkan</div>
+              <div class="lp-trust-num">Semak 1 Saat</div>
+              <div class="lp-trust-desc">Markah &amp; Ulasan Serta-merta</div>
             </div>
           </div>
 
-          <div class="lp-trust-item" data-paid-only hidden>
-            <div class="lp-trust-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/>
+          <div class="lp-strip-card lp-trust-item" data-open-only>
+            <div class="lp-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <defs>
+                  <radialGradient id="lpSaveDisc" cx="35%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#93c5fd"/>
+                    <stop offset="60%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#1d4ed8"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="32" cy="32" r="23" fill="url(#lpSaveDisc)"/>
+                <circle cx="32" cy="32" r="14" fill="none" stroke="#dbeafe" stroke-width="4" stroke-dasharray="60 28" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="5.5" fill="#eff6ff"/>
+              </svg>
+            </div>
+            <div>
+              <div class="lp-trust-num">Auto-Simpan</div>
+              <div class="lp-trust-desc">Boleh Sambung Bila-bila</div>
+            </div>
+          </div>
+
+          <div class="lp-strip-card lp-trust-item" data-paid-only hidden>
+            <div class="lp-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="23" fill="url(#lpSaveDisc)"/>
+                <rect x="23" y="18" width="18" height="28" rx="4" fill="#ffffff"/>
+                <circle cx="32" cy="41" r="1.8" fill="#1d4ed8"/>
               </svg>
             </div>
             <div>
               <div class="lp-trust-num">2 Peranti Serentak</div>
-              <div class="lp-trust-desc">Mula jawab di telefon, sambung di laptop tanpa hilang</div>
+              <div class="lp-trust-desc">Sambung Telefon &amp; Laptop</div>
             </div>
           </div>
 
-          <div class="lp-trust-item" data-open-only>
-            <div class="lp-trust-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/>
+          <div class="lp-strip-card lp-trust-item">
+            <div class="lp-strip-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M16 10 H38 L48 20 V52 A4 4 0 0 1 44 56 H16 A4 4 0 0 1 12 52 V14 A4 4 0 0 1 16 10 Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.6"/>
+                <polygon points="38,10 48,20 38,20" fill="#cbd5e1"/>
+                <rect x="8" y="23" width="28" height="13" rx="3.5" fill="#ef4444"/>
+                <text x="22" y="32.5" text-anchor="middle" font-family="Lexend, sans-serif" font-weight="800" font-size="8.8" fill="#ffffff">PDF</text>
+                <rect x="18" y="42" width="18" height="3" rx="1.5" fill="#cbd5e1"/>
+                <rect x="18" y="48" width="14" height="3" rx="1.5" fill="#cbd5e1"/>
+                <circle cx="46" cy="44" r="10" fill="#22c55e" stroke="#ffffff" stroke-width="2"/>
+                <path d="M41.5 44 l3 3 l6 -6" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
-              <div class="lp-trust-num">Auto-Simpan Jawapan</div>
-              <div class="lp-trust-desc">Sambung semula latihan separuh jalan pada bila-bila masa</div>
-            </div>
-          </div>
-
-          <div class="lp-trust-item">
-            <div class="lp-trust-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="lp-trust-num">Slip PDF Rasmi</div>
-              <div class="lp-trust-desc">Laporan keputusan setiap set untuk semakan ibu bapa</div>
+              <div class="lp-trust-num">Slip PDF Ibu Bapa</div>
+              <div class="lp-trust-desc">Laporan Keputusan Ibu Bapa</div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- SEKSYEN DEMO INTERAKTIF SEBENAR ("SHOW, DON'T TELL") -->
 
       <!-- SEKSYEN COUNTDOWN RASMI SPM 2026 & JADUAL SUBJEK -->
       <section id="countdown-spm" class="lp-section lp-spm-cd-section" aria-labelledby="lpSpmCdHeading">

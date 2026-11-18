@@ -182,12 +182,63 @@
     }
   }
 
+  let heroMotionPaused = false;
+  let heroXpTimer = null;
+
+  function setHeroMotionPaused(paused) {
+    heroMotionPaused = Boolean(paused);
+    const heroSec = document.getElementById("lpHeroSection");
+    const heroStage = document.getElementById("lpHeroStage");
+    const toggleBtn = document.getElementById("lpHeroMotionToggleBtn");
+    [heroSec, heroStage, toggleBtn].forEach(function (el) {
+      if (!el) return;
+      if (heroMotionPaused) el.setAttribute("data-motion-paused", "true");
+      else el.removeAttribute("data-motion-paused");
+    });
+    if (toggleBtn) {
+      const lbl = toggleBtn.querySelector("[data-motion-label]");
+      if (lbl) lbl.textContent = heroMotionPaused ? "Main Animasi" : "Jeda Animasi";
+    }
+  }
+
+  function bindLandingMotionControls() {
+    const toggleBtn = document.getElementById("lpHeroMotionToggleBtn");
+    if (!toggleBtn || toggleBtn.dataset.motionBound === "1") return;
+    toggleBtn.dataset.motionBound = "1";
+    toggleBtn.addEventListener("click", function () {
+      setHeroMotionPaused(!heroMotionPaused);
+    });
+  }
+
+  function startHeroXpCycle() {
+    if (heroXpTimer) clearInterval(heroXpTimer);
+    const A = getAnime();
+    if (!A || prefersReducedMotion()) return;
+    heroXpTimer = setInterval(function () {
+      const landingView = document.getElementById("landingView");
+      const xpEl = document.getElementById("lpHeroXpVal");
+      if (heroMotionPaused || prefersReducedMotion() || !xpEl || !landingView || landingView.hidden) return;
+      const tracker = { val: 120 };
+      A.animate(tracker, {
+        val: 150,
+        duration: 700,
+        ease: "outExpo",
+        onUpdate: function () {
+          xpEl.textContent = "+" + Math.round(tracker.val);
+        }
+      });
+    }, 5500);
+  }
+
   function playLandingEntrance() {
+    bindLandingMotionControls();
     const A = getAnime();
     if (!A || prefersReducedMotion()) return;
 
     const copyItems = document.querySelectorAll("#landingView .lp-hero-copy > *");
-    const browserFrame = document.querySelector("#landingView .lp-browser-frame");
+    const blueDisc = document.querySelector("#landingView .lp-stage-blue-disc");
+    const studentImg = document.querySelector("#landingView .lp-student-img");
+    const floaters = document.querySelectorAll("#landingView .lp-float-card, #landingView .lp-float-tile, #landingView .lp-float-sheet");
     const trustItems = document.querySelectorAll("#landingView .lp-trust-item");
 
     const tl = A.createTimeline({ defaults: { ease: "outQuart" } });
@@ -197,32 +248,54 @@
         translateY: [18, 0],
         duration: 480,
         delay: A.stagger(65),
-        onComplete: function () {
-          clearInlineTransform(copyItems);
-        }
+        onComplete: function () { clearInlineTransform(copyItems); }
       }, 0);
     }
-    if (browserFrame) {
-      tl.add(browserFrame, {
+    if (blueDisc) {
+      tl.add(blueDisc, {
         opacity: [0, 1],
-        translateY: [22, 0],
-        scale: [0.97, 1],
+        scale: [0.85, 1],
+        duration: 520,
+        onComplete: function () { clearInlineTransform(blueDisc); }
+      }, 80);
+    }
+    if (studentImg) {
+      tl.add(studentImg, {
+        opacity: [0, 1],
+        translateY: [24, 0],
+        scale: [0.95, 1],
         duration: 560,
-        onComplete: function () {
-          clearInlineTransform(browserFrame);
-        }
+        onComplete: function () { clearInlineTransform(studentImg); }
       }, 120);
+    }
+    if (floaters.length) {
+      tl.add(floaters, {
+        opacity: [0, 1],
+        translateY: [14, 0],
+        scale: [0.82, 1],
+        duration: 420,
+        delay: A.stagger(55),
+        ease: "outBack(1.3)",
+        onComplete: function () { clearInlineTransform(floaters); }
+      }, 220);
     }
     if (trustItems.length) {
       tl.add(trustItems, {
         opacity: [0, 1],
-        translateY: [12, 0],
-        duration: 400,
-        delay: A.stagger(55),
-        onComplete: function () {
-          clearInlineTransform(trustItems);
-        }
-      }, 260);
+        translateY: [16, 0],
+        duration: 420,
+        delay: A.stagger(60),
+        onComplete: function () { clearInlineTransform(trustItems); }
+      }, 300);
+    }
+    startHeroXpCycle();
+  }
+
+  if (typeof document !== "undefined") {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bindLandingMotionControls);
+    } else {
+      bindLandingMotionControls();
     }
   }
 

@@ -3475,16 +3475,12 @@
     });
 
     document.querySelectorAll("[data-live-trust-sets]").forEach(function (el) {
-      const subCount = Math.max(stats.totalSubjectCount, stats.harianSubjectCount, 1);
-      el.textContent = stats.totalCount + " Set & " + subCount + " Subjek";
+      el.textContent = stats.totalCount + "+ Set & Subjek";
     });
 
     document.querySelectorAll("[data-live-trust-desc]").forEach(function (el) {
-      if (stats.klonCount > 0) {
-        el.textContent = stats.harianCount + " set percubaan negeri/SBP + " + stats.klonCount + " set Klon SPM";
-      } else {
-        el.textContent = stats.harianCount + " set kertas percubaan negeri & SBP interaktif";
-      }
+      const subCount = Math.max(stats.totalSubjectCount, stats.harianSubjectCount, 1);
+      el.textContent = subCount + " Subjek Terpilih";
     });
 
     document.querySelectorAll("[data-live-showcase-heading]").forEach(function (el) {

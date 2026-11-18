@@ -1,5 +1,5 @@
 /* AUTO-GENERATED DARIPADA src/features/mobile-app/sw-template.js OLEH scripts/build-frontend.mjs */
-const BUILD_VERSION = "v20261118074416";
+const BUILD_VERSION = "v20261118075918";
 const SHELL_CACHE = "etutor-shell-" + BUILD_VERSION;
 
 const SHELL_ASSETS = [

@@ -4665,12 +4665,21 @@
     return /^https:\/\/(?:dev\.)?toyyibpay\.com\/[a-zA-Z0-9_-]+/.test(urlStr);
   }
 
+  async function postCreateToyyibPayBillWithRetry(url, headers, payloadJson) {
+    try {
+      return await fetch(url, { method: "POST", headers: headers, body: payloadJson });
+    } catch (firstErr) {
+      await new Promise(function (resolve) { setTimeout(resolve, 700); });
+      return await fetch(url, { method: "POST", headers: headers, body: payloadJson });
+    }
+  }
+
   async function startToyyibPayCheckout(opts) {
     const jwt = await resolveBearerToken();
     const baseUrl = resolvePaymentBaseUrl(Boolean(jwt));
     if (!baseUrl && !isLocalHostEnv()) {
-      await openCleanWhatsAppFallback(opts, opts.orderDlg);
-      return { ok: false, fallbackWhatsApp: true };
+      showToast("Konfigurasi pelayan pembayaran ToyyibPay tidak lengkap. Sila hubungi sokongan.", true);
+      return { ok: false };
     }
     if (!jwt && !isLocalHostEnv()) {
       showToast("Sila log masuk Google atau E-mel dahulu — anda akan terus dibawa ke pembayaran ToyyibPay.");
@@ -4693,18 +4702,15 @@
     }
 
     try {
-      const resp = await fetch(baseUrl + "/v1/payment/create-bill", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify({
-          packCode: packCode,
-          buyerName: opts.studentName,
-          buyerEmail: opts.userIdInput,
-          buyerPhone: opts.phoneInput || "",
-          referralCode: getAttributedReferralCode(),
-          returnOrigin: window.location.origin
-        })
+      const payloadJson = JSON.stringify({
+        packCode: packCode,
+        buyerName: opts.studentName,
+        buyerEmail: opts.userIdInput,
+        buyerPhone: opts.phoneInput || "",
+        referralCode: getAttributedReferralCode(),
+        returnOrigin: window.location.origin
       });
+      const resp = await postCreateToyyibPayBillWithRetry(baseUrl + "/v1/payment/create-bill", headers, payloadJson);
       const data = await resp.json().catch(function () { return {}; });
 
       if (data && data.authRequired) {
@@ -4713,13 +4719,8 @@
         openSyncDialog();
         return data;
       }
-      if (data && data.fallbackWhatsApp) {
-        showToast(data.error || "Membuka tempahan pantas WhatsApp...");
-        await openCleanWhatsAppFallback(opts, opts.orderDlg);
-        return data;
-      }
-      if (!resp.ok || !data.ok || !isAllowedPaymentRedirectUrl(data.paymentUrl)) {
-        showToast((data && data.error) || "Gagal menjana bil ToyyibPay. Cuba lagi atau hubungi WhatsApp Admin.");
+      if (!resp.ok || !data.ok || data.fallbackWhatsApp || !isAllowedPaymentRedirectUrl(data.paymentUrl)) {
+        showToast((data && data.error) || "Gagal menjana bil pembayaran ToyyibPay. Sila cuba sebentar lagi.", true);
         return data || { ok: false };
       }
 
@@ -4734,8 +4735,7 @@
       window.location.assign(data.paymentUrl);
       return data;
     } catch (err) {
-      showToast("Sambungan ke gerbang bayaran terganggu. Membuka WhatsApp Admin...");
-      await openCleanWhatsAppFallback(opts, opts.orderDlg);
+      showToast("Ralat sambungan ke pelayan ToyyibPay (" + ((err && err.message) || "Rangkaian") + "). Sila cuba lagi.", true);
       return { ok: false, error: err && err.message };
     } finally {
       if (btn) {

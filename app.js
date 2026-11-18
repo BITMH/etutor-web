@@ -2144,6 +2144,7 @@
 
 
 
+
   const WALLET_STORAGE_KEY = "etutor_cikgu_daily_tokens_v1";
   const REF_MONTHLY_LIMIT = 20;
 
@@ -2330,14 +2331,9 @@
     }
 
     document.querySelectorAll(".js-wallet-buy-pack").forEach(function (btn) {
-      btn.addEventListener("click", async function () {
+      btn.addEventListener("click", function () {
         const packKey = btn.getAttribute("data-pack") || "tokenFocus";
-        if (dlg && dlg.open) await closeTopLayer(dlg);
-        const orderDlg = document.getElementById("orderDialog");
-        const pkgSelect = document.getElementById("orderPackageSelect");
-        if (pkgSelect) { pkgSelect.value = packKey; pkgSelect.dispatchEvent(new Event("change")); }
-        window.dispatchEvent(new CustomEvent("etutor:prefill-order-modal"));
-        if (orderDlg && typeof orderDlg.showModal === "function") orderDlg.showModal();
+        startDirectToyyibPayCheckout({ pkgKey: packKey, triggerBtn: btn, parentDialog: dlg });
       });
     });
 
@@ -4551,10 +4547,10 @@
     return Boolean(el);
   }
 
-  // --- [features/payment/toyyibpayCheckoutService.js] ---
+  // --- [features/payment/toyyibpayFallbackHelper.js] ---
   /**
-   * src/features/payment/toyyibpayCheckoutService.js
-   * Perkhidmatan pembayaran automatik ToyyibPay (FPX & DuitNow QR), pulangan pengesahan bil, dan fallback WhatsApp Admin bersih.
+   * src/features/payment/toyyibpayFallbackHelper.js
+   * Pembantu profil pelajar semasa, penghalaan URL ToyyibPay & fallback WhatsApp Admin bersih.
    */
 
 
@@ -4562,23 +4558,57 @@
 
 
 
-  const PENDING_ORDER_KEY = "etutor_pending_toyyibpay_order_v1";
-
-  const PLAN_TO_PACK_CODE = {
-    tokenStarter: "PEK_CUBA_45",
-    tokenFocus: "PEK_FOKUS_160",
-    tokenSprint: "PEK_PECUTAN_500"
-  };
-
   function isLocalHostEnv() {
     const h = (typeof window !== "undefined" && window.location && window.location.hostname) || "";
     return /^(localhost|127\.0\.0\.1)$/i.test(h);
   }
 
-  function resolvePaymentBaseUrl() {
-    if (isLocalHostEnv()) return "";
+  function resolvePaymentBaseUrl(hasJwt) {
+    if (isLocalHostEnv() && !hasJwt) return "";
     const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) || {};
     return String(cfg.CIKGU_SUPABASE_EDGE_URL || "").trim().replace(/\/+$/, "");
+  }
+
+  async function resolveBearerToken() {
+    if (!isSupabaseConfigured()) return "";
+    try {
+      const sb = getSupabaseClient();
+      const res = sb ? await sb.auth.getSession() : null;
+      return String(res && res.data && res.data.session ? res.data.session.access_token || "" : "");
+    } catch (e) {
+      return "";
+    }
+  }
+
+  async function resolveCurrentCheckoutProfile() {
+    let email = "";
+    let studentName = "";
+    let phone = "";
+    try { email = (localStorage.getItem(SYNC_EMAIL_KEY) || "").trim(); } catch (e) {}
+    try { studentName = (localStorage.getItem(OPEN_STUDENT_NAME_KEY) || "").trim(); } catch (e) {}
+
+    try {
+      const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+      const sessRes = sb ? await sb.auth.getSession() : null;
+      const u = sessRes && sessRes.data && sessRes.data.session ? sessRes.data.session.user : null;
+      if (u) {
+        if (u.email) email = String(u.email).trim();
+        const meta = u.user_metadata || {};
+        if (!studentName) studentName = String(meta.full_name || meta.name || "").trim();
+        phone = String(u.phone || meta.phone || "").trim();
+      }
+    } catch (e) {}
+
+    if (!email && portalState.user && portalState.user.userId && String(portalState.user.userId).toUpperCase() !== "PELAJAR") {
+      email = String(portalState.user.userId).trim();
+    }
+    if (!studentName && portalState.user && portalState.user.buyerName && String(portalState.user.buyerName).toUpperCase() !== "PELAJAR") {
+      studentName = String(portalState.user.buyerName).trim();
+    }
+    if (!studentName && email) {
+      studentName = email.indexOf("@") !== -1 ? email.split("@")[0] : email;
+    }
+    return { studentName: studentName || "Pelajar", email: email || "pelajar@etutor.my", phone: phone };
   }
 
   function buildCleanWhatsAppUrl(opts) {
@@ -4597,10 +4627,7 @@
       "Mohon bantuan pengaktifan pek ini ke akaun eTutor.my saya. Terima kasih!"
     ].join("\n");
     const rawWa = ((window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.SALES_WHATSAPP) || "60137327696").replace(/\D/g, "");
-    return {
-      waUrl: "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(lines),
-      msgText: lines
-    };
+    return { waUrl: "https://wa.me/" + (rawWa || "60137327696") + "?text=" + encodeURIComponent(lines), msgText: lines };
   }
 
   async function openCleanWhatsAppFallback(opts, orderDlg) {
@@ -4611,16 +4638,26 @@
     showToast("Membuka WhatsApp Admin (013-732 7696)...");
   }
 
-  async function resolveBearerToken() {
-    if (!isSupabaseConfigured()) return "";
-    try {
-      const sb = getSupabaseClient();
-      const res = sb ? await sb.auth.getSession() : null;
-      return String(res && res.data && res.data.session ? res.data.session.access_token || "" : "");
-    } catch (e) {
-      return "";
-    }
-  }
+  // --- [features/payment/toyyibpayCheckoutService.js] ---
+  /**
+   * src/features/payment/toyyibpayCheckoutService.js
+   * Pembayaran terus 1-klik ToyyibPay (FPX & DuitNow QR), sambung auto selepas log masuk, dan pengesahan pulangan bil.
+   */
+
+
+
+
+
+
+
+  const PENDING_ORDER_KEY = "etutor_pending_toyyibpay_order_v1";
+  const PENDING_PACK_AFTER_LOGIN_KEY = "etutor_pending_buy_pack_v1";
+
+  const PLAN_TO_PACK_CODE = {
+    tokenStarter: "PEK_CUBA_45",
+    tokenFocus: "PEK_FOKUS_160",
+    tokenSprint: "PEK_PECUTAN_500"
+  };
 
   function isAllowedPaymentRedirectUrl(urlStr) {
     if (!urlStr) return false;
@@ -4629,15 +4666,14 @@
   }
 
   async function startToyyibPayCheckout(opts) {
-    const baseUrl = resolvePaymentBaseUrl();
+    const jwt = await resolveBearerToken();
+    const baseUrl = resolvePaymentBaseUrl(Boolean(jwt));
     if (!baseUrl && !isLocalHostEnv()) {
       await openCleanWhatsAppFallback(opts, opts.orderDlg);
       return { ok: false, fallbackWhatsApp: true };
     }
-
-    let jwt = await resolveBearerToken();
     if (!jwt && !isLocalHostEnv()) {
-      showToast("Sila log masuk Google atau E-mel terlebih dahulu supaya Token dikreditkan ke akaun anda.");
+      showToast("Sila log masuk Google atau E-mel dahulu — anda akan terus dibawa ke pembayaran ToyyibPay.");
       if (opts.orderDlg && opts.orderDlg.open) await closeTopLayer(opts.orderDlg);
       openSyncDialog();
       return { ok: false, authRequired: true };
@@ -4653,7 +4689,7 @@
     const origLabel = btn ? btn.textContent : "";
     if (btn) {
       btn.disabled = true;
-      btn.textContent = "Menjana Bil FPX ToyyibPay...";
+      btn.textContent = "Menjana Bil ToyyibPay...";
     }
 
     try {
@@ -4664,7 +4700,7 @@
           packCode: packCode,
           buyerName: opts.studentName,
           buyerEmail: opts.userIdInput,
-          buyerPhone: opts.phoneInput,
+          buyerPhone: opts.phoneInput || "",
           referralCode: getAttributedReferralCode(),
           returnOrigin: window.location.origin
         })
@@ -4683,18 +4719,17 @@
         return data;
       }
       if (!resp.ok || !data.ok || !isAllowedPaymentRedirectUrl(data.paymentUrl)) {
-        showToast((data && data.error) || "Gagal menjana bil ToyyibPay. Anda boleh guna WhatsApp Admin buat sementara.");
+        showToast((data && data.error) || "Gagal menjana bil ToyyibPay. Cuba lagi atau hubungi WhatsApp Admin.");
         return data || { ok: false };
       }
 
       try {
         sessionStorage.setItem(PENDING_ORDER_KEY, JSON.stringify({
-          orderRef: data.orderRef || "",
-          billCode: data.billCode || "",
-          packCode: packCode
+          orderRef: data.orderRef || "", billCode: data.billCode || "", packCode: packCode
         }));
       } catch (e) {}
 
+      if (opts.orderDlg && opts.orderDlg.open) await closeTopLayer(opts.orderDlg);
       showToast("Mengalihkan ke halaman pembayaran selamat ToyyibPay (FPX / DuitNow QR)...");
       window.location.assign(data.paymentUrl);
       return data;
@@ -4710,6 +4745,65 @@
     }
   }
 
+  async function startDirectToyyibPayCheckout(opts) {
+    const pkgKey = (opts && opts.pkgKey) || "tokenFocus";
+    const directPayUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PAYMENT_URL) ? window.ETUTOR_CONFIG.PAYMENT_URL.trim() : "";
+    if (directPayUrl) { window.open(directPayUrl, "_blank", "noopener"); return { ok: true }; }
+
+    const jwt = await resolveBearerToken();
+    if (!jwt && !isLocalHostEnv()) {
+      try { sessionStorage.setItem(PENDING_PACK_AFTER_LOGIN_KEY, JSON.stringify({ pkgKey: pkgKey, ts: Date.now() })); } catch (e) {}
+      if (opts && opts.parentDialog && opts.parentDialog.open) await closeTopLayer(opts.parentDialog);
+      showToast("Sila log masuk Google atau E-mel dahulu — anda akan terus dibawa ke pembayaran ToyyibPay.");
+      openSyncDialog();
+      return { ok: false, authRequired: true };
+    }
+
+    const prof = await resolveCurrentCheckoutProfile();
+    const plans = (opts && opts.plans) || (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PRICING_PLANS) || {};
+    showToast("Menghubungkan terus ke ToyyibPay (FPX / DuitNow QR)...");
+    return startToyyibPayCheckout({
+      studentName: prof.studentName,
+      userIdInput: prof.email,
+      phoneInput: prof.phone,
+      pkgKey: pkgKey,
+      plans: plans,
+      orderDlg: (opts && opts.parentDialog) || null,
+      submitBtn: (opts && opts.triggerBtn) || null
+    });
+  }
+
+  function initToyyibPayAutoResumeAfterLogin() {
+    if (initToyyibPayAutoResumeAfterLogin._bound || typeof window === "undefined") return;
+    initToyyibPayAutoResumeAfterLogin._bound = true;
+
+    const tryConsumePendingCheckout = async function () {
+      let raw = "";
+      try { raw = sessionStorage.getItem(PENDING_PACK_AFTER_LOGIN_KEY) || ""; } catch (e) {}
+      if (!raw) return;
+      let parsed = null;
+      try { parsed = JSON.parse(raw); } catch (e) {}
+      if (!parsed || !parsed.pkgKey || (Date.now() - Number(parsed.ts || 0)) > 10 * 60 * 1000) {
+        try { sessionStorage.removeItem(PENDING_PACK_AFTER_LOGIN_KEY); } catch (e) {}
+        return;
+      }
+      const jwt = await resolveBearerToken();
+      if (!jwt) return;
+      try { sessionStorage.removeItem(PENDING_PACK_AFTER_LOGIN_KEY); } catch (e) {}
+      await startDirectToyyibPayCheckout({ pkgKey: parsed.pkgKey });
+    };
+
+    tryConsumePendingCheckout();
+    if (isSupabaseConfigured()) {
+      const sb = getSupabaseClient();
+      if (sb && sb.auth && typeof sb.auth.onAuthStateChange === "function") {
+        sb.auth.onAuthStateChange(function (ev, sess) {
+          if (ev === "SIGNED_IN" && sess) tryConsumePendingCheckout();
+        });
+      }
+    }
+  }
+
   async function handleToyyibPayReturnIfPresent() {
     if (typeof window === "undefined") return false;
     const params = new URLSearchParams(window.location.search || "");
@@ -4721,10 +4815,7 @@
     if (params.get("payment_return") !== "toyyibpay" && hashParams.get("payment_return") !== "toyyibpay") return false;
 
     let pending = {};
-    try {
-      pending = JSON.parse(sessionStorage.getItem(PENDING_ORDER_KEY) || "{}");
-    } catch (e) {}
-
+    try { pending = JSON.parse(sessionStorage.getItem(PENDING_ORDER_KEY) || "{}"); } catch (e) {}
     const billCode = (params.get("billcode") || params.get("billCode") || hashParams.get("billcode") || hashParams.get("billCode") || pending.billCode || "").trim();
     const orderRef = (params.get("order_id") || params.get("orderRef") || hashParams.get("order_id") || hashParams.get("orderRef") || pending.orderRef || "").trim();
     const statusId = (params.get("status_id") || params.get("statusId") || hashParams.get("status_id") || hashParams.get("statusId") || "").trim();
@@ -4733,11 +4824,11 @@
       ["payment_return", "billcode", "billCode", "order_id", "orderRef", "status_id", "statusId", "transaction_id", "msg"]
         .forEach(function (k) { params.delete(k); });
       const q = params.toString();
-      const cleanUrl = window.location.pathname + (q ? "?" + q : "") + "#portal";
-      history.replaceState(null, "", cleanUrl);
+      history.replaceState(null, "", window.location.pathname + (q ? "?" + q : "") + "#portal");
     } catch (e) {}
 
-    const baseUrl = resolvePaymentBaseUrl();
+    const jwt = await resolveBearerToken();
+    const baseUrl = resolvePaymentBaseUrl(Boolean(jwt));
     if ((!baseUrl && !isLocalHostEnv()) || (!billCode && !orderRef)) return true;
 
     try {
@@ -4745,18 +4836,14 @@
       const headers = { "Content-Type": "application/json" };
       if (cfg.SUPABASE_ANON_KEY) headers.apikey = cfg.SUPABASE_ANON_KEY;
       const resp = await fetch(baseUrl + "/v1/payment/verify", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify({ billCode: billCode, orderRef: orderRef, statusId: statusId })
+        method: "POST", headers: headers, body: JSON.stringify({ billCode: billCode, orderRef: orderRef, statusId: statusId })
       });
       const res = await resp.json().catch(function () { return {}; });
       if (res && res.ok) {
         try { sessionStorage.removeItem(PENDING_ORDER_KEY); } catch (e) {}
         await refreshAiWalletFromServer();
         const qty = Number(res.addedTokens || 0);
-        showToast(qty > 0
-          ? "Pembayaran disahkan! +" + qty + " Token Top-up Kekal telah dikreditkan ke dompet anda."
-          : "Pembayaran disahkan! Baki Token Top-up Kekal anda telah dikemas kini.");
+        showToast(qty > 0 ? "Pembayaran disahkan! +" + qty + " Token Top-up Kekal telah dikreditkan ke dompet anda." : "Pembayaran disahkan! Baki Token Top-up Kekal anda telah dikemas kini.");
       } else if (res && res.status === "FAILED") {
         try { sessionStorage.removeItem(PENDING_ORDER_KEY); } catch (e) {}
         showToast(res.error || "Pembayaran FPX dibatalkan. Tiada caj dikenakan.");
@@ -4891,14 +4978,14 @@
 
     document.addEventListener("click", function (e) {
       const planBtn = e.target.closest(".js-select-plan");
-      if (planBtn && orderDlg) {
+      if (planBtn) {
+        e.preventDefault();
         const key = planBtn.getAttribute("data-plan-key") || "tokenFocus";
-        const directPayUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.PAYMENT_URL) ? window.ETUTOR_CONFIG.PAYMENT_URL.trim() : "";
-        if (directPayUrl) { window.open(directPayUrl, "_blank", "noopener"); return; }
-        if (pkgSelect) pkgSelect.value = plans[key] ? key : "tokenFocus";
-        syncOrderPlanBadge();
-        prefillOrderUserFields();
-        orderDlg.showModal();
+        startDirectToyyibPayCheckout({
+          pkgKey: plans[key] ? key : "tokenFocus",
+          triggerBtn: planBtn,
+          plans: plans
+        });
         return;
       }
 
@@ -9388,6 +9475,7 @@
     initPwaInstallFlow();
     initMobileAppExperience();
     initAdSenseController();
+    initToyyibPayAutoResumeAfterLogin();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

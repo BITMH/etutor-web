@@ -3819,6 +3819,40 @@
 
 
 
+  function resolveGradeTier(pct, grade) {
+    const g = String(grade || "").toUpperCase();
+    if (pct >= 70 || g.startsWith("A")) return { tier: "emerald", label: g === "A+" ? "Cemerlang Tertinggi" : "Cemerlang" };
+    if (pct >= 50 || g.startsWith("B") || g.startsWith("C")) return { tier: "neutral", label: g.startsWith("B") ? "Kepujian" : "Lulus Baik" };
+    if (pct >= 40 || g === "D" || g === "E") return { tier: "amber", label: "Lulus Minimum" };
+    return { tier: "danger", label: "Perlu Pemulihan" };
+  }
+
+  function buildSlipRefNo(data) {
+    const raw = String(data.fileId || "ETM") + "|" + String(data.percentage || 0);
+    let hash = 0;
+    for (let i = 0; i < raw.length; i++) hash = ((hash << 5) - hash + raw.charCodeAt(i)) | 0;
+    return "NO. RUJ: ETM-2026-" + Math.abs(hash).toString(36).toUpperCase().slice(0, 6).padStart(6, "0");
+  }
+
+  function updatePaperSplitBars(breakdownText) {
+    const objBar = document.getElementById("slipBarObj");
+    const subBar = document.getElementById("slipBarSub");
+    if (!objBar || !subBar) return;
+    const objMatch = String(breakdownText || "").match(/Objektif:\s*(\d+)\s*\/\s*(\d+)/i);
+    const subMatch = String(breakdownText || "").match(/Subjektif:\s*(\d+)\s*\/\s*(\d+)/i);
+    const objVal = objMatch ? Number(objMatch[1]) : 0;
+    const subVal = subMatch ? Number(subMatch[1]) : 0;
+    const total = objVal + subVal;
+    if (total > 0) {
+      const objPct = Math.round((objVal / total) * 100);
+      objBar.style.width = objPct + "%";
+      subBar.style.width = (100 - objPct) + "%";
+    } else {
+      objBar.style.width = "50%";
+      subBar.style.width = "50%";
+    }
+  }
+
   function openResultSlipModal() {
     const data = portalState.latestSlipData;
     const dlg = document.getElementById("resultSlipDialog");
@@ -3836,22 +3870,38 @@
       : ((portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar");
 
     const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
+    const safeGrade = String(data.grade || "—").slice(0, 6);
+    const tierInfo = resolveGradeTier(safePct, safeGrade);
+    const paperRoot = document.getElementById("slipPaperRoot");
+    if (paperRoot) paperRoot.setAttribute("data-tier", tierInfo.tier);
+
+    const arcEl = document.getElementById("slipScoreArc");
+    if (arcEl) arcEl.setAttribute("stroke-dashoffset", (314.16 * (1 - safePct / 100)).toFixed(2));
+
+    const refEl = document.getElementById("slipRefNo");
+    if (refEl) refEl.textContent = buildSlipRefNo(data);
+    const gLabelEl = document.getElementById("slipGradeLabel");
+    if (gLabelEl) gLabelEl.textContent = tierInfo.label;
+
     document.getElementById("slipStudentName").textContent = displayStudentName;
     document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
     document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
     document.getElementById("slipSubject").textContent = data.subject || "SPM";
     document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
     document.getElementById("slipScorePct").textContent = safePct + "%";
-    document.getElementById("slipGrade").textContent = String(data.grade || "—").slice(0, 6);
-    document.getElementById("slipBreakdown").textContent = data.breakdown || ("Markah: " + (data.scoreText || ""));
+    document.getElementById("slipGrade").textContent = safeGrade;
+    const breakdownText = data.breakdown || ("Markah: " + (data.scoreText || ""));
+    document.getElementById("slipBreakdown").textContent = breakdownText;
+    updatePaperSplitBars(breakdownText);
 
     const weakListEl = document.getElementById("slipWeakTopics");
     weakListEl.textContent = "";
     const wt = Array.isArray(data.weakTopics) ? data.weakTopics : [];
     if (wt.length === 0) {
       const okLi = document.createElement("li");
-      okLi.style.color = "var(--grade-emerald)";
-      okLi.textContent = "Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.";
+      okLi.className = "slip-topic-item";
+      okLi.setAttribute("data-state", "ok");
+      okLi.innerHTML = "<div class=\"slip-topic-row\"><span class=\"slip-topic-name\">Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.</span><span class=\"slip-topic-stat\">100%</span></div><div class=\"slip-topic-track\"><div class=\"slip-topic-fill\" style=\"width:100%\"></div></div>";
       weakListEl.appendChild(okLi);
     } else {
       wt.forEach(function (w) {
@@ -3860,13 +3910,32 @@
         const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
         const wTot = Math.max(1, Math.round(Number(w.total) || 1));
         const isAttempted = w.attempted === undefined ? true : Boolean(w.attempted);
-        if (isAttempted) {
-          li.style.color = "var(--status-danger, #b91c1c)";
-          li.style.fontWeight = "600";
-          li.textContent = String(w.topic || "Topik") + " — Penguasaan " + wPct + "% (" + wObt + "/" + wTot + ") • Perlu Ulang Kaji";
-        } else {
-          li.textContent = String(w.topic || "Topik") + " — Belum Dijawab (" + wObt + "/" + wTot + ")";
-        }
+        const state = !isAttempted ? "unattempted" : (wPct >= 60 ? "ok" : (wPct >= 40 ? "mid" : "weak"));
+        li.className = "slip-topic-item";
+        li.setAttribute("data-state", state);
+
+        const row = document.createElement("div");
+        row.className = "slip-topic-row";
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "slip-topic-name";
+        nameSpan.textContent = String(w.topic || "Topik");
+        const statSpan = document.createElement("span");
+        statSpan.className = "slip-topic-stat tabular-nums";
+        statSpan.textContent = isAttempted
+          ? (wPct + "% (" + wObt + "/" + wTot + ")" + (wPct < 60 ? " • Ulang Kaji" : ""))
+          : ("Belum Dijawab (" + wObt + "/" + wTot + ")");
+        row.appendChild(nameSpan);
+        row.appendChild(statSpan);
+
+        const track = document.createElement("div");
+        track.className = "slip-topic-track";
+        const fill = document.createElement("div");
+        fill.className = "slip-topic-fill";
+        fill.style.width = (isAttempted ? Math.max(4, wPct) : 0) + "%";
+        track.appendChild(fill);
+
+        li.appendChild(row);
+        li.appendChild(track);
         weakListEl.appendChild(li);
       });
     }

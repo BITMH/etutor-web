@@ -2688,7 +2688,14 @@
        DIALOG SLIP KEPUTUSAN RASMI (Boleh Dicetak Tanpa Soalan Peperiksaan)
        ===================================================================== -->
   <dialog id="resultSlipDialog" class="slip-dialog" closedby="any" aria-labelledby="slipHeading">
-    <div class="slip-paper">
+    <div class="slip-paper" id="slipPaperRoot" data-tier="neutral">
+      <div class="slip-watermark" aria-hidden="true">eTutor.my • RASMI</div>
+
+      <div class="slip-top-ribbon">
+        <span>PORTAL PENTAKSIRAN KENDIRI SPM • KSSM</span>
+        <span id="slipRefNo" class="tabular-nums">NO. RUJ: ETM-2026-0001</span>
+      </div>
+
       <div class="slip-header">
         <div class="etutor-logo-lockup">
           <svg class="etutor-emblem-svg" width="52" height="41" aria-hidden="true">
@@ -2696,55 +2703,105 @@
           </svg>
           <div class="etutor-logo-text">
             <div class="etutor-wordmark" style="font-size:1.22rem"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
-            <h2 id="slipHeading" style="font-size:0.96rem;color:var(--logo-navy);margin-top:2px">Slip Keputusan Latihan Interaktif</h2>
+            <h2 id="slipHeading" class="slip-doc-title">SLIP KEPUTUSAN RASMI LATIHAN SPM</h2>
+            <div class="slip-doc-sub">Laporan Pencapaian &amp; Diagnostik Topik Pelajar</div>
           </div>
         </div>
-        <span class="status-badge badge-subject">Disahkan</span>
+        <div class="slip-verified-stack">
+          <span class="slip-verified-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+            <span>DISAHKAN</span>
+          </span>
+          <span id="slipDate" class="slip-header-date tabular-nums">—</span>
+        </div>
       </div>
 
       <div class="slip-score-banner">
-        <div>
-          <div style="font-size:0.78rem;color:var(--text-muted);font-weight:600">PERATUS MARKAH</div>
-          <div id="slipScorePct" class="tabular-nums" style="font-size:2rem;font-weight:800;color:var(--brand-primary)">0%</div>
+        <div class="slip-gauge-wrap">
+          <svg class="slip-gauge-svg" viewBox="0 0 120 120" width="108" height="108" aria-hidden="true">
+            <circle class="slip-gauge-track" cx="60" cy="60" r="50"></circle>
+            <circle id="slipScoreArc" class="slip-gauge-fill" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"></circle>
+          </svg>
+          <div class="slip-gauge-center">
+            <div id="slipScorePct" class="tabular-nums slip-gauge-pct">0%</div>
+            <div class="slip-gauge-caption">MARKAH</div>
+          </div>
         </div>
-        <div>
-          <div style="font-size:0.78rem;color:var(--text-muted);font-weight:600">GRED PENCAPAIAN</div>
-          <div id="slipGrade" style="font-size:2rem;font-weight:800;color:var(--grade-emerald)">—</div>
+
+        <div class="slip-grade-seal-wrap">
+          <div class="slip-grade-seal">
+            <div class="slip-grade-seal-ring">
+              <div id="slipGrade" class="slip-grade-val">—</div>
+            </div>
+          </div>
+          <div id="slipGradeLabel" class="slip-grade-label">Menunggu Keputusan</div>
+        </div>
+
+        <div class="slip-paper-split" id="slipPaperSplit">
+          <div class="slip-split-title">Pecahan Kertas</div>
+          <div class="slip-split-bar" aria-hidden="true">
+            <span id="slipBarObj" class="slip-split-seg slip-seg-obj" style="width:50%"></span>
+            <span id="slipBarSub" class="slip-split-seg slip-seg-sub" style="width:50%"></span>
+          </div>
+          <div id="slipBreakdown" class="slip-split-text tabular-nums">—</div>
         </div>
       </div>
 
-      <div class="slip-no-print" style="margin-block-end:14px" data-open-only>
-        <label for="slipCustomNameInput" style="font-size:0.78rem;font-weight:700;color:var(--text-secondary);display:block;margin-bottom:4px">Nama Pelajar untuk Cetakan Slip (Pilihan):</label>
-        <input type="text" id="slipCustomNameInput" class="text-input" autocomplete="name" maxlength="80" placeholder="Taip nama anda di sini supaya tertera pada slip PDF...">
+      <div class="slip-no-print" style="margin-block-end:12px" data-open-only>
+        <label for="slipCustomNameInput" style="font-size:0.78rem;font-weight:700;color:var(--text-secondary);display:block;margin-bottom:4px">Nama Calon untuk Cetakan Slip Rasmi (Pilihan):</label>
+        <input type="text" id="slipCustomNameInput" class="text-input" autocomplete="name" maxlength="80" placeholder="Taip nama penuh anda di sini supaya tertera pada slip PDF...">
       </div>
 
       <div class="slip-meta-grid">
-        <div>
-          <div style="color:var(--text-muted);font-size:0.76rem">Nama Pelajar</div>
-          <div id="slipStudentName" style="font-weight:700">—</div>
+        <div class="slip-meta-cell">
+          <div class="slip-meta-lbl">Nama Calon</div>
+          <div id="slipStudentName" class="slip-meta-val">—</div>
         </div>
-        <div data-paid-only hidden>
-          <div style="color:var(--text-muted);font-size:0.76rem">ID Berdaftar</div>
-          <div id="slipUserId" class="tabular-nums" style="font-weight:600">—</div>
+        <div class="slip-meta-cell">
+          <div class="slip-meta-lbl">Mata Pelajaran</div>
+          <div id="slipSubject" class="slip-meta-val">—</div>
         </div>
-        <div>
-          <div style="color:var(--text-muted);font-size:0.76rem">Subjek</div>
-          <div id="slipSubject" style="font-weight:600">—</div>
+        <div class="slip-meta-cell" data-paid-only hidden>
+          <div class="slip-meta-lbl">ID Calon Berdaftar</div>
+          <div id="slipUserId" class="slip-meta-val tabular-nums">—</div>
         </div>
-        <div>
-          <div style="color:var(--text-muted);font-size:0.76rem">Tarikh &amp; Masa</div>
-          <div id="slipDate" class="tabular-nums" style="font-weight:600">—</div>
-        </div>
-        <div style="grid-column:1/-1">
-          <div style="color:var(--text-muted);font-size:0.76rem">Set Soalan</div>
-          <div id="slipQuizTitle" style="font-weight:700">—</div>
-          <div id="slipBreakdown" class="tabular-nums" style="font-size:0.84rem;color:var(--text-secondary);margin-top:2px"></div>
+        <div class="slip-meta-cell slip-meta-wide">
+          <div class="slip-meta-lbl">Set Peperiksaan / Modul</div>
+          <div id="slipQuizTitle" class="slip-meta-val">—</div>
         </div>
       </div>
 
-      <div style="border-top:1px solid var(--border-subtle);padding-top:12px">
-        <div style="font-size:0.82rem;font-weight:700;margin-bottom:6px">Analisis Penguasaan Topik:</div>
-        <ul id="slipWeakTopics" style="padding-left:18px;font-size:0.84rem;color:var(--text-secondary);display:flex;flex-direction:column;gap:4px"></ul>
+      <div class="slip-topics-section">
+        <div class="slip-topics-head">
+          <span>Analisis Penguasaan Topik</span>
+          <span class="slip-topics-legend">
+            <i class="dot-ok"></i> Kukuh &nbsp;
+            <i class="dot-mid"></i> Sederhana &nbsp;
+            <i class="dot-weak"></i> Ulang Kaji
+          </span>
+        </div>
+        <ul id="slipWeakTopics" class="slip-topic-bars"></ul>
+      </div>
+
+      <div class="slip-official-footer">
+        <div class="slip-seal-stamp">
+          <svg width="34" height="34" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="6" stroke="#1e3a8a" stroke-width="1.5" fill="#eff6ff"/>
+            <rect x="7" y="7" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="22" y="7" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="7" y="22" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="16" y="16" width="5" height="5" fill="#2563eb"/>
+            <rect x="23" y="22" width="6" height="6" fill="#1e3a8a"/>
+          </svg>
+          <div>
+            <div style="font-weight:700;color:#1e3a8a;font-size:0.74rem">Dokumen Dijana Secara Automatik</div>
+            <div style="font-size:0.68rem;color:var(--text-muted)">eTutor.my • Rekod Pentaksiran Digital Pelajar SPM</div>
+          </div>
+        </div>
+        <div class="slip-sign-box">
+          <div class="slip-sign-line"></div>
+          <div class="slip-sign-lbl">Semakan Ibu Bapa / Guru</div>
+        </div>
       </div>
     </div>
 

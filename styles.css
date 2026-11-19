@@ -2400,6 +2400,141 @@ progress.progress-ring::-moz-progress-bar {
   gap: 14px;
 }
 
+/* === features/study-notes/nota-catalog.css === */
+/* ==========================================================================
+   src/features/study-notes/nota-catalog.css
+   Gaya kad katalog Nota Interaktif Visual (thumbnail medali 3D + bar penguasaan)
+   ========================================================================== */
+
+.portal-dropdown-icon.icon-nota {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: var(--brand-primary);
+}
+
+.nota-highlight-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1px solid var(--brand-border);
+  margin-block-end: var(--space-3);
+}
+.nota-highlight-text {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.nota-highlight-text strong { color: var(--brand-navy); }
+
+.nota-chapter-card {
+  container-type: inline-size;
+  gap: 12px;
+}
+
+.nota-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.nota-cover-medallion {
+  flex: 0 0 64px;
+  inline-size: 64px;
+  block-size: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+  box-shadow: 0 8px 16px rgb(37 99 235 / 0.22);
+  background: #1e3a8a;
+}
+
+.nota-card-head-body {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nota-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.nota-edition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-soft);
+  color: var(--brand-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.nota-mastery-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 9px 11px;
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+}
+
+.nota-mastery-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.nota-sub-desc {
+  font-size: 0.81rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.phone-nota-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-inline-size: 0;
+}
+
+.phone-nota-thumb {
+  flex: 0 0 50px;
+  inline-size: 50px;
+  block-size: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 10px rgb(37 99 235 / 0.22);
+  background: #1e3a8a;
+}
+
+@container (max-width: 280px) {
+  .nota-cover-medallion {
+    flex-basis: 52px;
+    inline-size: 52px;
+    block-size: 52px;
+  }
+}
+
 /* === features/quiz-engine/exam-and-slip.css === */
 /* ==========================================================================
    FULL-SCREEN EXAM VIEW (100dvh + <iframe srcdoc>)
@@ -5194,16 +5329,22 @@ html[data-native-store-shell="true"]:not([data-allow-native-voucher="true"]) #sy
 }
 
 .phone-seg-wrap {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 4px; padding: 4px; border-radius: 14px; background: #e2e8f0;
 }
 .phone-seg-btn {
-  min-block-size: 44px; border: 0; border-radius: 10px; background: transparent;
-  color: #334155; font-weight: 700; font-size: 0.82rem; cursor: pointer;
+  min-block-size: 46px; padding: 5px 4px; border: 0; border-radius: 10px; background: transparent;
+  color: #334155; font-weight: 700; font-size: 0.78rem; line-height: 1.15;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-inline-size: 0; overflow: hidden; cursor: pointer;
+}
+.phone-seg-sub {
+  font-size: 0.66rem; font-weight: 600; color: #64748b; white-space: nowrap;
 }
 .phone-seg-btn[aria-pressed="true"] {
   background: #ffffff; color: var(--brand-primary); box-shadow: 0 1px 4px rgb(15 23 42 / 0.1);
 }
+.phone-seg-btn[aria-pressed="true"] .phone-seg-sub { color: var(--brand-primary); opacity: 0.88; }
 
 .phone-search-wrap { position: relative; }
 .phone-search-icon {

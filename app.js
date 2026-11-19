@@ -27,6 +27,7 @@
   const PENDING_REFERRAL_STORAGE_KEY = "etutor_pending_ref_code_v1";
   const ATTRIBUTED_REFERRAL_STORAGE_KEY = "etutor_attributed_ref_v1";
   const PHONE_WELCOME_DONE_KEY = "etutor_phone_welcome_done_v1";
+  const NOTA_PROGRESS_STORAGE_KEY = "etutor_nota_progress_v1";
 
   // --- [config/learningModulesRegistry.js] ---
   /**
@@ -46,10 +47,10 @@
   const PORTAL_MODULES = [
     { id: "klon_spm", stage: "spm", title: "Set Soalan Klon SPM Interaktif", active: true, defaultOpen: true, defaultVisible: true },
     { id: "pra_spm", stage: "spm", title: "Soalan Percubaan / Pra-SPM Negeri", active: true, defaultOpen: false, defaultVisible: true },
+    { id: "nota_interaktif", stage: "spm", title: "Nota Interaktif Visual", active: true, defaultOpen: false, defaultVisible: true },
     { id: "countdown_spm", stage: "spm", title: "Countdown & Jadual Waktu SPM 2026", active: true, defaultOpen: false, defaultVisible: true },
     { id: "progress", stage: "all", title: "Kemajuan Pembelajaran & Analisis", active: true, defaultOpen: false, defaultVisible: true },
     { id: "leaderboard", stage: "all", title: "Carta Kedudukan Pelajar (Leaderboard)", active: true, defaultOpen: false, defaultVisible: true },
-    { id: "nota_interaktif", stage: "spm", title: "Nota Interaktif Visual", active: false, defaultOpen: false, defaultVisible: false, badge: "Akan Datang" },
     { id: "flashcard", stage: "spm", title: "Latihan Flashcard Pantas", active: false, defaultOpen: false, defaultVisible: false, badge: "Akan Datang" }
   ];
 
@@ -62,6 +63,7 @@
       stage: "spm",
       singleOpenAccordion: true,
       openModuleId: "klon_spm",
+      notaLaunchedV1: true,
       visibleModules: visibleModules
     };
   }
@@ -82,6 +84,9 @@
           }
         });
       }
+      if (!parsed.notaLaunchedV1) {
+        vis.nota_interaktif = true;
+      }
       const validStage = EDUCATION_STAGES.some(function (s) { return s.id === parsed.stage && s.active; })
         ? parsed.stage
         : "spm";
@@ -89,6 +94,7 @@
         stage: validStage,
         singleOpenAccordion: typeof parsed.singleOpenAccordion === "boolean" ? parsed.singleOpenAccordion : true,
         openModuleId: typeof parsed.openModuleId === "string" ? parsed.openModuleId : "klon_spm",
+        notaLaunchedV1: true,
         visibleModules: vis
       };
     } catch (e) {
@@ -226,9 +232,12 @@
     klonSelectedSubject: "ALL",
     klonSelectedStatus: "ALL",
     klonSearchQuery: "",
+    notaSelectedSubject: "ALL",
+    notaSearchQuery: "",
     lbPeriod: "all",
     lbSubject: "ALL",
     activeQuizFileId: null,
+    activeNotaId: null,
     latestSlipData: null,
     pendingProgressPayload: null,
     progressFlushTimer: null,
@@ -1799,6 +1808,7 @@
 
 
 
+
   let syncingDropdownState = false;
   let dropdownListenersBound = false;
 
@@ -1892,6 +1902,11 @@
     const praPill = document.getElementById("praSpmSummaryPill");
     if (praPill && cat.length > 0) {
       praPill.textContent = praCount + " set";
+    }
+
+    const notaPill = document.getElementById("notaSummaryPill");
+    if (notaPill) {
+      notaPill.textContent = getNotaCatalogList().length + " bab interaktif";
     }
 
     const ps = portalState.progressSummary;
@@ -3395,6 +3410,265 @@
     if (window.ETutorMotion) window.ETutorMotion.animateCatalogCards();
   }
 
+  // --- [features/study-notes/notaCatalogView.js] ---
+  /**
+   * src/features/study-notes/notaCatalogView.js
+   * Pemapar UI Katalog Nota Interaktif Visual (Desktop #moduleDropdownNota & Tab Telefon #phoneTabKertas).
+   */
+  const NOTA_CATALOG = [
+    {
+      "id": "sejarah-t4-bab01",
+      "subject": "Sejarah",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Warisan Negara Bangsa",
+      "subtitle": "Dari Tujuh Kerajaan Alam Melayu hingga Pembesar Empat Lipatan, Dwi-Kanun Bertulis Melaka & Waadat — Lengkap Foto Arkib & Audio ElevenLabs v4",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 24,
+      "unitCount": 6,
+      "stepCount": 30,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sej-u2.jpg",
+      "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab01.html"
+    },
+    {
+      "id": "sejarah-t4-bab02-v2",
+      "subject": "Sejarah",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 2,
+      "title": "Kebangkitan Nasionalisme",
+      "subtitle": "Edisi Sinematik & Suara AI — Audio Penerangan Auto-Main ElevenLabs v4, Galeri Potret Arkib Wikimedia, Simulasi Mesin Cetak & SFX Tematik",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 28,
+      "unitCount": 7,
+      "stepCount": 45,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sej2-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab02-v2.html"
+    },
+    {
+      "id": "fizik-t4-bab01",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Pengukuran",
+      "subtitle": "Metrik vs Imperial, 7 Kuantiti Asas & 10 Terbitan S.I., Skalar & Vektor, 6 Bentuk Graf, Luas Bawah Graf serta Eksperimen 1.1 Bandul Ringkas — Lengkap Foto Arkib & Audio ElevenLabs v4",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 22,
+      "unitCount": 6,
+      "stepCount": 28,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz-u5.jpg",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab01.html"
+    }
+  ];
+
+
+
+
+
+  function getNotaCatalogList() {
+    return Array.isArray(NOTA_CATALOG) ? NOTA_CATALOG : [];
+  }
+
+  function loadNotaProgressMap() {
+    try {
+      if (typeof localStorage === "undefined") return {};
+      const raw = localStorage.getItem(NOTA_PROGRESS_STORAGE_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveNotaProgressEntry(noteId, patch) {
+    if (!noteId) return {};
+    const map = loadNotaProgressMap();
+    const prev = map[noteId] && typeof map[noteId] === "object" ? map[noteId] : {};
+    map[noteId] = Object.assign({}, prev, patch, { updatedMs: Date.now() });
+    try {
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem(NOTA_PROGRESS_STORAGE_KEY, JSON.stringify(map));
+      }
+    } catch (e) {}
+    return map;
+  }
+
+  function populateNotaSubjectChips() {
+    const chipRow = document.getElementById("notaSubjectChipsRow");
+    if (!chipRow) return;
+    const list = getNotaCatalogList();
+    const subjects = ["ALL"].concat(Array.from(new Set(list.map((c) => c.subject).filter(Boolean))));
+    if (portalState.notaSelectedSubject !== "ALL" && subjects.indexOf(portalState.notaSelectedSubject) === -1) {
+      portalState.notaSelectedSubject = "ALL";
+    }
+    chipRow.innerHTML = subjects.map(function (sub) {
+      const active = portalState.notaSelectedSubject === sub;
+      const label = sub === "ALL" ? "Semua Subjek" : sub;
+      return '<button type="button" class="tab-chip js-nota-subject-chip" data-subject="' + escapeHtml(sub) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(label) + "</button>";
+    }).join("");
+  }
+
+  function renderNotaCardMarkup_(item, progressRec) {
+    const unlocked = isNotaItemUnlocked(item.id);
+    const doneUnits = progressRec ? Math.max(0, Number(progressRec.completedUnits) || 0) : 0;
+    const totalUnits = Math.max(1, Number(item.unitCount) || 1);
+    const masteryPct = progressRec ? Math.min(100, Math.max(0, Number(progressRec.masteryPct) || 0)) : 0;
+    const xpEarned = progressRec ? Math.max(0, Number(progressRec.xp) || 0) : 0;
+
+    let statusHtml = unlocked
+      ? '<span class="status-badge badge-done">' + ICONS.checkCircle + " Terbuka Kekal</span>"
+      : '<span class="status-badge badge-progress">' + ICONS.lock + ' <span class="tabular-nums">' + NOTA_UNLOCK_COST + " Token • Kekal</span></span>";
+    if (masteryPct >= 100) {
+      statusHtml = '<span class="status-badge badge-done">' + ICONS.trophy + ' <span class="tabular-nums">100% Dikuasai</span></span>';
+    } else if (doneUnits > 0 || xpEarned > 0) {
+      statusHtml = '<span class="status-badge badge-progress">' + ICONS.flame + ' <span class="tabular-nums">' + masteryPct + "% • " + xpEarned + " XP</span></span>";
+    }
+
+    const ctaLabel = masteryPct >= 100
+      ? "Ulang Kaji Bab"
+      : ((doneUnits > 0 || xpEarned > 0) ? "Sambung Bab" : (unlocked ? "Mula Nota Interaktif" : ("Buka Bab (" + NOTA_UNLOCK_COST + " Token)")));
+    const ctaIcon = unlocked || doneUnits > 0 ? ICONS.play : ICONS.unlock;
+    const ctaCls = masteryPct >= 100 ? "btn-outline" : (doneUnits > 0 || xpEarned > 0 ? "btn-emerald" : "btn-primary");
+
+    return [
+      '<article class="quiz-card nota-chapter-card">',
+      '  <div class="nota-card-head">',
+      '    <img class="nota-cover-medallion" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="64" height="64" loading="lazy" decoding="async">',
+      '    <div class="nota-card-head-body">',
+      '      <div class="quiz-card-badges">',
+      '        <span class="badge-klon">' + ICONS.sparkles + " Ting. " + escapeHtml(item.form) + " • Bab " + escapeHtml(item.chapterNumber) + "</span>",
+      '        <span class="status-badge badge-subject">' + escapeHtml(item.subject) + "</span>",
+               statusHtml,
+      "      </div>",
+      '      <h3 class="quiz-card-title">' + escapeHtml(item.title) + "</h3>",
+      "    </div>",
+      "  </div>",
+      '  <p class="nota-sub-desc">' + escapeHtml(item.subtitle) + "</p>",
+      '  <div class="nota-meta-pills tabular-nums">',
+      '    <span class="nota-edition-pill">' + ICONS.book + " " + totalUnits + " Unit • " + item.stepCount + " Langkah</span>",
+      (item.hasVoice ? '<span class="nota-edition-pill">Suara Cikgu AI</span>' : ""),
+      '    <span class="nota-edition-pill">~' + escapeHtml(item.estimatedMinutes) + " min</span>",
+      "  </div>",
+      '  <div class="nota-mastery-wrap">',
+      '    <div class="nota-mastery-labels tabular-nums">',
+      "      <span>Penguasaan: " + doneUnits + "/" + totalUnits + " unit</span>",
+      "      <span>" + masteryPct + "% • " + xpEarned + " XP</span>",
+      "    </div>",
+      '    <progress class="etutor-progress" max="100" value="' + masteryPct + '" aria-label="Penguasaan ' + escapeHtml(item.title) + '"></progress>',
+      "  </div>",
+      '  <div class="quiz-card-footer">',
+      '    <button type="button" class="btn ' + ctaCls + ' js-open-nota" data-note-id="' + escapeHtml(item.id) + '">',
+             ctaIcon + " <span>" + escapeHtml(ctaLabel) + "</span>",
+      "    </button>",
+      "  </div>",
+      "</article>"
+    ].join("\n");
+  }
+
+  function renderNotaCatalogSection() {
+    const grid = document.getElementById("notaCatalogCardsGrid");
+    const countLabel = document.getElementById("notaCatalogCountLabel");
+    if (!grid) return;
+
+    const list = getNotaCatalogList();
+    const progMap = loadNotaProgressMap();
+    const q = String(portalState.notaSearchQuery || "").trim().toLowerCase();
+    const subj = portalState.notaSelectedSubject || "ALL";
+
+    const filtered = list.filter(function (item) {
+      if (subj !== "ALL" && item.subject !== subj) return false;
+      if (q) {
+        const hay = [item.subject, "bab " + item.chapterNumber, item.title, item.subtitle].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (countLabel) {
+      countLabel.textContent = filtered.length + " bab nota interaktif dipaparkan";
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="empty-state"><h3>Tiada Nota Interaktif Sepadan</h3><p>Cuba tukar kata kunci carian atau pilih Semua Subjek. Bab baharu ditambah secara berperingkat.</p></div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map((item) => renderNotaCardMarkup_(item, progMap[item.id])).join("\n");
+  }
+
+  function renderPhoneNotaList(phoneUiState, listEl, chipRow) {
+    const list = getNotaCatalogList();
+    const subjects = ["ALL"].concat(Array.from(new Set(list.map((c) => c.subject).filter(Boolean))).sort());
+    if (phoneUiState.paperSubject !== "ALL" && subjects.indexOf(phoneUiState.paperSubject) === -1) {
+      phoneUiState.paperSubject = "ALL";
+    }
+    if (chipRow) {
+      chipRow.innerHTML = subjects.map(function (s) {
+        const pressed = phoneUiState.paperSubject === s ? "true" : "false";
+        const label = s === "ALL" ? "Semua Subjek" : s;
+        return '<button type="button" class="phone-subj-chip js-phone-filter-subj" data-subj="' + escapeHtml(s) + '" aria-pressed="' + pressed + '">' + escapeHtml(label) + "</button>";
+      }).join("");
+    }
+    if (!listEl) return;
+
+    const q = String(phoneUiState.paperSearch || "").trim().toLowerCase();
+    const filtered = list.filter(function (item) {
+      if (phoneUiState.paperSubject !== "ALL" && item.subject !== phoneUiState.paperSubject) return false;
+      if (q) {
+        const hay = [item.subject, "bab " + item.chapterNumber, item.title, item.subtitle].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+    if (filtered.length === 0) {
+      listEl.innerHTML = '<div class="phone-card" style="text-align:center;color:#475569">Tiada nota interaktif sepadan. Bab baharu sedang ditambah secara berperingkat.</div>';
+      return;
+    }
+
+    const progMap = loadNotaProgressMap();
+    listEl.innerHTML = filtered.map(function (item) {
+      const rec = progMap[item.id] || {};
+      const unlocked = isNotaItemUnlocked(item.id);
+      const costLabel = unlocked ? "Dibuka Kekal" : (NOTA_UNLOCK_COST + " Token");
+      const costCls = unlocked ? "phone-badge-cost" : "phone-badge-cost is-klon";
+      const progText = (rec.completedUnits || 0) > 0 || (rec.xp || 0) > 0
+        ? ("Penguasaan: " + (rec.masteryPct || 0) + "% • " + (rec.xp || 0) + " XP")
+        : (item.unitCount + " Unit • " + item.stepCount + " Langkah • Suara AI");
+
+      return [
+        '<button type="button" class="phone-paper-card" data-phone-note-id="' + escapeHtml(item.id) + '">',
+        '  <div class="phone-nota-card-left">',
+        '    <img class="phone-nota-thumb" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="50" height="50" loading="lazy" decoding="async">',
+        "    <div>",
+        '      <div class="phone-paper-badges">',
+        '        <span class="phone-badge-code tabular-nums">' + escapeHtml(item.subject + " T" + item.form + " • Bab " + item.chapterNumber) + "</span>",
+        '        <span class="' + costCls + '">' + escapeHtml(costLabel) + "</span>",
+        "      </div>",
+        '      <h3 class="phone-paper-title">' + escapeHtml(item.title) + "</h3>",
+        '      <p class="phone-paper-meta tabular-nums">' + escapeHtml(progText) + "</p>",
+        "    </div>",
+        "  </div>",
+        '  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>',
+        "</button>"
+      ].join("");
+    }).join("");
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("etutor:server-unlocked-keys", function () {
+      renderNotaCatalogSection();
+    });
+  }
+
   // --- [features/catalog/liveCatalogSync.js] ---
   /**
    * src/features/catalog/liveCatalogSync.js
@@ -3633,6 +3907,7 @@
 
 
 
+
   function applyDashboardBundle(res) {
     if (res.user) portalState.user = res.user;
     if (Array.isArray(res.catalog)) {
@@ -3651,6 +3926,8 @@
     renderLeaderboardSection();
     renderKlonCatalogSection();
     renderCatalogSection();
+    populateNotaSubjectChips();
+    renderNotaCatalogSection();
     syncLandingKlonCountBadge();
     syncPortalDropdownSummaries();
 
@@ -3972,6 +4249,8 @@
 
 
 
+
+
   async function openQuizSet(fileId, autoResume, resetStart) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
@@ -3990,6 +4269,7 @@
     if (syncEl) syncEl.textContent = "Memuatkan soalan...";
 
     portalState.activeQuizFileId = fileId;
+    portalState.activeNotaId = null;
     portalState.latestSlipData = null;
     stage.hidden = false;
     document.documentElement.setAttribute("data-exam-active", "true");
@@ -4023,6 +4303,8 @@
     // Elakkan isu perlumbaan OOPIF (double-srcdoc navigation abort) apabila respons API sangat pantas:
     // Hanya papar spinner jika pemuatan mengambil masa melebihi 260ms.
     let quizResolved = false;
+    iframe.onload = null;
+    iframe.removeAttribute("src");
     iframe.removeAttribute("srcdoc");
     const spinnerTimer = setTimeout(function () {
       if (!quizResolved && portalState.activeQuizFileId === fileId) {
@@ -4141,14 +4423,22 @@
   async function closeQuizStage(opts) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
+    const wasNota = Boolean(portalState.activeNotaId);
     await flushPendingProgressNow();
+    flushCloudProgressSync();
 
-    if (iframe) iframe.srcdoc = "";
+    if (iframe) {
+      iframe.onload = null;
+      iframe.removeAttribute("src");
+      iframe.srcdoc = "";
+    }
     if (stage) stage.hidden = true;
     document.documentElement.setAttribute("data-exam-active", "false");
     document.documentElement.setAttribute("data-virtual-keyboard", "closed");
     document.body.style.overflow = "";
     portalState.activeQuizFileId = null;
+    portalState.activeNotaId = null;
+    if (wasNota) renderNotaCatalogSection();
 
     if (!isNativeCapacitorPlatform() && portalState.examHistoryPushed) {
       const manualClose = !(opts && opts.fromHistoryBack);
@@ -4257,6 +4547,7 @@
           stateJson: String(msg.stateJson || "")
         });
         saveOpenProgressMap(progMap);
+        scheduleCloudProgressSync();
         return;
       }
 
@@ -4364,6 +4655,189 @@
           applyDashboardBundle(res);
         }
       }).catch(function () {});
+    }
+  }
+
+  // --- [features/study-notes/notaStageController.js] ---
+  /**
+   * src/features/study-notes/notaStageController.js
+   * Pengawal pelancaran Nota Interaktif Visual dalam #examStage (<iframe sandbox>)
+   * serta jambatan postMessage (ETUTOR_NOTA_INIT, ETUTOR_NOTA_PROGRESS, COMPLETED, ASK_CIKGU, CLOSE).
+   */
+
+
+
+
+
+
+
+
+
+  function findNotaById_(noteId) {
+    return getNotaCatalogList().find((c) => c.id === noteId) || null;
+  }
+
+  function postInitStateToNotaIframe_(iframe, noteId) {
+    if (!iframe || !iframe.contentWindow) return;
+    const saved = loadNotaProgressMap()[noteId];
+    const stateJson = saved && saved.stateJson ? saved.stateJson : "";
+    try {
+      iframe.contentWindow.postMessage({ type: "ETUTOR_NOTA_INIT", noteId, stateJson }, "*");
+    } catch (e) {}
+  }
+
+  async function openNotaChapter(noteId) {
+    const item = findNotaById_(noteId);
+    if (!item) {
+      showToast("Bab Nota Interaktif tidak ditemui.");
+      return;
+    }
+
+    const wasLocked = !isNotaItemUnlocked(item.id);
+    const label = item.subject + " T" + item.form + " Bab " + item.chapterNumber + ": " + item.title;
+    if (!(await unlockNotaItem(item.id, label))) return;
+    if (wasLocked) {
+      renderNotaCatalogSection();
+      renderPhoneKertasTab();
+    }
+
+    const stage = document.getElementById("examStage");
+    const iframe = document.getElementById("examIframe");
+    const titleEl = document.getElementById("examStageTitle");
+    const slipBtn = document.getElementById("openSlipBtn");
+    const syncEl = document.getElementById("examSyncStatus");
+    if (!stage || !iframe) return;
+
+    portalState.activeQuizFileId = null;
+    portalState.activeNotaId = item.id;
+    portalState.latestSlipData = null;
+
+    if (titleEl) titleEl.textContent = label;
+    if (slipBtn) slipBtn.hidden = true;
+    if (syncEl) syncEl.textContent = "Memuatkan nota interaktif...";
+
+    stage.hidden = false;
+    document.documentElement.setAttribute("data-exam-active", "true");
+    document.body.style.overflow = "hidden";
+
+    if (!isNativeCapacitorPlatform() && !portalState.examHistoryPushed && window.history && typeof window.history.pushState === "function") {
+      try {
+        window.history.pushState({ etutorExamStage: true, noteId: item.id }, "");
+        portalState.examHistoryPushed = true;
+      } catch (e) {}
+    }
+    if (window.ETutorMotion) window.ETutorMotion.playExamStageOpen();
+
+    iframe.removeAttribute("srcdoc");
+    iframe.onload = function () {
+      if (portalState.activeNotaId !== item.id) return;
+      postInitStateToNotaIframe_(iframe, item.id);
+      if (syncEl) syncEl.textContent = "Auto-simpan aktif";
+    };
+    iframe.src = item.htmlPath;
+  }
+
+  async function handleNotaStageMessage(event) {
+    const iframe = document.getElementById("examIframe");
+    if (!iframe || !iframe.contentWindow || !event || event.source !== iframe.contentWindow) return;
+    if (event.origin !== "null" && event.origin !== window.location.origin) return;
+
+    const msg = event.data;
+    if (!msg || typeof msg !== "object" || typeof msg.type !== "string") return;
+    if (!msg.type.startsWith("ETUTOR_NOTA_")) return;
+
+    const activeId = portalState.activeNotaId;
+    if (!activeId || String(msg.noteId || "") !== String(activeId)) return;
+
+    const item = findNotaById_(activeId);
+    const syncEl = document.getElementById("examSyncStatus");
+
+    if (msg.type === "ETUTOR_NOTA_READY") {
+      postInitStateToNotaIframe_(iframe, activeId);
+      if (syncEl) syncEl.textContent = "Auto-simpan aktif";
+      return;
+    }
+
+    if (msg.type === "ETUTOR_NOTA_CLOSE") {
+      await closeQuizStage();
+      return;
+    }
+
+    if (msg.type === "ETUTOR_NOTA_ASK_CIKGU") {
+      const promptText = String(msg.prompt || "").slice(0, 600);
+      const subj = (item && item.subject) || String(msg.subject || "Sejarah");
+      const isPhone = document.documentElement.getAttribute("data-phone-app") === "true";
+      if (isPhone) {
+        await closeQuizStage();
+        switchPhoneTab("cikgu");
+        const inp = document.getElementById("phoneChatInput");
+        const sel = document.getElementById("phoneCikguSubjectSelect");
+        if (sel && subj) sel.value = subj;
+        if (inp) {
+          inp.value = promptText;
+          inp.focus();
+        }
+        return;
+      }
+      const drawer = window.__CIKGU_AI_INSTANCE__ && window.__CIKGU_AI_INSTANCE__.drawer;
+      if (drawer && typeof drawer.openWithPrompt === "function") {
+        drawer.openWithPrompt(promptText, subj);
+      } else {
+        showToast("Cikgu AI sedang dimulakan. Sila cuba sebentar lagi.");
+      }
+      return;
+    }
+
+    if (msg.type === "ETUTOR_NOTA_PROGRESS" || msg.type === "ETUTOR_NOTA_COMPLETED") {
+      const xp = Math.max(0, Math.round(Number(msg.xp) || 0));
+      const completedUnits = Math.max(0, Math.round(Number(msg.completedUnits) || 0));
+      const totalUnits = Math.max(1, Math.round(Number(msg.totalUnits) || (item ? item.unitCount : 1)));
+      const masteryPct = Math.min(100, Math.max(0, Math.round(Number(msg.masteryPct) || 0)));
+      saveNotaProgressEntry(activeId, {
+        completedUnits,
+        totalUnits,
+        masteryPct,
+        xp,
+        stars: Math.max(0, Number(msg.stars) || 0),
+        maxStars: Math.max(3, Number(msg.maxStars) || totalUnits * 3),
+        stateJson: String(msg.stateJson || "")
+      });
+      if (syncEl) {
+        syncEl.textContent = "Disimpan • " + xp + " XP • " + completedUnits + "/" + totalUnits + " unit";
+      }
+      renderNotaCatalogSection();
+      renderPhoneKertasTab();
+      syncPortalDropdownSummaries();
+      if (msg.type === "ETUTOR_NOTA_COMPLETED") {
+        showToast("Tahniah! Semua unit " + (item ? item.title : "Nota Interaktif") + " berjaya dikuasai (" + xp + " XP).");
+      }
+    }
+  }
+
+  function bindNotaCatalogEvents() {
+    document.addEventListener("click", function (e) {
+      const openBtn = e.target.closest(".js-open-nota");
+      if (openBtn) {
+        const nid = openBtn.getAttribute("data-note-id");
+        if (nid) openNotaChapter(nid);
+        return;
+      }
+      const subChip = e.target.closest(".js-nota-subject-chip");
+      if (subChip) {
+        portalState.notaSelectedSubject = subChip.getAttribute("data-subject") || "ALL";
+        document.querySelectorAll(".js-nota-subject-chip").forEach(function (btn) {
+          btn.setAttribute("aria-pressed", btn === subChip ? "true" : "false");
+        });
+        renderNotaCatalogSection();
+      }
+    });
+
+    const searchInp = document.getElementById("notaSearchInput");
+    if (searchInp) {
+      searchInp.addEventListener("input", function () {
+        portalState.notaSearchQuery = searchInp.value || "";
+        renderNotaCatalogSection();
+      });
     }
   }
 
@@ -6372,11 +6846,82 @@
     }
   }
 
+  // --- [features/admin/adminAiAuditView.js] ---
+  /**
+   * src/features/admin/adminAiAuditView.js
+   * Paparan Audit Kualiti Semakan AI, Jawapan Pelajar, Ulasan & Prestasi Failover di Panel Admin.
+   */
+
+
+  function renderAdminAiAuditTable() {
+    const summaryEl = document.getElementById("admAiQualitySummary");
+    const tbody = document.getElementById("adminAiAuditTableBody");
+    if (!portalState.adminData) return;
+
+    const q = portalState.adminData.aiQuality || {};
+    if (summaryEl) {
+      const checks = Number(q.checksToday) || 0;
+      const avgSec = ((Number(q.avgLatencyMsToday) || 0) / 1000).toFixed(1);
+      const failovers = Number(q.failoversToday) || 0;
+      summaryEl.textContent =
+        "Hari ini: " + checks + " semakan • Purata " + avgSec + "s • Failover: " + failovers;
+    }
+
+    if (!tbody) return;
+    const rows = Array.isArray(portalState.adminData.recentAiAudits) ? portalState.adminData.recentAiAudits : [];
+    if (rows.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:20px">Belum ada log audit semakan AI direkodkan.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = rows.slice(0, 40).map(function (r) {
+      const secStr = ((Number(r.latencyMs) || 0) / 1000).toFixed(1) + "s";
+      const usedFo = Boolean(r.usedFailover);
+      const badgeCls = usedFo ? "badge-progress" : "badge-done";
+      const provText = String(r.provider || "-");
+      const markStr = (r.awardedMarks !== null && r.awardedMarks !== undefined && r.awardedMarks !== "")
+        ? (escapeHtml(String(r.awardedMarks)) + " / " + escapeHtml(String(r.maxMarks || 0)) + "m")
+        : "Bimbingan";
+      const studentLabel = r.studentName || "Tetamu";
+      const subMeta = [r.subId || "", r.hasImage ? "Gambar" : ""].filter(Boolean).join(" • ");
+      const previewFeed = String(r.aiFeedback || "").replace(/\s+/g, " ").trim().slice(0, 95);
+      const ansText = String(r.studentAnswer || "").trim() || "(Tiada teks jawapan)";
+      const qText = String(r.questionExcerpt || "").trim() || "-";
+      const feedText = String(r.aiFeedback || "").trim() || "-";
+
+      return (
+        "<tr>" +
+          '<td><div class="tabular-nums" style="font-size:0.78rem">' + escapeHtml(r.timestamp || "-") + '</div>' +
+          '<div style="font-weight:700;font-size:0.82rem">' + escapeHtml(studentLabel) + "</div>" +
+          (r.studentEmail ? '<div style="font-size:0.74rem;color:var(--text-muted)">' + escapeHtml(r.studentEmail) + "</div>" : "") + "</td>" +
+          '<td style="font-size:0.8rem"><div style="font-weight:600">' + escapeHtml(r.subject || "SPM") + '</div>' +
+          '<div style="font-size:0.74rem;color:var(--text-muted)">' + escapeHtml(r.mode || "auto") + (subMeta ? " &bull; " + escapeHtml(subMeta) : "") + "</div></td>" +
+          '<td class="tabular-nums"><span class="status-badge ' + badgeCls + '">' + escapeHtml(provText) + "</span>" +
+          '<div style="font-size:0.74rem;color:var(--text-muted);margin-top:4px">' + escapeHtml(secStr) +
+          (usedFo && r.failoverReason ? " &bull; " + escapeHtml(r.failoverReason) : "") + "</div></td>" +
+          '<td class="tabular-nums" style="font-weight:700;font-size:0.84rem">' + markStr +
+          '<div style="font-size:0.72rem;color:var(--text-muted);font-weight:400">-' + (Number(r.tokenCost) || 0) + " tok (" + escapeHtml(r.bucket || "free") + ")</div></td>" +
+          '<td style="font-size:0.8rem;min-inline-size:260px;max-inline-size:420px">' +
+            "<details>" +
+              '<summary style="cursor:pointer;font-weight:600"><span>' + escapeHtml(previewFeed || "Lihat butiran jawapan & ulasan") + "</span></summary>" +
+              '<div style="margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--surface-alt,#f8fafc);white-space:pre-wrap;font-size:0.78rem;line-height:1.45">' +
+                "<div><strong>Soalan:</strong> " + escapeHtml(qText) + "</div>" +
+                '<div style="margin-top:6px"><strong>Jawapan Pelajar:</strong> ' + escapeHtml(ansText) + "</div>" +
+                '<div style="margin-top:6px"><strong>Ulasan Cikgu AI:</strong> ' + escapeHtml(feedText) + "</div>" +
+              "</div>" +
+            "</details>" +
+          "</td>" +
+        "</tr>"
+      );
+    }).join("");
+  }
+
   // --- [features/admin/adminTablesView.js] ---
   /**
    * src/features/admin/adminTablesView.js
    * Paparan statistik ekosistem, kutipan RM, bajet AI, dompet token pelajar, peti aduan, eksport CSV & log Admin.
    */
+
 
 
 
@@ -6475,6 +7020,7 @@
 
     renderAdminUsersTable();
     renderAdminPaymentsTable();
+    renderAdminAiAuditTable();
     renderAdminIssuesTable();
     renderAdminLogsTable();
     if (typeof renderAdminRecentVouchers === "function") renderAdminRecentVouchers(data.recentVouchers || []);
@@ -7461,9 +8007,11 @@
 
 
 
+
   function bindEvents() {
     initFormValidation();
     window.addEventListener("message", handleQuizMessage);
+    window.addEventListener("message", handleNotaStageMessage);
 
     // Sekat Ctrl+S / Ctrl+P pada peringkat induk kecuali semasa dialog slip dibuka
     document.addEventListener("keydown", function (e) {
@@ -7574,6 +8122,7 @@
 
 
     bindCatalogLeaderboardAndSlipEvents();
+    bindNotaCatalogEvents();
     initLandingAndOrderBindings();
     initAdminPanelBindings();
   }
@@ -8118,7 +8667,30 @@
     }
   }
 
+  let cloudProgressTimer = null;
+
+  function scheduleCloudProgressSync() {
+    if (!getSyncLink()) return;
+    clearTimeout(cloudProgressTimer);
+    cloudProgressTimer = setTimeout(function () {
+      cloudProgressTimer = null;
+      if (getSyncLink()) syncNow({ silent: true });
+    }, 10000);
+  }
+
+  function flushCloudProgressSync() {
+    if (cloudProgressTimer) {
+      clearTimeout(cloudProgressTimer);
+      cloudProgressTimer = null;
+    }
+    if (getSyncLink()) syncNow({ silent: true });
+  }
+
   function cloudSyncAfterSubmit(fileId) {
+    if (cloudProgressTimer) {
+      clearTimeout(cloudProgressTimer);
+      cloudProgressTimer = null;
+    }
     if (getSyncLink()) {
       syncNow({ silent: true, completedFileId: fileId });
       return;
@@ -8668,6 +9240,7 @@
 
 
 
+
   const phoneUiState = {
     activeTab: "utama",
     paperCategory: "harian",
@@ -8762,17 +9335,27 @@
   function renderPhoneKertasTab() {
     const catalog = Array.isArray(portalState.catalog) ? portalState.catalog : [];
     const isHarian = phoneUiState.paperCategory === "harian";
+    const isKlon = phoneUiState.paperCategory === "klon";
+    const isNota = phoneUiState.paperCategory === "nota";
     const hBtn = document.getElementById("phoneSegHarianBtn");
     const kBtn = document.getElementById("phoneSegKlonBtn");
+    const nBtn = document.getElementById("phoneSegNotaBtn");
     if (hBtn) hBtn.setAttribute("aria-pressed", isHarian ? "true" : "false");
-    if (kBtn) kBtn.setAttribute("aria-pressed", isHarian ? "false" : "true");
+    if (kBtn) kBtn.setAttribute("aria-pressed", isKlon ? "true" : "false");
+    if (nBtn) nBtn.setAttribute("aria-pressed", isNota ? "true" : "false");
 
     const harianCount = catalog.filter(function (c) { return c.category !== "klon"; }).length;
     const klonCount = catalog.filter(function (c) { return c.category === "klon"; }).length;
     const hcEl = document.getElementById("phoneSegHarianCount");
     const kcEl = document.getElementById("phoneSegKlonCount");
-    if (hcEl) hcEl.textContent = "(" + harianCount + " • 0T)";
-    if (kcEl) kcEl.textContent = "(" + klonCount + " • 2T)";
+    const ncEl = document.getElementById("phoneSegNotaCount");
+    if (hcEl) hcEl.textContent = harianCount + " set • 0T";
+    if (kcEl) kcEl.textContent = klonCount + " set • 2T";
+    if (ncEl) ncEl.textContent = getNotaCatalogList().length + " bab • 2T";
+    if (isNota) {
+      renderPhoneNotaList(phoneUiState, document.getElementById("phonePaperList"), document.getElementById("phonePaperSubjectsRow"));
+      return;
+    }
 
     const catItems = catalog.filter(function (c) {
       return isHarian ? c.category !== "klon" : c.category === "klon";
@@ -9169,6 +9752,7 @@
 
 
 
+
   function switchPhoneTab(tabName) {
     const valid = ["utama", "kertas", "cikgu", "akaun"].indexOf(tabName) !== -1 ? tabName : "utama";
     phoneUiState.activeTab = valid;
@@ -9280,6 +9864,12 @@
       if (catBtn) { phoneUiState.paperCategory = catBtn.getAttribute("data-phone-cat") || "harian"; renderPhoneKertasTab(); return; }
       const subjBtn = e.target.closest(".js-phone-filter-subj");
       if (subjBtn) { phoneUiState.paperSubject = subjBtn.getAttribute("data-subj") || "ALL"; renderPhoneKertasTab(); return; }
+      const notaCardBtn = e.target.closest("[data-phone-note-id]");
+      if (notaCardBtn) {
+        const nid = notaCardBtn.getAttribute("data-phone-note-id");
+        if (nid) openNotaChapter(nid);
+        return;
+      }
       const paperBtn = e.target.closest("[data-phone-file-id]");
       if (paperBtn) {
         const fId = paperBtn.getAttribute("data-phone-file-id");

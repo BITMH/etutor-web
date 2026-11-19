@@ -68,6 +68,23 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
   };
 
   let accText = "";
+  let hasFirstToken = false;
+  let progressTimer = null;
+  const startedWaitMs = Date.now();
+  const pushWaitStage = (msg) => {
+    try {
+      targetWin.postMessage(
+        {
+          type: "ETUTOR_AI_SUB_GRADE_STREAM",
+          subId: d.subId,
+          text: msg,
+          aiScore: null,
+          done: false
+        },
+        "*"
+      );
+    } catch {}
+  };
   try {
     const curTok = loadDailyTokenState();
     if (curTok.remaining < needTok) {
@@ -85,20 +102,27 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
     }
 
     if (!hasImg && warmupMachine && warmupMachine.status !== "ready") {
-      try {
-        targetWin.postMessage(
-          {
-            type: "ETUTOR_AI_SUB_GRADE_STREAM",
-            subId: d.subId,
-            text: "Cikgu AI sedang membuka buku rekod skema KSSM...",
-            aiScore: null,
-            done: false
-          },
-          "*"
-        );
-      } catch {}
+      pushWaitStage("Cikgu AI sedang membuka buku rekod skema KSSM...");
       await warmupMachine.greetCikgu();
     }
+
+    pushWaitStage("Menghantar jawapan ke Cikgu AI & memadankan skema rasmi LPM...");
+    let stageLevel = 0;
+    progressTimer = setInterval(() => {
+      if (hasFirstToken) {
+        clearInterval(progressTimer);
+        progressTimer = null;
+        return;
+      }
+      const elapsed = Date.now() - startedWaitMs;
+      if (elapsed >= 7500 && stageLevel < 2) {
+        stageLevel = 2;
+        pushWaitStage("Menyusun ulasan & tip markah penuh untuk anda (hampir siap)...");
+      } else if (elapsed >= 3200 && stageLevel < 1) {
+        stageLevel = 1;
+        pushWaitStage("Menyemak fakta, kata kunci & pemarkahan rubrik KSSM...");
+      }
+    }, 600);
 
     await client.streamSemak(
       {
@@ -117,6 +141,13 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
       },
       {
         onToken: (tok) => {
+          if (!hasFirstToken) {
+            hasFirstToken = true;
+            if (progressTimer) {
+              clearInterval(progressTimer);
+              progressTimer = null;
+            }
+          }
           accText += tok;
           const { cleanTxt, parsedScore } = normalizeAiGradeOutput(accText);
           try {
@@ -173,5 +204,10 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
     try {
       targetWin.postMessage({ type: "ETUTOR_AI_SUB_GRADE_FALLBACK", subId: d.subId }, "*");
     } catch {}
+  } finally {
+    if (progressTimer) {
+      clearInterval(progressTimer);
+      progressTimer = null;
+    }
   }
 }

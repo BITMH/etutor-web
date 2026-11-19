@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-11-19T10:23:42.285Z",
+  "count": 3,
+  "copiedAssets": 162,
+  "chapters": [
+    {
+      "id": "sejarah-t4-bab01",
+      "subject": "Sejarah",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Warisan Negara Bangsa",
+      "subtitle": "Dari Tujuh Kerajaan Alam Melayu hingga Pembesar Empat Lipatan, Dwi-Kanun Bertulis Melaka & Waadat — Lengkap Foto Arkib & Audio ElevenLabs v4",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 24,
+      "unitCount": 6,
+      "stepCount": 30,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sej-u2.jpg",
+      "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab01.html"
+    },
+    {
+      "id": "sejarah-t4-bab02-v2",
+      "subject": "Sejarah",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 2,
+      "title": "Kebangkitan Nasionalisme",
+      "subtitle": "Edisi Sinematik & Suara AI — Audio Penerangan Auto-Main ElevenLabs v4, Galeri Potret Arkib Wikimedia, Simulasi Mesin Cetak & SFX Tematik",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 28,
+      "unitCount": 7,
+      "stepCount": 45,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sej2-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab02-v2.html"
+    },
+    {
+      "id": "fizik-t4-bab01",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Pengukuran",
+      "subtitle": "Metrik vs Imperial, 7 Kuantiti Asas & 10 Terbitan S.I., Skalar & Vektor, 6 Bentuk Graf, Luas Bawah Graf serta Eksperimen 1.1 Bandul Ringkas — Lengkap Foto Arkib & Audio ElevenLabs v4",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 22,
+      "unitCount": 6,
+      "stepCount": 28,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz-u5.jpg",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab01.html"
+    }
+  ]
+}

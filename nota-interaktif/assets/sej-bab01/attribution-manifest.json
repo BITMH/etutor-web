@@ -1,0 +1,54 @@
+{
+  "telaga_batu": {
+    "file": "telaga_batu.jpg",
+    "title": "File:Telaga Batu inscription.JPG",
+    "label": "Prasasti Inskripsi Telaga Batu (Srivijaya)",
+    "era": "Abad ke-7 • Palembang",
+    "license": "CC BY-SA 3.0",
+    "artist": "Gunawan Kartapranata",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0) • Gunawan Kartapranata",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Telaga_Batu_inscription.JPG",
+    "bytes": 28361,
+    "width": 331,
+    "height": 360
+  },
+  "champa_temple": {
+    "file": "champa_temple.jpg",
+    "title": "File:Po Nagar Cham Towers.jpeg",
+    "label": "Menara Candi Kerajaan Champa (Po Nagar)",
+    "era": "Abad ke-8 • Vietnam Tengah",
+    "license": "CC BY-SA 3.0",
+    "artist": "4pf3154f7",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0) • 4pf3154f7",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Po_Nagar_Cham_Towers.jpeg",
+    "bytes": 31214,
+    "width": 360,
+    "height": 270
+  },
+  "cheng_ho_ship": {
+    "file": "cheng_ho_ship.jpg",
+    "title": "File:IMMH Chinese treasure ship model.jpg",
+    "label": "Model Kapal Pelayaran Laksamana Cheng Ho (Dinasti Ming)",
+    "era": "Abad ke-15 • Hubungan Melaka-Ming",
+    "license": "CC BY-SA 4.0",
+    "artist": "Damián Morán Dauchez",
+    "credit": "Wikimedia Commons (CC BY-SA 4.0) • Damián Morán Dauchez",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:IMMH_Chinese_treasure_ship_model.jpg",
+    "bytes": 19471,
+    "width": 360,
+    "height": 237
+  },
+  "melaka_port_scene": {
+    "file": "melaka_port_scene.jpg",
+    "title": "Ilustrasi Pelabuhan Entrepot & Istana Kesultanan Melayu Melaka",
+    "label": "Ilustrasi Pelabuhan Entrepot & Istana Kesultanan Melayu Melaka",
+    "era": "Abad ke-15 • Muara Sungai Melaka",
+    "license": "Original Illustration (eTutor.my Clean-Room)",
+    "artist": "eTutor.my Studio",
+    "credit": "Ilustrasi Arkib Asli eTutor.my (Clean-Room Akta 332)",
+    "sourceUrl": "",
+    "bytes": 33442,
+    "width": 420,
+    "height": 234
+  }
+}

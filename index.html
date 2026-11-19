@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://toyyibpay.com https://dev.toyyibpay.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src 'self' https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://toyyibpay.com https://dev.toyyibpay.com;">
   <title>Soalan Percubaan SPM Interaktif &amp; Skema Jawapan | eTutor.my</title>
   <meta name="description" content="Jawab koleksi lengkap Soalan Percubaan SPM negeri, SBP &amp; Klon SPM secara interaktif di telefon atau laptop. Dikemas kini secara langsung lengkap semakan skema &amp; analisis bab lemah.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -1701,10 +1701,10 @@
           <div class="module-vis-chips" role="group" aria-label="Tunjukkan atau sembunyikan kategori modul">
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="klon_spm" aria-pressed="true">Soalan Klon SPM</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="pra_spm" aria-pressed="true">Soalan Pra-SPM Negeri</button>
+            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="nota_interaktif" aria-pressed="true">Nota Interaktif Visual</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="countdown_spm" aria-pressed="true">Countdown &amp; Jadual SPM</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="progress" aria-pressed="true">Kemajuan Saya</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="leaderboard" aria-pressed="true">Leaderboard</button>
-            <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="nota_interaktif" aria-pressed="false">Nota Interaktif (Akan Datang)</button>
             <button type="button" class="tab-chip js-toggle-module-vis" data-module-id="flashcard" aria-pressed="false">Flashcard (Akan Datang)</button>
           </div>
           <div class="customizer-behavior-row">
@@ -1913,6 +1913,51 @@
           </section>
         </details>
 
+        <!-- DROPDOWN: NOTA INTERAKTIF VISUAL (PLAYABLE NOTES KSSM + SUARA AI) -->
+        <details id="moduleDropdownNota" class="portal-module-dropdown" data-module-id="nota_interaktif">
+          <summary class="portal-dropdown-summary">
+            <div class="portal-dropdown-title-wrap">
+              <span class="portal-dropdown-icon icon-nota" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10a2 2 0 012 2v14l-5-3-5 3-5-3V6a2 2 0 012-2z"/>
+                </svg>
+              </span>
+              <div>
+                <h2 id="notaCatalogHeading" class="portal-dropdown-title">Nota Interaktif Visual</h2>
+                <p class="portal-dropdown-desc">Peta kemahiran bergambar 3D, penerangan suara Cikgu AI &amp; makmal eksplorasi • Buka kekal 2 Token / bab.</p>
+              </div>
+            </div>
+            <div class="portal-dropdown-right">
+              <span id="notaSummaryPill" class="dropdown-meta-pill pill-accent tabular-nums">3 bab interaktif</span>
+              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+              </svg>
+            </div>
+          </summary>
+
+          <section id="notaCatalogSection" class="portal-dropdown-body" aria-labelledby="notaCatalogHeading">
+            <div class="nota-highlight-strip">
+              <p class="nota-highlight-text"><strong>Nota Interaktif Playable KSSM:</strong> Lengkap penerangan suara Cikgu AI, peta &amp; foto arkib beresolusi tinggi, simulasi sains, serta cabaran mini pantas. Bab tambahan akan dimasukkan secara berperingkat.</p>
+              <span id="notaCatalogCountLabel" class="tabular-nums" style="font-size:0.84rem;font-weight:700;color:var(--brand-primary)" aria-live="polite">3 bab nota interaktif</span>
+            </div>
+
+            <div class="catalog-toolbar">
+              <div class="search-and-status-row">
+                <div class="search-box">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3.5-3.5"/>
+                  </svg>
+                  <label for="notaSearchInput" class="sr-only">Cari tajuk bab nota interaktif atau subjek</label>
+                  <input type="search" id="notaSearchInput" class="search-input" placeholder="Cari subjek atau tajuk bab (cth: Pengukuran, Nasionalisme, Sejarah)...">
+                </div>
+              </div>
+              <div id="notaSubjectChipsRow" class="subject-chips-row" role="group" aria-label="Tapis Subjek Nota Interaktif"></div>
+            </div>
+
+            <div id="notaCatalogCardsGrid" class="catalog-grid"></div>
+          </section>
+        </details>
+
         <!-- DROPDOWN 3: KEMAJUAN PEMBELAJARAN SAYA (PROGRESS BENTO GRID) -->
         <details id="moduleDropdownProgress" class="portal-module-dropdown" data-module-id="progress">
           <summary class="portal-dropdown-summary">
@@ -2045,34 +2090,7 @@
           </section>
         </details>
 
-        <!-- SLOT MODUL MASA DEPAN: NOTA INTERAKTIF & FLASHCARD -->
-        <details id="moduleDropdownNota" class="portal-module-dropdown" data-module-id="nota_interaktif" hidden>
-          <summary class="portal-dropdown-summary">
-            <div class="portal-dropdown-title-wrap">
-              <span class="portal-dropdown-icon" aria-hidden="true">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10a2 2 0 012 2v14l-5-3-5 3-5-3V6a2 2 0 012-2z"/>
-                </svg>
-              </span>
-              <div>
-                <h2 class="portal-dropdown-title">Nota Interaktif Visual</h2>
-                <p class="portal-dropdown-desc">Peta minda, formula pantas, dan nota padat mengikut bab KSSM &amp; KSSR.</p>
-              </div>
-            </div>
-            <div class="portal-dropdown-right">
-              <span class="dropdown-meta-pill">2 Token / Bab • Akan Datang</span>
-              <svg class="icon portal-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
-              </svg>
-            </div>
-          </summary>
-          <div class="portal-dropdown-body">
-            <div class="future-module-placeholder">
-              <p>Setiap bab Nota Interaktif Visual boleh dibuka kekal selamanya menggunakan <strong>2 Token</strong> sahaja. Modul ini sedang dibangunkan dalam fasa seterusnya untuk pelajar SPM, Menengah Rendah, dan Sekolah Rendah.</p>
-            </div>
-          </div>
-        </details>
-
+        <!-- SLOT MODUL MASA DEPAN: FLASHCARD -->
         <details id="moduleDropdownFlashcard" class="portal-module-dropdown" data-module-id="flashcard" hidden>
           <summary class="portal-dropdown-summary">
             <div class="portal-dropdown-title-wrap">
@@ -2275,10 +2293,16 @@
       <div id="phoneTabKertas" class="phone-tab-panel" data-phone-panel="kertas" hidden>
         <div class="phone-seg-wrap" role="group" aria-label="Kategori Kertas Soalan">
           <button type="button" id="phoneSegHarianBtn" class="phone-seg-btn" data-phone-cat="harian" aria-pressed="true">
-            Pra-SPM Negeri <span id="phoneSegHarianCount" class="tabular-nums">(0T)</span>
+            <span>Pra-SPM</span>
+            <span id="phoneSegHarianCount" class="phone-seg-sub tabular-nums">0 set • 0T</span>
           </button>
           <button type="button" id="phoneSegKlonBtn" class="phone-seg-btn" data-phone-cat="klon" aria-pressed="false">
-            Set Klon SPM <span id="phoneSegKlonCount" class="tabular-nums">(2T)</span>
+            <span>Klon SPM</span>
+            <span id="phoneSegKlonCount" class="phone-seg-sub tabular-nums">0 set • 2T</span>
+          </button>
+          <button type="button" id="phoneSegNotaBtn" class="phone-seg-btn" data-phone-cat="nota" aria-pressed="false">
+            <span>Nota 3D</span>
+            <span id="phoneSegNotaCount" class="phone-seg-sub tabular-nums">3 bab • 2T</span>
           </button>
         </div>
 
@@ -3139,6 +3163,22 @@
             <table class="lb-table">
               <thead><tr><th scope="col">Masa &amp; Rujukan</th><th scope="col">Pembeli</th><th scope="col">Pek &amp; Jumlah</th><th scope="col">Kod Bil / Invois</th><th scope="col">Status</th></tr></thead>
               <tbody id="adminPaymentsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 4C. Audit Kualiti Semakan AI & Jawapan Pelajar Terkini -->
+        <section class="leaderboard-card" aria-labelledby="adminAiAuditHeading">
+          <div class="section-header">
+            <div>
+              <h2 id="adminAiAuditHeading" class="section-title">Audit Semakan AI &amp; Jawapan Pelajar Terkini</h2>
+              <p id="admAiQualitySummary" class="section-subtitle">Memantau kualiti markah, ulasan Cikgu AI, kepantasan respons &amp; status failover secara langsung.</p>
+            </div>
+          </div>
+          <div tabindex="0" role="region" aria-labelledby="adminAiAuditHeading" class="table-wrapper">
+            <table class="lb-table">
+              <thead><tr><th scope="col">Masa &amp; Pelajar</th><th scope="col">Subjek &amp; Mod</th><th scope="col">Enjin &amp; Masa</th><th scope="col">Markah AI</th><th scope="col">Jawapan &amp; Ulasan Cikgu AI</th></tr></thead>
+              <tbody id="adminAiAuditTableBody"></tbody>
             </table>
           </div>
         </section>

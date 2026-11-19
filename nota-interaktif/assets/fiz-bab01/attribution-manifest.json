@@ -1,0 +1,54 @@
+{
+  "kilogram_si": {
+    "file": "kilogram_si.jpg",
+    "title": "File:Prototype kilogram replica.JPG",
+    "label": "Replika Prototaip Kilogram Piawaian S.I.",
+    "era": "Unit Asas Jisim (kg)",
+    "license": "CC BY-SA 3.0",
+    "artist": "Japs 88",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0) • Japs 88",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prototype_kilogram_replica.JPG",
+    "bytes": 13156,
+    "width": 360,
+    "height": 270
+  },
+  "pressure_gauge": {
+    "file": "pressure_gauge.jpg",
+    "title": "File:Universal bicycle manometer.jpg",
+    "label": "Tolok Tekanan Dwi-Skala (Metrik bar & Imperial psi)",
+    "era": "Perbandingan Unit Metrik vs Imperial",
+    "license": "CC BY-SA 4.0",
+    "artist": "Cjp24",
+    "credit": "Wikimedia Commons (CC BY-SA 4.0) • Cjp24",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Universal_bicycle_manometer.jpg",
+    "bytes": 13447,
+    "width": 360,
+    "height": 177
+  },
+  "galileo_portrait": {
+    "file": "galileo_portrait.jpg",
+    "title": "File:Justus Sustermans - Portrait of Galileo Galilei, 1636.jpg",
+    "label": "Galileo Galilei (Pelukis: Justus Sustermans)",
+    "era": "1636 • Kajian Tempoh Bandul",
+    "license": "Public domain",
+    "artist": "Justus Sustermans",
+    "credit": "Wikimedia Commons (Public domain) • Justus Sustermans",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Justus_Sustermans_-_Portrait_of_Galileo_Galilei,_1636.jpg",
+    "bytes": 16389,
+    "width": 283,
+    "height": 360
+  },
+  "pendulum_retort_scene": {
+    "file": "pendulum_retort_scene.jpg",
+    "title": "Susunan Radas Eksperimen 1.1 Bandul Ringkas (Kaki Retort & Pengapit-G)",
+    "label": "Susunan Radas Eksperimen 1.1 Bandul Ringkas (Kaki Retort & Pengapit-G)",
+    "era": "Eksperimen Wajib KSSM Fizik T4 Bab 1",
+    "license": "Original Illustration (eTutor.my Clean-Room)",
+    "artist": "eTutor.my Studio",
+    "credit": "Ilustrasi Sains Asli eTutor.my (Clean-Room Akta 332)",
+    "sourceUrl": "",
+    "bytes": 15165,
+    "width": 314,
+    "height": 420
+  }
+}

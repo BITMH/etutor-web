@@ -4341,6 +4341,296 @@ dialog.slip-dialog::backdrop {
   }
 }
 
+/* === features/landing/landing-nota-announcement.css === */
+/* ==========================================================================
+   FLOATING ANNOUNCEMENT: NOTA INTERAKTIF TELAH TIBA DI ETUTOR.MY
+   ========================================================================== */
+
+.lp-nota-float {
+  position: fixed;
+  inset-block-end: 20px;
+  inset-inline: 0;
+  margin-inline: auto;
+  inline-size: fit-content;
+  max-inline-size: min(650px, calc(100vw - 380px));
+  z-index: 80;
+  background: rgb(15 23 42 / 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #f8fafc;
+  border: 1px solid rgb(148 163 184 / 0.28);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 44px -10px rgb(15 23 42 / 0.45),
+    0 0 0 1px rgb(255 255 255 / 0.06) inset;
+  overflow: hidden;
+  transition: opacity 0.24s ease, transform 0.24s ease, display 0.24s ease;
+  transition-behavior: allow-discrete;
+}
+
+@starting-style {
+  .lp-nota-float {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+.lp-nota-float.is-dismissing {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+.lp-nota-float[hidden] {
+  display: none;
+}
+
+.lp-nota-float-rail {
+  block-size: 3px;
+  background: linear-gradient(
+    90deg,
+    #6366f1 0%,
+    #0ea5e9 26%,
+    #10b981 52%,
+    #f59e0b 78%,
+    #ec4899 100%
+  );
+}
+
+.lp-nota-float-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.lp-nota-float-icon {
+  inline-size: 38px;
+  block-size: 38px;
+  border-radius: 11px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgb(14 165 233 / 0.24), rgb(16 185 129 / 0.24));
+  border: 1px solid rgb(56 189 248 / 0.35);
+  color: #67e8f9;
+  display: grid;
+  place-items: center;
+}
+
+.lp-nota-float-icon svg {
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.lp-nota-float-copy {
+  min-inline-size: 0;
+  flex: 1 1 auto;
+}
+
+.lp-nota-float-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lp-nota-float-badge {
+  background: rgb(16 185 129 / 0.18);
+  border: 1px solid rgb(52 211 153 / 0.45);
+  color: #6ee7b7;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.2;
+}
+
+.lp-nota-float-dot {
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: lp-live-pulse 2s infinite;
+}
+
+.lp-nota-float-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #93c5fd;
+}
+
+.lp-nota-float-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.24;
+  margin: 2px 0 0;
+}
+
+.lp-nota-float-sub {
+  font-size: 0.76rem;
+  color: #cbd5e1;
+  line-height: 1.3;
+  margin: 2px 0 0;
+}
+
+.lp-nota-float-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lp-nota-float-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-block-size: 38px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px -4px rgb(16 185 129 / 0.48);
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+.lp-nota-float-cta svg {
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.lp-nota-float-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.lp-nota-float-cta:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.lp-nota-float-close {
+  inline-size: 34px;
+  block-size: 34px;
+  border-radius: 999px;
+  border: 1px solid rgb(148 163 184 / 0.24);
+  background: rgb(255 255 255 / 0.06);
+  color: #cbd5e1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.lp-nota-float-close svg {
+  inline-size: 16px;
+  block-size: 16px;
+}
+
+.lp-nota-float-close:hover {
+  background: rgb(255 255 255 / 0.14);
+  color: #ffffff;
+}
+
+.lp-nota-float-close:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1039px) {
+  .lp-nota-float {
+    inset-block-end: calc(76px + env(safe-area-inset-bottom, 0px));
+    inline-size: calc(100% - 20px);
+    max-inline-size: 540px;
+  }
+}
+
+@media (max-width: 560px) {
+  .lp-nota-float {
+    border-radius: 15px;
+  }
+
+  .lp-nota-float-icon,
+  .lp-nota-float-sub {
+    display: none;
+  }
+
+  .lp-nota-float-inner {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .lp-nota-float-meta {
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .lp-nota-float-badge {
+    padding: 1px 6px;
+    font-size: 0.62rem;
+    gap: 4px;
+  }
+
+  .lp-nota-float-count {
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+
+  .lp-nota-float-title {
+    font-size: 0.78rem;
+    line-height: 1.2;
+    margin-block-start: 3px;
+  }
+
+  .lp-nota-float-actions {
+    gap: 6px;
+  }
+
+  .lp-nota-float-cta {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+    min-block-size: 34px;
+    gap: 4px;
+  }
+
+  .lp-nota-float-cta svg {
+    inline-size: 13px;
+    block-size: 13px;
+  }
+
+  .lp-nota-float-close {
+    inline-size: 30px;
+    block-size: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .lp-nota-float-inner {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-nota-float,
+  .lp-nota-float-cta,
+  .lp-nota-float-close {
+    transition: none;
+  }
+
+  .lp-nota-float-dot {
+    animation: none;
+  }
+}
+
 /* === features/landing/token-rules.css === */
 /* Peraturan Rasmi Token, Kadar Penggunaan, Aturcara 4 Langkah & Jadual Baucar Admin */
 .lp-token-rules-grid {

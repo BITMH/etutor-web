@@ -256,6 +256,7 @@
     supabaseAuthenticated: false,
     pendingKlonScroll: false,
     pendingCountdownScroll: false,
+    pendingNotaScroll: false,
     klonVisibleLimit: 12,
     harianVisibleLimit: 12,
     activeStage: "spm",
@@ -3451,6 +3452,108 @@
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab02-v2.html"
     },
     {
+      "id": "sejarah-t4-bab03",
+      "subject": "Sejarah",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 3,
+      "title": "Konflik Dunia & Pendudukan Jepun di Negara Kita",
+      "subtitle": "Nasionalisme awal, PD1 (1914–1918), PD2 Eropah & Asia Pasifik, serangan & dasar Jepun, Force 136, KMM/KRIS serta Bintang Tiga & Dato' Onn.",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 26,
+      "unitCount": 6,
+      "stepCount": 43,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sej3-u3.jpg",
+      "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab03.html"
+    },
+    {
+      "id": "bahasa-melayu-t4-tatabahasa",
+      "subject": "Bahasa Melayu",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Sistem Bahasa KSSM: Morfologi & Sintaksis (SP 5.1–5.3)",
+      "subtitle": "Kata tunggal, majmuk, terbitan, ganda & akronim, golongan kata, frasa, 4 pola ayat dasar, ayat songsang, majmuk serta ragam ayat SPM.",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 22,
+      "unitCount": 5,
+      "stepCount": 33,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/bm-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/bahasa-melayu-t4-tatabahasa.html"
+    },
+    {
+      "id": "bahasa-inggeris-t4-mod01",
+      "subject": "Bahasa Inggeris",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Module 1: Let's Chat (1119 CEFR Grammar & Communication)",
+      "subtitle": "Present Simple vs Continuous, Stative Verbs, Comparisons, Past Simple, Used to vs Be/Get Used to, Suffix Nouns (-ion/-ation/-ment) & Informal Email Writing.",
+      "editionBadge": "Interactive Multimedia & AI Coach",
+      "estimatedMinutes": 22,
+      "unitCount": 5,
+      "stepCount": 33,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/bi-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/bahasa-inggeris-t4-mod01.html"
+    },
+    {
+      "id": "matematik-t4-bab01",
+      "subject": "Matematik",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Fungsi & Persamaan Kuadratik dalam Satu Pemboleh Ubah",
+      "subtitle": "Bentuk am ax^2 + bx + c, kesan pekali parabola, paksi simetri, pemfaktoran, punca graf dan penyelesaian masalah KBAT SPM.",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 22,
+      "unitCount": 5,
+      "stepCount": 31,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/mat-u2.jpg",
+      "htmlPath": "./nota-interaktif/dist/matematik-t4-bab01.html"
+    },
+    {
+      "id": "sains-t4-bab01",
+      "subject": "Sains",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 1,
+      "title": "Langkah Keselamatan di dalam Makmal",
+      "subtitle": "Peralatan perlindungan diri (PPE), pengurusan sisa singki & biologi Kategori A-D, SOP tumpahan kimia/merkuri, dan jenis pemadam kebakaran.",
+      "editionBadge": "Edisi Multimedia & Suara AI",
+      "estimatedMinutes": 20,
+      "unitCount": 5,
+      "stepCount": 32,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sai-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sains-t4-bab01.html"
+    },
+    {
+      "id": "sains-t4-bab02",
+      "subject": "Sains",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 2,
+      "title": "Bantuan Kecemasan (CPR & Heimlich Manoeuvre)",
+      "subtitle": "Subtopik 2.1 & 2.2 KSSM — Talian 999, Kaedah & Kepentingan CPR (30:2), Heimlich Manoeuvre & Penyelamatan Diri Sendiri.",
+      "editionBadge": "Edisi Interaktif Webflow Bento 3D",
+      "estimatedMinutes": 22,
+      "unitCount": 5,
+      "stepCount": 25,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sai2-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sains-t4-bab02.html"
+    },
+    {
       "id": "fizik-t4-bab01",
       "subject": "Fizik",
       "subjectGroup": "sains",
@@ -3542,7 +3645,7 @@
     return [
       '<article class="quiz-card nota-chapter-card">',
       '  <div class="nota-card-head">',
-      '    <img class="nota-cover-medallion" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="64" height="64" loading="lazy" decoding="async">',
+      '    <img class="nota-cover-medallion" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="64" height="64">',
       '    <div class="nota-card-head-body">',
       '      <div class="quiz-card-badges">',
       '        <span class="badge-klon">' + ICONS.sparkles + " Ting. " + escapeHtml(item.form) + " • Bab " + escapeHtml(item.chapterNumber) + "</span>",
@@ -3642,12 +3745,12 @@
       const costCls = unlocked ? "phone-badge-cost" : "phone-badge-cost is-klon";
       const progText = (rec.completedUnits || 0) > 0 || (rec.xp || 0) > 0
         ? ("Penguasaan: " + (rec.masteryPct || 0) + "% • " + (rec.xp || 0) + " XP")
-        : (item.unitCount + " Unit • " + item.stepCount + " Langkah • Suara AI");
+        : (item.unitCount + " Unit • " + item.stepCount + " Langkah" + (item.hasVoice ? " • Suara AI" : ""));
 
       return [
         '<button type="button" class="phone-paper-card" data-phone-note-id="' + escapeHtml(item.id) + '">',
         '  <div class="phone-nota-card-left">',
-        '    <img class="phone-nota-thumb" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="50" height="50" loading="lazy" decoding="async">',
+        '    <img class="phone-nota-thumb" src="' + escapeHtml(item.coverIconPath) + '" alt="" width="50" height="50">',
         "    <div>",
         '      <div class="phone-paper-badges">',
         '        <span class="phone-badge-code tabular-nums">' + escapeHtml(item.subject + " T" + item.form + " • Bab " + item.chapterNumber) + "</span>",
@@ -4257,6 +4360,7 @@
     const titleEl = document.getElementById("examStageTitle");
     const slipBtn = document.getElementById("openSlipBtn");
     const syncEl = document.getElementById("examSyncStatus");
+    const closeBtn = document.getElementById("closeExamStageBtn");
 
     const meta = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
     if (meta) {
@@ -4266,6 +4370,7 @@
     }
     if (titleEl) titleEl.textContent = meta ? meta.cleanTitle : "Memuatkan Set Soalan...";
     if (slipBtn) slipBtn.hidden = true;
+    if (closeBtn) closeBtn.hidden = false;
     if (syncEl) syncEl.textContent = "Memuatkan soalan...";
 
     portalState.activeQuizFileId = fileId;
@@ -4423,6 +4528,7 @@
   async function closeQuizStage(opts) {
     const stage = document.getElementById("examStage");
     const iframe = document.getElementById("examIframe");
+    const closeBtn = document.getElementById("closeExamStageBtn");
     const wasNota = Boolean(portalState.activeNotaId);
     await flushPendingProgressNow();
     flushCloudProgressSync();
@@ -4432,6 +4538,7 @@
       iframe.removeAttribute("src");
       iframe.srcdoc = "";
     }
+    if (closeBtn) closeBtn.hidden = false;
     if (stage) stage.hidden = true;
     document.documentElement.setAttribute("data-exam-active", "false");
     document.documentElement.setAttribute("data-virtual-keyboard", "closed");
@@ -4706,6 +4813,7 @@
     const titleEl = document.getElementById("examStageTitle");
     const slipBtn = document.getElementById("openSlipBtn");
     const syncEl = document.getElementById("examSyncStatus");
+    const closeBtn = document.getElementById("closeExamStageBtn");
     if (!stage || !iframe) return;
 
     portalState.activeQuizFileId = null;
@@ -4714,6 +4822,7 @@
 
     if (titleEl) titleEl.textContent = label;
     if (slipBtn) slipBtn.hidden = true;
+    if (closeBtn) closeBtn.hidden = true;
     if (syncEl) syncEl.textContent = "Memuatkan nota interaktif...";
 
     stage.hidden = false;
@@ -4955,7 +5064,7 @@
 
   function isHashPortal() {
     const h = window.location.hash.toLowerCase();
-    return h === "#portal" || h === "#klon-portal";
+    return h === "#portal" || h === "#klon-portal" || h === "#nota-portal";
   }
 
   async function syncRouteMode() {
@@ -5001,16 +5110,27 @@
     }
 
     adminView.hidden = true;
+    const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(portalState.pendingKlonScroll);
+    const wantsCountdownScroll = Boolean(portalState.pendingCountdownScroll);
+    const wantsNotaScroll = window.location.hash.toLowerCase() === "#nota-portal" || Boolean(portalState.pendingNotaScroll);
+
     if (portalState.sessionToken && portalState.user) {
       if (landingElExists(landingView)) landingView.hidden = true;
       loginView.hidden = true;
       dashboardView.hidden = false;
+      if (wantsNotaScroll) {
+        portalState.pendingNotaScroll = false;
+        if (window.location.hash.toLowerCase() === "#nota-portal") {
+          history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
+        }
+        openPortalModuleDropdown("nota_interaktif");
+        const notaEl = document.getElementById("moduleDropdownNota");
+        if (notaEl) setTimeout(function () { notaEl.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      }
       return;
     }
 
     const authed = isPortalUserAuthenticated();
-    const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(portalState.pendingKlonScroll);
-    const wantsCountdownScroll = Boolean(portalState.pendingCountdownScroll);
 
     if (isPhoneAppLaunchEnv()) {
       if (isHashLogin()) {
@@ -5027,6 +5147,7 @@
         }
         portalState.pendingKlonScroll = false;
         portalState.pendingCountdownScroll = false;
+        portalState.pendingNotaScroll = false;
         await enterOpenPortal(false);
         return;
       }
@@ -5044,11 +5165,12 @@
       portalState.openPortalActive
     );
     if (wantsOpenPortal) {
-      if (isHashLogin() || window.location.hash.toLowerCase() === "#klon-portal") {
+      if (isHashLogin() || window.location.hash.toLowerCase() === "#klon-portal" || window.location.hash.toLowerCase() === "#nota-portal") {
         history.replaceState(null, "", window.location.pathname + window.location.search + "#portal");
       }
       portalState.pendingKlonScroll = false;
       portalState.pendingCountdownScroll = false;
+      portalState.pendingNotaScroll = false;
       await enterOpenPortal(false);
       if (wantsKlonScroll) {
         openPortalModuleDropdown("klon_spm");
@@ -5058,12 +5180,17 @@
         openPortalModuleDropdown("countdown_spm");
         const cdEl = document.getElementById("moduleDropdownCountdown");
         if (cdEl) setTimeout(function () { cdEl.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+      } else if (wantsNotaScroll) {
+        openPortalModuleDropdown("nota_interaktif");
+        const notaEl = document.getElementById("moduleDropdownNota");
+        if (notaEl) setTimeout(function () { notaEl.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
       }
       return;
     }
 
     if (!isOpenAccessMode() && (isHashPortal() || hasDeepLinkPortalParams())) {
       if (window.location.hash.toLowerCase() === "#klon-portal") portalState.pendingKlonScroll = true;
+      if (window.location.hash.toLowerCase() === "#nota-portal") portalState.pendingNotaScroll = true;
       history.replaceState(null, "", window.location.pathname + window.location.search + "#login");
     }
 
@@ -5767,6 +5894,91 @@
       : 1;
     setLiveOnlineText(fallbackSessions);
     subscribeLivePresence(supabase, fallbackSessions);
+  }
+
+  // --- [features/landing/landingNotaAnnouncement.js] ---
+  /**
+   * src/features/landing/landingNotaAnnouncement.js
+   * Pengawal pengumuman terapung Nota Interaktif pada halaman pendaratan (#landingView).
+   */
+
+
+
+
+  const LP_NOTA_FLOAT_DISMISSED_KEY = "etutor_lp_nota_float_dismissed_v1";
+
+  function moveFocusSafelyOutOfAnnouncement(bar) {
+    if (!bar.contains(document.activeElement)) return;
+    const fallbackFocus =
+      document.querySelector("#landingView .btn-hero-cta:not([hidden])") ||
+      document.getElementById("lpHeroHeading");
+    if (!fallbackFocus) return;
+    if (!fallbackFocus.hasAttribute("tabindex") && fallbackFocus.tagName !== "A" && fallbackFocus.tagName !== "BUTTON") {
+      fallbackFocus.setAttribute("tabindex", "-1");
+    }
+    fallbackFocus.focus({ preventScroll: true });
+  }
+
+  function initLandingNotaAnnouncement() {
+    const bar = document.getElementById("lpNotaAnnouncement");
+    if (!bar) return;
+
+    try {
+      if (sessionStorage.getItem(LP_NOTA_FLOAT_DISMISSED_KEY) === "1") {
+        bar.hidden = true;
+        return;
+      }
+    } catch (e) {}
+
+    const countEl = document.getElementById("lpNotaFloatCount");
+    if (countEl) {
+      const count = getNotaCatalogList().length;
+      if (count > 0) {
+        countEl.textContent = count + " Bab KSSM";
+      }
+    }
+
+    const closeBtn = document.getElementById("lpNotaFloatClose");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        try {
+          sessionStorage.setItem(LP_NOTA_FLOAT_DISMISSED_KEY, "1");
+        } catch (e) {}
+
+        moveFocusSafelyOutOfAnnouncement(bar);
+
+        const reduceMotion =
+          typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (reduceMotion) {
+          bar.hidden = true;
+          return;
+        }
+
+        bar.classList.add("is-dismissing");
+        window.setTimeout(function () {
+          bar.hidden = true;
+          bar.classList.remove("is-dismissing");
+        }, 240);
+      });
+    }
+
+    const ctaLink = document.getElementById("lpNotaFloatCta");
+    if (ctaLink) {
+      ctaLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        portalState.pendingNotaScroll = true;
+        if (!isOpenAccessMode() && !isPortalUserAuthenticated()) {
+          window.location.hash = "#login";
+          syncRouteMode();
+          window.scrollTo(0, 0);
+          return;
+        }
+        window.location.hash = "#nota-portal";
+        syncRouteMode();
+      });
+    }
   }
 
   // --- [features/spm-countdown/spmTimeEngine.js] ---
@@ -10119,6 +10331,7 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     initTokenReferralCapture();
     syncOpenAccessDom();
@@ -10130,6 +10343,7 @@
     bindIssueReportingEvents();
     initLiveCatalogAutoSync();
     initFooterLiveStats();
+    initLandingNotaAnnouncement();
     initSpmCountdown();
     initPwaInstallFlow();
     initMobileAppExperience();

@@ -1,0 +1,16 @@
+{
+  "rotary_telephone_retro": {
+    "file": "rotary_telephone_retro.jpg",
+    "label": "Vintage Rotary Telephone — Communication Before Smartphones",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vintage_Rotary_Dial_Phone.jpg",
+    "credit": "Wikimedia Commons (CC BY-SA 4.0) • Janak Bhatta",
+    "sizeBytes": 44463
+  },
+  "video_call_laptop": {
+    "file": "video_call_laptop.jpg",
+    "label": "Digital Communication — Video Calls & Instant Messaging",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laptop_Acrobat_Model_NBD_486C,_Type_DXh2-4496.jpg",
+    "credit": "Wikimedia Commons (CC BY-SA 4.0) • Raimond Spekking",
+    "sizeBytes": 15064
+  }
+}

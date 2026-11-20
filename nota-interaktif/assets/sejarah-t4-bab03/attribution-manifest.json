@@ -1,0 +1,37 @@
+{
+  "tok_janggut": {
+    "file": "tok_janggut.jpg",
+    "label": "Kebangkitan Tok Janggut di Pasir Puteh, Kelantan (1915)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tok_Janggut_digantung.jpg",
+    "credit": "Wikimedia Commons (Public domain) • Bodleian Library , Oxford University",
+    "sizeBytes": 38937
+  },
+  "kaiser_wilhelm_ii": {
+    "file": "kaiser_wilhelm_ii.jpg",
+    "label": "Kaiser Wilhelm II (Maharaja Jerman Turun Takhta 1918)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-2004-0096,_Kaiser_Wilhelm_II..jpg",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0 de) • E. Bieber",
+    "sizeBytes": 51082
+  },
+  "poland_invasion_1939": {
+    "file": "poland_invasion_1939.jpg",
+    "label": "Serangan Kilat Jerman ke atas Poland (Sept 1939)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rozporz%C4%85dzenie_Johannesa_Blaskowitza_1939.jpg",
+    "credit": "Wikimedia Commons (Public domain) • Johannes Blaskowitz",
+    "sizeBytes": 85131
+  },
+  "hms_prince_of_wales": {
+    "file": "hms_prince_of_wales.jpg",
+    "label": "Kapal Perang British HMS Prince of Wales di Kuantan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMS_Prince_Of_Wales_in_Singapore.jpg",
+    "credit": "Wikimedia Commons (Public domain) • Abrahams, H J (Lt), Royal Navy official photographer. Post-W",
+    "sizeBytes": 36505
+  },
+  "burma_siam_railway": {
+    "file": "burma_siam_railway.jpg",
+    "label": "Pembinaan Landasan Kereta Api Maut (Burma–Siam)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khwae_Yai_River,_Burma_Railway_Tour_(6969156438).jpg",
+    "credit": "Wikimedia Commons (CC BY 2.0) • David McKelvey from Brisbane, Australia",
+    "sizeBytes": 51879
+  }
+}

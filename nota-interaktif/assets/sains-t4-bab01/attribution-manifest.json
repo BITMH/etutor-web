@@ -1,0 +1,37 @@
+{
+  "safety_goggles_lab": {
+    "file": "safety_goggles_lab.jpg",
+    "label": "Gogal Keselamatan & Peralatan Perlindungan Diri (PPE)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modified_separation_flask.jpg",
+    "credit": "Wikimedia Commons (Public domain) • CDC/ Dorothy Roland",
+    "sizeBytes": 61436
+  },
+  "eyewash_shower_station": {
+    "file": "eyewash_shower_station.jpg",
+    "label": "Stesen Pencuci Mata & Penyiram Kecemasan Makmal",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Notfalldusche_Raffinerie_02.jpg",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0) • GeorgHH",
+    "sizeBytes": 101302
+  },
+  "biohazard_waste_bin": {
+    "file": "biohazard_waste_bin.jpg",
+    "label": "Tong Sisa Biobahaya & Bekas Tajam (Kategori A)",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:800px-Caernarfon_womens_toilets.jpg",
+    "credit": "Wikimedia Commons (CC BY-SA 3.0) • FrancisTyers~commonswiki",
+    "sizeBytes": 38411
+  },
+  "mercury_spill_hazard": {
+    "file": "mercury_spill_hazard.jpg",
+    "label": "Bahaya Merkuri Termometer Pecah & Serbuk Sulfur",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mercury-element.jpg",
+    "credit": "Wikimedia Commons (Public domain) • Wikimedia Commons",
+    "sizeBytes": 10310
+  },
+  "fire_blanket_safety": {
+    "file": "fire_blanket_safety.jpg",
+    "label": "Selimut Kebakaran (Fire Blanket) Memutuskan Oksigen",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fire-blanket-on-display.jpg",
+    "credit": "Wikimedia Commons (Public domain) • JonathanLamb",
+    "sizeBytes": 43979
+  }
+}

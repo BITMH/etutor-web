@@ -842,6 +842,19 @@
     return data || { ok: false };
   }
 
+  async function sbSetPinScoreLeaderboardVisibility(sessionToken, deviceId, fileId, showOnLeaderboard) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false };
+    const { data, error } = await sb.rpc("set_pin_score_leaderboard_visibility", {
+      p_session_token: String(sessionToken || ""),
+      p_device_id: String(deviceId || portalState.deviceId || "web"),
+      p_file_id: String(fileId || ""),
+      p_show: Boolean(showOnLeaderboard)
+    });
+    if (error) return { ok: false, error: error.message };
+    return data || { ok: false };
+  }
+
   async function sbGetPortalSettings() {
     const sb = getSupabaseClient();
     if (!sb || !isSupabaseConfigured()) return null;
@@ -1188,6 +1201,19 @@
         return buildPinDashboardBundle(saved, rawCat, lbRes && lbRes.ok ? lbRes.leaderboard : null);
       }
 
+      if (action === "setScoreLeaderboardVisibility" && isSbPinSession) {
+        const saved = await sbSetPinScoreLeaderboardVisibility(
+          portalState.sessionToken,
+          portalState.deviceId,
+          reqBody.fileId,
+          Boolean(reqBody.showOnLeaderboard)
+        );
+        if (!saved || !saved.ok) return saved;
+        const rawCat = await fetchRawCatalogForSupabase(false);
+        const lbRes = await sbFetchLeaderboard(portalState.lbPeriod, portalState.lbSubject, saved.userKey, saved.user.buyerName);
+        return buildPinDashboardBundle(saved, rawCat, lbRes && lbRes.ok ? lbRes.leaderboard : null);
+      }
+
       if (action === "publicDashboard") {
         const gasPub = await sendToGasOrPreview(reqBody, options);
         if (gasPub && gasPub.ok) {
@@ -1477,6 +1503,7 @@
     const myLbBest = {};
     scores.forEach(function (s) {
       if (!s || !s.fileId) return;
+      if (s.showOnLeaderboard !== true) return;
       if (isWeekly && s.completedMs && (Date.now() - Number(s.completedMs)) > sevenDaysMs) return;
       const sSub = String(s.subject || "").trim().toLowerCase();
       if (subFilterNorm && subFilterNorm !== "all" && sSub !== subFilterNorm) return;
@@ -4353,6 +4380,78 @@
     }, 500);
   }
 
+  // --- [features/quiz-engine/leaderboardOptInModal.js] ---
+  /**
+   * src/features/quiz-engine/leaderboardOptInModal.js
+   * Pengawal dialog pilihan pelajar sama ada ingin memaparkan markah ke Leaderboard atau mengekalkannya secara peribadi.
+   */
+
+  let activeHandlers = null;
+  let dialogBound = false;
+
+  function bindLeaderboardOptInDialog(dlg) {
+    if (!dlg || dialogBound) return;
+    dialogBound = true;
+    bindLightDismissFallback(dlg);
+
+    const hideBtn = document.getElementById("lbOptInHideBtn");
+    const showBtn = document.getElementById("lbOptInShowBtn");
+
+    if (hideBtn) {
+      hideBtn.addEventListener("click", function () {
+        const h = activeHandlers;
+        activeHandlers = null;
+        closeTopLayer(dlg);
+        if (h && typeof h.onKeepPrivate === "function") h.onKeepPrivate();
+      });
+    }
+
+    if (showBtn) {
+      showBtn.addEventListener("click", function () {
+        const h = activeHandlers;
+        activeHandlers = null;
+        closeTopLayer(dlg);
+        if (h && typeof h.onPublishToLeaderboard === "function") h.onPublishToLeaderboard();
+      });
+    }
+
+    dlg.addEventListener("cancel", function (ev) {
+      ev.preventDefault();
+      const h = activeHandlers;
+      activeHandlers = null;
+      closeTopLayer(dlg);
+      if (h && typeof h.onKeepPrivate === "function") h.onKeepPrivate();
+    });
+
+    dlg.addEventListener("close", function () {
+      const h = activeHandlers;
+      activeHandlers = null;
+      if (h && typeof h.onKeepPrivate === "function") h.onKeepPrivate();
+    });
+  }
+
+  function openLeaderboardOptInModal(scoreRecord, handlers) {
+    const dlg = document.getElementById("leaderboardOptInDialog");
+    if (!dlg) return;
+    bindLeaderboardOptInDialog(dlg);
+
+    const summaryEl = document.getElementById("lbOptInScoreSummary");
+    if (summaryEl && scoreRecord) {
+      const sc = String(scoreRecord.scoreText || (String(scoreRecord.percentage || 0) + "%"));
+      const gr = String(scoreRecord.grade || "—");
+      summaryEl.textContent = "Keputusan anda: " + sc + " (Gred " + gr + ")";
+    }
+
+    activeHandlers = handlers || null;
+    if (!dlg.open) {
+      if (typeof dlg.showModal === "function") {
+        dlg.showModal();
+      } else {
+        dlg.setAttribute("open", "");
+      }
+    }
+  }
+
   // --- [features/quiz-engine/quizMobileFitInjector.js] ---
   /**
    * src/features/quiz-engine/quizMobileFitInjector.js
@@ -4680,6 +4779,7 @@
 
 
 
+
   function handleQuizMessage(event) {
     const iframe = document.getElementById("examIframe");
     if (!iframe || !iframe.contentWindow || !event || event.source !== iframe.contentWindow) return;
@@ -4814,46 +4914,102 @@
       if (syncEl) syncEl.textContent = "Keputusan direkodkan: " + pctSafe + "% (" + gradeSafe + ")";
 
       if (isOpenGuest) {
+        const targetFileId = portalState.activeQuizFileId;
+        const completedMsNow = Date.now();
         const progMap = loadOpenProgressMap();
-        delete progMap[portalState.activeQuizFileId];
+        delete progMap[targetFileId];
         saveOpenProgressMap(progMap);
 
         const scores = loadOpenScoresList();
         scores.push({
           completedAt: new Date().toLocaleString("ms-MY"),
-          completedMs: Date.now(),
+          completedMs: completedMsNow,
           dateOnly: formatLocalDateOnly(new Date()),
-          fileId: portalState.activeQuizFileId,
+          fileId: targetFileId,
           quizTitle: safeTitle,
           subject: safeSubject,
           scoreText: portalState.latestSlipData.scoreText,
           percentage: pctSafe,
           grade: gradeSafe,
+          showOnLeaderboard: false,
           weakTopics: safeWeakTopics
         });
         saveOpenScoresList(scores);
-        cloudSyncAfterSubmit(portalState.activeQuizFileId);
+        cloudSyncAfterSubmit(targetFileId);
 
-        showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan.");
+        showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") direkodkan secara peribadi.");
         applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+
+        openLeaderboardOptInModal(portalState.latestSlipData, {
+          onKeepPrivate: function () {
+            showToast("Markah disimpan secara peribadi (disorokkan daripada Leaderboard).");
+          },
+          onPublishToLeaderboard: function () {
+            const list = loadOpenScoresList();
+            let updated = false;
+            for (let i = list.length - 1; i >= 0; i--) {
+              if (list[i] && list[i].fileId === targetFileId && list[i].completedMs === completedMsNow) {
+                list[i].showOnLeaderboard = true;
+                updated = true;
+                break;
+              }
+            }
+            if (!updated) {
+              for (let i = list.length - 1; i >= 0; i--) {
+                if (list[i] && list[i].fileId === targetFileId) {
+                  list[i].showOnLeaderboard = true;
+                  break;
+                }
+              }
+            }
+            saveOpenScoresList(list);
+            cloudSyncAfterSubmit(targetFileId);
+            applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
+            showToast("Markah anda kini dipaparkan di Leaderboard.");
+          }
+        });
         return;
       }
 
-      showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") telah direkodkan ke Leaderboard.");
+      const pinFileId = portalState.activeQuizFileId;
+      showToast("Tahniah! Markah " + pctSafe + "% (Gred " + gradeSafe + ") direkodkan secara peribadi.");
 
-      callBackend("saveScore", {
-        fileId: portalState.activeQuizFileId,
+      const savePinPromise = callBackend("saveScore", {
+        fileId: pinFileId,
         quizTitle: safeTitle,
         subject: safeSubject,
         scoreText: portalState.latestSlipData.scoreText,
         percentage: pctSafe,
         grade: gradeSafe,
+        showOnLeaderboard: false,
         weakTopics: safeWeakTopics
       }).then(function (res) {
         if (res && res.ok) {
           applyDashboardBundle(res);
         }
-      }).catch(function () {});
+        return res;
+      }).catch(function () { return null; });
+
+      openLeaderboardOptInModal(portalState.latestSlipData, {
+        onKeepPrivate: function () {
+          showToast("Markah disimpan secara peribadi (disorokkan daripada Leaderboard).");
+        },
+        onPublishToLeaderboard: function () {
+          savePinPromise.finally(function () {
+            callBackend("setScoreLeaderboardVisibility", {
+              fileId: pinFileId,
+              showOnLeaderboard: true
+            }).then(function (res) {
+              if (res && res.ok) {
+                applyDashboardBundle(res);
+              }
+              showToast("Markah anda kini dipaparkan di Leaderboard.");
+            }).catch(function () {
+              showToast("Gagal mengemas kini Leaderboard. Cuba sebentar lagi.", true);
+            });
+          });
+        }
+      });
     }
   }
 
@@ -9080,6 +9236,10 @@
       cloudProgressTimer = null;
     }
     if (getSyncLink()) {
+      if (syncUi.busy) {
+        setTimeout(function () { cloudSyncAfterSubmit(fileId); }, 450);
+        return;
+      }
       syncNow({ silent: true, completedFileId: fileId });
       return;
     }

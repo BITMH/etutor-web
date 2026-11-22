@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-22T02:17:38.883Z",
-  "count": 9,
-  "copiedAssets": 539,
+  "generatedAt": "2026-11-22T06:10:06.325Z",
+  "count": 10,
+  "copiedAssets": 598,
   "chapters": [
     {
       "id": "sejarah-t4-bab01",
@@ -138,6 +138,23 @@
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai2-u1.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab02.html"
+    },
+    {
+      "id": "sains-t4-bab03",
+      "subject": "Sains",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 3,
+      "title": "Teknik Mengukur Parameter Kesihatan Badan",
+      "subtitle": "Subtopik 3.1–3.4 KSSM (48 Langkah Bit-by-Bit) — Termometer 3D, Titik Nadi & Eksperimen 3.1, Sfigmomanometer & CPG 2018, Rumus BMI & Pinggan Sihat Malaysia.",
+      "editionBadge": "Edisi Animasi 3D Three.js & Suara AI",
+      "estimatedMinutes": 32,
+      "unitCount": 6,
+      "stepCount": 48,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sai3-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sains-t4-bab03.html"
     },
     {
       "id": "fizik-t4-bab01",

@@ -3554,6 +3554,23 @@
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab02.html"
     },
     {
+      "id": "sains-t4-bab03",
+      "subject": "Sains",
+      "subjectGroup": "teras",
+      "form": 4,
+      "chapterNumber": 3,
+      "title": "Teknik Mengukur Parameter Kesihatan Badan",
+      "subtitle": "Subtopik 3.1–3.4 KSSM (48 Langkah Bit-by-Bit) — Termometer 3D, Titik Nadi & Eksperimen 3.1, Sfigmomanometer & CPG 2018, Rumus BMI & Pinggan Sihat Malaysia.",
+      "editionBadge": "Edisi Animasi 3D Three.js & Suara AI",
+      "estimatedMinutes": 32,
+      "unitCount": 6,
+      "stepCount": 48,
+      "hasVoice": true,
+      "hasMultimedia": true,
+      "coverIconPath": "./nota-interaktif/assets/icons/sai3-u1.jpg",
+      "htmlPath": "./nota-interaktif/dist/sains-t4-bab03.html"
+    },
+    {
       "id": "fizik-t4-bab01",
       "subject": "Fizik",
       "subjectGroup": "sains",
@@ -4840,12 +4857,87 @@
     }
   }
 
+  // --- [features/study-notes/notaVideoModal.js] ---
+  /**
+   * src/features/study-notes/notaVideoModal.js
+   * Pengawal dialog pemain video YouTube HanaStudio (selamat di luar #examIframe sandbox).
+   */
+
+
+  function extractSafeYouTubeId(raw) {
+    const s = String(raw || "").trim();
+    if (!s) return "";
+    if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+    const patterns = [
+      /(?:youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#/]|$)/i,
+      /[?&]v=([A-Za-z0-9_-]{11})(?:[&#]|$)/i,
+      /youtube(?:-nocookie)?\.com\/(?:embed|shorts)\/([A-Za-z0-9_-]{11})(?:[?&#/]|$)/i
+    ];
+    for (let i = 0; i < patterns.length; i++) {
+      const m = s.match(patterns[i]);
+      if (m && m[1]) return m[1];
+    }
+    return "";
+  }
+
+  function bindNotaVideoCloseCleanup(dlg, slot) {
+    if (dlg.dataset.notaVideoBound === "1") return;
+    dlg.dataset.notaVideoBound = "1";
+    bindLightDismissFallback(dlg);
+    dlg.addEventListener("close", function () {
+      slot.innerHTML = "";
+      dlg.returnValue = "";
+    });
+  }
+
+  function openNotaYouTubeDialog(opts) {
+    const safeId = extractSafeYouTubeId(opts && opts.youtubeId);
+    if (!safeId) {
+      showToast("ID video YouTube tidak sah.");
+      return false;
+    }
+
+    const dlg = document.getElementById("notaVideoDialog");
+    const slot = document.getElementById("notaVideoFrameSlot");
+    const titleEl = document.getElementById("notaVideoDialogTitle");
+    const capEl = document.getElementById("notaVideoDialogCaption");
+    if (!dlg || !slot) return false;
+
+    bindNotaVideoCloseCleanup(dlg, slot);
+
+    if (titleEl) {
+      titleEl.textContent = String((opts && opts.title) || "Video Penerangan HanaStudio");
+    }
+    if (capEl) {
+      const capText = String((opts && opts.caption) || "").trim();
+      capEl.textContent = capText;
+      capEl.hidden = !capText;
+    }
+
+    slot.innerHTML = "";
+    const iframe = document.createElement("iframe");
+    iframe.className = "nota-yt-iframe";
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(safeId) + "?rel=0&playsinline=1&autoplay=1";
+    iframe.title = String((opts && opts.title) || "Pemain Video YouTube HanaStudio");
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+    iframe.setAttribute("allowfullscreen", "");
+    slot.appendChild(iframe);
+
+    if (!dlg.open && typeof dlg.showModal === "function") {
+      dlg.showModal();
+    }
+    return true;
+  }
+
   // --- [features/study-notes/notaStageController.js] ---
   /**
    * src/features/study-notes/notaStageController.js
    * Pengawal pelancaran Nota Interaktif Visual dalam #examStage (<iframe sandbox>)
    * serta jambatan postMessage (ETUTOR_NOTA_INIT, ETUTOR_NOTA_PROGRESS, COMPLETED, ASK_CIKGU, CLOSE).
    */
+
 
 
 
@@ -4944,6 +5036,15 @@
 
     if (msg.type === "ETUTOR_NOTA_CLOSE") {
       await closeQuizStage();
+      return;
+    }
+
+    if (msg.type === "ETUTOR_NOTA_OPEN_VIDEO") {
+      openNotaYouTubeDialog({
+        youtubeId: msg.youtubeId,
+        title: msg.title || (item ? item.title : "Video Penerangan HanaStudio"),
+        caption: msg.caption || ""
+      });
       return;
     }
 

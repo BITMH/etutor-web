@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src 'self' https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://toyyibpay.com https://dev.toyyibpay.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://accounts.google.com/gsi/client https://pagead2.googlesyndication.com https://partner.googleadservices.com https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.googletagservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*.googleusercontent.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://i.ytimg.com; media-src 'self' blob: data: https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080; frame-src 'self' https://accounts.google.com/gsi/ https://*.supabase.co https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://ep2.adtrafficquality.google https://www.google.com https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co wss://*.supabase.co https://accounts.google.com https://script.google.com https://script.googleusercontent.com https://accounts.google.com/gsi/ https://*.modal.run https://*.run.app https://*.a.run.app https://*.hf.space http://127.0.0.1:8080 http://localhost:8080 https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://toyyibpay.com https://dev.toyyibpay.com;">
   <title>Soalan Percubaan SPM Interaktif &amp; Skema Jawapan | eTutor.my</title>
   <meta name="description" content="Jawab koleksi lengkap Soalan Percubaan SPM negeri, SBP &amp; Klon SPM secara interaktif di telefon atau laptop. Dikemas kini secara langsung lengkap semakan skema &amp; analisis bab lemah.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -2881,6 +2881,27 @@
        SKRIN 4: PANEL KAWALAN ADMIN (#admin — Semakan Langganan & Akses)
        Diakses melalui URL `etutor.my/#admin` (atau `http://localhost:4173/#admin`)
        ===================================================================== -->
+
+  <!-- DIALOG PEMAIN VIDEO YOUTUBE HANASTUDIO (Selamat Sandbox #examIframe) -->
+  <dialog id="notaVideoDialog" class="nota-video-dialog" closedby="any" aria-labelledby="notaVideoDialogTitle">
+    <div class="nota-video-dialog-card">
+      <div class="nota-video-dialog-head">
+        <div class="nota-video-dialog-title-wrap">
+          <span class="nota-video-dialog-badge">VIDEO HANASTUDIO</span>
+          <h2 id="notaVideoDialogTitle" class="nota-video-dialog-title">Video Penerangan Nota Interaktif</h2>
+        </div>
+        <form method="dialog" class="nota-video-close-form">
+          <button type="submit" id="closeNotaVideoDialogBtn" class="nota-video-close-btn" aria-label="Tutup pemain video" autofocus>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div id="notaVideoFrameSlot" class="nota-video-frame-slot"></div>
+      <p id="notaVideoDialogCaption" class="nota-video-modal-cap" hidden></p>
+    </div>
+  </dialog>
 
   <!-- BUTANG TERAPUNG KECIL ADUAN / ISU (SUDUT BAWAH KIRI) -->
   <button id="openIssueModalBtn" class="etutor-issue-fab" type="button" aria-label="Buka borang aduan atau laporkan isu">

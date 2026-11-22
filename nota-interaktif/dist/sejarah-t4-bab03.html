@@ -2213,6 +2213,167 @@ dialog::backdrop {
 @media (max-width: 560px) {
   .wf-flip-grid, .wf-sc-opts { grid-template-columns: 1fr; }
   .wf-orbital-layout { grid-template-columns: 1fr; }
+}
+
+/* Three.js 3D Interactive Stage & Video Cards */
+.three-stage-shell {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: radial-gradient(circle at 30% 20%, #1e293b 0%, #0f172a 70%, #090d16 100%);
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 310px;
+}
+.three-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  touch-action: pan-y;
+  cursor: grab;
+  overflow: hidden;
+}
+.three-canvas-wrap:active { cursor: grabbing; }
+.three-canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.three-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+.three-hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+.nota-video-card {
+  margin: 0 0 12px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid #cbd5e1;
+  background: #0f172a;
+}
+.nota-hero-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+}
+.nota-video-cap {
+  padding: 7px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: #0f172a;
+}
+@media (max-width: 560px) {
+  .three-canvas-wrap { height: 248px; }
+}
+
+/* YouTube HanaStudio Light Facade Card & Standalone Player */
+.nota-yt-facade-card {
+  margin: 0 0 12px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1.5px solid #cbd5e1;
+  background: #0f172a;
+}
+.nota-yt-facade-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
+  padding: 0;
+  border: 0;
+  background: #020617;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+}
+.nota-yt-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.72);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.nota-yt-facade-btn:hover .nota-yt-thumb {
+  transform: scale(1.03);
+  filter: brightness(0.84);
+}
+.nota-yt-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.15) 45%, rgba(15, 23, 42, 0.86) 100%);
+}
+.nota-yt-pill {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.92);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+.nota-yt-play-badge {
+  align-self: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: #dc2626;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.45);
+}
+.nota-yt-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #ffffff;
+}
+.nota-yt-meta strong { font-size: 0.9rem; font-weight: 800; line-height: 1.3; }
+.nota-yt-meta span { font-size: 0.74rem; font-weight: 700; color: #7dd3fc; }
+.nota-yt-inline-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #020617;
+}
+.nota-yt-inline-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nota-yt-thumb { transition: none; }
+  .nota-yt-facade-btn:hover .nota-yt-thumb { transform: none; }
 }</style>
 </head>
 <body>
@@ -2338,6 +2499,7 @@ dialog::backdrop {
     </dialog>
   </div>
 
+  
   <script>/*!
  * GSAP 3.12.5
  * https://gsap.com
@@ -3945,6 +4107,124 @@ function bindHeroMediaClicks(card, step) {
       }
     });
   });
+
+  card.querySelectorAll(".js-yt-facade-btn").forEach(function (ytBtn) {
+    ytBtn.addEventListener("click", function () {
+      var ytId = ytBtn.getAttribute("data-yt-id") || "";
+      var ytTitle = ytBtn.getAttribute("data-yt-title") || step.title || "Video Penerangan HanaStudio";
+      var ytCap = ytBtn.getAttribute("data-yt-caption") || "";
+      if (!ytId) return;
+      if (typeof NotaVoice !== "undefined" && NotaVoice.stop) NotaVoice.stop();
+      if (typeof NotaAudio !== "undefined" && NotaAudio.playTap) NotaAudio.playTap();
+      if (typeof window !== "undefined" && window.parent && window.parent !== window) {
+        emitPortalEvent("ETUTOR_NOTA_OPEN_VIDEO", {
+          youtubeId: ytId,
+          title: ytTitle,
+          caption: ytCap
+        });
+        return;
+      }
+      var fig = ytBtn.closest(".nota-yt-facade-card");
+      if (!fig) return;
+      var iframeSrc = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(ytId) + "?rel=0&playsinline=1&autoplay=1";
+      fig.innerHTML =
+        '<div class="nota-yt-inline-wrap">' +
+          '<iframe class="nota-yt-inline-iframe" src="' + iframeSrc + '" title="' + escapeHtml(ytTitle) + '" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' +
+        "</div>" +
+        (ytCap ? '<figcaption class="nota-video-cap">' + escapeHtml(ytCap) + "</figcaption>" : "");
+    });
+  });
+
+  var reducedMotionQuery = typeof window !== "undefined" && window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)")
+    : null;
+  card.querySelectorAll("video.nota-hero-video").forEach(function (vid) {
+    var fig = vid.closest(".nota-video-card");
+    vid.addEventListener("error", function () {
+      if (fig) fig.hidden = true;
+    });
+    if (reducedMotionQuery && reducedMotionQuery.matches) {
+      vid.removeAttribute("autoplay");
+      vid.pause();
+    }
+    if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === "function") {
+      var onChangeMotion = function (ev) {
+        if (ev.matches) {
+          vid.removeAttribute("autoplay");
+          vid.pause();
+        }
+      };
+      reducedMotionQuery.addEventListener("change", onChangeMotion);
+      if (Array.isArray(notaState.activeLabCleanups)) {
+        notaState.activeLabCleanups.push(function () {
+          try { reducedMotionQuery.removeEventListener("change", onChangeMotion); } catch (e) {}
+        });
+      }
+    }
+  });
+}
+
+function extractYouTubeId(raw) {
+  var s = String(raw || "").trim();
+  if (!s) return "";
+  if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+  var patterns = [
+    /(?:youtu\.be\/)([A-Za-z0-9_-]{11})(?:[?&#/]|$)/i,
+    /[?&]v=([A-Za-z0-9_-]{11})(?:[&#]|$)/i,
+    /youtube(?:-nocookie)?\.com\/(?:embed|shorts)\/([A-Za-z0-9_-]{11})(?:[?&#/]|$)/i
+  ];
+  for (var i = 0; i < patterns.length; i++) {
+    var m = s.match(patterns[i]);
+    if (m && m[1]) return m[1];
+  }
+  return "";
+}
+
+function buildHeroVideoHtml(step) {
+  var vc = (step && step.videoClip) || null;
+  var mediaMap = (typeof window !== "undefined" && window.ETUTOR_NOTA_MEDIA) || {};
+  var rawYt = (step && step.youtubeId) || (vc && vc.youtubeId) || "";
+  var ytId = extractYouTubeId(rawYt);
+  if (ytId) {
+    var ytPosterKey = (vc && vc.posterKey) || (step && step.mediaKey) || "";
+    var ytPosterRec = ytPosterKey && mediaMap[ytPosterKey];
+    var thumbSrc = ytPosterRec ? (ytPosterRec.dataUri || ytPosterRec.src || "") : ("https://i.ytimg.com/vi/" + ytId + "/hqdefault.jpg");
+    var ytTitle = (vc && vc.title) || (step && step.title) || tUi("Video Penerangan HanaStudio", "HanaStudio Video Lesson");
+    var ytCap = (vc && vc.caption) || tUi("Klik untuk tonton video penerangan YouTube HanaStudio", "Click to watch HanaStudio YouTube video");
+    return (
+      '<figure class="nota-yt-facade-card">' +
+        '<button type="button" class="nota-yt-facade-btn js-yt-facade-btn" data-yt-id="' + escapeHtml(ytId) + '" data-yt-title="' + escapeHtml(ytTitle) + '" data-yt-caption="' + escapeHtml(ytCap) + '" aria-label="' + escapeHtml(tUi("Main video: ", "Play video: ") + ytTitle) + '">' +
+          '<img class="nota-yt-thumb" src="' + thumbSrc + '" alt="' + escapeHtml(ytTitle) + '" loading="lazy" decoding="async" width="640" height="360">' +
+          '<span class="nota-yt-overlay">' +
+            '<span class="nota-yt-pill">YOUTUBE &bull; HANASTUDIO</span>' +
+            '<span class="nota-yt-play-badge" aria-hidden="true">' +
+              '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M8 5l11 7-11 7V5z"/></svg>' +
+            "</span>" +
+            '<span class="nota-yt-meta">' +
+              '<strong>' + escapeHtml(ytTitle) + "</strong>" +
+              "<span>" + escapeHtml(tUi("Tonton Video HD", "Watch HD Video")) + "</span>" +
+            "</span>" +
+          "</span>" +
+        "</button>" +
+        '<figcaption class="nota-video-cap">' + escapeHtml(ytCap) + "</figcaption>" +
+      "</figure>"
+    );
+  }
+  if (!vc || !vc.src) return "";
+  var posterRec = vc.posterKey && mediaMap[vc.posterKey];
+  var posterUri = posterRec ? (posterRec.dataUri || posterRec.src || "") : "";
+  var reduced = typeof NotaFeel !== "undefined" && NotaFeel.prefersReducedMotion && NotaFeel.prefersReducedMotion();
+  var autoplayAttrs = reduced ? "" : " autoplay loop";
+  var posterAttr = posterUri ? ' poster="' + posterUri + '"' : "";
+  var caption = vc.caption ? '<figcaption class="nota-video-cap">' + escapeHtml(vc.caption) + "</figcaption>" : "";
+  return (
+    '<figure class="nota-video-card">' +
+      '<video class="nota-hero-video" controls muted playsinline preload="metadata" width="640" height="360"' + autoplayAttrs + posterAttr + ">" +
+        '<source src="' + escapeHtml(vc.src) + '" type="video/mp4">' +
+      "</video>" +
+      caption +
+    "</figure>"
+  );
 }
 
 function buildHeroMediaHtml(step) {
@@ -4028,6 +4308,7 @@ function renderConceptStep(step, card) {
       "</div>"
     : "";
 
+  var heroVideoHtml = buildHeroVideoHtml(step);
   var heroMediaHtml = buildHeroMediaHtml(step);
   var biteSummaryHtml = isBite && step.summary
     ? '<p class="bite-lead-pill">' + escapeHtml(step.summary) + "</p>"
@@ -4062,6 +4343,7 @@ function renderConceptStep(step, card) {
     hookHtml +
     '<h2 id="activeStepHeading" class="step-heading" tabindex="-1">' + escapeHtml(step.title || tUi("Konsep Utama", "Key Concept")) + "</h2>" +
     biteSummaryHtml +
+    heroVideoHtml +
     heroMediaHtml +
     labHtml +
     mindMapHostHtml +

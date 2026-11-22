@@ -4336,11 +4336,85 @@
     }, 500);
   }
 
+  // --- [features/quiz-engine/quizMobileFitInjector.js] ---
+  /**
+   * src/features/quiz-engine/quizMobileFitInjector.js
+   * Pengawal responsif telefon pihak klien untuk kandungan HTML kuiz dalam <iframe id="examIframe">.
+   * Menjamin tiada limpahan melintang ("slide kanan kiri") walaupun kertas dimuatkan daripada GAS/templat lama.
+   */
+
+  const QUIZ_MOBILE_FIT_CSS = [
+    '<style id="etutor-mobile-fit-css">',
+    '  html, body { max-width: 100%; overflow-wrap: break-word; }',
+    '  :where(a, code) { overflow-wrap: anywhere; }',
+    '  @media (max-width: 1023px) {',
+    '    .workspace { grid-template-columns: minmax(0, 1fr) !important; width: 100% !important; max-width: 100% !important; padding-inline: 10px !important; }',
+    '    .workspace > * { min-width: 0 !important; max-width: 100% !important; }',
+    '  }',
+    '  @media (max-width: 768px) {',
+    '    .exam-layout { grid-template-columns: minmax(0, 1fr) !important; }',
+    '    .exam-layout > * { min-width: 0 !important; max-width: 100% !important; }',
+    '    .app-container { width: 100% !important; max-width: 100% !important; padding: 10px !important; }',
+    '  }',
+    '  .workspace > *, .exam-layout > *, .main-content, .question-card, .q-stem, .mcq-list, .mcq-option,',
+    '  .subq-stack, .subq-card, .subq-prompt, .slot-grid, .slot-item, .stimulus-box, .feedback-panel,',
+    '  .skema-pre, .etutor-pills-wrap, .etutor-ai-subbox, .etutor-ai-subbox-body, .panel-card, .sidebar-card {',
+    '    min-width: 0 !important; max-width: 100% !important; box-sizing: border-box !important;',
+    '    overflow-wrap: break-word; word-wrap: break-word;',
+    '  }',
+    '  .mcq-option, .option-btn, .choice-btn { width: 100% !important; max-width: 100% !important; white-space: normal !important; }',
+    '  .mcq-option > :not(.mcq-letter) { flex: 1 1 0% !important; min-width: 0 !important; white-space: normal !important; overflow-wrap: break-word !important; }',
+    '  .mobile-thumb-bar { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important; }',
+    '  .q-grid { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }',
+    '  @media (max-width: 559px) { .compare-pair { grid-template-columns: minmax(0, 1fr) !important; } }',
+    '  .q-stem img, .stimulus-box img, .subq-card img, .question-card img, .pdf-diagram-img,',
+    '  .q-stem svg, .stimulus-box svg, .subq-card svg, .diagram-box svg, figure svg { max-width: 100% !important; height: auto !important; }',
+    '  .table-scroll, .table-wrapper { display: block; width: 100%; max-width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }',
+    '  @media (max-width: 520px) {',
+    '    .top-bar-inner { padding: 6px 8px; gap: 5px; }',
+    '    .sub-toolbar { padding: 0 10px; gap: 6px; }',
+    '    .question-card { padding: 12px !important; }',
+    '    .mcq-option { padding: 10px 11px; gap: 9px; font-size: 0.95rem; }',
+    '    .subq-top, .slot-label-row { flex-wrap: wrap; }',
+    '    input.smart-calc-input { min-width: 0 !important; width: 100%; }',
+    '    .mobile-thumb-bar { padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); gap: 6px; }',
+    '    .mobile-thumb-bar .btn { min-width: 0; padding: 8px 10px; font-size: 0.82rem; }',
+    '  }',
+    '</style>'
+  ].join("\n");
+
+  function injectQuizMobileFitCss(rawHtml) {
+    let out = String(rawHtml || "");
+    if (!out) return out;
+
+    if (!/<meta[^>]+name=["']viewport["']/i.test(out)) {
+      const vpTag = '<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">';
+      if (/<head[^>]*>/i.test(out)) {
+        out = out.replace(/<head([^>]*)>/i, function (m) { return m + "\n" + vpTag; });
+      } else {
+        out = vpTag + "\n" + out;
+      }
+    }
+
+    if (!out.includes('id="etutor-mobile-fit-css"')) {
+      if (/<\/head>/i.test(out)) {
+        out = out.replace(/<\/head>/i, function () { return QUIZ_MOBILE_FIT_CSS + "\n</head>"; });
+      } else if (/<body[^>]*>/i.test(out)) {
+        out = out.replace(/<body([^>]*)>/i, function (m) { return QUIZ_MOBILE_FIT_CSS + "\n" + m; });
+      } else {
+        out = QUIZ_MOBILE_FIT_CSS + "\n" + out;
+      }
+    }
+
+    return out;
+  }
+
   // --- [features/quiz-engine/examStageController.js] ---
   /**
    * src/features/quiz-engine/examStageController.js
    * Pengawal Ruang Peperiksaan (<iframe sandbox srcdoc>), muatan kertas soalan & penyegerakan checkpoint.
    */
+
 
 
 
@@ -4494,6 +4568,7 @@
           ? safeQuizHtml.replace(/<\/body>/i, clientSanitizer + "\n</body>")
           : (safeQuizHtml + "\n" + clientSanitizer);
       }
+      safeQuizHtml = injectQuizMobileFitCss(safeQuizHtml);
       iframe.srcdoc = safeQuizHtml;
       if (syncEl) {
         syncEl.textContent = autoResume && res.hasSavedState

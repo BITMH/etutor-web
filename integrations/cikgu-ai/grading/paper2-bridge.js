@@ -137,7 +137,7 @@ export async function handlePaper2SubGradeRequest(ev, d, { client, warmupMachine
         nama_pelajar: resolveStudentLoginName(d.candidateName),
         sesi_sudah_sapa: true,
         markah_penuh: maxMarks,
-        max_tokens: hasImg || maxMarks >= 20 ? 520 : 340
+        max_tokens: 8192
       },
       {
         onToken: (tok) => {

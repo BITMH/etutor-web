@@ -3139,6 +3139,7 @@ window.ETUTOR_NOTA_MEDIA = Object.assign(window.ETUTOR_NOTA_MEDIA || {}, {"telag
 })();
   </script>
   <script>window.ETUTOR_NOTA_VOICE = window.ETUTOR_NOTA_VOICE || {};
+window.ETUTOR_NOTA_CDN_BASE = "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev";
 /* Dijana automatik oleh generate-elevenlabs-v4.mjs (eleven_v4, voice=P2iny3EEOzVk8EzrU7Bq) */
 window.ETUTOR_NOTA_VOICE = Object.assign(window.ETUTOR_NOTA_VOICE || {}, {
   "u1-s1": "../assets/sejarah-t4-bab01/audio/u1-s1.mp3",
@@ -5873,7 +5874,20 @@ var NotaVoice = (function () {
   function getPackUrl(clipKey) {
     if (!clipKey || typeof window === "undefined") return "";
     var pack = window.ETUTOR_NOTA_VOICE;
-    return (pack && pack[clipKey]) || "";
+    var raw = (pack && pack[clipKey]) || "";
+    if (!raw) return "";
+    var cdnBase = window.ETUTOR_NOTA_CDN_BASE ? String(window.ETUTOR_NOTA_CDN_BASE).replace(/\/+$/, "") : "";
+    if (cdnBase && raw.indexOf("../assets/") === 0) {
+      var host = typeof location !== "undefined" ? String(location.hostname || "") : "";
+      var proto = typeof location !== "undefined" ? String(location.protocol || "") : "";
+      var search = typeof location !== "undefined" ? String(location.search || "") : "";
+      var isLocalHost = host === "localhost" || host === "127.0.0.1" || proto === "file:";
+      var forceCdn = /[?&]cdn=r2\b/i.test(search);
+      if (!isLocalHost || forceCdn) {
+        return cdnBase + "/nota-interaktif/assets/" + raw.slice("../assets/".length);
+      }
+    }
+    return raw;
   }
 
   function stripVoiceTags(raw) {

@@ -182,10 +182,18 @@ export class CikguFailoverClient {
         const jwt = resolveSupabaseAccessToken();
         const hdrs = { "Content-Type": "application/json", "X-Etutor-User": userKey };
         if (jwt) hdrs.Authorization = `Bearer ${jwt}`;
+        const semakSignal =
+          candidates.length > 1 &&
+          i < candidates.length - 1 &&
+          typeof AbortSignal !== "undefined" &&
+          typeof AbortSignal.timeout === "function"
+            ? AbortSignal.timeout(32000)
+            : undefined;
         const postSemak = (bodyObj) =>
           fetch(`${candidate.url}/v1/semak`, {
             method: "POST",
             headers: hdrs,
+            ...(semakSignal ? { signal: semakSignal } : {}),
             body: JSON.stringify({ ...bodyObj, id_pengguna: userKey, stream: true })
           });
 

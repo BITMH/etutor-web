@@ -2254,8 +2254,10 @@ dialog::backdrop {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 280px;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  max-height: 360px;
+  object-fit: contain;
+  background: #0f172a;
 }
 .nota-video-cap {
   padding: 7px 12px;
@@ -4113,6 +4115,25 @@ function buildHeroVideoHtml(step) {
     );
   }
   if (!vc || !vc.src) return "";
+  var rawVideoSrc = String(vc.src || "").trim();
+  var cdnBase = (typeof window !== "undefined" && window.ETUTOR_NOTA_CDN_BASE)
+    ? String(window.ETUTOR_NOTA_CDN_BASE).replace(/\/+$/, "")
+    : "";
+  var r2Src = (cdnBase && rawVideoSrc.indexOf("../assets/") === 0)
+    ? (cdnBase + "/nota-interaktif/" + rawVideoSrc.slice("../".length))
+    : "";
+  var host = typeof location !== "undefined" ? String(location.hostname || "") : "";
+  var proto = typeof location !== "undefined" ? String(location.protocol || "") : "";
+  var search = typeof location !== "undefined" ? String(location.search || "") : "";
+  var isLocalHost = host === "localhost" || host === "127.0.0.1" || proto === "file:";
+  var forceR2 = /[?&]cdn=r2\b/i.test(search);
+  var sourcesHtml = "";
+  if (r2Src && (!isLocalHost || forceR2)) {
+    sourcesHtml = '<source src="' + escapeHtml(r2Src) + '" type="video/mp4">';
+  } else {
+    sourcesHtml = '<source src="' + escapeHtml(rawVideoSrc) + '" type="video/mp4">' +
+      (r2Src ? '<source src="' + escapeHtml(r2Src) + '" type="video/mp4">' : "");
+  }
   var posterRec = vc.posterKey && mediaMap[vc.posterKey];
   var posterUri = posterRec ? (posterRec.dataUri || posterRec.src || "") : "";
   var reduced = typeof NotaFeel !== "undefined" && NotaFeel.prefersReducedMotion && NotaFeel.prefersReducedMotion();
@@ -4122,7 +4143,7 @@ function buildHeroVideoHtml(step) {
   return (
     '<figure class="nota-video-card">' +
       '<video class="nota-hero-video" controls muted playsinline preload="metadata" width="640" height="360"' + autoplayAttrs + posterAttr + ">" +
-        '<source src="' + escapeHtml(vc.src) + '" type="video/mp4">' +
+        sourcesHtml +
       "</video>" +
       caption +
     "</figure>"

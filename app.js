@@ -5290,6 +5290,21 @@
     return lines.join("\n");
   }
 
+  function buildResultSharePayload(attemptRec, displayStudentName) {
+    if (!attemptRec) return null;
+    const fid = attemptRec.fileId || "";
+    return {
+      mode: "result",
+      studentName: String(displayStudentName || attemptRec.buyerName || "Pelajar").trim(),
+      subject: attemptRec.subject || "SPM",
+      quizTitle: attemptRec.quizTitle || "Set Latihan SPM",
+      percentage: attemptRec.percentage || 0,
+      grade: attemptRec.grade || "-",
+      breakdown: attemptRec.breakdown || "",
+      url: fid ? ("https://etutor.my/?fileId=" + encodeURIComponent(fid) + "&open=1#portal") : "https://etutor.my/#portal"
+    };
+  }
+
   // --- [features/quiz-engine/examAnalysisRenderer.js] ---
   /**
    * src/features/quiz-engine/examAnalysisRenderer.js
@@ -5718,6 +5733,13 @@
         return;
       }
 
+      if (ev.target.closest("#shareSlipSocialBtn")) {
+        const payload = buildResultSharePayload(slipModalState.activeAttempt, document.getElementById("slipStudentName")?.textContent);
+        if (!payload || !window.ETutorShare) return showToast("Modul kongsi sedang dimuatkan.", true);
+        window.ETutorShare.openShareModal(payload);
+        return;
+      }
+
       if (ev.target.closest("#copySlipWhatsappBtn")) {
         const cur = slipModalState.activeAttempt;
         const txt = buildWhatsAppRevisionSummary(cur, cur && cur.aiAnalysis, slipModalState.delta);
@@ -5983,6 +6005,27 @@
     const slipBtn = document.getElementById("openSlipBtn");
     const syncEl = document.getElementById("examSyncStatus");
     const closeBtn = document.getElementById("closeExamStageBtn");
+    const shareBtn = document.getElementById("shareExamQuestionBtn");
+
+    if (shareBtn && shareBtn.dataset.bound !== "1") {
+      shareBtn.dataset.bound = "1";
+      shareBtn.addEventListener("click", function () {
+        if (!window.ETutorShare || typeof window.ETutorShare.openShareModal !== "function") {
+          showToast("Modul kongsi sedang dimuatkan. Sila cuba sebentar lagi.", true);
+          return;
+        }
+        const fid = portalState.activeQuizFileId || "";
+        const activeMeta = (portalState.catalog || []).find(function (c) { return c.fileId === fid; });
+        window.ETutorShare.openShareModal({
+          mode: "question",
+          allowQuestionEdit: true,
+          subject: (activeMeta && activeMeta.subject) || "SPM",
+          setCode: (activeMeta && activeMeta.setCode) || "",
+          quizTitle: (activeMeta && activeMeta.cleanTitle) || (titleEl && titleEl.textContent) || "Set Soalan SPM",
+          url: fid ? ("https://etutor.my/?fileId=" + encodeURIComponent(fid) + "&open=1#portal") : "https://etutor.my/#portal"
+        });
+      });
+    }
 
     const meta = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
     if (meta) {
@@ -10118,6 +10161,36 @@
       });
     }
 
+
+    const shareExpBtn = document.getElementById("shareExperienceBtn");
+    if (shareExpBtn) {
+      shareExpBtn.addEventListener("click", function () {
+        if (!window.ETutorShare || typeof window.ETutorShare.openShareModal !== "function") {
+          showToast("Modul kongsi sedang dimuatkan. Sila cuba sebentar lagi.");
+          return;
+        }
+        let refCode = "";
+        try {
+          const rawW = JSON.parse(localStorage.getItem("etutor_cikgu_daily_tokens_v1") || "{}");
+          if (rawW && rawW.serverReferralCode) refCode = String(rawW.serverReferralCode).trim().toUpperCase();
+        } catch (e) {}
+        const setsEl = document.getElementById("overallSetsDoneText");
+        const avgEl = document.getElementById("kpiAvgScore");
+        const gradeEl = document.getElementById("kpiAvgGrade");
+        const xpEl = document.getElementById("kpiTotalXp");
+        const nameEl = document.getElementById("navBuyerName");
+        window.ETutorShare.openShareModal({
+          mode: "experience",
+          studentName: (nameEl && nameEl.textContent.trim()) || "Pelajar SPM",
+          setsDoneText: (setsEl && setsEl.textContent.trim()) || "0 set selesai",
+          avgScore: (avgEl && avgEl.textContent.trim()) || "0%",
+          avgGrade: (gradeEl && gradeEl.textContent.trim()) || "-",
+          totalXp: (xpEl && xpEl.textContent.trim()) || "0 XP",
+          refCode: refCode,
+          url: "https://etutor.my/"
+        });
+      });
+    }
 
     bindCatalogLeaderboardAndSlipEvents();
     bindNotaCatalogEvents();

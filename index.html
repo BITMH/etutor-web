@@ -42,7 +42,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="eTutor SPM">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="./styles.css?v=26">
+  <link rel="stylesheet" href="./styles.css?v=27">
 
   <script type="application/ld+json">
   {
@@ -2035,6 +2035,7 @@
                   <h3 style="font-size:1rem;color:var(--text-primary)">Penguasaan Bank Soalan</h3>
                   <p id="overallSetsDoneText" class="tabular-nums" style="font-size:0.88rem;color:var(--text-muted);margin-top:4px">0 daripada 0 set selesai</p>
                   <p style="font-size:0.78rem;color:var(--grade-emerald);font-weight:600;margin-top:8px">Sasaran: Selesaikan 1 set setiap hari</p>
+                  <button type="button" id="shareExperienceBtn" class="btn btn-emerald btn-sm" style="margin-top:12px">Kongsi Pencapaian &amp; Pengalaman</button>
                 </div>
               </div>
 
@@ -2730,6 +2731,7 @@
 
       <div style="display:flex;align-items:center;gap:12px">
         <span id="examSyncStatus" class="sync-indicator tabular-nums">Auto-simpan aktif</span>
+        <button type="button" id="shareExamQuestionBtn" class="btn btn-outline btn-sm">Kongsi Soalan</button>
         <button type="button" id="openSlipBtn" class="btn btn-emerald btn-sm" hidden>
           <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
@@ -2879,7 +2881,8 @@
     <div class="slip-actions">
       <button type="button" id="closeSlipBtn" class="btn btn-outline">Tutup</button>
       <button type="button" id="retestSlipBtn" class="btn btn-outline" hidden>↻ Uji Semula</button>
-      <button type="button" id="copySlipWhatsappBtn" class="btn btn-emerald">Salin WhatsApp</button>
+      <button type="button" id="copySlipWhatsappBtn" class="btn btn-outline">Salin WhatsApp</button>
+      <button type="button" id="shareSlipSocialBtn" class="btn btn-emerald">Kongsi Keputusan</button>
       <button type="button" id="printSlipBtn" class="btn btn-primary">
         <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
@@ -3318,9 +3321,10 @@
 
   <script src="./vendor/anime.umd.min.js"></script>
   <script src="./vendor/supabase.umd.min.js"></script>
-  <script src="./config.js?v=26"></script>
-  <script src="./animations.js?v=26"></script>
-  <script src="./app.js?v=26"></script>
-  <script type="module" src="./integrations/cikgu-ai/index.js?v=26"></script>
+  <script src="./config.js?v=27"></script>
+  <script src="./animations.js?v=27"></script>
+  <script src="./app.js?v=27"></script>
+  <script src="./social-share.js?v=1" defer></script>
+  <script type="module" src="./integrations/cikgu-ai/index.js?v=27"></script>
 </body>
 </html>

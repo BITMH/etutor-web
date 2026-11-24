@@ -6153,3 +6153,224 @@ html[data-virtual-keyboard="open"] .phone-chat-shell {
 @media (prefers-reduced-motion: reduce) {
   #phoneAppShell *, .phone-sheet-dialog { scroll-behavior: auto !important; }
 }
+
+/* === features/social-share/social-share.css === */
+/* Modul Perkongsian Medsos eTutor.my (Dialog Top-Layer & Bar Kongsi SEO) */
+
+.et-share-dialog {
+  width: min(94vw, 860px);
+  max-height: 92dvh;
+  margin: auto;
+  padding: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 24px 60px rgb(15 23 42 / 0.28);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease, display 0.2s allow-discrete, overlay 0.2s allow-discrete;
+}
+
+.et-share-dialog[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@starting-style {
+  .et-share-dialog[open] {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+}
+
+.et-share-dialog::backdrop {
+  background: rgb(15 23 42 / 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.et-share-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.et-share-title {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #121e48;
+}
+
+.et-share-sub {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  color: #475569;
+}
+
+.et-share-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 310px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.et-share-preview-pane {
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.et-share-preview-pane img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: opacity 0.15s ease;
+}
+
+.et-share-controls-pane {
+  display: grid;
+  gap: 12px;
+}
+
+.et-share-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.et-share-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.et-share-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #0f172a;
+  background: #f8fafc;
+  resize: vertical;
+}
+
+.et-share-copybox {
+  font-size: 0.82rem;
+  background: #ffffff;
+}
+
+.et-share-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.et-share-btn-wide {
+  grid-column: 1 / -1;
+}
+
+.et-share-status {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.et-share-status[data-error="true"] {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.seo-share-bar {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.seo-share-bar-label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #121e48;
+}
+
+.seo-share-bar-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seo-q-share-wrap {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.seo-q-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e3a8a;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.seo-q-share-btn:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+@media (max-width: 720px) {
+  .et-share-layout {
+    grid-template-columns: 1fr;
+  }
+  .et-share-preview-pane {
+    max-width: 240px;
+    margin-inline: auto;
+  }
+  .et-share-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .et-share-dialog,
+  .et-share-preview-pane img {
+    transition: none;
+  }
+}

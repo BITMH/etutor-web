@@ -310,7 +310,26 @@
     }
   }
 
+  function syncNotaPromoTimerDom() {
+    const cfg = window.ETUTOR_CONFIG || {};
+    let active = cfg.NOTA_FREE_PROMO_MODE === true;
+    if (active && cfg.NOTA_FREE_PROMO_UNTIL) {
+      const untilMs = Date.parse(String(cfg.NOTA_FREE_PROMO_UNTIL).trim());
+      if (!Number.isNaN(untilMs) && Date.now() > untilMs) active = false;
+    }
+    if (document.documentElement) {
+      document.documentElement.setAttribute("data-nota-promo", active ? "true" : "false");
+    }
+    if (!active) {
+      document.querySelectorAll("[data-nota-std-text]").forEach(function (el) {
+        const stdText = el.getAttribute("data-nota-std-text");
+        if (stdText) el.textContent = stdText;
+      });
+    }
+  }
+
   function initStandaloneLiveSync() {
+    syncNotaPromoTimerDom();
     try {
       const raw = localStorage.getItem(LIVE_CACHE_KEY);
       if (raw) {
@@ -331,6 +350,7 @@
     fetchLiveCatalog(false);
 
     document.addEventListener("visibilitychange", function () {
+      syncNotaPromoTimerDom();
       if (!document.hidden && Date.now() - lastSyncMs > LIVE_STALE_MS) {
         fetchLiveCatalog(false);
       }

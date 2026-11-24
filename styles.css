@@ -232,6 +232,10 @@ html[data-open-access="true"] [data-paid-only],
 html[data-open-access="false"] [data-open-only] {
   display: none !important;
 }
+html[data-nota-promo="true"] [data-nota-std-only],
+html[data-nota-promo="false"] [data-nota-promo-only] {
+  display: none !important;
+}
 
 html[data-exam-active="true"] ins.adsbygoogle,
 html[data-exam-active="true"] .google-auto-placed,

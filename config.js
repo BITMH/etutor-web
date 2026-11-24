@@ -28,6 +28,9 @@ window.ETUTOR_CONFIG = {
   // Promosi Kemuncak SPM 2026: true = semua 35 bab Nota Interaktif 0 Token (Percuma);
   // Tukar kepada false selepas tamat SPM untuk kembali ke kadar asal (2 Token/Bab).
   NOTA_FREE_PROMO_MODE: true,
+  // Tarikh luput automatik promosi 0 Token Nota Interaktif (waktu Malaysia UTC+08:00).
+  // Sebaik melepasi tarikh ini, portal automatik kembali ke kadar asal (2 Token/Bab).
+  NOTA_FREE_PROMO_UNTIL: "2026-12-17T23:59:59+08:00",
 
   // Google Sign-In untuk Cloud Sync (pilihan). Kosongkan = hanya e-mel OTP.
   // Isi dengan OAuth Web Client ID (https://console.cloud.google.com/apis/credentials, Authorized JS origin: https://etutor.my)

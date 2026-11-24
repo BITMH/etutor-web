@@ -1641,6 +1641,7 @@
 
 
 
+
   function isOpenAccessMode() {
     try {
       const ov = sessionStorage.getItem(OPEN_MODE_OVERRIDE_KEY);
@@ -1659,13 +1660,21 @@
 
   function syncOpenAccessDom() {
     const open = isOpenAccessMode();
+    const notaPromo = isNotaFreePromoActive();
     if (typeof document !== "undefined" && document.documentElement) {
       document.documentElement.setAttribute("data-open-access", open ? "true" : "false");
+      document.documentElement.setAttribute("data-nota-promo", notaPromo ? "true" : "false");
       document.querySelectorAll("[data-paid-only]").forEach(function (el) {
         el.hidden = open;
       });
       document.querySelectorAll("[data-open-only]").forEach(function (el) {
         el.hidden = !open;
+      });
+      document.querySelectorAll("[data-nota-promo-only]").forEach(function (el) {
+        el.hidden = !notaPromo;
+      });
+      document.querySelectorAll("[data-nota-std-only]").forEach(function (el) {
+        el.hidden = notaPromo;
       });
     }
     renderHeaderUser();
@@ -2572,12 +2581,22 @@
   const KLON_UNLOCK_COST = 2;
   const NOTA_UNLOCK_COST = 2;
 
-  function isNotaFreePromoActive() {
-    return Boolean(typeof window !== "undefined" && window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.NOTA_FREE_PROMO_MODE === true);
+  function isNotaFreePromoActive(nowMsOverride) {
+    const cfg = typeof window !== "undefined" ? window.ETUTOR_CONFIG : null;
+    if (!cfg || cfg.NOTA_FREE_PROMO_MODE !== true) return false;
+    const untilStr = String(cfg.NOTA_FREE_PROMO_UNTIL || "").trim();
+    if (untilStr) {
+      const untilMs = Date.parse(untilStr);
+      if (!Number.isNaN(untilMs)) {
+        const nowMs = typeof nowMsOverride === "number" ? nowMsOverride : Date.now();
+        if (nowMs > untilMs) return false;
+      }
+    }
+    return true;
   }
 
-  function getEffectiveNotaUnlockCost() {
-    return isNotaFreePromoActive() ? 0 : NOTA_UNLOCK_COST;
+  function getEffectiveNotaUnlockCost(nowMsOverride) {
+    return isNotaFreePromoActive(nowMsOverride) ? 0 : NOTA_UNLOCK_COST;
   }
 
   function loadUnlockedKeysSet() {
@@ -7664,6 +7683,7 @@
 
 
 
+
   const LP_NOTA_FLOAT_DISMISSED_KEY = "etutor_lp_nota_float_dismissed_v1";
 
   function moveFocusSafelyOutOfAnnouncement(bar) {
@@ -7693,7 +7713,7 @@
     if (countEl) {
       const count = getNotaCatalogList().length;
       if (count > 0) {
-        countEl.textContent = count + " Bab KSSM";
+        countEl.textContent = count + (isNotaFreePromoActive() ? " Bab KSSM \u2022 0 Token" : " Bab KSSM");
       }
     }
 

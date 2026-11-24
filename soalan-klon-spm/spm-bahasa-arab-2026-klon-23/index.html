@@ -59,6 +59,26 @@
     .seo-table { width:100%; border-collapse:collapse; font-size:0.9rem; text-align:left; }
     .seo-table th, .seo-table td { padding:11px 14px; border-bottom:1px solid var(--border-subtle); vertical-align:top; }
     .seo-table th { background:#f8fafc; color:var(--brand-navy); font-weight:700; font-size:0.82rem; text-transform:uppercase; }
+    .tips-card-media { border-radius:10px; overflow:hidden; margin-bottom:12px; background:#eff6ff; border:1px solid var(--border-subtle); }
+    .tips-card-media img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure { margin:18px 0 0; border-radius:16px; overflow:hidden; border:1px solid var(--border-subtle); background:#f8fafc; box-shadow:0 8px 24px rgb(15 23 42 / 0.06); }
+    .tips-hero-figure img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure figcaption { padding:10px 16px; font-size:0.82rem; color:var(--text-secondary); background:#f8fafc; border-top:1px solid var(--border-subtle); }
+    .tips-author-bar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:12px 0 6px; font-size:0.86rem; color:var(--text-secondary); }
+    .tips-author-pill { background:#eff6ff; color:#1e3a8a; border:1px solid #bfdbfe; border-radius:999px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+    .tips-compare-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:12px; margin:14px 0; }
+    .tips-cmp-bad { background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-good { background:#ecfdf5; border:1px solid #a7f3d0; border-left:4px solid #059669; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-label { font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px; }
+    .tips-cmp-bad .tips-cmp-label { color:#991b1b; }
+    .tips-cmp-good .tips-cmp-label { color:#065f46; }
+    .tips-checklist { list-style:none; padding:0; margin:12px 0 0; display:grid; gap:8px; }
+    .tips-check-item { display:flex; align-items:flex-start; gap:10px; background:#f8fafc; border:1px solid var(--border-subtle); border-radius:12px; padding:11px 14px; cursor:pointer; font-size:0.93rem; line-height:1.5; }
+    .tips-check-item input { margin-top:4px; width:18px; height:18px; accent-color:#059669; flex-shrink:0; cursor:pointer; }
+    .tips-check-item input:checked + span { text-decoration:line-through; color:#065f46; font-weight:600; }
+    .tips-timeline { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:12px; margin-top:14px; }
+    .tips-time-step { background:#f8fafc; border:1px solid var(--border-subtle); border-top:3px solid var(--brand-accent); border-radius:12px; padding:14px; }
+    .tips-time-badge { font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--brand-accent); margin-bottom:4px; }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Laman Utama eTutor.my","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Soalan Klon SPM","item":"https://etutor.my/soalan-klon-spm/"},{"@type":"ListItem","position":3,"name":"Klon SPM Bahasa Arab 2026 (KLON 23)","item":"https://etutor.my/soalan-klon-spm/spm-bahasa-arab-2026-klon-23/"}]},{"@type":"Quiz","@id":"https://etutor.my/soalan-klon-spm/spm-bahasa-arab-2026-klon-23/#quiz","name":"Soalan Klon & Ramalan SPM Bahasa Arab 2026 (KLON 23)","description":"Latih tubi interaktif Soalan Klon & Ramalan SPM Bahasa Arab 2026 (KLON 23, Kertas 1 & 2) lengkap skema jawapan rasmi serta semakan automatik serta-merta.","inLanguage":"ms-MY","educationalLevel":"SPM (Sijil Pelajaran Malaysia)","learningResourceType":"Practice Exam","about":{"@type":"Thing","name":"Bahasa Arab KSSM SPM (2361)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"},"hasPart":[{"@type":"Question","position":1,"name":"الْوَلَدُ ____________ الْوَالِدَيْنِ فِي كُلِّ وَقْتٍ. — (٢) إملأ الفراغ باختيار الإجابة الصحيحة: (Pilih kata kerja lampau / الفعل الماضي yang sepadan dengan الْوَلَدُ)","eduQuestionType":"Multiple choice","acceptedAnswer":{"@type":"Answer","text":"A. عَاوَنَ"}},{"@type":"Question","position":2,"name":"٣. يُحِبُّ مُوسَى أَنْ __________ أُمَّهُ لإِعْدَادِ الْفُطُورِ فِي الصَّبَاحِ. — Pilih fi'il mudhari' mansub selepas 'أَنْ' yang tepat.","eduQuestionType":"Multiple choice","acceptedAnswer":{"@type":"Answer","text":"C. يُسَاعِدَ"}},{"@type":"Question","position":3,"name":"(ب) كَوِّنْ جُمَلًا مُفِيدَةً مُشْتَمِلَةً عَلَى الْقَوَاعِدِ وَالتَّرَاكِيبِ الآتِيَةِ [١٠ درجات]: — ١. جُمْلَةٌ مَبْدُوءَةٌ بِـ \"إِنَّ\" مَعَ ضَبْطِ اسْمِهَا وَخَبَرِهَا. [2m]","eduQuestionType":"Short answer","acceptedAnswer":{"@type":"Answer","text":"Rujuk skema pemarkahan."}}]}]}</script>
 </head>

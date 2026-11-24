@@ -28,6 +28,7 @@
   const ATTRIBUTED_REFERRAL_STORAGE_KEY = "etutor_attributed_ref_v1";
   const PHONE_WELCOME_DONE_KEY = "etutor_phone_welcome_done_v1";
   const NOTA_PROGRESS_STORAGE_KEY = "etutor_nota_progress_v1";
+  const EXAM_REPORTS_STORAGE_KEY = "etutor_exam_reports_v1";
 
   // --- [config/learningModulesRegistry.js] ---
   /**
@@ -943,14 +944,17 @@
     const userObj = (pinDashData && pinDashData.user) || portalState.user || { userId: "PELAJAR", buyerName: "Pelajar", aksesPakej: "ALL" };
     const allowedFiles = filterCatalogByPackage(rawCatalog, userObj.aksesPakej);
     const scores = Array.isArray(pinDashData && pinDashData.scores) ? pinDashData.scores : [];
+    portalState.scores = scores;
     const progRows = Array.isArray(pinDashData && pinDashData.inProgress) ? pinDashData.inProgress : [];
 
     const bestByFile = {};
+    const attemptCountByFile = {};
     const dateMap = {};
     const weakCounter = {};
 
     scores.forEach(function (s) {
       if (!s || !s.fileId) return;
+      attemptCountByFile[s.fileId] = (attemptCountByFile[s.fileId] || 0) + 1;
       const pct = Math.max(0, Math.min(100, Number(s.percentage) || 0));
       if (s.dateOnly) dateMap[s.dateOnly] = true;
       if (!bestByFile[s.fileId] || pct >= bestByFile[s.fileId].percentage) {
@@ -1012,6 +1016,7 @@
       }
       return Object.assign({}, f, {
         bestScore: best,
+        attemptCount: attemptCountByFile[f.fileId] || (best ? 1 : 0),
         inProgress: prog,
         status: prog ? "in_progress" : (best ? "completed" : "not_started")
       });
@@ -1373,11 +1378,13 @@
     const customName = getOpenStudentName() || "Pelajar";
 
     const bestByFile = {};
+    const attemptCountByFile = {};
     const dateMap = {};
     const weakCounter = {};
 
     scores.forEach(function (s) {
       if (!s || !s.fileId) return;
+      attemptCountByFile[s.fileId] = (attemptCountByFile[s.fileId] || 0) + 1;
       const pct = Math.max(0, Math.min(100, Number(s.percentage) || 0));
       if (s.dateOnly) dateMap[s.dateOnly] = true;
       if (!bestByFile[s.fileId] || pct >= bestByFile[s.fileId].percentage) {
@@ -1464,6 +1471,7 @@
       }
       return Object.assign({}, f, {
         bestScore: best,
+        attemptCount: attemptCountByFile[f.fileId] || (best ? 1 : 0),
         inProgress: prog ? {
           updatedAt: prog.updatedAt || "Sebentar tadi",
           fileId: prog.fileId,
@@ -2564,6 +2572,14 @@
   const KLON_UNLOCK_COST = 2;
   const NOTA_UNLOCK_COST = 2;
 
+  function isNotaFreePromoActive() {
+    return Boolean(typeof window !== "undefined" && window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.NOTA_FREE_PROMO_MODE === true);
+  }
+
+  function getEffectiveNotaUnlockCost() {
+    return isNotaFreePromoActive() ? 0 : NOTA_UNLOCK_COST;
+  }
+
   function loadUnlockedKeysSet() {
     try {
       if (typeof localStorage === "undefined") return new Set();
@@ -2600,6 +2616,7 @@
   }
 
   function isNotaItemUnlocked(noteId) {
+    if (isNotaFreePromoActive()) return true;
     if (portalState.sessionToken) return true;
     return loadUnlockedKeysSet().has("nota:" + String(noteId || "").trim());
   }
@@ -2663,6 +2680,7 @@
   }
 
   async function unlockNotaItem(noteId, title) {
+    if (isNotaFreePromoActive()) return true;
     if (isNotaItemUnlocked(noteId)) return true;
     return performContentUnlock_("nota", noteId, title || "Nota Interaktif", NOTA_UNLOCK_COST);
   }
@@ -2672,6 +2690,7 @@
    * src/features/catalog/deepLinkRouter.js
    * Penghala pautan dalam (Deep-Link ?set=, ?klon=, ?subject=, ?open=1) dari halaman SEO & kad Klon SPM.
    */
+
 
 
 
@@ -2686,6 +2705,7 @@
         (params.get("klon") || "").trim() ||
         (params.get("klonSubject") || "").trim() ||
         (params.get("subject") || "").trim() ||
+        (params.get("nota") || "").trim() ||
         (params.get("q") || "").trim()
       );
     } catch (e) {
@@ -2695,8 +2715,6 @@
 
   function applyDeepLinkParamsOnce() {
     if (portalState.deepLinkHandled) return;
-    const list = portalState.catalog || [];
-    if (list.length === 0) return;
 
     let params;
     try {
@@ -2706,6 +2724,28 @@
       return;
     }
 
+    const notaParam = (params.get("nota") || "").trim();
+    const autoOpen = params.get("open") === "1" || params.get("open") === "true";
+    if (notaParam) {
+      portalState.deepLinkHandled = true;
+      openPortalModuleDropdown("nota_interaktif");
+      try {
+        history.replaceState(null, "", window.location.pathname + "#portal");
+      } catch (e) {}
+      if (autoOpen) {
+        openNotaChapter(notaParam);
+      } else {
+        const notaEl = document.getElementById("moduleDropdownNota");
+        if (notaEl) {
+          setTimeout(function () { notaEl.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+        }
+      }
+      return;
+    }
+
+    const list = portalState.catalog || [];
+    if (list.length === 0) return;
+
     const fileIdParam = (params.get("fileId") || "").trim();
     const titleParam = (params.get("title") || "").trim();
     const setParam = (params.get("set") || "").trim();
@@ -2713,7 +2753,6 @@
     const klonSubParam = (params.get("klonSubject") || "").trim();
     const subParam = (params.get("subject") || "").trim();
     const qParam = (params.get("q") || "").trim();
-    const autoOpen = params.get("open") === "1" || params.get("open") === "true";
     const wantsKlonScroll = window.location.hash.toLowerCase() === "#klon-portal" || Boolean(klonParam) || Boolean(klonSubParam);
 
     portalState.deepLinkHandled = true;
@@ -3167,6 +3206,7 @@
 
 
 
+
   function lookupKlonMeta_(subjectName) {
     const target = String(subjectName || "").replace(/&/g, "&amp;").trim().toLowerCase();
     const raw = String(subjectName || "").trim().toLowerCase();
@@ -3313,6 +3353,7 @@
       '    <button type="button" class="btn ' + primaryBtnClass + ' js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" ' + resumeAttr + '>',
              primaryBtnIcon + ' <span>' + primaryBtnLabel + '</span>',
       '    </button>',
+           renderQuizReportBtnHtml_(item),
       (item.inProgress
         ? '<button type="button" class="btn btn-ghost btn-sm js-open-quiz" data-file-id="' + escapeHtml(item.fileId) + '" data-reset="1" title="Mula semula dari awal">' + ICONS.refresh + '<span class="sr-only">Mula Baharu</span></button>'
         : ''),
@@ -4090,15 +4131,18 @@
   }
 
   function renderNotaCardMarkup_(item, progressRec) {
+    const promoFree = isNotaFreePromoActive();
     const unlocked = isNotaItemUnlocked(item.id);
     const doneUnits = progressRec ? Math.max(0, Number(progressRec.completedUnits) || 0) : 0;
     const totalUnits = Math.max(1, Number(item.unitCount) || 1);
     const masteryPct = progressRec ? Math.min(100, Math.max(0, Number(progressRec.masteryPct) || 0)) : 0;
     const xpEarned = progressRec ? Math.max(0, Number(progressRec.xp) || 0) : 0;
 
-    let statusHtml = unlocked
-      ? '<span class="status-badge badge-done">' + ICONS.checkCircle + " Terbuka Kekal</span>"
-      : '<span class="status-badge badge-progress">' + ICONS.lock + ' <span class="tabular-nums">' + NOTA_UNLOCK_COST + " Token • Kekal</span></span>";
+    let statusHtml = promoFree
+      ? '<span class="status-badge badge-done">' + ICONS.checkCircle + " 0 Token • Percuma SPM</span>"
+      : (unlocked
+        ? '<span class="status-badge badge-done">' + ICONS.checkCircle + " Terbuka Kekal</span>"
+        : '<span class="status-badge badge-progress">' + ICONS.lock + ' <span class="tabular-nums">' + NOTA_UNLOCK_COST + " Token • Kekal</span></span>");
     if (masteryPct >= 100) {
       statusHtml = '<span class="status-badge badge-done">' + ICONS.trophy + ' <span class="tabular-nums">100% Dikuasai</span></span>';
     } else if (doneUnits > 0 || xpEarned > 0) {
@@ -4107,7 +4151,7 @@
 
     const ctaLabel = masteryPct >= 100
       ? "Ulang Kaji Bab"
-      : ((doneUnits > 0 || xpEarned > 0) ? "Sambung Bab" : (unlocked ? "Mula Nota Interaktif" : ("Buka Bab (" + NOTA_UNLOCK_COST + " Token)")));
+      : ((doneUnits > 0 || xpEarned > 0) ? "Sambung Bab" : (promoFree ? "Mula Nota Percuma" : (unlocked ? "Mula Nota Interaktif" : ("Buka Bab (" + NOTA_UNLOCK_COST + " Token)"))));
     const ctaIcon = unlocked || doneUnits > 0 ? ICONS.play : ICONS.unlock;
     const ctaCls = masteryPct >= 100 ? "btn-outline" : (doneUnits > 0 || xpEarned > 0 ? "btn-emerald" : "btn-primary");
 
@@ -4207,11 +4251,12 @@
     }
 
     const progMap = loadNotaProgressMap();
+    const promoFree = isNotaFreePromoActive();
     listEl.innerHTML = filtered.map(function (item) {
       const rec = progMap[item.id] || {};
       const unlocked = isNotaItemUnlocked(item.id);
-      const costLabel = unlocked ? "Dibuka Kekal" : (NOTA_UNLOCK_COST + " Token");
-      const costCls = unlocked ? "phone-badge-cost" : "phone-badge-cost is-klon";
+      const costLabel = promoFree ? "0 Token • Percuma" : (unlocked ? "Dibuka Kekal" : (NOTA_UNLOCK_COST + " Token"));
+      const costCls = (promoFree || unlocked) ? "phone-badge-cost" : "phone-badge-cost is-klon";
       const progText = (rec.completedUnits || 0) > 0 || (rec.xp || 0) > 0
         ? ("Penguasaan: " + (rec.masteryPct || 0) + "% • " + (rec.xp || 0) + " XP")
         : (item.unitCount + " Unit • " + item.stepCount + " Langkah" + (item.hasVoice ? " • Suara AI" : ""));
@@ -4660,13 +4705,838 @@
     }
   }
 
-  // --- [features/quiz-engine/resultSlipModal.js] ---
+  // --- [features/quiz-engine/topicToNotaMatcher.js] ---
   /**
-   * src/features/quiz-engine/resultSlipModal.js
-   * Pengawal dialog Slip Keputusan Rasmi SPM dan fungsi cetakan slip rasmi.
+   * src/features/quiz-engine/topicToNotaMatcher.js
+   * Pemadan pintar antara tajuk topik soalan peperiksaan dengan katalog Nota Interaktif Visual.
    */
 
 
+  const TOPIC_STOPWORDS = new Set([
+    "dan", "atau", "yang", "dalam", "di", "ke", "dari", "daripada", "pada", "untuk", "dengan",
+    "bab", "tingkatan", "ting", "modul", "module", "unit", "subtopik", "topik", "tema",
+    "serta", "antara", "sebagai", "oleh", "terhadap", "spm", "kssm", "t4", "t5",
+    "the", "and", "of", "in", "for", "to", "a", "an", "with", "vs"
+  ]);
+
+  function normalizeMatchTokens_(text) {
+    return String(text || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .split(/[\s-]+/)
+      .filter(function (w) { return w.length >= 3 && !TOPIC_STOPWORDS.has(w); });
+  }
+
+  function normalizeSubjectName_(rawSubj) {
+    const s = String(rawSubj || "").toLowerCase().trim();
+    if (!s) return "";
+    if (s.includes("sains") && !s.includes("komputer") && !s.includes("sukan") && !s.includes("rumah")) return "sains";
+    if (s.includes("sejarah")) return "sejarah";
+    if (s.includes("fizik")) return "fizik";
+    if (s.includes("matematik tambahan") || s.includes("add math")) return "matematik tambahan";
+    if (s.includes("matematik")) return "matematik";
+    if (s.includes("bahasa melayu") || s === "bm") return "bahasa melayu";
+    if (s.includes("bahasa inggeris") || s.includes("english") || s === "bi") return "bahasa inggeris";
+    return s;
+  }
+
+  function extractFormAndChapterHint_(text) {
+    const s = String(text || "").toLowerCase();
+    const fMatch = s.match(/(?:tingkatan|ting\.?)\s*([45])\b|\bt([45])\b/i);
+    const cMatch = s.match(/(?:bab|module|modul)\s*0?(\d{1,2})\b/i);
+    return {
+      form: fMatch ? Number(fMatch[1] || fMatch[2]) : null,
+      chapter: cMatch ? Number(cMatch[1]) : null
+    };
+  }
+
+  function matchTopicToNota(subject, rawTopic, catalogOverride) {
+    const catalog = Array.isArray(catalogOverride) ? catalogOverride : getNotaCatalogList();
+    const normSubj = normalizeSubjectName_(subject);
+    const topicText = String(rawTopic || "").trim();
+    if (!catalog.length || !topicText) return null;
+
+    const sameSubj = catalog.filter(function (item) {
+      return !normSubj || normalizeSubjectName_(item.subject) === normSubj;
+    });
+    if (!sameSubj.length) return null;
+
+    const hints = extractFormAndChapterHint_(topicText);
+    const qTokens = normalizeMatchTokens_(topicText);
+    let bestItem = null;
+    let bestScore = 0;
+
+    sameSubj.forEach(function (item) {
+      let score = 0;
+      if (hints.form && Number(item.form) === hints.form) score += 12;
+      if (hints.chapter && Number(item.chapterNumber) === hints.chapter) {
+        score += (hints.form && Number(item.form) === hints.form) ? 55 : 28;
+      }
+
+      const titleLow = String(item.title || "").toLowerCase();
+      const titleTokens = new Set(normalizeMatchTokens_(item.title));
+      const subTokens = new Set(normalizeMatchTokens_(item.subtitle));
+
+      if (titleLow && topicText.toLowerCase().includes(titleLow)) {
+        score += 50;
+      }
+
+      qTokens.forEach(function (tok) {
+        if (titleTokens.has(tok)) {
+          score += 25;
+        } else if (subTokens.has(tok)) {
+          score += 10;
+        }
+      });
+
+      if (sameSubj.length === 1 && qTokens.length > 0 && score >= 10) {
+        score += 15;
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestItem = item;
+      }
+    });
+
+    if (!bestItem || bestScore < 25) return null;
+    return {
+      item: bestItem,
+      score: bestScore,
+      isUnlocked: typeof catalogOverride !== "undefined" ? false : isNotaItemUnlocked(bestItem.id)
+    };
+  }
+
+  function getSubjectNotesSummary(subject, catalogOverride) {
+    const catalog = Array.isArray(catalogOverride) ? catalogOverride : getNotaCatalogList();
+    const normSubj = normalizeSubjectName_(subject);
+    return catalog
+      .filter(function (c) { return c && (!normSubj || normalizeSubjectName_(c.subject) === normSubj); })
+      .map(function (c) {
+        return {
+          id: c.id,
+          form: c.form,
+          chapterNumber: c.chapterNumber,
+          title: c.title
+        };
+      });
+  }
+
+  // --- [features/quiz-engine/examReportArchive.js] ---
+  /**
+   * src/features/quiz-engine/examReportArchive.js
+   * Arkib laporan peperiksaan berbilang percubaan (localStorage + Supabase), pemadan sejarah skor,
+   * pengira perbandingan Retest (Before vs After), dan butang Laporan pada kad soalan.
+   */
+
+
+
+
+
+
+
+
+  function readLocalExamReports_() {
+    try {
+      if (typeof localStorage === "undefined") return [];
+      const raw = localStorage.getItem(EXAM_REPORTS_STORAGE_KEY);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr.filter(function (x) { return x && x.fileId; }) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function writeLocalExamReports_(list) {
+    try {
+      if (typeof localStorage === "undefined") return;
+      const sorted = (Array.isArray(list) ? list : [])
+        .slice()
+        .sort(function (a, b) { return (Number(b.completedMs) || 0) - (Number(a.completedMs) || 0); })
+        .slice(0, 150);
+      localStorage.setItem(EXAM_REPORTS_STORAGE_KEY, JSON.stringify(sorted));
+    } catch (e) {}
+  }
+
+  function normalizeArchiveRec_(raw) {
+    if (!raw || !raw.fileId) return null;
+    const pct = Math.max(0, Math.min(100, Math.round(Number(raw.percentage) || 0)));
+    const ms = Math.max(1, Number(raw.completedMs) || Date.now());
+    return {
+      fileId: String(raw.fileId),
+      completedMs: ms,
+      completedAt: String(raw.completedAt || new Date(ms).toLocaleString("ms-MY")),
+      quizTitle: String(raw.quizTitle || "Set Latihan Interaktif").slice(0, 180),
+      subject: String(raw.subject || "SPM").slice(0, 80),
+      buyerName: String(raw.buyerName || "").slice(0, 80),
+      scoreText: String(raw.scoreText || (pct + "%")).slice(0, 50),
+      percentage: pct,
+      grade: String(raw.grade || computeLocalSpmGrade(pct, true)).slice(0, 10),
+      breakdown: String(raw.breakdown || "").slice(0, 220),
+      weakTopics: Array.isArray(raw.weakTopics) ? raw.weakTopics.slice(0, 12) : [],
+      allTopicStats: Array.isArray(raw.allTopicStats) ? raw.allTopicStats.slice(0, 24) : [],
+      paperSplit: raw.paperSplit && typeof raw.paperSplit === "object" ? raw.paperSplit : null,
+      wrongQuestions: Array.isArray(raw.wrongQuestions) ? raw.wrongQuestions.slice(0, 18) : [],
+      aiAnalysis: raw.aiAnalysis && typeof raw.aiAnalysis === "object" ? raw.aiAnalysis : null
+    };
+  }
+
+  async function syncReportSnapshotToCloud_(rec) {
+    try {
+      const sb = getSupabaseClient();
+      if (!sb || !isSupabaseConfigured() || !rec) return;
+      const sess = await sb.auth.getSession();
+      if (!sess || !sess.data || !sess.data.session) return;
+      await sb.rpc("save_exam_report_snapshot", {
+        p_file_id: rec.fileId,
+        p_completed_ms: rec.completedMs,
+        p_quiz_title: rec.quizTitle,
+        p_subject: rec.subject,
+        p_score_text: rec.scoreText,
+        p_percentage: rec.percentage,
+        p_grade: rec.grade,
+        p_breakdown: rec.breakdown,
+        p_diagnostics_json: {
+          weakTopics: rec.weakTopics,
+          allTopicStats: rec.allTopicStats,
+          paperSplit: rec.paperSplit,
+          wrongQuestions: rec.wrongQuestions
+        },
+        p_ai_analysis_json: rec.aiAnalysis || null
+      });
+    } catch (e) {}
+  }
+
+  function saveExamReportAttempt(rawRecord) {
+    const rec = normalizeArchiveRec_(rawRecord);
+    if (!rec) return null;
+    const list = readLocalExamReports_();
+    const idx = list.findIndex(function (x) {
+      return x.fileId === rec.fileId && Math.abs((Number(x.completedMs) || 0) - rec.completedMs) < 1500;
+    });
+    if (idx >= 0) {
+      if (!rec.aiAnalysis && list[idx].aiAnalysis) rec.aiAnalysis = list[idx].aiAnalysis;
+      list[idx] = rec;
+    } else {
+      list.unshift(rec);
+    }
+    writeLocalExamReports_(list);
+    void syncReportSnapshotToCloud_(rec);
+    return rec;
+  }
+
+  function attachAiAnalysisToAttempt(fileId, completedMs, aiReport) {
+    if (!fileId || !aiReport) return null;
+    const list = readLocalExamReports_();
+    let target = list.find(function (x) {
+      return x.fileId === fileId && (!completedMs || Math.abs((Number(x.completedMs) || 0) - Number(completedMs)) < 1500);
+    });
+    if (!target) {
+      const legacy = getAttemptsForFile(fileId)[0];
+      if (!legacy) return null;
+      target = normalizeArchiveRec_(legacy);
+      list.unshift(target);
+    }
+    target.aiAnalysis = aiReport;
+    writeLocalExamReports_(list);
+    void syncReportSnapshotToCloud_(target);
+    return target;
+  }
+
+  function getAttemptsForFile(fileId) {
+    if (!fileId) return [];
+    const archived = readLocalExamReports_().filter(function (x) { return x.fileId === fileId; });
+    const merged = archived.map(normalizeArchiveRec_).filter(Boolean);
+    const seenMs = new Set(merged.map(function (r) { return Math.round((Number(r.completedMs) || 0) / 1000); }));
+
+    const legacyPool = [];
+    if (Array.isArray(portalState.scores)) legacyPool.push.apply(legacyPool, portalState.scores);
+    if (typeof localStorage !== "undefined") {
+      try { legacyPool.push.apply(legacyPool, loadOpenScoresList()); } catch (e) {}
+    }
+
+    legacyPool.forEach(function (s) {
+      if (!s || s.fileId !== fileId) return;
+      const ms = Number(s.completedMs) || (s.completedAt ? Date.parse(s.completedAt) : 0) || Date.now();
+      const secKey = Math.round(ms / 1000);
+      if (seenMs.has(secKey)) return;
+      seenMs.add(secKey);
+      const n = normalizeArchiveRec_(Object.assign({}, s, { completedMs: ms }));
+      if (n) merged.push(n);
+    });
+
+    if (merged.length === 0) {
+      const catItem = (portalState.catalog || []).find(function (c) { return c.fileId === fileId; });
+      if (catItem && catItem.bestScore) {
+        const n = normalizeArchiveRec_(catItem.bestScore);
+        if (n) merged.push(n);
+      }
+    }
+
+    merged.sort(function (a, b) { return (Number(b.completedMs) || 0) - (Number(a.completedMs) || 0); });
+    return merged;
+  }
+
+  function getLatestAttemptForFile(fileId) {
+    return getAttemptsForFile(fileId)[0] || null;
+  }
+
+  function computeRetestDelta(currentAttempt, prevAttempt) {
+    if (!currentAttempt || !prevAttempt) return null;
+    const curPct = Math.round(Number(currentAttempt.percentage) || 0);
+    const prevPct = Math.round(Number(prevAttempt.percentage) || 0);
+    const curTopics = (currentAttempt.allTopicStats && currentAttempt.allTopicStats.length ? currentAttempt.allTopicStats : currentAttempt.weakTopics) || [];
+    const prevTopics = (prevAttempt.allTopicStats && prevAttempt.allTopicStats.length ? prevAttempt.allTopicStats : prevAttempt.weakTopics) || [];
+
+    const prevMap = {};
+    prevTopics.forEach(function (t) {
+      if (t && t.topic) prevMap[String(t.topic).trim().toLowerCase()] = t;
+    });
+
+    const topicDiffs = [];
+    curTopics.forEach(function (ct) {
+      if (!ct || !ct.topic) return;
+      const old = prevMap[String(ct.topic).trim().toLowerCase()];
+      if (!old) return;
+      const fromPct = Math.round(Number(old.percentage) || 0);
+      const toPct = Math.round(Number(ct.percentage) || 0);
+      const diff = toPct - fromPct;
+      const status = (fromPct < 60 && toPct >= 60) ? "mastered" : (toPct < 60 ? "still_weak" : (diff > 0 ? "improved" : "steady"));
+      topicDiffs.push({ topic: ct.topic, fromPct: fromPct, toPct: toPct, delta: diff, status: status });
+    });
+
+    topicDiffs.sort(function (a, b) { return b.delta - a.delta; });
+    return {
+      pctDelta: curPct - prevPct,
+      fromPct: prevPct,
+      toPct: curPct,
+      gradeFrom: String(prevAttempt.grade || "—"),
+      gradeTo: String(currentAttempt.grade || "—"),
+      prevCompletedAt: String(prevAttempt.completedAt || ""),
+      topicDiffs: topicDiffs,
+      improvedTopics: topicDiffs.filter(function (d) { return d.delta > 0; }).map(function (d) { return d.topic; }),
+      stillWeakTopics: topicDiffs.filter(function (d) { return d.toPct < 60; }).map(function (d) { return d.topic; })
+    };
+  }
+
+  async function hydrateExamReportsFromCloud() {
+    try {
+      const sb = getSupabaseClient();
+      if (!sb || !isSupabaseConfigured()) return false;
+      const sess = await sb.auth.getSession();
+      if (!sess || !sess.data || !sess.data.session) return false;
+      const { data, error } = await sb.rpc("get_my_exam_reports", { p_file_id: "" });
+      if (error || !data || !data.ok || !Array.isArray(data.reports)) return false;
+
+      const existing = readLocalExamReports_();
+      let changed = false;
+      data.reports.forEach(function (remoteRaw) {
+        const rem = normalizeArchiveRec_(remoteRaw);
+        if (!rem) return;
+        const idx = existing.findIndex(function (x) {
+          return x.fileId === rem.fileId && Math.abs((Number(x.completedMs) || 0) - rem.completedMs) < 1500;
+        });
+        if (idx === -1) {
+          existing.push(rem);
+          changed = true;
+        } else if (rem.aiAnalysis && !existing[idx].aiAnalysis) {
+          existing[idx].aiAnalysis = rem.aiAnalysis;
+          changed = true;
+        }
+      });
+      if (changed) {
+        writeLocalExamReports_(existing);
+        if (typeof renderKlonCatalogSection === "function") renderKlonCatalogSection();
+        if (typeof renderCatalogSection === "function") renderCatalogSection();
+        if (typeof renderPhoneKertasTab === "function") renderPhoneKertasTab();
+      }
+      return changed;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function renderQuizReportBtnHtml_(item) {
+    if (!item || !item.bestScore) return "";
+    const attempts = getAttemptsForFile(item.fileId);
+    const cnt = Math.max(Number(item.attemptCount) || 0, attempts.length || 1);
+    const hasAi = attempts.some(function (a) { return Boolean(a && a.aiAnalysis); });
+    const badge = cnt > 1 ? (" " + cnt + "×") : "";
+    const aiIcon = hasAi ? (" " + ICONS.sparkles) : "";
+    return '<button type="button" class="btn btn-outline btn-sm quiz-report-btn js-open-quiz-report" data-file-id="' + escapeHtml(item.fileId) + '" title="Semak laporan keputusan, analisis &amp; banding percubaan">Laporan' + escapeHtml(badge) + aiIcon + "</button>";
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("etutor:cloud-synced", function () {
+      void hydrateExamReportsFromCloud();
+    });
+  }
+
+  // --- [features/quiz-engine/examAnalysisService.js] ---
+  /**
+   * src/features/quiz-engine/examAnalysisService.js
+   * Klien perkhidmatan Analisis Pelajar Cikgu AI (2 Token) + Ringkasan WhatsApp.
+   */
+
+
+
+
+
+  const EXAM_ANALYSIS_TOKEN_COST = 2;
+
+  function resolveAnalysisUserKey_() {
+    try {
+      const raw = localStorage.getItem("etutor_portal_session_v1");
+      if (raw) {
+        const u = (JSON.parse(raw) || {}).user;
+        const uid = u && (u.userId || u.email || u.phone);
+        if (uid) return "usr:" + String(uid).trim().toLowerCase();
+      }
+      const syncEm = localStorage.getItem("etutor_sync_email_v1");
+      if (syncEm) return "eml:" + String(syncEm).trim().toLowerCase();
+      const cid = localStorage.getItem("etutor_cikgu_client_uid_v1");
+      if (cid) return cid;
+    } catch (e) {}
+    return "dev:" + getOrCreateDeviceId();
+  }
+
+  async function resolveAnalysisBearerJwt_() {
+    try {
+      const sb = isSupabaseConfigured() ? getSupabaseClient() : null;
+      if (sb) {
+        const res = await sb.auth.getSession();
+        const tok = res && res.data && res.data.session && res.data.session.access_token;
+        if (tok) return tok;
+      }
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i) || "";
+        if (k.startsWith("sb-") && k.endsWith("-auth-token")) {
+          const p = JSON.parse(localStorage.getItem(k) || "{}");
+          if (p && p.access_token) return String(p.access_token);
+          if (p && p.currentSession && p.currentSession.access_token) return String(p.currentSession.access_token);
+        }
+      }
+    } catch (e) {}
+    return "";
+  }
+
+  function resolveAnalysisEndpoints_() {
+    const cfg = (typeof window !== "undefined" && window.ETUTOR_CONFIG) || {};
+    const edge = String(cfg.CIKGU_SUPABASE_EDGE_URL || "https://ktesekiguardgfdgrmlp.supabase.co/functions/v1/cikgu-semak").replace(/\/+$/, "");
+    const modal = String(cfg.CIKGU_MODAL_GPU_URL || "https://hanismathussin96--cikgu-ai-spm.modal.run").replace(/\/+$/, "");
+    return [edge, modal].filter(Boolean);
+  }
+
+  function syncWalletFromHeaders_(resp, data) {
+    const prev = readWalletLocalSnapshot();
+    const remHdr = resp && resp.headers ? resp.headers.get("X-Cikgu-Daily-Remaining") : null;
+    const paidHdr = resp && resp.headers ? resp.headers.get("X-Cikgu-Paid-Balance") : null;
+    const totalAvail = (data && typeof data.daily_remaining === "number")
+      ? data.daily_remaining
+      : (remHdr !== null && remHdr !== "" && !isNaN(Number(remHdr)) ? Number(remHdr) : null);
+    const paid = (data && typeof data.paid_balance === "number")
+      ? data.paid_balance
+      : (paidHdr !== null && paidHdr !== "" && !isNaN(Number(paidHdr)) ? Number(paidHdr) : prev.paidBalance);
+    if (totalAvail === null) return;
+    const freeDaily = Math.max(0, Math.min(5, totalAvail - paid));
+    const spentDelta = Math.max(0, (prev.freeDailyRemaining || 0) - freeDaily);
+    persistAndBroadcastWallet({
+      paidBalance: paid,
+      freeDailyRemaining: freeDaily,
+      freeRemaining: freeDaily,
+      freeMonthlyRemaining: Math.max(0, (prev.freeMonthlyRemaining || 0) - spentDelta)
+    });
+  }
+
+  async function requestExamAiAnalysis(attemptRec, prevDelta) {
+    if (!attemptRec || !attemptRec.fileId) {
+      return { ok: false, error: "Tiada rekod peperiksaan untuk dianalisis." };
+    }
+    if (attemptRec.aiAnalysis) {
+      return { ok: true, cached: true, analysis: attemptRec.aiAnalysis };
+    }
+
+    const snap = readWalletLocalSnapshot();
+    if (snap.remaining < EXAM_ANALYSIS_TOKEN_COST) {
+      openTokenWalletDialog();
+      return {
+        ok: false,
+        insufficientTokens: true,
+        error: "Baki token tidak mencukupi (perlukan " + EXAM_ANALYSIS_TOKEN_COST + " Token). Tambah nilai atau tunggu reset harian."
+      };
+    }
+
+    const userKey = resolveAnalysisUserKey_();
+    const jwt = await resolveAnalysisBearerJwt_();
+    const hdrs = { "Content-Type": "application/json", "X-Etutor-User": userKey };
+    if (jwt) hdrs.Authorization = "Bearer " + jwt;
+
+    const payload = {
+      subjek: attemptRec.subject || "SPM",
+      mod: "analisis_peperiksaan",
+      sub_id: attemptRec.fileId,
+      soalan: "Analisis Peperiksaan: " + (attemptRec.quizTitle || "Set Latihan SPM"),
+      nama_pelajar: attemptRec.buyerName || "Pelajar",
+      id_pengguna: userKey,
+      markah_penuh: 100,
+      stream: false,
+      max_tokens: 4096,
+      analisis_data: {
+        subject: attemptRec.subject || "SPM",
+        quizTitle: attemptRec.quizTitle || "Set Latihan SPM",
+        studentName: attemptRec.buyerName || "Pelajar",
+        percentage: attemptRec.percentage,
+        grade: attemptRec.grade,
+        scoreText: attemptRec.scoreText,
+        breakdown: attemptRec.breakdown,
+        paperSplit: attemptRec.paperSplit || null,
+        allTopicStats: attemptRec.allTopicStats || [],
+        weakTopics: attemptRec.weakTopics || [],
+        wrongQuestions: attemptRec.wrongQuestions || [],
+        availableNotes: getSubjectNotesSummary(attemptRec.subject || ""),
+        previousAttempt: prevDelta ? {
+          percentage: prevDelta.fromPct,
+          grade: prevDelta.gradeFrom,
+          completedAt: prevDelta.prevCompletedAt,
+          improvedTopics: prevDelta.improvedTopics,
+          stillWeakTopics: prevDelta.stillWeakTopics
+        } : null
+      }
+    };
+
+    const endpoints = resolveAnalysisEndpoints_();
+    let lastErr = "Sambungan ke Cikgu AI tergendala sebentar (tiada token ditolak).";
+    let fallbackAnalysis = null;
+
+    for (let i = 0; i < endpoints.length; i++) {
+      try {
+        const resp = await fetch(endpoints[i] + "/v1/semak", {
+          method: "POST",
+          headers: hdrs,
+          body: JSON.stringify(payload),
+          signal: typeof AbortSignal !== "undefined" && AbortSignal.timeout ? AbortSignal.timeout(26000) : undefined
+        });
+        const data = await resp.json().catch(function () { return {}; });
+        if (resp.ok && data && data.analysis) {
+          syncWalletFromHeaders_(resp, data);
+          const enriched = Object.assign({}, data.analysis, {
+            provider: data.provider || "gemini-3.8-flash",
+            generatedAt: new Date().toISOString()
+          });
+          attachAiAnalysisToAttempt(attemptRec.fileId, attemptRec.completedMs, enriched);
+          return { ok: true, cached: false, provider: enriched.provider, analysis: enriched };
+        }
+        if (resp.status === 402 || (data && data.error === "daily_token_limit")) {
+          syncWalletFromHeaders_(resp, { daily_remaining: 0, paid_balance: 0 });
+          openTokenWalletDialog();
+          return { ok: false, insufficientTokens: true, error: data.detail || "Baki token AI tidak mencukupi." };
+        }
+        if (data && data.fallback_analysis) fallbackAnalysis = data.fallback_analysis;
+        if (data && data.detail) lastErr = data.detail;
+      } catch (err) {
+        lastErr = "Pelayan Cikgu AI sibuk sementara (tiada token ditolak).";
+      }
+    }
+
+    return { ok: false, error: lastErr, fallbackAnalysis: fallbackAnalysis };
+  }
+
+  function buildWhatsAppRevisionSummary(attemptRec, aiReport, retestDelta) {
+    if (!attemptRec) return "";
+    const lines = [
+      "*SLIP KEPUTUSAN & ULANG KAJI eTutor.my*",
+      "Calon: " + (attemptRec.buyerName || "Pelajar"),
+      "Subjek: " + (attemptRec.subject || "SPM"),
+      "Set: " + (attemptRec.quizTitle || "Set Latihan SPM"),
+      "Keputusan: *" + attemptRec.percentage + "% (Gred " + attemptRec.grade + ")*"
+    ];
+    if (retestDelta) {
+      const sign = retestDelta.pctDelta > 0 ? "+" : "";
+      lines.push("Perbandingan Retest: " + retestDelta.fromPct + "% -> " + retestDelta.toPct + "% (" + sign + retestDelta.pctDelta + "%)");
+    }
+    const revTopics = (aiReport && Array.isArray(aiReport.tajuk_ulangkaji) && aiReport.tajuk_ulangkaji.length)
+      ? aiReport.tajuk_ulangkaji.slice(0, 4).map(function (t, i) { return (i + 1) + ". " + t.tajuk + " (" + t.subtopik_fokus + ")"; })
+      : (attemptRec.weakTopics || []).slice(0, 4).map(function (w, i) { return (i + 1) + ". " + w.topic + " (" + w.percentage + "%)"; });
+    if (revTopics.length) {
+      lines.push("", "*Tajuk Wajib Ulang Kaji:*");
+      lines.push.apply(lines, revTopics);
+    }
+    if (aiReport && Array.isArray(aiReport.pelan_3_hari) && aiReport.pelan_3_hari.length) {
+      lines.push("", "*Pelan Tindakan 3 Hari:*");
+      aiReport.pelan_3_hari.slice(0, 3).forEach(function (p) {
+        lines.push("- " + p.hari + ": " + p.tindakan);
+      });
+    }
+    return lines.join("\n");
+  }
+
+  // --- [features/quiz-engine/examAnalysisRenderer.js] ---
+  /**
+   * src/features/quiz-engine/examAnalysisRenderer.js
+   * Pemapar UI untuk Pemilih Percubaan, Kad Perbandingan Retest, Topik + Pautan Nota Interaktif,
+   * serta Seksyen Analisis Cikgu AI & Pelan Ulang Kaji 3 Hari Bercetak.
+   */
+
+
+
+
+
+  function renderAttemptSwitcher(attempts, activeMs) {
+    const bar = document.getElementById("slipAttemptBar");
+    if (!bar) return;
+    if (!Array.isArray(attempts) || attempts.length < 2) {
+      bar.hidden = true;
+      bar.innerHTML = "";
+      return;
+    }
+    bar.hidden = false;
+    bar.innerHTML = [
+      '<span class="slip-attempt-lbl">Sejarah Percubaan (' + attempts.length + '):</span>',
+      '<div class="slip-attempt-pills">',
+      attempts.slice(0, 6).map(function (a, i) {
+        const isAct = Number(a.completedMs) === Number(activeMs);
+        const num = attempts.length - i;
+        const tag = i === 0 ? "Terkini" : ("#" + num);
+        return '<button type="button" class="slip-attempt-pill js-slip-switch-attempt" data-ms="' + escapeHtml(a.completedMs) + '" aria-pressed="' + (isAct ? "true" : "false") + '">' +
+          escapeHtml(tag + " • " + a.percentage + "% (" + a.grade + ")") +
+          (a.aiAnalysis ? (" " + ICONS.sparkles) : "") +
+          "</button>";
+      }).join(""),
+      "</div>"
+    ].join("");
+  }
+
+  function renderRetestCompareCard(delta) {
+    const box = document.getElementById("slipRetestCompare");
+    if (!box) return;
+    if (!delta) {
+      box.hidden = true;
+      box.innerHTML = "";
+      return;
+    }
+    const sign = delta.pctDelta > 0 ? "+" : "";
+    const cls = delta.pctDelta > 0 ? "is-up" : (delta.pctDelta < 0 ? "is-down" : "is-flat");
+    const arrow = delta.pctDelta > 0 ? "▲" : (delta.pctDelta < 0 ? "▼" : "●");
+    const pillsHtml = delta.topicDiffs.slice(0, 6).map(function (td) {
+      const tSign = td.delta > 0 ? "+" : "";
+      const tCls = td.status === "mastered" || td.delta > 0 ? "is-up" : (td.status === "still_weak" ? "is-warn" : "is-flat");
+      return '<span class="retest-topic-pill ' + tCls + '">' +
+        escapeHtml(td.topic) + ': <strong class="tabular-nums">' + td.fromPct + "% → " + td.toPct + "% (" + tSign + td.delta + "%)</strong>" +
+        "</span>";
+    }).join("");
+
+    box.hidden = false;
+    box.innerHTML = [
+      '<div class="retest-compare-head">',
+      '  <span>Perbandingan Percubaan Terdahulu (Retest &amp; Compare)</span>',
+      '  <span class="retest-delta-badge ' + cls + ' tabular-nums">' + arrow + " " + delta.fromPct + "% (" + escapeHtml(delta.gradeFrom) + ") → " + delta.toPct + "% (" + escapeHtml(delta.gradeTo) + ") • " + sign + delta.pctDelta + "%</span>",
+      "</div>",
+      (pillsHtml ? '<div class="retest-topic-pills">' + pillsHtml + "</div>" : "")
+    ].join("");
+  }
+
+  function renderSlipTopicsWithNota(data) {
+    const weakListEl = document.getElementById("slipWeakTopics");
+    if (!weakListEl) return;
+    weakListEl.textContent = "";
+
+    const allStats = Array.isArray(data.allTopicStats) && data.allTopicStats.length ? data.allTopicStats : [];
+    const rawList = allStats.length ? allStats : (Array.isArray(data.weakTopics) ? data.weakTopics : []);
+
+    if (rawList.length === 0) {
+      const okLi = document.createElement("li");
+      okLi.className = "slip-topic-item";
+      okLi.setAttribute("data-state", "ok");
+      okLi.innerHTML = '<div class="slip-topic-row"><span class="slip-topic-name">Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.</span><span class="slip-topic-stat">100%</span></div><div class="slip-topic-track"><div class="slip-topic-fill" style="width:100%"></div></div>';
+      weakListEl.appendChild(okLi);
+      return;
+    }
+
+    rawList.slice(0, 12).forEach(function (w) {
+      const li = document.createElement("li");
+      const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
+      const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
+      const wTot = Math.max(1, Math.round(Number(w.total) || 1));
+      const isAtt = w.attempted === undefined ? true : Boolean(w.attempted);
+      const state = !isAtt ? "unattempted" : (wPct >= 60 ? "ok" : (wPct >= 40 ? "mid" : "weak"));
+      li.className = "slip-topic-item";
+      li.setAttribute("data-state", state);
+
+      const row = document.createElement("div");
+      row.className = "slip-topic-row";
+      const nameSpan = document.createElement("span");
+      nameSpan.className = "slip-topic-name";
+      nameSpan.textContent = String(w.topic || "Topik");
+      const statSpan = document.createElement("span");
+      statSpan.className = "slip-topic-stat tabular-nums";
+      statSpan.textContent = isAtt
+        ? (wPct + "% (" + wObt + "/" + wTot + ")" + (wPct < 60 ? " • Ulang Kaji" : ""))
+        : ("Belum Dijawab (" + wObt + "/" + wTot + ")");
+      row.appendChild(nameSpan);
+      row.appendChild(statSpan);
+
+      const track = document.createElement("div");
+      track.className = "slip-topic-track";
+      const fill = document.createElement("div");
+      fill.className = "slip-topic-fill";
+      fill.style.width = (isAtt ? Math.max(4, wPct) : 0) + "%";
+      track.appendChild(fill);
+
+      li.appendChild(row);
+      li.appendChild(track);
+
+      if (wPct < 60) {
+        const matched = matchTopicToNota(data.subject || "", w.topic || "");
+        const act = document.createElement("div");
+        act.className = "slip-topic-action-row";
+        if (matched && matched.item) {
+          const it = matched.item;
+          act.innerHTML =
+            '<button type="button" class="slip-nota-btn slip-no-print js-slip-open-nota" data-note-id="' + escapeHtml(it.id) + '">' +
+            ICONS.book + ' <span>Buka Nota: T' + escapeHtml(it.form) + ' Bab ' + escapeHtml(it.chapterNumber) + ' — ' + escapeHtml(it.title) +
+            (matched.isUnlocked ? " (Terbuka)" : " (2 Token)") +
+            "</span></button>" +
+            '<span class="slip-print-only-ref">Rujukan Nota eTutor.my: Tingkatan ' + escapeHtml(it.form) + " Bab " + escapeHtml(it.chapterNumber) + " (" + escapeHtml(it.title) + ")</span>";
+        } else {
+          act.innerHTML =
+            '<button type="button" class="slip-cikgu-btn slip-no-print js-slip-ask-cikgu" data-topic="' + escapeHtml(w.topic || "") + '" data-subject="' + escapeHtml(data.subject || "") + '">' +
+            ICONS.sparkles + " <span>Tanya Cikgu AI Topik Ini →</span></button>";
+        }
+        li.appendChild(act);
+      }
+
+      weakListEl.appendChild(li);
+    });
+  }
+
+  function renderAiAnalysisSection(attemptRec, uiState) {
+    const sec = document.getElementById("slipAiAnalysisSection");
+    if (!sec) return;
+    const loading = Boolean(uiState && uiState.loading);
+    const errMsg = uiState && uiState.errorMsg ? String(uiState.errorMsg) : "";
+    const ai = attemptRec && attemptRec.aiAnalysis;
+
+    if (loading) {
+      sec.innerHTML = [
+        '<div class="slip-ai-loading">',
+        '  <div class="slip-ai-spinner" aria-hidden="true"></div>',
+        "  <div><strong>Cikgu AI sedang menganalisis kertas anda...</strong><p>Mengesan punca hilang markah, kelebihan dan menyusun pelan ulang kaji KSSM (3–6 saat).</p></div>",
+        "</div>"
+      ].join("");
+      return;
+    }
+
+    if (!ai) {
+      const fbHtml = uiState && uiState.fallbackAnalysis ? renderReportMarkup_(uiState.fallbackAnalysis, attemptRec.subject, true) : "";
+      sec.innerHTML = [
+        '<div class="slip-ai-cta-card slip-no-print">',
+        '  <div class="slip-ai-cta-info">',
+        '    <div class="slip-ai-cta-title">' + ICONS.sparkles + ' <span>Analisis Mendalam &amp; Pelan Ulang Kaji Cikgu AI</span></div>',
+        '    <p class="slip-ai-cta-desc">Dapatkan diagnosis punca hilang markah, kekuatan anda, senarai tajuk keutamaan SPM beserta pautan terus Nota Interaktif, dan jadual ulang kaji 3 hari sedia cetak.</p>',
+        (errMsg ? '<p class="slip-ai-err">' + escapeHtml(errMsg) + "</p>" : ""),
+        "  </div>",
+        '  <button type="button" id="slipAiAnalyzeBtn" class="btn btn-primary slip-ai-btn">Jana Analisis AI (' + EXAM_ANALYSIS_TOKEN_COST + " Token)</button>",
+        "</div>",
+        fbHtml
+      ].join("");
+      return;
+    }
+
+    sec.innerHTML = renderReportMarkup_(ai, attemptRec.subject, false);
+  }
+
+  function renderReportMarkup_(ai, subject, isFallback) {
+    const strengths = (ai.kelebihan_pelajar || []).map(function (s) { return "<li>" + escapeHtml(s) + "</li>"; }).join("");
+    const causes = (ai.punca_hilang_markah || []).map(function (c) { return "<li>" + escapeHtml(c) + "</li>"; }).join("");
+    const tips = (ai.tip_teknik_menjawab || []).map(function (t) { return "<li>" + escapeHtml(t) + "</li>"; }).join("");
+
+    const revCards = (ai.tajuk_ulangkaji || []).map(function (r, idx) {
+      let noteBtn = "";
+      const directId = String(r.nota_id || "").trim();
+      const directItem = directId
+        ? (getNotaCatalogList().find(function (c) { return c && c.id === directId; }) || null)
+        : null;
+      const matched = directItem
+        ? { item: directItem }
+        : matchTopicToNota(subject, (r.tajuk || "") + " " + (r.subtopik_fokus || ""));
+      const chosenItem = matched && matched.item ? matched.item : null;
+      if (chosenItem && chosenItem.id) {
+        const lbl = chosenItem.chapterNumber
+          ? ("Buka Nota: T" + chosenItem.form + " Bab " + chosenItem.chapterNumber + " — " + chosenItem.title)
+          : "Buka Nota Interaktif";
+        const refTxt = chosenItem.chapterNumber
+          ? ("Rujukan Nota Interaktif eTutor.my: Tingkatan " + chosenItem.form + " Bab " + chosenItem.chapterNumber + " — " + chosenItem.title)
+          : ("Rujukan Nota Interaktif eTutor.my: " + (chosenItem.title || "Nota Interaktif"));
+        noteBtn =
+          '<button type="button" class="slip-nota-btn slip-no-print js-slip-open-nota" data-note-id="' + escapeHtml(chosenItem.id) + '">' + ICONS.book + " <span>" + escapeHtml(lbl) + "</span></button>" +
+          '<span class="slip-print-only-ref">' + escapeHtml(refTxt) + "</span>";
+      } else {
+        noteBtn =
+          '<button type="button" class="slip-cikgu-btn slip-no-print js-slip-ask-cikgu" data-topic="' + escapeHtml(r.tajuk || "") + '" data-subject="' + escapeHtml(subject || "") + '">' + ICONS.sparkles + " <span>Tanya Cikgu AI</span></button>" +
+          '<span class="slip-print-only-ref">Cadangan Ulang Kaji: Rujuk Buku Teks KSSM &amp; Tanya Cikgu AI di eTutor.my</span>';
+      }
+      return [
+        '<div class="slip-rev-item">',
+        '  <div class="slip-rev-head"><span class="slip-rev-prio">#' + escapeHtml(r.keutamaan || idx + 1) + '</span><strong>' + escapeHtml(r.tajuk) + "</strong></div>",
+        '  <div class="slip-rev-sub">Fokus: ' + escapeHtml(r.subtopik_fokus) + "</div>",
+        '  <div class="slip-rev-why">' + escapeHtml(r.sebab_fokus) + "</div>",
+        '  <div class="slip-rev-act">' + noteBtn + "</div>",
+        "</div>"
+      ].join("");
+    }).join("");
+
+    const planRows = (ai.pelan_3_hari || []).map(function (p) {
+      return '<li class="slip-plan-item"><span class="slip-print-chk" aria-hidden="true">☐</span><div><strong>' +
+        escapeHtml(p.hari) + ":</strong> " + escapeHtml(p.tindakan) +
+        '<div class="slip-plan-target">Sasaran: ' + escapeHtml(p.sasaran) + "</div></div></li>";
+    }).join("");
+
+    return [
+      '<div class="slip-ai-report">',
+      '  <div class="slip-ai-report-head">',
+      '    <span>' + (isFallback ? "PELAN ULANG KAJI ASAS (0 TOKEN)" : "LAPORAN PENASIHAT CIKGU AI SPM") + "</span>",
+      '    <span class="slip-ai-cached-pill">' + (isFallback ? "Sandaran Pantas" : "Tersimpan • 0 Token Buka Semula") + "</span>",
+      "  </div>",
+      '  <p class="slip-ai-summary">' + escapeHtml(ai.ringkasan_prestasi || "") + "</p>",
+      '  <div class="slip-ai-grid">',
+      '    <div class="slip-ai-card is-good"><h4>Kelebihan Anda</h4><ul>' + (strengths || "<li>Usaha konsisten menjawab set latihan.</li>") + "</ul></div>",
+      '    <div class="slip-ai-card is-warn"><h4>Punca Markah Hilang</h4><ul>' + (causes || "<li>Perlu ketelitian kata kunci skema.</li>") + "</ul></div>",
+      "  </div>",
+      '  <div class="slip-ai-block"><h4>Tajuk &amp; Subtopik Wajib Ulang Kaji</h4><div class="slip-rev-list">' + revCards + "</div></div>",
+      '  <div class="slip-ai-block"><h4>Pelan Tindakan 3 Hari (Senarai Semak Cetak)</h4><ul class="slip-plan-list">' + planRows + "</ul></div>",
+      (tips ? '<div class="slip-ai-card is-tip"><h4>Tip Emas Teknik Menjawab SPM</h4><ul>' + tips + "</ul></div>" : ""),
+      "</div>"
+    ].join("");
+  }
+
+  // --- [features/quiz-engine/resultSlipModal.js] ---
+  /**
+   * src/features/quiz-engine/resultSlipModal.js
+   * Pengawal dialog Slip Keputusan Rasmi SPM, Hab Diagnostik & Ulang Kaji, Retest Compare & Cetakan PDF.
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const slipModalState = {
+    fileId: "",
+    attempts: [],
+    activeAttempt: null,
+    delta: null,
+    loading: false,
+    errorMsg: "",
+    fallbackAnalysis: null
+  };
 
   function resolveGradeTier(pct, grade) {
     const g = String(grade || "").toUpperCase();
@@ -4702,107 +5572,225 @@
     }
   }
 
-  function openResultSlipModal() {
-    const data = portalState.latestSlipData;
-    const dlg = document.getElementById("resultSlipDialog");
-    if (!data || !dlg) return;
+  function renderSlipAttemptView_(attempt) {
+    if (!attempt) return;
+    const attempts = slipModalState.attempts || [attempt];
+    const idx = attempts.findIndex(function (a) { return Number(a.completedMs) === Number(attempt.completedMs); });
+    const prevAttempt = idx >= 0 && idx + 1 < attempts.length ? attempts[idx + 1] : null;
+    slipModalState.activeAttempt = attempt;
+    slipModalState.delta = computeRetestDelta(attempt, prevAttempt);
+    slipModalState.loading = false;
+    slipModalState.errorMsg = "";
+    slipModalState.fallbackAnalysis = null;
 
     const isOpenGuest = !portalState.sessionToken && isOpenAccessMode();
     const customNameInput = document.getElementById("slipCustomNameInput");
     const savedOpenName = getOpenStudentName();
-    if (customNameInput && isOpenGuest) {
-      customNameInput.value = savedOpenName;
-    }
+    if (customNameInput && isOpenGuest) customNameInput.value = savedOpenName;
+    const displayName = isOpenGuest
+      ? (savedOpenName || attempt.buyerName || "Pelajar")
+      : ((portalState.user && portalState.user.buyerName) || attempt.buyerName || "Pelajar");
 
-    const displayStudentName = isOpenGuest
-      ? (savedOpenName || data.buyerName || "Pelajar")
-      : ((portalState.user && portalState.user.buyerName) || data.buyerName || "Pelajar");
-
-    const safePct = Math.max(0, Math.min(100, Math.round(Number(data.percentage) || 0)));
-    const safeGrade = String(data.grade || "—").slice(0, 6);
+    const safePct = Math.max(0, Math.min(100, Math.round(Number(attempt.percentage) || 0)));
+    const safeGrade = String(attempt.grade || "—").slice(0, 6);
     const tierInfo = resolveGradeTier(safePct, safeGrade);
     const paperRoot = document.getElementById("slipPaperRoot");
     if (paperRoot) paperRoot.setAttribute("data-tier", tierInfo.tier);
-
     const arcEl = document.getElementById("slipScoreArc");
     if (arcEl) arcEl.setAttribute("stroke-dashoffset", (314.16 * (1 - safePct / 100)).toFixed(2));
-
     const refEl = document.getElementById("slipRefNo");
-    if (refEl) refEl.textContent = buildSlipRefNo(data);
+    if (refEl) refEl.textContent = buildSlipRefNo(attempt);
     const gLabelEl = document.getElementById("slipGradeLabel");
     if (gLabelEl) gLabelEl.textContent = tierInfo.label;
 
-    document.getElementById("slipStudentName").textContent = displayStudentName;
+    document.getElementById("slipStudentName").textContent = displayName;
     document.getElementById("slipUserId").textContent = (portalState.user && portalState.user.userId) || "";
-    document.getElementById("slipQuizTitle").textContent = data.quizTitle || "Set Latihan Interaktif";
-    document.getElementById("slipSubject").textContent = data.subject || "SPM";
-    document.getElementById("slipDate").textContent = new Date().toLocaleString("ms-MY");
+    document.getElementById("slipQuizTitle").textContent = attempt.quizTitle || "Set Latihan Interaktif";
+    document.getElementById("slipSubject").textContent = attempt.subject || "SPM";
+    document.getElementById("slipDate").textContent = attempt.completedAt || new Date().toLocaleString("ms-MY");
     document.getElementById("slipScorePct").textContent = safePct + "%";
     document.getElementById("slipGrade").textContent = safeGrade;
-    const breakdownText = data.breakdown || ("Markah: " + (data.scoreText || ""));
+    const breakdownText = attempt.breakdown || ("Markah: " + (attempt.scoreText || ""));
     document.getElementById("slipBreakdown").textContent = breakdownText;
     updatePaperSplitBars(breakdownText);
 
-    const weakListEl = document.getElementById("slipWeakTopics");
-    weakListEl.textContent = "";
-    const wt = Array.isArray(data.weakTopics) ? data.weakTopics : [];
-    if (wt.length === 0) {
-      const okLi = document.createElement("li");
-      okLi.className = "slip-topic-item";
-      okLi.setAttribute("data-state", "ok");
-      okLi.innerHTML = "<div class=\"slip-topic-row\"><span class=\"slip-topic-name\">Penguasaan kukuh (>= 60%) merentasi semua bab yang diuji.</span><span class=\"slip-topic-stat\">100%</span></div><div class=\"slip-topic-track\"><div class=\"slip-topic-fill\" style=\"width:100%\"></div></div>";
-      weakListEl.appendChild(okLi);
-    } else {
-      wt.forEach(function (w) {
-        const li = document.createElement("li");
-        const wPct = Math.max(0, Math.min(100, Math.round(Number(w.percentage) || 0)));
-        const wObt = Math.max(0, Math.round(Number(w.obtained) || 0));
-        const wTot = Math.max(1, Math.round(Number(w.total) || 1));
-        const isAttempted = w.attempted === undefined ? true : Boolean(w.attempted);
-        const state = !isAttempted ? "unattempted" : (wPct >= 60 ? "ok" : (wPct >= 40 ? "mid" : "weak"));
-        li.className = "slip-topic-item";
-        li.setAttribute("data-state", state);
-
-        const row = document.createElement("div");
-        row.className = "slip-topic-row";
-        const nameSpan = document.createElement("span");
-        nameSpan.className = "slip-topic-name";
-        nameSpan.textContent = String(w.topic || "Topik");
-        const statSpan = document.createElement("span");
-        statSpan.className = "slip-topic-stat tabular-nums";
-        statSpan.textContent = isAttempted
-          ? (wPct + "% (" + wObt + "/" + wTot + ")" + (wPct < 60 ? " • Ulang Kaji" : ""))
-          : ("Belum Dijawab (" + wObt + "/" + wTot + ")");
-        row.appendChild(nameSpan);
-        row.appendChild(statSpan);
-
-        const track = document.createElement("div");
-        track.className = "slip-topic-track";
-        const fill = document.createElement("div");
-        fill.className = "slip-topic-fill";
-        fill.style.width = (isAttempted ? Math.max(4, wPct) : 0) + "%";
-        track.appendChild(fill);
-
-        li.appendChild(row);
-        li.appendChild(track);
-        weakListEl.appendChild(li);
-      });
+    const retestBtn = document.getElementById("retestSlipBtn");
+    if (retestBtn) {
+      retestBtn.hidden = !attempt.fileId;
+      retestBtn.setAttribute("data-file-id", attempt.fileId || "");
     }
 
-    if (typeof dlg.showModal === "function") {
-      dlg.showModal();
-    } else {
-      dlg.setAttribute("open", "");
-    }
+    renderAttemptSwitcher(attempts, attempt.completedMs);
+    renderRetestCompareCard(slipModalState.delta);
+    renderSlipTopicsWithNota(attempt);
+    renderAiAnalysisSection(attempt, slipModalState);
     if (window.ETutorMotion) window.ETutorMotion.animateSlipScore(safePct);
   }
 
+  function bindSlipModalDelegation_(dlg) {
+    if (!dlg || dlg.dataset.analysisBound === "1") return;
+    dlg.dataset.analysisBound = "1";
+
+    dlg.addEventListener("click", async function (ev) {
+      const swBtn = ev.target.closest(".js-slip-switch-attempt");
+      if (swBtn) {
+        const ms = Number(swBtn.getAttribute("data-ms"));
+        const found = (slipModalState.attempts || []).find(function (a) { return Number(a.completedMs) === ms; });
+        if (found) renderSlipAttemptView_(found);
+        return;
+      }
+
+      const notaBtn = ev.target.closest(".js-slip-open-nota");
+      if (notaBtn) {
+        const noteId = notaBtn.getAttribute("data-note-id");
+        if (!noteId) return;
+        if (dlg.open) await closeTopLayer(dlg);
+        if (portalState.activeQuizFileId) {
+          await closeQuizStage();
+          await new Promise(function (r) { setTimeout(r, 180); });
+        }
+        await openNotaChapter(noteId);
+        return;
+      }
+
+      const cikguBtn = ev.target.closest(".js-slip-ask-cikgu");
+      if (cikguBtn) {
+        const topic = (cikguBtn.getAttribute("data-topic") || "").trim();
+        const subj = (cikguBtn.getAttribute("data-subject") || "").trim();
+        if (dlg.open) await closeTopLayer(dlg);
+        const isPhone = document.documentElement.getAttribute("data-phone-app") === "true";
+        if (isPhone) {
+          if (portalState.activeQuizFileId) await closeQuizStage();
+          switchPhoneTab("cikgu");
+          if (typeof jumpToPhoneCikguTopic === "function") jumpToPhoneCikguTopic(topic);
+          return;
+        }
+        const drawer = window.__CIKGU_AI_INSTANCE__ && window.__CIKGU_AI_INSTANCE__.drawer;
+        if (drawer && typeof drawer.openWithPrompt === "function") {
+          drawer.openWithPrompt('Assalamualaikum Cikgu, saya nak ulang kaji topik "' + topic + '" yang markah saya rendah tadi. Boleh terangkan isi penting dan kata kunci skema SPM?', subj);
+        } else {
+          showToast("Sila klik butang Cikgu AI untuk bertanya mengenai topik ini.");
+        }
+        return;
+      }
+
+      if (ev.target.closest("#slipAiAnalyzeBtn")) {
+        const cur = slipModalState.activeAttempt;
+        if (!cur || slipModalState.loading) return;
+        slipModalState.loading = true;
+        slipModalState.errorMsg = "";
+        renderAiAnalysisSection(cur, slipModalState);
+        const res = await requestExamAiAnalysis(cur, slipModalState.delta);
+        slipModalState.loading = false;
+        if (res && res.ok && res.analysis) {
+          cur.aiAnalysis = res.analysis;
+          if (portalState.latestSlipData && portalState.latestSlipData.fileId === cur.fileId) {
+            portalState.latestSlipData.aiAnalysis = res.analysis;
+          }
+          renderKlonCatalogSection();
+          renderCatalogSection();
+          renderPhoneKertasTab();
+          showToast(res.cached ? "Laporan AI dimuatkan (0 Token)." : "Analisis Cikgu AI siap (-2 Token).");
+        } else {
+          slipModalState.errorMsg = (res && res.error) || "Analisis gagal dijana (tiada token ditolak).";
+          slipModalState.fallbackAnalysis = (res && res.fallbackAnalysis) || null;
+        }
+        renderAiAnalysisSection(cur, slipModalState);
+        return;
+      }
+
+      if (ev.target.closest("#copySlipWhatsappBtn")) {
+        const cur = slipModalState.activeAttempt;
+        const txt = buildWhatsAppRevisionSummary(cur, cur && cur.aiAnalysis, slipModalState.delta);
+        if (!txt) return;
+        try {
+          await navigator.clipboard.writeText(txt);
+          showToast("Ringkasan keputusan & tajuk ulang kaji disalin untuk WhatsApp!");
+        } catch (e) {
+          showToast("Tidak dapat menyalin secara automatik. Gunakan butang Cetak / PDF.", true);
+        }
+        return;
+      }
+
+      if (ev.target.closest("#retestSlipBtn")) {
+        const fid = (slipModalState.activeAttempt && slipModalState.activeAttempt.fileId) || slipModalState.fileId;
+        if (!fid) return;
+        if (dlg.open) await closeTopLayer(dlg);
+        openQuizSet(fid, false, true);
+      }
+    });
+  }
+
+  function openResultSlipModal(overrideAttempt) {
+    const raw = (overrideAttempt && typeof overrideAttempt === "object" && overrideAttempt.fileId)
+      ? overrideAttempt
+      : portalState.latestSlipData;
+    const dlg = document.getElementById("resultSlipDialog");
+    if (!raw || !dlg) return;
+
+    bindSlipModalDelegation_(dlg);
+    const attempts = getAttemptsForFile(raw.fileId);
+    if (!attempts.some(function (a) { return Math.abs((Number(a.completedMs) || 0) - (Number(raw.completedMs) || 0)) < 1500; })) {
+      attempts.unshift(raw);
+    }
+    slipModalState.fileId = raw.fileId;
+    slipModalState.attempts = attempts;
+    const matched = attempts.find(function (a) {
+      return raw.completedMs && Math.abs(Number(a.completedMs) - Number(raw.completedMs)) < 1500;
+    }) || attempts[0];
+
+    renderSlipAttemptView_(matched);
+    if (!dlg.open) {
+      if (typeof dlg.showModal === "function") dlg.showModal();
+      else dlg.setAttribute("open", "");
+    }
+  }
+
+  function openSavedReportForFile(fileId, preferredCompletedMs) {
+    if (!fileId) return;
+    const attempts = getAttemptsForFile(fileId);
+    if (!attempts.length) {
+      showToast("Belum ada laporan peperiksaan yang disimpan untuk set ini.");
+      return;
+    }
+    const picked = (preferredCompletedMs
+      ? attempts.find(function (a) { return Math.abs(Number(a.completedMs) - Number(preferredCompletedMs)) < 1500; })
+      : null) || attempts[0];
+    portalState.latestSlipData = picked;
+    openResultSlipModal(picked);
+  }
+
   function printOfficialSlip() {
-    document.body.classList.add("printing-official-slip");
-    window.print();
-    setTimeout(function () {
+    const dlg = document.getElementById("resultSlipDialog");
+    let wasModal = false;
+    try {
+      if (dlg && dlg.open && typeof dlg.matches === "function" && dlg.matches(":modal")) {
+        wasModal = true;
+        dlg.close();
+        dlg.setAttribute("open", "");
+      }
+    } catch (e) {}
+
+    let cleaned = false;
+    function cleanup() {
+      if (cleaned) return;
+      cleaned = true;
       document.body.classList.remove("printing-official-slip");
-    }, 500);
+      if (wasModal && dlg) {
+        try {
+          if (!dlg.matches(":modal")) {
+            dlg.removeAttribute("open");
+            if (typeof dlg.showModal === "function") dlg.showModal();
+            else dlg.setAttribute("open", "");
+          }
+        } catch (e) {}
+      }
+    }
+
+    document.body.classList.add("printing-official-slip");
+    window.addEventListener("afterprint", cleanup, { once: true });
+    window.print();
+    setTimeout(cleanup, 1500);
   }
 
   // --- [features/quiz-engine/leaderboardOptInModal.js] ---
@@ -5205,6 +6193,7 @@
 
 
 
+
   function handleQuizMessage(event) {
     const iframe = document.getElementById("examIframe");
     if (!iframe || !iframe.contentWindow || !event || event.source !== iframe.contentWindow) return;
@@ -5318,9 +6307,15 @@
       const resolvedName = isOpenGuest
         ? (getOpenStudentName() || "Pelajar")
         : ((portalState.user && portalState.user.buyerName) || "");
+      const completedMsNow = Date.now();
+      const safeAllTopics = Array.isArray(msg.allTopicStats) ? msg.allTopicStats.slice(0, 24) : [];
+      const safePaperSplit = msg.paperSplit && typeof msg.paperSplit === "object" ? msg.paperSplit : null;
+      const safeWrongQuestions = Array.isArray(msg.wrongQuestions) ? msg.wrongQuestions.slice(0, 18) : [];
 
       portalState.latestSlipData = {
         fileId: portalState.activeQuizFileId,
+        completedMs: completedMsNow,
+        completedAt: new Date(completedMsNow).toLocaleString("ms-MY"),
         quizTitle: safeTitle,
         subject: safeSubject,
         buyerName: resolvedName,
@@ -5328,8 +6323,12 @@
         percentage: pctSafe,
         grade: gradeSafe,
         breakdown: String(msg.breakdown || "").slice(0, 180),
-        weakTopics: safeWeakTopics
+        weakTopics: safeWeakTopics,
+        allTopicStats: safeAllTopics,
+        paperSplit: safePaperSplit,
+        wrongQuestions: safeWrongQuestions
       };
+      saveExamReportAttempt(portalState.latestSlipData);
 
       const slipBtn = document.getElementById("openSlipBtn");
       if (slipBtn) slipBtn.hidden = false;
@@ -5340,7 +6339,6 @@
 
       if (isOpenGuest) {
         const targetFileId = portalState.activeQuizFileId;
-        const completedMsNow = Date.now();
         const progMap = loadOpenProgressMap();
         delete progMap[targetFileId];
         saveOpenProgressMap(progMap);
@@ -5368,6 +6366,7 @@
         openLeaderboardOptInModal(portalState.latestSlipData, {
           onKeepPrivate: function () {
             showToast("Markah disimpan secara peribadi (disorokkan daripada Leaderboard).");
+            setTimeout(function () { openResultSlipModal(); }, 160);
           },
           onPublishToLeaderboard: function () {
             const list = loadOpenScoresList();
@@ -5391,6 +6390,7 @@
             cloudSyncAfterSubmit(targetFileId);
             applyDashboardBundle(buildOpenDashboardBundle(portalState.rawOpenCatalog, portalState.rawServerLeaderboard));
             showToast("Markah anda kini dipaparkan di Leaderboard.");
+            setTimeout(function () { openResultSlipModal(); }, 160);
           }
         });
         return;
@@ -5418,6 +6418,7 @@
       openLeaderboardOptInModal(portalState.latestSlipData, {
         onKeepPrivate: function () {
           showToast("Markah disimpan secara peribadi (disorokkan daripada Leaderboard).");
+          setTimeout(function () { openResultSlipModal(); }, 160);
         },
         onPublishToLeaderboard: function () {
           savePinPromise.finally(function () {
@@ -5433,6 +6434,7 @@
               showToast("Gagal mengemas kini Leaderboard. Cuba sebentar lagi.", true);
             });
           });
+          setTimeout(function () { openResultSlipModal(); }, 160);
         }
       });
     }
@@ -8770,6 +9772,13 @@
         return;
       }
 
+      const reportBtn = e.target.closest(".js-open-quiz-report");
+      if (reportBtn) {
+        const fid = reportBtn.getAttribute("data-file-id");
+        if (fid) openSavedReportForFile(fid);
+        return;
+      }
+
       if (e.target.closest(".js-load-more-klon")) {
         portalState.klonVisibleLimit = (Number(portalState.klonVisibleLimit) || PORTAL_BATCH_SIZE) + PORTAL_BATCH_SIZE;
         renderKlonCatalogSection();
@@ -9299,6 +10308,7 @@
       renderSyncButton();
       refreshAiWalletFromServer();
       tryClaimPendingReferralBonus().catch(function () {});
+      try { window.dispatchEvent(new CustomEvent("etutor:cloud-synced")); } catch (e) {}
       if (!opts.silent) showToast("Progress berjaya disimpan ke awan.");
       return true;
     } catch (err) {
@@ -9325,6 +10335,7 @@
     } else {
       refreshAiWalletFromServer();
       tryClaimPendingReferralBonus().catch(function () {});
+      try { window.dispatchEvent(new CustomEvent("etutor:cloud-synced")); } catch (e) {}
     }
     refreshOpenDashboardIfIdle();
     if (!opts.quietToast) {
@@ -10430,6 +11441,8 @@
       ? ("Kemajuan disimpan: " + (item.inProgress.answeredCount || 0) + " / " + (item.inProgress.totalQuestions || 40) + " soalan")
       : (item.bestScore ? ("Rekod terbaik: " + item.bestScore.percentage + "% (Gred " + item.bestScore.grade + ")") : "Belum dijawab lagi.");
     document.getElementById("phoneConfirmStartQuizBtn").textContent = item.inProgress ? "Sambung Menjawab" : (unlocked ? "Mula Menjawab Sekarang" : ("Buka Kunci Kekal (" + KLON_UNLOCK_COST + " Token) & Mula"));
+    const viewRepBtn = document.getElementById("phoneViewReportBtn");
+    if (viewRepBtn) viewRepBtn.hidden = !Boolean(item.bestScore);
     const restartBtn = document.getElementById("phoneRestartQuizBtn");
     if (restartBtn) restartBtn.hidden = !Boolean(item.inProgress);
     return true;
@@ -10726,6 +11739,7 @@
 
 
 
+
   function switchPhoneTab(tabName) {
     const valid = ["utama", "kertas", "cikgu", "akaun"].indexOf(tabName) !== -1 ? tabName : "utama";
     phoneUiState.activeTab = valid;
@@ -10760,6 +11774,7 @@
     });
 
     const startBtn = document.getElementById("phoneConfirmStartQuizBtn");
+    const viewRepBtn = document.getElementById("phoneViewReportBtn");
     const resetBtn = document.getElementById("phoneRestartQuizBtn");
     const paperDlg = document.getElementById("phonePaperDialog");
     if (startBtn) {
@@ -10767,6 +11782,13 @@
         const fId = phoneUiState.selectedFileId;
         if (paperDlg && paperDlg.open) await closeTopLayer(paperDlg);
         if (fId) openQuizSet(fId, true, false);
+      });
+    }
+    if (viewRepBtn) {
+      viewRepBtn.addEventListener("click", async function () {
+        const fId = phoneUiState.selectedFileId;
+        if (paperDlg && paperDlg.open) await closeTopLayer(paperDlg);
+        if (fId) openSavedReportForFile(fId);
       });
     }
     if (resetBtn) {
@@ -11093,6 +12115,7 @@
 
 
 
+
   document.addEventListener("DOMContentLoaded", async function () {
     initTokenReferralCapture();
     syncOpenAccessDom();
@@ -11110,6 +12133,7 @@
     initMobileAppExperience();
     initAdSenseController();
     initToyyibPayAutoResumeAfterLogin();
+    void hydrateExamReportsFromCloud();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)
     callBackend("ping").then(function (r) {

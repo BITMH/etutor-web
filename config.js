@@ -25,6 +25,10 @@ window.ETUTOR_CONFIG = {
   // Boleh juga ditukar terus secara langsung melalui Panel Kawalan Admin (#admin) pada tahun hadapan.
   OPEN_ACCESS_MODE: true,
 
+  // Promosi Kemuncak SPM 2026: true = semua 35 bab Nota Interaktif 0 Token (Percuma);
+  // Tukar kepada false selepas tamat SPM untuk kembali ke kadar asal (2 Token/Bab).
+  NOTA_FREE_PROMO_MODE: true,
+
   // Google Sign-In untuk Cloud Sync (pilihan). Kosongkan = hanya e-mel OTP.
   // Isi dengan OAuth Web Client ID (https://console.cloud.google.com/apis/credentials, Authorized JS origin: https://etutor.my)
   // dan tetapkan nilai SAMA pada Script Property `GOOGLE_CLIENT_ID` di Apps Script.

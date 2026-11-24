@@ -2820,6 +2820,111 @@ dialog.slip-dialog::backdrop {
   }
 }
 
+/* === features/quiz-engine/exam-analysis-slip.css === */
+/* POST-EXAM ANALYSIS, NOTA REDIRECT, ATTEMPT ARCHIVE & RETEST COMPARE UI */
+
+.quiz-card-footer .quiz-report-btn,
+.quiz-card-footer .btn-ghost { flex: 0 0 auto; white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; }
+
+.slip-attempt-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  padding: 10px 12px; margin-block-end: 12px;
+  background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: 10px;
+}
+.slip-attempt-lbl { font-size: 0.76rem; font-weight: 700; color: var(--text-secondary); }
+.slip-attempt-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.slip-attempt-pill {
+  border: 1px solid var(--border-strong); background: #ffffff; color: var(--text-primary);
+  border-radius: 999px; padding: 4px 10px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+}
+.slip-attempt-pill[aria-pressed="true"] { background: var(--brand-navy); color: #ffffff; border-color: var(--brand-navy); }
+
+.slip-retest-compare {
+  margin-block: 12px; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid #bfdbfe; background: #f0f9ff;
+}
+.retest-compare-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 8px; font-size: 0.82rem; font-weight: 800; color: #1e3a8a;
+}
+.retest-delta-badge { padding: 3px 9px; border-radius: 999px; font-size: 0.76rem; font-weight: 800; }
+.retest-delta-badge.is-up, .retest-topic-pill.is-up { background: #dcfce7; color: #166534; }
+.retest-delta-badge.is-down { background: #fee2e2; color: #991b1b; }
+.retest-delta-badge.is-flat, .retest-topic-pill.is-flat { background: #e2e8f0; color: #334155; }
+.retest-topic-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-block-start: 8px; }
+.retest-topic-pill { font-size: 0.74rem; padding: 3px 8px; border-radius: 6px; }
+.retest-topic-pill.is-warn { background: #fef3c7; color: #92400e; }
+
+.slip-topic-action-row { margin-block-start: 6px; display: flex; flex-wrap: wrap; gap: 6px; }
+.slip-nota-btn, .slip-cikgu-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  border-radius: 8px; padding: 5px 10px; font-size: 0.76rem; font-weight: 700;
+  cursor: pointer; border: 1px solid transparent;
+}
+.slip-nota-btn { background: #ecfdf5; color: #065f46; border-color: #a7f3d0; }
+.slip-nota-btn:hover { background: #d1fae5; }
+.slip-cikgu-btn { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+.slip-print-only-ref { display: none; font-size: 0.72rem; color: #334155; }
+
+.slip-ai-section { margin-block-start: 14px; }
+.slip-ai-cta-card {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 16px; border-radius: 12px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%); border: 1px solid #c7d2fe;
+}
+.slip-ai-cta-info { flex: 1 1 260px; }
+.slip-ai-cta-title { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 800; color: #1e3a8a; }
+.slip-ai-cta-desc { margin: 4px 0 0; font-size: 0.8rem; color: #475569; line-height: 1.45; }
+.slip-ai-err { margin: 6px 0 0; font-size: 0.78rem; font-weight: 700; color: #b91c1c; }
+
+.slip-ai-loading {
+  display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 12px;
+  background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.82rem; color: #1e3a8a;
+}
+.slip-ai-loading p { margin: 3px 0 0; font-size: 0.76rem; color: #475569; }
+.slip-ai-spinner {
+  inline-size: 24px; block-size: 24px; border-radius: 50%;
+  border: 3px solid #bfdbfe; border-top-color: #2563eb;
+  animation: etutor-spin 0.9s linear infinite; flex-shrink: 0;
+}
+@keyframes etutor-spin { to { transform: rotate(360deg); } }
+
+.slip-ai-report { border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; background: #ffffff; }
+.slip-ai-report-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 800; color: #1e3a8a;
+  padding-block-end: 8px; border-block-end: 1px solid #e2e8f0;
+}
+.slip-ai-cached-pill {
+  font-size: 0.72rem; background: #ecfdf5; color: #065f46;
+  border: 1px solid #a7f3d0; padding: 2px 8px; border-radius: 999px;
+}
+.slip-ai-summary { margin: 10px 0; font-size: 0.84rem; line-height: 1.5; color: #1e293b; }
+.slip-ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-block-end: 12px; }
+.slip-ai-card { border-radius: 10px; padding: 10px 12px; font-size: 0.79rem; border: 1px solid #e2e8f0; }
+.slip-ai-card.is-good { background: #f0fdf4; border-color: #bbf7d0; }
+.slip-ai-card.is-warn { background: #fff7ed; border-color: #fed7aa; }
+.slip-ai-card.is-tip { background: #fefce8; border-color: #fde68a; margin-block-start: 10px; }
+.slip-ai-card h4, .slip-ai-block h4 { margin: 0 0 6px; font-size: 0.8rem; font-weight: 800; color: #0f172a; }
+.slip-ai-card ul { margin: 0; padding-inline-start: 18px; line-height: 1.45; }
+
+.slip-ai-block { margin-block-start: 10px; }
+.slip-rev-list { display: grid; gap: 8px; }
+.slip-rev-item { border: 1px solid #e2e8f0; border-radius: 10px; padding: 9px 11px; background: #f8fafc; }
+.slip-rev-head { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; }
+.slip-rev-prio { background: #1e3a8a; color: #ffffff; border-radius: 6px; padding: 1px 6px; font-size: 0.7rem; font-weight: 800; }
+.slip-rev-sub { font-size: 0.77rem; font-weight: 700; color: #334155; margin-block-start: 3px; }
+.slip-rev-why { font-size: 0.76rem; color: #475569; margin-block-start: 2px; }
+.slip-rev-act { margin-block-start: 6px; }
+
+.slip-plan-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.slip-plan-item {
+  display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px;
+  border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; font-size: 0.79rem;
+}
+.slip-print-chk { font-size: 1rem; line-height: 1.1; color: #1e3a8a; }
+.slip-plan-target { font-size: 0.74rem; color: #475569; margin-block-start: 2px; }
+
 /* === shared/ui/styles/dialogs-and-toast.css === */
 /* Confetti Burst Layer (GPU-Composited Quiz Completion Celebration) */
 .confetti-burst-layer {
@@ -5157,6 +5262,10 @@ html:not([data-open-access="true"]) [data-open-only] {
 
 /* PRINT RULE: Block printing everywhere EXCEPT when Official Result Slip Dialog is open */
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
   body > *:not(#resultSlipDialog, .etutor-svg-sprite) {
     display: none !important;
   }
@@ -5165,17 +5274,62 @@ html:not([data-open-access="true"]) [data-open-only] {
   }
   dialog#resultSlipDialog {
     position: static !important;
+    inset: auto !important;
     display: block !important;
     inline-size: 100% !important;
     max-inline-size: 100% !important;
-    border: 1px solid #cbd5e1 !important;
+    block-size: auto !important;
+    max-block-size: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
     box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+  dialog#resultSlipDialog::backdrop {
+    display: none !important;
+  }
+  .slip-paper {
+    overflow: visible !important;
+    padding: 2px 4px !important;
+    background: #ffffff !important;
+  }
+  .slip-ai-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
   .slip-actions,
   .slip-no-print {
     display: none !important;
+  }
+  .slip-print-only-ref {
+    display: block !important;
+  }
+  .slip-ai-block h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .slip-score-banner,
+  .slip-meta-grid,
+  .slip-official-footer,
+  .slip-retest-compare,
+  .slip-ai-card,
+  .slip-rev-item,
+  .slip-plan-item,
+  .slip-topic-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .slip-official-footer {
+    margin-block-start: 14px !important;
+  }
+  .slip-ai-report {
+    border-color: #94a3b8 !important;
   }
 }
 

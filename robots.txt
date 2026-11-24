@@ -5,5 +5,6 @@ Disallow: /*?klon=
 Disallow: /*?klonSubject=
 Disallow: /*?subject=
 Disallow: /*?fileId=
+Disallow: /*?nota=
 
 Sitemap: https://etutor.my/sitemap.xml

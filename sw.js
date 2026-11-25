@@ -1,5 +1,5 @@
 /* AUTO-GENERATED DARIPADA src/features/mobile-app/sw-template.js OLEH scripts/build-frontend.mjs */
-const BUILD_VERSION = "v20261124082109";
+const BUILD_VERSION = "v20261125092319";
 const SHELL_CACHE = "etutor-shell-" + BUILD_VERSION;
 
 const SHELL_ASSETS = [
@@ -87,7 +87,23 @@ self.addEventListener("fetch", function (event) {
     return;
   }
 
-  const extMatch = /\.(css|js|svg|png|webmanifest|ico|woff2?)$/i.test(url.pathname);
+  const isCodeAsset = /\.(css|js)$/i.test(url.pathname);
+  if (isCodeAsset) {
+    event.respondWith(
+      fetch(req).then(function (networkRes) {
+        if (networkRes && networkRes.ok && networkRes.type === "basic") {
+          const copy = networkRes.clone();
+          caches.open(SHELL_CACHE).then(function (cache) { cache.put(req, copy); }).catch(function () {});
+        }
+        return networkRes;
+      }).catch(function () {
+        return caches.match(req);
+      })
+    );
+    return;
+  }
+
+  const extMatch = /\.(svg|png|webmanifest|ico|woff2?)$/i.test(url.pathname);
   if (!extMatch) return;
 
   event.respondWith(

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <title>EduQuest KSSM &bull; Peta Bab &amp; Bintang | eTutor.my</title>
+  <meta name="description" content="Peta pengembaraan EduQuest mengikut subjek dan tingkatan KSSM. Pilih tajuk atau ulang bab lama untuk mengumpul penuh 3 bintang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="./eduquest.css">
+</head>
+<body class="eq-page-body" data-theme="bm">
+  <header class="eq-topbar">
+    <div class="eq-topbar-inner">
+      <a href="../#portal" class="eq-back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/></svg>
+        <span>Kembali ke Portal</span>
+      </a>
+      <div class="eq-hud-pills">
+        <span class="eq-hud-pill is-xp" id="eqHudTotalXp">0 XP</span>
+        <span class="eq-hud-pill is-stars" id="eqHudTotalStars">0 / 0 ★</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="eq-main">
+    <section class="eq-controls-card" aria-label="Pilihan Tingkatan dan Subjek">
+      <div class="eq-world-banner">
+        <div>
+          <span class="eq-world-kicker" id="eqWorldKicker">DUNIA EDUQUEST &bull; TINGKATAN 4</span>
+          <h1 class="eq-world-title" id="eqWorldTitle">Kepulauan Melayu &bull; Bahasa Melayu</h1>
+          <p class="eq-world-sub">Susunan bab dari atas ke bawah. Pilih tajuk yang terbuka atau ulang bab lama bila-bila masa untuk raih penuh 3 bintang!</p>
+        </div>
+        <div class="eq-clr-meter">
+          <div class="eq-clr-nums"><span id="eqClrSummary">0 / 0 Bab Selesai</span><strong id="eqClrPct">0%</strong></div>
+          <div class="eq-clr-track"><span id="eqClrFill"></span></div>
+        </div>
+      </div>
+
+      <div class="eq-filter-row">
+        <div class="eq-pill-group" id="eqFormPills" role="group" aria-label="Pilih Tingkatan"></div>
+        <div class="eq-pill-group" id="eqSubjPills" role="group" aria-label="Pilih Subjek"></div>
+      </div>
+    </section>
+
+    <section class="eq-path-stage" id="eqPathStage" aria-label="Laluan Pengembaraan Bab">
+      <div class="eq-path-loading">Memuatkan peta pengembaraan EduQuest...</div>
+    </section>
+  </main>
+
+  <section id="eqPlayerStage" class="eq-player-stage" hidden aria-label="Paparan Bab EduQuest">
+    <div class="eq-player-topbar">
+      <button type="button" id="eqPlayerBackBtn" class="eq-back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-7l-7 7 7 7"/></svg>
+        <span>Kembali ke EduQuest</span>
+      </button>
+      <strong id="eqPlayerTitle" class="eq-player-title">Bab EduQuest</strong>
+      <span id="eqPlayerStatus" class="eq-player-status">Auto-simpan aktif</span>
+    </div>
+    <iframe id="eqPlayerIframe" class="eq-player-iframe" title="Kandungan Bab EduQuest"></iframe>
+  </section>
+
+  <script src="./eduquest.js"></script>
+</body>
+</html>

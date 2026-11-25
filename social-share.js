@@ -122,7 +122,7 @@
     const avgScore = cleanSingleLine(p.avgScore, 16) || "-";
     const avgGrade = cleanSingleLine(p.avgGrade, 10) || "-";
     const xpText = cleanSingleLine(p.totalXp, 24) || "0 XP";
-    const defaultNote = "Seronok ulang kaji guna eTutor.my sebab terus dapat semak skema jawapan, kenal pasti bab lemah dan baca nota 3D terus di telefon.";
+    const defaultNote = "Seronok ulang kaji guna eTutor.my sebab terus dapat semak skema jawapan, kenal pasti bab lemah dan baca nota interaktif terus di telefon.";
     const note = String(p.experienceNote || "").trim() || defaultNote;
 
     const lines = [
@@ -389,7 +389,7 @@
       ctx.fillStyle = "#475569"; ctx.font = "700 21px " + FONT_STACK; ctx.fillText(t.lbl, 140, ty + 40);
       ctx.fillStyle = t.col; ctx.font = "800 34px " + FONT_STACK; ctx.fillText(wrapTextLines(ctx, t.val, CARD_W - 280, 1)[0], 140, ty + 82);
     });
-    const note = String(p.experienceNote || "").trim() || "Ulang kaji jadi lebih tersusun sebab terus nampak bab lemah dan boleh buka nota 3D serta skema jawapan di telefon.";
+    const note = String(p.experienceNote || "").trim() || "Ulang kaji jadi lebih tersusun sebab terus nampak bab lemah dan boleh buka nota interaktif serta skema jawapan di telefon.";
     drawRoundRect(ctx, 108, 720, CARD_W - 216, 366, 24, "#f8fafc", "#cbd5e1", 2);
     ctx.fillStyle = "#1e3a8a"; ctx.font = "800 24px " + FONT_STACK; ctx.fillText("KONGSI PENGALAMAN", 142, 770);
     ctx.fillStyle = "#0f172a"; ctx.font = "600 31px " + FONT_STACK;

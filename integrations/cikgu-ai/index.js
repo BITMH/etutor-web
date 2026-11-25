@@ -8,7 +8,7 @@ import { DAILY_AI_TOKEN_LIMIT, onDailyTokenChange, saveDailyTokenState } from ".
 import { CikguFailoverClient } from "./api/failover-client.js?v=21";
 import { WarmupStateMachine } from "./state/warmup-machine.js?v=21";
 import { CikguSpeechIO } from "./audio/speech-io.js?v=21";
-import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=21";
+import { CikguWidgetDrawer } from "./ui/widget-drawer.js?v=22";
 import {
   resolveStudentLoginName,
   installExamIframeSensorHook,
@@ -27,7 +27,7 @@ function injectScopedStylesheet() {
   const link = document.createElement("link");
   link.id = "cikguAiScopedCss";
   link.rel = "stylesheet";
-  link.href = new URL("./ui/cikgu-ai.css?v=21", import.meta.url).href;
+  link.href = new URL("./ui/cikgu-ai.css?v=22", import.meta.url).href;
   document.head.appendChild(link);
 }
 

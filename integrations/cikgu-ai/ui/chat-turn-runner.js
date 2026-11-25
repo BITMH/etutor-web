@@ -4,10 +4,29 @@
  */
 
 import { renderSpmMarkdown } from "./markdown-spm.js";
+import { appendHybridActionButtons, syncHybridComposerUi } from "./hybrid-homework-ui.js";
 
-export async function executeCikguChatTurn(drawerInstance, userMessage) {
+export async function executeCikguChatTurn(drawerInstance, userMessage, turnOpts = {}) {
   const feed = drawerInstance.rootEl.querySelector("#cikguAiFeed");
   const submitBtn = drawerInstance.rootEl.querySelector("#cikguAiSubmitBtn");
+
+  const forcedMod = turnOpts && turnOpts.mod ? String(turnOpts.mod) : "";
+  const activeMod = forcedMod || (drawerInstance.hybridMode ? "bimbing_kerja_sekolah" : "auto");
+  const activeStage =
+    activeMod === "bimbing_kerja_sekolah"
+      ? String((turnOpts && turnOpts.tahap_bimbingan) || drawerInstance.pendingHintStage || "bimbing")
+      : "";
+
+  if (activeMod === "bimbing_kerja_sekolah" && activeStage === "bimbing") {
+    drawerInstance.lastHomeworkQuestion = userMessage;
+  }
+  if (drawerInstance.pendingHintStage === "semak_cubaan") {
+    drawerInstance.pendingHintStage = "bimbing";
+    syncHybridComposerUi(drawerInstance.rootEl, {
+      hybridMode: drawerInstance.hybridMode,
+      pendingHintStage: "bimbing"
+    });
+  }
 
   const freshCtx = (await drawerInstance.getLiveScreenSnapshot()) || drawerInstance.activeScreenQuestion;
   if (freshCtx) drawerInstance.setActiveScreenQuestion(freshCtx);
@@ -45,6 +64,16 @@ export async function executeCikguChatTurn(drawerInstance, userMessage) {
   let rawAccumulated = "";
   let detectedSubj = (freshCtx && freshCtx.subject) || "auto";
   const studentName = drawerInstance.getStudentName() || (freshCtx && freshCtx.candidateName) || "";
+  const responseMeta = { mod: activeMod, tahap_bimbingan: activeStage, sahsiah_signal: "" };
+
+  const soalanPayload =
+    activeMod === "bimbing_kerja_sekolah" && activeStage !== "bimbing"
+      ? String((turnOpts && turnOpts.homeworkQuestion) || drawerInstance.lastHomeworkQuestion || userMessage)
+      : userMessage;
+  const jawapanPayload =
+    activeMod === "bimbing_kerja_sekolah" && activeStage === "semak_cubaan"
+      ? [userMessage, studentDraftText].filter(Boolean).join("\n")
+      : studentDraftText;
 
   try {
     if (drawerInstance.warmupMachine && drawerInstance.warmupMachine.status !== "ready") {
@@ -53,21 +82,29 @@ export async function executeCikguChatTurn(drawerInstance, userMessage) {
       contentDiv.innerHTML = `<span style="color:#64748b;">Sedang meneliti soalan...</span>`;
     }
 
+    const reqPayload = {
+      subjek: detectedSubj || "auto",
+      mod: activeMod,
+      soalan: soalanPayload,
+      jawapan_pelajar: jawapanPayload,
+      konteks_skrin: screenContextText,
+      nama_pelajar: studentName,
+      sesi_sudah_sapa: drawerInstance.sessionGreeted || drawerInstance.chatHistory.length > 0,
+      sejarah_sembang: drawerInstance.chatHistory.slice(-6),
+      markah_penuh: detectedMarks
+    };
+    if (activeMod === "bimbing_kerja_sekolah") {
+      reqPayload.tahap_bimbingan = activeStage || "bimbing";
+    }
+
     await drawerInstance.client.streamSemak(
-      {
-        subjek: detectedSubj || "auto",
-        mod: "auto",
-        soalan: userMessage,
-        jawapan_pelajar: studentDraftText,
-        konteks_skrin: screenContextText,
-        nama_pelajar: studentName,
-        sesi_sudah_sapa: drawerInstance.sessionGreeted || drawerInstance.chatHistory.length > 0,
-        sejarah_sembang: drawerInstance.chatHistory.slice(-6),
-        markah_penuh: detectedMarks
-      },
+      reqPayload,
       {
         onMeta: (meta) => {
           if (meta.subjek) detectedSubj = meta.subjek;
+          if (meta.mod) responseMeta.mod = meta.mod;
+          if (meta.tahap_bimbingan) responseMeta.tahap_bimbingan = meta.tahap_bimbingan;
+          if (meta.sahsiah_signal) responseMeta.sahsiah_signal = meta.sahsiah_signal;
           if (meta.sesi_sudah_sapa !== undefined) {
             drawerInstance.sessionGreeted = Boolean(meta.sesi_sudah_sapa);
           }
@@ -88,6 +125,28 @@ export async function executeCikguChatTurn(drawerInstance, userMessage) {
       if (drawerInstance.chatHistory.length > 8) {
         drawerInstance.chatHistory = drawerInstance.chatHistory.slice(-8);
       }
+      appendHybridActionButtons({
+        botBubble,
+        drawerInstance,
+        meta: responseMeta,
+        homeworkQuestion: drawerInstance.lastHomeworkQuestion || soalanPayload,
+        onCheckAttempt: () => {
+          if (typeof drawerInstance.setHybridMode === "function") {
+            drawerInstance.setHybridMode(true, "semak_cubaan");
+          }
+          const inp = drawerInstance.rootEl && drawerInstance.rootEl.querySelector("#cikguAiChatInput");
+          if (inp) inp.focus();
+        },
+        onRevealFull: (hwQ) => {
+          if (!drawerInstance.isStreaming) {
+            executeCikguChatTurn(drawerInstance, "Tunjuk jalan kerja penuh bagi soalan ini.", {
+              mod: "bimbing_kerja_sekolah",
+              tahap_bimbingan: "jalan_kerja_penuh",
+              homeworkQuestion: hwQ
+            });
+          }
+        }
+      });
     }
 
     if (drawerInstance.speechIO && drawerInstance.speechIO.isTtsSupported()) {

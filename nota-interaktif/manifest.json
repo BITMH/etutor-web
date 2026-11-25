@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-24T08:21:09.147Z",
+  "generatedAt": "2026-11-25T09:23:19.934Z",
   "count": 35,
-  "copiedAssets": 1068,
+  "copiedAssets": 1111,
   "chapters": [
     {
       "id": "sejarah-t4-bab01",
@@ -18,6 +18,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab01.html"
     },
     {
@@ -35,6 +36,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej2-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab02-v2.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab02-v2.html"
     },
     {
@@ -52,6 +54,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej3-u3.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab03.html"
     },
     {
@@ -69,6 +72,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej4-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab04.html"
     },
     {
@@ -86,6 +90,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej5-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab05.html"
     },
     {
@@ -103,6 +108,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej6-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab06.html"
     },
     {
@@ -120,6 +126,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej7-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab07.html"
     },
     {
@@ -137,6 +144,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej8-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab08.html"
     },
     {
@@ -154,6 +162,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej9-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab09.html"
     },
     {
@@ -171,6 +180,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sej10-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab10.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab10.html"
     },
     {
@@ -188,6 +198,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/bm-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/bahasa-melayu-t4-tatabahasa.jpg",
       "htmlPath": "./nota-interaktif/dist/bahasa-melayu-t4-tatabahasa.html"
     },
     {
@@ -205,6 +216,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/bi-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/bahasa-inggeris-t4-mod01.jpg",
       "htmlPath": "./nota-interaktif/dist/bahasa-inggeris-t4-mod01.html"
     },
     {
@@ -222,6 +234,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/mat-u2.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/matematik-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab01.html"
     },
     {
@@ -239,6 +252,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab01.html"
     },
     {
@@ -256,6 +270,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai2-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab02.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab02.html"
     },
     {
@@ -273,6 +288,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai3-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab03.html"
     },
     {
@@ -290,6 +306,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai4-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab04.html"
     },
     {
@@ -307,6 +324,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai5-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab05.html"
     },
     {
@@ -324,6 +342,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai6-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab06.html"
     },
     {
@@ -341,6 +360,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai7-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab07.html"
     },
     {
@@ -358,6 +378,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai8-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab08.html"
     },
     {
@@ -375,6 +396,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai9-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab09.html"
     },
     {
@@ -392,6 +414,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai10-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab10.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab10.html"
     },
     {
@@ -409,6 +432,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai11-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab11.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab11.html"
     },
     {
@@ -426,6 +450,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai12-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab12.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab12.html"
     },
     {
@@ -443,6 +468,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai51-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab01.html"
     },
     {
@@ -460,6 +486,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai52-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab02.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab02.html"
     },
     {
@@ -477,6 +504,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai53-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab03.html"
     },
     {
@@ -494,6 +522,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai54-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab04.html"
     },
     {
@@ -511,6 +540,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai55-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab05.html"
     },
     {
@@ -528,6 +558,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai56-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab06.html"
     },
     {
@@ -545,6 +576,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai57-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab07.html"
     },
     {
@@ -562,6 +594,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai58-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab08.html"
     },
     {
@@ -579,6 +612,7 @@
       "hasVoice": false,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/sai59-u1.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab09.html"
     },
     {
@@ -596,6 +630,7 @@
       "hasVoice": true,
       "hasMultimedia": true,
       "coverIconPath": "./nota-interaktif/assets/icons/fiz-u5.jpg",
+      "chapterBgPath": "./nota-interaktif/assets/chapter-bg/fizik-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/fizik-t4-bab01.html"
     }
   ]

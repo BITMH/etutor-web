@@ -52,6 +52,7 @@ button, input { font-family: inherit; }
 .icon-lg { width: 26px; height: 26px; }
 
 .nota-shell {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -59,15 +60,49 @@ button, input { font-family: inherit; }
   overflow: hidden;
   background: radial-gradient(circle at top right, #eff6ff 0%, #f8fafc 46%);
 }
+.nota-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
+}
+.nota-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(6, 15, 36, 0.56) 0%, rgba(6, 15, 36, 0.28) 46%, rgba(6, 15, 36, 0.44) 100%);
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
+}
+body[data-world-theme="sejarah"] .nota-shell::before { background-image: url("../assets/world-bg/world-sejarah.jpg"); }
+body[data-world-theme="sains"] .nota-shell::before { background-image: url("../assets/world-bg/world-sains.jpg"); }
+body[data-world-theme="bm"] .nota-shell::before { background-image: url("../assets/world-bg/world-bm.jpg"); }
+body[data-world-theme="bi"] .nota-shell::before { background-image: url("../assets/world-bg/world-bi.jpg"); }
+body[data-world-theme="math"] .nota-shell::before { background-image: url("../assets/world-bg/world-math.jpg"); }
+body[data-world-theme="pi"] .nota-shell::before { background-image: url("../assets/world-bg/world-pi.jpg"); }
+body[data-world-theme="geo"] .nota-shell::before { background-image: url("../assets/world-bg/world-geo.jpg"); }
+body.is-lesson-open .nota-shell::after {
+  background: rgba(248, 250, 252, 0.84);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 
 .nota-topbar {
+  position: relative;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 16px;
-  background: var(--surface-card);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 2px solid var(--border-subtle);
   z-index: 20;
 }
@@ -212,7 +247,7 @@ button, input { font-family: inherit; }
 .btn-3d-ghost:hover:not(:disabled) { background: var(--brand-soft); border-color: var(--brand-border); }
 
 .hud-cikgu-btn { min-height: 44px; padding: 6px 12px; font-size: 0.82rem; }
-.nota-main { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 18px 16px 124px; }
+.nota-main { position: relative; z-index: 2; background: transparent; flex: 1; overflow-y: auto; overflow-x: hidden; padding: 18px 16px 124px; }
 
 .xp-pop-layer { position: fixed; inset: 0; pointer-events: none; z-index: 60; overflow: hidden; }
 .xp-float-badge {
@@ -282,11 +317,12 @@ body.wf-edition .hud-progress-fill {
 .path-view { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
 
 .chapter-hero-banner {
-  background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-primary) 58%, var(--brand-accent) 100%);
+  background: transparent;
   color: #ffffff;
-  border-radius: 20px;
-  padding: 22px;
-  box-shadow: 0 12px 28px rgba(30, 58, 138, 0.22);
+  border-radius: 0;
+  border: none;
+  padding: 10px 6px 8px;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -298,24 +334,30 @@ body.wf-edition .hud-progress-fill {
   gap: 6px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(6, 15, 36, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
   font-size: 0.76rem;
   font-weight: 700;
 }
 .hero-tag-free { background: rgba(5, 150, 105, 0.35); border-color: rgba(167, 243, 208, 0.5); }
-.chapter-hero-title { font-family: var(--font-heading); font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.85rem); margin: 0; line-height: 1.22; }
-.chapter-hero-sub { margin: 0; font-size: 0.94rem; color: #dbeafe; line-height: 1.5; }
+.chapter-hero-title { font-family: var(--font-heading); font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.85rem); margin: 0; line-height: 1.22; color: #ffffff; text-shadow: 0 2px 12px rgba(2, 6, 23, 0.88); }
+.chapter-hero-sub { margin: 0; font-size: 0.94rem; color: #f1f5f9; line-height: 1.5; text-shadow: 0 1px 8px rgba(2, 6, 23, 0.85); }
 
 .hero-mastery-box {
-  background: rgba(15, 23, 42, 0.28);
+  background: rgba(6, 15, 36, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 14px;
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.hero-mastery-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; font-weight: 700; color: #eff6ff; }
+.hero-mastery-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; font-weight: 700; color: #f8fafc; text-shadow: 0 1px 6px rgba(2, 6, 23, 0.78); }
 .hero-mastery-track { height: 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); overflow: hidden; }
 .hero-mastery-fill { height: 100%; border-radius: 999px; background: #34d399; transition: width 0.4s var(--spring); }
 
@@ -483,11 +525,13 @@ body.wf-edition .hud-progress-fill {
   margin-top: 8px;
   padding: 12px 14px;
   border-radius: 16px;
-  background: var(--surface-card);
-  border: 2px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.65);
   text-align: center;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.24);
   transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
 }
 .node-label-card[data-unit-idx] { cursor: pointer; }
@@ -855,23 +899,23 @@ body.wf-edition .hud-progress-fill {
 .wf-obsidian-hero {
   position: relative;
   overflow: hidden;
-  background: #111216;
+  background: transparent;
   color: #f8fafc;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 22px 22px 20px;
-  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.22);
+  border-radius: 0;
+  border: none;
+  padding: 10px 6px 8px;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 .wf-spectrum-bar {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 .wf-spectrum-bar span:nth-child(1) { background: #ec4899; }
@@ -892,9 +936,11 @@ body.wf-edition .hud-progress-fill {
   align-items: center;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #e2e8f0;
+  background: rgba(6, 15, 36, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -933,6 +979,7 @@ body.wf-edition .hud-progress-fill {
   margin: 0;
   line-height: 1.22;
   color: #ffffff;
+  text-shadow: 0 2px 12px rgba(2, 6, 23, 0.88);
 }
 .wf-hero-accent {
   background: linear-gradient(90deg, #f472b6 0%, #34d399 100%);
@@ -940,7 +987,7 @@ body.wf-edition .hud-progress-fill {
   background-clip: text;
   color: transparent;
 }
-.wf-hero-sub { margin: 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.5; }
+.wf-hero-sub { margin: 0; font-size: 0.92rem; color: #f1f5f9; line-height: 1.5; text-shadow: 0 1px 8px rgba(2, 6, 23, 0.85); }
 
 .wf-bento-metrics {
   display: grid;
@@ -948,8 +995,10 @@ body.wf-edition .hud-progress-fill {
   gap: 10px;
 }
 .wf-bento-tile {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 15, 36, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 14px;
   padding: 11px 13px;
   display: flex;
@@ -960,16 +1009,17 @@ body.wf-edition .hud-progress-fill {
   font-size: 0.67rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: #e2e8f0;
+  text-shadow: 0 1px 6px rgba(2, 6, 23, 0.78);
 }
-.wf-tile-val { font-size: 1.15rem; font-weight: 900; color: #ffffff; }
-.wf-tile-delta { font-size: 0.72rem; font-weight: 800; }
+.wf-tile-val { font-size: 1.15rem; font-weight: 900; color: #ffffff; text-shadow: 0 1px 6px rgba(2, 6, 23, 0.78); }
+.wf-tile-delta { font-size: 0.72rem; font-weight: 800; text-shadow: 0 1px 6px rgba(2, 6, 23, 0.78); }
 .wf-tile-delta.is-emerald { color: #34d399; }
 .wf-tile-delta.is-magenta { color: #f472b6; }
 .wf-tile-delta.is-amber { color: #fbbf24; }
 .wf-tile-delta.is-cyan { color: #38bdf8; }
 
-.wf-track { background: rgba(255, 255, 255, 0.12); height: 9px; }
+.wf-track { background: rgba(255, 255, 255, 0.24); height: 9px; }
 .wf-fill { background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 30%, #10b981 65%, #f59e0b 100%); }
 
 .node-label-card.is-wf-card { position: relative; padding-right: 18px; }
@@ -2478,7 +2528,8 @@ dialog::backdrop {
 }
 @media (prefers-reduced-motion: reduce) {
   .flash-tab-btn { transition: none; }
-}</style>
+}
+body .nota-shell::before { background-image: url("../assets/chapter-bg/sains-t4-bab07.jpg") !important; }</style>
 </head>
 <body>
   <div id="notaShell" class="nota-shell">
@@ -4118,9 +4169,21 @@ function getSvgIcon(name, cls) {
   return '<svg class="icon ' + (cls || "") + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">' + d + "</svg>";
 }
 
+function resolveNotaWorldTheme_() {
+  var subj = String((CHAPTER && CHAPTER.subject) || "");
+  if (/sejarah/i.test(subj)) return "sejarah";
+  if (/melayu/i.test(subj)) return "bm";
+  if (/inggeris|english/i.test(subj)) return "bi";
+  if (/matematik/i.test(subj)) return "math";
+  if (/islam/i.test(subj)) return "pi";
+  if (/geografi/i.test(subj)) return "geo";
+  return "sains";
+}
+
 function renderStaticChromeIcons() {
   if (typeof document !== "undefined" && document.body) {
     document.body.classList.toggle("wf-edition", Boolean(CHAPTER && CHAPTER.enableWebflowEdition));
+    document.body.setAttribute("data-world-theme", resolveNotaWorldTheme_());
   }
   var map = [
     ["notaBackIcon", "back", ""],
@@ -4289,6 +4352,9 @@ function renderPathMap(withViewTransition) {
       );
     }).join("");
 
+    if (typeof document !== "undefined" && document.body) {
+      document.body.classList.toggle("is-lesson-open", false);
+    }
     var freeTag = CHAPTER.isFreePreview ? '<span class="hero-tag hero-tag-free">' + tUi("Bab Pratonton Percuma", "Free Preview Chapter") + "</span>" : "";
     var heroHtml = "";
     if (isWf) {
@@ -4301,9 +4367,8 @@ function renderPathMap(withViewTransition) {
               '<span class="wf-dark-tag">' + escapeHtml(CHAPTER.subject) + " • Tingkatan " + escapeHtml(CHAPTER.form) + "</span>" +
               '<span class="wf-dark-tag">Bab ' + escapeHtml(CHAPTER.chapterNumber) + " • ~" + escapeHtml(CHAPTER.estimatedMinutes || 15) + " min</span>" +
             "</div>" +
-            '<span class="wf-live-pill"><span class="wf-live-dot" aria-hidden="true"></span>MOD INTERAKTIF WEBFLOW</span>' +
           "</div>" +
-          '<h1 id="chapterHeroTitle" class="wf-hero-title" tabindex="-1">' + escapeHtml(CHAPTER.title) + ' <span class="wf-hero-accent">Bento 3D</span></h1>' +
+          '<h1 id="chapterHeroTitle" class="wf-hero-title" tabindex="-1">' + escapeHtml(CHAPTER.title) + "</h1>" +
           '<p class="wf-hero-sub">' + escapeHtml(CHAPTER.subtitle || "") + "</p>" +
           '<div class="wf-bento-metrics">' +
             '<div class="wf-bento-tile">' +
@@ -4314,7 +4379,7 @@ function renderPathMap(withViewTransition) {
             '<div class="wf-bento-tile">' +
               '<span class="wf-tile-label">MATA XP TERKUMPUL</span>' +
               '<strong class="wf-tile-val tabular-nums"><span class="js-wf-count" data-target="' + notaState.xp + '">' + notaState.xp + "</span> XP</strong>" +
-              '<span class="wf-tile-delta is-magenta">Kad 3D &amp; Dial</span>' +
+              '<span class="wf-tile-delta is-magenta">Kad Interaktif</span>' +
             "</div>" +
             '<div class="wf-bento-tile">' +
               '<span class="wf-tile-label">KOLEKSI BINTANG</span>' +
@@ -4406,6 +4471,9 @@ function startUnit(unitIdx) {
   notaState.completedSteps = {};
 
   var applyStart = function () {
+    if (typeof document !== "undefined" && document.body) {
+      document.body.classList.toggle("is-lesson-open", true);
+    }
     var pathView = document.getElementById("pathView");
     var lessonView = document.getElementById("lessonView");
     if (pathView) pathView.hidden = true;

@@ -3,6 +3,8 @@
  * Pembina templat DOM bersih & minimalis bagi laci sembang Cikgu AI serta FAB terapung.
  */
 
+import { buildHybridModeBarMarkup, buildHybridStagePillMarkup } from "./hybrid-homework-ui.js";
+
 export function buildCikguDrawerTemplate(endpoints, isAdminRoute) {
   return `
     <div class="cikgu-ai-drawer" id="cikguAiDrawer" hidden>
@@ -64,6 +66,9 @@ export function buildCikguDrawerTemplate(endpoints, isAdminRoute) {
         </div>
       </div>
 
+      ${buildHybridModeBarMarkup(false)}
+      ${buildHybridStagePillMarkup()}
+
       <form class="cikgu-ai-composer" id="cikguAiForm">
         <textarea
           id="cikguAiChatInput"
@@ -85,7 +90,7 @@ export function buildCikguDrawerTemplate(endpoints, isAdminRoute) {
         <span>Perlukan bantuan soalan ini? Tanya Cikgu AI</span>
         <button type="button" class="cikgu-ai-tooltip-close" id="cikguAiTooltipClose" aria-label="Tutup">✕</button>
       </div>
-      <button type="button" class="cikgu-ai-fab" id="cikguAiFab" aria-label="Buka Cikgu AI">
+      <button type="button" class="cikgu-ai-fab" id="cikguAiFab" aria-label="Buka Cikgu AI (boleh diseret)" title="Cikgu AI — Klik untuk tanya atau seret untuk alih kedudukan">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
         <span class="cikgu-ai-pulse-dot"></span>
       </button>

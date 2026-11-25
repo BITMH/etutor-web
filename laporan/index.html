@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <title>Slip Keputusan Rasmi • Pantauan Ibu Bapa | eTutor.my</title>
+  <meta name="description" content="Slip keputusan rasmi baca-sahaja eTutor.my untuk semakan dan pantauan pencapaian SPM oleh ibu bapa dan penjaga.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="./laporan.css">
+</head>
+<body>
+  <svg class="etutor-svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="etutor-brand-emblem" viewBox="0 0 124 98">
+      <polygon points="4,34 56,8 56,60" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,8 108,34 56,60" fill="var(--emblem-navy, #121e48)"/>
+      <rect x="13.2" y="37.5" width="4.6" height="20" fill="var(--emblem-blue, #1d49c9)"/>
+      <circle cx="15.5" cy="59.5" r="5.1" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="11.8,63.2 19.2,63.2 22.4,79.5 8.6,79.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="28,50.6 56,64.6 56,85 28,74.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,64.6 84,50.6 84,74.5 56,85" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M40.5 73.5 L56 89 L86.5 58.5" fill="none" stroke="var(--emblem-cutout, #ffffff)" stroke-width="15.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <path d="M43.2 76.2 L56 89 L86 59" fill="none" stroke="var(--emblem-navy, #121e48)" stroke-width="8.4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <circle cx="89.4" cy="55.6" r="6.4" fill="var(--emblem-cutout, #ffffff)"/>
+      <circle cx="89.4" cy="55.6" r="3.9" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="97.8" cy="48.6" r="2.55" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="104.5" cy="43.4" r="1.8" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="101.2" cy="57.6" r="2.7" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M111 43.2 Q112 51.1 119.9 52.1 Q112 53.1 111 61 Q110 53.1 102.1 52.1 Q110 51.1 111 43.2 Z" fill="var(--emblem-navy, #121e48)"/>
+    </symbol>
+  </svg>
+
+  <header class="laporan-topbar no-print">
+    <div class="laporan-topbar-inner">
+      <a href="../" class="etutor-logo-lockup" aria-label="Laman Utama eTutor.my">
+        <svg class="etutor-emblem-svg" width="44" height="35" aria-hidden="true">
+          <use href="#etutor-brand-emblem"></use>
+        </svg>
+        <div class="etutor-logo-text">
+          <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+          <div class="etutor-tagline">Portal Pantauan Prestasi SPM</div>
+        </div>
+      </a>
+      <div class="laporan-topbar-actions">
+        <button type="button" id="laporanPrintBtn" class="btn btn-primary" hidden>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v7H6v-7z"/>
+          </svg>
+          <span>Cetak / Simpan PDF</span>
+        </button>
+        <a href="../kalkulator-merit-upu/" class="btn btn-outline">Kalkulator Merit UPU</a>
+        <a href="../" class="btn btn-emerald">Daftar / Teroka eTutor</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="laporan-page">
+    <section id="laporanStatusBox" class="laporan-status-card" aria-live="polite">
+      <div class="laporan-spinner" aria-hidden="true"></div>
+      <div>
+        <strong class="laporan-status-title">Memuatkan Slip Keputusan Rasmi...</strong>
+        <p class="laporan-status-desc">Mengesahkan pautan laporan baca-sahaja untuk paparan ibu bapa.</p>
+      </div>
+    </section>
+
+    <section id="laporanErrorBox" class="laporan-error-card" hidden aria-live="polite">
+      <div class="laporan-error-icon" aria-hidden="true">
+        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="9"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/>
+        </svg>
+      </div>
+      <h2 id="laporanErrorTitle">Slip Keputusan Tidak Ditemui</h2>
+      <p id="laporanErrorText">Pautan laporan tidak sah, rosak, atau telah dipadam oleh pemilik akaun.</p>
+      <div class="laporan-error-actions">
+        <a href="../" class="btn btn-primary">Buka Portal eTutor.my</a>
+        <a href="../kalkulator-merit-upu/" class="btn btn-outline">Kalkulator Merit UPU</a>
+      </div>
+    </section>
+
+    <article id="laporanSlipRoot" class="slip-a4" data-tier="neutral" hidden aria-labelledby="slipHeading">
+      <div class="slip-watermark" aria-hidden="true">eTutor.my • RASMI</div>
+
+      <div class="slip-top-ribbon">
+        <span>PORTAL PENTAKSIRAN KENDIRI SPM • KSSM</span>
+        <span id="slipModeBadge" class="tabular-nums">SLIP BACA-SAHAJA IBU BAPA</span>
+      </div>
+
+      <div class="slip-header">
+        <div class="etutor-logo-lockup">
+          <svg class="etutor-emblem-svg" width="52" height="41" aria-hidden="true">
+            <use href="#etutor-brand-emblem"></use>
+          </svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark slip-wm-lg"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <h1 id="slipHeading" class="slip-doc-title">SLIP KEPUTUSAN RASMI • PANTAUAN IBU BAPA</h1>
+            <div class="slip-doc-sub">Laporan Pencapaian &amp; Diagnostik Topik Pelajar</div>
+          </div>
+        </div>
+        <div class="slip-verified-stack">
+          <span class="slip-verified-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/>
+            </svg>
+            <span>DISAHKAN</span>
+          </span>
+          <span id="slipDate" class="slip-header-date tabular-nums">—</span>
+        </div>
+      </div>
+
+      <div class="slip-score-banner">
+        <div class="slip-gauge-wrap">
+          <svg class="slip-gauge-svg" viewBox="0 0 120 120" width="108" height="108" aria-hidden="true">
+            <circle class="slip-gauge-track" cx="60" cy="60" r="50"></circle>
+            <circle id="slipScoreArc" class="slip-gauge-fill" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"></circle>
+          </svg>
+          <div class="slip-gauge-center">
+            <div id="slipScorePct" class="tabular-nums slip-gauge-pct">0%</div>
+            <div class="slip-gauge-caption">MARKAH</div>
+          </div>
+        </div>
+
+        <div class="slip-grade-seal-wrap">
+          <div class="slip-grade-seal">
+            <div class="slip-grade-seal-ring">
+              <div id="slipGrade" class="slip-grade-val">—</div>
+            </div>
+          </div>
+          <div id="slipGradeLabel" class="slip-grade-label">Menunggu Keputusan</div>
+        </div>
+
+        <div class="slip-paper-split" id="slipPaperSplit">
+          <div class="slip-split-title">Pecahan Kertas</div>
+          <div class="slip-split-bar" aria-hidden="true">
+            <span id="slipBarObj" class="slip-split-seg slip-seg-obj"></span>
+            <span id="slipBarSub" class="slip-split-seg slip-seg-sub"></span>
+          </div>
+          <div id="slipBreakdown" class="slip-split-text tabular-nums">—</div>
+        </div>
+      </div>
+
+      <div class="slip-meta-grid">
+        <div class="slip-meta-cell">
+          <div class="slip-meta-lbl">Nama Pelajar</div>
+          <div id="slipStudentName" class="slip-meta-val">—</div>
+        </div>
+        <div class="slip-meta-cell">
+          <div class="slip-meta-lbl">Mata Pelajaran</div>
+          <div id="slipSubject" class="slip-meta-val">—</div>
+        </div>
+        <div class="slip-meta-cell slip-meta-wide">
+          <div class="slip-meta-lbl">Set Peperiksaan / Modul</div>
+          <div id="slipQuizTitle" class="slip-meta-val">—</div>
+        </div>
+        <div class="slip-meta-cell slip-meta-wide" id="slipSharedMetaCell" hidden>
+          <div class="slip-meta-lbl">Rekod Dikongsi Pada</div>
+          <div id="slipSharedAt" class="slip-meta-val tabular-nums">—</div>
+        </div>
+      </div>
+
+      <section class="slip-topics-section" aria-labelledby="slipTopicsHeading">
+        <div class="slip-topics-head">
+          <h2 id="slipTopicsHeading">Analisis Penguasaan Topik</h2>
+          <span class="slip-topics-legend">
+            <i class="dot-ok"></i> Kukuh
+            <i class="dot-mid"></i> Sederhana
+            <i class="dot-weak"></i> Ulang Kaji
+          </span>
+        </div>
+        <ul id="slipTopicsList" class="slip-topic-bars"></ul>
+      </section>
+
+      <section id="slipAiSection" class="slip-ai-section" hidden aria-labelledby="slipAiHeading"></section>
+
+      <footer class="slip-official-footer">
+        <div class="slip-seal-stamp">
+          <svg width="34" height="34" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="6" stroke="#1e3a8a" stroke-width="1.5" fill="#eff6ff"/>
+            <rect x="7" y="7" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="22" y="7" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="7" y="22" width="7" height="7" fill="#1e3a8a"/>
+            <rect x="16" y="16" width="5" height="5" fill="#2563eb"/>
+            <rect x="23" y="22" width="6" height="6" fill="#1e3a8a"/>
+          </svg>
+          <div>
+            <div class="slip-footer-title">Dokumen Dijana Secara Automatik (Baca-Sahaja)</div>
+            <div class="slip-footer-sub">eTutor.my • Rekod Pantauan Pencapaian SPM untuk Ibu Bapa</div>
+          </div>
+        </div>
+        <div class="slip-sign-box">
+          <div class="slip-sign-line"></div>
+          <div class="slip-sign-lbl">Semakan Ibu Bapa / Penjaga</div>
+        </div>
+      </footer>
+    </article>
+
+    <aside class="laporan-cta-footer no-print" aria-label="Pautan Lanjutan Ibu Bapa">
+      <div class="laporan-cta-copy">
+        <strong>Ingin bantu anak capai sasaran SPM &amp; semak peluang universiti awam?</strong>
+        <p>Gunakan Kalkulator Merit UPUOnline percuma atau daftar akaun pelajar di portal eTutor.my untuk akses 190+ set percubaan dan 35 bab Nota Interaktif.</p>
+      </div>
+      <div class="laporan-cta-links">
+        <a href="../kalkulator-merit-upu/" class="btn btn-outline">Kira Merit UPU 2027</a>
+        <a href="../" class="btn btn-emerald">Teroka eTutor.my</a>
+      </div>
+    </aside>
+  </main>
+
+  <script src="../config.js"></script>
+  <script src="./laporan.js"></script>
+</body>
+</html>

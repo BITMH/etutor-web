@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Matematik T5 Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang) |...</title>
+  <meta name="description" content="Nota ringkas KSSM Tingkatan 5 Matematik Bab 2 (m.s. 34–71), 4 objektif DSKP, contoh selesai, 10 MCQ &amp; 2 soalan Kertas 2 Cikgu AI.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://etutor.my/kssm/tingkatan-5/matematik/bab-2/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="eTutor.my">
+  <meta property="og:locale" content="ms_MY">
+  <meta property="og:url" content="https://etutor.my/kssm/tingkatan-5/matematik/bab-2/">
+  <meta property="og:title" content="Matematik T5 Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang) |...">
+  <meta property="og:description" content="Nota ringkas KSSM Tingkatan 5 Matematik Bab 2 (m.s. 34–71), 4 objektif DSKP, contoh selesai, 10 MCQ &amp; 2 soalan Kertas 2 Cikgu AI.">
+  <meta property="og:image" content="https://etutor.my/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matematik T5 Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang) |...">
+  <meta name="twitter:description" content="Nota ringkas KSSM Tingkatan 5 Matematik Bab 2 (m.s. 34–71), 4 objektif DSKP, contoh selesai, 10 MCQ &amp; 2 soalan Kertas 2 Cikgu AI.">
+  <meta name="twitter:image" content="https://etutor.my/og-preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="icon" type="image/svg+xml" href="../../../../favicon.svg">
+  <link rel="stylesheet" href="../../../../styles.css?v=27">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7216597758789088"
+       crossorigin="anonymous"></script>
+  
+  <style>
+    .seo-breadcrumb { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:0.84rem; color:var(--text-secondary); margin-bottom:18px; list-style:none; padding:0; }
+    .seo-breadcrumb a { color:var(--brand-accent); text-decoration:none; font-weight:600; }
+    .seo-breadcrumb a:hover { text-decoration:underline; }
+    .seo-hero-box { background:#ffffff; border:1px solid var(--border-subtle); border-radius:20px; padding:clamp(22px, 4vw, 36px); box-shadow:0 12px 32px rgb(15 23 42 / 0.05); margin-bottom:28px; }
+    .seo-stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin-top:22px; }
+    .seo-stat-card { background:var(--surface-subtle, #f8fafc); border:1px solid var(--border-subtle); border-radius:14px; padding:14px 16px; }
+    .seo-stat-lbl { font-size:0.76rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.03em; }
+    .seo-stat-val { font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:var(--brand-navy); margin-top:4px; }
+    .seo-section-card { background:#ffffff; border:1px solid var(--border-subtle); border-radius:18px; padding:clamp(20px, 3vw, 30px); margin-bottom:24px; }
+    .seo-topic-tags { display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:14px 0 0; }
+    .seo-topic-tag { background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; border-radius:999px; padding:6px 13px; font-size:0.83rem; font-weight:600; }
+    .seo-preview-item { border:1px solid var(--border-subtle); border-radius:14px; padding:18px; background:#f8fafc; margin-top:14px; }
+    .seo-preview-opts { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
+    .seo-preview-opts li { background:#ffffff; border:1px solid var(--border-subtle); border-radius:10px; padding:9px 13px; font-size:0.9rem; color:var(--text-primary); }
+    .seo-ans-details { margin-top:10px; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:10px 14px; font-size:0.88rem; }
+    .seo-ans-details summary { cursor:pointer; font-weight:700; color:#065f46; }
+    .seo-related-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; margin-top:16px; }
+    .seo-related-card { display:flex; flex-direction:column; justify-content:space-between; background:#f8fafc; border:1px solid var(--border-subtle); border-radius:14px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.18s ease, transform 0.18s ease; }
+    .seo-related-card:hover { border-color:var(--brand-accent); transform:translateY(-2px); }
+    .seo-hub-subject-block { scroll-margin-top:90px; margin-bottom:32px; }
+    .seo-cross-banner { margin-top:18px; padding:16px 20px; border-radius:14px; background:linear-gradient(135deg, #eff6ff, #ecfdf5); border:1px solid #bfdbfe; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; }
+    .seo-reminder-box { background:#fffbeb; border:1px solid #fde68a; border-left:4px solid #d97706; border-radius:12px; padding:16px 18px; margin:18px 0; color:#78350f; }
+    .seo-table-wrap { overflow-x:auto; margin-top:14px; border:1px solid var(--border-subtle); border-radius:14px; }
+    .seo-table { width:100%; border-collapse:collapse; font-size:0.9rem; text-align:left; }
+    .seo-table th, .seo-table td { padding:11px 14px; border-bottom:1px solid var(--border-subtle); vertical-align:top; }
+    .seo-table th { background:#f8fafc; color:var(--brand-navy); font-weight:700; font-size:0.82rem; text-transform:uppercase; }
+    .tips-card-media { border-radius:10px; overflow:hidden; margin-bottom:12px; background:#eff6ff; border:1px solid var(--border-subtle); }
+    .tips-card-media img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure { margin:18px 0 0; border-radius:16px; overflow:hidden; border:1px solid var(--border-subtle); background:#f8fafc; box-shadow:0 8px 24px rgb(15 23 42 / 0.06); }
+    .tips-hero-figure img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure figcaption { padding:10px 16px; font-size:0.82rem; color:var(--text-secondary); background:#f8fafc; border-top:1px solid var(--border-subtle); }
+    .tips-author-bar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:12px 0 6px; font-size:0.86rem; color:var(--text-secondary); }
+    .tips-author-pill { background:#eff6ff; color:#1e3a8a; border:1px solid #bfdbfe; border-radius:999px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+    .tips-compare-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:12px; margin:14px 0; }
+    .tips-cmp-bad { background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-good { background:#ecfdf5; border:1px solid #a7f3d0; border-left:4px solid #059669; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-label { font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px; }
+    .tips-cmp-bad .tips-cmp-label { color:#991b1b; }
+    .tips-cmp-good .tips-cmp-label { color:#065f46; }
+    .tips-checklist { list-style:none; padding:0; margin:12px 0 0; display:grid; gap:8px; }
+    .tips-check-item { display:flex; align-items:flex-start; gap:10px; background:#f8fafc; border:1px solid var(--border-subtle); border-radius:12px; padding:11px 14px; cursor:pointer; font-size:0.93rem; line-height:1.5; }
+    .tips-check-item input { margin-top:4px; width:18px; height:18px; accent-color:#059669; flex-shrink:0; cursor:pointer; }
+    .tips-check-item input:checked + span { text-decoration:line-through; color:#065f46; font-weight:600; }
+    .tips-timeline { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:12px; margin-top:14px; }
+    .tips-time-step { background:#f8fafc; border:1px solid var(--border-subtle); border-top:3px solid var(--brand-accent); border-radius:12px; padding:14px; }
+    .tips-time-badge { font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--brand-accent); margin-bottom:4px; }
+  </style>
+  <style>/* kssm-page-css */
+  .kssm-hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);color:#fff;border-radius:20px;padding:24px;margin-bottom:20px;box-shadow:0 12px 28px rgb(30 58 138 / .18)}
+  .kssm-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .kssm-pill{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:.76rem;font-weight:700;background:rgb(255 255 255 / .16);color:#fff;border:1px solid rgb(255 255 255 / .24)}
+  .kssm-pill.is-emerald{background:#059669;border-color:#10b981}
+  .kssm-pill.is-gold{background:#d97706;border-color:#f59e0b}
+  .kssm-hero h1{margin:0 0 10px;font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.45rem,2.6vw,2.05rem);line-height:1.25;color:#fff}
+  .kssm-hero-desc{margin:0 0 16px;color:#e0f2fe;font-size:.96rem;line-height:1.6}
+  .kssm-hero-actions,.kssm-kw-row,.kssm-p2-cta-row,.kssm-filter-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
+  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
+  .kssm-playable-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(120deg,#ecfdf5 0%,#eff6ff 100%);border:2px solid #059669;border-radius:16px;padding:16px 20px;margin-bottom:20px}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
+  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
+  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
+  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
+  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-takeaway{color:#047857 !important;font-weight:600}
+  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
+  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
+  .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
+  .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
+  .kssm-xp-stat span{display:block;font-size:.7rem;font-weight:700;color:#475569;text-transform:uppercase}
+  .kssm-xp-stat strong{font-size:.98rem;color:#1e3a8a}
+  .kssm-xp-stat.is-gold{background:#fffbeb;border-color:#f59e0b}
+  .kssm-xp-stat.is-gold strong{color:#b45309}
+  .kssm-progress-track{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-bottom:16px}
+  .kssm-progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#059669);transition:width .25s ease}
+  .kssm-quiz-grid,.kssm-p2-list{display:grid;gap:14px}
+  .kssm-q-card{border:1px solid #cbd5e1;border-radius:14px;padding:16px;background:#fff}
+  .kssm-q-head,.kssm-p2-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+  .kssm-q-num,.kssm-p2-label{font-size:.78rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-q-badge,.kssm-p2-marks{font-size:.75rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#fef3c7;color:#92400e}
+  .kssm-q-stem,.kssm-p2-q{margin:0 0 12px;font-weight:600;color:#0f172a;line-height:1.55}
+  .kssm-opt-list{display:grid;gap:8px}
+  .kssm-opt-btn{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;padding:10px 12px;border:1.5px solid #cbd5e1;border-radius:11px;background:#f8fafc;color:#0f172a;cursor:pointer;font-size:.91rem;line-height:1.45}
+  .kssm-opt-btn:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+  .kssm-opt-btn.is-correct{border-color:#059669;background:#ecfdf5;color:#065f46;font-weight:600}
+  .kssm-opt-btn.is-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b}
+  .kssm-opt-letter{flex:0 0 24px;height:24px;border-radius:7px;background:#fff;border:1px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem}
+  .kssm-q-feedback{margin-top:11px;padding:11px 13px;border-radius:11px;background:#f8fafc;border:1px solid #cbd5e1}
+  .kssm-fb-status{margin:0 0 4px;font-weight:700;font-size:.88rem}
+  .kssm-fb-status.is-ok{color:#059669}
+  .kssm-fb-status.is-bad{color:#b91c1c}
+  .kssm-fb-exp{margin:0;font-size:.88rem;color:#334155;line-height:1.5}
+  .kssm-quiz-actions{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}
+  .kssm-quiz-summary{margin:0;font-weight:600;color:#1e3a8a;font-size:.9rem}
+  .kssm-kw-chip{font-size:.76rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
+  .kssm-p2-hint-body{padding-top:10px}
+  .kssm-p2-hint-body p{margin:8px 0 0;font-size:.88rem;color:#334155}
+  .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
+  .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
+  .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
+  .kssm-bab-link{display:block;padding:8px 11px;border-radius:10px;border:1px solid #cbd5e1;background:#f8fafc;color:#1e3a8a;font-weight:600;font-size:.84rem;text-decoration:none}
+  .kssm-bab-link:hover{border-color:#2563eb;background:#eff6ff}
+  .kssm-filter-btn{padding:8px 14px;border-radius:999px;border:1.5px solid #cbd5e1;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
+  .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
+  .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 5","item":"https://etutor.my/kssm/tingkatan-5/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 2","item":"https://etutor.my/kssm/tingkatan-5/matematik/bab-2/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 5 Bab 2: Matriks (Operasi Asas & Matriks Songsang)","description":"Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks.","url":"https://etutor.my/kssm/tingkatan-5/matematik/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 5","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
+</head>
+<body class="lp-shell">
+  
+  <svg class="etutor-svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="etutor-brand-emblem" viewBox="0 0 124 98">
+      <polygon points="4,34 56,8 56,60" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,8 108,34 56,60" fill="var(--emblem-navy, #121e48)"/>
+      <rect x="13.2" y="37.5" width="4.6" height="20" fill="var(--emblem-blue, #1d49c9)"/>
+      <circle cx="15.5" cy="59.5" r="5.1" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="11.8,63.2 19.2,63.2 22.4,79.5 8.6,79.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="28,50.6 56,64.6 56,85 28,74.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,64.6 84,50.6 84,74.5 56,85" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M40.5 73.5 L56 89 L86.5 58.5" fill="none" stroke="var(--emblem-cutout, #ffffff)" stroke-width="15.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <path d="M43.2 76.2 L56 89 L86 59" fill="none" stroke="var(--emblem-navy, #121e48)" stroke-width="8.4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <circle cx="89.4" cy="55.6" r="6.4" fill="var(--emblem-cutout, #ffffff)"/>
+      <circle cx="89.4" cy="55.6" r="3.9" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="97.8" cy="48.6" r="2.55" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="104.5" cy="43.4" r="1.8" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="101.2" cy="57.6" r="2.7" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M111 43.2 Q112 51.1 119.9 52.1 Q112 53.1 111 61 Q110 53.1 102.1 52.1 Q110 51.1 111 43.2 Z" fill="var(--emblem-navy, #121e48)"/>
+    </symbol>
+  </svg>
+  <header class="lp-navbar">
+    <div class="lp-navbar-inner">
+      <a href="../../../../" class="lp-brand-link etutor-logo-lockup" aria-label="eTutor.my Laman Utama">
+        <svg class="etutor-emblem-svg" width="48" height="38" aria-hidden="true">
+          <use href="#etutor-brand-emblem"></use>
+        </svg>
+        <div class="etutor-logo-text">
+          <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+          <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+        </div>
+      </a>
+      <nav aria-label="Navigasi Nota KSSM">
+        <ul class="lp-nav-links">
+          <li><a href="../../../">Hab KSSM</a></li>
+          <li><a href="../../">Tingkatan 5</a></li>
+          <li><a href="../../../../nota-interaktif/">Nota Playable</a></li>
+          <li><a href="../../../../kalkulator-merit-upu/">Merit UPU 2027</a></li>
+        </ul>
+      </nav>
+      <div class="lp-nav-actions">
+        <a href="../../../../#portal" rel="nofollow" class="btn btn-emerald btn-sm"><span>Buka Portal</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="lp-container" style="padding-top:20px;padding-bottom:40px">
+    <nav class="seo-breadcrumb" aria-label="Breadcrumb">
+      <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 5</a> / <span>Matematik Bab 2</span>
+    </nav>
+    <section class="kssm-hero">
+      <div class="kssm-pill-row">
+        <span class="kssm-pill">Tingkatan 5</span>
+        <span class="kssm-pill">Matematik (1449)</span>
+        <span class="kssm-pill">m.s. 34–71</span>
+        <span class="kssm-pill is-emerald">0 Token • Percuma</span>
+        <span class="kssm-pill is-gold">+10 XP / Soalan</span>
+      </div>
+      <h1>Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang)</h1>
+      <p class="kssm-hero-desc">Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks. <br><small>Rujukan Rasmi: SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 5)</small></p>
+      <div class="kssm-hero-actions">
+        <a href="#latih-tubi-mcq" class="kssm-cta-light">Mula 10 Soalan Latih Tubi</a>
+        <a href="#kertas-2-berstruktur" class="kssm-cta-ghost">Soalan Kertas 2 &amp; Cikgu AI</a>
+      </div>
+    </section>
+
+    <section class="seo-section-card" style="padding:14px 18px;margin-bottom:18px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+      <div>
+        <strong>Mahu lihat modul visual SPM lain?</strong>
+        <p class="kssm-sublead">Terokai 35+ bab Nota Interaktif Playable Sains, Sejarah, Matematik, BM &amp; BI secara percuma.</p>
+      </div>
+      <a href="../../../../nota-interaktif/" class="btn btn-outline btn-sm">Lihat Semua Nota Interaktif</a>
+    </section>
+
+    <section class="seo-section-card">
+      <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+      <h2>Sasaran Penguasaan Bab Ini</h2>
+      <ol class="kssm-obj-list"><li>Mewakilkan maklumat jadual dalam bentuk matriks, menyatakan peringkat m × n (baris × lajur) serta menentukan unsur a_ij dan kesamaan matriks.</li><li>Melaksanakan penambahan, penolakan dan pendaraban skalar bagi matriks yang mempunyai peringkat yang sama.</li><li>Menentukan kebolehlaksanaan pendaraban dua matriks AB (bilangan lajur A = bilangan baris B) dan mendarabkan matriks secara tepat.</li><li>Mengira matriks songsang bagi matriks 2 × 2 apabila ad - bc ≠ 0 dan menggunakannya untuk menyelesaikan persamaan linear serentak.</li></ol>
+    </section>
+
+    <section class="seo-section-card">
+      <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 34–71)</span>
+      <h2>Ringkasan Teras Mengikut Subtopik</h2>
+      <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+      <h3>2.1 Peringkat Matriks, Unsur &amp; Kesamaan Matriks (SK 2.1)</h3>
+      <p class="kssm-sub-summary">Matriks ialah susunan nombor dalam baris (mendatar) dan lajur (menegak) yang diapit tanda kurung siku. Setiap kedudukan unsur dikenal pasti secara unik dengan peringkatnya.</p>
+      <ul class="kssm-kp-list"><li>Peringkat matriks ditulis sebagai: (bilangan BARIS) × (bilangan LAJUR). Contoh: matriks dengan 3 baris dan 2 lajur berperingkat 3 × 2 (BUKAN 2 × 3!).</li><li>Unsur a_ij merujuk unsur pada baris ke-i dan lajur ke-j (cth a₂₃ = baris ke-2, lajur ke-3).</li><li>Dua matriks A dan B adalah SAMA (A = B) jika dan hanya jika kedua-duanya mempunyai peringkat yang SAMA dan setiap unsur sepadan adalah sama nilai (membantu mencari nilai pemboleh ubah tidak diketahui!).</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh Terkawal:</strong> Nyatakan peringkat matriks M = [4  -1  7; 8  0  2] (2 baris, 3 lajur) dan nilai unsur m₁₃ + m₂₁.</p>
+        <p><strong>Penyelesaian:</strong> Peringkat M ialah 2 × 3. m₁₃ (baris 1 lajur 3) = 7 dan m₂₁ (baris 2 lajur 1) = 8 → jumlah = 7 + 8 = 15.</p>
+        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Ingat urutan: B-L (Baris dahulu, Lajur kedua — seperti &#39;Bilik&#39; dan &#39;Lantai&#39; atau &#39;Ba-La&#39;)!</p>
+      </div>
+    </article>
+<article class="kssm-sub-card">
+      <h3>2.2 Penambahan, Penolakan &amp; Pendaraban Skalar (SK 2.2)</h3>
+      <p class="kssm-sub-summary">Penambahan dan penolakan hanya boleh dilaksanakan ke atas dua matriks yang mempunyai peringkat yang SAMA TEPAT dengan menambah atau menolak unsur-unsur pada kedudukan sepadan.</p>
+      <ul class="kssm-kp-list"><li>Contoh (m.s. 54): Jika D + E = C, samakan setiap unsur sepadan satu demi satu (cth 2x - 1 + x = 8 → 3x = 9 → x = 3).</li><li>Pendaraban Skalar kA: darabkan nombor skalar k dengan SETIAP unsur di dalam matriks A secara seragam.</li><li>Sifat asas: (A + B) = (B + A) [kalis tukar tertib untuk tambah], tetapi tolak dan darab matriks secara amnya TIDAK kalis tukar tertib.</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh Terkawal:</strong> Diberi P = [7 9; -3 8] dan Q = [2 -3; 1 5], hitung 3(P - Q).</p>
+        <p><strong>Penyelesaian:</strong> P - Q = [7-2, 9-(-3); -3-1, 8-5] = [5 12; -4 3]. Darab 3: 3(P - Q) = [15 36; -12 9].</p>
+        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Awasi penolakan nombor negatif: 9 - (-3) = 9 + 3 = 12!</p>
+      </div>
+    </article>
+<article class="kssm-sub-card">
+      <h3>2.3 Pendaraban Dua Matriks &amp; Matriks Identiti (SK 2.2)</h3>
+      <p class="kssm-sub-summary">Dua matriks A_(m×p) dan B_(q×n) hanya boleh didarabkan apabila bilangan LAJUR matriks kiri sama dengan bilangan BARIS matriks kanan (p = q), dan hasil matriks berperingkat m × n.</p>
+      <ul class="kssm-kp-list"><li>Uji dimensi dalam → luar: (m × p) · (p × n) → p sama di tengah boleh didarab, peringkat jawapan ialah (m × n)! Oleh itu, AB mungkin wujud walaupun BA tidak wujud!</li><li>Cara mendarab: Darabkan setiap baris matriks kiri dengan setiap lajur matriks kanan secara hasil darab bintik: (baris × lajur) → jumlahkan.</li><li>Matriks Identiti I bagi peringkat 2 × 2 ialah [1 0; 0 1] yang memenuhi sifat AI = IA = A (diagon utama = 1, unsur lain = 0).</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh Terkawal:</strong> Tentukan sama ada pendaraban matriks C_(2×1) dengan D_(2×2) boleh menghasilkan CD dan DC, dan nyatakan peringkat hasil yang sah.</p>
+        <p><strong>Penyelesaian:</strong> CD: (2×1)(2×2) → nombor dalam 1 ≠ 2, TIDAK boleh didarab. DC: (2×2)(2×1) → nombor dalam 2 = 2, BOLEH didarab dan menghasilkan peringkat 2 × 1!</p>
+        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Pendaraban matriks TIDAK bersifat kalis tukar tertib (secara umum AB ≠ BA)!</p>
+      </div>
+    </article>
+<article class="kssm-sub-card">
+      <h3>2.4 Matriks Songsang &amp; Persamaan Linear Serentak (SK 2.2)</h3>
+      <p class="kssm-sub-summary">Kemuncak Bab 2 Matematik SPM ialah mencari matriks songsang A⁻¹ bagi menyelesaikan dua persamaan linear serentak tanpa menggunakan kaedah penggantian atau penghapusan.</p>
+      <ul class="kssm-kp-list"><li>Jika A = [a b; c d], penentu (determinant) ialah (ad - bc). Matriks songsang A⁻¹ wujud jika dan hanya jika (ad - bc) ≠ 0.</li><li>Rumus Matriks Songsang: A⁻¹ = 1 / (ad - bc) · [d  -b; -c  a] (tukar tempat a dengan d, dan tukar tanda b dengan c!). Apabila A didarab A⁻¹, hasilnya ialah Matriks Identiti I = [1 0; 0 1].</li><li>Menyelesaikan ax + by = h dan cx + dy = k: tulis dalam bentuk matriks A[x; y] = [h; k] → maka [x; y] = A⁻¹[h; k] = 1/(ad-bc) [d -b; -c a][h; k]!</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh Terkawal:</strong> Selesaikan persamaan serentak 2x + 3y = 12 dan x - y = 1 menggunakan kaedah matriks.</p>
+        <p><strong>Penyelesaian:</strong> Matriks A = [2 3; 1 -1]. Penentu ad - bc = (2)(-1) - (3)(1) = -2 - 3 = -5. Jadi [x; y] = (1/-5)[-1 -3; -1 2][12; 1] = (-1/5)[-12 - 3; -12 + 2] = (-1/5)[-15; -10] = [3; 2] → x = 3, y = 2.</p>
+        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa uji x dan y ke dalam kedua-dua persamaan asal (2(3)+3(2)=12, 3-2=1) dan JANGAN biarkan tanda kurung matriks pada jawapan akhir x dan y!</p>
+      </div>
+    </article></div>
+    </section>
+
+    <section class="seo-section-card">
+      <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+      <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+      <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
+      <p><strong>Kesilapan Lazim:</strong> Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2.</p>
+      <p><strong>Pembetulan Tepat:</strong> Dalam soalan SPM &#39;dengan menggunakan kaedah matriks, hitung nilai x dan nilai y&#39;, baris akhir WAJIB menyatakan nilai skalar: &#39;x = 3, y = 2&#39;.</p>
+      <p><strong>Tip Skor Exam:</strong> Keluarkan x dan y dari kurung matriks di baris penutup!</p>
+    </article>
+<article class="kssm-mistake-card">
+      <p><strong>Kesilapan Lazim:</strong> Lupa menukar kedudukan a dengan d atau salah tukar tanda dalam rumus A⁻¹.</p>
+      <p><strong>Pembetulan Tepat:</strong> Utama (a ke/dari d): TUKAR TEMPAT; Pepenjuru satu lagi (b, c): KEKAL TEMPAT tetapi TUKAR TANDA (+ jadi -, - jadi +).</p>
+      <p><strong>Tip Skor Exam:</strong> A = [a b; c d] → A⁻¹ = 1/(ad-bc) × [d -b; -c a]. Uji darab A·A⁻¹ untuk sahkan mendapat [1 0; 0 1]!</p>
+    </article>
+<article class="kssm-mistake-card">
+      <p><strong>Kesilapan Lazim:</strong> Mendarab dua matriks unsur-demi-unsur seperti penambahan (memadankan a₁₁×b₁₁ terus).</p>
+      <p><strong>Pembetulan Tepat:</strong> Pendaraban matriks mesti menggunakan &#39;Baris kiri × Lajur kanan&#39; diikuti penjumlahan hasil darab.</p>
+      <p><strong>Tip Skor Exam:</strong> Gunakan jari kiri menyusuri baris mendatar dan jari kanan menuruni lajur menegak!</p>
+    </article></div>
+    </section>
+
+    <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+      <div class="kssm-section-top">
+        <div>
+          <span class="kssm-eyebrow">Latih Tubi Topikal Interaktif • 0 Token</span>
+          <h2>10 Soalan Pengukuhan Bab 2</h2>
+          <p class="kssm-sublead">Pilih jawapan terbaik untuk semakan serta-merta, huraian penuh, dan kumpul <strong>+10 XP</strong> bagi setiap jawapan tepat.</p>
+        </div>
+        <div class="kssm-xp-panel" aria-live="polite">
+          <div class="kssm-xp-stat"><span>Kemajuan</span><strong id="kssmQuizProgressText">0 / 10</strong></div>
+          <div class="kssm-xp-stat"><span>Skor Betul</span><strong id="kssmQuizScoreText">0</strong></div>
+          <div class="kssm-xp-stat is-gold"><span>Jumlah XP KSSM</span><strong id="kssmTotalXpText">0 XP</strong></div>
+        </div>
+      </div>
+      <div class="kssm-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="kssmQuizProgressBar">
+        <div class="kssm-progress-fill" id="kssmQuizProgressFill" style="width:0%"></div>
+      </div>
+      <div class="kssm-quiz-grid"><article class="kssm-q-card" data-q-card="0" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 1 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Apakah peringkat bagi matriks [6; 9; -4] (satu lajur menegak dengan tiga baris)?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">1 × 3</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">3 × 1</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">3 × 3</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">1 × 1</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="0" hidden>
+          <p class="kssm-fb-status" data-q-status="0"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Bilangan baris = 3, bilangan lajur = 1, maka peringkatnya ialah 3 × 1.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="1" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 2 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Diberi matriks [2x - 1, -3; -12, 5 + y] + [x, 2; 7, y] = [8, -1; -5, 13]. Cari nilai x dan y.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">x = 3, y = 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">x = 2, y = 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">x = 3, y = 8</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x = 4, y = 3</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="1" hidden>
+          <p class="kssm-fb-status" data-q-status="1"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> (2x - 1) + x = 8 → 3x = 9 → x = 3; (5 + y) + y = 13 → 2y = 8 → y = 4.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="2" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 3 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Pasangan matriks manakah yang TIDAK BOLEH didarab bersama sebagai AB?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">A berperingkat 2 × 3 dan B berperingkat 3 × 1</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">A berperingkat 1 × 2 dan B berperingkat 2 × 3</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">A berperingkat 3 × 2 dan B berperingkat 3 × 2</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">A berperingkat 2 × 2 dan B berperingkat 2 × 4</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="2" hidden>
+          <p class="kssm-fb-status" data-q-status="2"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Bagi (3 × 2)(3 × 2), bilangan lajur kiri (2) ≠ bilangan baris kanan (3), maka pendaraban tidak tertakrif.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="3" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 4 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Matriks [4  6; 2  k] TIDAK mempunyai matriks songsang. Hitung nilai pemalar k.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">k = 3</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">k = 12</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">k = -3</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">k = 0</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="3" hidden>
+          <p class="kssm-fb-status" data-q-status="3"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Matriks songsang tiada apabila penentu ad - bc = 0: 4k - (6)(2) = 0 → 4k = 12 → k = 3.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="4" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 5 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Cari matriks songsang bagi M = [5  2; 7  3].</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">[3  -2; -7  5]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">[-3  2; 7  -5]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">1/29 [3  -2; -7  5]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">[5  -7; -2  3]</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="4" hidden>
+          <p class="kssm-fb-status" data-q-status="4"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Penentu = (5×3) - (2×7) = 15 - 14 = 1. Jadi M⁻¹ = 1/1 [3  -2; -7  5] = [3  -2; -7  5].</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="5" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 6 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Apakah hasil darab matriks A = [4  3] (1×2) dengan E = [5  -1  0; -4  8  7] (2×3)?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">[8  20  21]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">[20  20  21]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">[8  -20  21]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">Tidak tertakrif</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="5" hidden>
+          <p class="kssm-fb-status" data-q-status="5"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> [4(5)+3(-4), 4(-1)+3(8), 4(0)+3(7)] = [20-12, -4+24, 0+21] = [8  20  21].</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="6" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 7 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Manakah merupakan matriks identiti I berperingkat 2 × 2?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">[1  1; 1  1]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">[1  0; 0  1]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">[0  1; 1  0]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">[2  0; 0  2]</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="6" hidden>
+          <p class="kssm-fb-status" data-q-status="6"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Matriks identiti mempunyai 1 pada pepenjuru utama dan 0 pada semua kedudukan lain: [1 0; 0 1].</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="7" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 8 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Selesaikan persamaan serentak 3x + 2y = 7 dan 4x + 3y = 10 menggunakan prinsip matriks songsang.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">x = 1, y = 2</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">x = 2, y = 1</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">x = -1, y = 5</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x = 3, y = -1</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="7" hidden>
+          <p class="kssm-fb-status" data-q-status="7"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Penentu = 9 - 8 = 1. [x; y] = [3 -2; -4 3][7; 10] = [21-20; -28+30] = [1; 2].</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="8" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 9 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Diberi P berperingkat 3 × 4 dan hasil darab PQ berperingkat 3 × 2. Apakah peringkat bagi matriks Q?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">4 × 2</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">2 × 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">3 × 2</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">4 × 3</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="8" hidden>
+          <p class="kssm-fb-status" data-q-status="8"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> (3 × 4) · (4 × 2) menghasilkan (3 × 2), maka Q berperingkat 4 × 2.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="9" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 10 / 10</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Jika A = [2  -1; 0  3] dan A · B = I (matriks identiti), apakah matriks B?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">1/6 [3  1; 0  2]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">1/6 [2  1; 0  3]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">[3  1; 0  2]</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">1/5 [3  -1; 0  2]</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="9" hidden>
+          <p class="kssm-fb-status" data-q-status="9"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Jika AB = I, maka B ialah matriks songsang A⁻¹. ad - bc = (2)(3) - (-1)(0) = 6 → B = (1/6)[3  1; 0  2].</p>
+        </div>
+      </article></div>
+      <div class="kssm-quiz-actions">
+        <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 10 soalan untuk melengkapkan penguasaan bab ini.</p>
+        <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Latih Tubi</button>
+      </div>
+    </section>
+    <section class="seo-section-card" id="kertas-2-berstruktur">
+      <div class="kssm-section-top">
+        <div>
+          <span class="kssm-eyebrow">Latihan Kertas 2 / Berstruktur &amp; KBAT</span>
+          <h2>2 Soalan Berstruktur &amp; Bimbingan Cikgu AI</h2>
+          <p class="kssm-sublead">Cuba jawab sendiri berpandukan kata kunci pemarkahan, kemudian klik butang di bawah untuk bimbingan langkah demi langkah dalam Mod Hibrid Cikgu AI.</p>
+        </div>
+      </div>
+      <div class="kssm-p2-list"><article class="seo-preview-item kssm-p2-card">
+        <div class="kssm-p2-top">
+          <span class="kssm-p2-label">Soalan Kertas 2 (a) Matriks Songsang &amp; Penentu</span>
+          <span class="kssm-p2-marks">5 Markah</span>
+        </div>
+        <p class="kssm-p2-q">Diberi matriks M = [4  -2; m  3] dan matriks songsangnya ialah M⁻¹ = 1/16 [3  2; -2  n]. Cari nilai m dan nilai n.</p>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">penentu 4(3) - (-2)m = 16 -&gt; 12 + 2m = 16 -&gt; m = 2</span><span class="kssm-kw-chip">tukar tempat 4 dengan 3 -&gt; n = 4</span></div>
+            <p>Padankan rumus matriks songsang M⁻¹ dengan nilai penentu 16 dan kedudukan unsur pepenjuru utama.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%205%20%E2%80%A2%20Matematik%20Bab%202%3A%20Matriks%20(Operasi%20Asas%20%26%20Matriks%20Songsang)%5D%20Diberi%20matriks%20M%20%3D%20%5B4%20%20-2%3B%20m%20%203%5D%20dan%20matriks%20songsangnya%20ialah%20M%E2%81%BB%C2%B9%20%3D%201%2F16%20%5B3%20%202%3B%20-2%20%20n%5D.%20Cari%20nilai%20m%20dan%20nilai%20n.#portal" class="btn btn-primary btn-sm kssm-cikgu-ai-btn" rel="nofollow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Bimbing Bersama Cikgu AI (Mod Hibrid)</span>
+          </a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card">
+        <div class="kssm-p2-top">
+          <span class="kssm-p2-label">Soalan Kertas 2 (b) Masalah Persamaan Serentak Matriks</span>
+          <span class="kssm-p2-marks">6 Markah</span>
+        </div>
+        <p class="kssm-p2-q">Di Kedai Elektrik Sinar Jaya, harga bagi 3 unit kipas berdiri dan 2 unit kipas siling ialah RM710, manakala harga bagi 5 unit kipas berdiri dan 1 unit kipas siling ialah RM740. Menggunakan KAEDAH MATRIKS, hitung harga seunit kipas berdiri (x) dan seunit kipas siling (y).</p>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">[3 2; 5 1][x; y] = [710; 740]</span><span class="kssm-kw-chip">penentu = 3 - 10 = -7</span><span class="kssm-kw-chip">A⁻¹ = -1/7 [1 -2; -5 3]</span><span class="kssm-kw-chip">x = RM110, y = RM190</span></div>
+            <p>Tunjukkan persamaan matriks lengkap, matriks songsang terperinci, dan nyatakan jawapan akhir x dan y di luar matriks.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%205%20%E2%80%A2%20Matematik%20Bab%202%3A%20Matriks%20(Operasi%20Asas%20%26%20Matriks%20Songsang)%5D%20Di%20Kedai%20Elektrik%20Sinar%20Jaya%2C%20harga%20bagi%203%20unit%20kipas%20berdiri%20dan%202%20unit%20kipas%20siling%20ialah%20RM710%2C%20manakala%20harga%20bagi%205%20unit%20kipas%20berdiri%20dan%201%20unit%20kipas%20siling%20ialah%20RM740.%20Menggunakan%20KAEDAH%20MATRIKS%2C%20hitung%20harga%20seunit%20kipas%20berdiri%20(x)%20dan%20seunit%20kipas%20siling%20(y).#portal" class="btn btn-primary btn-sm kssm-cikgu-ai-btn" rel="nofollow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Bimbing Bersama Cikgu AI (Mod Hibrid)</span>
+          </a>
+        </div>
+      </article></div>
+    </section>
+
+    <section class="seo-section-card">
+      <span class="kssm-eyebrow">Pautan Seterusnya</span>
+      <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
+      <div class="seo-related-grid">
+        <a href="../bab-1/" class="kssm-bab-link">Beralih ke Matematik Bab 1</a>
+        <a href="../../" class="kssm-bab-link">Semua Subjek Tingkatan 5</a>
+        <a href="../../../" class="kssm-bab-link">Hab Utama KSSM T1–T5</a>
+        <a href="../../../../kalkulator-merit-upu/" class="kssm-bab-link">Kalkulator Merit UPUOnline 2027</a>
+        <a href="../../../../soalan-percubaan-spm/matematik/" class="kssm-bab-link">Soalan Percubaan SPM Matematik</a>
+      </div>
+    </section>
+  </main>
+  <footer class="lp-footer">
+    <div class="lp-container lp-footer-inner">
+      <div>
+        <div class="etutor-logo-lockup etutor-logo-on-dark">
+          <svg class="etutor-emblem-svg" width="46" height="36" aria-hidden="true"><use href="#etutor-brand-emblem"></use></svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;margin-top:10px;color:#94a3b8">Nota KSSM Pelengkap Tuisyen • Buku Teks &amp; DSKP KPM</div>
+      </div>
+      <ul class="lp-footer-links">
+        <li><a href="../../../">Hab KSSM</a></li>
+        <li><a href="../../../../nota-interaktif/">Nota Playable</a></li>
+        <li><a href="../../../../kalkulator-merit-upu/">Kalkulator UPU</a></li>
+        <li><a href="../../../../soalan-percubaan-spm/">Percubaan SPM</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="../../../../config.js"></script>
+  <script src="../../../../live-index-sync.js" defer></script>
+  <script>
+(function () {
+  var STORAGE_KEY = "etutor_kssm_bab_xp_v1";
+  var CHAP_KEY = "matematik-t5-bab-2";
+  var LETTERS = ["A", "B", "C", "D"];
+  var cards = Array.prototype.slice.call(document.querySelectorAll("[data-q-card]"));
+  if (!cards.length) return;
+
+  var progText = document.getElementById("kssmQuizProgressText");
+  var scoreText = document.getElementById("kssmQuizScoreText");
+  var xpText = document.getElementById("kssmTotalXpText");
+  var progBar = document.getElementById("kssmQuizProgressBar");
+  var progFill = document.getElementById("kssmQuizProgressFill");
+  var sumNote = document.getElementById("kssmQuizSummaryNote");
+  var resetBtn = document.getElementById("kssmQuizResetBtn");
+
+  function loadStore() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      var parsed = raw ? JSON.parse(raw) : {};
+      if (!parsed || typeof parsed !== "object") parsed = {};
+      if (!parsed.chapters || typeof parsed.chapters !== "object") parsed.chapters = {};
+      return parsed;
+    } catch (_) {
+      return { totalXp: 0, chapters: {} };
+    }
+  }
+
+  function saveStore(st) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(st)); } catch (_) {}
+  }
+
+  function recalcTotalXp(st) {
+    var total = 0;
+    Object.keys(st.chapters || {}).forEach(function (k) {
+      var rec = st.chapters[k];
+      if (rec && typeof rec.earnedXp === "number") total += rec.earnedXp;
+    });
+    st.totalXp = total;
+    return total;
+  }
+
+  var state = loadStore();
+  if (!state.chapters[CHAP_KEY]) state.chapters[CHAP_KEY] = { answers: {}, earnedXp: 0 };
+
+  function renderAll() {
+    var rec = state.chapters[CHAP_KEY];
+    var ansMap = rec.answers || {};
+    var answered = 0;
+    var correctCount = 0;
+
+    cards.forEach(function (card, idx) {
+      var correctIdx = Number(card.getAttribute("data-correct"));
+      var chosen = Object.prototype.hasOwnProperty.call(ansMap, idx) ? Number(ansMap[idx]) : -1;
+      var fb = card.querySelector('[data-q-fb="' + idx + '"]');
+      var statusEl = card.querySelector('[data-q-status="' + idx + '"]');
+      var btns = Array.prototype.slice.call(card.querySelectorAll(".kssm-opt-btn"));
+
+      btns.forEach(function (btn) {
+        var optIdx = Number(btn.getAttribute("data-opt-idx"));
+        btn.classList.remove("is-correct", "is-wrong");
+        btn.disabled = chosen !== -1;
+        if (chosen !== -1) {
+          if (optIdx === correctIdx) btn.classList.add("is-correct");
+          else if (optIdx === chosen) btn.classList.add("is-wrong");
+        }
+      });
+
+      if (chosen !== -1) {
+        answered += 1;
+        var isRight = chosen === correctIdx;
+        if (isRight) correctCount += 1;
+        if (fb) fb.hidden = false;
+        if (statusEl) {
+          statusEl.className = "kssm-fb-status " + (isRight ? "is-ok" : "is-bad");
+          statusEl.textContent = isRight
+            ? "Tepat! +10 XP direkodkan (Jawapan: " + LETTERS[correctIdx] + ")."
+            : "Kurang tepat. Jawapan sebenar ialah " + LETTERS[correctIdx] + ".";
+        }
+      } else if (fb) {
+        fb.hidden = true;
+      }
+    });
+
+    var xpHere = correctCount * 10;
+    if (xpHere > (rec.earnedXp || 0)) rec.earnedXp = xpHere;
+    var totalXp = recalcTotalXp(state);
+    saveStore(state);
+
+    var pct = Math.round((answered / cards.length) * 100);
+    if (progText) progText.textContent = answered + " / " + cards.length;
+    if (scoreText) scoreText.textContent = String(correctCount);
+    if (xpText) xpText.textContent = totalXp + " XP";
+    if (progFill) progFill.style.width = pct + "%";
+    if (progBar) progBar.setAttribute("aria-valuenow", String(answered));
+    if (sumNote) {
+      sumNote.textContent = answered === cards.length
+        ? "Tahniah! Anda menjawab " + correctCount + "/" + cards.length + " tepat (+" + (correctCount * 10) + " XP untuk bab ini)."
+        : "Kemajuan: " + answered + " daripada " + cards.length + " soalan telah disemak.";
+    }
+  }
+
+  cards.forEach(function (card, idx) {
+    card.addEventListener("click", function (ev) {
+      var btn = ev.target && ev.target.closest ? ev.target.closest(".kssm-opt-btn") : null;
+      if (!btn || btn.disabled) return;
+      var rec = state.chapters[CHAP_KEY];
+      if (!rec.answers) rec.answers = {};
+      if (Object.prototype.hasOwnProperty.call(rec.answers, idx)) return;
+      rec.answers[idx] = Number(btn.getAttribute("data-opt-idx"));
+      renderAll();
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", function () {
+      var prevBest = state.chapters[CHAP_KEY].earnedXp || 0;
+      state.chapters[CHAP_KEY] = { answers: {}, earnedXp: prevBest };
+      renderAll();
+    });
+  }
+
+  renderAll();
+})();
+</script>
+</body>
+</html>

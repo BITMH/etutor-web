@@ -11,6 +11,8 @@ import {
 } from "../config.js";
 import { buildCikguDrawerTemplate } from "./widget-template.js";
 import { executeCikguChatTurn } from "./chat-turn-runner.js";
+import { applyHybridDeepLinkFromUrl, syncHybridComposerUi } from "./hybrid-homework-ui.js";
+import { attachDraggableCikguFab } from "./fab-draggable.js?v=22";
 
 export class CikguWidgetDrawer {
   constructor({ client, warmupMachine, speechIO, getLiveScreenSnapshot, getStudentName }) {
@@ -24,6 +26,10 @@ export class CikguWidgetDrawer {
     this.activeScreenQuestion = null;
     this.sessionGreeted = false;
     this.chatHistory = [];
+    this.hybridMode = false;
+    this.pendingHintStage = "bimbing";
+    this.lastHomeworkQuestion = "";
+    this._deepLinkConsumed = false;
   }
 
   _shortDisplayName(rawName) {
@@ -48,6 +54,13 @@ export class CikguWidgetDrawer {
     document.body.appendChild(root);
     this.rootEl = root;
     this._bindEvents();
+    applyHybridDeepLinkFromUrl(this);
+  }
+
+  setHybridMode(enabled, stage = "bimbing") {
+    this.hybridMode = Boolean(enabled);
+    this.pendingHintStage = this.hybridMode && stage === "semak_cubaan" ? "semak_cubaan" : "bimbing";
+    syncHybridComposerUi(this.rootEl, { hybridMode: this.hybridMode, pendingHintStage: this.pendingHintStage });
   }
 
   setActiveScreenQuestion(ctx) {
@@ -82,6 +95,8 @@ export class CikguWidgetDrawer {
 
   _bindEvents() {
     const fab = this.rootEl.querySelector("#cikguAiFab");
+    const fabWrap = this.rootEl.querySelector(".cikgu-ai-fab-wrap");
+    const dragCtrl = fabWrap && fab ? attachDraggableCikguFab(this.rootEl, fabWrap, fab) : null;
     const drawer = this.rootEl.querySelector("#cikguAiDrawer");
     const closeBtn = this.rootEl.querySelector("#cikguAiCloseBtn");
     const tooltip = this.rootEl.querySelector("#cikguAiTooltip");
@@ -94,6 +109,11 @@ export class CikguWidgetDrawer {
     const form = this.rootEl.querySelector("#cikguAiForm");
     const chatInput = this.rootEl.querySelector("#cikguAiChatInput");
     const tokenPill = this.rootEl.querySelector("#cikguAiTokenPill");
+    const hybridToggle = this.rootEl.querySelector("#cikguAiHybridToggle");
+    const stageCancel = this.rootEl.querySelector("#cikguAiStageCancelBtn");
+    if (hybridToggle) hybridToggle.addEventListener("click", () => this.setHybridMode(!this.hybridMode, "bimbing"));
+    if (stageCancel) stageCancel.addEventListener("click", () => this.setHybridMode(this.hybridMode, "bimbing"));
+    syncHybridComposerUi(this.rootEl, { hybridMode: this.hybridMode, pendingHintStage: this.pendingHintStage });
 
     const renderTokenPill = (st) => {
       if (!tokenPill || !st) return;
@@ -140,6 +160,7 @@ export class CikguWidgetDrawer {
     if (tooltipClose) tooltipClose.addEventListener("click", hideTooltip);
 
     fab.addEventListener("click", async () => {
+      if (dragCtrl && dragCtrl.wasRecentlyDragged()) return;
       const willOpen = drawer.hidden;
       drawer.hidden = !willOpen;
       if (tooltip) tooltip.hidden = true;
@@ -239,7 +260,9 @@ export class CikguWidgetDrawer {
     if (drawer) drawer.hidden = false;
     if (fab) fab.setAttribute("aria-expanded", "true");
     if (tooltip) tooltip.hidden = true;
-    this.warmupMachine.triggerWarmupIfNeeded();
+    if (this.warmupMachine && this.warmupMachine.status === "idle") {
+      this.warmupMachine.triggerSilentPrewarm();
+    }
     if (subjectHint && (!this.activeScreenQuestion || !this.activeScreenQuestion.subject)) {
       this.setActiveScreenQuestion({ subject: subjectHint, quizTitle: `Latih Tubi ${subjectHint}` });
     }

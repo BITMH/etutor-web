@@ -7881,3 +7881,157 @@ dialog.et-mini-dialog[open]:where(:not([data-closing])) {
     transition: none;
   }
 }
+
+/* === features/teacher-tasks/studentTasks.css === */
+.st-tasks-section {
+  margin: 0 0 16px;
+}
+.st-tasks-card {
+  background: var(--surface, #ffffff);
+  border: 1.5px solid var(--border-subtle, #dbe3f0);
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgb(15 23 42 / 0.04);
+}
+.st-tasks-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.st-tasks-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.st-tasks-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-accent, #1d49c9);
+}
+.st-tasks-title {
+  margin: 0;
+  font-family: var(--font-heading, "Lexend", sans-serif);
+  font-size: 1.06rem;
+  color: var(--brand-navy, #121e48);
+}
+.st-join-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.st-join-input {
+  width: 148px;
+  min-block-size: 36px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle, #cbd5e1);
+  font-family: ui-monospace, monospace;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.st-class-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.st-class-chip {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+.st-tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.st-task-item {
+  border: 1px solid var(--border-subtle, #dbe3f0);
+  border-radius: 14px;
+  padding: 13px 14px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.st-task-item.is-graded {
+  border-color: #6ee7b7;
+  background: #ecfdf5;
+}
+.st-task-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.st-task-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+.st-task-badge.is-done {
+  background: #d1fae5;
+  color: #065f46;
+}
+.st-task-badge.is-due {
+  background: #fef3c7;
+  color: #92400e;
+}
+.st-task-name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-navy, #121e48);
+  line-height: 1.35;
+}
+.st-task-meta {
+  font-size: 0.76rem;
+  color: var(--text-secondary, #475569);
+  margin: 0;
+}
+.st-task-fb {
+  margin: 0;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid #a7f3d0;
+  font-size: 0.76rem;
+  color: #065f46;
+}
+.st-task-foot {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.st-guest-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.st-guest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}

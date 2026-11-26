@@ -15921,11 +15921,13 @@
     const visible = (matched.length > 0 ? matched : formItems).slice(0, 8);
     const xp = kssmQuickCardsReadXp_();
     const xpHtml = xp > 0 ? `<span class="kssm-qc-pill is-xp">${xp} XP</span>` : "";
+    const isUasa = formNum <= 3;
+    const examTag = isUasa ? "UASA" : "SPM";
     const cardsHtml = visible.map((ch) => {
       const href = "./" + String(ch.url || "").replace(/^\/+/, "");
-      return `<a class="kssm-qc-card" href="${kssmQuickCardsEscape_(href)}"><span class="kssm-qc-meta">${kssmQuickCardsEscape_(ch.subject)} • Bab ${Number(ch.bab)}</span><span class="kssm-qc-name">${kssmQuickCardsEscape_(ch.title)}</span><span class="kssm-qc-foot">${Number(ch.mcqCount) || 10} MCQ + ${Number(ch.essayCount) || 2} Kertas 2</span></a>`;
+      return `<a class="kssm-qc-card" href="${kssmQuickCardsEscape_(href)}"><span class="kssm-qc-meta">${kssmQuickCardsEscape_(ch.subject)} • Bab ${Number(ch.bab)}</span><span class="kssm-qc-name">${kssmQuickCardsEscape_(ch.title)}</span><span class="kssm-qc-foot">${Number(ch.mcqCount) || 10} MCQ + ${Number(ch.essayCount) || 2} ${isUasa ? "Struktur" : "Kertas 2"}</span></a>`;
     }).join("");
-    host.innerHTML = `<div class="kssm-qc-head"><h3 class="kssm-qc-title">Hab Bab 1–2 KSSM Tingkatan ${formNum} (Percuma • 0 Token)</h3><div class="kssm-qc-badges"><span class="kssm-qc-pill">0 Token</span>${xpHtml}<a class="kssm-qc-all" href="./kssm/tingkatan-${formNum}/">Semua Subjek T${formNum}</a></div></div><div class="kssm-qc-grid">${cardsHtml}</div>`;
+    host.innerHTML = `<div class="kssm-qc-head"><h3 class="kssm-qc-title">Nota &amp; Ujian Topikal ${examTag} Tingkatan ${formNum} (Bab 1–2 &bull; 0 Token)</h3><div class="kssm-qc-badges"><span class="kssm-qc-pill">0 Token</span>${xpHtml}<a class="kssm-qc-all" href="./kssm/tingkatan-${formNum}/">Semua Subjek T${formNum}</a></div></div><div class="kssm-qc-grid">${cardsHtml}</div>`;
     host.hidden = false;
   }
   function renderKssmQuickCardsForWorkspace(profile, activeForm, showAll, activeTab, notaEl) {
@@ -18460,11 +18462,282 @@
     }
   }
 
+  // --- [features/teacher-tasks/studentKssmCloudSync.js] ---
+  /**
+   * src/features/teacher-tasks/studentKssmCloudSync.js
+   * Menyegerakkan kemajuan KSSM & Nota Interaktif tempatan pelajar ke Supabase (student_sync_kssm_progress)
+   * supaya guru boleh menyemak tugasan dan Ujian Topikal secara automatik.
+   */
+
+  const KSSM_XP_STORAGE_KEY_ = "etutor_kssm_bab_xp_v1";
+  const NOTA_PROGRESS_STORAGE_KEY_ = "etutor_nota_progress_v1";
+  let lastSyncSig_ = "";
+  let syncInFlight_ = null;
+
+  function readJsonStoreSafe_(key) {
+    try {
+      if (typeof localStorage === "undefined") return {};
+      const raw = localStorage.getItem(key);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function collectLocalKssmProgressItems_() {
+    const kssmStore = readJsonStoreSafe_(KSSM_XP_STORAGE_KEY_);
+    const chapMap = (kssmStore && kssmStore.chapters && typeof kssmStore.chapters === "object")
+      ? kssmStore.chapters : {};
+    const notaMap = readJsonStoreSafe_(NOTA_PROGRESS_STORAGE_KEY_);
+
+    const items = [];
+    Object.keys(chapMap).forEach(function (chapterKey) {
+      const rec = chapMap[chapterKey];
+      const m = String(chapterKey).match(/^(.+)-t([1-5])-bab-(\d+)$/);
+      if (!m || !rec || typeof rec !== "object") return;
+      const earnedXp = Math.max(0, Number(rec.earnedXp) || 0);
+      const ansCount = rec.answers && typeof rec.answers === "object" ? Object.keys(rec.answers).length : 0;
+      if (earnedXp <= 0 && ansCount <= 0) return;
+
+      const stars = earnedXp >= 80 ? 3 : (earnedXp >= 50 ? 2 : (earnedXp > 0 ? 1 : 0));
+      items.push({
+        chapterKey: chapterKey,
+        subjectSlug: m[1],
+        formNum: Number(m[2]),
+        bab: Number(m[3]),
+        mcqCorrect: Math.min(10, Math.round(earnedXp / 10)),
+        mcqTotal: 10,
+        earnedXp: earnedXp,
+        notaCompleted: false,
+        notaStars: stars
+      });
+    });
+
+    // Tambah rekod nota jika wujud padanan notaId -> bab (jika notaId mengandungi form/bab)
+    Object.keys(notaMap).forEach(function (notaId) {
+      const nr = notaMap[notaId];
+      if (!nr || typeof nr !== "object") return;
+      const pct = Number(nr.masteryPct) || 0;
+      const tot = Math.max(1, Number(nr.totalUnits) || 6);
+      const done = Math.max(0, Number(nr.completedUnits) || 0);
+      const isDone = pct >= 80 || done >= tot;
+      const stars = pct >= 80 ? 3 : (pct >= 50 ? 2 : (done > 0 ? 1 : 0));
+      if (!isDone && stars === 0) return;
+      const matched = items.find(function (it) {
+        return notaId.indexOf(it.subjectSlug) !== -1 && notaId.indexOf("t" + it.formNum) !== -1 && notaId.indexOf("b" + it.bab) !== -1;
+      });
+      if (matched) {
+        matched.notaCompleted = matched.notaCompleted || isDone;
+        matched.notaStars = Math.max(matched.notaStars, stars);
+      }
+    });
+
+    return items.slice(0, 80);
+  }
+  async function syncKssmProgressToCloud(force) {
+    const sb = getSupabaseClient();
+    if (!sb) return { ok: false, skipped: true };
+    const sessRes = await sb.auth.getSession();
+    const session = sessRes && sessRes.data ? sessRes.data.session : null;
+    if (!session || !session.user) return { ok: false, skipped: true };
+
+    const items = collectLocalKssmProgressItems_();
+    if (!items.length) return { ok: true, synced: 0 };
+
+    const sig = session.user.id + ":" + JSON.stringify(items);
+    if (!force && sig === lastSyncSig_) return { ok: true, cached: true };
+    if (syncInFlight_) return syncInFlight_;
+
+    syncInFlight_ = sb.rpc("student_sync_kssm_progress", { p_items: items })
+      .then(function (res) {
+        if (!res.error && res.data && res.data.ok) {
+          lastSyncSig_ = sig;
+          return res.data;
+        }
+        return { ok: false };
+      })
+      .catch(function () { return { ok: false }; })
+      .finally(function () { syncInFlight_ = null; });
+
+    return syncInFlight_;
+  }
+
+  // --- [features/teacher-tasks/studentTasksWidget.js] ---
+  /**
+   * src/features/teacher-tasks/studentTasksWidget.js
+   * Memaparkan kad "Tugasan Cikgu & Kelas Saya" di #dashboardView serta fungsi Sertai Kelas guna Kod Kelas.
+   */
+
+
+
+
+  const PENDING_JOIN_KEY_ = "etutor_pending_join_code_v1";
+  let widgetBound_ = false;
+
+  function captureJoinCodeFromUrl_() {
+    if (typeof window === "undefined") return "";
+    try {
+      const code = String(new URLSearchParams(window.location.search || "").get("join") || "")
+        .replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+      if (code.length >= 4) {
+        sessionStorage.setItem(PENDING_JOIN_KEY_, code);
+        return code;
+      }
+      return sessionStorage.getItem(PENDING_JOIN_KEY_) || "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function buildTaskLaunchHref_(task) {
+    const cfg = (task && task.targetConfig && typeof task.targetConfig === "object") ? task.targetConfig : {};
+    const form = Number(cfg.form) || Number(String(task.formCode || "T5").replace(/\D/g, "")) || 5;
+    const slug = cfg.subjectSlug || task.subjectSlug || "matematik";
+    const bab = Number(cfg.bab) || 1;
+    const chapKey = cfg.chapterKey || (slug + "-t" + form + "-bab-" + bab);
+    if (task.assignmentType === "eduquest_nota" && cfg.notaId) {
+      return "./eduquest/?form=" + form + "&subject=" + encodeURIComponent(slug) + "&tajuk=" + encodeURIComponent(cfg.notaId);
+    }
+    return "./eduquest/?form=" + form + "&subject=" + encodeURIComponent(slug) + "&tab=latihan&tajuk=" + encodeURIComponent(chapKey);
+  }
+
+  function renderTaskCardHtml_(task) {
+    const isGraded = task.status === "graded";
+    const isSub = task.status === "submitted" || task.status === "ai_checked";
+    const badgeCls = isGraded ? "is-done" : (isSub ? "is-done" : "is-due");
+    const statusTxt = isGraded
+      ? ("Disahkan" + (task.teacherTp ? " • TP" + task.teacherTp : ""))
+      : (isSub ? "Sudah Hantar" : "Belum Siap");
+    const dueTxt = task.dueAt ? (" • Tamat: " + String(task.dueAt).slice(0, 10)) : "";
+    const scoreTxt = (task.autoMcqScore !== null && task.autoMcqScore !== undefined)
+      ? ("Skor MCQ: " + task.autoMcqScore + "/" + (task.autoMcqTotal || 10))
+      : "";
+    const href = buildTaskLaunchHref_(task);
+
+    return '<article class="st-task-item' + (isGraded ? " is-graded" : "") + '">' +
+      '  <div class="st-task-top"><span class="st-task-badge">' + escapeHtml(task.className + " • " + task.subject) + '</span><span class="st-task-badge ' + badgeCls + '">' + escapeHtml(statusTxt) + "</span></div>" +
+      '  <h3 class="st-task-name">' + escapeHtml(task.title) + "</h3>" +
+      '  <p class="st-task-meta">Daripada ' + escapeHtml(task.teacherName || "Cikgu") + escapeHtml(dueTxt) + (scoreTxt ? (" • " + escapeHtml(scoreTxt)) : "") + "</p>" +
+      (task.teacherFeedback ? ('<p class="st-task-fb"><strong>Komen Cikgu:</strong> ' + escapeHtml(task.teacherFeedback) + "</p>") : "") +
+      '  <div class="st-task-foot">' +
+      '    <a class="btn btn-primary btn-sm" href="' + escapeHtml(href) + '">' + (isSub || isGraded ? "Lihat / Ulang" : "Mula Tugasan") + "</a>" +
+      "  </div>" +
+      "</article>";
+  }
+
+  function renderGuestBannerHtml_(host, pendingCode) {
+    host.innerHTML =
+      '<div class="st-tasks-card">' +
+      '  <div class="st-guest-bar">' +
+      '    <div class="st-tasks-title-wrap">' +
+      '      <span class="st-tasks-eyebrow">Kelas &amp; Kerja Rumah Cikgu</span>' +
+      '      <h2 class="st-tasks-title">' + (pendingCode ? ("Kod Kelas Dikesan: " + escapeHtml(pendingCode)) : "Ada Kod Kelas daripada Cikgu?") + "</h2>" +
+      '      <p class="st-task-meta">Log masuk akaun pelajar (Google / E-mel percuma) untuk sertai kelas cikgu &amp; hantar kerja rumah automatik.</p>' +
+      "    </div>" +
+      '    <div class="st-guest-actions">' +
+      '      <button type="button" class="btn btn-primary btn-sm js-open-sync-dialog">Log Masuk Pelajar</button>' +
+      '      <a class="btn btn-outline btn-sm" href="./guru/">Portal Guru</a>' +
+      "    </div>" +
+      "  </div>" +
+      "</div>";
+  }
+  async function refreshStudentTeacherTasks() {
+    if (typeof document === "undefined") return;
+    const host = document.getElementById("studentTeacherTasksHost");
+    if (!host) return;
+
+    const pendingCode = captureJoinCodeFromUrl_();
+    const sb = getSupabaseClient();
+    if (!sb) {
+      renderGuestBannerHtml_(host, pendingCode);
+      return;
+    }
+
+    const sessRes = await sb.auth.getSession();
+    const sess = sessRes && sessRes.data ? sessRes.data.session : null;
+    if (!sess || !sess.user) {
+      renderGuestBannerHtml_(host, pendingCode);
+      return;
+    }
+
+    if (pendingCode) {
+      try { sessionStorage.removeItem(PENDING_JOIN_KEY_); } catch (_) {}
+      const jRes = await sb.rpc("student_join_class_by_code", { p_join_code: pendingCode, p_student_name: "" });
+      if (jRes.data && jRes.data.ok) {
+        showToast("Berjaya menyertai kelas " + jRes.data.classInfo.className + "!");
+      }
+    }
+
+    await syncKssmProgressToCloud(false);
+    const res = await sb.rpc("student_get_my_assignments");
+    if (res.error || !res.data || !res.data.ok) {
+      renderGuestBannerHtml_(host, "");
+      return;
+    }
+
+    const classes = Array.isArray(res.data.classes) ? res.data.classes : [];
+    const tasks = Array.isArray(res.data.assignments) ? res.data.assignments : [];
+
+    const classChips = classes.map(function (c) {
+      return '<span class="st-class-chip">' + escapeHtml(c.className + " • " + c.subject + " (" + c.teacherName + ")") + "</span>";
+    }).join("");
+
+    const tasksHtml = tasks.length
+      ? '<div class="st-tasks-grid">' + tasks.map(renderTaskCardHtml_).join("") + "</div>"
+      : (classes.length ? '<p class="st-task-meta">Belum ada tugasan aktif daripada cikgu buat masa ini.</p>' : "");
+
+    host.innerHTML =
+      '<div class="st-tasks-card">' +
+      '  <div class="st-tasks-head">' +
+      '    <div class="st-tasks-title-wrap">' +
+      '      <span class="st-tasks-eyebrow">Kerja Rumah &amp; Ujian Topikal</span>' +
+      '      <h2 class="st-tasks-title">Tugasan Cikgu &amp; Kelas Saya</h2>' +
+      "    </div>" +
+      '    <form id="studentJoinClassForm" class="st-join-form">' +
+      '      <input id="studentJoinCodeInput" type="text" maxlength="10" class="st-join-input" placeholder="Kod Kelas (cth: ET5A82)" aria-label="Masukkan Kod Kelas">' +
+      '      <button type="submit" class="btn btn-primary btn-sm">Sertai Kelas</button>' +
+      '      <a class="btn btn-outline btn-sm" href="./guru/">Untuk Guru</a>' +
+      "    </form>" +
+      "  </div>" +
+      (classChips ? ('<div class="st-class-chips">' + classChips + "</div>") : "") +
+      tasksHtml +
+      "</div>";
+  }
+  function initStudentTeacherTasks() {
+    if (typeof document === "undefined" || widgetBound_) return;
+    widgetBound_ = true;
+
+    document.addEventListener("submit", async function (e) {
+      const form = e.target && e.target.id === "studentJoinClassForm" ? e.target : null;
+      if (!form) return;
+      e.preventDefault();
+      const inp = document.getElementById("studentJoinCodeInput");
+      const code = String(inp ? inp.value : "").replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+      if (code.length < 4) return showToast("Sila masukkan Kod Kelas yang sah.");
+      const sb = getSupabaseClient();
+      if (!sb) return showToast("Sila log masuk dahulu.");
+      const res = await sb.rpc("student_join_class_by_code", { p_join_code: code, p_student_name: "" });
+      if (res.error || !res.data || !res.data.ok) {
+        return showToast((res.data && res.data.error) || "Kod kelas tidak ditemui.");
+      }
+      showToast("Berjaya menyertai kelas " + res.data.classInfo.className + "!");
+      await refreshStudentTeacherTasks();
+    });
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("focus", function () { void refreshStudentTeacherTasks(); });
+      window.addEventListener("etutor:student-profile-updated", function () { void refreshStudentTeacherTasks(); });
+    }
+    void refreshStudentTeacherTasks();
+  }
+
   // --- [main.js] ---
   /**
    * src/main.js
    * Pintu masuk permulaan aplikasi Portal eTutor.my (mengikat semua modul ciri pada DOMContentLoaded).
    */
+
 
 
 
@@ -18518,6 +18791,7 @@
     initPhoneGamificationView();
     initAdSenseController();
     initToyyibPayAutoResumeAfterLogin();
+    initStudentTeacherTasks();
     void hydrateExamReportsFromCloud();
 
     // Segerakkan status mod operasi daripada pelayan secara latar belakang (tanpa menghalang UI)

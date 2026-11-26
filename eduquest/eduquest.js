@@ -95,7 +95,7 @@
     if (!stage || !frame) return;
     activeTajuk = tajukId; activeNoteId = noteId || "";
     if (titleEl) titleEl.textContent = title || "Bab EduQuest";
-    if (statEl) statEl.textContent = activeNoteId ? "Auto-simpan aktif" : "Latihan Bab KSSM";
+    if (statEl) statEl.textContent = activeNoteId ? "Auto-simpan aktif" : "Ujian Topikal KSSM";
     frame.src = src;
     stage.classList.toggle("is-nota-mode", Boolean(activeNoteId));
     stage.hidden = false;
@@ -166,7 +166,7 @@
       var primarySrc = hasNota ? notaSrc : kssmSrc;
       var primaryNoteId = hasNota ? item.notaId : "";
       var primaryTajuk = hasNota ? item.notaId : item.kssmTajuk;
-      var btnTxt = item.stars === 3 ? "Ulang Kaji" : (item.stars > 0 ? "Ulang Untuk 3\u2605" : (hasNota ? "Mula Nota Bab " + item.bab : "Buka Latihan Bab " + item.bab));
+      var btnTxt = item.stars === 3 ? "Ulang Kaji" : (item.stars > 0 ? "Ulang Untuk 3\u2605" : (hasNota ? "Mula Nota Bab " + item.bab : "Buka Ujian Bab " + item.bab));
       var videoBtn = (!item.locked && window.etEqVideo) ? window.etEqVideo.buildActionBtn(item.notaId, item.videos) : "";
       var actions = item.locked
         ? '<button type="button" class="eq-node-btn is-locked-btn" disabled>Akan Dibuka Berperingkat</button>'
@@ -223,7 +223,7 @@
           ? (".." + String(target.kssm.url || "").replace(/^([^/])/, "/$1"))
           : ("../nota-interaktif/dist/" + encodeURIComponent(target.notaId) + ".html");
         var dNoteId = openKssm ? "" : target.notaId;
-        var dTitle = (openKssm ? "Latihan Bab " : "Bab ") + target.bab + ": " + target.title;
+        var dTitle = (openKssm ? "Ujian Topikal Bab " : "Bab ") + target.bab + ": " + target.title;
         openPlayer(dSrc, dTitle, openKssm ? target.kssmTajuk : target.notaId, dNoteId, false);
       }
     }

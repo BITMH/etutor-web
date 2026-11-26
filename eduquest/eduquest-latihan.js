@@ -15,12 +15,15 @@
     if (countEl) countEl.textContent = String(items.length);
     if (!stage) return;
 
-    var headHtml = '<h2 class="eq-latihan-title">Latihan Teks &amp; MCQ &bull; ' + esc(def.name) + "</h2>";
+    var isUasa = Number(activeForm) <= 3;
+    var examTag = isUasa ? "UASA" : "SPM";
+    var paperLabel = isUasa ? "10 MCQ &amp; 2 Struktur" : "10 MCQ &amp; 2 Kertas 2";
+    var headHtml = '<h2 class="eq-latihan-title">Ujian Topikal ' + examTag + " &bull; " + esc(def.name) + " (Ting. " + Number(activeForm) + ")</h2>";
 
     if (!items.length) {
       stage.innerHTML = headHtml +
         '<div class="eq-latihan-empty">' +
-        "  <p>Tiada set latihan untuk subjek ini buat masa ini.</p>" +
+        "  <p>Tiada set ujian topikal " + examTag + " untuk subjek ini buat masa ini.</p>" +
         '  <button type="button" class="eq-node-btn" data-eq-section="nota">Peta Nota EduQuest</button>' +
         "</div>";
       return;
@@ -34,12 +37,12 @@
         return '<span class="' + (s <= kStars ? "eq-star-on" : "eq-star-off") + '">&#9733;</span>';
       }).join("");
       var src = ".." + String(item.kssm.url || "").replace(/^([^/])/, "/$1");
-      var btnTxt = kStars > 0 ? "Ulang Latihan Bab " + item.bab : "Mula Latihan & MCQ";
+      var btnTxt = kStars > 0 ? "Ulang Ujian Bab " + item.bab : "Mula Ujian Topikal";
       return '<article class="eq-latihan-card">' +
         '  <div class="eq-latihan-top"><span class="eq-node-bab">Bab ' + item.bab + '</span><span class="eq-pin-stars-bar">' + starsHtml + "</span></div>" +
         '  <h3 class="eq-latihan-card-title">' + esc((item.kssm && item.kssm.title) || item.title) + "</h3>" +
-        '  <span class="eq-node-xp">' + kXp + " / 100 XP (MCQ &amp; Kertas 2)</span>" +
-        '  <button type="button" class="eq-latihan-btn" data-open-tajuk="' + esc(item.kssmTajuk) + '" data-src="' + esc(src) + '" data-title="' + esc("Latihan Bab " + item.bab + ": " + item.title) + '" data-note-id="">' + btnTxt + "</button>" +
+        '  <span class="eq-node-xp">' + kXp + " / 100 XP (Format " + examTag + " &bull; " + paperLabel + ")</span>" +
+        '  <button type="button" class="eq-latihan-btn" data-open-tajuk="' + esc(item.kssmTajuk) + '" data-src="' + esc(src) + '" data-title="' + esc("Ujian Topikal " + examTag + " Bab " + item.bab + ": " + item.title) + '" data-note-id="">' + btnTxt + "</button>" +
         "</article>";
     }).join("");
 

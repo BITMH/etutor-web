@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://*.googleusercontent.com; connect-src 'self' https://etutor.my https://*.etutor.my https://*.supabase.co; frame-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <title>Portal Guru &amp; Pentaksiran PBD | eTutor.my</title>
+  <meta name="description" content="Portal Guru eTutor.my untuk mengurus kelas, agih tugasan Ujian Topikal UASA/SPM &amp; Nota Interaktif, semakan murid serta rekod PBD TP1-TP6.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="./guru.css?v=1">
+</head>
+<body>
+  <header class="guru-topbar no-print">
+    <div class="guru-topbar-inner">
+      <a href="../#portal" class="guru-brand">
+        <span class="guru-brand-mark">eT</span>
+        <div>
+          <div class="guru-brand-title">eTutor<span>.my</span> &bull; Portal Guru</div>
+          <div class="guru-brand-sub" id="guruHeaderMeta">Kerja Rumah, Ujian Topikal &amp; PBD TP1–TP6</div>
+        </div>
+      </a>
+      <div class="guru-topbar-actions">
+        <a href="../#portal" class="g-btn g-btn-ghost">Portal Pelajar</a>
+        <button type="button" id="guruEditProfileBtn" class="g-btn g-btn-ghost" hidden>Profil Guru</button>
+        <button type="button" id="guruLogoutBtn" class="g-btn g-btn-outline" hidden>Log Keluar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="guru-main">
+    <div id="guruToast" class="guru-toast" role="status" aria-live="polite" hidden></div>
+
+    <!-- 1. SKRIN LOG MASUK GURU -->
+    <section id="guruLoginView" class="g-auth-wrap" aria-label="Log Masuk Guru">
+      <div class="g-card g-auth-card">
+        <span class="g-eyebrow">Akses Guru Sekolah &amp; Tuisyen</span>
+        <h1>Masuk ke Portal Guru eTutor.my</h1>
+        <p class="g-muted">Urus kelas, agih Ujian Topikal UASA &amp; SPM, semak kemajuan Nota Interaktif secara automatik, dan simpan eviden PBD TP1–TP6.</p>
+
+        <button type="button" id="guruGoogleBtn" class="g-btn g-btn-primary g-btn-full">
+          Log Masuk dengan Akaun Google
+        </button>
+
+        <div class="g-divider"><span>atau guna kod OTP e-mel</span></div>
+
+        <form id="guruOtpForm" class="g-stack">
+          <label class="g-label" for="guruEmailInput">E-mel Rasmi / Peribadi Guru</label>
+          <input id="guruEmailInput" type="email" class="g-input" placeholder="cikgu@moe.edu.my atau emel@gmail.com" required>
+          <button type="submit" id="guruSendOtpBtn" class="g-btn g-btn-outline g-btn-full">Hantar Kod Pengesahan (6 Digit)</button>
+        </form>
+
+        <form id="guruVerifyOtpForm" class="g-stack" hidden>
+          <label class="g-label" for="guruOtpCodeInput">Masukkan Kod 6 Digit dari E-mel</label>
+          <input id="guruOtpCodeInput" type="text" inputmode="numeric" maxlength="6" class="g-input" placeholder="123456" required>
+          <button type="submit" id="guruVerifyOtpBtn" class="g-btn g-btn-emerald g-btn-full">Sahkan Kod &amp; Masuk</button>
+        </form>
+        <p id="guruAuthMsg" class="g-status-msg" hidden></p>
+      </div>
+    </section>
+
+    <!-- 2. SKRIN ONBOARDING GURU WAJIB -->
+    <section id="guruOnboardingView" class="g-auth-wrap" hidden aria-label="Onboarding Guru">
+      <div class="g-card g-onb-card">
+        <span class="g-eyebrow">Langkah Pertama &bull; Onboarding Guru</span>
+        <h1>Lengkapkan Profil Pengajaran Anda</h1>
+        <p class="g-muted">Maklumat ini digunakan pada laporan rasmi PBD, nama cikgu pada kad tugasan pelajar, dan penapis subjek kelas.</p>
+
+        <form id="guruOnbForm" class="g-stack">
+          <div class="g-grid-2">
+            <div>
+              <label class="g-label" for="onbGuruName">Nama Penuh Guru *</label>
+              <input id="onbGuruName" type="text" class="g-input" placeholder="cth: Cikgu Aminah binti Ahmad" maxlength="80" required>
+            </div>
+            <div>
+              <label class="g-label" for="onbGuruSchool">Nama Sekolah / Pusat Tuisyen *</label>
+              <input id="onbGuruSchool" type="text" class="g-input" placeholder="cth: SMK Taman Pelangi" maxlength="140" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="g-label" for="onbGuruState">Negeri</label>
+            <select id="onbGuruState" class="g-input"></select>
+          </div>
+
+          <div>
+            <span class="g-label">Tingkatan yang Diajar *</span>
+            <div id="onbFormsGroup" class="g-chip-group"></div>
+          </div>
+
+          <div>
+            <span class="g-label">Subjek Utama *</span>
+            <div id="onbSubjectsGroup" class="g-chip-group"></div>
+          </div>
+
+          <p id="guruOnbError" class="g-error-msg" hidden></p>
+          <div class="g-row-end">
+            <button type="button" id="guruOnbCancelBtn" class="g-btn g-btn-ghost" hidden>Batal</button>
+            <button type="submit" id="guruOnbSubmitBtn" class="g-btn g-btn-primary">Simpan &amp; Buka Portal Guru</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 3. RUANG KERJA PORTAL GURU -->
+    <section id="guruAppView" hidden aria-label="Ruang Kerja Guru">
+      <div class="guru-print-head print-only">
+        <h1 id="guruPrintTitle">Rekod Pentaksiran Bilik Darjah (PBD) &amp; Eviden eTutor.my</h1>
+        <p id="guruPrintMeta"></p>
+      </div>
+
+      <div class="g-workspace-bar no-print">
+        <nav class="g-tabs" role="tablist" aria-label="Menu Portal Guru">
+          <button type="button" class="g-tab is-active" data-guru-tab="classes" role="tab" aria-selected="true">Kelas Saya</button>
+          <button type="button" class="g-tab" data-guru-tab="tasks" role="tab" aria-selected="false">Beri Tugasan &amp; Ujian</button>
+          <button type="button" class="g-tab" data-guru-tab="grading" role="tab" aria-selected="false">Semakan &amp; Nilai TP</button>
+          <button type="button" class="g-tab" data-guru-tab="reports" role="tab" aria-selected="false">Matriks PBD &amp; Laporan</button>
+        </nav>
+
+        <div class="g-class-picker">
+          <label class="g-label-inline" for="guruActiveClassSelect">Kelas Aktif:</label>
+          <select id="guruActiveClassSelect" class="g-input g-input-sm"></select>
+        </div>
+      </div>
+
+      <div id="guruTabClasses" class="g-tab-panel"></div>
+      <div id="guruTabTasks" class="g-tab-panel" hidden></div>
+      <div id="guruTabGrading" class="g-tab-panel" hidden></div>
+      <div id="guruTabReports" class="g-tab-panel" hidden></div>
+    </section>
+  </main>
+
+  <script src="../config.js"></script>
+  <script src="../vendor/supabase.umd.min.js"></script>
+  <script src="./guru-pbd-rubric.js?v=1"></script>
+  <script src="./guru-api.js?v=1"></script>
+  <script src="./guru-auth.js?v=1"></script>
+  <script src="./guru-classes.js?v=1"></script>
+  <script src="./guru-assignments.js?v=1"></script>
+  <script src="./guru-grading.js?v=1"></script>
+  <script src="./guru-reports.js?v=1"></script>
+  <script src="./guru-app.js?v=1"></script>
+</body>
+</html>

@@ -10966,92 +10966,6 @@
     subscribeLivePresence(supabase, fallbackSessions);
   }
 
-  // --- [features/landing/landingNotaAnnouncement.js] ---
-  /**
-   * src/features/landing/landingNotaAnnouncement.js
-   * Pengawal pengumuman terapung Nota Interaktif pada halaman pendaratan (#landingView).
-   */
-
-
-
-
-
-  const LP_NOTA_FLOAT_DISMISSED_KEY = "etutor_lp_nota_float_dismissed_v1";
-
-  function moveFocusSafelyOutOfAnnouncement(bar) {
-    if (!bar.contains(document.activeElement)) return;
-    const fallbackFocus =
-      document.querySelector("#landingView .btn-hero-cta:not([hidden])") ||
-      document.getElementById("lpHeroHeading");
-    if (!fallbackFocus) return;
-    if (!fallbackFocus.hasAttribute("tabindex") && fallbackFocus.tagName !== "A" && fallbackFocus.tagName !== "BUTTON") {
-      fallbackFocus.setAttribute("tabindex", "-1");
-    }
-    fallbackFocus.focus({ preventScroll: true });
-  }
-
-  function initLandingNotaAnnouncement() {
-    const bar = document.getElementById("lpNotaAnnouncement");
-    if (!bar) return;
-
-    try {
-      if (sessionStorage.getItem(LP_NOTA_FLOAT_DISMISSED_KEY) === "1") {
-        bar.hidden = true;
-        return;
-      }
-    } catch (e) {}
-
-    const countEl = document.getElementById("lpNotaFloatCount");
-    if (countEl) {
-      const count = getNotaCatalogList().length;
-      if (count > 0) {
-        countEl.textContent = count + (isNotaFreePromoActive() ? " Bab KSSM \u2022 0 Token" : " Bab KSSM");
-      }
-    }
-
-    const closeBtn = document.getElementById("lpNotaFloatClose");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        try {
-          sessionStorage.setItem(LP_NOTA_FLOAT_DISMISSED_KEY, "1");
-        } catch (e) {}
-
-        moveFocusSafelyOutOfAnnouncement(bar);
-
-        const reduceMotion =
-          typeof window.matchMedia === "function" &&
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        if (reduceMotion) {
-          bar.hidden = true;
-          return;
-        }
-
-        bar.classList.add("is-dismissing");
-        window.setTimeout(function () {
-          bar.hidden = true;
-          bar.classList.remove("is-dismissing");
-        }, 240);
-      });
-    }
-
-    const ctaLink = document.getElementById("lpNotaFloatCta");
-    if (ctaLink) {
-      ctaLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        portalState.pendingNotaScroll = true;
-        if (!isOpenAccessMode() && !isPortalUserAuthenticated()) {
-          window.location.hash = "#login";
-          syncRouteMode();
-          window.scrollTo(0, 0);
-          return;
-        }
-        window.location.hash = "#nota-portal";
-        syncRouteMode();
-      });
-    }
-  }
-
   // --- [features/spm-countdown/spmTimeEngine.js] ---
   /**
    * src/features/spm-countdown/spmTimeEngine.js
@@ -15589,7 +15503,7 @@
     const navDefs = [
       { id: "path", label: "EduQuest", icon: etEqIconSvg("map") },
       { id: "flashcard", label: "Main Flashcard", icon: etEqIconSvg("cards") },
-      { id: "latihan", label: "Latihan Kertas", icon: etEqIconSvg("trophy") },
+      { id: "latihan", label: "Latihan Interaktif", icon: etEqIconSvg("trophy") },
       { id: "settings", label: "Tetapan", icon: etEqIconSvg("gear") }
     ];
     const navHtml = navDefs.map(function (it) {
@@ -16074,13 +15988,13 @@
     return (!clean || clean === "Pelajar Contoh (Disekat Lalai)") ? "Pelajar" : clean;
   }
 
-  function fwOpenCikguAi_(promptText, subjectHint) {
+  function fwOpenCikguAi_(promptText, subjectHint, opts) {
     if (typeof etGamifRecordEvent === "function") etGamifRecordEvent("cikgu_ai_used", {});
     const msg = promptText || "Assalamualaikum Cikgu, bantu saya dengan soalan kerja sekolah ini.";
     const launcher = document.querySelector(".cikgu-ai-launcher, #cikgu-fab-btn");
     const drawer = window.__CIKGU_AI_INSTANCE__ && window.__CIKGU_AI_INSTANCE__.drawer;
     if (drawer && typeof drawer.openWithPrompt === "function") {
-      try { drawer.openWithPrompt(msg, subjectHint || ""); return; } catch (e) {}
+      try { drawer.openWithPrompt(msg, subjectHint || "", opts || {}); return; } catch (e) {}
     }
     if (launcher && typeof launcher.click === "function") { launcher.click(); return; }
     const fab = document.getElementById("cikguAiFab"), dr = document.getElementById("cikguAiDrawer");
@@ -16116,7 +16030,7 @@
       '<div class="et-form-switcher" role="group" aria-label="Penukar Tingkatan Pembelajaran">' + pillsHtml + "</div>",
       '<div class="et-workspace-tabs" role="tablist" aria-label="Bahagian Ruang Kerja Fokus">',
       '<button type="button" id="wsTabBelajar" class="et-ws-tab" data-ws-tab="belajar" role="tab" aria-selected="' + (activeTab === "belajar") + '" aria-pressed="' + (activeTab === "belajar") + '">Belajar &amp; Nota</button>',
-      '<button type="button" id="wsTabLatihan" class="et-ws-tab" data-ws-tab="latihan" role="tab" aria-selected="' + (activeTab === "latihan") + '" aria-pressed="' + (activeTab === "latihan") + '">Latihan &amp; Kertas</button>',
+      '<button type="button" id="wsTabLatihan" class="et-ws-tab" data-ws-tab="latihan" role="tab" aria-selected="' + (activeTab === "latihan") + '" aria-pressed="' + (activeTab === "latihan") + '">Latihan Interaktif</button>',
       '<button type="button" id="wsTabKemajuan" class="et-ws-tab" data-ws-tab="kemajuan" role="tab" aria-selected="' + (activeTab === "kemajuan") + '" aria-pressed="' + (activeTab === "kemajuan") + '">Kemajuan &amp; Slip</button>',
       "</div>"
     ].join("\n");
@@ -16303,7 +16217,8 @@
         return;
       }
       if (e.target.closest(".js-open-cikgu-ai-empty")) {
-        fwOpenCikguAi_("Assalamualaikum Cikgu, bantu saya dengan kerja sekolah atau topik " + fwFormLongLabel_(getActiveFormFilter()) + ".");
+        const isSnapBtn = Boolean(e.target.closest("#wsSnapCikguBtn"));
+        fwOpenCikguAi_("Assalamualaikum Cikgu, bantu saya dengan kerja sekolah atau topik " + fwFormLongLabel_(getActiveFormFilter()) + ".", "", { openSnap: isSnapBtn });
       }
     });
     window.addEventListener("etutor:student-profile-updated", function () {
@@ -18578,7 +18493,6 @@
 
 
 
-
   document.addEventListener("DOMContentLoaded", async function () {
     initTokenReferralCapture();
     initStudentProfileStore();
@@ -18597,7 +18511,6 @@
     bindIssueReportingEvents();
     initLiveCatalogAutoSync();
     initFooterLiveStats();
-    initLandingNotaAnnouncement();
     initSpmCountdown();
     initPwaInstallFlow();
     initMobileAppExperience();

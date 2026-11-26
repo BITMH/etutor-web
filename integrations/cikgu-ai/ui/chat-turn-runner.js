@@ -3,15 +3,32 @@
  * Pemproses pusingan sembang SSE Cikgu AI, pemaparan Markdown SPM, sejarah tetingkap & butang TTS.
  */
 
+import { loadDailyTokenState } from "../config.js";
 import { renderSpmMarkdown } from "./markdown-spm.js";
-import { appendHybridActionButtons, syncHybridComposerUi } from "./hybrid-homework-ui.js";
+import { appendHybridActionButtons, syncHybridComposerUi } from "./hybrid-homework-ui.js?v=28";
+import { SNAP_IMAGE_TOKEN_COST } from "./snap-photo-helper.js?v=28";
 
 export async function executeCikguChatTurn(drawerInstance, userMessage, turnOpts = {}) {
   const feed = drawerInstance.rootEl.querySelector("#cikguAiFeed");
   const submitBtn = drawerInstance.rootEl.querySelector("#cikguAiSubmitBtn");
 
+  const imgCopy = drawerInstance.pendingImage ? { ...drawerInstance.pendingImage } : null;
+  const hasImg = Boolean(imgCopy && imgCopy.base64);
+  if (hasImg) {
+    const tokSnap = loadDailyTokenState();
+    if (tokSnap.remaining < SNAP_IMAGE_TOKEN_COST) {
+      const warnBubble = document.createElement("div");
+      warnBubble.className = "cikgu-ai-msg cikgu-ai-msg-bot";
+      warnBubble.innerHTML = `<span style="color:#92400e;font-weight:600;">Baki token tidak mencukupi untuk semakan gambar (${SNAP_IMAGE_TOKEN_COST} Token diperlukan). Sila tambah nilai melalui Dompet Token.</span>`;
+      feed.appendChild(warnBubble);
+      feed.scrollTop = feed.scrollHeight;
+      return;
+    }
+    if (typeof drawerInstance.clearPendingImage === "function") drawerInstance.clearPendingImage();
+  }
+
   const forcedMod = turnOpts && turnOpts.mod ? String(turnOpts.mod) : "";
-  const activeMod = forcedMod || (drawerInstance.hybridMode ? "bimbing_kerja_sekolah" : "auto");
+  const activeMod = forcedMod || (drawerInstance.hybridMode ? "bimbing_kerja_sekolah" : (hasImg ? "semak_gambar" : "auto"));
   const activeStage =
     activeMod === "bimbing_kerja_sekolah"
       ? String((turnOpts && turnOpts.tahap_bimbingan) || drawerInstance.pendingHintStage || "bimbing")
@@ -33,7 +50,16 @@ export async function executeCikguChatTurn(drawerInstance, userMessage, turnOpts
 
   const userBubble = document.createElement("div");
   userBubble.className = "cikgu-ai-msg cikgu-ai-msg-user";
-  userBubble.textContent = userMessage;
+  if (hasImg) {
+    const imgEl = document.createElement("img");
+    imgEl.className = "cikgu-ai-user-img";
+    imgEl.src = imgCopy.dataUrl;
+    imgEl.alt = "Lampiran gambar kerja sekolah";
+    userBubble.appendChild(imgEl);
+  }
+  const msgTxtEl = document.createElement("div");
+  msgTxtEl.textContent = userMessage;
+  userBubble.appendChild(msgTxtEl);
   feed.appendChild(userBubble);
 
   const botBubble = document.createElement("div");
@@ -76,7 +102,7 @@ export async function executeCikguChatTurn(drawerInstance, userMessage, turnOpts
       : studentDraftText;
 
   try {
-    if (drawerInstance.warmupMachine && drawerInstance.warmupMachine.status !== "ready") {
+    if (drawerInstance.warmupMachine && drawerInstance.warmupMachine.status !== "ready" && !hasImg) {
       contentDiv.innerHTML = `<span style="color:#64748b;">Sekejap ya, Cikgu sedang membuka buku rekod KSSM &amp; bersedia di meja...</span>`;
       await drawerInstance.warmupMachine.greetCikgu();
       contentDiv.innerHTML = `<span style="color:#64748b;">Sedang meneliti soalan...</span>`;
@@ -86,13 +112,18 @@ export async function executeCikguChatTurn(drawerInstance, userMessage, turnOpts
       subjek: detectedSubj || "auto",
       mod: activeMod,
       soalan: soalanPayload,
-      jawapan_pelajar: jawapanPayload,
+      jawapan_pelajar: jawapanPayload || (hasImg ? userMessage.slice(0, 3500) : ""),
       konteks_skrin: screenContextText,
       nama_pelajar: studentName,
       sesi_sudah_sapa: drawerInstance.sessionGreeted || drawerInstance.chatHistory.length > 0,
       sejarah_sembang: drawerInstance.chatHistory.slice(-6),
-      markah_penuh: detectedMarks
+      markah_penuh: hasImg ? Math.max(detectedMarks, 6) : detectedMarks
     };
+    if (hasImg) {
+      reqPayload.imej_base64 = imgCopy.base64.slice(0, 255000);
+      reqPayload.imej_mime = imgCopy.mime || "image/jpeg";
+      reqPayload.max_tokens = 520;
+    }
     if (activeMod === "bimbing_kerja_sekolah") {
       reqPayload.tahap_bimbingan = activeStage || "bimbing";
     }

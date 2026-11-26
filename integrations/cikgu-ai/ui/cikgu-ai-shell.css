@@ -50,11 +50,11 @@
 }
 
 .cikgu-ai-drawer {
-  position: fixed; right: 20px; bottom: 86px; z-index: 9993; pointer-events: auto;
+  position: fixed; right: 20px; bottom: 86px; z-index: 9999; pointer-events: auto; isolation: isolate;
   width: 384px; max-width: calc(100vw - 24px); height: 540px; max-height: calc(100vh - 110px);
   background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px;
   box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
-  display: flex; flex-direction: column; overflow: hidden; animation: cikguFloatIn 0.2s ease-out;
+  display: flex; flex-direction: column; overflow: hidden; animation: cikguFloatIn 0.14s ease-out forwards;
 }
 @media (min-width: 641px) {
   .cikgu-ai-root[data-dock="left"] .cikgu-ai-drawer { left: 20px; right: auto; }

@@ -85,7 +85,7 @@
   }
 }
 @media print { .cikgu-ai-root { display: none !important; } }
-@keyframes cikguFloatIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cikguFloatIn { from { opacity: 0.9; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 .cikgu-ai-mode-bar {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
@@ -180,3 +180,40 @@
 }
 .cikgu-ai-hyb-btn:active:not(:disabled) { transform: translateY(2px); }
 .cikgu-ai-hyb-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cikgu-ai-snap-btn {
+  width: 38px; height: 38px; border-radius: 10px; background: #ecfdf5;
+  border: 1.5px solid #a7f3d0; color: #047857; display: flex; align-items: center;
+  justify-content: center; cursor: pointer; flex-shrink: 0; transition: all 0.15s;
+}
+.cikgu-ai-snap-btn:hover { background: #d1fae5; border-color: #34d399; }
+.cikgu-ai-snap-btn.has-image { background: #059669; border-color: #047857; color: #ffffff; }
+.cikgu-ai-snap-btn.is-attn { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35); border-color: #059669; }
+
+.cikgu-ai-image-bar {
+  display: flex; align-items: center; gap: 9px; padding: 7px 12px;
+  background: #ecfdf5; border-top: 1px solid #a7f3d0;
+}
+.cikgu-ai-image-thumb {
+  width: 38px; height: 38px; border-radius: 8px; object-fit: cover;
+  border: 1px solid #34d399; background: #ffffff; flex-shrink: 0;
+}
+.cikgu-ai-image-meta {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px;
+}
+.cikgu-ai-image-meta strong {
+  font-size: 11.5px; font-weight: 700; color: #065f46;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cikgu-ai-image-meta span { font-size: 10.5px; font-weight: 600; color: #047857; }
+.cikgu-ai-img-rm {
+  width: 28px; height: 28px; border-radius: 8px; border: 1px solid #a7f3d0;
+  background: #ffffff; color: #065f46; display: flex; align-items: center;
+  justify-content: center; cursor: pointer; flex-shrink: 0;
+}
+.cikgu-ai-img-rm:hover { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+
+.cikgu-ai-user-img {
+  max-width: 100%; max-height: 165px; border-radius: 10px;
+  display: block; margin-bottom: 6px; object-fit: contain;
+}

@@ -9,10 +9,11 @@ import {
   onDailyTokenChange,
   saveRuntimeEndpoints
 } from "../config.js";
-import { buildCikguDrawerTemplate } from "./widget-template.js";
-import { executeCikguChatTurn } from "./chat-turn-runner.js";
-import { applyHybridDeepLinkFromUrl, syncHybridComposerUi } from "./hybrid-homework-ui.js";
-import { attachDraggableCikguFab } from "./fab-draggable.js?v=22";
+import { buildCikguDrawerTemplate } from "./widget-template.js?v=28";
+import { executeCikguChatTurn } from "./chat-turn-runner.js?v=28";
+import { applyHybridDeepLinkFromUrl, syncHybridComposerUi } from "./hybrid-homework-ui.js?v=28";
+import { attachDesktopSnapPhotoHandlers } from "./snap-photo-helper.js?v=28";
+import { attachDraggableCikguFab } from "./fab-draggable.js?v=28";
 
 export class CikguWidgetDrawer {
   constructor({ client, warmupMachine, speechIO, getLiveScreenSnapshot, getStudentName }) {
@@ -29,6 +30,7 @@ export class CikguWidgetDrawer {
     this.hybridMode = false;
     this.pendingHintStage = "bimbing";
     this.lastHomeworkQuestion = "";
+    this.pendingImage = null;
     this._deepLinkConsumed = false;
   }
 
@@ -114,6 +116,7 @@ export class CikguWidgetDrawer {
     if (hybridToggle) hybridToggle.addEventListener("click", () => this.setHybridMode(!this.hybridMode, "bimbing"));
     if (stageCancel) stageCancel.addEventListener("click", () => this.setHybridMode(this.hybridMode, "bimbing"));
     syncHybridComposerUi(this.rootEl, { hybridMode: this.hybridMode, pendingHintStage: this.pendingHintStage });
+    attachDesktopSnapPhotoHandlers(this);
 
     const renderTokenPill = (st) => {
       if (!tokenPill || !st) return;
@@ -240,17 +243,19 @@ export class CikguWidgetDrawer {
       e.preventDefault();
       if (this.isStreaming) return;
       const msg = chatInput.value.trim();
-      if (msg.length < 2) {
+      const hasImg = Boolean(this.pendingImage && this.pendingImage.base64);
+      if (msg.length < 2 && !hasImg) {
         chatInput.focus();
         return;
       }
+      const promptOut = msg || "Sila bimbing dan semak gambar kerja sekolah saya ini.";
       chatInput.value = "";
       chatInput.style.height = "auto";
-      await this._handleChatTurn(msg);
+      await this._handleChatTurn(promptOut);
     });
   }
 
-  openWithPrompt(promptText, subjectHint = "") {
+  openWithPrompt(promptText, subjectHint = "", opts = {}) {
     if (!this.rootEl) return;
     const fab = this.rootEl.querySelector("#cikguAiFab");
     const drawer = this.rootEl.querySelector("#cikguAiDrawer");
@@ -271,6 +276,10 @@ export class CikguWidgetDrawer {
       chatInput.style.height = "auto";
       chatInput.style.height = Math.min(chatInput.scrollHeight, 110) + "px";
       chatInput.focus();
+    }
+    if (opts && opts.openSnap) {
+      this.setHybridMode(true, "bimbing");
+      if (typeof this.openSnapPhotoPicker === "function") this.openSnapPhotoPicker();
     }
   }
 

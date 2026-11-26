@@ -8,28 +8,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-block-size: 38px;
-  padding: 6px 12px;
+  inline-size: 40px;
+  min-inline-size: 40px;
+  block-size: 38px;
+  padding: 0;
+  flex: 0 0 40px;
   border-radius: 11px;
-  border: 1.5px solid rgba(56, 189, 248, 0.72);
-  background: linear-gradient(135deg, rgba(14, 116, 144, 0.78), rgba(30, 64, 175, 0.76));
+  border: 1.5px solid rgba(56, 189, 248, 0.78);
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.85), rgba(30, 64, 175, 0.82));
   color: #f0f9ff;
-  font-family: var(--eq-font-head);
-  font-size: 0.76rem;
-  font-weight: 800;
   cursor: pointer;
   box-shadow: 0 3px 10px rgba(2, 6, 23, 0.35);
+  transition: transform 0.14s ease, filter 0.14s ease;
 }
 
 .eq-node-video-btn.is-narrated {
-  border-color: rgba(251, 191, 36, 0.85);
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.85), rgba(37, 99, 235, 0.82));
-  color: #fef9c3;
+  border-color: rgba(251, 191, 36, 0.88);
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.9), rgba(37, 99, 235, 0.88));
+  color: #fef08a;
 }
 
 .eq-node-video-btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
+  transform: translateY(-1px);
 }
 
 .eq-video-modal {

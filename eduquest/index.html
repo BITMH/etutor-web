@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="stylesheet" href="./eduquest.css">
-  <link rel="stylesheet" href="./eduquest-video.css">
+  <link rel="stylesheet" href="./eduquest.css?v=28">
+  <link rel="stylesheet" href="./eduquest-video.css?v=28">
 </head>
 <body class="eq-page-body" data-theme="bm">
   <header class="eq-topbar">
@@ -48,11 +48,18 @@
         <div class="eq-pill-group" id="eqFormPills" role="group" aria-label="Pilih Tingkatan"></div>
         <div class="eq-pill-group" id="eqSubjPills" role="group" aria-label="Pilih Subjek"></div>
       </div>
+
+      <div class="eq-mode-tabs" id="eqModeTabs" role="tablist" aria-label="Bahagian Kandungan EduQuest">
+        <button type="button" class="eq-mode-tab is-active" id="eqTabNotaBtn" data-eq-section="nota" role="tab" aria-selected="true">Peta Nota EduQuest</button>
+        <button type="button" class="eq-mode-tab" id="eqTabLatihanBtn" data-eq-section="latihan" role="tab" aria-selected="false">Latihan Teks &amp; MCQ <span class="eq-tab-count" id="eqLatihanCount">0</span></button>
+      </div>
     </section>
 
     <section class="eq-path-stage" id="eqPathStage" aria-label="Laluan Pengembaraan Bab">
       <div class="eq-path-loading">Memuatkan peta pengembaraan EduQuest...</div>
     </section>
+
+    <section class="eq-latihan-stage" id="eqLatihanStage" aria-label="Seksyen Latihan Teks dan MCQ" hidden></section>
   </main>
 
   <section id="eqPlayerStage" class="eq-player-stage" hidden aria-label="Paparan Bab EduQuest">
@@ -88,7 +95,8 @@
     </div>
   </div>
 
-  <script src="./eduquest-video.js"></script>
-  <script src="./eduquest.js"></script>
+  <script src="./eduquest-video.js?v=28"></script>
+  <script src="./eduquest-latihan.js?v=28"></script>
+  <script src="./eduquest.js?v=28"></script>
 </body>
 </html>

@@ -3317,17 +3317,17 @@ dialog.slip-dialog::backdrop {
 
 .lp-sparkle-star {
   position: absolute;
-  filter: drop-shadow(0 6px 10px rgb(234 88 12 / 0.25));
+  opacity: 0.78;
+  filter: drop-shadow(0 6px 10px rgb(234 88 12 / 0.22));
 }
 
-.lp-sparkle-star.star-1 { inline-size: 52px; block-size: 52px; inset-block-end: 18%; inset-inline-start: 4%; }
-.lp-sparkle-star.star-2 { inline-size: 40px; block-size: 40px; inset-block-start: 10%; inset-inline-end: 42%; }
-.lp-sparkle-star.star-3 { inline-size: 42px; block-size: 42px; inset-block-start: 28%; inset-inline-end: 5%; }
-.lp-sparkle-star.star-4 { inline-size: 54px; block-size: 54px; inset-block-end: 14%; inset-inline-end: 4%; }
+.lp-sparkle-star.star-1 { inline-size: 36px; block-size: 36px; inset-block-end: 5%; inset-inline-start: 1%; opacity: 0.55; }
+.lp-sparkle-star.star-3 { inline-size: 40px; block-size: 40px; inset-block-start: 18%; inset-inline-end: 3%; }
+.lp-sparkle-star.star-4 { inline-size: 48px; block-size: 48px; inset-block-end: 12%; inset-inline-end: 3%; }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .lp-sparkle-star.star-1,
-  .lp-sparkle-star.star-2 {
+  .lp-sparkle-star.star-3 {
     display: none;
   }
 }
@@ -3365,10 +3365,10 @@ dialog.slip-dialog::backdrop {
 
 .lp-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 1.35rem + 2.45vw, 3.35rem);
+  font-size: clamp(1.8rem, 1.18rem + 1.85vw, 2.68rem);
   font-weight: 800;
   line-height: 1.12;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.032em;
   color: var(--brand-navy);
   text-wrap: balance;
   margin-block-end: var(--space-4);
@@ -3387,12 +3387,12 @@ dialog.slip-dialog::backdrop {
 }
 
 .lp-hero-lead {
-  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.12rem);
+  font-size: clamp(0.98rem, 0.92rem + 0.28vw, 1.1rem);
   color: var(--text-secondary);
   line-height: 1.62;
-  max-inline-size: 46ch;
+  max-inline-size: 50ch;
   text-wrap: pretty;
-  margin-block-end: var(--space-6);
+  margin-block-end: var(--space-5);
 }
 
 @media (max-width: 960px) {
@@ -3425,15 +3425,18 @@ dialog.slip-dialog::backdrop {
   border-radius: 14px;
   min-block-size: 54px;
   padding-inline: 28px;
-  background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
-  border: 1px solid #15803d;
+  background: linear-gradient(180deg, #059669 0%, #047857 100%);
+  border: 1px solid #047857;
   color: #ffffff;
-  box-shadow: 0 12px 26px -6px rgb(21 128 61 / 0.45);
+  box-shadow: 0 12px 26px -6px rgb(4 120 87 / 0.42);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
 }
 
 .btn-hero-cta:hover:not(:disabled) {
-  background: linear-gradient(180deg, #15803d 0%, #166534 100%);
-  border-color: #166534;
+  background: linear-gradient(180deg, #047857 0%, #065f46 100%);
+  border-color: #065f46;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px -6px rgb(4 120 87 / 0.5);
 }
 
 .lp-hero-noapp-note {
@@ -3445,7 +3448,7 @@ dialog.slip-dialog::backdrop {
 }
 
 /* === features/landing/landing-pelengkap-tuisyen.css === */
-/* Hero Pelengkap Tuisyen KSSM T1-T5 & SPM (3-Langkah + Rel Progresif Mudah Alih + Navbar Fit) */
+/* Hero Hab Pembelajaran KSSM T1-T5 & SPM (3-Teras Hab + Susun Atur Responsif + Navbar Fit) */
 
 .lp-nowrap { white-space: nowrap; }
 .lp-navbar-inner { gap: clamp(8px, 1.3vw, 18px); }
@@ -3465,46 +3468,88 @@ dialog.slip-dialog::backdrop {
   .lp-nav-actions .lp-pill-btn { padding-inline: 12px; min-block-size: 40px; font-size: 0.82rem; }
 }
 
-.lp-hero { padding-block: clamp(20px, 3vw, 36px) clamp(58px, 6vw, 76px); }
-.lp-hero-lead { margin-block-end: var(--space-4); }
+.lp-hero { padding-block: clamp(22px, 3.2vw, 38px) clamp(58px, 6vw, 76px); }
+.lp-hero-lead { margin-block-end: var(--space-5); }
 .lp-hero-mobile-mascot,
-.lp-tuisyen-rail-node,
-.lp-tuisyen-step-end { display: none; }
+.lp-hub-pillar-end { display: none; }
 
-.lp-tuisyen-steps {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px; margin-block-end: var(--space-4);
+.lp-hub-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-block-end: var(--space-5);
 }
-.lp-tuisyen-step {
-  display: flex; flex-direction: column; gap: 4px; padding: 10px 11px;
-  border-radius: 14px; background: rgb(255 255 255 / 0.94);
-  border: 1.5px solid #cbd5e1; box-shadow: 0 3px 0 #e2e8f0, 0 8px 18px rgb(15 23 42 / 0.05);
-  text-decoration: none; color: inherit; text-align: left;
+
+.lp-hub-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 13px 13px 14px;
+  border-radius: 16px;
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgb(15 23 42 / 0.09);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 20px -10px rgb(15 23 42 / 0.14);
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
   transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
 }
-.lp-tuisyen-step.is-step-blue { background: linear-gradient(155deg, #eff6ff 0%, #ffffff 78%); border-color: #bfdbfe; box-shadow: 0 3px 0 #dbeafe, 0 8px 16px rgb(37 99 235 / 0.06); }
-.lp-tuisyen-step.is-step-gold { background: linear-gradient(155deg, #fffbeb 0%, #ffffff 78%); border-color: #fde68a; box-shadow: 0 3px 0 #fef3c7, 0 8px 16px rgb(217 119 6 / 0.06); }
-.lp-tuisyen-step.is-step-emerald { background: linear-gradient(155deg, #ecfdf5 0%, #ffffff 78%); border-color: #a7f3d0; box-shadow: 0 3px 0 #d1fae5, 0 8px 16px rgb(5 150 105 / 0.06); }
 
-.lp-tuisyen-step:hover { transform: translateY(-2px); border-color: #2563eb; box-shadow: 0 4px 0 #bfdbfe, 0 10px 22px rgb(37 99 235 / 0.12); }
-.lp-tuisyen-step-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 2px; }
-
-.lp-tuisyen-badge {
-  display: inline-grid; place-items: center; inline-size: 22px; block-size: 22px;
-  border-radius: 999px; background: #1e3a8a; color: #ffffff;
-  font-family: var(--font-heading); font-size: 0.74rem; font-weight: 800;
+.lp-hub-pillar:hover {
+  transform: translateY(-2px);
+  border-color: rgb(37 99 235 / 0.42);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 0.06), 0 14px 26px -10px rgb(37 99 235 / 0.18);
 }
-.lp-tuisyen-step.is-step-blue .lp-tuisyen-badge { background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); }
-.lp-tuisyen-step.is-step-gold .lp-tuisyen-badge { background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%); }
-.lp-tuisyen-step.is-step-emerald .lp-tuisyen-badge { background: linear-gradient(180deg, #10b981 0%, #059669 100%); }
 
-.lp-tuisyen-icon { display: inline-grid; place-items: center; inline-size: 28px; block-size: 28px; border-radius: 8px; }
-.lp-tuisyen-icon svg { inline-size: 16px; block-size: 16px; }
-.lp-tuisyen-icon.is-blue { background: #dbeafe; color: #2563eb; }
-.lp-tuisyen-icon.is-gold { background: #fef3c7; color: #d97706; }
-.lp-tuisyen-icon.is-emerald { background: #d1fae5; color: #059669; }
-.lp-tuisyen-step-title { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; line-height: 1.28; color: #0f172a; }
-.lp-tuisyen-step-sub { font-size: 0.74rem; line-height: 1.35; color: #475569; font-weight: 500; }
+.lp-hub-pillar.is-amber:hover {
+  border-color: rgb(217 119 6 / 0.45);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 0.06), 0 14px 26px -10px rgb(217 119 6 / 0.2);
+}
+
+.lp-hub-pillar.is-emerald:hover {
+  border-color: rgb(5 150 105 / 0.45);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 0.06), 0 14px 26px -10px rgb(5 150 105 / 0.2);
+}
+
+.lp-hub-icon {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 34px;
+  block-size: 34px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.lp-hub-icon svg {
+  inline-size: 18px;
+  block-size: 18px;
+  max-inline-size: 18px;
+  max-block-size: 18px;
+}
+
+.lp-hub-icon.is-blue { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.lp-hub-icon.is-amber { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.lp-hub-icon.is-emerald { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+
+.lp-hub-pillar-body { min-inline-size: 0; }
+
+.lp-hub-pillar-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.28;
+  color: #0f172a;
+}
+
+.lp-hub-pillar-sub {
+  margin-top: 2px;
+  font-size: 0.74rem;
+  line-height: 1.38;
+  color: #475569;
+  font-weight: 500;
+}
 
 .lp-hero-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .lp-hero-cta-row .btn-hero-cta, .lp-btn-upu-cta { min-block-size: 48px; }
@@ -3516,66 +3561,47 @@ dialog.slip-dialog::backdrop {
 .lp-btn-upu-cta:hover:not(:disabled) { background: #eff6ff; border-color: #2563eb; color: #1e3a8a; }
 
 @media (max-width: 960px) {
-  .lp-tuisyen-steps { text-align: left; }
+  .lp-hub-pillars { text-align: left; }
   .lp-hero-cta-row { justify-content: center; }
+  .lp-hero-noapp-note { text-align: center; }
 }
 
 @media (max-width: 640px) {
   .lp-hero { padding-block: 16px 64px; }
-  .lp-trust-eyebrow { margin-block-end: 10px; font-size: 0.76rem; padding: 6px 12px; }
   .lp-hero-title-row {
-    display: grid; grid-template-columns: 78px minmax(0, 1fr);
+    display: grid; grid-template-columns: 76px minmax(0, 1fr);
     align-items: center; gap: 12px; text-align: left; margin-block-end: 12px;
   }
   .lp-hero-title-row .lp-hero-title {
-    margin-block-end: 0; font-size: clamp(1.36rem, 5vw, 1.72rem); line-height: 1.16;
+    margin-block-end: 0; font-size: clamp(1.36rem, 5vw, 1.72rem); line-height: 1.15;
   }
   .lp-hero-mobile-mascot {
-    display: grid; place-items: center; inline-size: 78px; block-size: 78px;
+    display: grid; place-items: center; inline-size: 76px; block-size: 76px;
     border-radius: 50%; padding: 3px; border: 2px solid #ffffff; overflow: hidden;
     background: radial-gradient(circle at 35% 30%, #ffffff 0%, #dbeafe 72%, #93c5fd 100%);
     box-shadow: 0 8px 18px rgb(37 99 235 / 0.18), 0 0 0 3px rgb(191 219 254 / 0.55);
   }
   .lp-hero-mobile-mascot img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: top center; }
-  .lp-hero-lead { font-size: 0.9rem; margin-block-end: 14px; }
+  .lp-hero-lead { font-size: 0.9rem; margin-block-end: 14px; text-align: left; }
 
-  .lp-tuisyen-steps {
-    position: relative; display: flex; flex-direction: column; gap: 10px;
-    padding-inline-start: 38px; text-align: left; inline-size: 100%;
+  .lp-hub-pillars {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    inline-size: 100%;
   }
-  .lp-tuisyen-steps::before {
-    content: ""; position: absolute; inset-inline-start: 13px; inset-block: 26px;
-    border-inline-start: 2px dashed #93c5fd; z-index: 0;
+  .lp-hub-pillar {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 13px;
   }
-  .lp-tuisyen-step {
-    position: relative; flex-direction: row; align-items: center; gap: 10px;
-    padding: 11px 12px; border-radius: 16px; min-inline-size: 0;
+  .lp-hub-icon { inline-size: 38px; block-size: 38px; border-radius: 11px; }
+  .lp-hub-pillar-body { flex: 1; }
+  .lp-hub-pillar-end {
+    display: inline-grid; place-items: center; inline-size: 26px; block-size: 26px;
+    border-radius: 999px; background: #f8fafc; color: #64748b; flex-shrink: 0;
   }
-  .lp-tuisyen-step::before {
-    content: ""; position: absolute; inset-inline-start: -12px; inset-block-start: 50%;
-    inline-size: 11px; block-size: 2px; background: #cbd5e1; z-index: 1;
-  }
-  .lp-tuisyen-step-top { margin-bottom: 0; flex-shrink: 0; }
-  .lp-tuisyen-badge {
-    position: absolute; inset-inline-start: -38px; inset-block-start: 50%; transform: translateY(-50%);
-    inline-size: 28px; block-size: 28px; border: 2.5px solid #ffffff;
-    box-shadow: 0 3px 8px rgb(15 23 42 / 0.18); z-index: 2;
-  }
-  .lp-tuisyen-icon { inline-size: 38px; block-size: 38px; border-radius: 11px; }
-  .lp-tuisyen-icon svg { inline-size: 20px; block-size: 20px; }
-  .lp-tuisyen-step-body { flex: 1; min-inline-size: 0; }
-  .lp-tuisyen-step-end {
-    display: inline-grid; place-items: center; inline-size: 24px; block-size: 24px;
-    border-radius: 999px; background: rgb(255 255 255 / 0.85); color: #64748b; flex-shrink: 0;
-  }
-  .lp-tuisyen-step-end svg { inline-size: 14px; block-size: 14px; }
-  .lp-tuisyen-rail-node {
-    display: block; position: relative; block-size: 8px; margin-block: -5px; z-index: 2; pointer-events: none;
-  }
-  .lp-tuisyen-rail-node svg {
-    position: absolute; inset-inline-start: -34px; inset-block-start: 50%; transform: translateY(-50%);
-    inline-size: 18px; block-size: 18px; filter: drop-shadow(0 2px 4px rgb(217 119 6 / 0.25));
-  }
+  .lp-hub-pillar-end svg { inline-size: 15px; block-size: 15px; max-inline-size: 15px; max-block-size: 15px; }
   .lp-hero-cta-stack { inline-size: 100%; }
   .lp-hero-cta-row { inline-size: 100%; }
   .lp-hero-cta-row .btn { inline-size: 100%; justify-content: center; }
@@ -4753,296 +4779,6 @@ dialog.slip-dialog::backdrop {
 
 @media (prefers-reduced-motion: reduce) {
   .lp-live-dot {
-    animation: none;
-  }
-}
-
-/* === features/landing/landing-nota-announcement.css === */
-/* ==========================================================================
-   FLOATING ANNOUNCEMENT: NOTA INTERAKTIF TELAH TIBA DI ETUTOR.MY
-   ========================================================================== */
-
-.lp-nota-float {
-  position: fixed;
-  inset-block-end: 20px;
-  inset-inline: 0;
-  margin-inline: auto;
-  inline-size: fit-content;
-  max-inline-size: min(650px, calc(100vw - 380px));
-  z-index: 80;
-  background: rgb(15 23 42 / 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  color: #f8fafc;
-  border: 1px solid rgb(148 163 184 / 0.28);
-  border-radius: 18px;
-  box-shadow:
-    0 20px 44px -10px rgb(15 23 42 / 0.45),
-    0 0 0 1px rgb(255 255 255 / 0.06) inset;
-  overflow: hidden;
-  transition: opacity 0.24s ease, transform 0.24s ease, display 0.24s ease;
-  transition-behavior: allow-discrete;
-}
-
-@starting-style {
-  .lp-nota-float {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-}
-
-.lp-nota-float.is-dismissing {
-  opacity: 0;
-  transform: translateY(16px);
-  pointer-events: none;
-}
-
-.lp-nota-float[hidden] {
-  display: none;
-}
-
-.lp-nota-float-rail {
-  block-size: 3px;
-  background: linear-gradient(
-    90deg,
-    #6366f1 0%,
-    #0ea5e9 26%,
-    #10b981 52%,
-    #f59e0b 78%,
-    #ec4899 100%
-  );
-}
-
-.lp-nota-float-inner {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-}
-
-.lp-nota-float-icon {
-  inline-size: 38px;
-  block-size: 38px;
-  border-radius: 11px;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, rgb(14 165 233 / 0.24), rgb(16 185 129 / 0.24));
-  border: 1px solid rgb(56 189 248 / 0.35);
-  color: #67e8f9;
-  display: grid;
-  place-items: center;
-}
-
-.lp-nota-float-icon svg {
-  inline-size: 20px;
-  block-size: 20px;
-}
-
-.lp-nota-float-copy {
-  min-inline-size: 0;
-  flex: 1 1 auto;
-}
-
-.lp-nota-float-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.lp-nota-float-badge {
-  background: rgb(16 185 129 / 0.18);
-  border: 1px solid rgb(52 211 153 / 0.45);
-  color: #6ee7b7;
-  border-radius: 999px;
-  padding: 2px 8px;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  line-height: 1.2;
-}
-
-.lp-nota-float-dot {
-  inline-size: 6px;
-  block-size: 6px;
-  border-radius: 50%;
-  background: #34d399;
-  animation: lp-live-pulse 2s infinite;
-}
-
-.lp-nota-float-count {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #93c5fd;
-}
-
-.lp-nota-float-title {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.24;
-  margin: 2px 0 0;
-}
-
-.lp-nota-float-sub {
-  font-size: 0.76rem;
-  color: #cbd5e1;
-  line-height: 1.3;
-  margin: 2px 0 0;
-}
-
-.lp-nota-float-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.lp-nota-float-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-block-size: 38px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 8px 18px -4px rgb(16 185 129 / 0.48);
-  transition: transform 0.16s ease, filter 0.16s ease;
-}
-
-.lp-nota-float-cta svg {
-  inline-size: 15px;
-  block-size: 15px;
-}
-
-.lp-nota-float-cta:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
-}
-
-.lp-nota-float-cta:focus-visible {
-  outline: 2px solid #38bdf8;
-  outline-offset: 2px;
-}
-
-.lp-nota-float-close {
-  inline-size: 34px;
-  block-size: 34px;
-  border-radius: 999px;
-  border: 1px solid rgb(148 163 184 / 0.24);
-  background: rgb(255 255 255 / 0.06);
-  color: #cbd5e1;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background-color 0.16s ease, color 0.16s ease;
-}
-
-.lp-nota-float-close svg {
-  inline-size: 16px;
-  block-size: 16px;
-}
-
-.lp-nota-float-close:hover {
-  background: rgb(255 255 255 / 0.14);
-  color: #ffffff;
-}
-
-.lp-nota-float-close:focus-visible {
-  outline: 2px solid #38bdf8;
-  outline-offset: 2px;
-}
-
-@media (max-width: 1039px) {
-  .lp-nota-float {
-    inset-block-end: calc(76px + env(safe-area-inset-bottom, 0px));
-    inline-size: calc(100% - 20px);
-    max-inline-size: 540px;
-  }
-}
-
-@media (max-width: 560px) {
-  .lp-nota-float {
-    border-radius: 15px;
-  }
-
-  .lp-nota-float-icon,
-  .lp-nota-float-sub {
-    display: none;
-  }
-
-  .lp-nota-float-inner {
-    padding: 8px 10px;
-    gap: 8px;
-  }
-
-  .lp-nota-float-meta {
-    gap: 6px;
-    flex-wrap: nowrap;
-  }
-
-  .lp-nota-float-badge {
-    padding: 1px 6px;
-    font-size: 0.62rem;
-    gap: 4px;
-  }
-
-  .lp-nota-float-count {
-    font-size: 0.68rem;
-    white-space: nowrap;
-  }
-
-  .lp-nota-float-title {
-    font-size: 0.78rem;
-    line-height: 1.2;
-    margin-block-start: 3px;
-  }
-
-  .lp-nota-float-actions {
-    gap: 6px;
-  }
-
-  .lp-nota-float-cta {
-    padding: 6px 10px;
-    font-size: 0.74rem;
-    min-block-size: 34px;
-    gap: 4px;
-  }
-
-  .lp-nota-float-cta svg {
-    inline-size: 13px;
-    block-size: 13px;
-  }
-
-  .lp-nota-float-close {
-    inline-size: 30px;
-    block-size: 30px;
-  }
-}
-
-@media (max-width: 360px) {
-  .lp-nota-float-inner {
-    flex-wrap: wrap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lp-nota-float,
-  .lp-nota-float-cta,
-  .lp-nota-float-close {
-    transition: none;
-  }
-
-  .lp-nota-float-dot {
     animation: none;
   }
 }

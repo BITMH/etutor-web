@@ -3,7 +3,8 @@
  * Pembina templat DOM bersih & minimalis bagi laci sembang Cikgu AI serta FAB terapung.
  */
 
-import { buildHybridModeBarMarkup, buildHybridStagePillMarkup } from "./hybrid-homework-ui.js";
+import { buildHybridModeBarMarkup, buildHybridStagePillMarkup } from "./hybrid-homework-ui.js?v=28";
+import { buildSnapImageBarMarkup, buildSnapComposerControlsMarkup } from "./snap-photo-helper.js?v=28";
 
 export function buildCikguDrawerTemplate(endpoints, isAdminRoute) {
   return `
@@ -62,14 +63,16 @@ export function buildCikguDrawerTemplate(endpoints, isAdminRoute) {
 
       <div class="cikgu-ai-feed" id="cikguAiFeed">
         <div class="cikgu-ai-msg cikgu-ai-msg-bot" id="cikguAiWelcomeBubble">
-          Assalamualaikum &amp; salam sejahtera! Ada bahagian soalan pada skrin yang kurang jelas, atau nak Cikgu semakkan jawapan kamu? Mulakan dengan sapaan dan tulis di bawah ya.
+          Assalamualaikum &amp; salam sejahtera! Taip soalan, klik ikon kamera untuk muat naik gambar kerja sekolah, atau tampal tangkap layar (Ctrl+V) di bawah ya.
         </div>
       </div>
 
       ${buildHybridModeBarMarkup(false)}
       ${buildHybridStagePillMarkup()}
+      ${buildSnapImageBarMarkup()}
 
       <form class="cikgu-ai-composer" id="cikguAiForm">
+        ${buildSnapComposerControlsMarkup()}
         <textarea
           id="cikguAiChatInput"
           class="cikgu-ai-chat-input"

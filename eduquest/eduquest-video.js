@@ -1,5 +1,5 @@
 (function () {
-  var PLAY_SVG = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  var PLAY_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
   var registry = {};
   var activeId = "";
   var activeIdx = 0;
@@ -19,8 +19,8 @@
     if (!notaId || !Array.isArray(videos) || !videos.length) return "";
     var hasAudio = videos.some(function (v) { return Boolean(v && v.hasNarration); });
     var cls = hasAudio ? "eq-node-video-btn is-narrated" : "eq-node-video-btn";
-    var label = (hasAudio ? "Video Suara BM (" : "Tonton Video (") + videos.length + ")";
-    return '<button type="button" class="' + cls + '" data-eq-video-open="' + esc(notaId) + '">' + PLAY_SVG + "<span>" + label + "</span></button>";
+    var tip = "Tonton video penerangan (" + videos.length + " klip)";
+    return '<button type="button" class="' + cls + '" data-eq-video-open="' + esc(notaId) + '" aria-label="' + esc(tip) + '" title="' + esc(tip) + '">' + PLAY_SVG + "</button>";
   }
 
   function renderEpisode() {

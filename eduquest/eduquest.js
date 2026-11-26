@@ -16,7 +16,7 @@
   var UPPER_SLUGS = ["fizik", "kimia", "biologi", "matematik-tambahan", "pendidikan-moral"];
   var LOCK_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" d="M8 11V7a4 4 0 018 0v4"/></svg>';
 
-  var kssmList = [], notaList = [], roadmap = {}, activeForm = 5, activeSlug = "sains", activeTajuk = "", activeNoteId = "", pendingDeepTajuk = "";
+  var kssmList = [], notaList = [], roadmap = {}, activeForm = 5, activeSlug = "sains", activeSection = "nota", activeTajuk = "", activeNoteId = "", pendingDeepTajuk = "";
   function esc(v) { return String(v == null ? "" : v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   function readStore(k) { try { var r = localStorage.getItem(k); return r ? JSON.parse(r) : {}; } catch (e) { return {}; } }
   function writeStore(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -34,6 +34,7 @@
     var params = new URLSearchParams(window.location.search || "");
     var qForm = Number(String(params.get("form") || "").replace(/\D/g, ""));
     var qSubj = String(params.get("subject") || "").trim().toLowerCase();
+    activeSection = params.get("tab") === "latihan" ? "latihan" : "nota";
     pendingDeepTajuk = String(params.get("tajuk") || "").trim();
     var prof = readStore("etutor_student_profile_v1");
     var profForm = Number(String((prof && prof.currentForm) || "T5").replace(/\D/g, "")) || 5;
@@ -51,6 +52,8 @@
       var url = new URL(window.location.href);
       url.searchParams.set("form", String(activeForm));
       url.searchParams.set("subject", activeSlug);
+      if (activeSection === "latihan") url.searchParams.set("tab", "latihan");
+      else url.searchParams.delete("tab");
       if (tajukVal) url.searchParams.set("tajuk", tajukVal);
       else url.searchParams.delete("tajuk");
       if (pushMode) window.history.pushState({ eqTajuk: tajukVal || "" }, "", url.toString());
@@ -163,13 +166,13 @@
       var primarySrc = hasNota ? notaSrc : kssmSrc;
       var primaryNoteId = hasNota ? item.notaId : "";
       var primaryTajuk = hasNota ? item.notaId : item.kssmTajuk;
-      var btnTxt = item.stars === 3 ? "Ulang Kaji" : (item.stars > 0 ? "Ulang Untuk 3\u2605" : (hasNota ? "Mula Nota Bab " + item.bab : "Mula Bab " + item.bab));
+      var btnTxt = item.stars === 3 ? "Ulang Kaji" : (item.stars > 0 ? "Ulang Untuk 3\u2605" : (hasNota ? "Mula Nota Bab " + item.bab : "Buka Latihan Bab " + item.bab));
       var videoBtn = (!item.locked && window.etEqVideo) ? window.etEqVideo.buildActionBtn(item.notaId, item.videos) : "";
       var actions = item.locked
         ? '<button type="button" class="eq-node-btn is-locked-btn" disabled>Akan Dibuka Berperingkat</button>'
-        : ('<button type="button" class="eq-node-btn" data-open-tajuk="' + esc(primaryTajuk) + '" data-src="' + esc(primarySrc) + '" data-title="' + esc("Bab " + item.bab + ": " + item.title) + '" data-note-id="' + esc(primaryNoteId) + '">' + btnTxt + "</button>" +
-          videoBtn +
-          (hasNota && kssmSrc ? '<button type="button" class="eq-node-note-btn" data-open-tajuk="' + esc(item.kssmTajuk) + '" data-src="' + esc(kssmSrc) + '" data-title="' + esc("Latihan Bab " + item.bab + ": " + item.title) + '" data-note-id="">Latihan Teks &amp; MCQ</button>' : ""));
+        : (hasNota
+          ? ('<button type="button" class="eq-node-btn" data-open-tajuk="' + esc(primaryTajuk) + '" data-src="' + esc(primarySrc) + '" data-title="' + esc("Bab " + item.bab + ": " + item.title) + '" data-note-id="' + esc(primaryNoteId) + '">' + btnTxt + "</button>" + videoBtn)
+          : '<button type="button" class="eq-node-btn" data-eq-section="latihan">' + btnTxt + "</button>");
       var medBtn = item.locked
         ? '<span class="eq-pin-medallion" aria-label="Bab ' + item.bab + ' Terkunci">' + medInner + "</span>"
         : '<button type="button" class="eq-pin-medallion" data-open-tajuk="' + esc(primaryTajuk) + '" data-src="' + esc(primarySrc) + '" data-title="' + esc("Bab " + item.bab + ": " + item.title) + '" data-note-id="' + esc(primaryNoteId) + '" aria-label="Buka Bab ' + item.bab + '">' + medInner + "</button>";
@@ -199,6 +202,13 @@
       return '<button type="button" class="eq-pill' + (s.slug === activeSlug ? " is-active" : "") + '" data-eq-subj="' + esc(s.slug) + '">' + esc(s.short) + "</button>";
     }).join("");
     document.getElementById("eqPathStage").innerHTML = '<div class="eq-bands-wrap">' + bandsHtml + "</div>";
+    if (window.etEqLatihan) window.etEqLatihan.renderSection(enriched, activeForm, def, kMap);
+    var pathEl = document.getElementById("eqPathStage"), latEl = document.getElementById("eqLatihanStage");
+    var tabNota = document.getElementById("eqTabNotaBtn"), tabLat = document.getElementById("eqTabLatihanBtn");
+    if (pathEl) pathEl.hidden = (activeSection !== "nota");
+    if (latEl) latEl.hidden = (activeSection !== "latihan");
+    if (tabNota) { tabNota.classList.toggle("is-active", activeSection === "nota"); tabNota.setAttribute("aria-selected", String(activeSection === "nota")); }
+    if (tabLat) { tabLat.classList.toggle("is-active", activeSection === "latihan"); tabLat.setAttribute("aria-selected", String(activeSection === "latihan")); }
 
     if (pendingDeepTajuk) {
       var reqTajuk = pendingDeepTajuk;
@@ -230,6 +240,11 @@
       activeForm = Number(fBtn.getAttribute("data-eq-form")) || 5;
       var list = validSubjs(activeForm);
       if (!list.some(function (s) { return s.slug === activeSlug; })) activeSlug = list[0].slug;
+      syncUrl(false, ""); render(); return;
+    }
+    var secBtn = e.target.closest("[data-eq-section]");
+    if (secBtn) {
+      activeSection = secBtn.getAttribute("data-eq-section") === "latihan" ? "latihan" : "nota";
       syncUrl(false, ""); render(); return;
     }
     var sBtn = e.target.closest("[data-eq-subj]");

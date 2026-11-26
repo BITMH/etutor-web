@@ -84,6 +84,56 @@ body[data-theme="geo"]::before { background-image: url("../images/game-map/world
 }
 .eq-pill.is-active { background: linear-gradient(135deg, #2563eb, #0284c7); border-color: #fde047; color: #ffffff; }
 
+.eq-mode-tabs {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px;
+  padding: 5px; border-radius: 14px; background: rgba(6, 15, 36, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.22); backdrop-filter: blur(8px);
+}
+.eq-mode-tab {
+  display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 10px;
+  border: none; background: transparent; color: #e2e8f0; cursor: pointer;
+  font-family: var(--eq-font-head); font-size: 0.8rem; font-weight: 700; transition: all 0.15s ease;
+}
+.eq-mode-tab:hover { color: #ffffff; background: rgba(255, 255, 255, 0.1); }
+.eq-mode-tab.is-active {
+  background: linear-gradient(135deg, #10b981, #059669); color: #ffffff;
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.35);
+}
+.eq-tab-count {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px;
+  padding: 0 6px; border-radius: 999px; font-size: 0.72rem; font-weight: 800;
+  background: rgba(255, 255, 255, 0.22); color: #ffffff;
+}
+
+.eq-latihan-stage { display: flex; flex-direction: column; gap: 14px; }
+.eq-latihan-head {
+  padding: 16px 18px; border-radius: 18px; background: rgba(6, 15, 36, 0.34);
+  border: 1.5px solid rgba(255, 255, 255, 0.24); backdrop-filter: blur(8px);
+}
+.eq-latihan-kicker { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; color: #6ee7b7; }
+.eq-latihan-title { margin: 4px 0; font-family: var(--eq-font-head); font-size: 1.15rem; color: #ffffff; }
+.eq-latihan-sub { margin: 0; font-size: 0.83rem; color: #e2e8f0; line-height: 1.45; }
+.eq-latihan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.eq-latihan-card {
+  padding: 15px 16px; border-radius: 16px; background: rgba(6, 15, 36, 0.28);
+  border: 1.5px solid rgba(255, 255, 255, 0.24); backdrop-filter: blur(8px);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.eq-latihan-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.eq-latihan-card-title { margin: 0; font-family: var(--eq-font-head); font-size: 0.96rem; color: #ffffff; line-height: 1.35; }
+.eq-latihan-btn {
+  margin-top: auto; min-block-size: 40px; padding: 8px 14px; border-radius: 11px; cursor: pointer;
+  font-family: var(--eq-font-head); font-size: 0.8rem; font-weight: 800; color: #ffffff;
+  background: linear-gradient(180deg, #10b981, #059669); border: 1.5px solid #047857;
+}
+.eq-latihan-btn:hover { filter: brightness(1.08); }
+.eq-latihan-empty {
+  padding: 20px 18px; border-radius: 16px; background: rgba(6, 15, 36, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.22); text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.eq-latihan-empty p { margin: 0; font-size: 0.88rem; color: #f1f5f9; max-width: 52ch; line-height: 1.5; }
+
 .eq-path-stage { display: flex; flex-direction: column; align-items: center; }
 .eq-path-loading { text-align: center; padding: 48px 16px; color: #f1f5f9; font-weight: 700; text-shadow: 0 2px 10px rgba(2, 6, 23, 0.85); }
 .eq-bands-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; }
@@ -190,5 +240,6 @@ body[data-theme="geo"]::before { background-image: url("../images/game-map/world
   .eq-chap-band { padding: 14px; min-block-size: 220px; }
   .eq-band-inner, .eq-chap-band.is-odd .eq-band-inner { flex-direction: column; align-items: stretch; }
   .eq-pin-col { flex-direction: row; }
+  .eq-latihan-grid { grid-template-columns: 1fr; }
   .eq-player-status { display: none; }
 }

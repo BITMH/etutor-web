@@ -4321,6 +4321,9 @@
       "stepCount": 30,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab01.html"
@@ -4339,6 +4342,9 @@
       "stepCount": 45,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej2-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab02-v2.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab02-v2.html"
@@ -4357,6 +4363,9 @@
       "stepCount": 43,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej3-u3.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab03.html"
@@ -4375,6 +4384,9 @@
       "stepCount": 48,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej4-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab04.html"
@@ -4393,6 +4405,9 @@
       "stepCount": 45,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej5-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab05.html"
@@ -4411,6 +4426,9 @@
       "stepCount": 46,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej6-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab06.html"
@@ -4429,6 +4447,9 @@
       "stepCount": 45,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej7-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab07.html"
@@ -4447,6 +4468,9 @@
       "stepCount": 46,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej8-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab08.html"
@@ -4465,6 +4489,9 @@
       "stepCount": 46,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej9-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab09.html"
@@ -4483,6 +4510,9 @@
       "stepCount": 46,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sej10-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sejarah-t4-bab10.jpg",
       "htmlPath": "./nota-interaktif/dist/sejarah-t4-bab10.html"
@@ -4501,6 +4531,30 @@
       "stepCount": 37,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "sej51-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Konsep Kedaulatan — Takrif, Tokoh & 4 Jenis (1.1)",
+          "stepTitle": "1.1 Definisi Kedaulatan & Takrif dalam 4 Bahasa",
+          "caption": "Animasi 3D: Laman Istana Berdaulat dan Dewan Parlimen Negara dalam sinar fajar",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_kedaulatan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_kedaulatan.mp4"
+        },
+        {
+          "unitId": "sej51-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Ciri Negara yang Berdaulat (1.2)",
+          "stepTitle": "1.2 Ciri Pertama: Mempunyai Pemerintahan Teratur",
+          "caption": "Video Penerangan 15s (BM): Empat ciri negara berdaulat — pemerintahan, sempadan, perundangan dan rakyat",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_ciri_berdaulat_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_ciri_berdaulat_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej51-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab01.html"
@@ -4519,6 +4573,20 @@
       "stepCount": 38,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "sej52-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Latar Belakang Sejarah Perlembagaan Persekutuan (2.1)",
+          "stepTitle": "2.1 Asas Pembentukan & Undang-Undang Negeri Melayu Awal",
+          "caption": "Video Penerangan 15s (BM): Prinsip keluhuran Perlembagaan Persekutuan, ciri tradisional dan ciri moden negara",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab02/video/sej52_video_perlembagaan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab02/video/sej52_video_perlembagaan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej52-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab02.html"
@@ -4537,6 +4605,20 @@
       "stepCount": 43,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sej53-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Latar Belakang Pemerintahan Beraja & Demokrasi (3.1)",
+          "stepTitle": "3.1 Pemerintahan Beraja Kesultanan Melaka & Legasi 9 Negeri",
+          "caption": "Animasi 3D: Dewan Parlimen dan singgahsana diraja dalam sistem Raja Berperlembagaan",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab03/video/sej53_video_parlimen_raja.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab03/video/sej53_video_parlimen_raja.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej53-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab03.html"
@@ -4555,6 +4637,20 @@
       "stepCount": 39,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "sej54-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Latar Belakang Sistem Persekutuan (4.1)",
+          "stepTitle": "4.1 Konsep Persekutuan & Konfederasi Negeri Sembilan (1889–1898)",
+          "caption": "Video Penerangan 15s (BM): Pembahagian kuasa Persekutuan, Negeri dan Bersama demi kestabilan rakyat",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab04/video/sej54_video_persekutuan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab04/video/sej54_video_persekutuan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej54-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab04.html"
@@ -4573,6 +4669,20 @@
       "stepCount": 42,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sej55-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Konsep Gagasan Malaysia & Peta Penyatuan 1963",
+          "stepTitle": "5.1 Konsep Gagasan Malaysia & Negara Persekutuan Berdaulat",
+          "caption": "Video Interaktif: Penggabungan wilayah bekas jajahan British membentuk Persekutuan Malaysia pada tahun 1963",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab05/video/sej55_video_pembentukan_malaysia.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab05/video/sej55_video_pembentukan_malaysia.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej55-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab05.html"
@@ -4591,6 +4701,20 @@
       "stepCount": 41,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "sej56-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Cabaran Dalaman Malaysia & Krisis Sarawak (6.1)",
+          "stepTitle": "6.1 Cabaran Pembangunan & Sosioekonomi Sarawak–Sabah",
+          "caption": "Video Penerangan 15s (BM): Cabaran awal selepas pembentukan Malaysia — Singapura, ancaman komunis dan MAGERAN",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab06/video/sej56_video_cabaran_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab06/video/sej56_video_cabaran_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej56-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab06.html"
@@ -4609,6 +4733,20 @@
       "stepCount": 44,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sej57-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Perpaduan dan Integrasi Nasional (7.1)",
+          "stepTitle": "7.1 Perpaduan Kaum, Integrasi Nasional & Feri Malaysia (1986)",
+          "caption": "Video Interaktif: Semangat perpaduan pelbagai kaum dan integrasi nasional sebagai asas kesejahteraan Malaysia",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab07/video/sej57_video_perpaduan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab07/video/sej57_video_perpaduan.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej57-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab07.html"
@@ -4627,6 +4765,20 @@
       "stepCount": 39,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "sej58-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pembentukan Dasar Ekonomi Baru (8.1)",
+          "stepTitle": "8.1 Latar Belakang DEB, MAPEN (Jan 1970) & RRJP1",
+          "caption": "Video Penerangan 15s (BM): Matlamat Dasar Ekonomi Baru (DEB) dan Dasar Pembangunan Nasional (DPN)",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab08/video/sej58_video_deb_dpn_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab08/video/sej58_video_deb_dpn_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej58-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab08.html"
@@ -4645,6 +4797,20 @@
       "stepCount": 43,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sej59-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Latar Belakang & Asas Penggubalan Dasar Luar (9.1–9.2)",
+          "stepTitle": "9.1 Zaman British & Dua Fasa Dasar Luar Selepas Kemerdekaan",
+          "caption": "Animasi 3D: Evolusi dasar luar Malaysia daripada era Wisma Putra hingga kerjasama serantau ASEAN dan ZOPFAN",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab09/video/sej59_video_dasar_luar_asean.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab09/video/sej59_video_dasar_luar_asean.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej59-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab09.html"
@@ -4663,6 +4829,20 @@
       "stepCount": 37,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sej510-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Malaysia dalam Isu Global Kontemporari (10.1)",
+          "stepTitle": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+          "caption": "Animasi 3D: Diplomasi berprinsip Malaysia di persada PBB, ASEAN, kelestarian alam dan wawasan masa hadapan",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sejarah-t5-bab10/video/sej510_video_global_wawasan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab10/video/sej510_video_global_wawasan.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sej510-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/sejarah-t5-bab10.html"
@@ -4681,6 +4861,9 @@
       "stepCount": 33,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/bm-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/bahasa-melayu-t4-tatabahasa.jpg",
       "htmlPath": "./nota-interaktif/dist/bahasa-melayu-t4-tatabahasa.html"
@@ -4699,6 +4882,9 @@
       "stepCount": 33,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/bi-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/bahasa-inggeris-t4-mod01.jpg",
       "htmlPath": "./nota-interaktif/dist/bahasa-inggeris-t4-mod01.html"
@@ -4717,6 +4903,9 @@
       "stepCount": 31,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/mat-u2.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/matematik-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab01.html"
@@ -4735,6 +4924,20 @@
       "stepCount": 31,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat42-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Asas Nombor, Digit Sah & Nilai Tempat",
+          "stepTitle": "Asas Nombor dalam Teknologi Moden & Peraturan Digit Sah",
+          "caption": "Video Penerangan 3D: Rahsia asas nombor daripada asas sepuluh kehidupan harian hingga logik binari komputer moden",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab02/video/mat42_video_asas_nombor_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab02/video/mat42_video_asas_nombor_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat42-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab02.html"
@@ -4753,6 +4956,20 @@
       "stepCount": 42,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat43-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pernyataan, Pengkuantiti & Penafian (~p)",
+          "stepTitle": "3.1 Maksud Pernyataan & Penentuan Nilai Kebenaran",
+          "caption": "Video Penerangan (BM): Penaakulan logik dalam perbahasan, pengkomputeran serta asas pernyataan benar dan palsu",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab03/video/mat43_video_logik_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab03/video/mat43_video_logik_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat43-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab03.html"
@@ -4771,6 +4988,20 @@
       "stepCount": 40,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat44-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Persilangan Set (P ∩ Q) & Kes Khas Rajah Venn",
+          "stepTitle": "4.1 Definisi Persilangan Set (P ∩ Q) & Analogi Gerhana",
+          "caption": "Video Penerangan Bersuara (BM): Konsep Persilangan Set (P ∩ Q), Kesatuan Set (P ∪ Q) dan Lorekan Rajah Venn",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab04/video/mat44_video_operasi_set_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab04/video/mat44_video_operasi_set_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat44-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab04.html"
@@ -4789,6 +5020,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat45-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Asas Rangkaian, Bucu V, Tepi E & Darjah d(v)",
+          "stepTitle": "Konsep Graf & Rangkaian Dunia Sebenar (Pengangkutan, Sosial & Sejuk)",
+          "caption": "Animasi 3D: Bucu dan tepi saling berhubung membentuk rangkaian graf mudah, berbilang tepi serta gelung",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab05/video/mat45_video_graf_rangkaian.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab05/video/mat45_video_graf_rangkaian.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat45-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab05.html"
@@ -4807,6 +5052,20 @@
       "stepCount": 37,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat46-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pengenalan Ketaksamaan Linear & Pemodelan Situasi",
+          "stepTitle": "6.1 Daripada Satu Pemboleh Ubah ke Dua Pemboleh Ubah",
+          "caption": "Video Penerangan Bersuara (BM): Garis Sempadan Padu vs Sempang, Tentusah Titik & Rantau Sepunya Sistem Ketaksamaan",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab06/video/mat46_video_ketaksamaan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab06/video/mat46_video_ketaksamaan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat46-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab06.html"
@@ -4825,6 +5084,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat47-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Asas Graf Jarak-Masa & Plot Persamaan",
+          "stepTitle": "7.1 Mengenali Paksi Graf Jarak-Masa & Makna Kecerunan",
+          "caption": "Video Penerangan Bersuara (BM): Konsep Graf Jarak-Masa, Graf Laju-Masa, Kecerunan dan Luas Di Bawah Graf",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab07/video/mat47_video_graf_gerakan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab07/video/mat47_video_graf_gerakan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat47-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab07.html"
@@ -4843,6 +5116,20 @@
       "stepCount": 33,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat48-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Konsep Serakan, Plot Batang-dan-Daun & Plot Titik",
+          "stepTitle": "8.1 Maksud Serakan, Etika Data & Jaringan Kata",
+          "caption": "Video Penerangan Bersuara (BM): Konsep Serakan, Plot Batang-dan-Daun, Plot Titik, Kuartil, Plot Kotak & Sisihan Piawai",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab08/video/mat48_video_serakan_tak_terkumpul_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab08/video/mat48_video_serakan_tak_terkumpul_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat48-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab08.html"
@@ -4861,6 +5148,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat49-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Peristiwa Bergabung & Ruang Sampel S",
+          "stepTitle": "Teori Kebarangkalian, Maslahat Bab & Peristiwa Bergabung",
+          "caption": "Simulasi 3D: Percabangan kebarangkalian peristiwa bergabung melalui lambungan dadu, syiling dan cabutan guli berwarna",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab09/video/mat49_video_kebarangkalian.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab09/video/mat49_video_kebarangkalian.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat49-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab09.html"
@@ -4879,6 +5180,20 @@
       "stepCount": 30,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat410-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Proses Pengurusan Kewangan & Matlamat SMART",
+          "stepTitle": "10.1 Definisi Pengurusan Kewangan, Tokoh BNM & 5 Proses",
+          "caption": "Video Penerangan Bersuara (BM): Proses Pengurusan Kewangan, Konsep SMART, Aset vs Liabiliti dan Pengurusan Aliran Tunai",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t4-bab10/video/mat410_video_kewangan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab10/video/mat410_video_kewangan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat410-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t4-bab10.html"
@@ -4897,6 +5212,20 @@
       "stepCount": 32,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat51-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Ubahan Langsung, Pemalar k & Graf Asalan",
+          "stepTitle": "1.1 Maksud Ubahan Langsung, Simbol ∝ & Graf Melalui Asalan",
+          "caption": "Video Penerangan Bersuara (BM): Konsep Ubahan Langsung (y = kx^n), Ubahan Songsang (y = k/x^n), Graf Hiperbola vs Garis Lurus & Ubahan Bergabung",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab01/video/mat51_video_ubahan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab01/video/mat51_video_ubahan_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat51-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab01.html"
@@ -4915,6 +5244,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat52-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pengenalan Matriks, Peringkat m × n & Matriks Sama",
+          "stepTitle": "Mewakilkan Maklumat dalam Bentuk Matriks & Jenis Bentuknya",
+          "caption": "Simulasi 3D: Transformasi tatasusun nombor dalam grid baris dan lajur serta aplikasi pemetaan matriks",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab02/video/mat52_video_matriks_transformasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab02/video/mat52_video_matriks_transformasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat52-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab02.html"
@@ -4933,6 +5276,20 @@
       "stepCount": 34,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat53-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Konsep Risiko, Akta Insurans & Prinsip Indemniti",
+          "stepTitle": "Makna Risiko, Kawal Selia BNM & Peranan Aktuari",
+          "caption": "Video Penerangan Bersuara: Pengurusan Risiko, Insurans Hayat vs Am & Prinsip Indemniti",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab03/video/mat53_video_insurans_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab03/video/mat53_video_insurans_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat53-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab03.html"
@@ -4951,6 +5308,20 @@
       "stepCount": 34,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat54-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Tujuan Percukaian, 5 Jenis Cukai & Pengelakan Cukai",
+          "stepTitle": "Makna Percukaian, 4 Tujuan Utama & Kuasa Kutipan",
+          "caption": "Video Penerangan Bersuara (BM): Tujuan Percukaian, 5 Jenis Cukai Malaysia, Kadar Progresif & Rebat",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab04/video/mat54_video_percukaian_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab04/video/mat54_video_percukaian_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat54-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab04.html"
@@ -4969,6 +5340,20 @@
       "stepCount": 31,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat55-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Kekongruenan Poligon & Sifat Segi Tiga",
+          "stepTitle": "5.1 Makna Kekongruenan, Mercu Tanda Malaysia & Syarat Poligon",
+          "caption": "Animasi 3D: Bentuk kongruen mengekalkan saiz serta sudut sepadan dan membentuk pola teselasi rapat",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab05/video/mat55_video_kekongruenan_teselasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab05/video/mat55_video_kekongruenan_teselasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat55-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab05.html"
@@ -4987,6 +5372,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat56-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Bulatan Unit, 4 Sukuan & Nisbah (kos θ, sin θ)",
+          "stepTitle": "Bulatan Unit (r = 1), Putaran Lawan Jam & Koordinat (kos θ, sin θ)",
+          "caption": "Animasi 3D: Putaran jejari bulatan unit menghasilkan gelombang sinus dan kosinus secara berkala",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab06/video/mat56_video_trigonometri_gelombang.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab06/video/mat56_video_trigonometri_gelombang.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat56-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab06.html"
@@ -5005,6 +5404,20 @@
       "stepCount": 35,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "mat57-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Jadual Kekerapan, Histogram & Poligon Kekerapan",
+          "stepTitle": "Selang Kelas, Had, Titik Tengah, Sempadan & Kekerapan Longgokan",
+          "caption": "Animasi 3D: Penyusunan data terkumpul kepada histogram, lengkung ogif dan taburan sisihan piawai",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab07/video/mat57_video_sukatan_serakan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab07/video/mat57_video_sukatan_serakan.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat57-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab07.html"
@@ -5023,6 +5436,20 @@
       "stepCount": 33,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "mat58-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Konsep Asas & 6 Komponen Pemodelan Matematik",
+          "stepTitle": "8.1 Makna Model Matematik, Terowong SMART & Soalan Terbuka",
+          "caption": "Video Penerangan Bersuara (BM): Proses 6 Komponen Pemodelan Matematik serta Aplikasi Fungsi Linear, Kuadratik & Eksponen",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/matematik-t5-bab08/video/mat58_video_pemodelan_matematik_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab08/video/mat58_video_pemodelan_matematik_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/mat58-u1.jpg",
       "chapterBgPath": "",
       "htmlPath": "./nota-interaktif/dist/matematik-t5-bab08.html"
@@ -5041,6 +5468,9 @@
       "stepCount": 32,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sai-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab01.html"
@@ -5059,6 +5489,9 @@
       "stepCount": 25,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sai2-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab02.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab02.html"
@@ -5077,6 +5510,9 @@
       "stepCount": 48,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 0,
+      "narratedVideoCount": 0,
+      "videos": [],
       "coverIconPath": "./nota-interaktif/assets/icons/sai3-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab03.html"
@@ -5095,6 +5531,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai4-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Isu Sosiosaintifik & Sektor Tenaga",
+          "stepTitle": "Tenaga Boleh Baharu: Solar, Angin, Hidro, Geoterma, Ombak & Biojisim",
+          "caption": "Animasi 3D: Penjanaan tenaga boleh baharu daripada turbin angin, panel suria dan empangan hidroelektrik",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab04/video/sai4_video_green_energy.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab04/video/sai4_video_green_energy.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai4-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab04.html"
@@ -5113,6 +5563,20 @@
       "stepCount": 46,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai5-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: DNA, Kromosom, Mitosis & Meiosis",
+          "stepTitle": "Kariotip Manusia (46 Kromosom) & 4 Fasa Mitosis (PMAT)",
+          "caption": "Animasi 3D: Pergerakan kromosom semasa pembahagian mitosis menghasilkan dua sel anak seiras",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab05/video/sai5_video_mitosis_dna.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab05/video/sai5_video_mitosis_dna.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai5-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab05.html"
@@ -5131,6 +5595,20 @@
       "stepCount": 46,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai6-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Sistem Rangka Manusia, Sendi & Otot Antagonis",
+          "stepTitle": "Mekanisme Otot Berantagonis (Biseps & Triseps)",
+          "caption": "Animasi 3D: Tindakan berantagonis otot biseps dan triseps semasa membengkok serta meluruskan lengan",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab06/video/sai6_video_antagonistic_arm.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab06/video/sai6_video_antagonistic_arm.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai6-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab06.html"
@@ -5149,6 +5627,20 @@
       "stepCount": 46,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai7-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Sistem Endokrin & 6 Kelenjar Utama",
+          "stepTitle": "Cara Tindakan Sistem Endokrin, Hormon & Organ Sasaran",
+          "caption": "Animasi 3D: Molekul hormon bergerak melalui salur darah menuju ke sel sasaran",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab07/video/sai7_video_endocrine_hormone.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab07/video/sai7_video_endocrine_hormone.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai7-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab07.html"
@@ -5167,6 +5659,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai8-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Asas Jirim — Atom, Molekul, Ion & Sifat Fizik",
+          "stepTitle": "Rencana Sains: 118 Unsur & 3 Zarah Asas Jirim",
+          "caption": "Animasi 3D: Nukleus bercas positif mengandungi proton serta neutron dikelilingi petala elektron",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab08/video/sai8_video_atom_isotope.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab08/video/sai8_video_atom_isotope.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai8-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab08.html"
@@ -5185,6 +5691,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai9-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pengaloian & 5 Aloi Utama Industri",
+          "stepTitle": "Pengaloian: Mengapa Atom Asing Menguatkan Logam Tulen",
+          "caption": "Animasi 3D: Atom asing menghalang lapisan atom logam tulen daripada menggelongsor",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab09/video/sai9_video_alloy_lattice.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab09/video/sai9_video_alloy_lattice.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai9-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab09.html"
@@ -5203,6 +5723,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai10-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Radikal Bebas & Mekanisme Bahan Antioksidan",
+          "stepTitle": "Bahan Antioksidan: Perisai Penderma Elektron Menentang Pengoksidaan",
+          "caption": "Animasi 3D: Molekul antioksidan menderma elektron untuk meneutralkan radikal bebas yang mengancam sel",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab10/video/sai10_video_antioxidant.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab10/video/sai10_video_antioxidant.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai10-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab10.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab10.html"
@@ -5221,6 +5755,20 @@
       "stepCount": 46,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai11-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Pecutan Graviti g, Jatuh Bebas & Antigraviti",
+          "stepTitle": "Pecutan Graviti (g = 10 m s^-2) & Jatuh Bebas dalam Vakum",
+          "caption": "Animasi 3D: Bola keluli dan bulu pelepah jatuh serentak dalam tiub vakum tanpa rintangan udara",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab11/video/sai11_video_freefall_vacuum.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab11/video/sai11_video_freefall_vacuum.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai11-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab11.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab11.html"
@@ -5239,6 +5787,20 @@
       "stepCount": 44,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai12-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Pembelahan vs Pelakuran Nukleus",
+          "stepTitle": "Pembelahan Nukleus Uranium-235 & Tindak Balas Berantai",
+          "caption": "Animasi 3D: Pembelahan nukleus uranium-235 membebaskan tenaga nuklear dan tiga neutron baru",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t4-bab12/video/sai12_video_nuclear_fission.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab12/video/sai12_video_nuclear_fission.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai12-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t4-bab12.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t4-bab12.html"
@@ -5257,6 +5819,20 @@
       "stepCount": 44,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai51-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Dunia Mikroorganisma — Flora Normal & 5 Kumpulan Mikrob",
+          "stepTitle": "Pengelasan 5 Kumpulan Mikrob: Fungi, Alga & Protozoa",
+          "caption": "Animasi 3D: Kepelbagaian bakteria, yis bertunas dan protozoa bergerak dalam bendalir mikroskop",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab01/video/sai51_video_microbes.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab01/video/sai51_video_microbes.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai51-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab01.html"
@@ -5275,6 +5851,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai52-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Kitar Nitrogen & Keseimbangan Alam",
+          "stepTitle": "Kitar Nitrogen: 3 Proses Penambahan Ion Nitrat ke Tanah",
+          "caption": "Animasi 3D: Bakteria pengikat nitrogen dalam nodul akar kekacang menukar gas nitrogen kepada nitrat",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab02/video/sai52_video_nitrogen_cycle.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab02/video/sai52_video_nitrogen_cycle.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai52-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab02.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab02.html"
@@ -5293,6 +5883,20 @@
       "stepCount": 44,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai53-u5",
+          "unitNumber": 5,
+          "unitTitle": "Unit 5: Teknologi Emisi Negatif Mikroalga & Peranan Global PBB",
+          "stepTitle": "Teknologi Emisi Negatif: Mikroalga Marin, Teknologi Hijau & Eco Currency",
+          "caption": "Animasi 3D: Teknologi emisi negatif menggunakan mikroalga laut menyerap CO2 atmosfera dan membebaskan oksigen",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab03/video/sai53_video_microalgae_capture.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab03/video/sai53_video_microalgae_capture.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai53-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab03.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab03.html"
@@ -5311,6 +5915,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai54-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Faktor Suhu & Kepekatan (Eksperimen 4.1 & 4.2)",
+          "stepTitle": "5 Faktor Kadar & Eksperimen 4.1: Kesan Suhu (Na2S2O3 + H2SO4)",
+          "caption": "Animasi 3D: Peningkatan suhu dan kepekatan mempercepat perlanggaran berkesan antara zarah bahan tindak balas",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab04/video/sai54_video_collision_rate.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab04/video/sai54_video_collision_rate.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai54-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab04.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab04.html"
@@ -5329,6 +5947,20 @@
       "stepCount": 46,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai55-u5",
+          "unitNumber": 5,
+          "unitTitle": "Unit 5: Minyak Sawit, Saponifikasi Sabun & Kelestarian Lestari",
+          "stepTitle": "Penghasilan Sabun (Saponifikasi) & Mekanisme Pencucian Misel 3D",
+          "caption": "Animasi 3D: Molekul sabun hidrofobik dan hidrofilik menanggalkan kotoran berminyak daripada fabrik",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab05/video/sai55_video_soap_micelle.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab05/video/sai55_video_soap_micelle.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai55-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab05.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab05.html"
@@ -5347,6 +5979,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai56-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Sel Elektrolitik, Elektrolit & Leburan Ion",
+          "stepTitle": "Komponen Sel Elektrolitik & Eksperimen 6.1 (PbBr2 Lebur)",
+          "caption": "Animasi 3D: Pergerakan kation dan anion ke katod serta anod semasa proses elektrolisis",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab06/video/sai56_video_electrolysis.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab06/video/sai56_video_electrolysis.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai56-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab06.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab06.html"
@@ -5365,6 +6011,20 @@
       "stepCount": 44,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai57-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Kanta Cembung, Kanta Cekung & Istilah Optik",
+          "stepTitle": "Kanta Cembung (Penumpu) vs Kanta Cekung (Pencapah) & Aktiviti 7.1",
+          "caption": "Animasi 3D: Sinar cahaya selari membias melalui kanta cembung dan menumpu tepat pada titik fokus",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab07/video/sai57_video_convex_lens.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab07/video/sai57_video_convex_lens.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai57-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab07.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab07.html"
@@ -5383,6 +6043,20 @@
       "stepCount": 43,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai58-u4",
+          "unitNumber": 4,
+          "unitTitle": "Unit 4: Aplikasi Aerofoil, Penunu Bunsen, Dron & Keselamatan",
+          "stepTitle": "Bentuk Aerofoil Sayap Kapal Terbang & Sudut Serang (Rajah 8.13)",
+          "caption": "Animasi 3D: Aliran udara laju di bahagian atas sayap aerofoil menjana tekanan rendah dan daya angkat ke atas",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab08/video/sai58_video_bernoulli_wing.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab08/video/sai58_video_bernoulli_wing.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai58-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab08.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab08.html"
@@ -5401,6 +6075,20 @@
       "stepCount": 45,
       "hasVoice": false,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 0,
+      "videos": [
+        {
+          "unitId": "sai59-u5",
+          "unitNumber": 5,
+          "unitTitle": "Unit 5: 9.2 Sistem Penentu Sejagat (GPS), Format DMS/DD & Kegunaan",
+          "stepTitle": "9.2 Sistem Penentu Sejagat (GPS): Definisi & 3 Segmen Utama",
+          "caption": "Animasi 3D: Isyarat tiga atau lebih satelit GPS menentu kedudukan pengguna di permukaan Bumi",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/sains-t5-bab09/video/sai59_video_satellite_gps.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab09/video/sai59_video_satellite_gps.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/sai59-u1.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/sains-t5-bab09.jpg",
       "htmlPath": "./nota-interaktif/dist/sains-t5-bab09.html"
@@ -5419,9 +6107,517 @@
       "stepCount": 28,
       "hasVoice": true,
       "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz-u5",
+          "unitNumber": 5,
+          "unitTitle": "Eksperimen 1.1 Bandul Ringkas (Amali Wajib)",
+          "stepTitle": "Eksperimen 1.1: Menyiasat Hubungan Panjang Bandul (l) dengan Tempoh Ayunan (T)",
+          "caption": "Video Penerangan Bersuara (BM): Eksperimen 1.1 Bandul Ringkas — hubungan panjang tali l dengan tempoh ayunan T serta graf T² melawan l",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab01/video/fiz41_video_graf_bandul_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab01/video/fiz41_video_graf_bandul_narasi.mp4"
+        }
+      ],
       "coverIconPath": "./nota-interaktif/assets/icons/fiz-u5.jpg",
       "chapterBgPath": "./nota-interaktif/assets/chapter-bg/fizik-t4-bab01.jpg",
       "htmlPath": "./nota-interaktif/dist/fizik-t4-bab01.html"
+    },
+    {
+      "id": "fizik-t4-bab02",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 2,
+      "title": "Daya dan Gerakan I",
+      "subtitle": "Subtopik 2.1–2.8 KSSM (44 Langkah Bit-by-Bit) — Gerakan Linear, Pita Detik 50 Hz & SUVAT, Graf s-t/v-t/a-t, Jatuh Bebas & Eksperimen 2.1, Inersia & Neraca Inersia, Keabadian Momentum, Daya F=ma, Impuls & Keselamatan Kenderaan serta Berat W=mg.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 6,
+      "stepCount": 44,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz42-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Gerakan Linear, Pita Detik 50 Hz & Persamaan SUVAT",
+          "stepTitle": "2.1 Gerakan Linear: Jarak vs Sesaran, Laju vs Halaju & Pecutan",
+          "caption": "Animasi 3D: Analisis gerakan linear, troli landasan makmal dan keabadian momentum",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_daya_gerakan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_daya_gerakan.mp4"
+        },
+        {
+          "unitId": "fiz42-u4",
+          "unitNumber": 4,
+          "unitTitle": "Unit 4: Momentum & Prinsip Keabadian Momentum",
+          "stepTitle": "2.5 Konsep Momentum (p = mv) & Prinsip Keabadian Momentum",
+          "caption": "Video Penerangan Bersuara (BM): Prinsip Keabadian Momentum perlanggaran serta peranan zon remuk memanjangkan masa hentaman bagi mengurangkan daya impuls",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_momentum_impuls_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_momentum_impuls_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz42-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab02.html"
+    },
+    {
+      "id": "fizik-t4-bab03",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 3,
+      "title": "Kegravitian",
+      "subtitle": "Subtopik 3.1–3.3 KSSM (33 Langkah Bit-by-Bit) — Hukum Kegravitian Semesta Newton (F = GMm/r²), Pecutan Graviti g(h), Daya Memusat & Jisim Bumi (M = 4π²r³/GT²), Tiga Hukum Kepler (T² ∝ r³), Satelit Geopegun vs Bukan Geopegun serta Halaju Lepas v = √(2GM/r).",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 34,
+      "unitCount": 5,
+      "stepCount": 33,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz43-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Hukum Kegravitian Semesta Newton & Pecutan Graviti",
+          "stepTitle": "3.1 Hukum Kegravitian Semesta Newton (F = GMm / r²)",
+          "caption": "Animasi 3D: Tarikan graviti semesta mengikat planet dan satelit dalam orbit mengelilingi jasad pusat",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kegravitian_orbit.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kegravitian_orbit.mp4"
+        },
+        {
+          "unitId": "fiz43-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Tiga Hukum Kepler — Orbit Elips, Luas & Tempoh",
+          "stepTitle": "3.2 Hukum Kepler Pertama & Kedua (Elips Dwifokus & Hukum Luas)",
+          "caption": "Video Penerangan Bersuara (BM): Hukum Kepler orbit elips dwifokus, luas sama dalam masa sama dan halaju lepas roket",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kepler_halaju_lepas_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kepler_halaju_lepas_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz43-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab03.html"
+    },
+    {
+      "id": "fizik-t4-bab04",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 4,
+      "title": "Haba",
+      "subtitle": "Subtopik 4.1–4.4 KSSM — Keseimbangan Terma & Penentu Ukuran Termometer, Muatan Haba Tentu (Q = mcΔθ) & Bayu Pantai, Haba Pendam Tentu (Q = ml) & Lengkung Fasa, serta 3 Hukum Gas & Sifar Mutlak (-273°C / 0 K).",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 32,
+      "unitCount": 5,
+      "stepCount": 34,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 2,
+      "videos": [
+        {
+          "unitId": "fiz44-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Keseimbangan Terma & Penentu Ukuran Termometer",
+          "stepTitle": "Sentuhan Terma, Pengaliran Haba & Keseimbangan Terma",
+          "caption": "Video Penerangan Bersuara (BM): Pengaliran tenaga haba, keseimbangan terma dan fenomena haba harian",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_narasi.mp4"
+        },
+        {
+          "unitId": "fiz44-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Haba Pendam Tentu & Perubahan Fasa",
+          "stepTitle": "Haba Pendam Tentu (l_f vs l_v) & Teori Kinetik Perubahan Fasa",
+          "caption": "Video Penerangan Bersuara (BM): Haba Pendam Tentu — mengapa suhu kekal malar semasa peleburan dan pendidihan",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_pendam_fasa_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_pendam_fasa_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz44-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab04.html"
+    },
+    {
+      "id": "fizik-t4-bab05",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 5,
+      "title": "Gelombang",
+      "subtitle": "Subtopik 5.1–5.7 KSSM (46 Langkah Bit-by-Bit) — Asas Gelombang & Tangki Riak, Pelembapan & Bandul Barton, Pantulan (i = r), Pembiasan Dalam-Cetek, Pembelauan Celah, Interferens Young (λ = ax/D) serta 7 Jalur Spektrum Elektromagnet.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 6,
+      "stepCount": 46,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz45-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Asas Gelombang, Graf & Tangki Riak",
+          "stepTitle": "5.1 Penghasilan Gelombang, Pemindahan Tenaga & Pengelasan",
+          "caption": "Animasi 3D: Perambatan gelombang air satah dan membulat di dalam tangki riak makmal",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_gelombang_riple.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_gelombang_riple.mp4"
+        },
+        {
+          "unitId": "fiz45-u4",
+          "unitNumber": 4,
+          "unitTitle": "Unit 4: Pembelauan & Interferens Gelombang (Dwicelah Young)",
+          "stepTitle": "5.6 Prinsip Superposisi, Sumber Koheren & Nod vs Antinod",
+          "caption": "Video Penerangan Bersuara (BM): Interferens Membina dan Memusnah daripada dua sumber koheren dwicelah Young",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_interferens_young_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_interferens_young_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz45-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab05.html"
+    },
+    {
+      "id": "fizik-t4-bab06",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 4,
+      "chapterNumber": 6,
+      "title": "Cahaya dan Optik",
+      "subtitle": "Subtopik 6.1–6.6 KSSM — Pembiasan Cahaya & Hukum Snell, Dalam Nyata vs Ketara (Eksperimen 6.1–6.2), Pantulan Dalam Penuh & Logamaya/Pelangi/Gentian Optik, Pembentukan Imej & Formula Kanta Nipis (Eksperimen 6.3), Mikroskop Majmuk & Teleskop Astronomi serta Cermin Sfera.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 6,
+      "stepCount": 44,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 2,
+      "videos": [
+        {
+          "unitId": "fiz46-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pembiasan Cahaya, Hukum Snell & Dalam Ketara",
+          "stepTitle": "Pembiasan Cahaya & Perbezaan Ketumpatan Optik",
+          "caption": "Video Penerangan Bersuara (BM): Konsep pembiasan cahaya, Hukum Snell dan aplikasi optik Bab 6",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_cahaya_optik_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_cahaya_optik_narasi.mp4"
+        },
+        {
+          "unitId": "fiz46-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Pantulan Dalam Penuh & Fenomena Harian",
+          "stepTitle": "Syarat Pantulan Dalam Penuh & Sudut Genting (c)",
+          "caption": "Video Penerangan Bersuara (BM): Syarat Pantulan Dalam Penuh melebihi sudut genting dan kabel gentian optik",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_pantulan_dalam_penuh_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_pantulan_dalam_penuh_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz46-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t4-bab06.html"
+    },
+    {
+      "id": "fizik-t5-bab01",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 1,
+      "title": "Daya dan Gerakan II",
+      "subtitle": "Subtopik 1.1–1.4 KSSM (40 Langkah Bit-by-Bit) — Daya Paduan & Lif (R = mg ± ma), Leraian Daya & Satah Condong, Keseimbangan Segi Tiga Daya Tertutup, Hukum Hooke (F = kx), Ep = ½kx², Faktor & Susunan Spring.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 5,
+      "stepCount": 40,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 2,
+      "videos": [
+        {
+          "unitId": "fiz51-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Daya Paduan, Vektor & Penimbang Lif",
+          "stepTitle": "1.1 Daya Paduan & 4 Situasi Tindakan Dua Daya",
+          "caption": "Video Penerangan Bersuara (BM): Konsep daya paduan, tarik tali dan gabungan vektor daya",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_daya_paduan_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_daya_paduan_narasi.mp4"
+        },
+        {
+          "unitId": "fiz51-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Leraian Daya, Satah Condong & Mesin Rumput",
+          "stepTitle": "1.2 Leraian Daya: Komponen Mengufuk (Fx) & Menegak (Fy)",
+          "caption": "Video Penerangan Bersuara (BM): Leraian Daya kepada komponen mengufuk dan menegak pada satah condong",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_leraian_daya_satah_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_leraian_daya_satah_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz51-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab01.html"
+    },
+    {
+      "id": "fizik-t5-bab02",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 2,
+      "title": "Tekanan",
+      "subtitle": "Subtopik 2.1–2.6 KSSM — Tekanan Cecair (P = hρg), Barometer Atmosfera (760 mm Hg), Manometer Tiub-U & Tolok Bourdon, Prinsip Pascal (F₁/A₁ = F₂/A₂), Prinsip Archimedes (F_B = ρVg) & Prinsip Bernoulli.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 34,
+      "unitCount": 6,
+      "stepCount": 45,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 2,
+      "videos": [
+        {
+          "unitId": "fiz52-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Tekanan Cecair, Faktor & Aplikasi Kejuruteraan",
+          "stepTitle": "2.1 Tekanan Cecair: Penerbitan P = hρg & Eksperimen 2.1–2.2",
+          "caption": "Video Penerangan Bersuara (BM): Pengenalan tekanan bendalir, daya apungan, sistem hidraulik dan aliran Bernoulli",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_tekanan_bendalir_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_tekanan_bendalir_narasi.mp4"
+        },
+        {
+          "unitId": "fiz52-u4",
+          "unitNumber": 4,
+          "unitTitle": "Unit 4: Prinsip Pascal & Sistem Pengganda Daya Hidraulik",
+          "stepTitle": "2.4 Prinsip Pascal, Omboh Pascal & Sistem Pengganda Daya",
+          "caption": "Video Penerangan Bersuara (BM): Prinsip Pascal pengganda daya hidraulik dan Prinsip Bernoulli daya angkat aerofoil",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_pascal_bernoulli_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_pascal_bernoulli_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz52-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab02.html"
+    },
+    {
+      "id": "fizik-t5-bab03",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 3,
+      "title": "Elektrik",
+      "subtitle": "Subtopik 3.1–3.4 KSSM (39 Langkah Bit-by-Bit) — Medan Elektrik, Nyalaan Lilin & Bola Polistirena, I = Q/t & V = E/Q, Hukum Ohm & R = ρl/A, Superkonduktor, Litar Kombinasi, d.g.e. & Rintangan Dalam (ε = V + Ir) serta Kuasa & Kos Bil kWj.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 5,
+      "stepCount": 39,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 2,
+      "videos": [
+        {
+          "unitId": "fiz53-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Medan Elektrik, Arus & Beza Keupayaan",
+          "stepTitle": "3.1 Medan Elektrik, Kit Serbuk Suji & Kekuatan Medan (E)",
+          "caption": "Video Penerangan Bersuara (BM): Medan elektrik, daya ke atas cas ujian, arus I = Q/t dan beza keupayaan V = E/Q",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_elektrik_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_elektrik_narasi.mp4"
+        },
+        {
+          "unitId": "fiz53-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Daya Gerak Elektrik (d.g.e.) & Rintangan Dalam",
+          "stepTitle": "3.3 Daya Gerak Elektrik (ε) vs Beza Keupayaan (V) & Rintangan Dalam (r)",
+          "caption": "Video Penerangan Bersuara (BM): Perbezaan daya gerak elektrik (d.g.e.) dan beza keupayaan akibat rintangan dalam sel",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_dge_rintangan_dalam_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_dge_rintangan_dalam_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz53-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab03.html"
+    },
+    {
+      "id": "fizik-t5-bab04",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 4,
+      "title": "Keelektromagnetan",
+      "subtitle": "Subtopik 4.1–4.3 KSSM — Medan Lastik & Petua Tangan Kiri Fleming, Motor a.t. & Motor Tanpa Berus, Aruhan Elektromagnet, Hukum Faraday & Hukum Lenz, Petua Tangan Kanan Fleming, Penjana a.u./a.t., Transformer (Vs/Vp = Ns/Np), Kehilangan Tenaga & Grid Penghantaran Voltan Tinggi.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 34,
+      "unitCount": 5,
+      "stepCount": 37,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz54-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Daya Magnet ke atas Konduktor, Medan Lastik & Motor a.t.",
+          "stepTitle": "4.1 Daya atas Konduktor, Medan Lastik & Petua Tangan Kiri Fleming",
+          "caption": "Animasi 3D: Interaksi medan magnet, konduktor pembawa arus, aruhan solenoid dan teras transformer",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_keelektromagnetan.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_keelektromagnetan.mp4"
+        },
+        {
+          "unitId": "fiz54-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Aruhan Elektromagnet, Hukum Faraday-Lenz & Penjana",
+          "stepTitle": "4.2 Aruhan Elektromagnet, Gerakan Relatif & Hukum Faraday",
+          "caption": "Video Penerangan Bersuara (BM): Aruhan Elektromagnet, Hukum Lenz menentang gerakan magnet dan prinsip transformer",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_aruhan_lenz_transformer_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_aruhan_lenz_transformer_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz54-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab04.html"
+    },
+    {
+      "id": "fizik-t5-bab05",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 5,
+      "title": "Elektronik",
+      "subtitle": "Subtopik 5.1–5.3 KSSM (37 Langkah Bit-by-Bit) — Pancaran Termion & Tiub Sinar Katod (eV = ½mv²), Pesongan Medan Elektrik & Magnet, Semikonduktor Jenis-n/p & Simpang p-n, Rektifikasi Separuh & Penuh (Rektifier Titi 4 Diod) + Kapasitor, serta Transistor npn/pnp, Amplifier β & Suis Automatik LDR/Termistor.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 35,
+      "unitCount": 5,
+      "stepCount": 37,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 1,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz55-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Pancaran Termion, Sinar Katod & Tenaga Elektron",
+          "stepTitle": "5.1 Revolusi Elektronik, Pancaran Termion & Tiub Vakum",
+          "caption": "Video Penerangan Bersuara (BM): Pengenalan elektronik, pancaran termion, diod rektifier dan transistor",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab05/video/fiz55_video_elektronik_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab05/video/fiz55_video_elektronik_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz55-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab05.html"
+    },
+    {
+      "id": "fizik-t5-bab06",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 6,
+      "title": "Fizik Nuklear",
+      "subtitle": "Subtopik 6.1–6.2 KSSM — Reputan Radioaktif (α, β, γ), Separuh Hayat N = (½)ⁿN₀ & Pentarikhan Usia, Pembelahan U-235 vs Pelakuran Suria, Kecacatan Jisim E = mc², Reaktor Nuklear & Tenaga Alternatif Malaysia.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 34,
+      "unitCount": 5,
+      "stepCount": 34,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz56-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Reputan Radioaktif & Persamaan Alfa, Beta, Gama",
+          "stepTitle": "6.1 Reputan Radioaktif, Radioisotop & Tiga Jenis Sinaran",
+          "caption": "Animasi 3D: Reputan radioaktif nukleus tidak stabil serta tindak balas pembelahan dan tenaga nuklear",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_fizik_nuklear.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_fizik_nuklear.mp4"
+        },
+        {
+          "unitId": "fiz56-u2",
+          "unitNumber": 2,
+          "unitTitle": "Unit 2: Separuh Hayat (T½), Lengkung Eksponen & Aplikasi",
+          "stepTitle": "Separuh Hayat (T½), Keaktifan & Simulasi Dadu (Aktiviti 6.3)",
+          "caption": "Video Penerangan Bersuara (BM): Separuh Hayat reputan radioaktif dan kecacatan jisim menghasilkan tenaga nuklear",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_separuh_hayat_emc2_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_separuh_hayat_emc2_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz56-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab06.html"
+    },
+    {
+      "id": "fizik-t5-bab07",
+      "subject": "Fizik",
+      "subjectGroup": "sains",
+      "form": 5,
+      "chapterNumber": 7,
+      "title": "Fizik Kuantum",
+      "subtitle": "Subtopik 7.1–7.3 KSSM (37 Langkah Bit-by-Bit) — Jasad Hitam & Bencana Ultraungu, Kuanta Tenaga Max Planck E=hf, Kedualan Gelombang-Zarah & Panjang Gelombang de Broglie λ=h/p, Mikroskop Elektron, Kuasa Foton P=nhf, Kesan Fotoelektrik, Kit LED h=me/c, Persamaan Einstein hf=W+K_maks, Graf K_maks vs f serta Aplikasi Sel Suria, ISS & Pintu Automatik.",
+      "editionBadge": "Edisi Simulasi 3D & Video Interaktif",
+      "estimatedMinutes": 34,
+      "unitCount": 5,
+      "stepCount": 37,
+      "hasVoice": false,
+      "hasMultimedia": true,
+      "videoCount": 2,
+      "narratedVideoCount": 1,
+      "videos": [
+        {
+          "unitId": "fiz57-u1",
+          "unitNumber": 1,
+          "unitTitle": "Unit 1: Jasad Hitam, Bencana Ultraungu & Kuanta Tenaga",
+          "stepTitle": "7.1 Jasad Hitam, Graf Sinaran Termal & Pencetusan Idea Kuantum",
+          "caption": "Animasi 3D: Pancaran spektrum jasad hitam, paket kuanta foton dan pembebasan fotoelektron dari permukaan logam",
+          "hasNarration": false,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fizik_kuantum.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fizik_kuantum.mp4"
+        },
+        {
+          "unitId": "fiz57-u3",
+          "unitNumber": 3,
+          "unitTitle": "Unit 3: Kesan Fotoelektrik, Kit LED & 4 Ciri Eksperimen",
+          "stepTitle": "7.2 Mekanisme Kesan Fotoelektrik & Susunan Radas Sel Foto",
+          "caption": "Video Penerangan Bersuara (BM): Kesan Fotoelektrik Einstein — frekuensi ambang, pemancaran serta-merta dan keamatan cahaya",
+          "hasNarration": true,
+          "localPath": "./nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fotoelektrik_einstein_narasi.mp4",
+          "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fotoelektrik_einstein_narasi.mp4"
+        }
+      ],
+      "coverIconPath": "./nota-interaktif/assets/icons/fiz57-u1.jpg",
+      "chapterBgPath": "",
+      "htmlPath": "./nota-interaktif/dist/fizik-t5-bab07.html"
     }
   ];
 
@@ -13528,8 +14724,13 @@
     { name: "Sejarah", short: "Sejarah", slug: "sejarah", world: "Kota Warisan & Manuskrip", theme: "sejarah", img: "./images/game-map/world-sejarah.jpg" },
     { name: "Pendidikan Islam", short: "P. Islam", slug: "pendidikan-islam", world: "Taman Cahaya Ilmu", theme: "pi", img: "./images/game-map/world-pi.jpg" },
     { name: "Geografi", short: "Geografi", slug: "geografi", world: "Lembah Peta & Kompas", theme: "geo", img: "./images/game-map/world-geo.jpg" },
-    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "sains", img: "./images/game-map/world-sains.jpg" }
+    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "sains", img: "./images/game-map/world-sains.jpg" },
+    { name: "Kimia", short: "Kimia", slug: "kimia", world: "Makmal Molekul & Reaksi", theme: "sains", img: "./images/game-map/world-sains.jpg" },
+    { name: "Biologi", short: "Biologi", slug: "biologi", world: "Taman Sel & Ekosistem", theme: "geo", img: "./images/game-map/world-geo.jpg" },
+    { name: "Matematik Tambahan", short: "Add Math", slug: "matematik-tambahan", world: "Menara Kalkulus & Vektor", theme: "math", img: "./images/game-map/world-math.jpg" },
+    { name: "Pendidikan Moral", short: "P. Moral", slug: "pendidikan-moral", world: "Balai Etika & Integriti", theme: "sejarah", img: "./images/game-map/world-sejarah.jpg" }
   ];
+  const ET_EQ_UPPER_SLUGS = ["fizik", "kimia", "biologi", "matematik-tambahan", "pendidikan-moral"];
 
   let etEqManifestCache_ = null;
   let etEqManifestPromise_ = null;
@@ -13545,7 +14746,7 @@
     const n = Number(formNum) || 5;
     return ET_EQ_SUBJ_DEFS.filter(function (d) {
       if (d.slug === "geografi") return n <= 3;
-      if (d.slug === "fizik") return n === 4;
+      if (ET_EQ_UPPER_SLUGS.indexOf(d.slug) !== -1) return n >= 4;
       return true;
     });
   }
@@ -13646,14 +14847,14 @@
     });
 
     let babs = Object.keys(byBab).map(Number).sort(function (a, b) { return a - b; });
-    if (!babs.length && def.slug !== "fizik") {
+    if (!babs.length && ET_EQ_UPPER_SLUGS.indexOf(def.slug) === -1) {
       [1, 2].forEach(function (b) {
         byBab[b] = { bab: b, kssm: { form: num, subject: def.name, subjectSlug: def.slug, bab: b, title: "Bab " + b + " " + def.name, url: "/kssm/tingkatan-" + num + "/" + def.slug + "/bab-" + b + "/", playableNoteId: "" } };
       });
       babs = [1, 2];
     }
 
-    let clearedCount = 0, fullStarCount = 0, totalStars = 0;
+    let clearedCount = 0, fullStarCount = 0, totalStars = 0, totalVideos = 0;
     const chapters = babs.map(function (b) {
       const slot = byBab[b], k = slot.kssm, n = slot.nota;
       const key = def.slug + "-t" + num + "-bab-" + b;
@@ -13664,6 +14865,8 @@
       const nXp = nRec ? Math.max(0, Number(nRec.xp) || 0) : 0;
       const stars = Math.max(etEqCalcChapterStars(kRec), etEqCalcNotaStars(nRec, n && n.unitCount));
       const earnedXp = Math.max(kXp, nXp);
+      const videoCount = (n && Number(n.videoCount)) || 0;
+      totalVideos += videoCount;
       if (stars > 0 || earnedXp > 0) clearedCount += 1;
       if (stars === 3) fullStarCount += 1;
       totalStars += stars;
@@ -13671,7 +14874,7 @@
       const tajukId = notaId || key;
       const href = "./eduquest/?form=" + num + "&subject=" + encodeURIComponent(def.slug) + "&tajuk=" + encodeURIComponent(tajukId);
       return {
-        key: key, bab: b, notaId: notaId, isNotaOnly: isNotaOnly,
+        key: key, bab: b, notaId: notaId, isNotaOnly: isNotaOnly, videoCount: videoCount,
         title: (n && n.title) || (k && k.title) || ("Bab " + b),
         href: href, earnedXp: earnedXp, stars: stars,
         isCleared: stars > 0 || earnedXp > 0, isFull: stars === 3
@@ -13684,7 +14887,7 @@
     return {
       formNum: num, subject: def, chapters: chapters, totalChapters: totalChapters,
       clearedCount: clearedCount, fullStarCount: fullStarCount, totalStars: totalStars,
-      maxStars: maxStars, pct: pct,
+      maxStars: maxStars, pct: pct, totalVideos: totalVideos,
       nextChapter: chapters.find(function (c) { return c.stars < 3; }) || chapters[0],
       eduquestHref: "./eduquest/?form=" + num + "&subject=" + encodeURIComponent(def.slug)
     };
@@ -13776,6 +14979,7 @@
       '    <div class="et-eq-subj-bar" role="group" aria-label="Pilih Subjek EduQuest">' + subjPillsHtml + "</div>",
       '    <div class="et-eq-clr-cta-row">',
       '      <a class="et-eq-play-cta is-clr-cta" href="' + escapeHtml(clr.eduquestHref) + '">' + etEqIconSvg("map") + "<span>Buka EduQuest " + escapeHtml(clr.subject.short) + " &rarr;</span></a>",
+      (clr.totalVideos > 0 ? '      <span class="et-eq-clr-pct-pill tabular-nums">' + clr.totalVideos + " Video Penerangan</span>" : ""),
       '      <span class="et-eq-clr-pct-pill tabular-nums">' + clr.clearedCount + "/" + clr.totalChapters + " Bab &bull; " + clr.pct + "%</span>",
       "    </div>",
       '    <div class="et-eq-clr-body">',
@@ -14142,6 +15346,7 @@
       '    <div class="et-eq-subj-bar" role="group" aria-label="Pilih Subjek EduQuest">' + subjPills + "</div>",
       '    <div class="et-eq-clr-cta-row">',
       '      <a class="et-eq-play-cta is-phone-block" style="margin:0;inline-size:100%;text-decoration:none" href="' + escapeHtml(clr.eduquestHref) + '">' + etEqIconSvg("map") + "<span>BUKA EDUQUEST " + escapeHtml(clr.subject.short.toUpperCase()) + " &rarr;</span></a>",
+      (clr.totalVideos > 0 ? '      <span class="et-eq-clr-pct-pill tabular-nums">' + clr.totalVideos + " Video Penerangan</span>" : ""),
       "    </div>",
       '    <div class="et-eq-clr-body">',
       '      <div class="et-eq-clr-chips">' + chapChips + "</div>",

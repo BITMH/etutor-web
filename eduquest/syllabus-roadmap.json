@@ -78,6 +78,15 @@
     "Gelombang",
     "Cahaya dan Optik"
   ],
+  "T5:fizik": ["Daya dan Gerakan II", "Tekanan", "Elektrik", "Keelektromagnetan", "Elektronik", "Fizik Nuklear", "Fizik Kuantum"],
+  "T4:kimia": ["Pengenalan kepada Kimia", "Jirim dan Struktur Atom", "Konsep Mol, Formula dan Persamaan Kimia", "Jadual Berkala Unsur", "Ikatan Kimia", "Asid, Bes dan Garam", "Kadar Tindak Balas", "Bahan Buatan dalam Industri"],
+  "T5:kimia": ["Keseimbangan Redoks", "Sebatian Karbon", "Termokimia", "Polimer", "Kimia Konsumer dan Industri"],
+  "T4:biologi": ["Pengenalan kepada Biologi dan Peraturan Makmal", "Biologi Sel dan Organisasi Sel", "Pergerakan Bahan Merentasi Membran Plasma", "Komposisi Kimia dalam Sel", "Metabolisme dan Enzim", "Pembahagian Sel", "Respirasi Sel", "Sistem Respirasi dalam Manusia dan Haiwan", "Nutrisi dan Sistem Pencernaan Manusia", "Pengangkutan dalam Manusia dan Haiwan", "Keimunan Manusia", "Koordinasi dan Gerak Balas dalam Manusia", "Homeostasis dan Sistem Urinari Manusia", "Sokongan dan Pergerakan dalam Manusia dan Haiwan", "Pembiakan Seks, Perkembangan dan Pertumbuhan dalam Manusia dan Haiwan"],
+  "T5:biologi": ["Organisasi Tisu Tumbuhan dan Pertumbuhan", "Struktur dan Fungsi Daun", "Nutrisi dalam Tumbuhan", "Pengangkutan dalam Tumbuhan", "Gerak Balas dalam Tumbuhan", "Pembiakan Seks dalam Tumbuhan Berbunga", "Penyesuaian Tumbuhan pada Habitat Berlainan", "Biodiversiti", "Ekosistem", "Kelestarian Alam Sekitar", "Pewarisan", "Variasi", "Teknologi Genetik"],
+  "T4:matematik-tambahan": ["Fungsi", "Fungsi Kuadratik", "Sistem Persamaan", "Indeks, Surd dan Logaritma", "Janjang", "Hukum Linear", "Geometri Koordinat", "Vektor", "Penyelesaian Segi Tiga", "Nombor Indeks"],
+  "T5:matematik-tambahan": ["Sukatan Membulat", "Pembezaan", "Pengamiran", "Pilih Atur dan Gabungan", "Taburan Kebarangkalian", "Fungsi Trigonometri", "Pengaturcaraan Linear", "Kinematik Gerakan Linear"],
+  "T4:pendidikan-moral": ["Norma Masyarakat Pemangkin Kesejahteraan", "Peribadi Mulia Hiasan Diri", "Prinsip Keadilan dan Keprihatinan dalam Membuat Keputusan", "Penggunaan Teknologi Maklumat dan Komunikasi Secara Beretika", "Mantap Integriti Mantaplah Jati Diri", "Keluarga Berintegriti Keluarga Disegani", "Berperikemanusiaan Membentuk Masyarakat Sejahtera", "Hak dan Tanggungjawab Warganegara", "Perpaduan Masyarakat Asas Kemakmuran Negara", "Pengurusan Perbelanjaan Secara Beretika", "Keunikan Rakyat Malaysia", "Kedaulatan Negara Tanggungjawab Bersama"],
+  "T5:pendidikan-moral": ["Norma Masyarakat Global Membentuk Keharmonian Sejagat", "Ukir Nama di Mata Dunia, Jati Diri Berpisah Tiada", "Kerohanian Membentuk Individu Bermoral", "Penggunaan Sumber dan Penyebaran Maklumat demi Kesejahteraan Sejagat", "Integriti Pemacu Kecemerlangan Organisasi", "Pembangunan Negara Bertunjangkan Integriti", "Berperikemanusiaan Pemangkin Kesejahteraan Global", "Penglibatan Diri Peneraju Komuniti", "Kerjasama Masyarakat Global", "Pengurusan Kewangan Secara Beretika Menjamin Keharmonian Hidup", "Malaysia Unggul di Mata Dunia", "Malaysia dalam Hubungan Antarabangsa"],
   "T5:bahasa-melayu": [
     "Anda Bersih, Anda Sihat",
     "Sukan dan Rekreasi",

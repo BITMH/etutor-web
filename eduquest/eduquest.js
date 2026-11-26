@@ -7,8 +7,13 @@
     { name: "Sejarah", short: "Sejarah", slug: "sejarah", world: "Kota Warisan & Manuskrip", theme: "sejarah", img: "../images/game-map/world-sejarah.jpg" },
     { name: "Pendidikan Islam", short: "P. Islam", slug: "pendidikan-islam", world: "Taman Cahaya Ilmu", theme: "pi", img: "../images/game-map/world-pi.jpg" },
     { name: "Geografi", short: "Geografi", slug: "geografi", world: "Lembah Peta & Kompas", theme: "geo", img: "../images/game-map/world-geo.jpg" },
-    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "sains", img: "../images/game-map/world-sains.jpg" }
+    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "sains", img: "../images/game-map/world-sains.jpg" },
+    { name: "Kimia", short: "Kimia", slug: "kimia", world: "Makmal Molekul & Reaksi", theme: "sains", img: "../images/game-map/world-sains.jpg" },
+    { name: "Biologi", short: "Biologi", slug: "biologi", world: "Taman Sel & Ekosistem", theme: "geo", img: "../images/game-map/world-geo.jpg" },
+    { name: "Matematik Tambahan", short: "Add Math", slug: "matematik-tambahan", world: "Menara Kalkulus & Vektor", theme: "math", img: "../images/game-map/world-math.jpg" },
+    { name: "Pendidikan Moral", short: "P. Moral", slug: "pendidikan-moral", world: "Balai Etika & Integriti", theme: "sejarah", img: "../images/game-map/world-sejarah.jpg" }
   ];
+  var UPPER_SLUGS = ["fizik", "kimia", "biologi", "matematik-tambahan", "pendidikan-moral"];
   var LOCK_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" d="M8 11V7a4 4 0 018 0v4"/></svg>';
 
   var kssmList = [], notaList = [], roadmap = {}, activeForm = 5, activeSlug = "sains", activeTajuk = "", activeNoteId = "", pendingDeepTajuk = "";
@@ -22,7 +27,7 @@
     var p = (d / t) * 100;
     return p >= 80 ? 3 : (p >= 50 ? 2 : ((d > 0 || (Number(rec.xp) || 0) > 0) ? 1 : 0));
   }
-  function validSubjs(f) { return SUBJ_DEFS.filter(function (s) { return s.slug === "geografi" ? f <= 3 : (s.slug === "fizik" ? f === 4 : true); }); }
+  function validSubjs(f) { return SUBJ_DEFS.filter(function (s) { return s.slug === "geografi" ? f <= 3 : (UPPER_SLUGS.indexOf(s.slug) !== -1 ? f >= 4 : true); }); }
   function getSubjDef(slug) { return SUBJ_DEFS.find(function (s) { return s.slug === slug; }) || SUBJ_DEFS[0]; }
 
   function initFromQuery() {
@@ -72,7 +77,7 @@
       }
     });
     var babs = Object.keys(byBab).map(Number).sort(function (a, b) { return a - b; });
-    if (!babs.length && activeSlug !== "fizik") {
+    if (!babs.length && UPPER_SLUGS.indexOf(activeSlug) === -1) {
       [1, 2].forEach(function (b) {
         byBab[b] = { bab: b, kssm: { form: activeForm, subjectSlug: activeSlug, bab: b, title: "Bab " + b + " " + def.name, url: "/kssm/tingkatan-" + activeForm + "/" + activeSlug + "/bab-" + b + "/", playableNoteId: "" } };
       });
@@ -116,7 +121,8 @@
       return s + (Number(notaProg[k] && notaProg[k].xp) || 0);
     }, 0);
 
-    var slots = mergeChapters(def), cleared = 0, starsSum = 0, unlockedCount = 0, activeFound = false;
+    if (window.etEqVideo) window.etEqVideo.reset();
+    var slots = mergeChapters(def), cleared = 0, starsSum = 0, unlockedCount = 0, activeFound = false, totalVideos = 0;
     var enriched = slots.map(function (slot) {
       var k = slot.kssm, n = slot.nota, bab = slot.bab, locked = !k && !n;
       var kRec = kMap[activeSlug + "-t" + activeForm + "-bab-" + bab] || null;
@@ -124,18 +130,23 @@
       var nRec = notaId ? (notaProg[notaId] || null) : null;
       var xp = Math.max(kRec ? (Number(kRec.earnedXp) || 0) : 0, nRec ? (Number(nRec.xp) || 0) : 0);
       var stars = locked ? 0 : Math.max(calcStars(kRec && kRec.earnedXp), calcNotaStars(nRec, n && n.unitCount));
+      var videos = (!locked && n && Array.isArray(n.videos)) ? n.videos : [];
       if (!locked) unlockedCount += 1;
       if (!locked && (stars > 0 || xp > 0)) cleared += 1;
       starsSum += stars;
+      totalVideos += videos.length;
       var isCurrent = false;
       if (!locked && !activeFound && stars < 3) { isCurrent = true; activeFound = true; }
       var bgImg = (n && n.chapterBgPath) ? ("../" + String(n.chapterBgPath).replace(/^\.\//, "")) : def.img;
+      var chTitle = (n && n.title) || (k && k.title) || slot.roadmapTitle || ("Bab " + bab);
+      if (notaId && videos.length && window.etEqVideo) {
+        window.etEqVideo.register(notaId, { title: "Bab " + bab + ": " + chTitle, notaSrc: "../nota-interaktif/dist/" + encodeURIComponent(notaId) + ".html", videos: videos });
+      }
       return {
-        bab: bab, kssm: k, nota: n, notaId: notaId, locked: locked, bgImg: bgImg,
+        bab: bab, kssm: k, nota: n, notaId: notaId, locked: locked, bgImg: bgImg, videos: videos,
         kssmTajuk: activeSlug + "-t" + activeForm + "-bab-" + bab,
         tajukId: notaId || (activeSlug + "-t" + activeForm + "-bab-" + bab),
-        title: (n && n.title) || (k && k.title) || slot.roadmapTitle || ("Bab " + bab),
-        xp: xp, stars: stars, isCurrent: isCurrent
+        title: chTitle, xp: xp, stars: stars, isCurrent: isCurrent
       };
     });
 
@@ -153,9 +164,11 @@
       var primaryNoteId = hasNota ? item.notaId : "";
       var primaryTajuk = hasNota ? item.notaId : item.kssmTajuk;
       var btnTxt = item.stars === 3 ? "Ulang Kaji" : (item.stars > 0 ? "Ulang Untuk 3\u2605" : (hasNota ? "Mula Nota Bab " + item.bab : "Mula Bab " + item.bab));
+      var videoBtn = (!item.locked && window.etEqVideo) ? window.etEqVideo.buildActionBtn(item.notaId, item.videos) : "";
       var actions = item.locked
         ? '<button type="button" class="eq-node-btn is-locked-btn" disabled>Akan Dibuka Berperingkat</button>'
         : ('<button type="button" class="eq-node-btn" data-open-tajuk="' + esc(primaryTajuk) + '" data-src="' + esc(primarySrc) + '" data-title="' + esc("Bab " + item.bab + ": " + item.title) + '" data-note-id="' + esc(primaryNoteId) + '">' + btnTxt + "</button>" +
+          videoBtn +
           (hasNota && kssmSrc ? '<button type="button" class="eq-node-note-btn" data-open-tajuk="' + esc(item.kssmTajuk) + '" data-src="' + esc(kssmSrc) + '" data-title="' + esc("Latihan Bab " + item.bab + ": " + item.title) + '" data-note-id="">Latihan Teks &amp; MCQ</button>' : ""));
       var medBtn = item.locked
         ? '<span class="eq-pin-medallion" aria-label="Bab ' + item.bab + ' Terkunci">' + medInner + "</span>"
@@ -174,6 +187,8 @@
     document.getElementById("eqClrSummary").textContent = cleared + " / " + unlockedCount + " Bab Terbuka Selesai";
     document.getElementById("eqClrPct").textContent = pct + "%";
     document.getElementById("eqClrFill").style.width = Math.max(6, pct) + "%";
+    var vidHud = document.getElementById("eqHudVideoCount");
+    if (vidHud) { vidHud.textContent = totalVideos + " Video"; vidHud.hidden = totalVideos <= 0; }
     document.getElementById("eqHudTotalXp").textContent = totalXpAll.toLocaleString("en-MY") + " XP";
     document.getElementById("eqHudTotalStars").textContent = starsSum + " / " + maxStars + " \u2605";
 
@@ -243,6 +258,16 @@
       closePlayer(false);
     }
   });
+
+  window.etEqOpenChapterFromVideo = function (notaId) {
+    var btns = document.querySelectorAll("[data-note-id]");
+    for (var i = 0; i < btns.length; i++) {
+      if (btns[i].getAttribute("data-note-id") === notaId) {
+        openPlayer(btns[i].getAttribute("data-src"), btns[i].getAttribute("data-title"), btns[i].getAttribute("data-open-tajuk"), notaId, true);
+        return;
+      }
+    }
+  };
 
   initFromQuery(); syncUrl(false, pendingDeepTajuk);
   var grab = function (u) { return fetch(u).then(function (r) { return r && r.ok ? r.json() : null; }).catch(function () { return null; }); };

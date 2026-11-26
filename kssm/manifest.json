@@ -574,7 +574,7 @@
       "bab": 2,
       "title": "Asas Nombor (Penukaran Asas 2 hingga 9 & Operasi)",
       "summary": "Menguasai perwakilan nombor dalam asas 2 hingga 9, penentuan nilai tempat dan nilai digit bⁿ, penukaran pantas antara asas (melalui asas 10 dan kaedah blok 3-bit antara asas 2 dengan asas 8) serta bentuk lazim penambahan dan penolakan pelbagai asas.",
-      "playableNoteId": "",
+      "playableNoteId": "matematik-t4-bab02",
       "mcqCount": 10,
       "essayCount": 2
     },
@@ -706,7 +706,7 @@
       "bab": 1,
       "title": "Ubahan (Ubahan Langsung, Songsang & Bergabung)",
       "summary": "Menguasai perwakilan simbol ubahan (∝) dan persamaan pemalar (k) bagi Ubahan Langsung (y = kxⁿ), Ubahan Tercantum (y = kxᵐzⁿ), Ubahan Songsang (y = k/xⁿ) serta Ubahan Bergabung (y = kxᵐ/zⁿ), tafsiran graf garis lurus dari asalan dan hukum sains (Hukum Charles & Boyle).",
-      "playableNoteId": "",
+      "playableNoteId": "matematik-t5-bab01",
       "mcqCount": 10,
       "essayCount": 2
     },
@@ -718,7 +718,7 @@
       "bab": 2,
       "title": "Matriks (Operasi Asas & Matriks Songsang)",
       "summary": "Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks.",
-      "playableNoteId": "",
+      "playableNoteId": "matematik-t5-bab02",
       "mcqCount": 10,
       "essayCount": 2
     },

@@ -12,7 +12,7 @@
     classDetail: null,
     activeTab: "classes",
     activeAssignmentId: "",
-    manifests: { kssm: [], nota: [] }
+    manifests: { kssm: [], nota: [], klon: [], trial: [] }
   };
 
   function toast(msg) {
@@ -110,7 +110,8 @@
       return;
     }
     Auth.showScreen("app", state.profile, false);
-    state.manifests = await Api.loadContentManifests();
+    var resAll = await Promise.all([Api.loadContentManifests(), Api.loadQuizCatalog()]);
+    state.manifests = Object.assign({}, resAll[0], resAll[1]);
     await reloadClasses("");
   }
 

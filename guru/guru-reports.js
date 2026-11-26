@@ -29,11 +29,11 @@
 
     var doneSubs = subs.filter(function (s) { return s.status === "submitted" || s.status === "graded"; });
     var pctDone = subs.length ? Math.round((doneSubs.length / subs.length) * 100) : 0;
-    var scored = subs.filter(function (s) { return s.teacherScore !== null || s.autoMcqScore !== null; });
+    var scored = subs.filter(function (s) { return s.teacherScore !== null || s.quizPercentage != null || s.autoMcqScore !== null; });
     var avgPct = scored.length ? Math.round(scored.reduce(function (sum, s) {
-      var sc = s.teacherScore !== null ? Number(s.teacherScore) : Number(s.autoMcqScore || 0);
-      var mx = Math.max(1, Number(s.teacherMaxScore || s.autoMcqTotal || 10));
-      return sum + (sc / mx) * 100;
+      if (s.teacherScore !== null) return sum + (Number(s.teacherScore) / Math.max(1, Number(s.teacherMaxScore || 10))) * 100;
+      if (s.quizPercentage != null) return sum + Number(s.quizPercentage);
+      return sum + (Number(s.autoMcqScore || 0) / Math.max(1, Number(s.autoMcqTotal || 10))) * 100;
     }, 0) / scored.length) : 0;
 
     var tpReady = subs.filter(function (s) { return Number(s.teacherTp || R.suggestTpClient(s) || 0) >= 3; }).length;
@@ -50,11 +50,13 @@
       var cells = assigns.map(function (a) {
         var sub = subs.find(function (s) { return s.assignmentId === a.id && s.studentId === st.studentId; });
         var tp = sub && (sub.teacherTp || R.suggestTpClient(sub));
-        var sc = sub && (sub.teacherScore !== null ? sub.teacherScore : sub.autoMcqScore);
-        var mx = sub ? (sub.teacherMaxScore || sub.autoMcqTotal || 10) : 10;
+        var hasQuiz = sub && sub.quizPercentage != null;
+        var sc = sub && (sub.teacherScore !== null ? sub.teacherScore : (hasQuiz ? sub.quizPercentage : sub.autoMcqScore));
+        var mx = sub ? (sub.teacherMaxScore || (hasQuiz ? 100 : (sub.autoMcqTotal || 10))) : 10;
         if (!sub || (sub.status === "not_started" && !tp)) return '<td><span class="g-muted">—</span></td>';
         var pillCls = tp >= 5 ? "g-pill-green" : (tp >= 3 ? "g-pill-blue" : "g-pill-amber");
-        var label = (sub.teacherTp ? "TP" + tp : (tp ? "~TP" + tp : "Hantar")) + (sc !== null && sc !== undefined ? " (" + sc + "/" + mx + ")" : "");
+        var scoreLbl = sc !== null && sc !== undefined ? (mx === 100 ? (" (" + sc + "%)") : (" (" + sc + "/" + mx + ")")) : "";
+        var label = (sub.teacherTp ? "TP" + tp : (tp ? "~TP" + tp : "Hantar")) + scoreLbl;
         return '<td><span class="g-pill ' + pillCls + '">' + R.esc(label) + "</span></td>";
       }).join("");
       return "<tr><td>" + (idx + 1) + "</td><td><strong>" + R.esc(st.studentName) + "</strong></td>" + cells + "</tr>";
@@ -102,8 +104,8 @@
         lines.push([
           cls.className, cls.subject, st.studentName, a.title, a.dskpRef || "",
           s.status || "not_started",
-          s.teacherScore !== null && s.teacherScore !== undefined ? s.teacherScore : (s.autoMcqScore != null ? s.autoMcqScore : ""),
-          s.teacherMaxScore || s.autoMcqTotal || "",
+          s.teacherScore !== null && s.teacherScore !== undefined ? s.teacherScore : (s.quizPercentage != null ? s.quizPercentage : (s.autoMcqScore != null ? s.autoMcqScore : "")),
+          s.teacherMaxScore || (s.quizPercentage != null ? 100 : (s.autoMcqTotal || "")),
           s.notaCompleted ? "Siap" : "Belum",
           s.eduquestStars || 0,
           sugTp ? "TP" + sugTp : "",

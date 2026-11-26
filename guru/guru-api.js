@@ -3,6 +3,7 @@
 
   var cachedClient = null;
   var cachedManifests = null;
+  var cachedQuizCatalog = null;
 
   function getSb() {
     if (cachedClient) return cachedClient;
@@ -39,6 +40,68 @@
     return cachedManifests;
   }
 
+  function splitQuizCatalog(rawList) {
+    var klon = [], trial = [];
+    (Array.isArray(rawList) ? rawList : []).forEach(function (it) {
+      if (!it || !it.fileId) return;
+      var rec = {
+        fileId: String(it.fileId),
+        title: String(it.cleanTitle || it.title || it.fileName || "Set Soalan SPM"),
+        subject: String(it.subject || "SPM"),
+        setCode: String(it.setCode || ""),
+        stateOrSource: String(it.stateOrSource || ""),
+        year: String(it.year || "")
+      };
+      if (it.category === "klon") klon.push(rec);
+      else trial.push(rec);
+    });
+    return { klon: klon, trial: trial };
+  }
+
+  async function loadQuizCatalog() {
+    if (cachedQuizCatalog) return cachedQuizCatalog;
+    var items = [];
+    try {
+      var snap = localStorage.getItem("etutor_live_catalog_v1");
+      var parsed = snap ? JSON.parse(snap) : null;
+      if (parsed && Array.isArray(parsed.items) && parsed.items.length) items = parsed.items;
+    } catch (_) {}
+
+    if (!items.length) {
+      var sb = getSb();
+      if (sb) {
+        try {
+          var rpc = await sb.rpc("get_cached_quiz_catalog");
+          if (rpc && !rpc.error && rpc.data && rpc.data.ok && Array.isArray(rpc.data.catalog)) {
+            items = rpc.data.catalog;
+          }
+        } catch (_) {}
+      }
+    }
+
+    if (!items.length) {
+      var host = (window.location && window.location.hostname) || "";
+      var isLocal = /^(localhost|127\.0\.0\.1)$/i.test(host);
+      var gasUrl = (window.ETUTOR_CONFIG && window.ETUTOR_CONFIG.GAS_WEB_APP_URL) || "";
+      var endpoint = isLocal ? "/api" : gasUrl;
+      if (endpoint) {
+        try {
+          var resp = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ action: "publicDashboard" }),
+            redirect: "follow"
+          });
+          var data = resp.ok ? await resp.json() : null;
+          if (data && data.ok && Array.isArray(data.catalog)) items = data.catalog;
+        } catch (_) {}
+      }
+    }
+
+    cachedQuizCatalog = splitQuizCatalog(items);
+    return cachedQuizCatalog;
+  }
+
   window.ETGuruApi = {
     getSb: getSb,
     getTeacherProfile: function () { return callRpc("get_teacher_profile"); },
@@ -54,6 +117,7 @@
     createAssignment: function (p) { return callRpc("teacher_create_assignment", p); },
     getClassDetail: function (classId) { return callRpc("teacher_get_class_detail", { p_class_id: classId }); },
     gradeSubmission: function (p) { return callRpc("teacher_grade_submission", p); },
-    loadContentManifests: loadContentManifests
+    loadContentManifests: loadContentManifests,
+    loadQuizCatalog: loadQuizCatalog
   };
 })();

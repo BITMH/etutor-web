@@ -18592,12 +18592,15 @@
 
   function buildTaskLaunchHref_(task) {
     const cfg = (task && task.targetConfig && typeof task.targetConfig === "object") ? task.targetConfig : {};
+    if (cfg.fileId) {
+      return "./?fileId=" + encodeURIComponent(cfg.fileId) + "&open=1#portal";
+    }
     const form = Number(cfg.form) || Number(String(task.formCode || "T5").replace(/\D/g, "")) || 5;
     const slug = cfg.subjectSlug || task.subjectSlug || "matematik";
     const bab = Number(cfg.bab) || 1;
     const chapKey = cfg.chapterKey || (slug + "-t" + form + "-bab-" + bab);
     if (task.assignmentType === "eduquest_nota" && cfg.notaId) {
-      return "./eduquest/?form=" + form + "&subject=" + encodeURIComponent(slug) + "&tajuk=" + encodeURIComponent(cfg.notaId);
+      return "./?nota=" + encodeURIComponent(cfg.notaId) + "&open=1#portal";
     }
     return "./eduquest/?form=" + form + "&subject=" + encodeURIComponent(slug) + "&tab=latihan&tajuk=" + encodeURIComponent(chapKey);
   }
@@ -18608,11 +18611,13 @@
     const badgeCls = isGraded ? "is-done" : (isSub ? "is-done" : "is-due");
     const statusTxt = isGraded
       ? ("Disahkan" + (task.teacherTp ? " • TP" + task.teacherTp : ""))
-      : (isSub ? "Sudah Hantar" : "Belum Siap");
+      : (isSub ? "Sudah Hantar" : (task.status === "in_progress" ? "Sedang Buat" : "Belum Siap"));
     const dueTxt = task.dueAt ? (" • Tamat: " + String(task.dueAt).slice(0, 10)) : "";
-    const scoreTxt = (task.autoMcqScore !== null && task.autoMcqScore !== undefined)
-      ? ("Skor MCQ: " + task.autoMcqScore + "/" + (task.autoMcqTotal || 10))
-      : "";
+    const scoreTxt = (task.quizPercentage !== null && task.quizPercentage !== undefined)
+      ? ("Skor: " + (task.quizScoreText || (task.quizPercentage + "%")) + (task.quizGrade ? " (" + task.quizGrade + ")" : ""))
+      : ((task.autoMcqScore !== null && task.autoMcqScore !== undefined)
+        ? ("Skor MCQ: " + task.autoMcqScore + "/" + (task.autoMcqTotal || 10))
+        : (task.progressAnswered ? ("Kemajuan: " + task.progressAnswered + "/" + (task.progressTotal || 40)) : ""));
     const href = buildTaskLaunchHref_(task);
 
     return '<article class="st-task-item' + (isGraded ? " is-graded" : "") + '">' +

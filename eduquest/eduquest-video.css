@@ -36,17 +36,24 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   padding: 16px;
   background: rgba(2, 6, 23, 0.82);
   backdrop-filter: blur(10px);
 }
 
 .eq-video-dialog {
-  width: min(94vw, 820px);
+  width: 100%;
+  max-width: min(820px, calc(100vw - 32px));
+  min-width: 0;
   max-height: 92dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 20px;
   background: linear-gradient(160deg, #0b1e46 0%, #06122c 100%);
   border: 1.5px solid rgba(125, 211, 252, 0.42);
@@ -117,6 +124,8 @@
 
 .eq-video-stage {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
@@ -126,6 +135,8 @@
 
 .eq-video-player {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: 100%;
   display: block;
   object-fit: contain;
@@ -137,16 +148,20 @@
   font-size: 0.84rem;
   line-height: 1.45;
   color: #e2e8f0;
+  overflow-wrap: anywhere;
 }
 
 .eq-video-playlist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  min-width: 0;
   gap: 8px;
 }
 
 .eq-video-ep {
   text-align: left;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 9px 11px;
   border-radius: 12px;
   border: 1.5px solid rgba(148, 163, 184, 0.28);
@@ -189,6 +204,7 @@
   }
   .eq-video-dialog {
     width: 100%;
+    max-width: calc(100vw - 16px);
     padding: 13px 13px 15px;
     border-radius: 16px;
   }

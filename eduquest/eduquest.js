@@ -209,6 +209,7 @@
     if (latEl) latEl.hidden = (activeSection !== "latihan");
     if (tabNota) { tabNota.classList.toggle("is-active", activeSection === "nota"); tabNota.setAttribute("aria-selected", String(activeSection === "nota")); }
     if (tabLat) { tabLat.classList.toggle("is-active", activeSection === "latihan"); tabLat.setAttribute("aria-selected", String(activeSection === "latihan")); }
+    if (window.etEqWorldBg) window.etEqWorldBg.sync();
 
     if (pendingDeepTajuk) {
       var reqTajuk = pendingDeepTajuk;

@@ -15,20 +15,13 @@
     if (countEl) countEl.textContent = String(items.length);
     if (!stage) return;
 
-    var headHtml =
-      '<div class="eq-latihan-head">' +
-      '  <div>' +
-      '    <span class="eq-latihan-kicker">SEKSYEN BERASINGAN &bull; KSSM TINGKATAN ' + activeForm + "</span>" +
-      '    <h2 class="eq-latihan-title">Latihan Teks &amp; MCQ &bull; ' + esc(def.name) + "</h2>" +
-      '    <p class="eq-latihan-sub">Latih tubi nota buku teks KPM &amp; 10 soalan objektif MCQ berhuraian mengikut bab — diasingkan daripada peta Nota EduQuest.</p>' +
-      "  </div>" +
-      "</div>";
+    var headHtml = '<h2 class="eq-latihan-title">Latihan Teks &amp; MCQ &bull; ' + esc(def.name) + "</h2>";
 
     if (!items.length) {
       stage.innerHTML = headHtml +
         '<div class="eq-latihan-empty">' +
-        "  <p>Set Latihan Teks &amp; MCQ khusus untuk " + esc(def.name) + " Tingkatan " + activeForm + " sedang disiapkan. Gunakan Peta Nota EduQuest untuk meneroka nota visual interaktif bab ini.</p>" +
-        '  <button type="button" class="eq-node-btn" data-eq-section="nota">Kembali ke Peta Nota EduQuest</button>' +
+        "  <p>Tiada set latihan untuk subjek ini buat masa ini.</p>" +
+        '  <button type="button" class="eq-node-btn" data-eq-section="nota">Peta Nota EduQuest</button>' +
         "</div>";
       return;
     }

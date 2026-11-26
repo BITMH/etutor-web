@@ -7322,6 +7322,11 @@ html[data-phone-app="true"] #dashboardView:not([hidden]) { min-block-size: 0 !im
 .et-eq-map-card[data-eq-theme="sejarah"] { background: linear-gradient(155deg, rgba(120, 53, 15, 0.92), rgba(23, 23, 38, 0.95)); border-color: rgba(251, 191, 36, 0.45); }
 .et-eq-map-card[data-eq-theme="pi"] { background: linear-gradient(155deg, rgba(4, 120, 87, 0.92), rgba(12, 25, 44, 0.95)); border-color: rgba(110, 231, 183, 0.45); }
 .et-eq-map-card[data-eq-theme="geo"] { background: linear-gradient(155deg, rgba(21, 128, 61, 0.9), rgba(12, 25, 44, 0.95)); border-color: rgba(134, 239, 172, 0.45); }
+.et-eq-map-card[data-eq-theme="fizik"] { background: linear-gradient(155deg, rgba(3, 105, 161, 0.94), rgba(8, 32, 72, 0.96)); border-color: rgba(56, 189, 248, 0.5); }
+.et-eq-map-card[data-eq-theme="kimia"] { background: linear-gradient(155deg, rgba(109, 40, 217, 0.92), rgba(30, 19, 72, 0.96)); border-color: rgba(192, 132, 252, 0.5); }
+.et-eq-map-card[data-eq-theme="biologi"] { background: linear-gradient(155deg, rgba(5, 150, 105, 0.92), rgba(5, 46, 43, 0.96)); border-color: rgba(52, 211, 153, 0.5); }
+.et-eq-map-card[data-eq-theme="addmath"] { background: linear-gradient(155deg, rgba(49, 46, 129, 0.95), rgba(15, 16, 53, 0.97)); border-color: rgba(250, 204, 21, 0.5); }
+.et-eq-map-card[data-eq-theme="moral"] { background: linear-gradient(155deg, rgba(180, 83, 9, 0.9), rgba(42, 24, 16, 0.95)); border-color: rgba(252, 211, 77, 0.5); }
 .et-eq-clr-hero {
   position: relative; block-size: 210px; overflow: hidden; border-bottom: 1px solid rgba(125, 211, 252, 0.25);
 }

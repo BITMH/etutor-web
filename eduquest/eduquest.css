@@ -52,6 +52,16 @@ body[data-theme="pi"] { --eq-bg-top: #047857; --eq-bg-bot: #082623; --eq-accent:
 body[data-theme="pi"] .eq-scroll-tile { background-image: url("../images/game-map/world-pi.jpg"); }
 body[data-theme="geo"] { --eq-bg-top: #15803d; --eq-bg-bot: #092418; --eq-accent: #86efac; }
 body[data-theme="geo"] .eq-scroll-tile { background-image: url("../images/game-map/world-geo.jpg"); }
+body[data-theme="fizik"] { --eq-bg-top: #0369a1; --eq-bg-bot: #082048; --eq-accent: #38bdf8; }
+body[data-theme="fizik"] .eq-scroll-tile { background-image: url("../images/game-map/world-fizik.jpg"); }
+body[data-theme="kimia"] { --eq-bg-top: #6d28d9; --eq-bg-bot: #1e1348; --eq-accent: #c084fc; }
+body[data-theme="kimia"] .eq-scroll-tile { background-image: url("../images/game-map/world-kimia.jpg"); }
+body[data-theme="biologi"] { --eq-bg-top: #059669; --eq-bg-bot: #052e2b; --eq-accent: #34d399; }
+body[data-theme="biologi"] .eq-scroll-tile { background-image: url("../images/game-map/world-biologi.jpg"); }
+body[data-theme="addmath"] { --eq-bg-top: #312e81; --eq-bg-bot: #0f1035; --eq-accent: #facc15; }
+body[data-theme="addmath"] .eq-scroll-tile { background-image: url("../images/game-map/world-addmath.jpg"); }
+body[data-theme="moral"] { --eq-bg-top: #b45309; --eq-bg-bot: #2a1810; --eq-accent: #fcd34d; }
+body[data-theme="moral"] .eq-scroll-tile { background-image: url("../images/game-map/world-moral.jpg"); }
 
 .eq-topbar {
   position: sticky; top: 0; z-index: 30; backdrop-filter: blur(6px);

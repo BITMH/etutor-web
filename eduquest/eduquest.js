@@ -7,11 +7,11 @@
     { name: "Sejarah", short: "Sejarah", slug: "sejarah", world: "Kota Warisan & Manuskrip", theme: "sejarah", img: "../images/game-map/world-sejarah.jpg" },
     { name: "Pendidikan Islam", short: "P. Islam", slug: "pendidikan-islam", world: "Taman Cahaya Ilmu", theme: "pi", img: "../images/game-map/world-pi.jpg" },
     { name: "Geografi", short: "Geografi", slug: "geografi", world: "Lembah Peta & Kompas", theme: "geo", img: "../images/game-map/world-geo.jpg" },
-    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "sains", img: "../images/game-map/world-sains.jpg" },
-    { name: "Kimia", short: "Kimia", slug: "kimia", world: "Makmal Molekul & Reaksi", theme: "sains", img: "../images/game-map/world-sains.jpg" },
-    { name: "Biologi", short: "Biologi", slug: "biologi", world: "Taman Sel & Ekosistem", theme: "geo", img: "../images/game-map/world-geo.jpg" },
-    { name: "Matematik Tambahan", short: "Add Math", slug: "matematik-tambahan", world: "Menara Kalkulus & Vektor", theme: "math", img: "../images/game-map/world-math.jpg" },
-    { name: "Pendidikan Moral", short: "P. Moral", slug: "pendidikan-moral", world: "Balai Etika & Integriti", theme: "sejarah", img: "../images/game-map/world-sejarah.jpg" }
+    { name: "Fizik", short: "Fizik", slug: "fizik", world: "Stesen Daya & Tenaga", theme: "fizik", img: "../images/game-map/world-fizik.jpg" },
+    { name: "Kimia", short: "Kimia", slug: "kimia", world: "Makmal Molekul & Reaksi", theme: "kimia", img: "../images/game-map/world-kimia.jpg" },
+    { name: "Biologi", short: "Biologi", slug: "biologi", world: "Taman Sel & Ekosistem", theme: "biologi", img: "../images/game-map/world-biologi.jpg" },
+    { name: "Matematik Tambahan", short: "Add Math", slug: "matematik-tambahan", world: "Menara Kalkulus & Vektor", theme: "addmath", img: "../images/game-map/world-addmath.jpg" },
+    { name: "Pendidikan Moral", short: "P. Moral", slug: "pendidikan-moral", world: "Balai Etika & Integriti", theme: "moral", img: "../images/game-map/world-moral.jpg" }
   ];
   var UPPER_SLUGS = ["fizik", "kimia", "biologi", "matematik-tambahan", "pendidikan-moral"];
   var LOCK_SVG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path stroke-linecap="round" d="M8 11V7a4 4 0 018 0v4"/></svg>';

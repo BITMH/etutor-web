@@ -2309,6 +2309,28 @@ dialog::backdrop {
   object-fit: contain;
   background: #0f172a;
 }
+.nota-video-card.is-narrated {
+  border-color: #38bdf8;
+}
+.nota-video-audio-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 100%);
+  color: #e0f2fe;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.nota-video-audio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.85);
+  flex-shrink: 0;
+}
 .nota-video-cap {
   padding: 7px 12px;
   font-size: 0.76rem;
@@ -4722,15 +4744,24 @@ function buildHeroVideoHtml(step) {
     sourcesHtml = '<source src="' + escapeHtml(rawVideoSrc) + '" type="video/mp4">' +
       (r2Src ? '<source src="' + escapeHtml(r2Src) + '" type="video/mp4">' : "");
   }
+  var hasNarration = Boolean(vc.hasNarration);
   var posterRec = vc.posterKey && mediaMap[vc.posterKey];
   var posterUri = posterRec ? (posterRec.dataUri || posterRec.src || "") : "";
   var reduced = typeof NotaFeel !== "undefined" && NotaFeel.prefersReducedMotion && NotaFeel.prefersReducedMotion();
-  var autoplayAttrs = reduced ? "" : " autoplay loop";
+  var autoplayAttrs = (reduced || hasNarration) ? "" : " autoplay loop";
+  var muteAttr = hasNarration ? "" : " muted";
   var posterAttr = posterUri ? ' poster="' + posterUri + '"' : "";
+  var audioBanner = hasNarration
+    ? '<div class="nota-video-audio-bar"><span class="nota-video-audio-dot" aria-hidden="true"></span><span>' +
+        escapeHtml(tUi("Video Penerangan Bersuara (BM) • Tekan Main untuk dengar penjelasan", "Narrated Explainer Video • Press Play to listen")) +
+      "</span></div>"
+    : "";
+  var cardCls = hasNarration ? "nota-video-card is-narrated" : "nota-video-card";
   var caption = vc.caption ? '<figcaption class="nota-video-cap">' + escapeHtml(vc.caption) + "</figcaption>" : "";
   return (
-    '<figure class="nota-video-card">' +
-      '<video class="nota-hero-video" controls muted playsinline preload="metadata" width="640" height="360"' + autoplayAttrs + posterAttr + ">" +
+    '<figure class="' + cardCls + '">' +
+      audioBanner +
+      '<video class="nota-hero-video" controls' + muteAttr + ' playsinline preload="metadata" width="640" height="360"' + autoplayAttrs + posterAttr + ">" +
         sourcesHtml +
       "</video>" +
       caption +

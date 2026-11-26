@@ -15965,11 +15965,8 @@
 
 
 
-
   const FW_VALID_TABS_ = ["belajar", "latihan", "kemajuan"];
   let fwEventsBound_ = false;
-  let fwMascotHostEl_ = null;
-  let fwDashObserverBound_ = false;
   const FW_SVG_CAM_ = '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h3l2-3h6l2 3h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2z"/><circle cx="12" cy="13" r="3.5"/></svg>';
   const FW_SVG_BOOK_ = '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg>';
   const FW_SVG_PLAY_ = '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" stroke-linejoin="round"/></svg>';
@@ -15984,12 +15981,6 @@
     const num = String(code || "").replace(/\D/g, "");
     return num ? ("Tingkatan " + num) : "Tingkatan 5";
   }
-  function fwResolveDisplayName_(profile) {
-    const raw = (profile && profile.displayName) || (portalState.user && portalState.user.buyerName) || getOpenStudentName() || "";
-    const clean = String(raw || "").trim();
-    return (!clean || clean === "Pelajar Contoh (Disekat Lalai)") ? "Pelajar" : clean;
-  }
-
   function fwOpenCikguAi_(promptText, subjectHint, opts) {
     if (typeof etGamifRecordEvent === "function") etGamifRecordEvent("cikgu_ai_used", {});
     const msg = promptText || "Assalamualaikum Cikgu, bantu saya dengan soalan kerja sekolah ini.";
@@ -16010,30 +16001,26 @@
   function fwRenderWorkspaceHeader_(profile, activeForm, showAll, activeTab) {
     const headerEl = document.getElementById("focusWorkspaceHeader");
     if (!headerEl) return;
-    const name = fwResolveDisplayName_(profile);
-    const greeting = profile.role === "ibu_bapa" ? ("Pantauan " + name) : ("Hai, " + name + "!");
     const forms = Array.isArray(profile.learningForms) && profile.learningForms.length > 0 ? profile.learningForms : [profile.currentForm || "T5"];
     const pillCodes = forms.length > 1 ? forms.concat(["ALL"]) : forms;
     const selCount = Array.isArray(profile.selectedSubjects) ? profile.selectedSubjects.length : 0;
-    const goalMins = Number(profile.dailyGoalMinutes) || 15;
     const pillsHtml = pillCodes.map(function (code) {
       const active = activeForm === code;
       return '<button type="button" class="et-form-pill' + (active ? " is-active" : "") + '" data-form-code="' + escapeHtml(code) + '" aria-pressed="' + (active ? "true" : "false") + '">' + escapeHtml(fwFormShortLabel_(code)) + "</button>";
     }).join("");
 
     headerEl.innerHTML = [
-      '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap"><div>',
-      '<h2 style="margin:0;font-size:clamp(1.12rem,1rem + 0.5vw,1.38rem);color:#0f172a">' + escapeHtml(greeting) + "</h2>",
-      '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px"><span class="et-onb-count-pill">' + escapeHtml(fwFormLongLabel_(profile.currentForm)) + '</span><span class="et-onb-rec-badge">Sasaran: ' + goalMins + " min/hari</span></div>",
-      '</div><div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px" role="group" aria-label="Skop Subjek">',
-      '<button type="button" class="tab-chip js-ws-show-all-chip" data-scope="mine" aria-pressed="' + (!showAll ? "true" : "false") + '">Subjek Saya (' + selCount + ")</button>",
-      '<button type="button" class="tab-chip js-ws-show-all-chip" data-scope="all" aria-pressed="' + (showAll ? "true" : "false") + '">Tunjuk Semua 23 Subjek</button>',
-      "</div></div>",
-      '<div class="et-form-switcher" role="group" aria-label="Penukar Tingkatan Pembelajaran">' + pillsHtml + "</div>",
       '<div class="et-workspace-tabs" role="tablist" aria-label="Bahagian Ruang Kerja Fokus">',
       '<button type="button" id="wsTabBelajar" class="et-ws-tab" data-ws-tab="belajar" role="tab" aria-selected="' + (activeTab === "belajar") + '" aria-pressed="' + (activeTab === "belajar") + '">Belajar &amp; Nota</button>',
       '<button type="button" id="wsTabLatihan" class="et-ws-tab" data-ws-tab="latihan" role="tab" aria-selected="' + (activeTab === "latihan") + '" aria-pressed="' + (activeTab === "latihan") + '">Latihan Interaktif</button>',
       '<button type="button" id="wsTabKemajuan" class="et-ws-tab" data-ws-tab="kemajuan" role="tab" aria-selected="' + (activeTab === "kemajuan") + '" aria-pressed="' + (activeTab === "kemajuan") + '">Kemajuan &amp; Slip</button>',
+      "</div>",
+      '<div class="et-ws-filter-strip">',
+      '<div class="et-form-switcher" role="group" aria-label="Penukar Tingkatan Pembelajaran">' + pillsHtml + "</div>",
+      '<div class="et-scope-switcher" role="group" aria-label="Skop Subjek">',
+      '<button type="button" class="tab-chip js-ws-show-all-chip" data-scope="mine" aria-pressed="' + (!showAll ? "true" : "false") + '">Subjek Saya (' + selCount + ")</button>",
+      '<button type="button" class="tab-chip js-ws-show-all-chip" data-scope="all" aria-pressed="' + (showAll ? "true" : "false") + '" title="Tunjuk semua 23 subjek" aria-label="Tunjuk semua 23 subjek">Semua 23</button>',
+      "</div>",
       "</div>"
     ].join("\n");
   }
@@ -16149,29 +16136,6 @@
     if (hasSpm && mods.cd) mods.cd.hidden = false;
   }
 
-  function fwSyncMascotStage_(profile, activeForm) {
-    const phoneMount = document.getElementById("phoneMascotStageMount");
-    const deskMount = document.getElementById("etMascotStageMount");
-    const mountEl = (phoneMount && phoneMount.offsetParent !== null) ? phoneMount : deskMount;
-    const dashEl = document.getElementById("dashboardView");
-    if (!mountEl || !dashEl || dashEl.hidden) return;
-    const name = fwResolveDisplayName_(profile);
-    const subs = Array.isArray(profile && profile.selectedSubjects) ? profile.selectedSubjects : [];
-    const topSubj = subs[0] || "KSSM";
-    const msg = name === "Pelajar"
-      ? ("Jom kuasai " + topSubj + " (" + fwFormShortLabel_(activeForm) + ") hari ini!")
-      : ("Hai " + name + "! Jom teruskan momentum " + topSubj + "!");
-    if ((fwMascotHostEl_ !== mountEl || !mountEl.childElementCount) && typeof etMascot3dMount === "function") {
-      fwMascotHostEl_ = mountEl;
-      try { etMascot3dMount(mountEl, { studentName: name, subject: topSubj, form: activeForm }); } catch (e) {}
-    } else if (typeof etMascot3dMount !== "function" && !mountEl.childElementCount) {
-      mountEl.innerHTML = '<img src="./images/hero-student-3d.webp" alt="Maskot Cikgu eTutor" width="112" height="112" style="object-fit:contain"><p id="etMascotSpeechBubble" style="margin:6px 12px 10px;font-size:.78rem;font-weight:700;color:#1e3a8a;text-align:center">' + escapeHtml(msg) + "</p>";
-    }
-    if (typeof etMascot3dSetSpeech === "function") {
-      try { etMascot3dSetSpeech(msg); } catch (e) {}
-    }
-  }
-
   function renderFocusWorkspaceUi() {
     const profile = getStudentProfile();
     const activeForm = getActiveFormFilter();
@@ -16181,7 +16145,6 @@
     fwRenderWorkspaceHeader_(profile, activeForm, showAll, activeTab);
     fwRenderMissionCard_(profile, activeForm);
     fwSyncModuleVisibility_(profile, activeForm, showAll, activeTab);
-    fwSyncMascotStage_(profile, activeForm);
     if (typeof etQuestPathRender === "function") etQuestPathRender();
     if (typeof etGamifSideRender === "function") etGamifSideRender();
   }
@@ -16194,13 +16157,6 @@
   function initFocusWorkspace() {
     if (typeof etGamifInit === "function") etGamifInit();
     renderFocusWorkspaceUi();
-    const dashEl = document.getElementById("dashboardView");
-    if (dashEl && !fwDashObserverBound_ && typeof MutationObserver === "function") {
-      fwDashObserverBound_ = true;
-      new MutationObserver(function () {
-        if (!dashEl.hidden) fwSyncMascotStage_(getStudentProfile(), getActiveFormFilter());
-      }).observe(dashEl, { attributes: true, attributeFilter: ["hidden"] });
-    }
     if (fwEventsBound_) return;
     fwEventsBound_ = true;
     document.addEventListener("click", function (e) {
@@ -16229,9 +16185,6 @@
       populateNotaSubjectChips(); renderNotaCatalogSection(); renderFocusWorkspaceUi();
     });
     window.addEventListener("etutor:dashboard-bundle-applied", renderFocusWorkspaceUi);
-    window.addEventListener("etutor:mascot-host-changed", function () {
-      fwSyncMascotStage_(getStudentProfile(), getActiveFormFilter());
-    });
     window.addEventListener("etutor:gamification-updated", function () {
       if (typeof etQuestPathRender === "function") etQuestPathRender();
       if (typeof etGamifSideRender === "function") etGamifSideRender();

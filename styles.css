@@ -6481,6 +6481,11 @@ dialog.et-settings-dialog::backdrop {
   padding: 18px 20px; box-shadow: 0 3px 0 #e2e8f0; max-inline-size: 100%;
 }
 #focusWorkspaceHeader { display: flex; flex-direction: column; gap: 14px; }
+#focusWorkspaceHeader.is-compact { padding: 10px 12px; gap: 8px; }
+.et-ws-filter-strip {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px;
+}
+.et-scope-switcher { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
 #focusMissionCard { background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%); border-color: #bfdbfe; box-shadow: 0 3px 0 #bfdbfe; }
 #focusEmptyStateCard {
   background: #fffbeb; border-color: #fde68a; box-shadow: 0 3px 0 #fde68a;
@@ -6493,6 +6498,11 @@ dialog.et-settings-dialog::backdrop {
   border: 2px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;
   box-shadow: 0 2px 0 #cbd5e1; white-space: nowrap;
 }
+.focus-workspace-header.is-compact .et-form-pill,
+.focus-workspace-header.is-compact .tab-chip {
+  min-block-size: 30px; padding: 4px 11px; font-size: 0.76rem; font-weight: 700;
+  border-width: 1.5px; box-shadow: none;
+}
 .et-form-pill[aria-pressed="true"],
 .et-form-pill.is-active { background: #1e3a8a; border-color: #1e3a8a; color: #ffffff; box-shadow: 0 2px 0 #0f172a; }
 
@@ -6500,12 +6510,14 @@ dialog.et-settings-dialog::backdrop {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;
   padding: 5px; border-radius: 14px; background: #f1f5f9; border: 1px solid #e2e8f0;
 }
+.focus-workspace-header.is-compact .et-workspace-tabs { padding: 4px; gap: 5px; border-radius: 12px; }
 .et-ws-tab,
 .et-workspace-tabs > button {
   min-block-size: 44px; padding: 8px 10px; border: 0; border-radius: 10px; background: transparent;
   color: #334155; font-family: var(--font-heading); font-size: 0.86rem; font-weight: 700; cursor: pointer;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.focus-workspace-header.is-compact .et-ws-tab { min-block-size: 36px; padding: 6px 10px; font-size: 0.8rem; }
 .et-ws-tab[aria-selected="true"],
 .et-ws-tab[aria-pressed="true"],
 .et-workspace-tabs > button[aria-selected="true"],
@@ -6835,22 +6847,12 @@ dialog.et-onb-dialog {
 }
 .et-gamif-focus-btn:hover { background: #eff6ff; }
 
-/* Baris Hero Fokus + Pentas Maskot 3D */
-.et-focus-hero-row {
-  display: grid; grid-template-columns: minmax(0, 1.56fr) minmax(190px, 0.72fr);
-  gap: 12px; align-items: stretch;
-}
-.dashboard-main.et-gamif-shell #focusWorkspaceHeader { padding: 15px 16px; }
+/* Bar Kompak Ruang Kerja Fokus */
+.dashboard-main.et-gamif-shell #focusWorkspaceHeader { padding: 10px 12px; }
 .dashboard-main.et-gamif-shell .et-ws-tab,
 .dashboard-main.et-gamif-shell .et-workspace-tabs > button {
-  font-size: 0.77rem; padding: 7px 6px; letter-spacing: -0.015em;
-  white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.2; text-align: center;
-}
-.et-mascot-stage-card {
-  position: relative; min-block-size: 185px;
-  background: radial-gradient(circle at 50% 35%, #eff6ff 0%, #ffffff 74%);
-  border: 2px solid #cbd5e1; border-radius: 18px; box-shadow: 0 3px 0 #cbd5e1;
-  overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  font-size: 0.8rem; padding: 6px 10px; min-block-size: 36px;
+  white-space: nowrap; line-height: 1.2; text-align: center;
 }
 
 /* Sepanduk Unit & Laluan Nod 2.5D Melengkung */
@@ -6984,7 +6986,6 @@ dialog.et-onb-dialog {
   .dashboard-main.et-gamif-shell > .portal-modules-stack { grid-column: 1; grid-row: 3; }
   .et-gamif-right-rail { grid-column: 2; grid-row: 2 / 4; position: static; }
 }
-@media (max-width: 860px) { .et-focus-hero-row { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 767px) {
   .dashboard-main.et-gamif-shell { grid-template-columns: minmax(0, 1fr); }
   .et-gamif-left-rail, .et-gamif-center-col, .dashboard-main.et-gamif-shell > .portal-modules-stack, .et-gamif-right-rail {
@@ -7020,7 +7021,6 @@ dialog.et-onb-dialog {
   display: inline-flex; align-items: center; justify-content: center; border-radius: 11px;
 }
 #dashboardView .user-pill:hover, #dashboardView .btn-ghost:hover, #dashboardView .btn-outline:hover { background: rgba(30, 64, 135, 0.9); color: #ffffff; }
-#dashboardView .et-mascot-stage-card { background: transparent; border: 0; box-shadow: none; padding: 0; }
 #dashboardView .et-gamif-left-rail, #dashboardView .et-gamif-right-rail { gap: 10px; }
 #dashboardView .et-gamif-card { padding: 10px 11px; }
 
@@ -7056,7 +7056,6 @@ dialog.et-onb-dialog {
   border: 1.5px solid rgba(125, 211, 252, 0.28); border-radius: 18px;
   box-shadow: 0 12px 28px rgba(2, 6, 23, 0.42); color: #f8fafc;
 }
-#dashboardView #focusWorkspaceHeader h2,
 #dashboardView #focusMissionCard h3,
 #dashboardView #focusEmptyStateCard h3 { color: #ffffff !important; }
 #dashboardView #focusMissionCard p,

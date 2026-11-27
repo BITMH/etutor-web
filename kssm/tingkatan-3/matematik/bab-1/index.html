@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 1","item":"https://etutor.my/kssm/tingkatan-3/matematik/bab-1/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 3 Bab 1: Indeks (Tatatanda & Hukum Indeks)","description":"Menguasai tatatanda indeks aⁿ, pembahagian berulang menukar nombor kepada bentuk indeks, serta kesemua tujuh Hukum Indeks termasuk kuasa sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) dan indeks pecahan (a^(m/n)).","url":"https://etutor.my/kssm/tingkatan-3/matematik/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 3</a> / <span>Matematik Bab 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 3)</span>
-      <span>Matematik (1449) &bull; Bab 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Matematik Tingkatan 3 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Mewakilkan pendaraban berulang suatu nombor atau sebutan algebra dalam bentuk tatatanda indeks aⁿ (a = asas, n = indeks).</li><li>Menukar suatu nombor atau pecahan kepada bentuk indeks dengan asas tertentu menggunakan kaedah pembahagian berulang atau pokok faktor.</li><li>Mengaplikasikan Hukum Indeks pendaraban (aᵐ × aⁿ = aᵐ⁺ⁿ), pembahagian (aᵐ ÷ aⁿ = aᵐ⁻ⁿ) dan penguasaan ((aᵐ)ⁿ = aᵐⁿ) untuk mempermudah ungkapan.</li><li>Menilai ungkapan melibatkan indeks sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) serta indeks pecahan (a^(1/n) = ⁿ√a) dan menyelesaikan persamaan indeks.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–29)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_matematik_Bab_1.pdf" data-form-label="Tingkatan 3" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 1–29" data-dskp="SK 1.1–1.2 (DSKP KSSM Matematik Tingkatan 3)" data-chapter-heading="Bab 1: Indeks (Tatatanda &amp; Hukum Indeks)" data-hero-summary="Menguasai tatatanda indeks aⁿ, pembahagian berulang menukar nombor kepada bentuk indeks, serta kesemua tujuh Hukum Indeks termasuk kuasa sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) dan indeks pecahan (a^(m/n))." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Bab 1: Indeks (Tatatanda &amp; Hukum Indeks)</h2>
+          <p class="kssm-sublead">Menguasai tatatanda indeks aⁿ, pembahagian berulang menukar nombor kepada bentuk indeks, serta kesemua tujuh Hukum Indeks termasuk kuasa sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) dan indeks pecahan (a^(m/n)).</p>
+          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Matematik (1449) &bull; m.s. 1–29 &bull; SK 1.1–1.2 (DSKP KSSM Matematik Tingkatan 3)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mewakilkan pendaraban berulang suatu nombor atau sebutan algebra dalam bentuk tatatanda indeks aⁿ (a = asas, n = indeks).">
+      <span class="kssm-obj-num">01</span>
+      <span>Mewakilkan pendaraban berulang suatu nombor atau sebutan algebra dalam bentuk tatatanda indeks aⁿ (a = asas, n = indeks).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menukar suatu nombor atau pecahan kepada bentuk indeks dengan asas tertentu menggunakan kaedah pembahagian berulang atau pokok faktor.">
+      <span class="kssm-obj-num">02</span>
+      <span>Menukar suatu nombor atau pecahan kepada bentuk indeks dengan asas tertentu menggunakan kaedah pembahagian berulang atau pokok faktor.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengaplikasikan Hukum Indeks pendaraban (aᵐ × aⁿ = aᵐ⁺ⁿ), pembahagian (aᵐ ÷ aⁿ = aᵐ⁻ⁿ) dan penguasaan ((aᵐ)ⁿ = aᵐⁿ) untuk mempermudah ungkapan.">
+      <span class="kssm-obj-num">03</span>
+      <span>Mengaplikasikan Hukum Indeks pendaraban (aᵐ × aⁿ = aᵐ⁺ⁿ), pembahagian (aᵐ ÷ aⁿ = aᵐ⁻ⁿ) dan penguasaan ((aᵐ)ⁿ = aᵐⁿ) untuk mempermudah ungkapan.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menilai ungkapan melibatkan indeks sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) serta indeks pecahan (a^(1/n) = ⁿ√a) dan menyelesaikan persamaan indeks.">
+      <span class="kssm-obj-num">04</span>
+      <span>Menilai ungkapan melibatkan indeks sifar (a⁰ = 1), indeks negatif (a⁻ⁿ = 1/aⁿ) serta indeks pecahan (a^(1/n) = ⁿ√a) dan menyelesaikan persamaan indeks.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–29)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks asas 3." data-ex-solution="(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 = 9 ÷ 3 = 3 ÷ 3 = 1 → 81 = 3⁴." data-ex-takeaway="Sentiasa letak tanda kurung apabila mendarab atau membahagi asas negatif atau asas pecahan!">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Tatatanda Indeks &amp; Pendaraban Berulang (SK 1.1)</h3>
       <p class="kssm-sub-summary">Suatu nombor yang didarabkan secara berulang dengan dirinya sendiri sebanyak n kali boleh diringkaskan dalam bentuk indeks aⁿ, di mana a ialah asas dan n ialah indeks (eksponen).</p>
       <ul class="kssm-kp-list"><li>Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.</li><li>AWASI KURUNGAN BAGI ASAS NEGATIF: (-3)² = (-3) × (-3) = +9, tetapi -3² = -(3 × 3) = -9! Kurungan menentukan sama ada tanda negatif turut dikuasakan.</li><li>Menukar nombor kepada bentuk indeks: bahagikan secara berulang dengan asas sasaran, misalnya 32/3125 ÷ (2/5) berulang 5 kali menghasilkan (2/5)⁵.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks asas 3.</p>
-        <p><strong>Penyelesaian:</strong> (-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 = 9 ÷ 3 = 3 ÷ 3 = 1 → 81 = 3⁴.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa letak tanda kurung apabila mendarab atau membahagi asas negatif atau asas pecahan!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks asas 3.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 = 9 ÷ 3 = 3 ÷ 3 = 1 → 81 = 3⁴.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa letak tanda kurung apabila mendarab atau membahagi asas negatif atau asas pecahan!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Ringkaskan ungkapan (2m²n³)³ ÷ 4m⁴n⁵." data-ex-solution="Pembilang = 2³ m^(2×3) n^(3×3) = 8m⁶n⁹. Bahagi dengan 4m⁴n⁵ → (8/4) m^(6-4) n^(9-5) = 2m²n⁴." data-ex-takeaway="Kumpulkan nombor pekali bersama nombor, huruf m bersama m, dan huruf n bersama n — jangan campurkan asas berlainan!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Hukum Pendaraban, Pembahagian &amp; Penguasaan Indeks (SK 1.2)</h3>
       <p class="kssm-sub-summary">Operasi antara sebutan indeks yang mempunyai ASAS SAMA mengikut tiga hukum algebra yang pantas tanpa perlu mengira nilai besar satu per satu.</p>
       <ul class="kssm-kp-list"><li>1. Pendaraban asas sama: aᵐ × aⁿ = aᵐ⁺ⁿ (tambah indeks; pekali nombor didarab seperti biasa: 3m³ × 2m⁴ = 6m⁷).</li><li>2. Pembahagian asas sama: aᵐ ÷ aⁿ = aᵐ⁻ⁿ (tolak indeks; contoh: 25x²y³ ÷ 5xy = 5x¹y² = 5xy²).</li><li>3. Bentuk indeks dikuasakan: (aᵐ)ⁿ = aᵐⁿ dan (aᵐbⁿ)ᵖ = aᵐᵖbⁿᵖ. Contoh: (p²q³r)⁴ = p⁸q¹²r⁴; (3p²)³ = 27p⁶ (JANGAN lupa kuasakan pekali 3³ = 27!).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Ringkaskan ungkapan (2m²n³)³ ÷ 4m⁴n⁵.</p>
-        <p><strong>Penyelesaian:</strong> Pembilang = 2³ m^(2×3) n^(3×3) = 8m⁶n⁹. Bahagi dengan 4m⁴n⁵ → (8/4) m^(6-4) n^(9-5) = 2m²n⁴.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Kumpulkan nombor pekali bersama nombor, huruf m bersama m, dan huruf n bersama n — jangan campurkan asas berlainan!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Ringkaskan ungkapan (2m²n³)³ ÷ 4m⁴n⁵.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Pembilang = 2³ m^(2×3) n^(3×3) = 8m⁶n⁹. Bahagi dengan 4m⁴n⁵ → (8/4) m^(6-4) n^(9-5) = 2m²n⁴.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kumpulkan nombor pekali bersama nombor, huruf m bersama m, dan huruf n bersama n — jangan campurkan asas berlainan!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Ungkapkan 2m⁻³ dan 1 / (8⁻⁵) dalam bentuk indeks positif." data-ex-solution="2m⁻³ = 2 / m³ (hanya m berpindah ke penyebut kerana kuasa -3 milik m sahaja!). 1 / 8⁻⁵ = 8⁵." data-ex-takeaway="Dalam 2m⁻³, pekali 2 mempunyai indeks +1, maka 2 kekal di pengangka dan hanya m⁻³ turun menjadi m³!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Indeks Sifar (a⁰) dan Indeks Negatif (a⁻ⁿ) (SK 1.2)</h3>
       <p class="kssm-sub-summary">Daripada pembahagian indeks asas sama (contoh 2³ ÷ 2³ = 2⁰ = 1 dan 2³ ÷ 2⁵ = 2⁻² = 1/2²), terbit dua hukum penting untuk indeks sifar dan negatif dengan syarat asas a ≠ 0.</p>
       <ul class="kssm-kp-list"><li>Hukum Indeks Sifar: Sebarang asas bukan sifar dikuasakan 0 sentiasa bernilai 1 → a⁰ = 1 (contoh: (-7)⁰ = 1, 5m⁰ = 5(1) = 5, tetapi (5m)⁰ = 1).</li><li>Hukum Indeks Negatif: a⁻ⁿ = 1 / aⁿ dan sebaliknya 1 / a⁻ⁿ = aⁿ (tanda indeks berubah apabila melintas garis pecahan).</li><li>Untuk asas pecahan berindeks negatif: (a/b)⁻ⁿ = (b/a)ⁿ, contohnya (2/3)⁻² = (3/2)² = 9/4.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Ungkapkan 2m⁻³ dan 1 / (8⁻⁵) dalam bentuk indeks positif.</p>
-        <p><strong>Penyelesaian:</strong> 2m⁻³ = 2 / m³ (hanya m berpindah ke penyebut kerana kuasa -3 milik m sahaja!). 1 / 8⁻⁵ = 8⁵.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Dalam 2m⁻³, pekali 2 mempunyai indeks +1, maka 2 kekal di pengangka dan hanya m⁻³ turun menjadi m³!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Ungkapkan 2m⁻³ dan 1 / (8⁻⁵) dalam bentuk indeks positif.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> 2m⁻³ = 2 / m³ (hanya m berpindah ke penyebut kerana kuasa -3 milik m sahaja!). 1 / 8⁻⁵ = 8⁵.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Dalam 2m⁻³, pekali 2 mempunyai indeks +1, maka 2 kekal di pengangka dan hanya m⁻³ turun menjadi m³!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Nilaikan (16^(3/4) × 81^(-1/4)) tanpa kalkulator." data-ex-solution="16^(3/4) = (⁴√16)³ = 2³ = 8. 81^(-1/4) = 1 / (⁴√81) = 1/3. Maka 8 × (1/3) = 8/3." data-ex-takeaway="Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka ialah Kuasa biasa!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Indeks Pecahan (a^(m/n)) &amp; Persamaan Indeks (SK 1.2)</h3>
       <p class="kssm-sub-summary">Indeks pecahan menghubungkan tatatanda indeks dengan punca kuasa ke-n, manakala persamaan indeks diselesaikan dengan menyamakan asas di kiri dan kanan persamaan.</p>
       <ul class="kssm-kp-list"><li>Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ = (ⁿ√a)ᵐ.</li><li>Tip kiraan tanpa kalkulator: buat PUNCA KUASA (ⁿ√a) DAHULU agar nombor kekal kecil sebelum dikuasakan m! Contoh: 27^(2/3) = (³√27)² = 3² = 9.</li><li>Menyelesaikan persamaan indeks: tukar semua sebutan kepada asas sepunya terkecil (cth: 16(4ˣ) = 16ʸ → 4² · 4ˣ = (4²)ʸ → 2 + x = 2y) lalu samakan indeks di kedua-dua belah!</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Nilaikan (16^(3/4) × 81^(-1/4)) tanpa kalkulator.</p>
-        <p><strong>Penyelesaian:</strong> 16^(3/4) = (⁴√16)³ = 2³ = 8. 81^(-1/4) = 1 / (⁴√81) = 1/3. Maka 8 × (1/3) = 8/3.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka ialah Kuasa biasa!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Nilaikan (16^(3/4) × 81^(-1/4)) tanpa kalkulator.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> 16^(3/4) = (⁴√16)³ = 2³ = 8. 81^(-1/4) = 1 / (⁴√81) = 1/3. Maka 8 × (1/3) = 8/3.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka ialah Kuasa biasa!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Lupa mendarab indeks pada pekali nombor di dalam kurungan: menulis (3x²)³ = 3x⁶.</p>
-      <p><strong>Pembetulan Tepat:</strong> Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Lupa mendarab indeks pada pekali nombor di dalam kurungan: menulis (3x²)³ = 3x⁶." data-m-correction="Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶." data-m-tip="Tulis indeks tersirat &#39;1&#39; pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Lupa mendarab indeks pada pekali nombor di dalam kurungan: menulis (3x²)³ = 3x⁶.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.</p>
       <p><strong>Tip Skor Exam:</strong> Tulis indeks tersirat &#39;1&#39; pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menulis 2m⁻³ = 1 / (2m³) dengan menurunkan pekali 2 bersama m.</p>
-      <p><strong>Pembetulan Tepat:</strong> Kuasa -3 hanya bertindak ke atas m, bukan 2, jadi 2m⁻³ = 2 / m³; manakala (2m)⁻³ = 1 / (8m³).</p>
+<article class="kssm-mistake-card" data-m-mistake="Menulis 2m⁻³ = 1 / (2m³) dengan menurunkan pekali 2 bersama m." data-m-correction="Kuasa -3 hanya bertindak ke atas m, bukan 2, jadi 2m⁻³ = 2 / m³; manakala (2m)⁻³ = 1 / (8m³)." data-m-tip="Periksa sama ada terdapat tanda kurung atau tidak!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis 2m⁻³ = 1 / (2m³) dengan menurunkan pekali 2 bersama m.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kuasa -3 hanya bertindak ke atas m, bukan 2, jadi 2m⁻³ = 2 / m³; manakala (2m)⁻³ = 1 / (8m³).</p>
       <p><strong>Tip Skor Exam:</strong> Periksa sama ada terdapat tanda kurung atau tidak!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mendarab indeks apabila sebutan didarabkan: menulis a³ × a⁴ = a¹².</p>
-      <p><strong>Pembetulan Tepat:</strong> Mendarab asas sama → TAMBAH indeks (a³⁺⁴ = a⁷); hanya bentuk kuasa atas kuasa (a³)⁴ didarab (a¹²).</p>
+<article class="kssm-mistake-card" data-m-mistake="Mendarab indeks apabila sebutan didarabkan: menulis a³ × a⁴ = a¹²." data-m-correction="Mendarab asas sama → TAMBAH indeks (a³⁺⁴ = a⁷); hanya bentuk kuasa atas kuasa (a³)⁴ didarab (a¹²)." data-m-tip="Darab luar = tambah indeks; Kurungan/kuasa atas kuasa = darab indeks.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mendarab indeks apabila sebutan didarabkan: menulis a³ × a⁴ = a¹².</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Mendarab asas sama → TAMBAH indeks (a³⁺⁴ = a⁷); hanya bentuk kuasa atas kuasa (a³)⁴ didarab (a¹²).</p>
       <p><strong>Tip Skor Exam:</strong> Darab luar = tambah indeks; Kurungan/kuasa atas kuasa = darab indeks.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%203%20%E2%80%A2%20Matematik%20Bab%201%3A%20Indeks%20(Tatatanda%20%26%20Hukum%20Indeks)%5D%20Selesaikan%20persamaan%20indeks%20berikut%20untuk%20mencari%20nilai%20x%20dan%20y%3A%20(i)%202%CB%A3%20%C3%97%208%5E(x-1)%20%3D%2032%3B%20(ii)%20Diberi%203(9%CB%A3)%20%3D%2027%CA%B8%2C%20ungkapkan%20y%20dalam%20sebutan%20x.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

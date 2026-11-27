@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 5","item":"https://etutor.my/kssm/tingkatan-5/"},{"@type":"ListItem","position":4,"name":"Bahasa Inggeris Bab 2","item":"https://etutor.my/kssm/tingkatan-5/bahasa-inggeris/bab-2/"}]},{"@type":"LearningResource","name":"Bahasa Inggeris Tingkatan 5 Bab 2: Unit 2: Life's Great Mysteries (Past Tenses, Used To & Would)","description":"Master Form 5 Unit 2 mysteries ('Winchester Mystery House'): contrasting Past Simple vs. Past Continuous, past habits and states with 'used to' vs. 'would' (and why 'would' CANNOT express past states!), plus mystery storytelling and deduction vocabulary.","url":"https://etutor.my/kssm/tingkatan-5/bahasa-inggeris/bab-2/","inLanguage":"en","educationalLevel":"Tingkatan 5","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Inggeris KSSM (1119)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 5</a> / <span>Bahasa Inggeris Unit 2</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 5)</span>
-      <span>Bahasa Inggeris (1119) &bull; Unit 2</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -286,90 +299,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Bahasa Inggeris Tingkatan 5 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Narrate historical mysteries accurately by combining Past Simple (main events/completed facts) with Past Continuous (ongoing scenes/simultaneous actions).</li><li>Distinguish past states (&#39;live&#39;, &#39;have&#39;, &#39;believe&#39;, &#39;own&#39;) from repeated past actions when choosing between &#39;used to&#39; and &#39;would&#39;.</li><li>Understand key reading details of Sarah Winchester&#39;s 1884 California mansion mystery and deduction modals (&#39;must/might/can&#39;t have&#39;).</li><li>Organise eerie mystery narratives using atmospheric adjectives, time linkers and dramatic endings.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 13–24)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-inggeris" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T5_bahasa-inggeris_Bab_2.pdf" data-form-label="Tingkatan 5" data-subject-name="Bahasa Inggeris" data-subject-code="1119" data-pages="pp. 13–24" data-dskp="CEFR B1 High • Download B1+ Unit 2 (DSKP KSSM BI Tingkatan 5)" data-chapter-heading="Unit 2: Unit 2: Life&#39;s Great Mysteries (Past Tenses, Used To &amp; Would)" data-hero-summary="Master Form 5 Unit 2 mysteries (&#39;Winchester Mystery House&#39;): contrasting Past Simple vs. Past Continuous, past habits and states with &#39;used to&#39; vs. &#39;would&#39; (and why &#39;would&#39; CANNOT express past states!), plus mystery storytelling and deduction vocabulary." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Unit 2: Unit 2: Life&#39;s Great Mysteries (Past Tenses, Used To &amp; Would)</h2>
+          <p class="kssm-sublead">Master Form 5 Unit 2 mysteries (&#39;Winchester Mystery House&#39;): contrasting Past Simple vs. Past Continuous, past habits and states with &#39;used to&#39; vs. &#39;would&#39; (and why &#39;would&#39; CANNOT express past states!), plus mystery storytelling and deduction vocabulary.</p>
+          <p class="kssm-sheet-meta">Tingkatan 5 &bull; Bahasa Inggeris (1119) &bull; pp. 13–24 &bull; CEFR B1 High • Download B1+ Unit 2 (DSKP KSSM BI Tingkatan 5)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Narrate historical mysteries accurately by combining Past Simple (main events/completed facts) with Past Continuous (ongoing scenes/simultaneous actions).">
+      <span class="kssm-obj-num">01</span>
+      <span>Narrate historical mysteries accurately by combining Past Simple (main events/completed facts) with Past Continuous (ongoing scenes/simultaneous actions).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Distinguish past states (&#39;live&#39;, &#39;have&#39;, &#39;believe&#39;, &#39;own&#39;) from repeated past actions when choosing between &#39;used to&#39; and &#39;would&#39;.">
+      <span class="kssm-obj-num">02</span>
+      <span>Distinguish past states (&#39;live&#39;, &#39;have&#39;, &#39;believe&#39;, &#39;own&#39;) from repeated past actions when choosing between &#39;used to&#39; and &#39;would&#39;.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Understand key reading details of Sarah Winchester&#39;s 1884 California mansion mystery and deduction modals (&#39;must/might/can&#39;t have&#39;).">
+      <span class="kssm-obj-num">03</span>
+      <span>Understand key reading details of Sarah Winchester&#39;s 1884 California mansion mystery and deduction modals (&#39;must/might/can&#39;t have&#39;).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Organise eerie mystery narratives using atmospheric adjectives, time linkers and dramatic endings.">
+      <span class="kssm-obj-num">04</span>
+      <span>Organise eerie mystery narratives using atmospheric adjectives, time linkers and dramatic endings.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 13–24)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Complete the narrative: &#39;While carpenters ______ (build) staircases that led nowhere, rumours quickly ______ (spread) across the town.&#39;" data-ex-solution="&#39;were building&#39; (ongoing activity over a period) and &#39;spread&#39; (verb &#39;spread&#39; has irregular Past Simple &#39;spread&#39;, no &#39;-ed&#39;!)." data-ex-takeaway="Watch irregular verbs like spread-spread-spread, cost-cost-cost and put-put-put!">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Past Simple vs. Past Continuous in Mystery Stories</h3>
       <p class="kssm-sub-summary">Narrating unexplained events such as the Winchester Mystery House or strange disappearances requires precise control over completed events vs. background atmosphere.</p>
       <ul class="kssm-kp-list"><li>Past Simple: single completed actions in sequence (&#39;In 1884, Sarah Winchester left Connecticut, travelled to California and bought a farmhouse&#39;), historical facts and permanent past states.</li><li>Past Continuous (&#39;was/were + V-ing&#39;): ongoing scene-setting (&#39;Moonlight was shining through the attic window&#39;), two parallel ongoing actions (&#39;While builders were hammering upstairs, Sarah was sketching new blueprints&#39;), or interrupted actions.</li><li>Time anchors: &#39;over the next thirty-eight years&#39;, &#39;while&#39;, &#39;as&#39;, &#39;suddenly&#39;, &#39;when&#39;, &#39;at that moment&#39;.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Complete the narrative: &#39;While carpenters ______ (build) staircases that led nowhere, rumours quickly ______ (spread) across the town.&#39;</p>
-        <p><strong>Penyelesaian:</strong> &#39;were building&#39; (ongoing activity over a period) and &#39;spread&#39; (verb &#39;spread&#39; has irregular Past Simple &#39;spread&#39;, no &#39;-ed&#39;!).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Watch irregular verbs like spread-spread-spread, cost-cost-cost and put-put-put!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Complete the narrative: &#39;While carpenters ______ (build) staircases that led nowhere, rumours quickly ______ (spread) across the town.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;were building&#39; (ongoing activity over a period) and &#39;spread&#39; (verb &#39;spread&#39; has irregular Past Simple &#39;spread&#39;, no &#39;-ed&#39;!).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Watch irregular verbs like spread-spread-spread, cost-cost-cost and put-put-put!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Decide whether &#39;would&#39; is valid in both sentences: (1) &#39;My grandad used to tell ghost stories by lantern light.&#39; (2) &#39;That old mansion used to belong to a wealthy inventor.&#39;" data-ex-solution="(1) &#39;tell&#39; is a repeated past action → &#39;would tell&#39; IS VALID! (2) &#39;belong&#39; is a past state → &#39;would belong&#39; is INVALID; ONLY &#39;used to belong&#39; is grammatical!" data-ex-takeaway="Past ACTION repeated regularly = used to OR would; Past STATE (be/live/have/belong/believe) = ONLY used to!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 &#39;Used to&#39; vs. &#39;Would&#39; for Past Habits and States</h3>
       <p class="kssm-sub-summary">This is one of the highest-yield grammar contrasts in Form 5 SPM. Both describe past routines no longer true today, YET they obey one strict restriction regarding STATIVE verbs.</p>
       <ul class="kssm-kp-list"><li>&#39;used to + base verb&#39;: works for BOTH past repeated actions AND past states/situations (&#39;Sarah used to sleep in a different bedroom every night&#39;; &#39;She used to own a huge fortune&#39;).</li><li>&#39;would + base verb&#39;: works ONLY for REPEATED PAST ACTIONS / habits (&#39;She would wear one of 13 special coloured robes and ask spirits for guidance&#39;).</li><li>CRITICAL EXAM RULE: NEVER use &#39;would&#39; with stative verbs (&#39;live&#39;, &#39;be&#39;, &#39;own&#39;, &#39;have&#39;, &#39;like&#39;, &#39;know&#39;, &#39;believe&#39;) for past states! Say &#39;She used to live in Connecticut&#39;, NEVER &#39;She would live in Connecticut&#39;.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Decide whether &#39;would&#39; is valid in both sentences: (1) &#39;My grandad used to tell ghost stories by lantern light.&#39; (2) &#39;That old mansion used to belong to a wealthy inventor.&#39;</p>
-        <p><strong>Penyelesaian:</strong> (1) &#39;tell&#39; is a repeated past action → &#39;would tell&#39; IS VALID! (2) &#39;belong&#39; is a past state → &#39;would belong&#39; is INVALID; ONLY &#39;used to belong&#39; is grammatical!</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Past ACTION repeated regularly = used to OR would; Past STATE (be/live/have/belong/believe) = ONLY used to!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Decide whether &#39;would&#39; is valid in both sentences: (1) &#39;My grandad used to tell ghost stories by lantern light.&#39; (2) &#39;That old mansion used to belong to a wealthy inventor.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (1) &#39;tell&#39; is a repeated past action → &#39;would tell&#39; IS VALID! (2) &#39;belong&#39; is a past state → &#39;would belong&#39; is INVALID; ONLY &#39;used to belong&#39; is grammatical!</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Past ACTION repeated regularly = used to OR would; Past STATE (be/live/have/belong/believe) = ONLY used to!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Why did Sarah Winchester allegedly never sleep in the same bedroom two nights in a row?" data-ex-solution="According to the reading text, she wanted to confuse spirits she believed were haunting her home." data-ex-takeaway="When answering SPM comprehension questions, distinguish verified biographical dates (1884, 38 years) from reported beliefs (&#39;Apparently...&#39;).">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>2.3 Reading Mystery: Winchester Mystery House (p. 18–19)</h3>
       <p class="kssm-sub-summary">Unit 2 features the real-life history of Sarah Winchester, whose grief and eccentric architectural habits sparked a century-old legend in California.</p>
       <ul class="kssm-kp-list"><li>Background: After losing her child and husband (inheriting wealth from the Winchester rifle company), heartbroken Sarah left Connecticut in 1884 for California.</li><li>Mystery construction: For 38 years she employed builders round-the-clock adding strange rooms, doors opening into walls and staircases leading nowhere.</li><li>Habits &amp; beliefs: Legend says she slept in a different bedroom every two nights and consulted robes/seances to confuse spirits — reminding readers how stories blend facts with legend.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Why did Sarah Winchester allegedly never sleep in the same bedroom two nights in a row?</p>
-        <p><strong>Penyelesaian:</strong> According to the reading text, she wanted to confuse spirits she believed were haunting her home.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> When answering SPM comprehension questions, distinguish verified biographical dates (1884, 38 years) from reported beliefs (&#39;Apparently...&#39;).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Why did Sarah Winchester allegedly never sleep in the same bedroom two nights in a row?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> According to the reading text, she wanted to confuse spirits she believed were haunting her home.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> When answering SPM comprehension questions, distinguish verified biographical dates (1884, 38 years) from reported beliefs (&#39;Apparently...&#39;).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Respond using a modal of deduction: &#39;The locked attic door swung open with nobody upstairs and muddy footprints outside.&#39;" data-ex-solution="Someone must have entered earlier, or the wind might have blown a loose latch open — it can&#39;t have been an animal wearing boots!" data-ex-takeaway="&#39;Must have V3&#39; = almost 100% sure; &#39;Might/Could have V3&#39; = possible; &#39;Can&#39;t have V3&#39; = impossible (NEVER &#39;mustn&#39;t have&#39; for deduction!).">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Past Deduction &amp; Narrative Tension Builders</h3>
       <p class="kssm-sub-summary">When debating unsolved mysteries (like UFOs, Bermuda Triangle or ancient ruins), Unit 2 pairs past tenses with speculation vocabulary.</p>
       <ul class="kssm-kp-list"><li>Phrases for explaining mysteries: &#39;archaeologists believe&#39;, &#39;there is no logical explanation&#39;, &#39;it must have been...&#39;, &#39;it could/might have been...&#39;, &#39;it can&#39;t have been...&#39; (impossible).</li><li>Suspicious/mysterious vocab: bizarre, eerie, vanish without a trace, hoax, witness, legend, rumour, clue, investigate.</li><li>Dramatic story openings: avoid dull &#39;One day I went...&#39; — start with sensory sound, unexpected weather or a puzzling discovery.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Respond using a modal of deduction: &#39;The locked attic door swung open with nobody upstairs and muddy footprints outside.&#39;</p>
-        <p><strong>Penyelesaian:</strong> Someone must have entered earlier, or the wind might have blown a loose latch open — it can&#39;t have been an animal wearing boots!</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> &#39;Must have V3&#39; = almost 100% sure; &#39;Might/Could have V3&#39; = possible; &#39;Can&#39;t have V3&#39; = impossible (NEVER &#39;mustn&#39;t have&#39; for deduction!).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Respond using a modal of deduction: &#39;The locked attic door swung open with nobody upstairs and muddy footprints outside.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Someone must have entered earlier, or the wind might have blown a loose latch open — it can&#39;t have been an animal wearing boots!</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> &#39;Must have V3&#39; = almost 100% sure; &#39;Might/Could have V3&#39; = possible; &#39;Can&#39;t have V3&#39; = impossible (NEVER &#39;mustn&#39;t have&#39; for deduction!).</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Using &#39;would&#39; for past states, e.g. &#39;Years ago, there would be a creepy well behind our school.&#39;</p>
-      <p><strong>Pembetulan Tepat:</strong> &#39;Be&#39; describes a state, not a repeated action, so use &#39;used to&#39;: &#39;There used to be a creepy well...&#39;.</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Using &#39;would&#39; for past states, e.g. &#39;Years ago, there would be a creepy well behind our school.&#39;" data-m-correction="&#39;Be&#39; describes a state, not a repeated action, so use &#39;used to&#39;: &#39;There used to be a creepy well...&#39;." data-m-tip="Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like &#39;be/live/have/believe&#39;), ban &#39;would&#39;!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using &#39;would&#39; for past states, e.g. &#39;Years ago, there would be a creepy well behind our school.&#39;</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> &#39;Be&#39; describes a state, not a repeated action, so use &#39;used to&#39;: &#39;There used to be a creepy well...&#39;.</p>
       <p><strong>Tip Skor Exam:</strong> Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like &#39;be/live/have/believe&#39;), ban &#39;would&#39;!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Writing &#39;She didn&#39;t used to believe in legends&#39; or &#39;Did people would tell stories?&#39;</p>
-      <p><strong>Pembetulan Tepat:</strong> After &#39;didn&#39;t/did&#39;, drop &#39;-d&#39;: &#39;didn&#39;t use to believe&#39;. And NEVER form yes/no questions about past habits with &#39;Did ... would&#39; — use &#39;Did people use to tell...?&#39;</p>
+<article class="kssm-mistake-card" data-m-mistake="Writing &#39;She didn&#39;t used to believe in legends&#39; or &#39;Did people would tell stories?&#39;" data-m-correction="After &#39;didn&#39;t/did&#39;, drop &#39;-d&#39;: &#39;didn&#39;t use to believe&#39;. And NEVER form yes/no questions about past habits with &#39;Did ... would&#39; — use &#39;Did people use to tell...?&#39;" data-m-tip="Negatives and questions belong to &#39;use to&#39;, almost never &#39;would&#39;!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Writing &#39;She didn&#39;t used to believe in legends&#39; or &#39;Did people would tell stories?&#39;</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> After &#39;didn&#39;t/did&#39;, drop &#39;-d&#39;: &#39;didn&#39;t use to believe&#39;. And NEVER form yes/no questions about past habits with &#39;Did ... would&#39; — use &#39;Did people use to tell...?&#39;</p>
       <p><strong>Tip Skor Exam:</strong> Negatives and questions belong to &#39;use to&#39;, almost never &#39;would&#39;!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Using &#39;mustn&#39;t have&#39; as the opposite of &#39;must have&#39; when deducing mysteries (&#39;It mustn&#39;t have been a ghost&#39;).</p>
-      <p><strong>Pembetulan Tepat:</strong> The logical opposite of certainty &#39;must have been&#39; is &#39;can&#39;t have been&#39; (&#39;It can&#39;t have been a ghost; I saw the curtain string&#39;).</p>
+<article class="kssm-mistake-card" data-m-mistake="Using &#39;mustn&#39;t have&#39; as the opposite of &#39;must have&#39; when deducing mysteries (&#39;It mustn&#39;t have been a ghost&#39;)." data-m-correction="The logical opposite of certainty &#39;must have been&#39; is &#39;can&#39;t have been&#39; (&#39;It can&#39;t have been a ghost; I saw the curtain string&#39;)." data-m-tip="Sure YES = must have; Sure NO = can&#39;t have!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using &#39;mustn&#39;t have&#39; as the opposite of &#39;must have&#39; when deducing mysteries (&#39;It mustn&#39;t have been a ghost&#39;).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> The logical opposite of certainty &#39;must have been&#39; is &#39;can&#39;t have been&#39; (&#39;It can&#39;t have been a ghost; I saw the curtain string&#39;).</p>
       <p><strong>Tip Skor Exam:</strong> Sure YES = must have; Sure NO = can&#39;t have!</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 1 (Objektif) &bull; 0 Token</span>
@@ -929,11 +987,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 2 / Berstruktur &amp; KBAT</span>
@@ -1035,9 +1090,7 @@
           <a href="../../../../?cikguSubjek=Bahasa%20Inggeris&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%205%20%E2%80%A2%20Bahasa%20Inggeris%20Bab%202%3A%20Unit%202%3A%20Life&#39;s%20Great%20Mysteries%20(Past%20Tenses%2C%20Used%20To%20%26%20Would)%5D%20Write%20a%2070-word%20atmospheric%20opening%20for%20a%20mystery%20story%20set%20in%20an%20abandoned%20clock%20tower.%20Use%20at%20least%20one%20Past%20Continuous%20background%20sentence%20interrupted%20by%20Past%20Simple%2C%20one%20&#39;used%20to&#39;%20state%2C%20and%20two%20mystery%20adjectives.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1094,13 +1147,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1188,6 +1234,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

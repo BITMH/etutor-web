@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Bahasa Melayu Bab 1","item":"https://etutor.my/kssm/tingkatan-3/bahasa-melayu/bab-1/"}]},{"@type":"LearningResource","name":"Bahasa Melayu Tingkatan 3 Bab 1: Suluh Masa Depan (Kata Nama & Kata Pinjaman)","description":"Menguasai kata nama dan pengejaan kata pinjaman bahasa Inggeris serta Arab/Sanskrit yang tepat, laras bahasa laporan dan berita tentang laluan pendidikan selepas Tingkatan 3, serta teknik bacaan KWLH dan SQ3R.","url":"https://etutor.my/kssm/tingkatan-3/bahasa-melayu/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Melayu KSSM (1103)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 3</a> / <span>Bahasa Melayu Tema 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 3)</span>
-      <span>Bahasa Melayu (1103) &bull; Tema 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Bahasa Melayu Tingkatan 3 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Mengenal pasti dan menggunakan kata nama am, kata nama khas serta kata pinjaman (modus operandi, vokasional, graduan, teknologi) dengan ejaan baku.</li><li>Membaca laras bahasa laporan dan berita dengan sebutan, intonasi serta nada yang sesuai mengenai laluan Kolej Vokasional dan aliran perdana.</li><li>Mengaplikasikan teknik bacaan aktif KWLH dan SQ3R (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan Kembali, Refleksi).</li><li>Menulis dan menerangkan makna kata, rangkai kata, istilah serta gurindam kepentingan ilmu dengan gramatis.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–13)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-melayu" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_bahasa-melayu_Bab_1.pdf" data-form-label="Tingkatan 3" data-subject-name="Bahasa Melayu" data-subject-code="1103" data-pages="m.s. 1–13" data-dskp="SK 1.1, 1.2, 2.1, 2.2, 3.1, 5.1 (DSKP KSSM BM Tingkatan 3)" data-chapter-heading="Tema 1: Suluh Masa Depan (Kata Nama &amp; Kata Pinjaman)" data-hero-summary="Menguasai kata nama dan pengejaan kata pinjaman bahasa Inggeris serta Arab/Sanskrit yang tepat, laras bahasa laporan dan berita tentang laluan pendidikan selepas Tingkatan 3, serta teknik bacaan KWLH dan SQ3R." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Tema 1: Suluh Masa Depan (Kata Nama &amp; Kata Pinjaman)</h2>
+          <p class="kssm-sublead">Menguasai kata nama dan pengejaan kata pinjaman bahasa Inggeris serta Arab/Sanskrit yang tepat, laras bahasa laporan dan berita tentang laluan pendidikan selepas Tingkatan 3, serta teknik bacaan KWLH dan SQ3R.</p>
+          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Bahasa Melayu (1103) &bull; m.s. 1–13 &bull; SK 1.1, 1.2, 2.1, 2.2, 3.1, 5.1 (DSKP KSSM BM Tingkatan 3)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mengenal pasti dan menggunakan kata nama am, kata nama khas serta kata pinjaman (modus operandi, vokasional, graduan, teknologi) dengan ejaan baku.">
+      <span class="kssm-obj-num">01</span>
+      <span>Mengenal pasti dan menggunakan kata nama am, kata nama khas serta kata pinjaman (modus operandi, vokasional, graduan, teknologi) dengan ejaan baku.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Membaca laras bahasa laporan dan berita dengan sebutan, intonasi serta nada yang sesuai mengenai laluan Kolej Vokasional dan aliran perdana.">
+      <span class="kssm-obj-num">02</span>
+      <span>Membaca laras bahasa laporan dan berita dengan sebutan, intonasi serta nada yang sesuai mengenai laluan Kolej Vokasional dan aliran perdana.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengaplikasikan teknik bacaan aktif KWLH dan SQ3R (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan Kembali, Refleksi).">
+      <span class="kssm-obj-num">03</span>
+      <span>Mengaplikasikan teknik bacaan aktif KWLH dan SQ3R (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan Kembali, Refleksi).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menulis dan menerangkan makna kata, rangkai kata, istilah serta gurindam kepentingan ilmu dengan gramatis.">
+      <span class="kssm-obj-num">04</span>
+      <span>Menulis dan menerangkan makna kata, rangkai kata, istilah serta gurindam kepentingan ilmu dengan gramatis.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–13)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Kenal pasti kata pinjaman daripada petikan Tema 1: &#39;Kolej Vokasional melaksanakan modus operandi pembelajaran kendiri dengan sokongan teknologi moden.&#39;" data-ex-solution="&#39;vokasional&#39;, &#39;modus operandi&#39;, dan &#39;teknologi&#39;." data-ex-takeaway="Bezakan kata pinjaman yang sudah dimelayukan ejaannya (&#39;ekonomi&#39;, &#39;akibat&#39;) daripada ungkapan asing utuh yang perlu dicondongkan (&#39;modus operandi&#39;).">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Kata Nama &amp; Kata Pinjaman Bahasa Melayu (SP 5.1.1)</h3>
       <p class="kssm-sub-summary">Pemodenan ilmu dan kerjaya selepas Tingkatan 3 memperkenalkan banyak kata pinjaman daripada bahasa Arab, Sanskrit, dan Inggeris yang diserap ke dalam sistem ejaan serta morfologi bahasa Melayu.</p>
       <ul class="kssm-kp-list"><li>Kata pinjaman Inggeris mengekalkan keselarasan bentuk atau disesuaikan ejaannya: vokasional (vocational), inovasi, teknologi, fokus, moden, profesional, modus operandi (istilah Latin/Inggeris yang dikekalkan).</li><li>Kata pinjaman Arab &amp; Sanskrit: syukur, azimat, waswas, hikmat, pelajar, sosiobudaya, ilmu, tawakal.</li><li>Pastikan kata pinjaman seperti &#39;profesional&#39; (satu &#39;s&#39;), &#39;teknologi&#39; (bukan &#39;tehnologi&#39;) dan &#39;vokasional&#39; (bukan &#39;vokesyenal&#39;) dieja mengikut Pedoman Umum Ejaan Rumi.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Kenal pasti kata pinjaman daripada petikan Tema 1: &#39;Kolej Vokasional melaksanakan modus operandi pembelajaran kendiri dengan sokongan teknologi moden.&#39;</p>
-        <p><strong>Penyelesaian:</strong> &#39;vokasional&#39;, &#39;modus operandi&#39;, dan &#39;teknologi&#39;.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Bezakan kata pinjaman yang sudah dimelayukan ejaannya (&#39;ekonomi&#39;, &#39;akibat&#39;) daripada ungkapan asing utuh yang perlu dicondongkan (&#39;modus operandi&#39;).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Kenal pasti kata pinjaman daripada petikan Tema 1: &#39;Kolej Vokasional melaksanakan modus operandi pembelajaran kendiri dengan sokongan teknologi moden.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;vokasional&#39;, &#39;modus operandi&#39;, dan &#39;teknologi&#39;.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Bezakan kata pinjaman yang sudah dimelayukan ejaannya (&#39;ekonomi&#39;, &#39;akibat&#39;) daripada ungkapan asing utuh yang perlu dicondongkan (&#39;modus operandi&#39;).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Mengapakah langkah &#39;Meninjau&#39; dan &#39;Menyoal&#39; dilakukan sebelum membaca teks sepenuhnya dalam teknik SQ3R?" data-ex-solution="Sebagai tahap prabaca untuk mendapatkan gambaran awal tema teks dan merangsang fokus mencari jawapan penting semasa membaca." data-ex-takeaway="Gunakan kaedah bulatkan kata kunci dan tanda soal (?) pada idea kabur ketika menjawab kertas pemahaman.">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Teknik Membaca Aktif: KWLH, CHATT &amp; SQ3R (m.s. 15–17)</h3>
       <p class="kssm-sub-summary">Buku Teks BM Tingkatan 3 memulakan pengajaran dengan strategi membaca aktif supaya murid memahami teks laporan, berita dan rencana peperiksaan dengan cekap.</p>
       <ul class="kssm-kp-list"><li>KWLH: Know (sudah diketahui) → What (ingin diketahui) → Learned (dipelajari selepas baca) → How (bagaimana mendapat maklumat tambahan).</li><li>CHATT: Circle (bulatkan kata kunci) → Highlight (tandai idea utama) → Asterisk (*) → Transfer (pindah ke jadual/ringkasan) → Teacher summary.</li><li>SQ3R oleh Francis Robinson (6 langkah diadaptasi dalam buku teks): Meninjau (Survey), Menyoal (Question), Membaca (Read), Mencatat (Record), Menyatakan kembali (Recite) dan Membuat refleksi (Review).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Mengapakah langkah &#39;Meninjau&#39; dan &#39;Menyoal&#39; dilakukan sebelum membaca teks sepenuhnya dalam teknik SQ3R?</p>
-        <p><strong>Penyelesaian:</strong> Sebagai tahap prabaca untuk mendapatkan gambaran awal tema teks dan merangsang fokus mencari jawapan penting semasa membaca.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Gunakan kaedah bulatkan kata kunci dan tanda soal (?) pada idea kabur ketika menjawab kertas pemahaman.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah langkah &#39;Meninjau&#39; dan &#39;Menyoal&#39; dilakukan sebelum membaca teks sepenuhnya dalam teknik SQ3R?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Sebagai tahap prabaca untuk mendapatkan gambaran awal tema teks dan merangsang fokus mencari jawapan penting semasa membaca.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Gunakan kaedah bulatkan kata kunci dan tanda soal (?) pada idea kabur ketika menjawab kertas pemahaman.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Apakah maksud simpulan bahasa &#39;beralih angin&#39; dan &#39;bagai katak di bawah tempurung&#39; dalam teks Tema 1?" data-ex-solution="&#39;Beralih angin&#39; bermaksud bertukar haluan/suasana baharu (contohnya bertukar ke aliran vokasional); &#39;bagai katak di bawah tempurung&#39; merujuk orang yang sempit pengetahuan kerana tidak mahu menuntut ilmu." data-ex-takeaway="Gurindam m.s. 30 (&#39;Tanpa ilmu fikiran dikurung, Bagai katak di bawah tempurung&#39;) menonjolkan nilai kesungguhan menuntut ilmu.">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Pendidikan Selepas Tingkatan Tiga &amp; Laras Laporan (SP 2.1.1)</h3>
       <p class="kssm-sub-summary">Petikan Tema 1 menerangkan pilihan pendidikan selepas Tingkatan 3 termasuk aliran perdana STEM/kemanusiaan, Kolej Vokasional (KV), Pendidikan Asas Vokasional (PAV) dan kecemerlangan sekolah seperti Seri Puteri Symphonic Winds (SPWinds) serta PIPOA.</p>
       <ul class="kssm-kp-list"><li>Selepas Tingkatan 3, pelajar boleh memilih aliran perdana di SMK atau beralih angin ke Kolej Vokasional (KV) dan sekolah teknik mengikut potensi diri.</li><li>Program Pendidikan Orang Asli (seperti PIPOA) membuktikan keprihatinan kerajaan menyalurkan peruntukan RM17.5 juta bagi melahirkan graduan berdaya saing.</li><li>Laras laporan &amp; berita bercirikan fakta berangka tepat, gaya bahasa objektif, tidak beremosi dan tersusun mengikut kronologi.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Apakah maksud simpulan bahasa &#39;beralih angin&#39; dan &#39;bagai katak di bawah tempurung&#39; dalam teks Tema 1?</p>
-        <p><strong>Penyelesaian:</strong> &#39;Beralih angin&#39; bermaksud bertukar haluan/suasana baharu (contohnya bertukar ke aliran vokasional); &#39;bagai katak di bawah tempurung&#39; merujuk orang yang sempit pengetahuan kerana tidak mahu menuntut ilmu.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Gurindam m.s. 30 (&#39;Tanpa ilmu fikiran dikurung, Bagai katak di bawah tempurung&#39;) menonjolkan nilai kesungguhan menuntut ilmu.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Apakah maksud simpulan bahasa &#39;beralih angin&#39; dan &#39;bagai katak di bawah tempurung&#39; dalam teks Tema 1?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;Beralih angin&#39; bermaksud bertukar haluan/suasana baharu (contohnya bertukar ke aliran vokasional); &#39;bagai katak di bawah tempurung&#39; merujuk orang yang sempit pengetahuan kerana tidak mahu menuntut ilmu.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Gurindam m.s. 30 (&#39;Tanpa ilmu fikiran dikurung, Bagai katak di bawah tempurung&#39;) menonjolkan nilai kesungguhan menuntut ilmu.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Terangkan maksud rangkai kata &#39;membawa minda yang cerdas&#39; mengikut konteks nasihat warden asrama." data-ex-solution="Memiliki fikiran yang tajam, rasional dan positif ketika berdepan pelbagai cabaran serta ragam rakan sebaya." data-ex-takeaway="Pastikan terjemahan makna rangkai kata masih mengekalkan golongan kata dan nada ayat asal.">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Menjelaskan Makna Istilah &amp; Menulis Perenggan Bernas (SP 2.2.1 &amp; 3.1.1)</h3>
       <p class="kssm-sub-summary">Dalam soalan pemahaman dan penulisan Tingkatan 3, murid diuji kemahiran menerangkan maksud rangkai kata mengikut konteks menggunakan kamus dan tesaurus serta membina ayat yang tepat.</p>
       <ul class="kssm-kp-list"><li>Rangkai kata &#39;tidak berbelah bahagi&#39; bermaksud sokongan penuh tanpa keraguan; &#39;kata-kata azimat&#39; bermaksud nasihat atau pegangan berharga.</li><li>Apabila diminta menerangkan maksud rangkai kata, gantikan setiap kata sukar dengan padanan tepat mengikut konteks ayat asal — JANGAN salin semula ayat soalan.</li><li>Gunakan tesaurus untuk mempelbagaikan kosa kata berkualiti seperti &#39;pemudah cara&#39; (fasilitator) dan &#39;akses kendiri&#39;.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Terangkan maksud rangkai kata &#39;membawa minda yang cerdas&#39; mengikut konteks nasihat warden asrama.</p>
-        <p><strong>Penyelesaian:</strong> Memiliki fikiran yang tajam, rasional dan positif ketika berdepan pelbagai cabaran serta ragam rakan sebaya.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Pastikan terjemahan makna rangkai kata masih mengekalkan golongan kata dan nada ayat asal.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Terangkan maksud rangkai kata &#39;membawa minda yang cerdas&#39; mengikut konteks nasihat warden asrama.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Memiliki fikiran yang tajam, rasional dan positif ketika berdepan pelbagai cabaran serta ragam rakan sebaya.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pastikan terjemahan makna rangkai kata masih mengekalkan golongan kata dan nada ayat asal.</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengeja kata pinjaman Inggeris mengikut bunyi asal seperti &#39;tehnologi&#39;, &#39;vokesyenal&#39; atau &#39;professional&#39;.</p>
-      <p><strong>Pembetulan Tepat:</strong> Ejaan baku bahasa Melayu ialah &#39;teknologi&#39;, &#39;vokasional&#39; dan &#39;profesional&#39; (satu huruf &#39;s&#39;).</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengeja kata pinjaman Inggeris mengikut bunyi asal seperti &#39;tehnologi&#39;, &#39;vokesyenal&#39; atau &#39;professional&#39;." data-m-correction="Ejaan baku bahasa Melayu ialah &#39;teknologi&#39;, &#39;vokasional&#39; dan &#39;profesional&#39; (satu huruf &#39;s&#39;)." data-m-tip="Semak keselarasan kata pinjaman Inggeris: &#39;-tion&#39; menjadi &#39;-si&#39;, &#39;-al&#39; kekal &#39;-al&#39;.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengeja kata pinjaman Inggeris mengikut bunyi asal seperti &#39;tehnologi&#39;, &#39;vokesyenal&#39; atau &#39;professional&#39;.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Ejaan baku bahasa Melayu ialah &#39;teknologi&#39;, &#39;vokasional&#39; dan &#39;profesional&#39; (satu huruf &#39;s&#39;).</p>
       <p><strong>Tip Skor Exam:</strong> Semak keselarasan kata pinjaman Inggeris: &#39;-tion&#39; menjadi &#39;-si&#39;, &#39;-al&#39; kekal &#39;-al&#39;.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menjelaskan maksud rangkai kata dengan menggunakan perkataan dasar yang sama dari soalan.</p>
-      <p><strong>Pembetulan Tepat:</strong> Berikan kata sinonim atau huraian tepat, contohnya &#39;sokongan tidak berbelah bahagi&#39; → &#39;bantuan penuh yang ikhlas tanpa sebarang keraguan&#39;.</p>
+<article class="kssm-mistake-card" data-m-mistake="Menjelaskan maksud rangkai kata dengan menggunakan perkataan dasar yang sama dari soalan." data-m-correction="Berikan kata sinonim atau huraian tepat, contohnya &#39;sokongan tidak berbelah bahagi&#39; → &#39;bantuan penuh yang ikhlas tanpa sebarang keraguan&#39;." data-m-tip="Tukar sekurang-kurangnya kata utama dengan sinonim kamus yang tepat.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menjelaskan maksud rangkai kata dengan menggunakan perkataan dasar yang sama dari soalan.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Berikan kata sinonim atau huraian tepat, contohnya &#39;sokongan tidak berbelah bahagi&#39; → &#39;bantuan penuh yang ikhlas tanpa sebarang keraguan&#39;.</p>
       <p><strong>Tip Skor Exam:</strong> Tukar sekurang-kurangnya kata utama dengan sinonim kamus yang tepat.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengelirukan teknik bacaan KWLH dengan SQ3R dalam soalan amalan bacaan.</p>
-      <p><strong>Pembetulan Tepat:</strong> KWLH memfokuskan jadual Know-What-Learned-How, manakala SQ3R terdiri daripada 6 langkah (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan kembali, Refleksi).</p>
+<article class="kssm-mistake-card" data-m-mistake="Mengelirukan teknik bacaan KWLH dengan SQ3R dalam soalan amalan bacaan." data-m-correction="KWLH memfokuskan jadual Know-What-Learned-How, manakala SQ3R terdiri daripada 6 langkah (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan kembali, Refleksi)." data-m-tip="SQ3R mempunyai &#39;3R&#39; (Read, Record/Recite, Review).">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan teknik bacaan KWLH dengan SQ3R dalam soalan amalan bacaan.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> KWLH memfokuskan jadual Know-What-Learned-How, manakala SQ3R terdiri daripada 6 langkah (Meninjau, Menyoal, Membaca, Mencatat, Menyatakan kembali, Refleksi).</p>
       <p><strong>Tip Skor Exam:</strong> SQ3R mempunyai &#39;3R&#39; (Read, Record/Recite, Review).</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Bahasa%20Melayu&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%203%20%E2%80%A2%20Bahasa%20Melayu%20Bab%201%3A%20Suluh%20Masa%20Depan%20(Kata%20Nama%20%26%20Kata%20Pinjaman)%5D%20Anda%20bakal%20membuat%20pilihan%20antara%20aliran%20perdana%20dengan%20Kolej%20Vokasional%20selepas%20Tingkatan%203.%20Huraikan%20tiga%20faktor%20pertimbangan%20yang%20bijak%20sebelum%20membuat%20pemilihan%20aliran%20tersebut.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

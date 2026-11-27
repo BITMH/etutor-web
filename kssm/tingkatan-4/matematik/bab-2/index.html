@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 2","item":"https://etutor.my/kssm/tingkatan-4/matematik/bab-2/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 4 Bab 2: Asas Nombor (Penukaran Asas 2 hingga 9 & Operasi)","description":"Menguasai perwakilan nombor dalam asas 2 hingga 9, penentuan nilai tempat dan nilai digit bⁿ, penukaran pantas antara asas (melalui asas 10 dan kaedah blok 3-bit antara asas 2 dengan asas 8) serta bentuk lazim penambahan dan penolakan pelbagai asas.","url":"https://etutor.my/kssm/tingkatan-4/matematik/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 4</a> / <span>Matematik Bab 2</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 4)</span>
-      <span>Matematik (1449) &bull; Bab 2</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -286,90 +299,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Matematik Tingkatan 4 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Mewakilkan nombor dalam asas 2 hingga 9 dengan digit sah (0 hingga b - 1) serta menyatakan nilai tempat (bⁿ) dan nilai digit.</li><li>Menukar nombor daripada asas lain ke asas sepuluh menggunakan kembangan nilai tempat, dan dari asas sepuluh ke asas lain dengan pembahagian berulang.</li><li>Menukar terus antara nombor asas dua dan asas lapan dengan kaedah pengelompokan 3 digit (4-2-1).</li><li>Melaksanakan pengiraan penambahan dan penolakan nombor dalam pelbagai asas secara bentuk lazim serta menyelesaikan masalah SPM.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 33–54)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_matematik_Bab_2.pdf" data-form-label="Tingkatan 4" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 33–54" data-dskp="SK 2.1 (DSKP KSSM Matematik Tingkatan 4)" data-chapter-heading="Bab 2: Asas Nombor (Penukaran Asas 2 hingga 9 &amp; Operasi)" data-hero-summary="Menguasai perwakilan nombor dalam asas 2 hingga 9, penentuan nilai tempat dan nilai digit bⁿ, penukaran pantas antara asas (melalui asas 10 dan kaedah blok 3-bit antara asas 2 dengan asas 8) serta bentuk lazim penambahan dan penolakan pelbagai asas." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Bab 2: Asas Nombor (Penukaran Asas 2 hingga 9 &amp; Operasi)</h2>
+          <p class="kssm-sublead">Menguasai perwakilan nombor dalam asas 2 hingga 9, penentuan nilai tempat dan nilai digit bⁿ, penukaran pantas antara asas (melalui asas 10 dan kaedah blok 3-bit antara asas 2 dengan asas 8) serta bentuk lazim penambahan dan penolakan pelbagai asas.</p>
+          <p class="kssm-sheet-meta">Tingkatan 4 &bull; Matematik (1449) &bull; m.s. 33–54 &bull; SK 2.1 (DSKP KSSM Matematik Tingkatan 4)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mewakilkan nombor dalam asas 2 hingga 9 dengan digit sah (0 hingga b - 1) serta menyatakan nilai tempat (bⁿ) dan nilai digit.">
+      <span class="kssm-obj-num">01</span>
+      <span>Mewakilkan nombor dalam asas 2 hingga 9 dengan digit sah (0 hingga b - 1) serta menyatakan nilai tempat (bⁿ) dan nilai digit.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menukar nombor daripada asas lain ke asas sepuluh menggunakan kembangan nilai tempat, dan dari asas sepuluh ke asas lain dengan pembahagian berulang.">
+      <span class="kssm-obj-num">02</span>
+      <span>Menukar nombor daripada asas lain ke asas sepuluh menggunakan kembangan nilai tempat, dan dari asas sepuluh ke asas lain dengan pembahagian berulang.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menukar terus antara nombor asas dua dan asas lapan dengan kaedah pengelompokan 3 digit (4-2-1).">
+      <span class="kssm-obj-num">03</span>
+      <span>Menukar terus antara nombor asas dua dan asas lapan dengan kaedah pengelompokan 3 digit (4-2-1).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Melaksanakan pengiraan penambahan dan penolakan nombor dalam pelbagai asas secara bentuk lazim serta menyelesaikan masalah SPM.">
+      <span class="kssm-obj-num">04</span>
+      <span>Melaksanakan pengiraan penambahan dan penolakan nombor dalam pelbagai asas secara bentuk lazim serta menyelesaikan masalah SPM.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 33–54)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Tentukan nilai digit bagi digit bergaris 6 dalam nombor 6231₈, dan hitung nilai keseluruhan nombor itu dalam asas sepuluh." data-ex-solution="Digit 6 berada di tempat 8³ = 512, maka nilai digitnya = 6 × 8³ = 3,072. Nilai keseluruhan = (6×512) + (2×64) + (3×8) + (1×1) = 3,072 + 128 + 24 + 1 = 3,225₁₀." data-ex-takeaway="Sentiasa mulakan nilai tempat paling kanan dengan kuasa SIFAR (b⁰ = 1), BUKAN b¹!">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Digit Sah, Nilai Tempat &amp; Nilai Nombor Asas 10 (m.s. 35–41)</h3>
       <p class="kssm-sub-summary">Setiap asas nombor b hanya boleh menggunakan digit dari 0 hingga (b - 1). Nilai sesuatu nombor dalam asas sepuluh diperoleh dengan menjumlahkan hasil darab setiap digit dengan nilai tempat kuasanya.</p>
       <ul class="kssm-kp-list"><li>Asas 2 (binari) guna digit {0, 1}; Asas 5 guna {0, 1, 2, 3, 4}; Asas 8 (oktal) guna {0..7}; Asas 9 guna {0..8}. Contoh: &#39;371₆&#39; TIDAK SAH kerana terdapat digit 7 ≥ 6!</li><li>Nilai tempat dari kanan ke kiri bagi asas b ialah b⁰ (=1), b¹, b², b³, ...</li><li>Contoh 253₆: nilai tempat = 6², 6¹, 6⁰ (36, 6, 1). Nilai dalam asas 10 = (2 × 6²) + (5 × 6¹) + (3 × 6⁰) = 72 + 30 + 3 = 105₁₀.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Tentukan nilai digit bagi digit bergaris 6 dalam nombor 6231₈, dan hitung nilai keseluruhan nombor itu dalam asas sepuluh.</p>
-        <p><strong>Penyelesaian:</strong> Digit 6 berada di tempat 8³ = 512, maka nilai digitnya = 6 × 8³ = 3,072. Nilai keseluruhan = (6×512) + (2×64) + (3×8) + (1×1) = 3,072 + 128 + 24 + 1 = 3,225₁₀.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa mulakan nilai tempat paling kanan dengan kuasa SIFAR (b⁰ = 1), BUKAN b¹!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Tentukan nilai digit bagi digit bergaris 6 dalam nombor 6231₈, dan hitung nilai keseluruhan nombor itu dalam asas sepuluh.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Digit 6 berada di tempat 8³ = 512, maka nilai digitnya = 6 × 8³ = 3,072. Nilai keseluruhan = (6×512) + (2×64) + (3×8) + (1×1) = 3,072 + 128 + 24 + 1 = 3,225₁₀.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa mulakan nilai tempat paling kanan dengan kuasa SIFAR (b⁰ = 1), BUKAN b¹!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Tukarkan 65₈ terus kepada asas dua tanpa melalui asas sepuluh." data-ex-solution="Pecahkan setiap digit oktal kepada 3 bit [4,2,1]: 6 = 4+2+0 = 110; 5 = 4+0+1 = 101 → gabungkan: 110101₂." data-ex-takeaway="Kelompokkan bit dari KANAN ke KIRI untuk 2→8, dan kembangkan setiap digit kepada tepat 3 bit untuk 8→2!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Penukaran Antara Asas &amp; Pintasan Asas 2 ke/dari Asas 8 (m.s. 42–46)</h3>
       <p class="kssm-sub-summary">Untuk menukar antara mana-mana dua asas (selain asas 2ke/dari8), gunakan asas sepuluh sebagai jambatan perantara melalui kembangan darab diikuti pembahagian berulang.</p>
       <ul class="kssm-kp-list"><li>Asas 10 → Asas b: bahagikan nombor secara berulang dengan b dan catat BAKI setiap langkah, kemudian baca baki dari BAWAH ke ATAS!</li><li>Contoh: Tukar 43₁₀ ke asas 4 → 43÷4 = 10 baki 3; 10÷4 = 2 baki 2; 2÷4 = 0 baki 2 → Baca dari bawah: 223₄.</li><li>Pintasan Asas 2 ke/dari Asas 8 (2³ = 8): Kelompokkan digit asas 2 kepada tiga-tiga dari KANAN ke kiri (tambah 0 di kiri jika tidak cukup 3), dan tukar setiap kumpulan menggunakan pemberat [4, 2, 1]. Contoh: 1101101₂ → 001 | 101 | 101 → (1)(4+1)(4+1) = 155₈!</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Tukarkan 65₈ terus kepada asas dua tanpa melalui asas sepuluh.</p>
-        <p><strong>Penyelesaian:</strong> Pecahkan setiap digit oktal kepada 3 bit [4,2,1]: 6 = 4+2+0 = 110; 5 = 4+0+1 = 101 → gabungkan: 110101₂.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Kelompokkan bit dari KANAN ke KIRI untuk 2→8, dan kembangkan setiap digit kepada tepat 3 bit untuk 8→2!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Tukarkan 65₈ terus kepada asas dua tanpa melalui asas sepuluh.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Pecahkan setiap digit oktal kepada 3 bit [4,2,1]: 6 = 4+2+0 = 110; 5 = 4+0+1 = 101 → gabungkan: 110101₂.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kelompokkan bit dari KANAN ke KIRI untuk 2→8, dan kembangkan setiap digit kepada tepat 3 bit untuk 8→2!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Hitung 372₈ - 77₈ secara bentuk lazim." data-ex-solution="Lajur kanan: 2 &lt; 7, pinjam 1 daripada 7 (tinggal 6), bawa nilai +8 → (8+2)-7 = 3. Lajur tengah: 6 &lt; 7, pinjam 1 daripada 3 (tinggal 2), bawa +8 → (8+6)-7 = 7. Lajur kiri: 2. Jawapan = 273₈." data-ex-takeaway="Ketika meminjam dari kiri dalam asas b, tambah &#39;b&#39; kepada digit yang meminjam (cth +8 dalam asas 8, +5 dalam asas 5, +2 dalam asas 2)!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>2.3 Tambah &amp; Tolak Nombor dalam Pelbagai Asas (m.s. 47–49)</h3>
       <p class="kssm-sub-summary">Bentuk lazim penambahan dan penolakan dalam asas b mematuhi logik kumpul semula (carry / borrow) berasaskan nilai asas b, bukannya 10.</p>
       <ul class="kssm-kp-list"><li>Penambahan Asas b: Tambah lajur dari kanan. Jika jumlah S ≥ b, tulis baki (S - b) dan bawa naik +1 ke lajur kiri (jika S = b + r, tulis r, bawa 1).</li><li>Contoh Asas 8: 673₈ + 175₈ → lajur sa: 3+5 = 8 = (1×8 + 0) → tulis 0 bawa 1; lajur lapanan: 1+7+7 = 15 = (1×8 + 7) → tulis 7 bawa 1; lajur kiri: 1+6+1 = 8 → tulis 10 → jawapan 1070₈!</li><li>Penolakan Asas b: Jika digit atas &lt; digit bawah, pinjam 1 daripada lajur sebelah kiri yang BERNILAI &#39;b&#39; (BUKAN 10!). Contoh Asas 7: 6241₇ - 613₇ → lajur kanan 1 &lt; 3 → pinjam 1 dari 4 (tinggal 3), 1 menjadi 7+1 = 8 → 8 - 3 = 5; akhirnya = 5325₇.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Hitung 372₈ - 77₈ secara bentuk lazim.</p>
-        <p><strong>Penyelesaian:</strong> Lajur kanan: 2 &lt; 7, pinjam 1 daripada 7 (tinggal 6), bawa nilai +8 → (8+2)-7 = 3. Lajur tengah: 6 &lt; 7, pinjam 1 daripada 3 (tinggal 2), bawa +8 → (8+6)-7 = 7. Lajur kiri: 2. Jawapan = 273₈.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Ketika meminjam dari kiri dalam asas b, tambah &#39;b&#39; kepada digit yang meminjam (cth +8 dalam asas 8, +5 dalam asas 5, +2 dalam asas 2)!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Hitung 372₈ - 77₈ secara bentuk lazim.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Lajur kanan: 2 &lt; 7, pinjam 1 daripada 7 (tinggal 6), bawa nilai +8 → (8+2)-7 = 3. Lajur tengah: 6 &lt; 7, pinjam 1 daripada 3 (tinggal 2), bawa +8 → (8+6)-7 = 7. Lajur kiri: 2. Jawapan = 273₈.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Ketika meminjam dari kiri dalam asas b, tambah &#39;b&#39; kepada digit yang meminjam (cth +8 dalam asas 8, +5 dalam asas 5, +2 dalam asas 2)!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Tentukan sama ada pernyataan 123₄ &gt; 23₈ benar atau palsu." data-ex-solution="123₄ = 1(16) + 2(4) + 3(1) = 27₁₀. 23₈ = 2(8) + 3(1) = 19₁₀. Kerana 27 &gt; 19, pernyataan adalah BENAR." data-ex-takeaway="Sentiasa tukarkan kedua-dua nombor ke asas sepuluh terlebih dahulu apabila membandingkan nombor daripada asas berlainan!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Masalah Aplikasi &amp; Semakan Kalkulator / Semakan Silang (m.s. 50–52)</h3>
       <p class="kssm-sub-summary">Soalan SPM Kertas 1 dan Kertas 2 sering menggabungkan penukaran asas daripada jadual peratus atau markah subjek serta mencari digit yang tidak diketahui dalam persamaan asas.</p>
       <ul class="kssm-kp-list"><li>Contoh Alex Wong (m.s. 51): markah Sejarah = 82₉ (= 74), Matematik = 234₅ (= 69), BM = 11001₂ (= 25) → tukar semuanya ke asas 10 sebelum membandingkan atau menjumlahkannya.</li><li>Mencari pemboleh ubah y dalam persamaan seperti 1122₃ + y₇ = 118₉: tukar semua nombor diketahui kepada asas 10, cari nilai y₁₀, kemudian tukar balik ke asas 7!</li><li>Semakan pantas: Gunakan asas 10 sebagai alat semak silang untuk memastikan jawapan bentuk lazim anda 100% tepat.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Tentukan sama ada pernyataan 123₄ &gt; 23₈ benar atau palsu.</p>
-        <p><strong>Penyelesaian:</strong> 123₄ = 1(16) + 2(4) + 3(1) = 27₁₀. 23₈ = 2(8) + 3(1) = 19₁₀. Kerana 27 &gt; 19, pernyataan adalah BENAR.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa tukarkan kedua-dua nombor ke asas sepuluh terlebih dahulu apabila membandingkan nombor daripada asas berlainan!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Tentukan sama ada pernyataan 123₄ &gt; 23₈ benar atau palsu.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> 123₄ = 1(16) + 2(4) + 3(1) = 27₁₀. 23₈ = 2(8) + 3(1) = 19₁₀. Kerana 27 &gt; 19, pernyataan adalah BENAR.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa tukarkan kedua-dua nombor ke asas sepuluh terlebih dahulu apabila membandingkan nombor daripada asas berlainan!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Meminjam nilai &#39;10&#39; ketika menolak dalam asas bukan sepuluh, seperti 100₂ - 1₂.</p>
-      <p><strong>Pembetulan Tepat:</strong> Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Meminjam nilai &#39;10&#39; ketika menolak dalam asas bukan sepuluh, seperti 100₂ - 1₂." data-m-correction="Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂)." data-m-tip="Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Meminjam nilai &#39;10&#39; ketika menolak dalam asas bukan sepuluh, seperti 100₂ - 1₂.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).</p>
       <p><strong>Tip Skor Exam:</strong> Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Membaca baki pembahagian berulang dari ATAS ke BAWAH semasa menukar daripada asas 10.</p>
-      <p><strong>Pembetulan Tepat:</strong> Baki pembahagian berulang wajib disusun dari BAWAH (baki terakhir) ke ATAS (baki pertama).</p>
+<article class="kssm-mistake-card" data-m-mistake="Membaca baki pembahagian berulang dari ATAS ke BAWAH semasa menukar daripada asas 10." data-m-correction="Baki pembahagian berulang wajib disusun dari BAWAH (baki terakhir) ke ATAS (baki pertama)." data-m-tip="Anak panah sentiasa menunjuk ke ATAS di tepi lajur baki!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Membaca baki pembahagian berulang dari ATAS ke BAWAH semasa menukar daripada asas 10.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Baki pembahagian berulang wajib disusun dari BAWAH (baki terakhir) ke ATAS (baki pertama).</p>
       <p><strong>Tip Skor Exam:</strong> Anak panah sentiasa menunjuk ke ATAS di tepi lajur baki!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengelompokkan 3 bit dari KIRI ke kanan semasa menukar asas 2 ke asas 8 (cth 1101₂ → 110 | 1).</p>
-      <p><strong>Pembetulan Tepat:</strong> Pengelompokan 3 bit untuk asas 2 ke/dari 8 mesti bermula dari KANAN: 1101₂ → 001 | 101 = 15₈.</p>
+<article class="kssm-mistake-card" data-m-mistake="Mengelompokkan 3 bit dari KIRI ke kanan semasa menukar asas 2 ke asas 8 (cth 1101₂ → 110 | 1)." data-m-correction="Pengelompokan 3 bit untuk asas 2 ke/dari 8 mesti bermula dari KANAN: 1101₂ → 001 | 101 = 15₈." data-m-tip="Digit nilai tempat paling kecil (2⁰) berada di kanan — ikat kumpulan dari kanan dahulu!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelompokkan 3 bit dari KIRI ke kanan semasa menukar asas 2 ke asas 8 (cth 1101₂ → 110 | 1).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Pengelompokan 3 bit untuk asas 2 ke/dari 8 mesti bermula dari KANAN: 1101₂ → 001 | 101 = 15₈.</p>
       <p><strong>Tip Skor Exam:</strong> Digit nilai tempat paling kecil (2⁰) berada di kanan — ikat kumpulan dari kanan dahulu!</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 1 (Objektif) &bull; 0 Token</span>
@@ -929,11 +987,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 2 / Berstruktur &amp; KBAT</span>
@@ -1035,9 +1090,7 @@
           <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%202%3A%20Asas%20Nombor%20(Penukaran%20Asas%202%20hingga%209%20%26%20Operasi)%5D%20Berdasarkan%20Latihan%20m.s.%2051%2C%20markah%20seorang%20murid%20dalam%20Sejarah%2C%20Matematik%20dan%20Bahasa%20Melayu%20masing-masing%20ialah%2082%E2%82%89%2C%20234%E2%82%85%20dan%2011001%E2%82%82.%20Hitung%20jumlah%20markah%20keseluruhan%20murid%20itu%20dalam%20asas%20sepuluh%20dan%20nyatakan%20beza%20antara%20markah%20tertinggi%20dengan%20terendahnya%20dalam%20asas%20lima.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1094,13 +1147,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1188,6 +1234,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

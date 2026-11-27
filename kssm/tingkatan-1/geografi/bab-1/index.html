@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 1","item":"https://etutor.my/kssm/tingkatan-1/"},{"@type":"ListItem","position":4,"name":"Geografi Bab 1","item":"https://etutor.my/kssm/tingkatan-1/geografi/bab-1/"}]},{"@type":"LearningResource","name":"Geografi Tingkatan 1 Bab 1: Arah (Mata Angin, Kompas & Bearing Sudutan)","description":"Menguasai lapan arah mata angin utama dan perantaraan, teknik menentukan arah berpandukan matahari serta kompas magnetik, dan langkah mengukur bearing sudutan menggunakan jangka sudut (0° hingga 360°).","url":"https://etutor.my/kssm/tingkatan-1/geografi/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 1","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Geografi KSSM (2280)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 1</a> / <span>Geografi Bab 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 1)</span>
-      <span>Geografi (2280) &bull; Bab 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Geografi Tingkatan 1 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Mengenal pasti empat arah mata angin utama (U, S, T, B) dan empat arah mata angin perantaraan (TL, Tg, BD, BL).</li><li>Menjelaskan kaedah menentukan arah mata angin berpandukan terbit dan terbenam matahari.</li><li>Mengaplikasikan panduan mengorientasikan kompas magnetik di lapangan dengan menjauhi objek besi.</li><li>Mengukur bearing sudutan titik dari suatu titik rujukan mengikut arah pusingan jam (0°–360°) termasuk sudut melebihi 180°.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–11)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="geografi" data-tpl="geografi" data-subject-slug="geografi" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T1_geografi_Bab_1.pdf" data-form-label="Tingkatan 1" data-subject-name="Geografi" data-subject-code="2280" data-pages="m.s. 1–11" data-dskp="SK 1.1 Kemahiran Geografi: Arah (DSKP KSSM Geografi T1)" data-chapter-heading="Bab 1: Arah (Mata Angin, Kompas &amp; Bearing Sudutan)" data-hero-summary="Menguasai lapan arah mata angin utama dan perantaraan, teknik menentukan arah berpandukan matahari serta kompas magnetik, dan langkah mengukur bearing sudutan menggunakan jangka sudut (0° hingga 360°)." style="--tpl-accent:#0369a1;--tpl-soft:#f0f9ff;--tpl-border:#7dd3fc;--tpl-ink:#0c4a6e;--tpl-bg:url('../../../../images/nota-templates/geografi.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Bab 1: Arah (Mata Angin, Kompas &amp; Bearing Sudutan)</h2>
+          <p class="kssm-sublead">Menguasai lapan arah mata angin utama dan perantaraan, teknik menentukan arah berpandukan matahari serta kompas magnetik, dan langkah mengukur bearing sudutan menggunakan jangka sudut (0° hingga 360°).</p>
+          <p class="kssm-sheet-meta">Tingkatan 1 &bull; Geografi (2280) &bull; m.s. 1–11 &bull; SK 1.1 Kemahiran Geografi: Arah (DSKP KSSM Geografi T1)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mengenal pasti empat arah mata angin utama (U, S, T, B) dan empat arah mata angin perantaraan (TL, Tg, BD, BL).">
+      <span class="kssm-obj-num">01</span>
+      <span>Mengenal pasti empat arah mata angin utama (U, S, T, B) dan empat arah mata angin perantaraan (TL, Tg, BD, BL).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menjelaskan kaedah menentukan arah mata angin berpandukan terbit dan terbenam matahari.">
+      <span class="kssm-obj-num">02</span>
+      <span>Menjelaskan kaedah menentukan arah mata angin berpandukan terbit dan terbenam matahari.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengaplikasikan panduan mengorientasikan kompas magnetik di lapangan dengan menjauhi objek besi.">
+      <span class="kssm-obj-num">03</span>
+      <span>Mengaplikasikan panduan mengorientasikan kompas magnetik di lapangan dengan menjauhi objek besi.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengukur bearing sudutan titik dari suatu titik rujukan mengikut arah pusingan jam (0°–360°) termasuk sudut melebihi 180°.">
+      <span class="kssm-obj-num">04</span>
+      <span>Mengukur bearing sudutan titik dari suatu titik rujukan mengikut arah pusingan jam (0°–360°) termasuk sudut melebihi 180°.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–11)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Jika Taman Indah terletak di sebelah bawah-kanan (antara Selatan dengan Timur) dari Sekolah Kebangsaan Jaya, apakah arahnya dari sekolah?" data-ex-solution="Tenggara (terletak tepat di antara arah Timur 90° dan Selatan 180°)." data-ex-takeaway="Hafal susunan ikut arah jam bermula dari atas: U → TL → T → Tg → S → BD → B → BL.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Lapan Arah Mata Angin (SP 1.1.1)</h3>
       <p class="kssm-sub-summary">Arah bermaksud hala tuju sesuatu tempat dari suatu tempat yang lain. Kemahiran asas geografi memerlukan pelajar menguasai lapan arah mata angin yang terdiri daripada empat arah utama dan empat arah perantaraan.</p>
       <ul class="kssm-kp-list"><li>Empat arah mata angin utama: Utara (U - 0°/360°), Timur (T - 90°), Selatan (S - 180°) dan Barat (B - 270°).</li><li>Empat arah mata angin perantaraan: Timur Laut (TL - antara U dengan T, 45°), Tenggara (Tg - antara T dengan S, 135°), Barat Daya (BD - antara S dengan B, 225°) dan Barat Laut (BL - antara B dengan U, 315°).</li><li>Sentiasa semak titik rujukan: perkataan &#39;dari X&#39; bermakna lukis arah mata angin di titik X!</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Jika Taman Indah terletak di sebelah bawah-kanan (antara Selatan dengan Timur) dari Sekolah Kebangsaan Jaya, apakah arahnya dari sekolah?</p>
-        <p><strong>Penyelesaian:</strong> Tenggara (terletak tepat di antara arah Timur 90° dan Selatan 180°).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Hafal susunan ikut arah jam bermula dari atas: U → TL → T → Tg → S → BD → B → BL.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Jika Taman Indah terletak di sebelah bawah-kanan (antara Selatan dengan Timur) dari Sekolah Kebangsaan Jaya, apakah arahnya dari sekolah?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Tenggara (terletak tepat di antara arah Timur 90° dan Selatan 180°).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hafal susunan ikut arah jam bermula dari atas: U → TL → T → Tg → S → BD → B → BL.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Mengapakah bacaan kompas boleh tersasar jika pelajar berdiri di sebelah tiang lampu besi?" data-ex-solution="Logam besi mengganggu medan magnet bumi dan menarik jarum kompas lari daripada arah Utara magnetik sebenar." data-ex-takeaway="Sentiasa jauhkan kompas sekurang-kurangnya beberapa meter daripada kereta, telefon atau pagar besi.">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Menentukan Arah dengan Matahari &amp; Kompas (SP 1.1.2–1.1.3)</h3>
       <p class="kssm-sub-summary">Tanpa alat moden, arah mata angin dapat ditentukan menggunakan kedudukan matahari terbit dan terbenam akibat putaran bumi dari barat ke timur, manakala kompas magnetik memberikan bacaan tepat.</p>
       <ul class="kssm-kp-list"><li>Panduan Matahari: Apabila berdiri menghadap matahari terbit (Timur), belakang ialah Barat, tangan kiri ialah Utara dan tangan kanan ialah Selatan.</li><li>Kompas magnetik mempunyai perumah, pemuka dan jarum magnet yang sentiasa menunjuk ke arah Utara akibat tarikan kutub magnet utara bumi.</li><li>Panduan mengorientasikan kompas: letakkan di permukaan rata, berdiri menghadap objek sasaran, pusing perumah hingga jarum merah sejajar huruf U, dan jauhi objek besi seperti tiang lampu, pagar atau kerusi besi.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Mengapakah bacaan kompas boleh tersasar jika pelajar berdiri di sebelah tiang lampu besi?</p>
-        <p><strong>Penyelesaian:</strong> Logam besi mengganggu medan magnet bumi dan menarik jarum kompas lari daripada arah Utara magnetik sebenar.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa jauhkan kompas sekurang-kurangnya beberapa meter daripada kereta, telefon atau pagar besi.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah bacaan kompas boleh tersasar jika pelajar berdiri di sebelah tiang lampu besi?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Logam besi mengganggu medan magnet bumi dan menarik jarum kompas lari daripada arah Utara magnetik sebenar.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa jauhkan kompas sekurang-kurangnya beberapa meter daripada kereta, telefon atau pagar besi.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Nyatakan titik manakah dilukis tanda silang Utara-Selatan bagi soalan: &#39;Ukur bearing sudutan Masjid dari Balai Polis&#39;." data-ex-solution="Lukis garis Utara-Selatan pada &#39;Balai Polis&#39; kerana frasa &#39;dari Balai Polis&#39; menjadikannya titik rujukan asal." data-ex-takeaway="Hukum Emas Bearing: Selepas perkataan &#39;DARI&#39;, di situlah letaknya titik rujukan dan protraktor!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Konsep Bearing Sudutan &amp; Pengukuran 0°–180° (SP 1.1.4)</h3>
       <p class="kssm-sub-summary">Bearing ialah arah sesuatu objek atau tempat dari satu titik rujukan yang diukur dalam unit darjah (°). Bearing sudutan diukur dari arah Utara (0°) mengikut arah pusingan jam sehingga ke garisan sasaran.</p>
       <ul class="kssm-kp-list"><li>Langkah mengukur bearing Y dari X: (1) Sambungkan X dan Y dengan garis lurus; (2) Lukis garisan Utara di titik X (titik rujukan selepas kata &#39;dari&#39;); (3) Letak pusat jangka sudut tepat di X dan baca skala ikut arah jam dari 0° Utara.</li><li>Jika sasaran Y terletak di sebelah timur garisan Utara-Selatan (0°–180°), letakkan tapak lurus jangka sudut (protractor) di sebelah kanan garisan Utara.</li><li>Nyatakan bearing tiga digit bagi sudut kecil jika diminta dalam format peta, contohnya 045° atau 45°.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Nyatakan titik manakah dilukis tanda silang Utara-Selatan bagi soalan: &#39;Ukur bearing sudutan Masjid dari Balai Polis&#39;.</p>
-        <p><strong>Penyelesaian:</strong> Lukis garis Utara-Selatan pada &#39;Balai Polis&#39; kerana frasa &#39;dari Balai Polis&#39; menjadikannya titik rujukan asal.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Hukum Emas Bearing: Selepas perkataan &#39;DARI&#39;, di situlah letaknya titik rujukan dan protraktor!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Nyatakan titik manakah dilukis tanda silang Utara-Selatan bagi soalan: &#39;Ukur bearing sudutan Masjid dari Balai Polis&#39;.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Lukis garis Utara-Selatan pada &#39;Balai Polis&#39; kerana frasa &#39;dari Balai Polis&#39; menjadikannya titik rujukan asal.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hukum Emas Bearing: Selepas perkataan &#39;DARI&#39;, di situlah letaknya titik rujukan dan protraktor!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Sudut yang diukur dari garisan Selatan ke garisan PQ di sebelah Barat ialah 65°. Hitung bearing sudutan Q dari P." data-ex-solution="Bearing sudutan = 180° + 65° = 245° (arah Barat Daya)." data-ex-takeaway="Sentiasa tambah 180° apabila garisan sasaran berada di sebelah kiri (Barat) titik rujukan!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Mengukur Bearing Sudutan Melebihi 180°</h3>
       <p class="kssm-sub-summary">Kebanyakan jangka sudut berbentuk separuh bulatan (180°). Bagi titik sasaran di sebelah barat titik rujukan (180° hingga 360°), pelajar perlu menggabungkan separuh bulatan Selatan (180°) dengan sudut baki.</p>
       <ul class="kssm-kp-list"><li>Langkah bearing Q dari P (&gt;180°): Lukis garis lurus PQ dan garisan Utara-Selatan di P.</li><li>Pusingkan protraktor ke sebelah KIRI (menghadap Barat), sejajarkan 0° dengan arah Selatan dan 180° dengan arah Utara, lalu ukur sudut dari garisan Selatan ke garisan PQ.</li><li>Rumus akhir: Bearing Sudutan = 180° + sudut ukuran dari garisan Selatan.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Sudut yang diukur dari garisan Selatan ke garisan PQ di sebelah Barat ialah 65°. Hitung bearing sudutan Q dari P.</p>
-        <p><strong>Penyelesaian:</strong> Bearing sudutan = 180° + 65° = 245° (arah Barat Daya).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa tambah 180° apabila garisan sasaran berada di sebelah kiri (Barat) titik rujukan!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Sudut yang diukur dari garisan Selatan ke garisan PQ di sebelah Barat ialah 65°. Hitung bearing sudutan Q dari P.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Bearing sudutan = 180° + 65° = 245° (arah Barat Daya).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa tambah 180° apabila garisan sasaran berada di sebelah kiri (Barat) titik rujukan!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Meletakkan protraktor di titik destinasi bukannya di titik rujukan selepas kata &#39;dari&#39;.</p>
-      <p><strong>Pembetulan Tepat:</strong> Bagi soalan &#39;bearing A dari B&#39;, sentiasa lukis paksi Utara dan letak protraktor pada titik B.</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Meletakkan protraktor di titik destinasi bukannya di titik rujukan selepas kata &#39;dari&#39;." data-m-correction="Bagi soalan &#39;bearing A dari B&#39;, sentiasa lukis paksi Utara dan letak protraktor pada titik B." data-m-tip="Bulatkan perkataan &#39;dari ___&#39; setiap kali membaca soalan peta.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Meletakkan protraktor di titik destinasi bukannya di titik rujukan selepas kata &#39;dari&#39;.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Bagi soalan &#39;bearing A dari B&#39;, sentiasa lukis paksi Utara dan letak protraktor pada titik B.</p>
       <p><strong>Tip Skor Exam:</strong> Bulatkan perkataan &#39;dari ___&#39; setiap kali membaca soalan peta.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Membaca skala anti-jam pada jangka sudut sehingga menulis 60° untuk arah Barat Laut.</p>
-      <p><strong>Pembetulan Tepat:</strong> Bearing sudutan sentiasa diukur mengikut ARAH PUSINGAN JAM bermula dari Utara 0°.</p>
+<article class="kssm-mistake-card" data-m-mistake="Membaca skala anti-jam pada jangka sudut sehingga menulis 60° untuk arah Barat Laut." data-m-correction="Bearing sudutan sentiasa diukur mengikut ARAH PUSINGAN JAM bermula dari Utara 0°." data-m-tip="Semak anggaran kuadran: Utara-Timur = 0°–90°, Timur-Selatan = 90°–180°, Selatan-Barat = 180°–270°, Barat-Utara = 270°–360°.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Membaca skala anti-jam pada jangka sudut sehingga menulis 60° untuk arah Barat Laut.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Bearing sudutan sentiasa diukur mengikut ARAH PUSINGAN JAM bermula dari Utara 0°.</p>
       <p><strong>Tip Skor Exam:</strong> Semak anggaran kuadran: Utara-Timur = 0°–90°, Timur-Selatan = 90°–180°, Selatan-Barat = 180°–270°, Barat-Utara = 270°–360°.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Terlupa menambah 180° apabila sasaran berada di kuadran Barat Daya atau Barat Laut.</p>
-      <p><strong>Pembetulan Tepat:</strong> Apabila mengukur dari arah Selatan ke garisan di sebelah kiri, tambahkan 180° kepada bacaan sudut.</p>
+<article class="kssm-mistake-card" data-m-mistake="Terlupa menambah 180° apabila sasaran berada di kuadran Barat Daya atau Barat Laut." data-m-correction="Apabila mengukur dari arah Selatan ke garisan di sebelah kiri, tambahkan 180° kepada bacaan sudut." data-m-tip="Jika sasaran di sebelah kiri garisan Utara-Selatan, jawapan mesti antara 181° hingga 359°.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Terlupa menambah 180° apabila sasaran berada di kuadran Barat Daya atau Barat Laut.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Apabila mengukur dari arah Selatan ke garisan di sebelah kiri, tambahkan 180° kepada bacaan sudut.</p>
       <p><strong>Tip Skor Exam:</strong> Jika sasaran di sebelah kiri garisan Utara-Selatan, jawapan mesti antara 181° hingga 359°.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Geografi&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%201%20%E2%80%A2%20Geografi%20Bab%201%3A%20Arah%20(Mata%20Angin%2C%20Kompas%20%26%20Bearing%20Sudutan)%5D%20Huraikan%20langkah%20demi%20langkah%20cara%20mengukur%20bearing%20sudutan%20Sekolah%20dari%20Balai%20Bomba%20sekiranya%20Sekolah%20berada%20pada%20arah%20300%C2%B0%20(Barat%20Laut)%20menggunakan%20jangka%20sudut%20separuh%20bulatan.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

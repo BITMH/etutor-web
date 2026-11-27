@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 1","item":"https://etutor.my/kssm/tingkatan-1/"},{"@type":"ListItem","position":4,"name":"Pendidikan Islam Bab 1","item":"https://etutor.my/kssm/tingkatan-1/pendidikan-islam/bab-1/"}]},{"@type":"LearningResource","name":"Pendidikan Islam Tingkatan 1 Bab 1: Pelajaran 1: Surah al-Baqarah Ayat 1–5 (Mukmin Bertakwa)","description":"Memahami bacaan, hafazan bertajwid dan inti sari Surah al-Baqarah ayat 1 hingga 5 tentang keagungan al-Quran sebagai petunjuk mutlak serta lima ciri mukmin bertakwa yang dijanjikan kejayaan dunia dan akhirat.","url":"https://etutor.my/kssm/tingkatan-1/pendidikan-islam/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 1","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Pendidikan Islam KSSM (1223)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 1</a> / <span>Pendidikan Islam Pelajaran 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 1)</span>
-      <span>Pendidikan Islam (1223) &bull; Pelajaran 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Pendidikan Islam Tingkatan 1 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Membaca dan menghafaz Surah al-Baqarah ayat 1 hingga 5 dengan betul, lancar serta bertajwid (termasuk huruf muqatta&#39;ah Alif Lam Mim).</li><li>Menyatakan maksud takwa dan membuktikan kebenaran al-Quran sebagai kitab yang tidak mengandungi sebarang keraguan (la raiba fih).</li><li>Menyenaraikan lima ciri utama golongan mukmin bertakwa berdasarkan ayat 3 hingga 4 Surah al-Baqarah.</li><li>Mengamalkan tuntutan solat, infak rezeki dan keyakinan kepada hari akhirat serta mengenal hukum tajwid Isti&#39;azah, Basmalah dan Alif Lam.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–6)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="islam" data-tpl="islam" data-subject-slug="pendidikan-islam" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T1_pendidikan-islam_Bab_1.pdf" data-form-label="Tingkatan 1" data-subject-name="Pendidikan Islam" data-subject-code="1223" data-pages="m.s. 2–6" data-dskp="SK 1.1 &amp; 1.5 (DSKP KSSM Pendidikan Islam Tingkatan 1)" data-chapter-heading="Pelajaran 1: Pelajaran 1: Surah al-Baqarah Ayat 1–5 (Mukmin Bertakwa)" data-hero-summary="Memahami bacaan, hafazan bertajwid dan inti sari Surah al-Baqarah ayat 1 hingga 5 tentang keagungan al-Quran sebagai petunjuk mutlak serta lima ciri mukmin bertakwa yang dijanjikan kejayaan dunia dan akhirat." style="--tpl-accent:#0f766e;--tpl-soft:#f0fdfa;--tpl-border:#5eead4;--tpl-ink:#134e4a;--tpl-bg:url('../../../../images/nota-templates/islam.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Pelajaran 1: Pelajaran 1: Surah al-Baqarah Ayat 1–5 (Mukmin Bertakwa)</h2>
+          <p class="kssm-sublead">Memahami bacaan, hafazan bertajwid dan inti sari Surah al-Baqarah ayat 1 hingga 5 tentang keagungan al-Quran sebagai petunjuk mutlak serta lima ciri mukmin bertakwa yang dijanjikan kejayaan dunia dan akhirat.</p>
+          <p class="kssm-sheet-meta">Tingkatan 1 &bull; Pendidikan Islam (1223) &bull; m.s. 2–6 &bull; SK 1.1 &amp; 1.5 (DSKP KSSM Pendidikan Islam Tingkatan 1)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Membaca dan menghafaz Surah al-Baqarah ayat 1 hingga 5 dengan betul, lancar serta bertajwid (termasuk huruf muqatta&#39;ah Alif Lam Mim).">
+      <span class="kssm-obj-num">01</span>
+      <span>Membaca dan menghafaz Surah al-Baqarah ayat 1 hingga 5 dengan betul, lancar serta bertajwid (termasuk huruf muqatta&#39;ah Alif Lam Mim).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menyatakan maksud takwa dan membuktikan kebenaran al-Quran sebagai kitab yang tidak mengandungi sebarang keraguan (la raiba fih).">
+      <span class="kssm-obj-num">02</span>
+      <span>Menyatakan maksud takwa dan membuktikan kebenaran al-Quran sebagai kitab yang tidak mengandungi sebarang keraguan (la raiba fih).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menyenaraikan lima ciri utama golongan mukmin bertakwa berdasarkan ayat 3 hingga 4 Surah al-Baqarah.">
+      <span class="kssm-obj-num">03</span>
+      <span>Menyenaraikan lima ciri utama golongan mukmin bertakwa berdasarkan ayat 3 hingga 4 Surah al-Baqarah.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengamalkan tuntutan solat, infak rezeki dan keyakinan kepada hari akhirat serta mengenal hukum tajwid Isti&#39;azah, Basmalah dan Alif Lam.">
+      <span class="kssm-obj-num">04</span>
+      <span>Mengamalkan tuntutan solat, infak rezeki dan keyakinan kepada hari akhirat serta mengenal hukum tajwid Isti&#39;azah, Basmalah dan Alif Lam.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–6)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah ayat 2 menyebut al-Quran sebagai petunjuk khusus &#39;lil-muttaqin&#39; (bagi orang bertakwa)?" data-ex-solution="Kerana hanya orang yang beriman, merendah hati serta takut kepada Allah SWT sahaja yang sudi menerima, menghayati dan mengamalkan panduan al-Quran." data-ex-takeaway="Kebenaran al-Quran terpancar apabila pembacanya berusaha mengamalkan ajarannya dengan hati yang ikhlas.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Keagungan Al-Quran sebagai Petunjuk Orang Bertakwa (Ayat 1–2)</h3>
       <p class="kssm-sub-summary">Surah al-Baqarah dibuka dengan huruf muqatta&#39;ah &#39;Alif Lam Mim&#39; yang hanya diketahui maknanya oleh Allah SWT, diikuti penegasan bahawa al-Quran tidak mengandungi sebarang keraguan dan menjadi petunjuk bagi orang bertakwa (muttaqin).</p>
       <ul class="kssm-kp-list"><li>Makna ayat 1–2: &#39;Alif, Lam, Mim. Kitab (al-Quran) ini tidak ada keraguan padanya; petunjuk bagi mereka yang bertakwa.&#39;</li><li>Takwa bermaksud mengawal diri daripada kemurkaan Allah SWT dengan melaksanakan segala perintah-Nya dan menjauhi larangan-Nya.</li><li>Keistimewaan al-Quran: terpelihara keasliannya daripada sebarang tokok tambah sejak diturunkan hingga hari kiamat.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Mengapakah ayat 2 menyebut al-Quran sebagai petunjuk khusus &#39;lil-muttaqin&#39; (bagi orang bertakwa)?</p>
-        <p><strong>Penyelesaian:</strong> Kerana hanya orang yang beriman, merendah hati serta takut kepada Allah SWT sahaja yang sudi menerima, menghayati dan mengamalkan panduan al-Quran.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Kebenaran al-Quran terpancar apabila pembacanya berusaha mengamalkan ajarannya dengan hati yang ikhlas.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah ayat 2 menyebut al-Quran sebagai petunjuk khusus &#39;lil-muttaqin&#39; (bagi orang bertakwa)?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana hanya orang yang beriman, merendah hati serta takut kepada Allah SWT sahaja yang sudi menerima, menghayati dan mengamalkan panduan al-Quran.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kebenaran al-Quran terpancar apabila pembacanya berusaha mengamalkan ajarannya dengan hati yang ikhlas.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Berikan dua contoh amalan pelajar Tingkatan 1 yang menepati maksud &#39;wa mimma razaqnahum yunfiqun&#39; (menginfakkan sebahagian rezeki)." data-ex-solution="Menyumbang wang saku ke dalam tabung masjid atau membantu rakan sekolah yang kurang berkemampuan secara ikhlas." data-ex-takeaway="Rezeki yang diinfakkan bukan sahaja wang ringgit tetapi merangkumi ilmu, tenaga dan masa yang bermanfaat.">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Lima Ciri Mukmin Bertakwa (Ayat 3–4)</h3>
       <p class="kssm-sub-summary">Allah SWT memperincikan lima ciri amalan hati dan perbuatan yang membuktikan seseorang muslim benar-benar beriman serta layak mendapat hidayah dan kejayaan sejati.</p>
       <ul class="kssm-kp-list"><li>1. Beriman kepada perkara ghaib: meyakini kewujudan Allah SWT, malaikat, syurga, neraka dan hari kiamat walaupun tidak dilihat mata kasar.</li><li>2. Mendirikan solat: menunaikan solat fardu lima waktu dengan sempurna syarat, rukun dan khusyuk pada waktunya.</li><li>3. Menginfakkan sebahagian rezeki: bersedekah, berzakat dan membantu orang memerlukan daripada harta halal kurniaan Allah.</li><li>4. Beriman kepada al-Quran dan kitab-kitab terdahulu (Taurat, Zabur, Injil); serta 5. Meyakini kehidupan hari akhirat.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Berikan dua contoh amalan pelajar Tingkatan 1 yang menepati maksud &#39;wa mimma razaqnahum yunfiqun&#39; (menginfakkan sebahagian rezeki).</p>
-        <p><strong>Penyelesaian:</strong> Menyumbang wang saku ke dalam tabung masjid atau membantu rakan sekolah yang kurang berkemampuan secara ikhlas.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Rezeki yang diinfakkan bukan sahaja wang ringgit tetapi merangkumi ilmu, tenaga dan masa yang bermanfaat.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Berikan dua contoh amalan pelajar Tingkatan 1 yang menepati maksud &#39;wa mimma razaqnahum yunfiqun&#39; (menginfakkan sebahagian rezeki).</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Menyumbang wang saku ke dalam tabung masjid atau membantu rakan sekolah yang kurang berkemampuan secara ikhlas.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Rezeki yang diinfakkan bukan sahaja wang ringgit tetapi merangkumi ilmu, tenaga dan masa yang bermanfaat.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Apakah hubungan antara mendirikan solat dengan kejayaan seorang pelajar?" data-ex-solution="Solat fardu mendidik disiplin masa, ketenangan minda dan mencegah perbuatan keji serta mungkar, sekali gus melahirkan murid berakhlak cemerlang." data-ex-takeaway="Kejayaan (al-muflihun) bermula dengan menjaga hubungan dengan Allah (solat) dan hubungan sesama manusia (infak).">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Ganjaran Kejayaan &amp; Pengajaran Ayat (Ayat 5)</h3>
       <p class="kssm-sub-summary">Ayat 5 menegaskan kedudukan mulia golongan bertakwa bahawa mereka sentiasa berada di atas petunjuk Tuhannya dan merekalah golongan yang benar-benar berjaya (al-muflihun).</p>
       <ul class="kssm-kp-list"><li>Kejayaan hakiki (al-falah) menurut al-Quran merangkumi ketenangan hati di dunia dan kemasukan ke syurga di akhirat.</li><li>Perbandingan: golongan munafik atau ingkar hanya mengejar kesenangan sementara, manakala mukmin bertakwa memiliki panduan jelas daripada Pencipta.</li><li>Murid hendaklah mendampingi al-Quran setiap hari melalui bacaan, pemahaman terjemahan dan pengamalan akhlak mulia.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Apakah hubungan antara mendirikan solat dengan kejayaan seorang pelajar?</p>
-        <p><strong>Penyelesaian:</strong> Solat fardu mendidik disiplin masa, ketenangan minda dan mencegah perbuatan keji serta mungkar, sekali gus melahirkan murid berakhlak cemerlang.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Kejayaan (al-muflihun) bermula dengan menjaga hubungan dengan Allah (solat) dan hubungan sesama manusia (infak).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Apakah hubungan antara mendirikan solat dengan kejayaan seorang pelajar?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Solat fardu mendidik disiplin masa, ketenangan minda dan mencegah perbuatan keji serta mungkar, sekali gus melahirkan murid berakhlak cemerlang.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kejayaan (al-muflihun) bermula dengan menjaga hubungan dengan Allah (solat) dan hubungan sesama manusia (infak).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Berapa harakatkah kadar bacaan huruf &#39;Lam&#39; dan &#39;Mim&#39; pada ayat pertama Surah al-Baqarah?" data-ex-solution="Dibaca panjang 6 harakat dengan dengung (idgham) di antara huruf Mim akhir &#39;Lam&#39; dan huruf Mim awal &#39;Mim&#39;." data-ex-takeaway="Sentiasa semak bacaan hafazan ayat 1–5 di hadapan guru atau rakan bagi memastikan kadar 6 harakat dan dengung tepat.">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Tajwid Ringkas dalam Ayat: Mad Lazim Harfi, Alif Lam &amp; Wajibul Ghunnah</h3>
       <p class="kssm-sub-summary">Bacaan ayat 1 hingga 5 perlu menepati hukum tajwid asas dalam DSKP SK 1.5 agar bacaan serta hafazan tepat makhraj dan kadar panjang harakatnya.</p>
       <ul class="kssm-kp-list"><li>Isti&#39;azah (&#39;A&#39;uzubillahi minasy-syaitanir-rajim&#39;) sunat muakkad dibaca sebelum memulakan tilawah; Basmalah sunat dibaca di awal surah (kecuali Surah at-Taubah).</li><li>Huruf muqatta&#39;ah &#39;Alif Lam Mim&#39;: &#39;Alif&#39; dibaca tanpa mad; &#39;Lam&#39; dan &#39;Mim&#39; dibaca panjang 6 harakat (Mad Lazim Harfi Musyba&#39;).</li><li>&#39;Al-muttaqin&#39; mengandungi hukum Alif Lam Qamariah (huruf Lam dibaca jelas) serta Mad Aridh Lissukun ketika waqaf (2, 4 atau 6 harakat).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Berapa harakatkah kadar bacaan huruf &#39;Lam&#39; dan &#39;Mim&#39; pada ayat pertama Surah al-Baqarah?</p>
-        <p><strong>Penyelesaian:</strong> Dibaca panjang 6 harakat dengan dengung (idgham) di antara huruf Mim akhir &#39;Lam&#39; dan huruf Mim awal &#39;Mim&#39;.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa semak bacaan hafazan ayat 1–5 di hadapan guru atau rakan bagi memastikan kadar 6 harakat dan dengung tepat.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Berapa harakatkah kadar bacaan huruf &#39;Lam&#39; dan &#39;Mim&#39; pada ayat pertama Surah al-Baqarah?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Dibaca panjang 6 harakat dengan dengung (idgham) di antara huruf Mim akhir &#39;Lam&#39; dan huruf Mim awal &#39;Mim&#39;.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa semak bacaan hafazan ayat 1–5 di hadapan guru atau rakan bagi memastikan kadar 6 harakat dan dengung tepat.</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengatakan lima ciri orang bertakwa hanya merujuk ibadah solat dan puasa sahaja.</p>
-      <p><strong>Pembetulan Tepat:</strong> Ayat 3–4 menyebut beriman kepada perkara ghaib, solat, infak rezeki, beriman kepada al-Quran serta kitab terdahulu, dan yakin hari akhirat.</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengatakan lima ciri orang bertakwa hanya merujuk ibadah solat dan puasa sahaja." data-m-correction="Ayat 3–4 menyebut beriman kepada perkara ghaib, solat, infak rezeki, beriman kepada al-Quran serta kitab terdahulu, dan yakin hari akhirat." data-m-tip="Hafal 5 kata kunci ayat 3–4: Ghaib → Solat → Infak → Kitab → Akhirat.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengatakan lima ciri orang bertakwa hanya merujuk ibadah solat dan puasa sahaja.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Ayat 3–4 menyebut beriman kepada perkara ghaib, solat, infak rezeki, beriman kepada al-Quran serta kitab terdahulu, dan yakin hari akhirat.</p>
       <p><strong>Tip Skor Exam:</strong> Hafal 5 kata kunci ayat 3–4: Ghaib → Solat → Infak → Kitab → Akhirat.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Membaca huruf &#39;Alif&#39; dalam &#39;Alif Lam Mim&#39; secara panjang 6 harakat.</p>
-      <p><strong>Pembetulan Tepat:</strong> &#39;Alif&#39; dibaca pendek mengikut sebutan huruf asalnya tanpa mad; hanya &#39;Lam&#39; dan &#39;Mim&#39; dibaca 6 harakat.</p>
+<article class="kssm-mistake-card" data-m-mistake="Membaca huruf &#39;Alif&#39; dalam &#39;Alif Lam Mim&#39; secara panjang 6 harakat." data-m-correction="&#39;Alif&#39; dibaca pendek mengikut sebutan huruf asalnya tanpa mad; hanya &#39;Lam&#39; dan &#39;Mim&#39; dibaca 6 harakat." data-m-tip="Dengar talaqqi guru untuk membezakan Alif (pendek) daripada Lam dan Mim (6 harakat).">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Membaca huruf &#39;Alif&#39; dalam &#39;Alif Lam Mim&#39; secara panjang 6 harakat.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> &#39;Alif&#39; dibaca pendek mengikut sebutan huruf asalnya tanpa mad; hanya &#39;Lam&#39; dan &#39;Mim&#39; dibaca 6 harakat.</p>
       <p><strong>Tip Skor Exam:</strong> Dengar talaqqi guru untuk membezakan Alif (pendek) daripada Lam dan Mim (6 harakat).</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menyalahertikan infak sebagai sedekah wang oleh orang kaya sahaja.</p>
-      <p><strong>Pembetulan Tepat:</strong> Infak boleh dilakukan mengikut kemampuan sesiapa sahaja daripada rezeki masa, tenaga, ilmu atau harta yang halal.</p>
+<article class="kssm-mistake-card" data-m-mistake="Menyalahertikan infak sebagai sedekah wang oleh orang kaya sahaja." data-m-correction="Infak boleh dilakukan mengikut kemampuan sesiapa sahaja daripada rezeki masa, tenaga, ilmu atau harta yang halal." data-m-tip="Sedikit tetapi istiqamah lebih dicintai Allah SWT.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyalahertikan infak sebagai sedekah wang oleh orang kaya sahaja.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Infak boleh dilakukan mengikut kemampuan sesiapa sahaja daripada rezeki masa, tenaga, ilmu atau harta yang halal.</p>
       <p><strong>Tip Skor Exam:</strong> Sedikit tetapi istiqamah lebih dicintai Allah SWT.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Pendidikan%20Islam&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%201%20%E2%80%A2%20Pendidikan%20Islam%20Bab%201%3A%20Pelajaran%201%3A%20Surah%20al-Baqarah%20Ayat%201%E2%80%935%20(Mukmin%20Bertakwa)%5D%20Sebagai%20seorang%20murid%20sekolah%20menengah%2C%20huraikan%20bagaimanakah%20amalan%20membudayakan%20bacaan%20dan%20penghayatan%20al-Quran%20dapat%20membentuk%20jati%20diri%20mukmin%20yang%20cemerlang%20serta%20jauh%20daripada%20gejala%20sosial.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

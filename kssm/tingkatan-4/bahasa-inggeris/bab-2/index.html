@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Bahasa Inggeris Bab 2","item":"https://etutor.my/kssm/tingkatan-4/bahasa-inggeris/bab-2/"}]},{"@type":"LearningResource","name":"Bahasa Inggeris Tingkatan 4 Bab 2: Module 2: Ready for Anything (Quantifiers & Relative Clauses)","description":"Master Countable/Uncountable Quantifiers ('plenty of', 'a few', 'a little', 'many/much'), Defining vs. Non-Defining Relative Clauses ('who, which, that, whose, where'), Past Simple vs. Past Continuous narration ('when/while') and phrasal verbs with 'keep'.","url":"https://etutor.my/kssm/tingkatan-4/bahasa-inggeris/bab-2/","inLanguage":"en","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Inggeris KSSM (1119)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 4</a> / <span>Bahasa Inggeris Unit 2</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 4)</span>
-      <span>Bahasa Inggeris (1119) &bull; Unit 2</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -286,90 +299,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Bahasa Inggeris Tingkatan 4 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Select accurate quantifiers (&#39;many/much&#39;, &#39;a few/few&#39;, &#39;a little/little&#39;, &#39;plenty of&#39;, &#39;hardly any&#39;) with countable and uncountable nouns.</li><li>Construct Defining Relative Clauses (essential info, &#39;that&#39; allowed, object pronoun omission) and Non-Defining Relative Clauses (commas mandatory, NO &#39;that&#39;, no omission).</li><li>Sequence past events naturally using Past Simple (completed/interrupting event) alongside Past Continuous (background/in-progress event) with &#39;when&#39; and &#39;while&#39;.</li><li>Apply phrasal verbs with &#39;keep&#39; (&#39;keep up with&#39;, &#39;keep on&#39;, &#39;keep in touch&#39;, &#39;keep away&#39;) and feelings adjectives (&#39;thrilled&#39;, &#39;exhausted&#39;, &#39;relieved&#39;).</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 21–34)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-inggeris" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_bahasa-inggeris_Bab_2.pdf" data-form-label="Tingkatan 4" data-subject-name="Bahasa Inggeris" data-subject-code="1119" data-pages="pp. 21–34" data-dskp="CEFR B1 Mid • Full Blast! Plus 4 Module 2 (DSKP KSSM BI T4)" data-chapter-heading="Unit 2: Module 2: Ready for Anything (Quantifiers &amp; Relative Clauses)" data-hero-summary="Master Countable/Uncountable Quantifiers (&#39;plenty of&#39;, &#39;a few&#39;, &#39;a little&#39;, &#39;many/much&#39;), Defining vs. Non-Defining Relative Clauses (&#39;who, which, that, whose, where&#39;), Past Simple vs. Past Continuous narration (&#39;when/while&#39;) and phrasal verbs with &#39;keep&#39;." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Unit 2: Module 2: Ready for Anything (Quantifiers &amp; Relative Clauses)</h2>
+          <p class="kssm-sublead">Master Countable/Uncountable Quantifiers (&#39;plenty of&#39;, &#39;a few&#39;, &#39;a little&#39;, &#39;many/much&#39;), Defining vs. Non-Defining Relative Clauses (&#39;who, which, that, whose, where&#39;), Past Simple vs. Past Continuous narration (&#39;when/while&#39;) and phrasal verbs with &#39;keep&#39;.</p>
+          <p class="kssm-sheet-meta">Tingkatan 4 &bull; Bahasa Inggeris (1119) &bull; pp. 21–34 &bull; CEFR B1 Mid • Full Blast! Plus 4 Module 2 (DSKP KSSM BI T4)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Select accurate quantifiers (&#39;many/much&#39;, &#39;a few/few&#39;, &#39;a little/little&#39;, &#39;plenty of&#39;, &#39;hardly any&#39;) with countable and uncountable nouns.">
+      <span class="kssm-obj-num">01</span>
+      <span>Select accurate quantifiers (&#39;many/much&#39;, &#39;a few/few&#39;, &#39;a little/little&#39;, &#39;plenty of&#39;, &#39;hardly any&#39;) with countable and uncountable nouns.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Construct Defining Relative Clauses (essential info, &#39;that&#39; allowed, object pronoun omission) and Non-Defining Relative Clauses (commas mandatory, NO &#39;that&#39;, no omission).">
+      <span class="kssm-obj-num">02</span>
+      <span>Construct Defining Relative Clauses (essential info, &#39;that&#39; allowed, object pronoun omission) and Non-Defining Relative Clauses (commas mandatory, NO &#39;that&#39;, no omission).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Sequence past events naturally using Past Simple (completed/interrupting event) alongside Past Continuous (background/in-progress event) with &#39;when&#39; and &#39;while&#39;.">
+      <span class="kssm-obj-num">03</span>
+      <span>Sequence past events naturally using Past Simple (completed/interrupting event) alongside Past Continuous (background/in-progress event) with &#39;when&#39; and &#39;while&#39;.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Apply phrasal verbs with &#39;keep&#39; (&#39;keep up with&#39;, &#39;keep on&#39;, &#39;keep in touch&#39;, &#39;keep away&#39;) and feelings adjectives (&#39;thrilled&#39;, &#39;exhausted&#39;, &#39;relieved&#39;).">
+      <span class="kssm-obj-num">04</span>
+      <span>Apply phrasal verbs with &#39;keep&#39; (&#39;keep up with&#39;, &#39;keep on&#39;, &#39;keep in touch&#39;, &#39;keep away&#39;) and feelings adjectives (&#39;thrilled&#39;, &#39;exhausted&#39;, &#39;relieved&#39;).</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 21–34)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Choose the best quantifier: &#39;Rescuers had (few / little) water left, yet (a few / a little) local hikers still offered help.&#39;" data-ex-solution="&#39;little water&#39; (uncountable, almost none) and &#39;a few local hikers&#39; (plural countable, several helpful hikers)." data-ex-takeaway="Positive tone (&#39;enough to help&#39;) = &#39;a few / a little&#39;; Negative tone (&#39;nearly zero!&#39;) = &#39;few / little&#39; without &#39;a&#39;.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Countable/Uncountable Nouns &amp; Quantifiers (Module 2 p. 21+)</h3>
       <p class="kssm-sub-summary">Module 2 (&#39;Ready for Anything&#39;) covers adventure stories, volunteering and preparedness, pairing noun types accurately with quantifiers.</p>
       <ul class="kssm-kp-list"><li>Countable plural only: many, (a) few, several, a number of (&#39;a few volunteers&#39; = some positive; &#39;few volunteers&#39; = almost none / negative).</li><li>Uncountable only: much, (a) little, a great deal of (&#39;a little courage&#39; = some; &#39;little time&#39; = almost none).</li><li>Flexible (BOTH countable plural and uncountable): a lot of, lots of, plenty of, some, any, no, hardly any (&#39;plenty of water&#39; / &#39;plenty of volunteers&#39;).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Choose the best quantifier: &#39;Rescuers had (few / little) water left, yet (a few / a little) local hikers still offered help.&#39;</p>
-        <p><strong>Penyelesaian:</strong> &#39;little water&#39; (uncountable, almost none) and &#39;a few local hikers&#39; (plural countable, several helpful hikers).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Positive tone (&#39;enough to help&#39;) = &#39;a few / a little&#39;; Negative tone (&#39;nearly zero!&#39;) = &#39;few / little&#39; without &#39;a&#39;.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Choose the best quantifier: &#39;Rescuers had (few / little) water left, yet (a few / a little) local hikers still offered help.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;little water&#39; (uncountable, almost none) and &#39;a few local hikers&#39; (plural countable, several helpful hikers).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Positive tone (&#39;enough to help&#39;) = &#39;a few / a little&#39;; Negative tone (&#39;nearly zero!&#39;) = &#39;few / little&#39; without &#39;a&#39;.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Combine into ONE sentence with correct punctuation: &#39;Rani is an experienced paramedic. Her swift action saved two climbers.&#39;" data-ex-solution="Rani, whose swift action saved two climbers, is an experienced paramedic. (Use commas + &#39;whose&#39; for possession!)" data-ex-takeaway="Commas present (Non-Defining) = Use &#39;who/which/whose/where&#39;, NEVER &#39;that&#39;!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Defining vs. Non-Defining Relative Clauses</h3>
       <p class="kssm-sub-summary">Relative clauses join short choppy sentences cleanly into complex SPM Band 4–5 sentences by defining people (who/that), things (which/that), places (where), possession (whose) and time (when).</p>
       <ul class="kssm-kp-list"><li>DEFINING Relative Clause: gives ESSENTIAL information needed to identify the noun (NO commas!). Example: &#39;The firefighter who rescued the hiker won a medal.&#39; Object pronoun (&#39;The trail [that/which] we climbed was steep&#39;) can be omitted.</li><li>NON-DEFINING Relative Clause: gives EXTRA non-essential information about an already identified noun (MUST have commas!). Example: &#39;Mount Kinabalu, which is in Sabah, attracts climbers worldwide.&#39;</li><li>IRON RULE of Non-Defining Clauses: NEVER use &#39;that&#39; inside commas, and NEVER omit the relative pronoun (&#39;My uncle, that lives in Ipoh...&#39; is WRONG → use &#39;who&#39;).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Combine into ONE sentence with correct punctuation: &#39;Rani is an experienced paramedic. Her swift action saved two climbers.&#39;</p>
-        <p><strong>Penyelesaian:</strong> Rani, whose swift action saved two climbers, is an experienced paramedic. (Use commas + &#39;whose&#39; for possession!)</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Commas present (Non-Defining) = Use &#39;who/which/whose/where&#39;, NEVER &#39;that&#39;!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Combine into ONE sentence with correct punctuation: &#39;Rani is an experienced paramedic. Her swift action saved two climbers.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Rani, whose swift action saved two climbers, is an experienced paramedic. (Use commas + &#39;whose&#39; for possession!)</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Commas present (Non-Defining) = Use &#39;who/which/whose/where&#39;, NEVER &#39;that&#39;!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Complete the emergency recount: &#39;While hikers ______ (cross) the wooden bridge, heavy rain suddenly ______ (begin).&#39;" data-ex-solution="&#39;were crossing&#39; (ongoing longer action after &#39;While&#39;) and &#39;began&#39; (sudden interrupting action in Past Simple)." data-ex-takeaway="Use Past Continuous for the movie background and Past Simple for the main plot actions!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>2.3 Past Simple vs. Past Continuous in Storytelling</h3>
       <p class="kssm-sub-summary">Narrating exciting stories or emergencies (&#39;Ready for Anything&#39;) relies on contrasting background ongoing actions with sudden interrupting events.</p>
       <ul class="kssm-kp-list"><li>Past Continuous (&#39;was/were + V-ing&#39;): ongoing background scene or longer action interrupted midway (&#39;The wind was howling&#39;; &#39;While we were pitching the tent...&#39;).</li><li>Past Simple (&#39;V2 / -ed&#39;): finished sequence of actions or the sudden interrupting event (&#39;...a branch fell onto the path&#39;).</li><li>Connectors: &#39;While / As&#39; usually introduce the longer Past Continuous background action; &#39;When&#39; commonly introduces the sudden Past Simple interruption.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Complete the emergency recount: &#39;While hikers ______ (cross) the wooden bridge, heavy rain suddenly ______ (begin).&#39;</p>
-        <p><strong>Penyelesaian:</strong> &#39;were crossing&#39; (ongoing longer action after &#39;While&#39;) and &#39;began&#39; (sudden interrupting action in Past Simple).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Use Past Continuous for the movie background and Past Simple for the main plot actions!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Complete the emergency recount: &#39;While hikers ______ (cross) the wooden bridge, heavy rain suddenly ______ (begin).&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;were crossing&#39; (ongoing longer action after &#39;While&#39;) and &#39;began&#39; (sudden interrupting action in Past Simple).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Use Past Continuous for the movie background and Past Simple for the main plot actions!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Fix the adjective error: &#39;After walking 15 km uphill, the scouts were very exhausting, yet they kept to walk until camp.&#39;" data-ex-solution="After walking 15 km uphill, the scouts were very exhausted, yet they kept on walking until camp." data-ex-takeaway="People FEEL &#39;-ed&#39; (exhausted, relieved); situations ARE &#39;-ing&#39; (exhausting, thrilling); &#39;keep on&#39; + V-ing!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Phrasal Verbs with &#39;keep&#39; &amp; Adjectives of Feeling</h3>
       <p class="kssm-sub-summary">Module 2 enriches SPM narrative writing with vivid adjectives for emotions and multi-word verbs built around &#39;keep&#39;.</p>
       <ul class="kssm-kp-list"><li>Phrasal verbs with &#39;keep&#39;: &#39;keep up with&#39; (stay at same pace/level), &#39;keep on (+ -ing)&#39; (continue persistently), &#39;keep away from&#39; (avoid danger), &#39;keep in touch with&#39; (maintain contact), &#39;keep an eye on&#39; (watch carefully).</li><li>Adjective pairs (-ed for feelings vs -ing for things): &#39;exhausted&#39; (how hikers felt) vs &#39;exhausting&#39; (describing the hike); &#39;terrified&#39; vs &#39;terrifying&#39;; &#39;relieved&#39; vs &#39;relieving&#39;; &#39;thrilled&#39; vs &#39;thrilling&#39;.</li><li>Always use strong action verbs and emotional reactions when drafting Part 3 SPM narrative stories.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Fix the adjective error: &#39;After walking 15 km uphill, the scouts were very exhausting, yet they kept to walk until camp.&#39;</p>
-        <p><strong>Penyelesaian:</strong> After walking 15 km uphill, the scouts were very exhausted, yet they kept on walking until camp.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> People FEEL &#39;-ed&#39; (exhausted, relieved); situations ARE &#39;-ing&#39; (exhausting, thrilling); &#39;keep on&#39; + V-ing!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Fix the adjective error: &#39;After walking 15 km uphill, the scouts were very exhausting, yet they kept to walk until camp.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> After walking 15 km uphill, the scouts were very exhausted, yet they kept on walking until camp.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> People FEEL &#39;-ed&#39; (exhausted, relieved); situations ARE &#39;-ing&#39; (exhausting, thrilling); &#39;keep on&#39; + V-ing!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Writing &#39;that&#39; inside a non-defining relative clause with commas: &#39;Kuala Lumpur, that is Malaysia&#39;s capital, has tall towers.&#39;</p>
-      <p><strong>Pembetulan Tepat:</strong> Replace &#39;that&#39; with &#39;which&#39;: &#39;Kuala Lumpur, which is Malaysia&#39;s capital, has tall towers.&#39;</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Writing &#39;that&#39; inside a non-defining relative clause with commas: &#39;Kuala Lumpur, that is Malaysia&#39;s capital, has tall towers.&#39;" data-m-correction="Replace &#39;that&#39; with &#39;which&#39;: &#39;Kuala Lumpur, which is Malaysia&#39;s capital, has tall towers.&#39;" data-m-tip="See commas around a relative clause? Ban the word &#39;that&#39;!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Writing &#39;that&#39; inside a non-defining relative clause with commas: &#39;Kuala Lumpur, that is Malaysia&#39;s capital, has tall towers.&#39;</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Replace &#39;that&#39; with &#39;which&#39;: &#39;Kuala Lumpur, which is Malaysia&#39;s capital, has tall towers.&#39;</p>
       <p><strong>Tip Skor Exam:</strong> See commas around a relative clause? Ban the word &#39;that&#39;!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Using &#39;who&#39;s&#39; instead of &#39;whose&#39; for possession in relative clauses (&#39;The student who&#39;s bag was lost&#39;).</p>
-      <p><strong>Pembetulan Tepat:</strong> &#39;Who&#39;s&#39; means &#39;who is / who has&#39;; possession MUST be spelled &#39;whose&#39; (&#39;The student whose bag was lost&#39;).</p>
+<article class="kssm-mistake-card" data-m-mistake="Using &#39;who&#39;s&#39; instead of &#39;whose&#39; for possession in relative clauses (&#39;The student who&#39;s bag was lost&#39;)." data-m-correction="&#39;Who&#39;s&#39; means &#39;who is / who has&#39;; possession MUST be spelled &#39;whose&#39; (&#39;The student whose bag was lost&#39;)." data-m-tip="Test by expanding: does &#39;who is bag&#39; make sense? No → use &#39;whose&#39;!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using &#39;who&#39;s&#39; instead of &#39;whose&#39; for possession in relative clauses (&#39;The student who&#39;s bag was lost&#39;).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> &#39;Who&#39;s&#39; means &#39;who is / who has&#39;; possession MUST be spelled &#39;whose&#39; (&#39;The student whose bag was lost&#39;).</p>
       <p><strong>Tip Skor Exam:</strong> Test by expanding: does &#39;who is bag&#39; make sense? No → use &#39;whose&#39;!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Using Past Continuous for every action in a list (&#39;I was waking up, was brushing my teeth and was walking out&#39;).</p>
-      <p><strong>Pembetulan Tepat:</strong> Sequential completed actions in a narrative use Past Simple: &#39;I woke up, brushed my teeth and walked out.&#39;</p>
+<article class="kssm-mistake-card" data-m-mistake="Using Past Continuous for every action in a list (&#39;I was waking up, was brushing my teeth and was walking out&#39;)." data-m-correction="Sequential completed actions in a narrative use Past Simple: &#39;I woke up, brushed my teeth and walked out.&#39;" data-m-tip="Past Simple = Action 1 → Action 2 → Action 3; Past Continuous = background setting or interrupted action.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using Past Continuous for every action in a list (&#39;I was waking up, was brushing my teeth and was walking out&#39;).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Sequential completed actions in a narrative use Past Simple: &#39;I woke up, brushed my teeth and walked out.&#39;</p>
       <p><strong>Tip Skor Exam:</strong> Past Simple = Action 1 → Action 2 → Action 3; Past Continuous = background setting or interrupted action.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 1 (Objektif) &bull; 0 Token</span>
@@ -929,11 +987,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 2 / Berstruktur &amp; KBAT</span>
@@ -1035,9 +1090,7 @@
           <a href="../../../../?cikguSubjek=Bahasa%20Inggeris&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Bahasa%20Inggeris%20Bab%202%3A%20Module%202%3A%20Ready%20for%20Anything%20(Quantifiers%20%26%20Relative%20Clauses)%5D%20Write%20a%2065-word%20narrative%20opening%20about%20getting%20caught%20in%20a%20sudden%20rainstorm%20during%20a%20jungle%20hike.%20Include%20Past%20Continuous%20%2B%20Past%20Simple%20(&#39;While%20...&#39;)%2C%20two%20&#39;-ed%2F-ing&#39;%20feeling%20adjectives%2C%20and%20one%20phrasal%20verb%20with%20&#39;keep&#39;.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1094,13 +1147,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1188,6 +1234,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

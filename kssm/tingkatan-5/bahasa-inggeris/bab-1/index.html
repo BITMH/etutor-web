@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 5","item":"https://etutor.my/kssm/tingkatan-5/"},{"@type":"ListItem","position":4,"name":"Bahasa Inggeris Bab 1","item":"https://etutor.my/kssm/tingkatan-5/bahasa-inggeris/bab-1/"}]},{"@type":"LearningResource","name":"Bahasa Inggeris Tingkatan 5 Bab 1: Unit 1: It's Personal! (Family, Present Tenses & Relative Clauses)","description":"Master Form 5 Unit 1 themes and grammar from Download B1+: family types (extended, blended, adoptive, single-parent), household chore collaboration, Present Simple vs. Present Continuous (stative/dynamic meaning shifts) and Relative Clauses including prepositions before 'whom/which'.","url":"https://etutor.my/kssm/tingkatan-5/bahasa-inggeris/bab-1/","inLanguage":"en","educationalLevel":"Tingkatan 5","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Inggeris KSSM (1119)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 5</a> / <span>Bahasa Inggeris Unit 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 5)</span>
-      <span>Bahasa Inggeris (1119) &bull; Unit 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -286,90 +299,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Bahasa Inggeris Tingkatan 5 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Differentiate modern family structures (traditional, extended, blended, adoptive, single-parent) and phrasal verbs of relationships (&#39;get on with&#39;, &#39;fall out&#39;, &#39;look up to&#39;, &#39;get together&#39;).</li><li>Distinguish dynamic vs. stative uses of verbs like &#39;have&#39;, &#39;think&#39;, &#39;see&#39;, &#39;appear&#39; and &#39;taste&#39; in Present Simple vs. Present Continuous.</li><li>Construct Defining and Non-Defining Relative Clauses cleanly (recognising when object pronouns can be omitted and never using &#39;that&#39; after commas).</li><li>Apply formal and informal preposition placement in relative clauses (&#39;the chore that I hate&#39; vs &#39;the relative to whom I spoke&#39;).</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 1–12)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-inggeris" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T5_bahasa-inggeris_Bab_1.pdf" data-form-label="Tingkatan 5" data-subject-name="Bahasa Inggeris" data-subject-code="1119" data-pages="pp. 1–12" data-dskp="CEFR B1 High • Download B1+ Unit 1 (DSKP KSSM BI Tingkatan 5)" data-chapter-heading="Unit 1: Unit 1: It&#39;s Personal! (Family, Present Tenses &amp; Relative Clauses)" data-hero-summary="Master Form 5 Unit 1 themes and grammar from Download B1+: family types (extended, blended, adoptive, single-parent), household chore collaboration, Present Simple vs. Present Continuous (stative/dynamic meaning shifts) and Relative Clauses including prepositions before &#39;whom/which&#39;." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Unit 1: Unit 1: It&#39;s Personal! (Family, Present Tenses &amp; Relative Clauses)</h2>
+          <p class="kssm-sublead">Master Form 5 Unit 1 themes and grammar from Download B1+: family types (extended, blended, adoptive, single-parent), household chore collaboration, Present Simple vs. Present Continuous (stative/dynamic meaning shifts) and Relative Clauses including prepositions before &#39;whom/which&#39;.</p>
+          <p class="kssm-sheet-meta">Tingkatan 5 &bull; Bahasa Inggeris (1119) &bull; pp. 1–12 &bull; CEFR B1 High • Download B1+ Unit 1 (DSKP KSSM BI Tingkatan 5)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Differentiate modern family structures (traditional, extended, blended, adoptive, single-parent) and phrasal verbs of relationships (&#39;get on with&#39;, &#39;fall out&#39;, &#39;look up to&#39;, &#39;get together&#39;).">
+      <span class="kssm-obj-num">01</span>
+      <span>Differentiate modern family structures (traditional, extended, blended, adoptive, single-parent) and phrasal verbs of relationships (&#39;get on with&#39;, &#39;fall out&#39;, &#39;look up to&#39;, &#39;get together&#39;).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Distinguish dynamic vs. stative uses of verbs like &#39;have&#39;, &#39;think&#39;, &#39;see&#39;, &#39;appear&#39; and &#39;taste&#39; in Present Simple vs. Present Continuous.">
+      <span class="kssm-obj-num">02</span>
+      <span>Distinguish dynamic vs. stative uses of verbs like &#39;have&#39;, &#39;think&#39;, &#39;see&#39;, &#39;appear&#39; and &#39;taste&#39; in Present Simple vs. Present Continuous.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Construct Defining and Non-Defining Relative Clauses cleanly (recognising when object pronouns can be omitted and never using &#39;that&#39; after commas).">
+      <span class="kssm-obj-num">03</span>
+      <span>Construct Defining and Non-Defining Relative Clauses cleanly (recognising when object pronouns can be omitted and never using &#39;that&#39; after commas).</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Apply formal and informal preposition placement in relative clauses (&#39;the chore that I hate&#39; vs &#39;the relative to whom I spoke&#39;).">
+      <span class="kssm-obj-num">04</span>
+      <span>Apply formal and informal preposition placement in relative clauses (&#39;the chore that I hate&#39; vs &#39;the relative to whom I spoke&#39;).</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 1–12)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Identify the family type: &#39;When Amir&#39;s father remarried, Amir gained a stepmother and two younger stepsisters living in the same house.&#39;" data-ex-solution="Blended family (formed when one or both partners bring children from a previous marriage into a new family household)." data-ex-takeaway="Always separate &#39;extended family&#39; (multigenerational aunts/grandparents) from &#39;blended family&#39; (stepparents/stepsiblings).">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Family Types &amp; Household Relationships (Unit 1 Reading)</h3>
       <p class="kssm-sub-summary">Unit 1 (&#39;It&#39;s Personal!&#39;) explores changing family structures, fair household chore sharing and maintaining healthy ties with relatives and peers.</p>
       <ul class="kssm-kp-list"><li>Family vocabulary (p. 5): traditional/nuclear family (parents &amp; children), extended family (grandparents, aunts, uncles under one roof or close ties), blended family (stepparents/stepsiblings after remarriage), adoptive family, single-parent family.</li><li>Relationship collocations &amp; phrasal verbs: &#39;share the same interests&#39;, &#39;get together with relatives&#39;, &#39;go on strike&#39; (stop working in protest), &#39;pull your weight&#39; (do your fair share of chores), &#39;get on well with&#39; (be friendly), &#39;look up to&#39; (admire).</li><li>In the reading article, household chores historically fell unevenly on women, whereas modern fairness expects every member to lend a hand.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Identify the family type: &#39;When Amir&#39;s father remarried, Amir gained a stepmother and two younger stepsisters living in the same house.&#39;</p>
-        <p><strong>Penyelesaian:</strong> Blended family (formed when one or both partners bring children from a previous marriage into a new family household).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Always separate &#39;extended family&#39; (multigenerational aunts/grandparents) from &#39;blended family&#39; (stepparents/stepsiblings).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Identify the family type: &#39;When Amir&#39;s father remarried, Amir gained a stepmother and two younger stepsisters living in the same house.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Blended family (formed when one or both partners bring children from a previous marriage into a new family household).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Always separate &#39;extended family&#39; (multigenerational aunts/grandparents) from &#39;blended family&#39; (stepparents/stepsiblings).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Explain the meaning difference: (1) &#39;Aunt Maya has three children.&#39; vs (2) &#39;Aunt Maya is having lunch with us now.&#39;" data-ex-solution="(1) &#39;has&#39; shows permanent family possession (stative). (2) &#39;is having&#39; describes the ongoing action of eating a meal right now (dynamic)." data-ex-takeaway="Notice Present Continuous + &#39;always/constantly&#39; expresses mild irritation about a bad household habit!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Present Simple, Present Continuous &amp; Meaning-Shift Verbs</h3>
       <p class="kssm-sub-summary">Beyond basic routines vs. temporary actions, Form 5 tests verbs that CAN take &#39;-ing&#39; ONLY when their meaning shifts from a permanent state to an active behaviour or planned event.</p>
       <ul class="kssm-kp-list"><li>THINK: &#39;I think family loyalty matters&#39; (opinion = stative) vs. &#39;We are thinking of organising a family dinner&#39; (considering = dynamic).</li><li>HAVE: &#39;They have a huge house&#39; (possession = stative) vs. &#39;We are having a huge get-together on Sunday&#39; (hosting/experiencing event = dynamic).</li><li>SEE / LOOK / APPEAR / TASTE: &#39;She looks tired&#39; (seems = stative) vs. &#39;He is looking at old family albums&#39; (action); &#39;My brother is always leaving wet towels on the sofa!&#39; (annoying repeated habit uses Present Continuous + &#39;always&#39;).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Explain the meaning difference: (1) &#39;Aunt Maya has three children.&#39; vs (2) &#39;Aunt Maya is having lunch with us now.&#39;</p>
-        <p><strong>Penyelesaian:</strong> (1) &#39;has&#39; shows permanent family possession (stative). (2) &#39;is having&#39; describes the ongoing action of eating a meal right now (dynamic).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Notice Present Continuous + &#39;always/constantly&#39; expresses mild irritation about a bad household habit!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Explain the meaning difference: (1) &#39;Aunt Maya has three children.&#39; vs (2) &#39;Aunt Maya is having lunch with us now.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (1) &#39;has&#39; shows permanent family possession (stative). (2) &#39;is having&#39; describes the ongoing action of eating a meal right now (dynamic).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Notice Present Continuous + &#39;always/constantly&#39; expresses mild irritation about a bad household habit!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Decide if &#39;who/that&#39; can be deleted safely: (A) &#39;The neighbour who lives next door babysits for us.&#39; (B) &#39;The cousin who we met in Melaka works as a chef.&#39;" data-ex-solution="(A) CANNOT be omitted because &#39;who&#39; is the subject of &#39;lives&#39;. (B) CAN be omitted (&#39;The cousin we met in Melaka...&#39;) because &#39;we&#39; is the subject and &#39;who&#39; is the object of &#39;met&#39;!" data-ex-takeaway="Quick omission test: Look immediately AFTER who/which/that — is there a new noun/pronoun subject (&#39;I/we/they&#39;)? Yes = object pronoun (omissible in defining clauses)!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Relative Clauses &amp; Pronoun Omission Rules (Grammar 1.4–1.7)</h3>
       <p class="kssm-sub-summary">Download Unit 1 revisits Defining and Non-Defining Relative Clauses with sharper Form 5 precision regarding object pronoun omission.</p>
       <ul class="kssm-kp-list"><li>Defining Relative Clause (no commas, essential meaning): &#39;The chore which/that I hate most is washing-up.&#39; Because &#39;which/that&#39; is the OBJECT of &#39;I hate&#39;, it CAN be omitted → &#39;The chore I hate most is washing-up.&#39;</li><li>NEVER omit a SUBJECT relative pronoun: &#39;The sister who helps Mum is Sarah.&#39; (Wrong: &#39;The sister helps Mum is Sarah&#39;).</li><li>Non-Defining Relative Clause (extra info inside commas): &#39;My eldest cousin, who studies medicine in Penang, visits us every Eid.&#39; NEVER use &#39;that&#39; and NEVER omit the relative pronoun inside commas!</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Decide if &#39;who/that&#39; can be deleted safely: (A) &#39;The neighbour who lives next door babysits for us.&#39; (B) &#39;The cousin who we met in Melaka works as a chef.&#39;</p>
-        <p><strong>Penyelesaian:</strong> (A) CANNOT be omitted because &#39;who&#39; is the subject of &#39;lives&#39;. (B) CAN be omitted (&#39;The cousin we met in Melaka...&#39;) because &#39;we&#39; is the subject and &#39;who&#39; is the object of &#39;met&#39;!</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Quick omission test: Look immediately AFTER who/which/that — is there a new noun/pronoun subject (&#39;I/we/they&#39;)? Yes = object pronoun (omissible in defining clauses)!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Decide if &#39;who/that&#39; can be deleted safely: (A) &#39;The neighbour who lives next door babysits for us.&#39; (B) &#39;The cousin who we met in Melaka works as a chef.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (A) CANNOT be omitted because &#39;who&#39; is the subject of &#39;lives&#39;. (B) CAN be omitted (&#39;The cousin we met in Melaka...&#39;) because &#39;we&#39; is the subject and &#39;who&#39; is the object of &#39;met&#39;!</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Quick omission test: Look immediately AFTER who/which/that — is there a new noun/pronoun subject (&#39;I/we/they&#39;)? Yes = object pronoun (omissible in defining clauses)!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Rewrite formally by moving the preposition: &#39;The aunt who I talked to gave me helpful advice.&#39;" data-ex-solution="The aunt to whom I talked gave me helpful advice. (Preposition before a person pronoun MUST use &#39;whom&#39;, NEVER &#39;to who&#39; or &#39;to that&#39;!)" data-ex-takeaway="Preposition + WHOM (person) / WHICH (thing) — never &#39;preposition + who&#39; or &#39;preposition + that&#39;!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Prepositions in Relative Clauses &amp; Email Paragraphing</h3>
       <p class="kssm-sub-summary">Form 5 introduces formal vs. everyday preposition placement in relative clauses plus paragraph organisation for SPM Part 1 email writing.</p>
       <ul class="kssm-kp-list"><li>Everyday/neutral style places the preposition at the END of the clause (allowing &#39;that&#39; or omission): &#39;The relative (who/that) I rely on most is my uncle.&#39;</li><li>Formal style places the preposition BEFORE &#39;whom&#39; (people) or &#39;which&#39; (things) — NEVER before &#39;who&#39; or &#39;that&#39;, and you CANNOT omit &#39;whom/which&#39;: &#39;The relative on whom I rely most is my uncle.&#39; / &#39;The chore about which he complained...&#39;</li><li>Email structure (p. 11): use a separate paragraph for each new topic so readers follow smoothly, with clear topic transitions.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Rewrite formally by moving the preposition: &#39;The aunt who I talked to gave me helpful advice.&#39;</p>
-        <p><strong>Penyelesaian:</strong> The aunt to whom I talked gave me helpful advice. (Preposition before a person pronoun MUST use &#39;whom&#39;, NEVER &#39;to who&#39; or &#39;to that&#39;!)</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Preposition + WHOM (person) / WHICH (thing) — never &#39;preposition + who&#39; or &#39;preposition + that&#39;!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Rewrite formally by moving the preposition: &#39;The aunt who I talked to gave me helpful advice.&#39;</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> The aunt to whom I talked gave me helpful advice. (Preposition before a person pronoun MUST use &#39;whom&#39;, NEVER &#39;to who&#39; or &#39;to that&#39;!)</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Preposition + WHOM (person) / WHICH (thing) — never &#39;preposition + who&#39; or &#39;preposition + that&#39;!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Writing &#39;to who&#39; or &#39;for that&#39; when placing a preposition before a relative pronoun (&#39;The friend with who I live&#39;).</p>
-      <p><strong>Pembetulan Tepat:</strong> After a preposition, change &#39;who&#39; to &#39;whom&#39; and never use &#39;that&#39;: &#39;The friend with whom I live&#39; (or informal: &#39;The friend I live with&#39;).</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Writing &#39;to who&#39; or &#39;for that&#39; when placing a preposition before a relative pronoun (&#39;The friend with who I live&#39;)." data-m-correction="After a preposition, change &#39;who&#39; to &#39;whom&#39; and never use &#39;that&#39;: &#39;The friend with whom I live&#39; (or informal: &#39;The friend I live with&#39;)." data-m-tip="Preposition upfront? Only WHOM or WHICH survive!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Writing &#39;to who&#39; or &#39;for that&#39; when placing a preposition before a relative pronoun (&#39;The friend with who I live&#39;).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> After a preposition, change &#39;who&#39; to &#39;whom&#39; and never use &#39;that&#39;: &#39;The friend with whom I live&#39; (or informal: &#39;The friend I live with&#39;).</p>
       <p><strong>Tip Skor Exam:</strong> Preposition upfront? Only WHOM or WHICH survive!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Treating all uses of &#39;have&#39; or &#39;think&#39; as strictly forbidden in &#39;-ing&#39; form (&#39;We have a party this Sunday&#39; for an arranged plan).</p>
-      <p><strong>Pembetulan Tepat:</strong> Use Present Continuous when &#39;have&#39; means &#39;host/eat/enjoy&#39; (&#39;We are having a family barbecue on Sunday&#39;) or &#39;think&#39; means &#39;consider&#39; (&#39;I&#39;m thinking of apologising&#39;).</p>
+<article class="kssm-mistake-card" data-m-mistake="Treating all uses of &#39;have&#39; or &#39;think&#39; as strictly forbidden in &#39;-ing&#39; form (&#39;We have a party this Sunday&#39; for an arranged plan)." data-m-correction="Use Present Continuous when &#39;have&#39; means &#39;host/eat/enjoy&#39; (&#39;We are having a family barbecue on Sunday&#39;) or &#39;think&#39; means &#39;consider&#39; (&#39;I&#39;m thinking of apologising&#39;)." data-m-tip="Does &#39;have&#39; mean &#39;own/possess&#39;? Keep Simple. Does it mean &#39;eat/celebrate/experience&#39;? Use &#39;-ing&#39;!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Treating all uses of &#39;have&#39; or &#39;think&#39; as strictly forbidden in &#39;-ing&#39; form (&#39;We have a party this Sunday&#39; for an arranged plan).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Use Present Continuous when &#39;have&#39; means &#39;host/eat/enjoy&#39; (&#39;We are having a family barbecue on Sunday&#39;) or &#39;think&#39; means &#39;consider&#39; (&#39;I&#39;m thinking of apologising&#39;).</p>
       <p><strong>Tip Skor Exam:</strong> Does &#39;have&#39; mean &#39;own/possess&#39;? Keep Simple. Does it mean &#39;eat/celebrate/experience&#39;? Use &#39;-ing&#39;!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Omitting the pronoun in a non-defining relative clause (&#39;My grandmother, I admire very much, lives in Kedah&#39;).</p>
-      <p><strong>Pembetulan Tepat:</strong> Never omit pronouns inside non-defining clauses with commas: &#39;My grandmother, whom/who I admire very much, lives in Kedah.&#39;</p>
+<article class="kssm-mistake-card" data-m-mistake="Omitting the pronoun in a non-defining relative clause (&#39;My grandmother, I admire very much, lives in Kedah&#39;)." data-m-correction="Never omit pronouns inside non-defining clauses with commas: &#39;My grandmother, whom/who I admire very much, lives in Kedah.&#39;" data-m-tip="Commas present = KEEP the relative pronoun and NEVER use &#39;that&#39;.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Omitting the pronoun in a non-defining relative clause (&#39;My grandmother, I admire very much, lives in Kedah&#39;).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Never omit pronouns inside non-defining clauses with commas: &#39;My grandmother, whom/who I admire very much, lives in Kedah.&#39;</p>
       <p><strong>Tip Skor Exam:</strong> Commas present = KEEP the relative pronoun and NEVER use &#39;that&#39;.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 1 (Objektif) &bull; 0 Token</span>
@@ -929,11 +987,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 2 / Berstruktur &amp; KBAT</span>
@@ -1035,9 +1090,7 @@
           <a href="../../../../?cikguSubjek=Bahasa%20Inggeris&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%205%20%E2%80%A2%20Bahasa%20Inggeris%20Bab%201%3A%20Unit%201%3A%20It&#39;s%20Personal!%20(Family%2C%20Present%20Tenses%20%26%20Relative%20Clauses)%5D%20Write%20a%2065-word%20email%20to%20a%20cousin%20explaining%20how%20your%20family%20divides%20weekend%20household%20chores%20fairly.%20Use%20at%20least%20one%20dynamic%20use%20of%20Present%20Continuous%20(future%20plan%20or%20annoyance)%20and%20one%20Non-Defining%20Relative%20Clause.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1094,13 +1147,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1188,6 +1234,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

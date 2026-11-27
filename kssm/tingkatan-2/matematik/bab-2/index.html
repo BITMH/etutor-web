@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 2","item":"https://etutor.my/kssm/tingkatan-2/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 2","item":"https://etutor.my/kssm/tingkatan-2/matematik/bab-2/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 2 Bab 2: Pemfaktoran dan Pecahan Algebra","description":"Menguasai kembangan satu dan dua kurungan ungkapan algebra, empat kaedah pemfaktoran (FSTB, beza dua kuasa dua, pendaraban silang dan pengumpulan empat sebutan) serta operasi +, -, × dan ÷ pecahan algebra.","url":"https://etutor.my/kssm/tingkatan-2/matematik/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 2","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 2</a> / <span>Matematik Bab 2</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 2)</span>
-      <span>Matematik (1449) &bull; Bab 2</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Matematik Tingkatan 2 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Mengembangkan ungkapan algebra melibatkan pendaraban satu sebutan dengan ungkapan dalam kurungan serta pendaraban dua ungkapan dalam kurungan.</li><li>Memfaktorkan ungkapan algebra menggunakan FSTB, beza antara dua sebutan kuasa dua (a² - b²), kaedah pendaraban silang bagi ax² + bx + c dan pengumpulan empat sebutan.</li><li>Melaksanakan penambahan dan penolakan pecahan algebra dengan mencari penyebut sepunya GSTK.</li><li>Mempermudah pendaraban dan pembahagian pecahan algebra dengan memfaktorkan pengangka serta penyebut terlebih dahulu sebelum pemansuhan faktor sepunya.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 18–41)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T2_matematik_Bab_2.pdf" data-form-label="Tingkatan 2" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 18–41" data-dskp="SK 2.1–2.3 (DSKP KSSM Matematik Tingkatan 2)" data-chapter-heading="Bab 2: Pemfaktoran dan Pecahan Algebra" data-hero-summary="Menguasai kembangan satu dan dua kurungan ungkapan algebra, empat kaedah pemfaktoran (FSTB, beza dua kuasa dua, pendaraban silang dan pengumpulan empat sebutan) serta operasi +, -, × dan ÷ pecahan algebra." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Bab 2: Pemfaktoran dan Pecahan Algebra</h2>
+          <p class="kssm-sublead">Menguasai kembangan satu dan dua kurungan ungkapan algebra, empat kaedah pemfaktoran (FSTB, beza dua kuasa dua, pendaraban silang dan pengumpulan empat sebutan) serta operasi +, -, × dan ÷ pecahan algebra.</p>
+          <p class="kssm-sheet-meta">Tingkatan 2 &bull; Matematik (1449) &bull; m.s. 18–41 &bull; SK 2.1–2.3 (DSKP KSSM Matematik Tingkatan 2)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mengembangkan ungkapan algebra melibatkan pendaraban satu sebutan dengan ungkapan dalam kurungan serta pendaraban dua ungkapan dalam kurungan.">
+      <span class="kssm-obj-num">01</span>
+      <span>Mengembangkan ungkapan algebra melibatkan pendaraban satu sebutan dengan ungkapan dalam kurungan serta pendaraban dua ungkapan dalam kurungan.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Memfaktorkan ungkapan algebra menggunakan FSTB, beza antara dua sebutan kuasa dua (a² - b²), kaedah pendaraban silang bagi ax² + bx + c dan pengumpulan empat sebutan.">
+      <span class="kssm-obj-num">02</span>
+      <span>Memfaktorkan ungkapan algebra menggunakan FSTB, beza antara dua sebutan kuasa dua (a² - b²), kaedah pendaraban silang bagi ax² + bx + c dan pengumpulan empat sebutan.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Melaksanakan penambahan dan penolakan pecahan algebra dengan mencari penyebut sepunya GSTK.">
+      <span class="kssm-obj-num">03</span>
+      <span>Melaksanakan penambahan dan penolakan pecahan algebra dengan mencari penyebut sepunya GSTK.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mempermudah pendaraban dan pembahagian pecahan algebra dengan memfaktorkan pengangka serta penyebut terlebih dahulu sebelum pemansuhan faktor sepunya.">
+      <span class="kssm-obj-num">04</span>
+      <span>Mempermudah pendaraban dan pembahagian pecahan algebra dengan memfaktorkan pengangka serta penyebut terlebih dahulu sebelum pemansuhan faktor sepunya.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 18–41)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Kembang dan permudahkan (3p + 2)² - 4p(p - 1)." data-ex-solution="(9p² + 12p + 4) - (4p² - 4p) = 9p² + 12p + 4 - 4p² + 4p = 5p² + 16p + 4." data-ex-takeaway="Sentiasa tuliskan (3p + 2)² = (3p + 2)(3p + 2) supaya tidak tercicir sebutan tengah +12p.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Kembangan Ungkapan Algebra (SK 2.1)</h3>
       <p class="kssm-sub-summary">Kembangan bermaksud mendarabkan sesuatu ungkapan di luar kurungan dengan setiap sebutan di dalam kurungan secara teliti dan menggabungkan sebutan serupa.</p>
       <ul class="kssm-kp-list"><li>Satu kurungan: a(b + c) = ab + ac. Contoh: 3r(r - 2s) = 3r² - 6rs; berhati-hati tanda negatif: -5b(a + 3) = -5ab - 15b.</li><li>Dua kurungan: (a + b)(c + d) = ac + ad + bc + bd. Contoh: (3r + 4s)(r - 2s) = 3r² - 6rs + 4rs - 8s² = 3r² - 2rs - 8s².</li><li>Identiti kuasa dua sempurna: (a + b)² = a² + 2ab + b² dan (a - b)² = a² - 2ab + b² (JANGAN lupakan sebutan tengah 2ab!).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Kembang dan permudahkan (3p + 2)² - 4p(p - 1).</p>
-        <p><strong>Penyelesaian:</strong> (9p² + 12p + 4) - (4p² - 4p) = 9p² + 12p + 4 - 4p² + 4p = 5p² + 16p + 4.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa tuliskan (3p + 2)² = (3p + 2)(3p + 2) supaya tidak tercicir sebutan tengah +12p.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Kembang dan permudahkan (3p + 2)² - 4p(p - 1).</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (9p² + 12p + 4) - (4p² - 4p) = 9p² + 12p + 4 - 4p² + 4p = 5p² + 16p + 4.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa tuliskan (3p + 2)² = (3p + 2)(3p + 2) supaya tidak tercicir sebutan tengah +12p.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Faktorkan selengkapnya 5k² - 80 dan x² - 5x - 14." data-ex-solution="(1) 5k² - 80 = 5(k² - 16) = 5(k + 4)(k - 4). (2) x² - 5x - 14 = (x - 7)(x + 2) kerana (-7)(+2) = -14 dan -7 + 2 = -5." data-ex-takeaway="Sentiasa periksa Faktor Sepunya Terbesar (FSTB) sebagai langkah PERTAMA sebelum kaedah lain!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Empat Kaedah Pemfaktoran Algebra (SK 2.2)</h3>
       <p class="kssm-sub-summary">Pemfaktoran ialah proses songsangan kepada kembangan — menulis semula ungkapan sebagai hasil darab faktor-faktor algebranya.</p>
       <ul class="kssm-kp-list"><li>Kaedah 1 (Faktor Sepunya / FSTB): 6x² + 9xy = 3x(2x + 3y).</li><li>Kaedah 2 (Beza Dua Kuasa Dua): x² - y² = (x + y)(x - y). Kadangkala perlu keluarkan FSTB dahulu: 3y² - 147 = 3(y² - 49) = 3(y + 7)(y - 7).</li><li>Kaedah 3 (Kuadratik ax² + bx + c): guna pendaraban silang untuk mencari dua nombor yang hasil darab = a·c dan hasil tambah = b. Kaedah 4 (4 sebutan): ab + ac + bd + cd = a(b + c) + d(b + c) = (b + c)(a + d).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Faktorkan selengkapnya 5k² - 80 dan x² - 5x - 14.</p>
-        <p><strong>Penyelesaian:</strong> (1) 5k² - 80 = 5(k² - 16) = 5(k + 4)(k - 4). (2) x² - 5x - 14 = (x - 7)(x + 2) kerana (-7)(+2) = -14 dan -7 + 2 = -5.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Sentiasa periksa Faktor Sepunya Terbesar (FSTB) sebagai langkah PERTAMA sebelum kaedah lain!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Faktorkan selengkapnya 5k² - 80 dan x² - 5x - 14.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (1) 5k² - 80 = 5(k² - 16) = 5(k + 4)(k - 4). (2) x² - 5x - 14 = (x - 7)(x + 2) kerana (-7)(+2) = -14 dan -7 + 2 = -5.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa periksa Faktor Sepunya Terbesar (FSTB) sebagai langkah PERTAMA sebelum kaedah lain!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Permudahkan sebagai satu pecahan tunggal: 4/(d²g) + 3/(5dg)." data-ex-solution="GSTK penyebut = 5d²g. Maka (4 × 5)/(5d²g) + (3 × d)/(5d²g) = (20 + 3d) / (5d²g)." data-ex-takeaway="Untuk GSTK huruf berindeks, pilih kuasa TERTINGGI bagi setiap pemboleh ubah sepunya.">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>2.3 Penambahan &amp; Penolakan Pecahan Algebra (SK 2.3)</h3>
       <p class="kssm-sub-summary">Seperti pecahan nombor biasa, pecahan algebra hanya boleh ditambah atau ditolak apabila penyebutnya telah disamakan kepada Gandaan Sepunya Terkecil (GSTK).</p>
       <ul class="kssm-kp-list"><li>Penyebut berbeza nombor: m/9 + n/12 → GSTK(9, 12) = 36, maka (4m + 3n)/36.</li><li>Penyebut berpemboleh ubah: 3/(3mn) + n/(6m²) → GSTK = 6m²n (atau ringkaskan 1/(mn) + n/(6m²) = (6m + n²)/(6m²n)).</li><li>Awasi tanda negatif sebelum kurungan pengangka apabila menolak pecahan: a/2 - (x - 3)/4 = (2a - x + 3)/4.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Permudahkan sebagai satu pecahan tunggal: 4/(d²g) + 3/(5dg).</p>
-        <p><strong>Penyelesaian:</strong> GSTK penyebut = 5d²g. Maka (4 × 5)/(5d²g) + (3 × d)/(5d²g) = (20 + 3d) / (5d²g).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Untuk GSTK huruf berindeks, pilih kuasa TERTINGGI bagi setiap pemboleh ubah sepunya.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Permudahkan sebagai satu pecahan tunggal: 4/(d²g) + 3/(5dg).</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> GSTK penyebut = 5d²g. Maka (4 × 5)/(5d²g) + (3 × d)/(5d²g) = (20 + 3d) / (5d²g).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Untuk GSTK huruf berindeks, pilih kuasa TERTINGGI bagi setiap pemboleh ubah sepunya.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Permudahkan: (x² - 9)/(2x + 6) ÷ (x - 3)/4." data-ex-solution="Faktor &amp; songsangkan: [(x + 3)(x - 3) / 2(x + 3)] × [4 / (x - 3)]. Mansuhkan (x + 3) dan (x - 3), tinggal 4/2 = 2." data-ex-takeaway="Faktorkan SEMUA ungkapan kuadratik atau ber-FSTB dahulu, baru mansuhkan kurungan yang sepadan!">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Pendaraban &amp; Pembahagian Pecahan Algebra (SK 2.3.2)</h3>
       <p class="kssm-sub-summary">Untuk mendarab atau membahagi pecahan algebra, faktorkan setiap pengangka dan penyebut yang boleh difaktorkan terlebih dahulu, tukar bahagi (÷) kepada darab songsangan, lalu mansuhkan faktor sepunya.</p>
       <ul class="kssm-kp-list"><li>Hanya faktor dalam bentuk hasil darab boleh dimansuhkan; JANGAN memansuhkan sebutan tunggal yang dipisahkan oleh tanda &#39;+&#39; atau &#39;-&#39; (cth: (x+2)/x ≠ 2!).</li><li>Contoh: (x² - x) / (xy) = x(x - 1) / (xy) = (x - 1)/y.</li><li>Pembahagian: (A/B) ÷ (C/D) = (A/B) × (D/C) sebelum memfaktorkan dan memansuhkan.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Permudahkan: (x² - 9)/(2x + 6) ÷ (x - 3)/4.</p>
-        <p><strong>Penyelesaian:</strong> Faktor &amp; songsangkan: [(x + 3)(x - 3) / 2(x + 3)] × [4 / (x - 3)]. Mansuhkan (x + 3) dan (x - 3), tinggal 4/2 = 2.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Faktorkan SEMUA ungkapan kuadratik atau ber-FSTB dahulu, baru mansuhkan kurungan yang sepadan!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Permudahkan: (x² - 9)/(2x + 6) ÷ (x - 3)/4.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Faktor &amp; songsangkan: [(x + 3)(x - 3) / 2(x + 3)] × [4 / (x - 3)]. Mansuhkan (x + 3) dan (x - 3), tinggal 4/2 = 2.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Faktorkan SEMUA ungkapan kuadratik atau ber-FSTB dahulu, baru mansuhkan kurungan yang sepadan!</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengembangkan (x + 5)² menjadi x² + 25 sahaja.</p>
-      <p><strong>Pembetulan Tepat:</strong> (x + 5)² = (x + 5)(x + 5) = x² + 10x + 25 (wajib ada sebutan 2 × x × 5 = 10x).</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengembangkan (x + 5)² menjadi x² + 25 sahaja." data-m-correction="(x + 5)² = (x + 5)(x + 5) = x² + 10x + 25 (wajib ada sebutan 2 × x × 5 = 10x)." data-m-tip="Kuasa dua kurungan dua sebutan sentiasa menghasilkan TIGA sebutan.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengembangkan (x + 5)² menjadi x² + 25 sahaja.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> (x + 5)² = (x + 5)(x + 5) = x² + 10x + 25 (wajib ada sebutan 2 × x × 5 = 10x).</p>
       <p><strong>Tip Skor Exam:</strong> Kuasa dua kurungan dua sebutan sentiasa menghasilkan TIGA sebutan.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Memansuhkan x daripada pecahan (x + 6) / x menjadi 6 atau 7.</p>
-      <p><strong>Pembetulan Tepat:</strong> x dalam pengangka ditambah dengan 6, bukan faktor darab, jadi (x + 6)/x TIDAK boleh dimansuhkan.</p>
+<article class="kssm-mistake-card" data-m-mistake="Memansuhkan x daripada pecahan (x + 6) / x menjadi 6 atau 7." data-m-correction="x dalam pengangka ditambah dengan 6, bukan faktor darab, jadi (x + 6)/x TIDAK boleh dimansuhkan." data-m-tip="Hanya kurungan/faktor yang mendarab keseluruhan pengangka dan penyebut boleh dipotong.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Memansuhkan x daripada pecahan (x + 6) / x menjadi 6 atau 7.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> x dalam pengangka ditambah dengan 6, bukan faktor darab, jadi (x + 6)/x TIDAK boleh dimansuhkan.</p>
       <p><strong>Tip Skor Exam:</strong> Hanya kurungan/faktor yang mendarab keseluruhan pengangka dan penyebut boleh dipotong.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Lupa mendarab sebutan pertama dengan faktor negatif di depan kurungan seperti -(2x - 3) = -2x - 3.</p>
-      <p><strong>Pembetulan Tepat:</strong> Negatif darab negatif ialah positif: -(2x - 3) = -2x + 3.</p>
+<article class="kssm-mistake-card" data-m-mistake="Lupa mendarab sebutan pertama dengan faktor negatif di depan kurungan seperti -(2x - 3) = -2x - 3." data-m-correction="Negatif darab negatif ialah positif: -(2x - 3) = -2x + 3." data-m-tip="Berikan perhatian khusus kepada tanda negatif tepat di hadapan kurungan kedua atau pengangka pecahan kedua.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Lupa mendarab sebutan pertama dengan faktor negatif di depan kurungan seperti -(2x - 3) = -2x - 3.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Negatif darab negatif ialah positif: -(2x - 3) = -2x + 3.</p>
       <p><strong>Tip Skor Exam:</strong> Berikan perhatian khusus kepada tanda negatif tepat di hadapan kurungan kedua atau pengangka pecahan kedua.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%202%20%E2%80%A2%20Matematik%20Bab%202%3A%20Pemfaktoran%20dan%20Pecahan%20Algebra%5D%20Harga%20secawan%20kopi%20ialah%20RM(x%20-%203)%20dan%20sepinggan%20mi%20rebus%20ialah%20RM(x%20%2B%204).%20Seorang%20pelanggan%20membeli%20kedua-dua%20item%20setiap%20hari%20selama%20(y%20-%208)%20hari.%20Ungkapkan%20jumlah%20perbelanjaannya%20dalam%20bentuk%20ungkapan%20algebra%20terkembang.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

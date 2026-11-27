@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 2","item":"https://etutor.my/kssm/tingkatan-2/"},{"@type":"ListItem","position":4,"name":"Sejarah Bab 1","item":"https://etutor.my/kssm/tingkatan-2/sejarah/bab-1/"}]},{"@type":"LearningResource","name":"Sejarah Tingkatan 2 Bab 1: Kerajaan Alam Melayu (Konsep, Kemasyhuran & Hubungan Luar)","description":"Memahami konsep Alam Melayu daripada aspek geografi, bahasa dan budaya serumpun, kemasyhuran tujuh kerajaan awal (Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara) serta hubungan luar dengan China, India dan kerajaan sezaman.","url":"https://etutor.my/kssm/tingkatan-2/sejarah/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 2","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sejarah KSSM (1249)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 2</a> / <span>Sejarah Bab 1</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 2)</span>
-      <span>Sejarah (1249) &bull; Bab 1</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Sejarah Tingkatan 2 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Menjelaskan konsep Alam Melayu dari aspek geografi (tokoh sejarawan), bahasa Austronesia dan budaya serumpun.</li><li>Mengenal pasti lokasi, pusat pentadbiran dan pengasas tujuh kerajaan Alam Melayu yang masyhur.</li><li>Menganalisis faktor kemasyhuran serta kehebatan pemerintahan kerajaan Funan, Srivijaya, Angkor, Majapahit dan Kedah Tua.</li><li>Menghuraikan hubungan perdagangan, keagamaan dan diplomatik Kerajaan Alam Melayu dengan kerajaan luar yang sezaman.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–23)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sejarah" data-tpl="sejarah" data-subject-slug="sejarah" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T2_sejarah_Bab_1.pdf" data-form-label="Tingkatan 2" data-subject-name="Sejarah" data-subject-code="1249" data-pages="m.s. 2–23" data-dskp="SK 5.1 (DSKP KSSM Sejarah Tingkatan 2)" data-chapter-heading="Bab 1: Kerajaan Alam Melayu (Konsep, Kemasyhuran &amp; Hubungan Luar)" data-hero-summary="Memahami konsep Alam Melayu daripada aspek geografi, bahasa dan budaya serumpun, kemasyhuran tujuh kerajaan awal (Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara) serta hubungan luar dengan China, India dan kerajaan sezaman." style="--tpl-accent:#b45309;--tpl-soft:#fffbeb;--tpl-border:#fcd34d;--tpl-ink:#78350f;--tpl-bg:url('../../../../images/nota-templates/sejarah.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Bab 1: Kerajaan Alam Melayu (Konsep, Kemasyhuran &amp; Hubungan Luar)</h2>
+          <p class="kssm-sublead">Memahami konsep Alam Melayu daripada aspek geografi, bahasa dan budaya serumpun, kemasyhuran tujuh kerajaan awal (Funan, Champa, Srivijaya, Angkor, Majapahit, Kedah Tua, Gangga Nagara) serta hubungan luar dengan China, India dan kerajaan sezaman.</p>
+          <p class="kssm-sheet-meta">Tingkatan 2 &bull; Sejarah (1249) &bull; m.s. 2–23 &bull; SK 5.1 (DSKP KSSM Sejarah Tingkatan 2)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menjelaskan konsep Alam Melayu dari aspek geografi (tokoh sejarawan), bahasa Austronesia dan budaya serumpun.">
+      <span class="kssm-obj-num">01</span>
+      <span>Menjelaskan konsep Alam Melayu dari aspek geografi (tokoh sejarawan), bahasa Austronesia dan budaya serumpun.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengenal pasti lokasi, pusat pentadbiran dan pengasas tujuh kerajaan Alam Melayu yang masyhur.">
+      <span class="kssm-obj-num">02</span>
+      <span>Mengenal pasti lokasi, pusat pentadbiran dan pengasas tujuh kerajaan Alam Melayu yang masyhur.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menganalisis faktor kemasyhuran serta kehebatan pemerintahan kerajaan Funan, Srivijaya, Angkor, Majapahit dan Kedah Tua.">
+      <span class="kssm-obj-num">03</span>
+      <span>Menganalisis faktor kemasyhuran serta kehebatan pemerintahan kerajaan Funan, Srivijaya, Angkor, Majapahit dan Kedah Tua.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menghuraikan hubungan perdagangan, keagamaan dan diplomatik Kerajaan Alam Melayu dengan kerajaan luar yang sezaman.">
+      <span class="kssm-obj-num">04</span>
+      <span>Menghuraikan hubungan perdagangan, keagamaan dan diplomatik Kerajaan Alam Melayu dengan kerajaan luar yang sezaman.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–23)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah bahasa Melayu mudah diterima sebagai lingua franca di Alam Melayu?" data-ex-solution="Kerana ia termasuk dalam rumpun bahasa Austronesia yang memiliki kata serumpun meluas serta strukturnya ringkas dan mudah dipelajari oleh pedagang dan penduduk wilayah." data-ex-takeaway="Tiga teras keserumpunan Alam Melayu yang wajib diingat ialah Geografi, Bahasa dan Budaya.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Konsep Alam Melayu: Geografi, Bahasa &amp; Budaya (SP 5.1.1)</h3>
       <p class="kssm-sub-summary">Alam Melayu merangkumi gugusan kepulauan dan tanah besar di tenggara benua Asia yang diikat oleh keserumpunan geografi, bahasa dan adat resam budaya.</p>
       <ul class="kssm-kp-list"><li>Aspek Geografi: meliputi selatan Vietnam, Kemboja, selatan Myanmar, Segenting Kra, Malaysia, Indonesia, Brunei dan Filipina (Ismail Hussein; Abdul Hadi Haji Hasan; Alfred Russel Wallace menyebut Kepulauan Melayu).</li><li>Aspek Bahasa: bahasa Melayu tergolong dalam keluarga bahasa Austronesia (antara ~200 bahasa serumpun di Alam Melayu) yang mudah difahami merentas wilayah; Sutan Takdir Alisjahbana menekankan sifat bahasa Melayu yang sederhana dan mudah dipelajari.</li><li>Aspek Budaya: persamaan seni bina, kesenian, kepercayaan, adat resam dan tulisan (tulisan Kawi/Palava sebelum Jawi) seperti nilai gotong-royong dan seni persembahan wayang kulit.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Mengapakah bahasa Melayu mudah diterima sebagai lingua franca di Alam Melayu?</p>
-        <p><strong>Penyelesaian:</strong> Kerana ia termasuk dalam rumpun bahasa Austronesia yang memiliki kata serumpun meluas serta strukturnya ringkas dan mudah dipelajari oleh pedagang dan penduduk wilayah.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Tiga teras keserumpunan Alam Melayu yang wajib diingat ialah Geografi, Bahasa dan Budaya.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah bahasa Melayu mudah diterima sebagai lingua franca di Alam Melayu?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana ia termasuk dalam rumpun bahasa Austronesia yang memiliki kata serumpun meluas serta strukturnya ringkas dan mudah dipelajari oleh pedagang dan penduduk wilayah.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Tiga teras keserumpunan Alam Melayu yang wajib diingat ialah Geografi, Bahasa dan Budaya.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Senaraikan tiga lagi kerajaan Alam Melayu yang terletak di Jawa dan Semenanjung Tanah Melayu." data-ex-solution="Majapahit (abad ke-13, Kota Trowulan Jawa, diasaskan Raden Vijaya pada 1294), Kedah Tua (abad ke-5, Sungai Mas &amp; Pangkalan Bujang — bukti candi Lembah Bujang) dan Gangga Nagara (abad ke-6, Pantai Barat Semenanjung di Perak)." data-ex-takeaway="Padankan pusat kerajaan: Funan (Vyadhapura), Champa (Indrapura), Srivijaya (Palembang), Majapahit (Kota Trowulan).">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Tujuh Kerajaan Awal Alam Melayu (SP 5.1.2)</h3>
       <p class="kssm-sub-summary">Kemunculan kerajaan-kerajaan awal membuktikan keupayaan masyarakat Alam Melayu membina tamadun berdaulat seawal abad pertama Masihi.</p>
       <ul class="kssm-kp-list"><li>1. Funan (Abad ke-1, Lembah Sungai Mekong, pusat Vyadhapura) — masyhur semasa Raja Fan Shih-man dan pelabuhan Oc Eo.</li><li>2. Champa (Abad ke-2, selatan &amp; tengah Vietnam, pusat Indrapura) — diasaskan oleh Chu-Lien.</li><li>3. Srivijaya (Abad ke-7 / 683 M, Palembang, Sumatera) — diasaskan oleh Dapunta Hyang Sri Jayanasa; menguasai Selat Melaka dan Selat Sunda.</li><li>4. Angkor (Abad ke-9, Lembah Sungai Mekong, pusat Hariharalaya / Angkor Thom) — diasaskan Jayavarman II; bina Angkor Wat dan baray (kolam air besar).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Senaraikan tiga lagi kerajaan Alam Melayu yang terletak di Jawa dan Semenanjung Tanah Melayu.</p>
-        <p><strong>Penyelesaian:</strong> Majapahit (abad ke-13, Kota Trowulan Jawa, diasaskan Raden Vijaya pada 1294), Kedah Tua (abad ke-5, Sungai Mas &amp; Pangkalan Bujang — bukti candi Lembah Bujang) dan Gangga Nagara (abad ke-6, Pantai Barat Semenanjung di Perak).</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Padankan pusat kerajaan: Funan (Vyadhapura), Champa (Indrapura), Srivijaya (Palembang), Majapahit (Kota Trowulan).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Senaraikan tiga lagi kerajaan Alam Melayu yang terletak di Jawa dan Semenanjung Tanah Melayu.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Majapahit (abad ke-13, Kota Trowulan Jawa, diasaskan Raden Vijaya pada 1294), Kedah Tua (abad ke-5, Sungai Mas &amp; Pangkalan Bujang — bukti candi Lembah Bujang) dan Gangga Nagara (abad ke-6, Pantai Barat Semenanjung di Perak).</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Padankan pusat kerajaan: Funan (Vyadhapura), Champa (Indrapura), Srivijaya (Palembang), Majapahit (Kota Trowulan).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Bagaimanakah Kerajaan Kedah Tua mendapat kemasyhuran walaupun berskala lebih kecil daripada Majapahit?" data-ex-solution="Kedah Tua terkenal sebagai pusat perdagangan antarabangsa di Lembah Bujang yang memanfaatkan Gunung Jerai sebagai panduan pelayar dan kaya hasil hutan serta bijih timah." data-ex-takeaway="Gunung Jerai menjadi mercu tanda panduan kapal dagang menuju pelabuhan Lembah Bujang (Kedah Tua).">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>1.3 Faktor Kemasyhuran Kerajaan Alam Melayu (SP 5.1.3)</h3>
       <p class="kssm-sub-summary">Kebijaksanaan pemerintah, kedudukan geografi strategik dan hubungan antarabangsa menjadi kunci kegemilangan empayar maritim dan agraria Alam Melayu.</p>
       <ul class="kssm-kp-list"><li>Kedudukan strategik di laluan perdagangan Timur-Barat (China dan India) menjadikan pelabuhan seperti Oc Eo (Funan), Palembang (Srivijaya) dan Sungai Mas (Kedah Tua) tumpuan kapal dagang.</li><li>Kebijaksanaan pemerintah: Suryavarman II dan Jayavarman VII memajukan pertanian dengan pembinaan baray di Angkor; Patih Gajah Mada menyatukan Nusantara di bawah Majapahit.</li><li>Kekayaan hasil bumi (beras, rempah ratus, emas, kapur barus, bijih timah) serta sistem pengairan subur menyokong kestabilan politik dan perdagangan.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Bagaimanakah Kerajaan Kedah Tua mendapat kemasyhuran walaupun berskala lebih kecil daripada Majapahit?</p>
-        <p><strong>Penyelesaian:</strong> Kedah Tua terkenal sebagai pusat perdagangan antarabangsa di Lembah Bujang yang memanfaatkan Gunung Jerai sebagai panduan pelayar dan kaya hasil hutan serta bijih timah.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Gunung Jerai menjadi mercu tanda panduan kapal dagang menuju pelabuhan Lembah Bujang (Kedah Tua).</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Bagaimanakah Kerajaan Kedah Tua mendapat kemasyhuran walaupun berskala lebih kecil daripada Majapahit?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Kedah Tua terkenal sebagai pusat perdagangan antarabangsa di Lembah Bujang yang memanfaatkan Gunung Jerai sebagai panduan pelayar dan kaya hasil hutan serta bijih timah.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Gunung Jerai menjadi mercu tanda panduan kapal dagang menuju pelabuhan Lembah Bujang (Kedah Tua).</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Apakah tujuan Kerajaan Srivijaya dan Funan menghantar utusan diplomatik ke China dan India?" data-ex-solution="Untuk mengukuhkan hubungan perdagangan, mendapat pengiktirafan politik, memelihara keselamatan daripada ancaman luar serta menjalin persahabatan keagamaan." data-ex-takeaway="Hubungan diplomatik awal membuktikan kebijaksanaan pemimpin Alam Melayu dalam geopolitik serantau.">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Kerajaan Sezaman &amp; Hubungan Luar (SP 5.1.4)</h3>
       <p class="kssm-sub-summary">Kerajaan Alam Melayu tidak terpencil; sebaliknya membangun sejajar dengan empayar besar dunia melalui hubungan perdagangan, keagamaan dan diplomatik.</p>
       <ul class="kssm-kp-list"><li>Abad ke-9: Champa, Srivijaya dan Angkor wujud sezaman dengan Kerajaan Abbasiyah, Empayar Byzantine, Dinasti Tang dan Kerajaan Chola.</li><li>Abad ke-14: Champa, Angkor dan Majapahit sezaman dengan Empayar Mongol, Kerajaan Turki Uthmaniyah dan Kesultanan Delhi.</li><li>Tiga bentuk hubungan luar: Perdagangan (bertukar sutera/tembikar China dengan rempah/hasil hutan), Keagamaan (penyebaran Hindu, Buddha dan Islam — I-Tsing belajar Sanskrit di Srivijaya), dan Diplomatik (penghantaran utusan ke China &amp; India demi pengiktirafan serta keselamatan).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Apakah tujuan Kerajaan Srivijaya dan Funan menghantar utusan diplomatik ke China dan India?</p>
-        <p><strong>Penyelesaian:</strong> Untuk mengukuhkan hubungan perdagangan, mendapat pengiktirafan politik, memelihara keselamatan daripada ancaman luar serta menjalin persahabatan keagamaan.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Hubungan diplomatik awal membuktikan kebijaksanaan pemimpin Alam Melayu dalam geopolitik serantau.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Apakah tujuan Kerajaan Srivijaya dan Funan menghantar utusan diplomatik ke China dan India?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Untuk mengukuhkan hubungan perdagangan, mendapat pengiktirafan politik, memelihara keselamatan daripada ancaman luar serta menjalin persahabatan keagamaan.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hubungan diplomatik awal membuktikan kebijaksanaan pemimpin Alam Melayu dalam geopolitik serantau.</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengelirukan pengasas Srivijaya (Dapunta Hyang Sri Jayanasa) dengan Majapahit (Raden Vijaya).</p>
-      <p><strong>Pembetulan Tepat:</strong> Srivijaya (683 M, Palembang) = Dapunta Hyang Sri Jayanasa; Majapahit (1294 M, Kota Trowulan) = Raden Vijaya dengan bantuan tentera Mongol.</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengelirukan pengasas Srivijaya (Dapunta Hyang Sri Jayanasa) dengan Majapahit (Raden Vijaya)." data-m-correction="Srivijaya (683 M, Palembang) = Dapunta Hyang Sri Jayanasa; Majapahit (1294 M, Kota Trowulan) = Raden Vijaya dengan bantuan tentera Mongol." data-m-tip="Ingat &#39;Sri&#39; = Srivijaya / Sri Jayanasa; &#39;Vijaya&#39; = Raden Vijaya di Majapahit.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan pengasas Srivijaya (Dapunta Hyang Sri Jayanasa) dengan Majapahit (Raden Vijaya).</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Srivijaya (683 M, Palembang) = Dapunta Hyang Sri Jayanasa; Majapahit (1294 M, Kota Trowulan) = Raden Vijaya dengan bantuan tentera Mongol.</p>
       <p><strong>Tip Skor Exam:</strong> Ingat &#39;Sri&#39; = Srivijaya / Sri Jayanasa; &#39;Vijaya&#39; = Raden Vijaya di Majapahit.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Mengatakan Kedah Tua terletak di Lembah Sungai Mekong.</p>
-      <p><strong>Pembetulan Tepat:</strong> Kedah Tua berpusat di Sungai Mas dan Pangkalan Bujang (Lembah Bujang, Kedah); Funan dan Angkor terletak di Lembah Sungai Mekong.</p>
+<article class="kssm-mistake-card" data-m-mistake="Mengatakan Kedah Tua terletak di Lembah Sungai Mekong." data-m-correction="Kedah Tua berpusat di Sungai Mas dan Pangkalan Bujang (Lembah Bujang, Kedah); Funan dan Angkor terletak di Lembah Sungai Mekong." data-m-tip="Sungai Mekong = Funan &amp; Angkor; Lembah Bujang = Kedah Tua.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengatakan Kedah Tua terletak di Lembah Sungai Mekong.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kedah Tua berpusat di Sungai Mas dan Pangkalan Bujang (Lembah Bujang, Kedah); Funan dan Angkor terletak di Lembah Sungai Mekong.</p>
       <p><strong>Tip Skor Exam:</strong> Sungai Mekong = Funan &amp; Angkor; Lembah Bujang = Kedah Tua.</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menyangka kerajaan Alam Melayu hanya wujud sebelum Islam dan tiada hubungan dengan dunia Arab atau China.</p>
-      <p><strong>Pembetulan Tepat:</strong> Alam Melayu berhubung aktif dengan Dinasti Tang/Ming, Chola di India serta Kerajaan Abbasiyah dan pedagang Arab/Parsi.</p>
+<article class="kssm-mistake-card" data-m-mistake="Menyangka kerajaan Alam Melayu hanya wujud sebelum Islam dan tiada hubungan dengan dunia Arab atau China." data-m-correction="Alam Melayu berhubung aktif dengan Dinasti Tang/Ming, Chola di India serta Kerajaan Abbasiyah dan pedagang Arab/Parsi." data-m-tip="Abad ke-9 = Srivijaya &amp; Angkor sezaman dengan Abbasiyah dan Dinasti Tang.">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyangka kerajaan Alam Melayu hanya wujud sebelum Islam dan tiada hubungan dengan dunia Arab atau China.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Alam Melayu berhubung aktif dengan Dinasti Tang/Ming, Chola di India serta Kerajaan Abbasiyah dan pedagang Arab/Parsi.</p>
       <p><strong>Tip Skor Exam:</strong> Abad ke-9 = Srivijaya &amp; Angkor sezaman dengan Abbasiyah dan Dinasti Tang.</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Sejarah&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%202%20%E2%80%A2%20Sejarah%20Bab%201%3A%20Kerajaan%20Alam%20Melayu%20(Konsep%2C%20Kemasyhuran%20%26%20Hubungan%20Luar)%5D%20Pada%20pendapat%20anda%2C%20apakah%20tiga%20faktor%20utama%20yang%20membolehkan%20kerajaan%20awal%20Alam%20Melayu%20seperti%20Srivijaya%20dan%20Funan%20muncul%20sebagai%20empayar%20perdagangan%20antarabangsa%20yang%20masyhur%3F#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

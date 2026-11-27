@@ -100,29 +100,49 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
-  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
-  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
-  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
-  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
-  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
+  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
+  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
+  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
+  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
   .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:14px;padding:18px;background:#fff}
-  .kssm-sub-card h3{margin:0 0 8px;color:#1e3a8a;font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
+  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
   .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
   .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 6px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
+  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
   .kssm-takeaway{color:#047857 !important;font-weight:600}
   .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:15px}
+  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
   .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
+  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
@@ -193,18 +213,15 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
   @media print{
-    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
-    .kssm-print-header{display:flex !important}
     #panel-nota{display:block !important}
-    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
-    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
-    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
-    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
-    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 2","item":"https://etutor.my/kssm/tingkatan-2/"},{"@type":"ListItem","position":4,"name":"Pendidikan Islam Bab 2","item":"https://etutor.my/kssm/tingkatan-2/pendidikan-islam/bab-2/"}]},{"@type":"LearningResource","name":"Pendidikan Islam Tingkatan 2 Bab 2: Pelajaran 2: Surah Ali Imran Ayat 18 (Keesaan & Keagungan Allah SWT)","description":"Memahami bacaan, hafazan bertajwid dan inti sari Surah Ali Imran ayat 18 tentang pengiktirafan keesaan Allah SWT oleh diri-Nya sendiri, para malaikat serta ahli ilmu dengan penuh keadilan (qa'iman bil-qist).","url":"https://etutor.my/kssm/tingkatan-2/pendidikan-islam/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 2","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Pendidikan Islam KSSM (1223)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -258,10 +275,6 @@
     <nav class="seo-breadcrumb" aria-label="Breadcrumb">
       <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 2</a> / <span>Pendidikan Islam Pelajaran 2</span>
     </nav>
-    <div class="kssm-print-header">
-      <span>eTutor.my &bull; Nota KSSM (Tingkatan 2)</span>
-      <span>Pendidikan Islam (1223) &bull; Pelajaran 2</span>
-    </div>
     <section class="kssm-hero">
       <div class="kssm-hero-head">
         <div class="kssm-pill-row">
@@ -281,90 +294,135 @@
         <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
       </div>
     </section>
-
     <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
-      <div class="kssm-print-bar">
-        <p>Nota Ringkas Pendidikan Islam Tingkatan 2 &bull; Sedia untuk cetakan atau simpanan PDF.</p>
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Bahasa</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Sains</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Matematik</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Sejarah</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>P. Islam</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Geografi</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
         <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-          <span>Cetak / Simpan PDF</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
         </button>
       </div>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-        <h2>Sasaran Penguasaan Bab Ini</h2>
-        <ol class="kssm-obj-list"><li>Membaca dan menghafaz Surah Ali Imran ayat 18 dengan betul, lancar dan bertajwid.</li><li>Menyatakan terjemahan penuh ayat 18 serta tiga golongan saksi yang mengisytiharkan kalimah tauhid &#39;La ilaha illa Huwa&#39;.</li><li>Menjelaskan maksud Allah menegakkan keadilan (&#39;qa&#39;iman bil-qist&#39;) serta sifat Al-Aziz dan Al-Hakim.</li><li>Menghargai martabat tinggi ahli ilmu dalam Islam dan mengamalkan kalimah syahadah dalam ibadah serta zikir harian.</li></ol>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 5–8)</span>
-        <h2>Ringkasan Teras Mengikut Subtopik</h2>
-        <div class="kssm-subtopics-grid"><article class="kssm-sub-card">
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="islam" data-tpl="islam" data-subject-slug="pendidikan-islam" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T2_pendidikan-islam_Bab_2.pdf" data-form-label="Tingkatan 2" data-subject-name="Pendidikan Islam" data-subject-code="1223" data-pages="m.s. 5–8" data-dskp="SK 1.11 (DSKP KSSM Pendidikan Islam Tingkatan 2)" data-chapter-heading="Pelajaran 2: Pelajaran 2: Surah Ali Imran Ayat 18 (Keesaan &amp; Keagungan Allah SWT)" data-hero-summary="Memahami bacaan, hafazan bertajwid dan inti sari Surah Ali Imran ayat 18 tentang pengiktirafan keesaan Allah SWT oleh diri-Nya sendiri, para malaikat serta ahli ilmu dengan penuh keadilan (qa&#39;iman bil-qist)." style="--tpl-accent:#0f766e;--tpl-soft:#f0fdfa;--tpl-border:#5eead4;--tpl-ink:#134e4a;--tpl-bg:url('../../../../images/nota-templates/islam.jpg')">
+        <header class="kssm-sheet-head">
+          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
+          <h2>Pelajaran 2: Pelajaran 2: Surah Ali Imran Ayat 18 (Keesaan &amp; Keagungan Allah SWT)</h2>
+          <p class="kssm-sublead">Memahami bacaan, hafazan bertajwid dan inti sari Surah Ali Imran ayat 18 tentang pengiktirafan keesaan Allah SWT oleh diri-Nya sendiri, para malaikat serta ahli ilmu dengan penuh keadilan (qa&#39;iman bil-qist).</p>
+          <p class="kssm-sheet-meta">Tingkatan 2 &bull; Pendidikan Islam (1223) &bull; m.s. 5–8 &bull; SK 1.11 (DSKP KSSM Pendidikan Islam Tingkatan 2)</p>
+        </header>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
+          <h2>Sasaran Penguasaan Bab Ini</h2>
+          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Membaca dan menghafaz Surah Ali Imran ayat 18 dengan betul, lancar dan bertajwid.">
+      <span class="kssm-obj-num">01</span>
+      <span>Membaca dan menghafaz Surah Ali Imran ayat 18 dengan betul, lancar dan bertajwid.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menyatakan terjemahan penuh ayat 18 serta tiga golongan saksi yang mengisytiharkan kalimah tauhid &#39;La ilaha illa Huwa&#39;.">
+      <span class="kssm-obj-num">02</span>
+      <span>Menyatakan terjemahan penuh ayat 18 serta tiga golongan saksi yang mengisytiharkan kalimah tauhid &#39;La ilaha illa Huwa&#39;.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menjelaskan maksud Allah menegakkan keadilan (&#39;qa&#39;iman bil-qist&#39;) serta sifat Al-Aziz dan Al-Hakim.">
+      <span class="kssm-obj-num">03</span>
+      <span>Menjelaskan maksud Allah menegakkan keadilan (&#39;qa&#39;iman bil-qist&#39;) serta sifat Al-Aziz dan Al-Hakim.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menghargai martabat tinggi ahli ilmu dalam Islam dan mengamalkan kalimah syahadah dalam ibadah serta zikir harian.">
+      <span class="kssm-obj-num">04</span>
+      <span>Menghargai martabat tinggi ahli ilmu dalam Islam dan mengamalkan kalimah syahadah dalam ibadah serta zikir harian.</span>
+    </div></div>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 5–8)</span>
+          <h2>Ringkasan Teras Mengikut Subtopik</h2>
+          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah ahli ilmu (ulul-&#39;ilmi) digandingkan bersama Allah SWT dan para malaikat sebagai saksi keesaan Tuhan dalam ayat 18?" data-ex-solution="Hal ini menunjukkan ketinggian darjat dan kemuliaan orang berilmu di sisi Allah SWT kerana kefahaman ilmu yang benar membimbing mereka mengenal pencipta dengan yakin." data-ex-takeaway="Martabat ahli ilmu diangkat tinggi dalam al-Quran sehingga dijadikan saksi kebenaran tauhid.">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Bacaan, Terjemahan &amp; Tiga Saksi Tauhid (SK 1.11)</h3>
       <p class="kssm-sub-summary">Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT sebagai satu-satunya Tuhan yang berhak disembah.</p>
       <ul class="kssm-kp-list"><li>Lafaz rumi: &#39;Syahidallahu annahu la ilaha illa Huwa wal-mala&#39;ikatu wa ulul-&#39;ilmi qa&#39;iman bil-qist, la ilaha illa Huwal-&#39;Azizul-Hakim.&#39;</li><li>Terjemahan: &#39;Allah menerangkan bahawa tiada Tuhan melainkan Dia yang mentadbirkan sekalian alam dengan keadilan, dan malaikat serta orang-orang berilmu (mengakui demikian); tiada Tuhan melainkan Dia yang Maha Kuasa lagi Maha Bijaksana.&#39;</li><li>Tiga pihak yang menyaksikan tauhid: (1) Allah SWT sendiri, (2) Para malaikat yang taat tanpa maksiat, dan (3) Orang-orang berilmu (ulul-&#39;ilmi — para nabi, ulama dan mukmin berpengetahuan).</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Mengapakah ahli ilmu (ulul-&#39;ilmi) digandingkan bersama Allah SWT dan para malaikat sebagai saksi keesaan Tuhan dalam ayat 18?</p>
-        <p><strong>Penyelesaian:</strong> Hal ini menunjukkan ketinggian darjat dan kemuliaan orang berilmu di sisi Allah SWT kerana kefahaman ilmu yang benar membimbing mereka mengenal pencipta dengan yakin.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Martabat ahli ilmu diangkat tinggi dalam al-Quran sehingga dijadikan saksi kebenaran tauhid.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah ahli ilmu (ulul-&#39;ilmi) digandingkan bersama Allah SWT dan para malaikat sebagai saksi keesaan Tuhan dalam ayat 18?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Hal ini menunjukkan ketinggian darjat dan kemuliaan orang berilmu di sisi Allah SWT kerana kefahaman ilmu yang benar membimbing mereka mengenal pencipta dengan yakin.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Martabat ahli ilmu diangkat tinggi dalam al-Quran sehingga dijadikan saksi kebenaran tauhid.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Bagaimanakah keyakinan terhadap sifat Allah &#39;Al-Hakim&#39; membantu pelajar menghadapi keputusan peperiksaan atau ujian hidup?" data-ex-solution="Pelajar akan bersabar dan berbaik sangka bahawa setiap ketentuan Allah selepas berusaha mempunyai hikmah terbaik untuk kematangan masa depannya." data-ex-takeaway="Beriman dengan Al-&#39;Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Keadilan Allah (Qa&#39;iman bil-Qist), Al-Aziz &amp; Al-Hakim</h3>
       <p class="kssm-sub-summary">Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki sifat Maha Perkasa dan Maha Bijaksana.</p>
       <ul class="kssm-kp-list"><li>&#39;Qa&#39;iman bil-qist&#39;: Allah SWT sentiasa mengurus seluruh ciptaan-Nya dengan adil, tidak menzalimi sesiapa pun, dan membalas setiap amalan mengikut timbangan saksama.</li><li>Al-&#39;Aziz (Maha Mulia / Maha Perkasa): Tiada kuasa dapat mengalahkan atau menghalang kehendak Allah SWT.</li><li>Al-Hakim (Maha Bijaksana): Setiap hukum syariat, ujian hidup dan kejadian alam yang ditentukan Allah penuh hikmah dan kesempurnaan.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Bagaimanakah keyakinan terhadap sifat Allah &#39;Al-Hakim&#39; membantu pelajar menghadapi keputusan peperiksaan atau ujian hidup?</p>
-        <p><strong>Penyelesaian:</strong> Pelajar akan bersabar dan berbaik sangka bahawa setiap ketentuan Allah selepas berusaha mempunyai hikmah terbaik untuk kematangan masa depannya.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Beriman dengan Al-&#39;Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Bagaimanakah keyakinan terhadap sifat Allah &#39;Al-Hakim&#39; membantu pelajar menghadapi keputusan peperiksaan atau ujian hidup?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Pelajar akan bersabar dan berbaik sangka bahawa setiap ketentuan Allah selepas berusaha mempunyai hikmah terbaik untuk kematangan masa depannya.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Beriman dengan Al-&#39;Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Apakah hukum tajwid bagi bacaan &#39;qa&#39;iman bil-qist&#39; ketika tanwin bertemu huruf Ba?" data-ex-solution="Hukum Iqlab (huruf tunggal bagi Iqlab ialah Ba ب); sebutan &#39;qa&#39;iman&#39; bertukar menjadi dengung &#39;qa&#39;imam-bil-qist&#39; sepanjang 2 harakat." data-ex-takeaway="Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
       <h3>2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad Jaiz &amp; Tanwin</h3>
       <p class="kssm-sub-summary">Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar harakatnya semasa hafazan.</p>
       <ul class="kssm-kp-list"><li>&#39;Wa ulul-&#39;ilmi&#39; &amp; &#39;al-mala&#39;ikatu&#39;: &#39;al-mala&#39;ikatu&#39; mengandungi Mad Wajib Muttasil (huruf mad bertemu hamzah dalam SATU kalimah → dibaca wajib 4 atau 5 harakat).</li><li>&#39;La ilaha&#39;: mengandungi Mad Jaiz Munfasil (huruf mad di akhir kata bertemu hamzah di awal kata berikut → dibaca 4 atau 5 harakat mengikut bacaan Hafs).</li><li>&#39;Qa&#39;iman bil-qist&#39;: Tanwin fathah bertemu huruf Ba ialah hukum Iqlab (menukarkan bunyi tanwin kepada Mim yang samar dengan dengung 2 harakat)!</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Apakah hukum tajwid bagi bacaan &#39;qa&#39;iman bil-qist&#39; ketika tanwin bertemu huruf Ba?</p>
-        <p><strong>Penyelesaian:</strong> Hukum Iqlab (huruf tunggal bagi Iqlab ialah Ba ب); sebutan &#39;qa&#39;iman&#39; bertukar menjadi dengung &#39;qa&#39;imam-bil-qist&#39; sepanjang 2 harakat.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Apakah hukum tajwid bagi bacaan &#39;qa&#39;iman bil-qist&#39; ketika tanwin bertemu huruf Ba?</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> Hukum Iqlab (huruf tunggal bagi Iqlab ialah Ba ب); sebutan &#39;qa&#39;iman&#39; bertukar menjadi dengung &#39;qa&#39;imam-bil-qist&#39; sepanjang 2 harakat.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!</p>
       </div>
     </article>
-<article class="kssm-sub-card">
+<article class="kssm-sub-card" data-ex-prompt="Berikan dua bukti amalan yang memelihara kesucian kalimah tauhid &#39;La ilaha illa Huwa&#39; dalam hidup remaja." data-ex-solution="(1) Menjauhi amalan khurafat dan ramalan nasib/zodiak; (2) Memohon pertolongan dan tawakal hanya kepada Allah SWT melalui doa." data-ex-takeaway="Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.">
+      <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Pengajaran &amp; Tanggungjawab Pelajar Berilmu</h3>
       <p class="kssm-sub-summary">Pengiktirafan ayat 18 memberi motivasi besar kepada pelajar supaya tekun menuntut ilmu fardu ain dan fardu kifayah demi mendekatkan diri kepada Allah SWT.</p>
       <ul class="kssm-kp-list"><li>Ilmu yang bermanfaat bukan sekadar menghafal fakta untuk lulus, tetapi menjadikan pemiliknya semakin takut, bersyukur dan patuh kepada Allah SWT.</li><li>Mengelakkan segala bentuk syirik (mempercayai tangkal, sihir, horoskop atau menyembah selain Allah) demi memelihara kalimah &#39;La ilaha illa Huwa&#39;.</li><li>Berusaha bersikap adil terhadap diri sendiri, rakan dan tanggungjawab sekolah sebagai meneladani sifat keadilan Allah.</li></ul>
       <div class="kssm-example-box">
-        <p><strong>Contoh Terkawal:</strong> Berikan dua bukti amalan yang memelihara kesucian kalimah tauhid &#39;La ilaha illa Huwa&#39; dalam hidup remaja.</p>
-        <p><strong>Penyelesaian:</strong> (1) Menjauhi amalan khurafat dan ramalan nasib/zodiak; (2) Memohon pertolongan dan tawakal hanya kepada Allah SWT melalui doa.</p>
-        <p class="kssm-takeaway"><strong>Tip Penting:</strong> Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.</p>
+        <p><span class="kssm-ex-pill">Contoh</span> Berikan dua bukti amalan yang memelihara kesucian kalimah tauhid &#39;La ilaha illa Huwa&#39; dalam hidup remaja.</p>
+        <p><span class="kssm-ex-pill">Penyelesaian</span> (1) Menjauhi amalan khurafat dan ramalan nasib/zodiak; (2) Memohon pertolongan dan tawakal hanya kepada Allah SWT melalui doa.</p>
+        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.</p>
       </div>
     </article></div>
-      </section>
-
-      <section class="seo-section-card">
-        <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-        <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-        <div class="kssm-mistakes-grid"><article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Tidak menukarkan bunyi tanwin kepada bunyi Mim berdengung pada kalimah &#39;qa&#39;iman bil-qist&#39;.</p>
-      <p><strong>Pembetulan Tepat:</strong> Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi &#39;m&#39; dengan dengung 2 harakat).</p>
+        </section>
+        <section class="kssm-sheet-card">
+          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
+          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
+          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Tidak menukarkan bunyi tanwin kepada bunyi Mim berdengung pada kalimah &#39;qa&#39;iman bil-qist&#39;." data-m-correction="Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi &#39;m&#39; dengan dengung 2 harakat)." data-m-tip="Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Tidak menukarkan bunyi tanwin kepada bunyi Mim berdengung pada kalimah &#39;qa&#39;iman bil-qist&#39;.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi &#39;m&#39; dengan dengung 2 harakat).</p>
       <p><strong>Tip Skor Exam:</strong> Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menganggap Mad Wajib Muttasil dalam &#39;al-mala&#39;ikatu&#39; dibaca 2 harakat sahaja.</p>
-      <p><strong>Pembetulan Tepat:</strong> Mad Wajib Muttasil wajib dipanjangkan 4 atau 5 harakat (dan 6 harakat jika hamzah berada di hujung waqaf).</p>
+<article class="kssm-mistake-card" data-m-mistake="Menganggap Mad Wajib Muttasil dalam &#39;al-mala&#39;ikatu&#39; dibaca 2 harakat sahaja." data-m-correction="Mad Wajib Muttasil wajib dipanjangkan 4 atau 5 harakat (dan 6 harakat jika hamzah berada di hujung waqaf)." data-m-tip="Hamzah dalam satu perkataan dengan huruf Mad = Mad Wajib (4–5 harakat).">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap Mad Wajib Muttasil dalam &#39;al-mala&#39;ikatu&#39; dibaca 2 harakat sahaja.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Mad Wajib Muttasil wajib dipanjangkan 4 atau 5 harakat (dan 6 harakat jika hamzah berada di hujung waqaf).</p>
       <p><strong>Tip Skor Exam:</strong> Hamzah dalam satu perkataan dengan huruf Mad = Mad Wajib (4–5 harakat).</p>
     </article>
-<article class="kssm-mistake-card">
-      <p><strong>Kesilapan Lazim:</strong> Menulis hanya malaikat dan manusia sahaja yang menjadi saksi keesaan Allah.</p>
-      <p><strong>Pembetulan Tepat:</strong> Ayat 18 menyebut TIGA saksi secara jelas: Allah SWT sendiri, para malaikat, dan golongan berilmu (ulul-&#39;ilmi).</p>
+<article class="kssm-mistake-card" data-m-mistake="Menulis hanya malaikat dan manusia sahaja yang menjadi saksi keesaan Allah." data-m-correction="Ayat 18 menyebut TIGA saksi secara jelas: Allah SWT sendiri, para malaikat, dan golongan berilmu (ulul-&#39;ilmi)." data-m-tip="Jangan tertinggal &#39;Allah SWT&#39; sebagai saksi pertama dalam ayat (&#39;Syahidallahu...&#39;).">
+      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis hanya malaikat dan manusia sahaja yang menjadi saksi keesaan Allah.</p>
+      <p><span class="kssm-mistake-tag is-good">Tepat</span> Ayat 18 menyebut TIGA saksi secara jelas: Allah SWT sendiri, para malaikat, dan golongan berilmu (ulul-&#39;ilmi).</p>
       <p><strong>Tip Skor Exam:</strong> Jangan tertinggal &#39;Allah SWT&#39; sebagai saksi pertama dalam ayat (&#39;Syahidallahu...&#39;).</p>
     </article></div>
-      </section>
+        </section>
+      </div>
     </div>
-
-    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden>
-      <section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian A (Objektif) &bull; 0 Token</span>
@@ -924,11 +982,8 @@
         <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
         <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
       </div>
-    </section>
-    </div>
-
-    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden>
-      <section class="seo-section-card" id="kertas-2-berstruktur">
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
       <div class="kssm-section-top">
         <div>
           <span class="kssm-eyebrow">Ujian Topikal UASA &bull; Bahagian B / Berstruktur &amp; KBAT</span>
@@ -1030,9 +1085,7 @@
           <a href="../../../../?cikguSubjek=Pendidikan%20Islam&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%202%20%E2%80%A2%20Pendidikan%20Islam%20Bab%202%3A%20Pelajaran%202%3A%20Surah%20Ali%20Imran%20Ayat%2018%20(Keesaan%20%26%20Keagungan%20Allah%20SWT)%5D%20Mengapakah%20Islam%20memuliakan%20kedudukan%20orang%20berilmu%20sebagaimana%20terserlah%20dalam%20ayat%2018%3F%20Huraikan%20tiga%20adab%20seorang%20penuntut%20ilmu%20agar%20ilmunya%20diberkati%20serta%20mengukuhkan%20keimanan.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
         </div>
       </article></div>
-    </section>
-    </div>
-
+    </section></div>
     <section class="seo-section-card kssm-related-section">
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
@@ -1089,13 +1142,6 @@
   else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
   else activateTab("nota");
 
-  var printBtn = document.getElementById("kssmPrintPdfBtn");
-  if (printBtn) {
-    printBtn.addEventListener("click", function () {
-      activateTab("nota");
-      setTimeout(function () { window.print(); }, 60);
-    });
-  }
   var playBtn = document.querySelector(".kssm-playable-icon-btn");
   if (playBtn && window.self !== window.top) {
     playBtn.addEventListener("click", function (ev) {
@@ -1183,6 +1229,7 @@
   renderAll();
 })();
 </script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

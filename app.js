@@ -4539,7 +4539,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Kedaulatan — Takrif, Tokoh & 4 Jenis (1.1)",
           "stepTitle": "1.1 Definisi Kedaulatan & Takrif dalam 4 Bahasa",
-          "caption": "Animasi 3D: Laman Istana Berdaulat dan Dewan Parlimen Negara dalam sinar fajar",
+          "caption": "Laman Istana Berdaulat dan Dewan Parlimen Negara dalam sinar fajar.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_kedaulatan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_kedaulatan.mp4"
@@ -4549,7 +4549,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Ciri Negara yang Berdaulat (1.2)",
           "stepTitle": "1.2 Ciri Pertama: Mempunyai Pemerintahan Teratur",
-          "caption": "Video Penerangan 15s (BM): Empat ciri negara berdaulat — pemerintahan, sempadan, perundangan dan rakyat",
+          "caption": "Empat ciri negara berdaulat — pemerintahan, sempadan, perundangan dan rakyat.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_ciri_berdaulat_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab01/video/sej51_video_ciri_berdaulat_narasi.mp4"
@@ -4581,7 +4581,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Latar Belakang Sejarah Perlembagaan Persekutuan (2.1)",
           "stepTitle": "2.1 Asas Pembentukan & Undang-Undang Negeri Melayu Awal",
-          "caption": "Video Penerangan 15s (BM): Prinsip keluhuran Perlembagaan Persekutuan, ciri tradisional dan ciri moden negara",
+          "caption": "Prinsip keluhuran Perlembagaan Persekutuan, ciri tradisional dan ciri moden negara.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab02/video/sej52_video_perlembagaan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab02/video/sej52_video_perlembagaan_narasi.mp4"
@@ -4613,7 +4613,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Latar Belakang Pemerintahan Beraja & Demokrasi (3.1)",
           "stepTitle": "3.1 Pemerintahan Beraja Kesultanan Melaka & Legasi 9 Negeri",
-          "caption": "Animasi 3D: Dewan Parlimen dan singgahsana diraja dalam sistem Raja Berperlembagaan",
+          "caption": "Dewan Parlimen dan singgahsana diraja dalam sistem Raja Berperlembagaan.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab03/video/sej53_video_parlimen_raja.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab03/video/sej53_video_parlimen_raja.mp4"
@@ -4645,7 +4645,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Latar Belakang Sistem Persekutuan (4.1)",
           "stepTitle": "4.1 Konsep Persekutuan & Konfederasi Negeri Sembilan (1889–1898)",
-          "caption": "Video Penerangan 15s (BM): Pembahagian kuasa Persekutuan, Negeri dan Bersama demi kestabilan rakyat",
+          "caption": "Pembahagian kuasa Persekutuan, Negeri dan Bersama demi kestabilan rakyat.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab04/video/sej54_video_persekutuan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab04/video/sej54_video_persekutuan_narasi.mp4"
@@ -4677,7 +4677,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Gagasan Malaysia & Peta Penyatuan 1963",
           "stepTitle": "5.1 Konsep Gagasan Malaysia & Negara Persekutuan Berdaulat",
-          "caption": "Video Interaktif: Penggabungan wilayah bekas jajahan British membentuk Persekutuan Malaysia pada tahun 1963",
+          "caption": "Penggabungan wilayah bekas jajahan British membentuk Persekutuan Malaysia pada tahun 1963.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab05/video/sej55_video_pembentukan_malaysia.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab05/video/sej55_video_pembentukan_malaysia.mp4"
@@ -4709,7 +4709,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Cabaran Dalaman Malaysia & Krisis Sarawak (6.1)",
           "stepTitle": "6.1 Cabaran Pembangunan & Sosioekonomi Sarawak–Sabah",
-          "caption": "Video Penerangan 15s (BM): Cabaran awal selepas pembentukan Malaysia — Singapura, ancaman komunis dan MAGERAN",
+          "caption": "Cabaran awal selepas pembentukan Malaysia — Singapura, ancaman komunis dan MAGERAN.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab06/video/sej56_video_cabaran_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab06/video/sej56_video_cabaran_narasi.mp4"
@@ -4741,7 +4741,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Perpaduan dan Integrasi Nasional (7.1)",
           "stepTitle": "7.1 Perpaduan Kaum, Integrasi Nasional & Feri Malaysia (1986)",
-          "caption": "Video Interaktif: Semangat perpaduan pelbagai kaum dan integrasi nasional sebagai asas kesejahteraan Malaysia",
+          "caption": "Semangat perpaduan pelbagai kaum dan integrasi nasional sebagai asas kesejahteraan Malaysia.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab07/video/sej57_video_perpaduan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab07/video/sej57_video_perpaduan.mp4"
@@ -4773,7 +4773,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pembentukan Dasar Ekonomi Baru (8.1)",
           "stepTitle": "8.1 Latar Belakang DEB, MAPEN (Jan 1970) & RRJP1",
-          "caption": "Video Penerangan 15s (BM): Matlamat Dasar Ekonomi Baru (DEB) dan Dasar Pembangunan Nasional (DPN)",
+          "caption": "Matlamat Dasar Ekonomi Baru (DEB) dan Dasar Pembangunan Nasional (DPN).",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab08/video/sej58_video_deb_dpn_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab08/video/sej58_video_deb_dpn_narasi.mp4"
@@ -4805,7 +4805,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Latar Belakang & Asas Penggubalan Dasar Luar (9.1–9.2)",
           "stepTitle": "9.1 Zaman British & Dua Fasa Dasar Luar Selepas Kemerdekaan",
-          "caption": "Animasi 3D: Evolusi dasar luar Malaysia daripada era Wisma Putra hingga kerjasama serantau ASEAN dan ZOPFAN",
+          "caption": "Evolusi dasar luar Malaysia daripada era Wisma Putra hingga kerjasama serantau ASEAN dan ZOPFAN.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab09/video/sej59_video_dasar_luar_asean.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab09/video/sej59_video_dasar_luar_asean.mp4"
@@ -4837,7 +4837,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Malaysia dalam Isu Global Kontemporari (10.1)",
           "stepTitle": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
-          "caption": "Animasi 3D: Diplomasi berprinsip Malaysia di persada PBB, ASEAN, kelestarian alam dan wawasan masa hadapan",
+          "caption": "Diplomasi berprinsip Malaysia di persada PBB, ASEAN, kelestarian alam dan wawasan masa hadapan.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sejarah-t5-bab10/video/sej510_video_global_wawasan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sejarah-t5-bab10/video/sej510_video_global_wawasan.mp4"
@@ -5037,7 +5037,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Cergaskan Dirimu & Wacana Penulisan Sihat",
           "stepTitle": "1.1.1 & 3.1.1 Kecergasan Diri, Terapi Seni & Teknik Maksud Ayat",
-          "caption": "Video Ilustrasi Wacana Karangan (Tanpa Audio): Panduan menyusun kesinambungan idea dan penanda wacana karangan SPM bertemakan gaya hidup sihat.",
+          "caption": "Panduan menyusun kesinambungan idea dan penanda wacana karangan SPM bertemakan gaya hidup sihat.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/bahasa-melayu-t5-wacana/video/bm5_video_wacana_karangan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/bahasa-melayu-t5-wacana/video/bm5_video_wacana_karangan.mp4"
@@ -5384,7 +5384,7 @@
           "unitNumber": 4,
           "unitTitle": "Critical Essay Writing & Informal Replies",
           "stepTitle": "Critical Writing & Personal Communication",
-          "caption": "Narrated Video (EN): Critical writing structure, reasoned evidence and persuasive essay balance",
+          "caption": "Critical writing structure, reasoned evidence and persuasive essay balance.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/bahasa-inggeris-t5-writing/video/bi5_video_critical_writing_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/bahasa-inggeris-t5-writing/video/bi5_video_critical_writing_narasi.mp4"
@@ -5584,7 +5584,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Nombor, Digit Sah & Nilai Tempat",
           "stepTitle": "Asas Nombor dalam Teknologi Moden & Peraturan Digit Sah",
-          "caption": "Video Penerangan 3D: Rahsia asas nombor daripada asas sepuluh kehidupan harian hingga logik binari komputer moden",
+          "caption": "Rahsia asas nombor daripada asas sepuluh kehidupan harian hingga logik binari komputer moden.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab02/video/mat42_video_asas_nombor_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab02/video/mat42_video_asas_nombor_narasi.mp4"
@@ -5616,7 +5616,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pernyataan, Pengkuantiti & Penafian (~p)",
           "stepTitle": "3.1 Maksud Pernyataan & Penentuan Nilai Kebenaran",
-          "caption": "Video Penerangan (BM): Penaakulan logik dalam perbahasan, pengkomputeran serta asas pernyataan benar dan palsu",
+          "caption": "Penaakulan logik dalam perbahasan, pengkomputeran serta asas pernyataan benar dan palsu.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab03/video/mat43_video_logik_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab03/video/mat43_video_logik_narasi.mp4"
@@ -5648,7 +5648,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Persilangan Set (P ∩ Q) & Kes Khas Rajah Venn",
           "stepTitle": "4.1 Definisi Persilangan Set (P ∩ Q) & Analogi Gerhana",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Persilangan Set (P ∩ Q), Kesatuan Set (P ∪ Q) dan Lorekan Rajah Venn",
+          "caption": "Konsep Persilangan Set (P ∩ Q), Kesatuan Set (P ∪ Q) dan Lorekan Rajah Venn.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab04/video/mat44_video_operasi_set_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab04/video/mat44_video_operasi_set_narasi.mp4"
@@ -5680,7 +5680,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Rangkaian, Bucu V, Tepi E & Darjah d(v)",
           "stepTitle": "Konsep Graf & Rangkaian Dunia Sebenar (Pengangkutan, Sosial & Sejuk)",
-          "caption": "Animasi 3D: Bucu dan tepi saling berhubung membentuk rangkaian graf mudah, berbilang tepi serta gelung",
+          "caption": "Bucu dan tepi saling berhubung membentuk rangkaian graf mudah, berbilang tepi serta gelung.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab05/video/mat45_video_graf_rangkaian.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab05/video/mat45_video_graf_rangkaian.mp4"
@@ -5712,7 +5712,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pengenalan Ketaksamaan Linear & Pemodelan Situasi",
           "stepTitle": "6.1 Daripada Satu Pemboleh Ubah ke Dua Pemboleh Ubah",
-          "caption": "Video Penerangan Bersuara (BM): Garis Sempadan Padu vs Sempang, Tentusah Titik & Rantau Sepunya Sistem Ketaksamaan",
+          "caption": "Garis Sempadan Padu vs Sempang, Tentusah Titik & Rantau Sepunya Sistem Ketaksamaan.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab06/video/mat46_video_ketaksamaan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab06/video/mat46_video_ketaksamaan_narasi.mp4"
@@ -5744,7 +5744,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Graf Jarak-Masa & Plot Persamaan",
           "stepTitle": "7.1 Mengenali Paksi Graf Jarak-Masa & Makna Kecerunan",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Graf Jarak-Masa, Graf Laju-Masa, Kecerunan dan Luas Di Bawah Graf",
+          "caption": "Konsep Graf Jarak-Masa, Graf Laju-Masa, Kecerunan dan Luas Di Bawah Graf.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab07/video/mat47_video_graf_gerakan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab07/video/mat47_video_graf_gerakan_narasi.mp4"
@@ -5776,7 +5776,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Serakan, Plot Batang-dan-Daun & Plot Titik",
           "stepTitle": "8.1 Maksud Serakan, Etika Data & Jaringan Kata",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Serakan, Plot Batang-dan-Daun, Plot Titik, Kuartil, Plot Kotak & Sisihan Piawai",
+          "caption": "Konsep Serakan, Plot Batang-dan-Daun, Plot Titik, Kuartil, Plot Kotak & Sisihan Piawai.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab08/video/mat48_video_serakan_tak_terkumpul_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab08/video/mat48_video_serakan_tak_terkumpul_narasi.mp4"
@@ -5808,7 +5808,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Peristiwa Bergabung & Ruang Sampel S",
           "stepTitle": "Teori Kebarangkalian, Maslahat Bab & Peristiwa Bergabung",
-          "caption": "Simulasi 3D: Percabangan kebarangkalian peristiwa bergabung melalui lambungan dadu, syiling dan cabutan guli berwarna",
+          "caption": "Percabangan kebarangkalian peristiwa bergabung melalui lambungan dadu, syiling dan cabutan guli berwarna.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab09/video/mat49_video_kebarangkalian.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab09/video/mat49_video_kebarangkalian.mp4"
@@ -5840,7 +5840,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Proses Pengurusan Kewangan & Matlamat SMART",
           "stepTitle": "10.1 Definisi Pengurusan Kewangan, Tokoh BNM & 5 Proses",
-          "caption": "Video Penerangan Bersuara (BM): Proses Pengurusan Kewangan, Konsep SMART, Aset vs Liabiliti dan Pengurusan Aliran Tunai",
+          "caption": "Proses Pengurusan Kewangan, Konsep SMART, Aset vs Liabiliti dan Pengurusan Aliran Tunai.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t4-bab10/video/mat410_video_kewangan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t4-bab10/video/mat410_video_kewangan_narasi.mp4"
@@ -5872,7 +5872,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Ubahan Langsung, Pemalar k & Graf Asalan",
           "stepTitle": "1.1 Maksud Ubahan Langsung, Simbol ∝ & Graf Melalui Asalan",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Ubahan Langsung (y = kx^n), Ubahan Songsang (y = k/x^n), Graf Hiperbola vs Garis Lurus & Ubahan Bergabung",
+          "caption": "Konsep Ubahan Langsung (y = kx^n), Ubahan Songsang (y = k/x^n), Graf Hiperbola vs Garis Lurus & Ubahan Bergabung.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab01/video/mat51_video_ubahan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab01/video/mat51_video_ubahan_narasi.mp4"
@@ -5904,7 +5904,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pengenalan Matriks, Peringkat m × n & Matriks Sama",
           "stepTitle": "Mewakilkan Maklumat dalam Bentuk Matriks & Jenis Bentuknya",
-          "caption": "Simulasi 3D: Transformasi tatasusun nombor dalam grid baris dan lajur serta aplikasi pemetaan matriks",
+          "caption": "Transformasi tatasusun nombor dalam grid baris dan lajur serta aplikasi pemetaan matriks.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab02/video/mat52_video_matriks_transformasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab02/video/mat52_video_matriks_transformasi.mp4"
@@ -5936,7 +5936,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Risiko, Akta Insurans & Prinsip Indemniti",
           "stepTitle": "Makna Risiko, Kawal Selia BNM & Peranan Aktuari",
-          "caption": "Video Penerangan Bersuara: Pengurusan Risiko, Insurans Hayat vs Am & Prinsip Indemniti",
+          "caption": "Pengurusan Risiko, Insurans Hayat vs Am & Prinsip Indemniti.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab03/video/mat53_video_insurans_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab03/video/mat53_video_insurans_narasi.mp4"
@@ -5968,7 +5968,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Tujuan Percukaian, 5 Jenis Cukai & Pengelakan Cukai",
           "stepTitle": "Makna Percukaian, 4 Tujuan Utama & Kuasa Kutipan",
-          "caption": "Video Penerangan Bersuara (BM): Tujuan Percukaian, 5 Jenis Cukai Malaysia, Kadar Progresif & Rebat",
+          "caption": "Tujuan Percukaian, 5 Jenis Cukai Malaysia, Kadar Progresif & Rebat.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab04/video/mat54_video_percukaian_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab04/video/mat54_video_percukaian_narasi.mp4"
@@ -6000,7 +6000,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Kekongruenan Poligon & Sifat Segi Tiga",
           "stepTitle": "5.1 Makna Kekongruenan, Mercu Tanda Malaysia & Syarat Poligon",
-          "caption": "Animasi 3D: Bentuk kongruen mengekalkan saiz serta sudut sepadan dan membentuk pola teselasi rapat",
+          "caption": "Bentuk kongruen mengekalkan saiz serta sudut sepadan dan membentuk pola teselasi rapat.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab05/video/mat55_video_kekongruenan_teselasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab05/video/mat55_video_kekongruenan_teselasi.mp4"
@@ -6032,7 +6032,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Bulatan Unit, 4 Sukuan & Nisbah (kos θ, sin θ)",
           "stepTitle": "Bulatan Unit (r = 1), Putaran Lawan Jam & Koordinat (kos θ, sin θ)",
-          "caption": "Animasi 3D: Putaran jejari bulatan unit menghasilkan gelombang sinus dan kosinus secara berkala",
+          "caption": "Putaran jejari bulatan unit menghasilkan gelombang sinus dan kosinus secara berkala.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab06/video/mat56_video_trigonometri_gelombang.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab06/video/mat56_video_trigonometri_gelombang.mp4"
@@ -6064,7 +6064,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Jadual Kekerapan, Histogram & Poligon Kekerapan",
           "stepTitle": "Selang Kelas, Had, Titik Tengah, Sempadan & Kekerapan Longgokan",
-          "caption": "Animasi 3D: Penyusunan data terkumpul kepada histogram, lengkung ogif dan taburan sisihan piawai",
+          "caption": "Penyusunan data terkumpul kepada histogram, lengkung ogif dan taburan sisihan piawai.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab07/video/mat57_video_sukatan_serakan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab07/video/mat57_video_sukatan_serakan.mp4"
@@ -6096,7 +6096,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Asas & 6 Komponen Pemodelan Matematik",
           "stepTitle": "8.1 Makna Model Matematik, Terowong SMART & Soalan Terbuka",
-          "caption": "Video Penerangan Bersuara (BM): Proses 6 Komponen Pemodelan Matematik serta Aplikasi Fungsi Linear, Kuadratik & Eksponen",
+          "caption": "Proses 6 Komponen Pemodelan Matematik serta Aplikasi Fungsi Linear, Kuadratik & Eksponen.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-t5-bab08/video/mat58_video_pemodelan_matematik_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-t5-bab08/video/mat58_video_pemodelan_matematik_narasi.mp4"
@@ -6191,7 +6191,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Isu Sosiosaintifik & Sektor Tenaga",
           "stepTitle": "Tenaga Boleh Baharu: Solar, Angin, Hidro, Geoterma, Ombak & Biojisim",
-          "caption": "Animasi 3D: Penjanaan tenaga boleh baharu daripada turbin angin, panel suria dan empangan hidroelektrik",
+          "caption": "Penjanaan tenaga boleh baharu daripada turbin angin, panel suria dan empangan hidroelektrik.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab04/video/sai4_video_green_energy.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab04/video/sai4_video_green_energy.mp4"
@@ -6223,7 +6223,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: DNA, Kromosom, Mitosis & Meiosis",
           "stepTitle": "Kariotip Manusia (46 Kromosom) & 4 Fasa Mitosis (PMAT)",
-          "caption": "Animasi 3D: Pergerakan kromosom semasa pembahagian mitosis menghasilkan dua sel anak seiras",
+          "caption": "Pergerakan kromosom semasa pembahagian mitosis menghasilkan dua sel anak seiras.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab05/video/sai5_video_mitosis_dna.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab05/video/sai5_video_mitosis_dna.mp4"
@@ -6255,7 +6255,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Sistem Rangka Manusia, Sendi & Otot Antagonis",
           "stepTitle": "Mekanisme Otot Berantagonis (Biseps & Triseps)",
-          "caption": "Animasi 3D: Tindakan berantagonis otot biseps dan triseps semasa membengkok serta meluruskan lengan",
+          "caption": "Tindakan berantagonis otot biseps dan triseps semasa membengkok serta meluruskan lengan.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab06/video/sai6_video_antagonistic_arm.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab06/video/sai6_video_antagonistic_arm.mp4"
@@ -6287,7 +6287,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sistem Endokrin & 6 Kelenjar Utama",
           "stepTitle": "Cara Tindakan Sistem Endokrin, Hormon & Organ Sasaran",
-          "caption": "Animasi 3D: Molekul hormon bergerak melalui salur darah menuju ke sel sasaran",
+          "caption": "Molekul hormon bergerak melalui salur darah menuju ke sel sasaran.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab07/video/sai7_video_endocrine_hormone.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab07/video/sai7_video_endocrine_hormone.mp4"
@@ -6319,7 +6319,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Jirim — Atom, Molekul, Ion & Sifat Fizik",
           "stepTitle": "Rencana Sains: 118 Unsur & 3 Zarah Asas Jirim",
-          "caption": "Animasi 3D: Nukleus bercas positif mengandungi proton serta neutron dikelilingi petala elektron",
+          "caption": "Nukleus bercas positif mengandungi proton serta neutron dikelilingi petala elektron.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab08/video/sai8_video_atom_isotope.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab08/video/sai8_video_atom_isotope.mp4"
@@ -6351,7 +6351,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pengaloian & 5 Aloi Utama Industri",
           "stepTitle": "Pengaloian: Mengapa Atom Asing Menguatkan Logam Tulen",
-          "caption": "Animasi 3D: Atom asing menghalang lapisan atom logam tulen daripada menggelongsor",
+          "caption": "Atom asing menghalang lapisan atom logam tulen daripada menggelongsor.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab09/video/sai9_video_alloy_lattice.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab09/video/sai9_video_alloy_lattice.mp4"
@@ -6383,7 +6383,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Radikal Bebas & Mekanisme Bahan Antioksidan",
           "stepTitle": "Bahan Antioksidan: Perisai Penderma Elektron Menentang Pengoksidaan",
-          "caption": "Animasi 3D: Molekul antioksidan menderma elektron untuk meneutralkan radikal bebas yang mengancam sel",
+          "caption": "Molekul antioksidan menderma elektron untuk meneutralkan radikal bebas yang mengancam sel.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab10/video/sai10_video_antioxidant.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab10/video/sai10_video_antioxidant.mp4"
@@ -6415,7 +6415,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Pecutan Graviti g, Jatuh Bebas & Antigraviti",
           "stepTitle": "Pecutan Graviti (g = 10 m s^-2) & Jatuh Bebas dalam Vakum",
-          "caption": "Animasi 3D: Bola keluli dan bulu pelepah jatuh serentak dalam tiub vakum tanpa rintangan udara",
+          "caption": "Bola keluli dan bulu pelepah jatuh serentak dalam tiub vakum tanpa rintangan udara.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab11/video/sai11_video_freefall_vacuum.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab11/video/sai11_video_freefall_vacuum.mp4"
@@ -6447,7 +6447,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Pembelahan vs Pelakuran Nukleus",
           "stepTitle": "Pembelahan Nukleus Uranium-235 & Tindak Balas Berantai",
-          "caption": "Animasi 3D: Pembelahan nukleus uranium-235 membebaskan tenaga nuklear dan tiga neutron baru",
+          "caption": "Pembelahan nukleus uranium-235 membebaskan tenaga nuklear dan tiga neutron baru.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t4-bab12/video/sai12_video_nuclear_fission.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t4-bab12/video/sai12_video_nuclear_fission.mp4"
@@ -6479,7 +6479,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Dunia Mikroorganisma — Flora Normal & 5 Kumpulan Mikrob",
           "stepTitle": "Pengelasan 5 Kumpulan Mikrob: Fungi, Alga & Protozoa",
-          "caption": "Animasi 3D: Kepelbagaian bakteria, yis bertunas dan protozoa bergerak dalam bendalir mikroskop",
+          "caption": "Kepelbagaian bakteria, yis bertunas dan protozoa bergerak dalam bendalir mikroskop.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab01/video/sai51_video_microbes.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab01/video/sai51_video_microbes.mp4"
@@ -6511,7 +6511,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Kitar Nitrogen & Keseimbangan Alam",
           "stepTitle": "Kitar Nitrogen: 3 Proses Penambahan Ion Nitrat ke Tanah",
-          "caption": "Animasi 3D: Bakteria pengikat nitrogen dalam nodul akar kekacang menukar gas nitrogen kepada nitrat",
+          "caption": "Bakteria pengikat nitrogen dalam nodul akar kekacang menukar gas nitrogen kepada nitrat.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab02/video/sai52_video_nitrogen_cycle.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab02/video/sai52_video_nitrogen_cycle.mp4"
@@ -6543,7 +6543,7 @@
           "unitNumber": 5,
           "unitTitle": "Unit 5: Teknologi Emisi Negatif Mikroalga & Peranan Global PBB",
           "stepTitle": "Teknologi Emisi Negatif: Mikroalga Marin, Teknologi Hijau & Eco Currency",
-          "caption": "Animasi 3D: Teknologi emisi negatif menggunakan mikroalga laut menyerap CO2 atmosfera dan membebaskan oksigen",
+          "caption": "Teknologi emisi negatif menggunakan mikroalga laut menyerap CO2 atmosfera dan membebaskan oksigen.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab03/video/sai53_video_microalgae_capture.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab03/video/sai53_video_microalgae_capture.mp4"
@@ -6575,7 +6575,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Faktor Suhu & Kepekatan (Eksperimen 4.1 & 4.2)",
           "stepTitle": "5 Faktor Kadar & Eksperimen 4.1: Kesan Suhu (Na2S2O3 + H2SO4)",
-          "caption": "Animasi 3D: Peningkatan suhu dan kepekatan mempercepat perlanggaran berkesan antara zarah bahan tindak balas",
+          "caption": "Peningkatan suhu dan kepekatan mempercepat perlanggaran berkesan antara zarah bahan tindak balas.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab04/video/sai54_video_collision_rate.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab04/video/sai54_video_collision_rate.mp4"
@@ -6607,7 +6607,7 @@
           "unitNumber": 5,
           "unitTitle": "Unit 5: Minyak Sawit, Saponifikasi Sabun & Kelestarian Lestari",
           "stepTitle": "Penghasilan Sabun (Saponifikasi) & Mekanisme Pencucian Misel 3D",
-          "caption": "Animasi 3D: Molekul sabun hidrofobik dan hidrofilik menanggalkan kotoran berminyak daripada fabrik",
+          "caption": "Molekul sabun hidrofobik dan hidrofilik menanggalkan kotoran berminyak daripada fabrik.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab05/video/sai55_video_soap_micelle.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab05/video/sai55_video_soap_micelle.mp4"
@@ -6639,7 +6639,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sel Elektrolitik, Elektrolit & Leburan Ion",
           "stepTitle": "Komponen Sel Elektrolitik & Eksperimen 6.1 (PbBr2 Lebur)",
-          "caption": "Animasi 3D: Pergerakan kation dan anion ke katod serta anod semasa proses elektrolisis",
+          "caption": "Pergerakan kation dan anion ke katod serta anod semasa proses elektrolisis.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab06/video/sai56_video_electrolysis.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab06/video/sai56_video_electrolysis.mp4"
@@ -6671,7 +6671,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Kanta Cembung, Kanta Cekung & Istilah Optik",
           "stepTitle": "Kanta Cembung (Penumpu) vs Kanta Cekung (Pencapah) & Aktiviti 7.1",
-          "caption": "Animasi 3D: Sinar cahaya selari membias melalui kanta cembung dan menumpu tepat pada titik fokus",
+          "caption": "Sinar cahaya selari membias melalui kanta cembung dan menumpu tepat pada titik fokus.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab07/video/sai57_video_convex_lens.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab07/video/sai57_video_convex_lens.mp4"
@@ -6703,7 +6703,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Aplikasi Aerofoil, Penunu Bunsen, Dron & Keselamatan",
           "stepTitle": "Bentuk Aerofoil Sayap Kapal Terbang & Sudut Serang (Rajah 8.13)",
-          "caption": "Animasi 3D: Aliran udara laju di bahagian atas sayap aerofoil menjana tekanan rendah dan daya angkat ke atas",
+          "caption": "Aliran udara laju di bahagian atas sayap aerofoil menjana tekanan rendah dan daya angkat ke atas.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab08/video/sai58_video_bernoulli_wing.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab08/video/sai58_video_bernoulli_wing.mp4"
@@ -6735,7 +6735,7 @@
           "unitNumber": 5,
           "unitTitle": "Unit 5: 9.2 Sistem Penentu Sejagat (GPS), Format DMS/DD & Kegunaan",
           "stepTitle": "9.2 Sistem Penentu Sejagat (GPS): Definisi & 3 Segmen Utama",
-          "caption": "Animasi 3D: Isyarat tiga atau lebih satelit GPS menentu kedudukan pengguna di permukaan Bumi",
+          "caption": "Isyarat tiga atau lebih satelit GPS menentu kedudukan pengguna di permukaan Bumi.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/sains-t5-bab09/video/sai59_video_satellite_gps.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/sains-t5-bab09/video/sai59_video_satellite_gps.mp4"
@@ -6767,7 +6767,7 @@
           "unitNumber": 1,
           "unitTitle": "Larangan Rasuah & Harta Batil",
           "stepTitle": "Larangan Rasuah Menurut Surah al-Baqarah: 188",
-          "caption": "Video Penerangan Bersuara (BM): Konsep larangan rasuah, kesan buruk penyalahgunaan kuasa dan pemeliharaan amanah dalam Islam",
+          "caption": "Konsep larangan rasuah, kesan buruk penyalahgunaan kuasa dan pemeliharaan amanah dalam Islam.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t4-bab01/video/pi41_video_larangan_rasuah_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t4-bab01/video/pi41_video_larangan_rasuah_narasi.mp4"
@@ -6799,7 +6799,7 @@
           "unitNumber": 1,
           "unitTitle": "Konsep Sunnatullah & Perang Uhud",
           "stepTitle": "Memahami Sunnatullah (Surah Ali Imran: 137-139)",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Sunnatullah (ketetapan Allah pada alam dan sejarah manusia) serta kepentingan mengkaji sebab-akibat",
+          "caption": "Konsep Sunnatullah (ketetapan Allah pada alam dan sejarah manusia) serta kepentingan mengkaji sebab-akibat.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t4-bab02/video/pi42_video_sunnatullah_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t4-bab02/video/pi42_video_sunnatullah_narasi.mp4"
@@ -6852,7 +6852,7 @@
           "unitNumber": 1,
           "unitTitle": "Sembelihan Menurut Syarak",
           "stepTitle": "Konsep, Rukun & Syarat Sah Sembelihan",
-          "caption": "Video Penerangan Bersuara (BM): Rukun dan syarat sah sembelihan Islam (urat halkum dan marih) serta hikmah ibadah korban",
+          "caption": "Rukun dan syarat sah sembelihan Islam (urat halkum dan marih) serta hikmah ibadah korban.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t4-bab04/video/pi44_video_sembelihan_korban_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t4-bab04/video/pi44_video_sembelihan_korban_narasi.mp4"
@@ -6884,7 +6884,7 @@
           "unitNumber": 1,
           "unitTitle": "Abu Bakar as-Siddiq & Umar al-Khattab RA",
           "stepTitle": "Kepimpinan Khalifah Abu Bakar & Umar al-Khattab RA",
-          "caption": "Video Penerangan Bersuara (BM): Kepimpinan empat Khalifah al-Rasyidin (Abu Bakar, Umar, Uthman, Ali) dan asas syura dalam pentadbiran",
+          "caption": "Kepimpinan empat Khalifah al-Rasyidin (Abu Bakar, Umar, Uthman, Ali) dan asas syura dalam pentadbiran.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t4-bab05/video/pi45_video_khulafa_rasyidin_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t4-bab05/video/pi45_video_khulafa_rasyidin_narasi.mp4"
@@ -7000,7 +7000,7 @@
           "unitNumber": 1,
           "unitTitle": "Solat Sunat Istikharah & Solat Sunat Tasbih (SK 4.25)",
           "stepTitle": "Kaifiat & Hikmah Solat Sunat Istikharah dan Tasbih (SK 4.25)",
-          "caption": "Video Penerangan Bersuara (BM): Tujuan dan kaifiat ringkas Solat Sunat Istikharah memohon petunjuk serta Solat Sunat Tasbih",
+          "caption": "Tujuan dan kaifiat ringkas Solat Sunat Istikharah memohon petunjuk serta Solat Sunat Tasbih.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t5-bab04/video/pi54_video_istikharah_tasbih_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t5-bab04/video/pi54_video_istikharah_tasbih_narasi.mp4"
@@ -7032,7 +7032,7 @@
           "unitNumber": 1,
           "unitTitle": "Sejarah & Empat Sultan Terunggul Kerajaan Uthmaniyah (SK 5.14.1 - 5.14.2)",
           "stepTitle": "600 Tahun Kekuasaan & Empat Sultan Agung Uthmaniyah (SK 5.14)",
-          "caption": "Video Penerangan Bersuara (BM): Kegemilangan kepimpinan Kerajaan Uthmaniyah, penaklukan Konstantiniah serta sumbangan tamadun Islam",
+          "caption": "Kegemilangan kepimpinan Kerajaan Uthmaniyah, penaklukan Konstantiniah serta sumbangan tamadun Islam.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-islam-t5-tamadun/video/pi5_video_tamadun_islam_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-islam-t5-tamadun/video/pi5_video_tamadun_islam_narasi.mp4"
@@ -7148,7 +7148,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Etika & Kepentingan Penggunaan TMK",
           "stepTitle": "5.4.1 & 5.4.2 Etika dan Kepentingan TMK Secara Beretika",
-          "caption": "Video Penerangan Bersuara (BM): Etika komunikasi digital, semakan kesahihan maklumat dan pencegahan buli siber",
+          "caption": "Etika komunikasi digital, semakan kesahihan maklumat dan pencegahan buli siber.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-moral-t4-bab04/video/pm44_video_etika_tmk_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-moral-t4-bab04/video/pm44_video_etika_tmk_narasi.mp4"
@@ -7180,7 +7180,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Maksud, Kepentingan & Implikasi Integriti Individu",
           "stepTitle": "6.1.1, 6.1.2 & 6.1.3 Maksud, Kepentingan dan Implikasi Integriti",
-          "caption": "Video Penerangan Bersuara (BM): Kepentingan integriti individu dalam membina jati diri kukuh serta menolak penipuan akademik dan harian",
+          "caption": "Kepentingan integriti individu dalam membina jati diri kukuh serta menolak penipuan akademik dan harian.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-moral-t4-bab05/video/pm45_video_integriti_jati_diri_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-moral-t4-bab05/video/pm45_video_integriti_jati_diri_narasi.mp4"
@@ -7296,7 +7296,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Maksud & 6 Cara Menguruskan Perbelanjaan Secara Beretika",
           "stepTitle": "7.3.1 & 7.3.2 Maksud & 6 Cara Urus Perbelanjaan Beretika",
-          "caption": "Video Penerangan Bersuara (BM): Perancangan bajet, perbezaan keperluan vs kehendak dan amalan menabung secara beretika",
+          "caption": "Perancangan bajet, perbezaan keperluan vs kehendak dan amalan menabung secara beretika.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-moral-t4-bab10/video/pm410_video_perbelanjaan_beretika_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-moral-t4-bab10/video/pm410_video_perbelanjaan_beretika_narasi.mp4"
@@ -7454,7 +7454,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep & Pelaksanaan Integriti Organisasi",
           "stepTitle": "6.1.1 & 6.1.2 Maksud, 7 Elemen & Cara Integriti Organisasi",
-          "caption": "Video Penerangan Bersuara (BM): Prinsip integriti organisasi, pematuhan kod etika kerja, piagam pelanggan dan pembasmian salah guna kuasa.",
+          "caption": "Prinsip integriti organisasi, pematuhan kod etika kerja, piagam pelanggan dan pembasmian salah guna kuasa.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/pendidikan-moral-t5-integriti/video/pm5_video_etika_integriti_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/pendidikan-moral-t5-integriti/video/pm5_video_etika_integriti_narasi.mp4"
@@ -7633,7 +7633,7 @@
           "unitNumber": 5,
           "unitTitle": "Eksperimen 1.1 Bandul Ringkas (Amali Wajib)",
           "stepTitle": "Eksperimen 1.1: Menyiasat Hubungan Panjang Bandul (l) dengan Tempoh Ayunan (T)",
-          "caption": "Video Penerangan Bersuara (BM): Eksperimen 1.1 Bandul Ringkas — hubungan panjang tali l dengan tempoh ayunan T serta graf T² melawan l",
+          "caption": "Eksperimen 1.1 Bandul Ringkas — hubungan panjang tali l dengan tempoh ayunan T serta graf T² melawan l.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab01/video/fiz41_video_graf_bandul_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab01/video/fiz41_video_graf_bandul_narasi.mp4"
@@ -7665,7 +7665,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Gerakan Linear, Pita Detik 50 Hz & Persamaan SUVAT",
           "stepTitle": "2.1 Gerakan Linear: Jarak vs Sesaran, Laju vs Halaju & Pecutan",
-          "caption": "Animasi 3D: Analisis gerakan linear, troli landasan makmal dan keabadian momentum",
+          "caption": "Analisis gerakan linear, troli landasan makmal dan keabadian momentum.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_daya_gerakan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_daya_gerakan.mp4"
@@ -7675,7 +7675,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Momentum & Prinsip Keabadian Momentum",
           "stepTitle": "2.5 Konsep Momentum (p = mv) & Prinsip Keabadian Momentum",
-          "caption": "Video Penerangan Bersuara (BM): Prinsip Keabadian Momentum perlanggaran serta peranan zon remuk memanjangkan masa hentaman bagi mengurangkan daya impuls",
+          "caption": "Prinsip Keabadian Momentum perlanggaran serta peranan zon remuk memanjangkan masa hentaman bagi mengurangkan daya impuls.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_momentum_impuls_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab02/video/fiz42_video_momentum_impuls_narasi.mp4"
@@ -7707,7 +7707,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Hukum Kegravitian Semesta Newton & Pecutan Graviti",
           "stepTitle": "3.1 Hukum Kegravitian Semesta Newton (F = GMm / r²)",
-          "caption": "Animasi 3D: Tarikan graviti semesta mengikat planet dan satelit dalam orbit mengelilingi jasad pusat",
+          "caption": "Tarikan graviti semesta mengikat planet dan satelit dalam orbit mengelilingi jasad pusat.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kegravitian_orbit.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kegravitian_orbit.mp4"
@@ -7717,7 +7717,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Tiga Hukum Kepler — Orbit Elips, Luas & Tempoh",
           "stepTitle": "3.2 Hukum Kepler Pertama & Kedua (Elips Dwifokus & Hukum Luas)",
-          "caption": "Video Penerangan Bersuara (BM): Hukum Kepler orbit elips dwifokus, luas sama dalam masa sama dan halaju lepas roket",
+          "caption": "Hukum Kepler orbit elips dwifokus, luas sama dalam masa sama dan halaju lepas roket.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kepler_halaju_lepas_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab03/video/fiz43_video_kepler_halaju_lepas_narasi.mp4"
@@ -7749,7 +7749,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Keseimbangan Terma & Penentu Ukuran Termometer",
           "stepTitle": "Sentuhan Terma, Pengaliran Haba & Keseimbangan Terma",
-          "caption": "Video Penerangan Bersuara (BM): Pengaliran tenaga haba, keseimbangan terma dan fenomena haba harian",
+          "caption": "Pengaliran tenaga haba, keseimbangan terma dan fenomena haba harian.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_narasi.mp4"
@@ -7759,7 +7759,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Haba Pendam Tentu & Perubahan Fasa",
           "stepTitle": "Haba Pendam Tentu (l_f vs l_v) & Teori Kinetik Perubahan Fasa",
-          "caption": "Video Penerangan Bersuara (BM): Haba Pendam Tentu — mengapa suhu kekal malar semasa peleburan dan pendidihan",
+          "caption": "Haba Pendam Tentu — mengapa suhu kekal malar semasa peleburan dan pendidihan.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_pendam_fasa_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab04/video/fiz44_video_haba_pendam_fasa_narasi.mp4"
@@ -7791,7 +7791,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Gelombang, Graf & Tangki Riak",
           "stepTitle": "5.1 Penghasilan Gelombang, Pemindahan Tenaga & Pengelasan",
-          "caption": "Animasi 3D: Perambatan gelombang air satah dan membulat di dalam tangki riak makmal",
+          "caption": "Perambatan gelombang air satah dan membulat di dalam tangki riak makmal.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_gelombang_riple.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_gelombang_riple.mp4"
@@ -7801,7 +7801,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Pembelauan & Interferens Gelombang (Dwicelah Young)",
           "stepTitle": "5.6 Prinsip Superposisi, Sumber Koheren & Nod vs Antinod",
-          "caption": "Video Penerangan Bersuara (BM): Interferens Membina dan Memusnah daripada dua sumber koheren dwicelah Young",
+          "caption": "Interferens Membina dan Memusnah daripada dua sumber koheren dwicelah Young.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_interferens_young_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab05/video/fiz45_video_interferens_young_narasi.mp4"
@@ -7833,7 +7833,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pembiasan Cahaya, Hukum Snell & Dalam Ketara",
           "stepTitle": "Pembiasan Cahaya & Perbezaan Ketumpatan Optik",
-          "caption": "Video Penerangan Bersuara (BM): Konsep pembiasan cahaya, Hukum Snell dan aplikasi optik Bab 6",
+          "caption": "Konsep pembiasan cahaya, Hukum Snell dan aplikasi optik Bab 6.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_cahaya_optik_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_cahaya_optik_narasi.mp4"
@@ -7843,7 +7843,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Pantulan Dalam Penuh & Fenomena Harian",
           "stepTitle": "Syarat Pantulan Dalam Penuh & Sudut Genting (c)",
-          "caption": "Video Penerangan Bersuara (BM): Syarat Pantulan Dalam Penuh melebihi sudut genting dan kabel gentian optik",
+          "caption": "Syarat Pantulan Dalam Penuh melebihi sudut genting dan kabel gentian optik.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_pantulan_dalam_penuh_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t4-bab06/video/fiz46_video_pantulan_dalam_penuh_narasi.mp4"
@@ -7875,7 +7875,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Daya Paduan, Vektor & Penimbang Lif",
           "stepTitle": "1.1 Daya Paduan & 4 Situasi Tindakan Dua Daya",
-          "caption": "Video Penerangan Bersuara (BM): Konsep daya paduan, tarik tali dan gabungan vektor daya",
+          "caption": "Konsep daya paduan, tarik tali dan gabungan vektor daya.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_daya_paduan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_daya_paduan_narasi.mp4"
@@ -7885,7 +7885,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Leraian Daya, Satah Condong & Mesin Rumput",
           "stepTitle": "1.2 Leraian Daya: Komponen Mengufuk (Fx) & Menegak (Fy)",
-          "caption": "Video Penerangan Bersuara (BM): Leraian Daya kepada komponen mengufuk dan menegak pada satah condong",
+          "caption": "Leraian Daya kepada komponen mengufuk dan menegak pada satah condong.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_leraian_daya_satah_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab01/video/fiz51_video_leraian_daya_satah_narasi.mp4"
@@ -7917,7 +7917,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Tekanan Cecair, Faktor & Aplikasi Kejuruteraan",
           "stepTitle": "2.1 Tekanan Cecair: Penerbitan P = hρg & Eksperimen 2.1–2.2",
-          "caption": "Video Penerangan Bersuara (BM): Pengenalan tekanan bendalir, daya apungan, sistem hidraulik dan aliran Bernoulli",
+          "caption": "Pengenalan tekanan bendalir, daya apungan, sistem hidraulik dan aliran Bernoulli.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_tekanan_bendalir_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_tekanan_bendalir_narasi.mp4"
@@ -7927,7 +7927,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Prinsip Pascal & Sistem Pengganda Daya Hidraulik",
           "stepTitle": "2.4 Prinsip Pascal, Omboh Pascal & Sistem Pengganda Daya",
-          "caption": "Video Penerangan Bersuara (BM): Prinsip Pascal pengganda daya hidraulik dan Prinsip Bernoulli daya angkat aerofoil",
+          "caption": "Prinsip Pascal pengganda daya hidraulik dan Prinsip Bernoulli daya angkat aerofoil.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_pascal_bernoulli_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab02/video/fiz52_video_pascal_bernoulli_narasi.mp4"
@@ -7959,7 +7959,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Medan Elektrik, Arus & Beza Keupayaan",
           "stepTitle": "3.1 Medan Elektrik, Kit Serbuk Suji & Kekuatan Medan (E)",
-          "caption": "Video Penerangan Bersuara (BM): Medan elektrik, daya ke atas cas ujian, arus I = Q/t dan beza keupayaan V = E/Q",
+          "caption": "Medan elektrik, daya ke atas cas ujian, arus I = Q/t dan beza keupayaan V = E/Q.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_elektrik_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_elektrik_narasi.mp4"
@@ -7969,7 +7969,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Daya Gerak Elektrik (d.g.e.) & Rintangan Dalam",
           "stepTitle": "3.3 Daya Gerak Elektrik (ε) vs Beza Keupayaan (V) & Rintangan Dalam (r)",
-          "caption": "Video Penerangan Bersuara (BM): Perbezaan daya gerak elektrik (d.g.e.) dan beza keupayaan akibat rintangan dalam sel",
+          "caption": "Perbezaan daya gerak elektrik (d.g.e.) dan beza keupayaan akibat rintangan dalam sel.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_dge_rintangan_dalam_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab03/video/fiz53_video_dge_rintangan_dalam_narasi.mp4"
@@ -8001,7 +8001,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Daya Magnet ke atas Konduktor, Medan Lastik & Motor a.t.",
           "stepTitle": "4.1 Daya atas Konduktor, Medan Lastik & Petua Tangan Kiri Fleming",
-          "caption": "Animasi 3D: Interaksi medan magnet, konduktor pembawa arus, aruhan solenoid dan teras transformer",
+          "caption": "Interaksi medan magnet, konduktor pembawa arus, aruhan solenoid dan teras transformer.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_keelektromagnetan.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_keelektromagnetan.mp4"
@@ -8011,7 +8011,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Aruhan Elektromagnet, Hukum Faraday-Lenz & Penjana",
           "stepTitle": "4.2 Aruhan Elektromagnet, Gerakan Relatif & Hukum Faraday",
-          "caption": "Video Penerangan Bersuara (BM): Aruhan Elektromagnet, Hukum Lenz menentang gerakan magnet dan prinsip transformer",
+          "caption": "Aruhan Elektromagnet, Hukum Lenz menentang gerakan magnet dan prinsip transformer.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_aruhan_lenz_transformer_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab04/video/fiz54_video_aruhan_lenz_transformer_narasi.mp4"
@@ -8043,7 +8043,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pancaran Termion, Sinar Katod & Tenaga Elektron",
           "stepTitle": "5.1 Revolusi Elektronik, Pancaran Termion & Tiub Vakum",
-          "caption": "Video Penerangan Bersuara (BM): Pengenalan elektronik, pancaran termion, diod rektifier dan transistor",
+          "caption": "Pengenalan elektronik, pancaran termion, diod rektifier dan transistor.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab05/video/fiz55_video_elektronik_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab05/video/fiz55_video_elektronik_narasi.mp4"
@@ -8075,7 +8075,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Reputan Radioaktif & Persamaan Alfa, Beta, Gama",
           "stepTitle": "6.1 Reputan Radioaktif, Radioisotop & Tiga Jenis Sinaran",
-          "caption": "Animasi 3D: Reputan radioaktif nukleus tidak stabil serta tindak balas pembelahan dan tenaga nuklear",
+          "caption": "Reputan radioaktif nukleus tidak stabil serta tindak balas pembelahan dan tenaga nuklear.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_fizik_nuklear.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_fizik_nuklear.mp4"
@@ -8085,7 +8085,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Separuh Hayat (T½), Lengkung Eksponen & Aplikasi",
           "stepTitle": "Separuh Hayat (T½), Keaktifan & Simulasi Dadu (Aktiviti 6.3)",
-          "caption": "Video Penerangan Bersuara (BM): Separuh Hayat reputan radioaktif dan kecacatan jisim menghasilkan tenaga nuklear",
+          "caption": "Separuh Hayat reputan radioaktif dan kecacatan jisim menghasilkan tenaga nuklear.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_separuh_hayat_emc2_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab06/video/fiz56_video_separuh_hayat_emc2_narasi.mp4"
@@ -8117,7 +8117,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Jasad Hitam, Bencana Ultraungu & Kuanta Tenaga",
           "stepTitle": "7.1 Jasad Hitam, Graf Sinaran Termal & Pencetusan Idea Kuantum",
-          "caption": "Animasi 3D: Pancaran spektrum jasad hitam, paket kuanta foton dan pembebasan fotoelektron dari permukaan logam",
+          "caption": "Pancaran spektrum jasad hitam, paket kuanta foton dan pembebasan fotoelektron dari permukaan logam.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fizik_kuantum.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fizik_kuantum.mp4"
@@ -8127,7 +8127,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Kesan Fotoelektrik, Kit LED & 4 Ciri Eksperimen",
           "stepTitle": "7.2 Mekanisme Kesan Fotoelektrik & Susunan Radas Sel Foto",
-          "caption": "Video Penerangan Bersuara (BM): Kesan Fotoelektrik Einstein — frekuensi ambang, pemancaran serta-merta dan keamatan cahaya",
+          "caption": "Kesan Fotoelektrik Einstein — frekuensi ambang, pemancaran serta-merta dan keamatan cahaya.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fotoelektrik_einstein_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/fizik-t5-bab07/video/fiz57_video_fotoelektrik_einstein_narasi.mp4"
@@ -8159,7 +8159,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Penyiasatan Saintifik & Eksperimen 1.1 Garam",
           "stepTitle": "1.2 Kaedah Saintifik Sistematik (11 Langkah Berurutan)",
-          "caption": "Video Penerangan Bersuara (BM): Penyiasatan Saintifik & Prosedur Keselamatan Makmal Kimia",
+          "caption": "Penyiasatan Saintifik & Prosedur Keselamatan Makmal Kimia.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab01/video/kim41_video_kaedah_saintifik_makmal_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab01/video/kim41_video_kaedah_saintifik_makmal_narasi.mp4"
@@ -8191,7 +8191,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Zarah Subatom & Perkembangan 5 Model Atom",
           "stepTitle": "3 Zarah Subatom dalam Atom (Rajah 2.8)",
-          "caption": "Video Penerangan Bersuara (BM): Proton dan neutron di nukleus, nombor proton, nombor nukleon dan konsep isotop",
+          "caption": "Proton dan neutron di nukleus, nombor proton, nombor nukleon dan konsep isotop.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab02/video/kim42_video_struktur_atom_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab02/video/kim42_video_struktur_atom_narasi.mp4"
@@ -8223,7 +8223,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Konsep Mol, Pemalar Avogadro, Jisim Molar & Isi Padu Molar",
           "stepTitle": "Takrif Mol, Pemalar Avogadro (NA) & Jenis Zarah Bahan",
-          "caption": "Video Penerangan Bersuara (BM): Konsep Mol, Pemalar Avogadro 6.02 x 10^23 serta hubung kait zarah, jisim molar dan isi padu molar gas",
+          "caption": "Konsep Mol, Pemalar Avogadro 6.02 x 10^23 serta hubung kait zarah, jisim molar dan isi padu molar gas.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab03/video/kim43_video_konsep_mol_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab03/video/kim43_video_konsep_mol_narasi.mp4"
@@ -8233,7 +8233,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Formula Kimia, Formula Empirik & Eksperimen MgO vs CuO",
           "stepTitle": "Eksperimen Makmal: Magnesium Oksida (Akt. 3.12) vs Kuprum(II) Oksida (Akt. 3.13)",
-          "caption": "Video Penerangan Bersuara (BM): Eksperimen Formula Empirik MgO (Mangkuk Pijar) vs CuO (Aliran Gas Hidrogen) serta pengiraan stoikiometri",
+          "caption": "Eksperimen Formula Empirik MgO (Mangkuk Pijar) vs CuO (Aliran Gas Hidrogen) serta pengiraan stoikiometri.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab03/video/kim43_video_formula_empirik_stoikiometri_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab03/video/kim43_video_formula_empirik_stoikiometri_narasi.mp4"
@@ -8265,7 +8265,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sejarah Perkembangan & Susunan Jadual Berkala Moden",
           "stepTitle": "Buletin Kolam Renang & 3 Perintis Awal Jadual Berkala",
-          "caption": "Animasi 3D: Susunan sistematik unsur kimia dalam Jadual Berkala Moden mengikut pertambahan nombor proton",
+          "caption": "Susunan sistematik unsur kimia dalam Jadual Berkala Moden mengikut pertambahan nombor proton.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab04/video/kim44_video_jadual_berkala.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab04/video/kim44_video_jadual_berkala.mp4"
@@ -8275,7 +8275,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Unsur Kumpulan 17 — Halogen, Tindak Balas & Kereaktifan",
           "stepTitle": "Tindak Balas Halogen (Air, Fe, NaOH) & Penurunan Kereaktifan",
-          "caption": "Video Penerangan Bersuara (BM): Mengapa Kumpulan 1 dan Kumpulan 17 bergerak bertentangan arah kereaktifan serta peralihan oksida merentasi Kala 3",
+          "caption": "Mengapa Kumpulan 1 dan Kumpulan 17 bergerak bertentangan arah kereaktifan serta peralihan oksida merentasi Kala 3.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab04/video/kim44_video_kumpulan1_17_kala3_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab04/video/kim44_video_kumpulan1_17_kala3_narasi.mp4"
@@ -8307,7 +8307,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Asas Pembentukan Sebatian & Ikatan Ion",
           "stepTitle": "5.1 Sut Angkasa Kovalen & Asas Kestabilan Susunan Elektron",
-          "caption": "Animasi 3D: Pembentukan ikatan kimia melalui pemindahan elektron (ikatan ion) dan perkongsian elektron (ikatan kovalen)",
+          "caption": "Pembentukan ikatan kimia melalui pemindahan elektron (ikatan ion) dan perkongsian elektron (ikatan kovalen).",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab05/video/kim45_video_ikatan_kimia.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab05/video/kim45_video_ikatan_kimia.mp4"
@@ -8317,7 +8317,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Ikatan Hidrogen & Aplikasi Kehidupan Harian",
           "stepTitle": "5.4 Pembentukan Ikatan Hidrogen (N, O, F) & Fenomena Ais Terapung",
-          "caption": "Video Penerangan Bersuara (BM): Mekanisme ikatan ion, perkongsian kovalen dan tarikan ikatan hidrogen antara molekul air",
+          "caption": "Mekanisme ikatan ion, perkongsian kovalen dan tarikan ikatan hidrogen antara molekul air.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab05/video/kim45_video_ikatan_ion_kovalen_hidrogen_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab05/video/kim45_video_ikatan_ion_kovalen_hidrogen_narasi.mp4"
@@ -8349,7 +8349,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Peranan Air, Nilai pH & Kekuatan Asid-Alkali",
           "stepTitle": "6.1 Buletin Gua Mulu, Definisi Asid, Kebesan & Bes vs Alkali",
-          "caption": "Video Penerangan Bersuara (BM): Peranan air mengionkan asid dan alkali, skala pH serta kekuatan pengionan",
+          "caption": "Peranan air mengionkan asid dan alkali, skala pH serta kekuatan pengionan.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab06/video/kim46_video_asid_bes_garam_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab06/video/kim46_video_asid_bes_garam_narasi.mp4"
@@ -8359,7 +8359,7 @@
           "unitNumber": 5,
           "unitTitle": "Unit 5: Tindakan Haba Garam & Analisis Kualitatif",
           "stepTitle": "6.10 Ujian 8 Gas & Kesan Haba ke atas Garam (Eksperimen 6.7–6.8)",
-          "caption": "Video Penerangan Bersuara (BM): Pentitratan asid-alkali, penguraian terma garam dan ujian kation serta anion",
+          "caption": "Pentitratan asid-alkali, penguraian terma garam dan ujian kation serta anion.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab06/video/kim46_video_pentitratan_ujian_garam_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab06/video/kim46_video_pentitratan_ujian_garam_narasi.mp4"
@@ -8391,7 +8391,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Penentuan Kadar Tindak Balas & Kecerunan Tangen",
           "stepTitle": "Kadar Purata (Keseluruhan & Sela) vs Kecerunan Tangen Seketika",
-          "caption": "Video 3D Bersuara (15s): Kadar tindak balas dan peningkatan frekuensi perlanggaran berkesan zarah terhadap permukaan pepejal",
+          "caption": "Kadar tindak balas dan peningkatan frekuensi perlanggaran berkesan zarah terhadap permukaan pepejal.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab07/video/kim47_video_kadar_tindak_balas_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab07/video/kim47_video_kadar_tindak_balas_narasi.mp4"
@@ -8401,7 +8401,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Teori Perlanggaran, Profil Tenaga Ea & Skema 4-Langkah",
           "stepTitle": "Teori Perlanggaran: 2 Syarat Perlanggaran Berkesan & Orientasi",
-          "caption": "Video 3D Bersuara (15s): Teori perlanggaran, syarat tenaga pengaktifan Ea, orientasi betul dan tindakan mangkin",
+          "caption": "Teori perlanggaran, syarat tenaga pengaktifan Ea, orientasi betul dan tindakan mangkin.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab07/video/kim47_video_teori_perlanggaran_mangkin_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab07/video/kim47_video_teori_perlanggaran_mangkin_narasi.mp4"
@@ -8433,7 +8433,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Aloi, Susunan Atom, Eksperimen 8.1 & Jadual 8.3",
           "stepTitle": "8.1 Maksud Aloi, Industri Masa Depan & Susunan Atom Logam vs Aloi",
-          "caption": "Video Penerangan Bersuara (BM): Pengenalan Bahan Buatan dalam Industri — Aloi, Kaca, Seramik & Bahan Komposit",
+          "caption": "Pengenalan Bahan Buatan dalam Industri — Aloi, Kaca, Seramik & Bahan Komposit.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t4-bab08/video/kim48_video_bahan_buatan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t4-bab08/video/kim48_video_bahan_buatan_narasi.mp4"
@@ -8465,7 +8465,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pengoksidaan, Penurunan & Pemindahan Elektron Tiub-U",
           "stepTitle": "1.1 Buletin Bunga Api & 4 Takrifan Tindak Balas Redoks",
-          "caption": "Animasi 3D: Tindak balas redoks pemindahan elektron antara agen penurunan dengan agen pengoksidaan",
+          "caption": "Tindak balas redoks pemindahan elektron antara agen penurunan dengan agen pengoksidaan.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab01/video/kim51_video_redoks_elektrokimia.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab01/video/kim51_video_redoks_elektrokimia.mp4"
@@ -8475,7 +8475,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Sel Kimia, Notasi Sel, Pengiraan E°_sel & Asas Sel Elektrolisis",
           "stepTitle": "1.3 Sel Kimia, Sel Daniell & Titian Garam / Pasu Berliang",
-          "caption": "Video Penerangan Bersuara (BM): Prinsip sel kimia Daniell, notasi sel, keupayaan elektrod piawai dan sel elektrolisis",
+          "caption": "Prinsip sel kimia Daniell, notasi sel, keupayaan elektrod piawai dan sel elektrolisis.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab01/video/kim51_video_redoks_sel_kimia_elektrolisis_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab01/video/kim51_video_redoks_sel_kimia_elektrolisis_narasi.mp4"
@@ -8507,7 +8507,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Jenis Sebatian Karbon, Penyulingan Petroleum & Peretakan",
           "stepTitle": "2.1.1 Sebatian Organik vs Tak Organik & Hidrokarbon Tepu vs Tak Tepu",
-          "caption": "Animasi 3D: Kepelbagaian sebatian karbon, rantai hidrokarbon dan penapisan petroleum",
+          "caption": "Kepelbagaian sebatian karbon, rantai hidrokarbon dan penapisan petroleum.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab02/video/kim52_video_sebatian_karbon.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab02/video/kim52_video_sebatian_karbon.mp4"
@@ -8517,7 +8517,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Alkana vs Alkena, Ujian Kimia & Penambahan Alkena",
           "stepTitle": "2.3 Kereaktifan Alkana (Pembakaran & Penukargantian UV) vs Alkena",
-          "caption": "Video Penerangan Bersuara (BM): Saling pertukaran Alkana–Alkena–Alkohol–Asid Karboksilik & Pengesteran",
+          "caption": "Saling pertukaran Alkana–Alkena–Alkohol–Asid Karboksilik & Pengesteran.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab02/video/kim52_video_siri_homolog_pengesteran_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab02/video/kim52_video_siri_homolog_pengesteran_narasi.mp4"
@@ -8549,7 +8549,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Perubahan Haba, Aras Tenaga & Tenaga Ikatan",
           "stepTitle": "3.1 Tindak Balas Eksotermik, Endotermik & Aktiviti Makmal 3A",
-          "caption": "Video Penerangan Bersuara (BM): Tindak Balas Eksotermik vs Endotermik, Pemutusan & Pembentukan Ikatan serta Aras Tenaga",
+          "caption": "Tindak Balas Eksotermik vs Endotermik, Pemutusan & Pembentukan Ikatan serta Aras Tenaga.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab03/video/kim53_video_eksotermik_endotermik_haba_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab03/video/kim53_video_eksotermik_endotermik_haba_narasi.mp4"
@@ -8559,7 +8559,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Kalorimetri Q = mcθ, Pemendakan & Penyesaran",
           "stepTitle": "Kalorimetri Cawan Polistirena, Rumus Q = mcθ & 4 Anggapan Akueus",
-          "caption": "Video Penerangan Bersuara (BM): Kalorimetri Q = mcθ, 4 Jenis Haba Tindak Balas & Nilai Bahan Api",
+          "caption": "Kalorimetri Q = mcθ, 4 Jenis Haba Tindak Balas & Nilai Bahan Api.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab03/video/kim53_video_termokimia_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab03/video/kim53_video_termokimia_narasi.mp4"
@@ -8591,7 +8591,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Dunia Polimer, Pengelasan & Tindak Balas Pempolimeran",
           "stepTitle": "4.1 Maksud Polimer, Sumber (Jadual 4.1) & 3 Pengelasan Polimer",
-          "caption": "Animasi 3D: Pencantuman unit asas monomer secara berterusan membentuk molekul rantai panjang polimer sintetik",
+          "caption": "Pencantuman unit asas monomer secara berterusan membentuk molekul rantai panjang polimer sintetik.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab04/video/kim54_video_polimer_sintetik.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab04/video/kim54_video_polimer_sintetik.mp4"
@@ -8601,7 +8601,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Pemvulkanan Getah, Rangkai Silang Sulfur & Kekenyalan",
           "stepTitle": "Proses Pemvulkanan Sulfur (S₂Cl₂) & Pemvulkanan Alternatif Tanpa Sulfur",
-          "caption": "Video Penerangan Bersuara (BM): Mekanisme Pemvulkanan Getah Membentuk Rangkai Silang Sulfur untuk Kekenyalan dan Kekuatan Maksimum",
+          "caption": "Mekanisme Pemvulkanan Getah Membentuk Rangkai Silang Sulfur untuk Kekenyalan dan Kekuatan Maksimum.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab04/video/kim54_video_pempolimeran_getah_tervulkan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab04/video/kim54_video_pempolimeran_getah_tervulkan_narasi.mp4"
@@ -8633,7 +8633,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Bahan Pencuci — Saponifikasi, Misel & Air Liat",
           "stepTitle": "5.2 Sabun (Saponifikasi + NaCl) vs Detergen (Pensulfonan + Peneutralan)",
-          "caption": "Video Penerangan Bersuara (BM): Proses saponifikasi minyak sawit membentuk sabun, pensulfonan detergen dan tindakan misel pada gris",
+          "caption": "Proses saponifikasi minyak sawit membentuk sabun, pensulfonan detergen dan tindakan misel pada gris.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/kimia-t5-bab05/video/kim55_video_kimia_pengguna_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/kimia-t5-bab05/video/kim55_video_kimia_pengguna_narasi.mp4"
@@ -8665,7 +8665,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Keselamatan Makmal & Pengurusan Sisa Biologi",
           "stepTitle": "1.2 Peralatan Perlindungan Diri (PPE) & Kabinet Makmal",
-          "caption": "Video Penerangan Bersuara (BM): Keselamatan makmal biologi, kategori pelupusan sisa biologi, satah anatomi dan aras organisasi sel",
+          "caption": "Keselamatan makmal biologi, kategori pelupusan sisa biologi, satah anatomi dan aras organisasi sel.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab01/video/bio41_video_makmal_biologi_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab01/video/bio41_video_makmal_biologi_narasi.mp4"
@@ -8697,7 +8697,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Struktur & Fungsi Komponen Sel Haiwan dan Tumbuhan",
           "stepTitle": "2.1 Penyediaan Slaid & Komponen Utama Sel Haiwan",
-          "caption": "Video Penerangan Bersuara (BM): Fungsi organel sel haiwan dan tumbuhan serta pengkhususan sel dalam organisasi tisu",
+          "caption": "Fungsi organel sel haiwan dan tumbuhan serta pengkhususan sel dalam organisasi tisu.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab02/video/bio42_video_organel_sel_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab02/video/bio42_video_organel_sel_narasi.mp4"
@@ -8729,7 +8729,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Struktur Model Mozek Bendalir & Ketelapan Membran",
           "stepTitle": "3.1 Keperluan Pergerakan Bahan & Model Mozek Bendalir",
-          "caption": "Animasi 3D: Struktur Model Mozek Bendalir membran plasma dan pergerakan molekul",
+          "caption": "Struktur Model Mozek Bendalir membran plasma dan pergerakan molekul.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab03/video/bio43_video_membran_plasma.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab03/video/bio43_video_membran_plasma.mp4"
@@ -8761,7 +8761,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sifat Molekul Air dan Kepentingannya dalam Sel",
           "stepTitle": "4.1 Kekutuban Air, Daya Kapilari & Muatan Haba Tentu",
-          "caption": "Video Penerangan BM: Komposisi Kimia dalam Sel dan Peranan Molekul Air serta Makromolekul",
+          "caption": "Komposisi Kimia dalam Sel dan Peranan Molekul Air serta Makromolekul.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab04/video/bio44_video_komposisi_sel_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab04/video/bio44_video_komposisi_sel_narasi.mp4"
@@ -8793,7 +8793,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Metabolisme, Sifat Enzim & Penghasilan Enzim Ekstrasel",
           "stepTitle": "Sifat Umum Enzim, Enzim Intrasel vs Laluan Enzim Ekstrasel",
-          "caption": "Video Penerangan BM: Metabolisme, Mekanisme Tindakan Enzim dan Penglibatan Organel",
+          "caption": "Metabolisme, Mekanisme Tindakan Enzim dan Penglibatan Organel.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab05/video/bio45_video_enzim_metabolisme_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab05/video/bio45_video_enzim_metabolisme_narasi.mp4"
@@ -8825,7 +8825,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Mitosis & Sitokinesis (Haiwan vs Tumbuhan)",
           "stepTitle": "Peringkat Mitosis (PMAT), Sitokinesis & Kepentingan Mitosis",
-          "caption": "Video Penerangan BM: Fasa Mitosis (PMAT), Sitokinesis dan Meiosis",
+          "caption": "Fasa Mitosis (PMAT), Sitokinesis dan Meiosis.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab06/video/bio46_video_pembahagian_sel_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab06/video/bio46_video_pembahagian_sel_narasi.mp4"
@@ -8857,7 +8857,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Penghasilan Tenaga & Jenis Respirasi Sel",
           "stepTitle": "7.1 Keperluan Tenaga, Substrat Glukosa & Jenis Respirasi Sel",
-          "caption": "Video Penerangan BM: Penghasilan ATP melalui Respirasi Aerob dan Fermentasi",
+          "caption": "Penghasilan ATP melalui Respirasi Aerob dan Fermentasi.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab07/video/bio47_video_respirasi_sel_atp_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab07/video/bio47_video_respirasi_sel_atp_narasi.mp4"
@@ -8889,7 +8889,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Struktur Respirasi & Penyesuaian Haiwan serta Manusia",
           "stepTitle": "8.1 Penyesuaian Struktur Respirasi Serangga, Ikan, Katak & Manusia",
-          "caption": "Video Penerangan Bersuara (BM): Penyesuaian struktur respirasi serangga, ikan dan pertukaran gas di alveolus manusia",
+          "caption": "Penyesuaian struktur respirasi serangga, ikan dan pertukaran gas di alveolus manusia.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab08/video/bio48_video_respirasi_alveolus_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab08/video/bio48_video_respirasi_alveolus_narasi.mp4"
@@ -8921,7 +8921,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sistem Pencernaan (Mulut, Perut, Duodenum & Ileum)",
           "stepTitle": "Pencernaan Lengkap di Duodenum & Ileum serta Aktiviti 9.1-9.3",
-          "caption": "Video Penerangan Bersuara (BM): Tindakan enzim pencernaan dan penyerapan nutrien di vilus usus kecil",
+          "caption": "Tindakan enzim pencernaan dan penyerapan nutrien di vilus usus kecil.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab09/video/bio49_video_pencernaan_vilus_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab09/video/bio49_video_pencernaan_vilus_narasi.mp4"
@@ -8953,7 +8953,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Jantung, Salur Darah, Komposisi Darah & Mekanisme Denyutan",
           "stepTitle": "10.2 Struktur Jantung, Salur Darah & Komposisi Darah Manusia",
-          "caption": "Animasi 3D: Struktur jantung empat ruang, injap sehala dan laluan peredaran darah manusia",
+          "caption": "Struktur jantung empat ruang, injap sehala dan laluan peredaran darah manusia.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab10/video/bio410_video_peredaran_jantung.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab10/video/bio410_video_peredaran_jantung.mp4"
@@ -8985,7 +8985,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Tiga Barisan Pertahanan Badan",
           "stepTitle": "11.1 Pertahanan Badan: Barisan Pertama, Kedua & Ketiga",
-          "caption": "Video Penerangan Bersuara (BM): Tiga barisan pertahanan badan manusia, proses fagositosis dan tindakan spesifik antibodi",
+          "caption": "Tiga barisan pertahanan badan manusia, proses fagositosis dan tindakan spesifik antibodi.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab11/video/bio411_video_keimunan_antibodi_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab11/video/bio411_video_keimunan_antibodi_narasi.mp4"
@@ -9017,7 +9017,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Neuron & Penghantaran Impuls Merentasi Sinaps",
           "stepTitle": "12.3 Tiga Jenis Neuron & Penghantaran Kimia Sinaps",
-          "caption": "Video Penerangan Bersuara (BM): Struktur neuron deria dan motor, penghantaran impuls saraf serta pemindahan kimia merentasi sinaps",
+          "caption": "Struktur neuron deria dan motor, penghantaran impuls saraf serta pemindahan kimia merentasi sinaps.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab12/video/bio412_video_koordinasi_saraf_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab12/video/bio412_video_koordinasi_saraf_narasi.mp4"
@@ -9049,7 +9049,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Ginjal, Nefron & Pembentukan Air Kencing",
           "stepTitle": "13.2 Nefron & Tiga Proses Pembentukan Air Kencing",
-          "caption": "Video Penerangan Bersuara (BM): Pembentukan air kencing di nefron (ultraturasan, penyerapan semula, rembesan) dan kawal atur ADH",
+          "caption": "Pembentukan air kencing di nefron (ultraturasan, penyerapan semula, rembesan) dan kawal atur ADH.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab13/video/bio413_video_nefron_homeostasis_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab13/video/bio413_video_nefron_homeostasis_narasi.mp4"
@@ -9081,7 +9081,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Sendi, Otot Antagonis & Pergerakan Lengan/Kaki",
           "stepTitle": "14.2 Sendi & 14.3 Pergerakan Lengan & Kaki Berjalan",
-          "caption": "Video Penerangan Bersuara (BM): Tindakan otot antagonis biseps dan triseps, fungsi tendon dan ligamen pada sendi engsel siku",
+          "caption": "Tindakan otot antagonis biseps dan triseps, fungsi tendon dan ligamen pada sendi engsel siku.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab14/video/bio414_video_otot_antagonis_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab14/video/bio414_video_otot_antagonis_narasi.mp4"
@@ -9113,7 +9113,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Kitar Haid, Kawalan Hormon & Menopaus",
           "stepTitle": "15.3 Perubahan Hormon Sepanjang Kitar Haid 28 Hari",
-          "caption": "Video Penerangan Bersuara (BM): Kitar haid (FSH, estrogen, LH, progesteron), ovulasi hari ke-14 dan penempelan blastosista",
+          "caption": "Kitar haid (FSH, estrogen, LH, progesteron), ovulasi hari ke-14 dan penempelan blastosista.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t4-bab15/video/bio415_video_kitar_haid_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t4-bab15/video/bio415_video_kitar_haid_narasi.mp4"
@@ -9145,7 +9145,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Tisu Meristem & Tiga Zon Pertumbuhan Sel",
           "stepTitle": "1.2 Tisu Meristem & 3 Zon Pertumbuhan Primer",
-          "caption": "Video Penerangan Bersuara (BM): Zon pertumbuhan meristem apeks (pembahagian, pemanjangan, pembezaan) dan pertumbuhan sekunder batang berkayu",
+          "caption": "Zon pertumbuhan meristem apeks (pembahagian, pemanjangan, pembezaan) dan pertumbuhan sekunder batang berkayu.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab01/video/bio51_video_meristem_pertumbuhan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab01/video/bio51_video_meristem_pertumbuhan_narasi.mp4"
@@ -9177,7 +9177,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Kloroplas, Pigmen & Dua Peringkat Fotosintesis",
           "stepTitle": "2.4 Sejarah Fotosintesis, Kloroplas & Kromatografi Pigmen",
-          "caption": "Video Penerangan Bersuara (BM): Struktur dalaman daun, kloroplas dan proses fotosintesis",
+          "caption": "Struktur dalaman daun, kloroplas dan proses fotosintesis.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab02/video/bio52_video_daun_fotosintesis_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab02/video/bio52_video_daun_fotosintesis_narasi.mp4"
@@ -9209,7 +9209,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Organ Pengambilan Air & Mineral — Struktur Akar",
           "stepTitle": "3.2 Struktur Luar & Dalaman Akar serta Jalur Casparian",
-          "caption": "Video Penerangan Bersuara (BM): Kepentingan makronutrien NPK serta laluan pengambilan air dan ion mineral oleh sel rambut akar",
+          "caption": "Kepentingan makronutrien NPK serta laluan pengambilan air dan ion mineral oleh sel rambut akar.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab03/video/bio53_video_nutrisi_akar_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab03/video/bio53_video_nutrisi_akar_narasi.mp4"
@@ -9241,7 +9241,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Pengangkutan Air — Simplas, Apoplas & Tiga Daya",
           "stepTitle": "4.2 Penyerapan Akar, Laluan Simplas & Laluan Apoplas",
-          "caption": "Video Animasi: Pergerakan air dari akar melalui salur xilem dan penyejatan wap air melalui stoma daun (transpirasi)",
+          "caption": "Pergerakan air dari akar melalui salur xilem dan penyejatan wap air melalui stoma daun (transpirasi).",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab04/video/bio54_video_tumbuhan_transpirasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab04/video/bio54_video_tumbuhan_transpirasi.mp4"
@@ -9273,7 +9273,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Peranan Auksin dalam Fototropisme & Geotropisme",
           "stepTitle": "Eksperimen Koleoptil & Graf Kesan Auksin pada Pucuk vs Akar",
-          "caption": "Video Penerangan Bersuara (BM): Peranan fitohormon auksin dalam fototropisme positif pucuk dan etilena dalam pemasakan buah",
+          "caption": "Peranan fitohormon auksin dalam fototropisme positif pucuk dan etilena dalam pemasakan buah.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab05/video/bio55_video_auksin_fototropisme_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab05/video/bio55_video_auksin_fototropisme_narasi.mp4"
@@ -9305,7 +9305,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Struktur Bunga & Perbandingan Jantan vs Betina",
           "stepTitle": "6.1 Struktur Bunga: Stamen vs Karpel (Jadual 6.2)",
-          "caption": "Video Penerangan Bersuara (BM): Struktur stamen dan karpel bunga serta proses pendebungaan hingga persenyawaan ganda dua",
+          "caption": "Struktur stamen dan karpel bunga serta proses pendebungaan hingga persenyawaan ganda dua.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab06/video/bio56_video_pembiakan_bunga_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab06/video/bio56_video_pembiakan_bunga_narasi.mp4"
@@ -9337,7 +9337,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pengelasan Empat Habitat & Model Terarium",
           "stepTitle": "7.1 Pengelasan Tumbuhan Mengikut Habitat & Terarium",
-          "caption": "Video Penerangan Bersuara (BM): Penyesuaian struktur hidrofit (aerenkima), halofit (pneumatofor) dan xerofit (daun berduri & kutikel tebal)",
+          "caption": "Penyesuaian struktur hidrofit (aerenkima), halofit (pneumatofor) dan xerofit (daun berduri & kutikel tebal).",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab07/video/bio57_video_penyesuaian_tumbuhan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab07/video/bio57_video_penyesuaian_tumbuhan_narasi.mp4"
@@ -9369,7 +9369,7 @@
           "unitNumber": 4,
           "unitTitle": "Unit 4: Mikroorganisma, Virus & Kitar Nitrogen",
           "stepTitle": "Rajah 8.14: Kitar Nitrogen Lengkap & Bakteria Terlibat",
-          "caption": "Video Penerangan Bersuara (BM): Pengelasan 6 Alam organisma dan peranan bakteria pengikat nitrogen serta penitritan dalam kitar nitrogen",
+          "caption": "Pengelasan 6 Alam organisma dan peranan bakteria pengikat nitrogen serta penitritan dalam kitar nitrogen.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab08/video/bio58_video_taksonomi_nitrogen_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab08/video/bio58_video_taksonomi_nitrogen_narasi.mp4"
@@ -9401,7 +9401,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Ekosistem Paya Bakau, Pengkolonian & Sesaran",
           "stepTitle": "Pengkolonian, Sesaran 3 Zon Paya Bakau & Biji Benih Vivipariti",
-          "caption": "Video Penerangan Bersuara (BM): Pemindahan tenaga 10% dalam piramid ekologi serta zon pengkolonian dan sesaran paya bakau",
+          "caption": "Pemindahan tenaga 10% dalam piramid ekologi serta zon pengkolonian dan sesaran paya bakau.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab09/video/bio59_video_ekosistem_bakau_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab09/video/bio59_video_ekosistem_bakau_narasi.mp4"
@@ -9433,7 +9433,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Ancaman Alam Sekitar, Eutrofikasi & BOD",
           "stepTitle": "10.1 Ancaman Alam Sekitar, Eutrofikasi & Eksperimen BOD",
-          "caption": "Video Penerangan Bersuara (BM): Mekanisme kesan rumah hijau serta proses eutrofikasi yang meningkatkan nilai BOD air",
+          "caption": "Mekanisme kesan rumah hijau serta proses eutrofikasi yang meningkatkan nilai BOD air.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab10/video/bio510_video_eutrofikasi_kelestarian_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab10/video/bio510_video_eutrofikasi_kelestarian_narasi.mp4"
@@ -9465,7 +9465,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Gen, Alel, Lokus & Kariotip Kromosom",
           "stepTitle": "11.3 Gen, Alel, Lokus & 11.4 Kariotip Manusia (44+XX / 44+XY)",
-          "caption": "Video Animasi: Struktur kromosom, gen, lokus dan pewarisan maklumat genetik DNA",
+          "caption": "Struktur kromosom, gen, lokus dan pewarisan maklumat genetik DNA.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab11/video/bio511_video_pewarisan_dna.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab11/video/bio511_video_pewarisan_dna.mp4"
@@ -9497,7 +9497,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Variasi Selanjar vs Tak Selanjar & Pemilihan Semula Jadi",
           "stepTitle": "12.1 Variasi Selanjar vs Tak Selanjar & Biston betularia",
-          "caption": "Video Penerangan Bersuara (BM): Perbandingan variasi selanjar (lengkung normal) dengan variasi tak selanjar serta kesan mutasi gen dan kromosom",
+          "caption": "Perbandingan variasi selanjar (lengkung normal) dengan variasi tak selanjar serta kesan mutasi gen dan kromosom.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab12/video/bio512_video_variasi_mutasi_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab12/video/bio512_video_variasi_mutasi_narasi.mp4"
@@ -9529,7 +9529,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Kejuruteraan Genetik, GMO & Penghasilan Insulin",
           "stepTitle": "13.1 Kejuruteraan Genetik, GMO & Rajah 13.2 Penghasilan Insulin",
-          "caption": "Video Penerangan Bersuara (BM): Penghasilan insulin manusia melalui teknologi DNA rekombinan dan prinsip pemprofilan DNA",
+          "caption": "Penghasilan insulin manusia melalui teknologi DNA rekombinan dan prinsip pemprofilan DNA.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/biologi-t5-bab13/video/bio513_video_dna_rekombinan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/biologi-t5-bab13/video/bio513_video_dna_rekombinan_narasi.mp4"
@@ -9561,7 +9561,7 @@
           "unitNumber": 2,
           "unitTitle": "Unit 2: Fungsi Gubahan & Fungsi Berulang",
           "stepTitle": "1.2 Pengertian & Pengiraan Fungsi Gubahan fg(x) vs gf(x)",
-          "caption": "Video Penerangan Bersuara (BM): Pemetaan fungsi gubahan fg(x) dan pantulan songsangan f^-1(x)",
+          "caption": "Pemetaan fungsi gubahan fg(x) dan pantulan songsangan f^-1(x).",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab01/video/addm41_video_fungsi_gubahan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab01/video/addm41_video_fungsi_gubahan_narasi.mp4"
@@ -9593,7 +9593,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Jenis-jenis Punca & Pembezalayan",
           "stepTitle": "2.2 Nilai Pembezalayan (b^2 - 4ac) & Tafsiran Geometri",
-          "caption": "Video Penerangan Bersuara (BM): Kesan pembezalayan b^2 - 4ac terhadap pintasan-x dan tiga bentuk kuadratik",
+          "caption": "Kesan pembezalayan b^2 - 4ac terhadap pintasan-x dan tiga bentuk kuadratik.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab02/video/addm42_video_fungsi_kuadratik_pembezalayan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab02/video/addm42_video_fungsi_kuadratik_pembezalayan_narasi.mp4"
@@ -9625,7 +9625,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Sistem Persamaan Linear Tiga Pemboleh Ubah",
           "stepTitle": "3.1 Tafsiran Geometri Sistem Persamaan Linear 3 Pemboleh Ubah",
-          "caption": "Video Penerangan Bersuara (BM): Persilangan tiga satah sistem persamaan linear dan kaedah penggantian garis lurus dengan lengkung",
+          "caption": "Persilangan tiga satah sistem persamaan linear dan kaedah penggantian garis lurus dengan lengkung.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab03/video/addm43_video_sistem_persamaan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab03/video/addm43_video_sistem_persamaan_narasi.mp4"
@@ -9657,7 +9657,7 @@
           "unitNumber": 3,
           "unitTitle": "Unit 3: Hukum Logaritma & Penukaran Asas",
           "stepTitle": "4.3 Takrif Logaritma, 3 Hukum Asas & Penukaran Asas",
-          "caption": "Video Penerangan Bersuara (BM): Hukum indeks, merasionalkan penyebut surd dengan konjugat serta hubungan songsang graf eksponen dan logaritma",
+          "caption": "Hukum indeks, merasionalkan penyebut surd dengan konjugat serta hubungan songsang graf eksponen dan logaritma.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab04/video/addm44_video_indeks_surd_log_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab04/video/addm44_video_indeks_surd_log_narasi.mp4"
@@ -9689,7 +9689,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Janjang Aritmetik — Beza Sepunya & Sebutan Ke-n",
           "stepTitle": "5.1 Mengenal Pasti Janjang Aritmetik & Rumus Tn",
-          "caption": "Video Penerangan Bersuara (BM): Perbandingan janjang aritmetik (beza sepunya d) dan janjang geometri (nisbah sepunya r & hasil tambah ketakterhinggaan)",
+          "caption": "Perbandingan janjang aritmetik (beza sepunya d) dan janjang geometri (nisbah sepunya r & hasil tambah ketakterhinggaan).",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab05/video/addm45_video_janjang_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab05/video/addm45_video_janjang_narasi.mp4"
@@ -9721,7 +9721,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Hubungan Linear & Garis Penyuaian Terbaik",
           "stepTitle": "6.1 Hubungan Linear vs Tak Linear & Garis Penyuaian Terbaik",
-          "caption": "Video Penerangan Bersuara (BM): Transformasi hubungan tak linear kepada bentuk linear Y = mX + c dan lukisan garis penyuaian terbaik",
+          "caption": "Transformasi hubungan tak linear kepada bentuk linear Y = mX + c dan lukisan garis penyuaian terbaik.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab06/video/addm46_video_hukum_linear_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab06/video/addm46_video_hukum_linear_narasi.mp4"
@@ -9753,7 +9753,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Pembahagi Tembereng Garis",
           "stepTitle": "7.1 Pembahagi Tembereng Garis (Nisbah m : n & Titik Tengah)",
-          "caption": "Video Animasi Geometri Koordinat: Pembahagian tembereng garis, garis serenjang dan lokus bulatan",
+          "caption": "Pembahagian tembereng garis, garis serenjang dan lokus bulatan.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab07/video/addm47_video_geometri_koordinat.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab07/video/addm47_video_geometri_koordinat.mp4"
@@ -9785,7 +9785,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Vektor, Vektor Selari & Titik Segaris",
           "stepTitle": "8.1 Kuantiti Vektor, Tatatanda & Syarat Vektor Selari",
-          "caption": "Video Penerangan Bersuara (BM): Hukum Segi Tiga dan Hukum Segi Empat Selari bagi vektor paduan serta leraian komponen vektor unit i dan j",
+          "caption": "Hukum Segi Tiga dan Hukum Segi Empat Selari bagi vektor paduan serta leraian komponen vektor unit i dan j.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab08/video/addm48_video_vektor_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab08/video/addm48_video_vektor_narasi.mp4"
@@ -9817,7 +9817,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Petua Sinus & Kes Berambiguiti",
           "stepTitle": "9.1 Petua Sinus & Syarat Kes Berambiguiti",
-          "caption": "Video Penerangan Bersuara (BM): Aplikasi Petua Sinus, Petua Kosinus dan fenomena kes berambiguiti (dua segi tiga) dalam segi tiga bukan bersudut tegak",
+          "caption": "Aplikasi Petua Sinus, Petua Kosinus dan fenomena kes berambiguiti (dua segi tiga) dalam segi tiga bukan bersudut tegak.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab09/video/addm49_video_penyelesaian_segitiga_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab09/video/addm49_video_penyelesaian_segitiga_narasi.mp4"
@@ -9849,7 +9849,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Konsep Nombor Indeks & Tafsiran Perubahan",
           "stepTitle": "10.1 Nombor Indeks: Rumus I = (Q1 / Q0) * 100 & Tafsiran",
-          "caption": "Video Penerangan Bersuara (BM): Pengiraan nombor indeks harga berbanding tahun asas serta indeks gubahan mengikut pemberat komponen",
+          "caption": "Pengiraan nombor indeks harga berbanding tahun asas serta indeks gubahan mengikut pemberat komponen.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t4-bab10/video/addm410_video_nombor_indeks_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t4-bab10/video/addm410_video_nombor_indeks_narasi.mp4"
@@ -9881,7 +9881,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Radian & Penukaran Darjah–Radian",
           "stepTitle": "1.1 Takrifan 1 Radian dan Perkaitan π rad = 180°",
-          "caption": "Video Penerangan Bersuara (BM): Takrifan 1 Radian (s = j), Panjang Lengkok s = jθ, Luas Sektor L = 1/2 j²θ & Aplikasi Sukatan Membulat",
+          "caption": "Takrifan 1 Radian (s = j), Panjang Lengkok s = jθ, Luas Sektor L = 1/2 j²θ & Aplikasi Sukatan Membulat.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab01/video/addm51_video_sukatan_membulat_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab01/video/addm51_video_sukatan_membulat_narasi.mp4"
@@ -9913,7 +9913,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Had Fungsi (0/0) & Pembezaan Prinsip Pertama",
           "stepTitle": "2.1 Had Suatu Fungsi & Mengatasi Bentuk Tak Tentu 0/0",
-          "caption": "Animasi 3D: Perkaitan antara kecerunan tangen pembezaan dengan luas di bawah lengkung pengamiran",
+          "caption": "Perkaitan antara kecerunan tangen pembezaan dengan luas di bawah lengkung pengamiran.",
           "hasNarration": false,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab02/video/addm52_video_pembezaan_kamiran.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab02/video/addm52_video_pembezaan_kamiran.mp4"
@@ -9945,7 +9945,7 @@
           "unitNumber": 5,
           "unitTitle": "Unit 5: Isi Padu Kisaran 360° & Aplikasi Pengamiran",
           "stepTitle": "Isi Padu Bongkah Kisaran 360° (Paksi-x & Paksi-y)",
-          "caption": "Video Penerangan Bersuara (BM): Pengamiran tentu bagi luas di bawah lengkung dan isi padu janaan kisaran 360 darjah",
+          "caption": "Pengamiran tentu bagi luas di bawah lengkung dan isi padu janaan kisaran 360 darjah.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab03/video/addm53_video_pengamiran_kisaran_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab03/video/addm53_video_pengamiran_kisaran_narasi.mp4"
@@ -9977,7 +9977,7 @@
           "unitNumber": 1,
           "unitTitle": "Unit 1: Petua Pendaraban, Faktorial n! & Pilih Atur Membulat",
           "stepTitle": "4.1 Petua Pendaraban (m × n), Linear n! & Bulatan (n−1)!",
-          "caption": "Video Penerangan Bersuara (BM): Perbezaan konsep pilih atur (nPr, tertib penting) dan gabungan (nCr, tertib tidak penting)",
+          "caption": "Perbezaan konsep pilih atur (nPr, tertib penting) dan gabungan (nCr, tertib tidak penting).",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab04/video/addm54_video_pilih_atur_gabungan_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab04/video/addm54_video_pilih_atur_gabungan_narasi.mp4"
@@ -10009,7 +10009,7 @@
           "unitNumber": 1,
           "unitTitle": "Pemboleh Ubah Rawak Diskret & Selanjar",
           "stepTitle": "Mengenal Pemboleh Ubah Rawak (5.1)",
-          "caption": "Video Penerangan Bersuara (BM): Taburan binomial diskrit dan penjelmaan kepada lengkung taburan normal piawai skor-Z",
+          "caption": "Taburan binomial diskrit dan penjelmaan kepada lengkung taburan normal piawai skor-Z.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab05/video/addm55_video_taburan_normal_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab05/video/addm55_video_taburan_normal_narasi.mp4"
@@ -10041,7 +10041,7 @@
           "unitNumber": 1,
           "unitTitle": "Sudut Positif, Negatif & 6 Nisbah Trigonometri",
           "stepTitle": "Sudut Putaran & 6 Nisbah Trigonometri (6.1-6.2)",
-          "caption": "Video Penerangan Bersuara (BM): Penjanaan graf sinus, kosinus dan tangen daripada bulatan unit serta kesan amplitud dan kitaran",
+          "caption": "Penjanaan graf sinus, kosinus dan tangen daripada bulatan unit serta kesan amplitud dan kitaran.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab06/video/addm56_video_fungsi_trigo_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab06/video/addm56_video_fungsi_trigo_narasi.mp4"
@@ -10073,7 +10073,7 @@
           "unitNumber": 3,
           "unitTitle": "Fungsi Objektif & Kaedah Garis Selari",
           "stepTitle": "Kaedah Garis Selari Fungsi Objektif (7.2)",
-          "caption": "Video Penerangan Bersuara (BM): Penentuan rantau tersaur daripada ketaksamaan kekangan dan kaedah garis fungsi objektif optimum",
+          "caption": "Penentuan rantau tersaur daripada ketaksamaan kekangan dan kaedah garis fungsi objektif optimum.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab07/video/addm57_video_pengaturcaraan_linear_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab07/video/addm57_video_pengaturcaraan_linear_narasi.mp4"
@@ -10105,7 +10105,7 @@
           "unitNumber": 2,
           "unitTitle": "Pembezaan Kinematik: v = ds/dt dan a = dv/dt",
           "stepTitle": "Tangga Pembezaan Kinematik (8.2)",
-          "caption": "Video Penerangan Bersuara (BM): Hubungan sesaran (s), halaju (v = ds/dt) dan pecutan (a = dv/dt) serta syarat halaju maksimum dan berhenti seketika",
+          "caption": "Hubungan sesaran (s), halaju (v = ds/dt) dan pecutan (a = dv/dt) serta syarat halaju maksimum dan berhenti seketika.",
           "hasNarration": true,
           "localPath": "./nota-interaktif/assets/matematik-tambahan-t5-bab08/video/addm58_video_kinematik_linear_narasi.mp4",
           "r2Url": "https://pub-a078acf7cdf144cdbffaf309be626334.r2.dev/nota-interaktif/assets/matematik-tambahan-t5-bab08/video/addm58_video_kinematik_linear_narasi.mp4"

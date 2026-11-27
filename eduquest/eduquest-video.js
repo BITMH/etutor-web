@@ -15,11 +15,19 @@
     return "";
   }
 
+  function cleanCaption(raw) {
+    return String(raw || "")
+      .replace(/^(?:Video|Animasi|Simulasi|Narrated|Klip)[^:]{0,65}:\s*/i, "")
+      .replace(/\s*\(\s*Tanpa\s+Audio\s*\)\s*/gi, " ")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+  }
+
   function buildActionBtn(notaId, videos) {
     if (!notaId || !Array.isArray(videos) || !videos.length) return "";
     var hasAudio = videos.some(function (v) { return Boolean(v && v.hasNarration); });
     var cls = hasAudio ? "eq-node-video-btn is-narrated" : "eq-node-video-btn";
-    var tip = "Tonton video penerangan (" + videos.length + " klip)";
+    var tip = "Tonton video";
     return '<button type="button" class="' + cls + '" data-eq-video-open="' + esc(notaId) + '" aria-label="' + esc(tip) + '" title="' + esc(tip) + '">' + PLAY_SVG + "</button>";
   }
 
@@ -30,26 +38,19 @@
     var v = entry.videos[activeIdx];
     var player = document.getElementById("eqVideoPlayer");
     var titleEl = document.getElementById("eqVideoChapterTitle");
-    var badgeEl = document.getElementById("eqVideoAudioBadge");
     var capEl = document.getElementById("eqVideoCaption");
     var listEl = document.getElementById("eqVideoPlaylist");
     var notaBtn = document.getElementById("eqVideoOpenNotaBtn");
 
     if (titleEl) titleEl.textContent = entry.title + (v.unitNumber ? (" \u2022 Unit " + v.unitNumber) : "");
-    if (badgeEl) {
-      badgeEl.textContent = v.hasNarration
-        ? "Video Penerangan Bersuara (BM) \u2022 Audio Aktif"
-        : "Animasi Konsep 3D Interaktif";
-      badgeEl.classList.toggle("is-visual", !v.hasNarration);
-    }
-    if (capEl) capEl.textContent = v.caption || v.stepTitle || v.unitTitle || "";
+    if (capEl) capEl.textContent = cleanCaption(v.caption || v.stepTitle || v.unitTitle || "");
     if (notaBtn) notaBtn.hidden = !entry.notaSrc;
 
     if (listEl) {
       if (entry.videos.length > 1) {
         listEl.hidden = false;
         listEl.innerHTML = entry.videos.map(function (ep, i) {
-          var epTag = "Unit " + (ep.unitNumber || (i + 1)) + (ep.hasNarration ? " \u2022 Suara BM" : " \u2022 3D Visual");
+          var epTag = "Unit " + (ep.unitNumber || (i + 1));
           var epSub = ep.stepTitle || ep.unitTitle || ep.caption || ("Episod " + (i + 1));
           return '<button type="button" class="eq-video-ep' + (i === activeIdx ? " is-active" : "") + '" data-eq-video-idx="' + i + '">' +
             "<strong>" + esc(epTag) + "</strong><span>" + esc(epSub) + "</span></button>";

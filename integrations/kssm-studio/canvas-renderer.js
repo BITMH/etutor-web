@@ -4,12 +4,12 @@
  */
 
 export const TPL_THEMES = {
-  bahasa: { label: "Bahasa", accent: "#1d4ed8", accentSoft: "#eff6ff", border: "#93c5fd", ink: "#1e3a8a", file: "bahasa.jpg" },
-  sains: { label: "Sains", accent: "#047857", accentSoft: "#ecfdf5", border: "#6ee7b7", ink: "#064e3b", file: "sains.jpg" },
-  matematik: { label: "Matematik", accent: "#4338ca", accentSoft: "#eef2ff", border: "#a5b4fc", ink: "#312e81", file: "matematik.jpg" },
-  sejarah: { label: "Sejarah", accent: "#b45309", accentSoft: "#fffbeb", border: "#fcd34d", ink: "#78350f", file: "sejarah.jpg" },
-  islam: { label: "P. Islam", accent: "#0f766e", accentSoft: "#f0fdfa", border: "#5eead4", ink: "#134e4a", file: "islam.jpg" },
-  geografi: { label: "Geografi", accent: "#0369a1", accentSoft: "#f0f9ff", border: "#7dd3fc", ink: "#0c4a6e", file: "geografi.jpg" }
+  bahasa: { label: "Klasik Gading", accent: "#1d4ed8", accentSoft: "#eff6ff", border: "#93c5fd", ink: "#1e3a8a", file: "bahasa.jpg" },
+  sains: { label: "Botani Pudina", accent: "#047857", accentSoft: "#ecfdf5", border: "#6ee7b7", ink: "#064e3b", file: "sains.jpg" },
+  matematik: { label: "Geometri Biru", accent: "#4338ca", accentSoft: "#eef2ff", border: "#a5b4fc", ink: "#312e81", file: "matematik.jpg" },
+  sejarah: { label: "Warisan Emas", accent: "#b45309", accentSoft: "#fffbeb", border: "#fcd34d", ink: "#78350f", file: "sejarah.jpg" },
+  islam: { label: "Arabes Zamrud", accent: "#0f766e", accentSoft: "#f0fdfa", border: "#5eead4", ink: "#134e4a", file: "islam.jpg" },
+  geografi: { label: "Puncak Awan", accent: "#0369a1", accentSoft: "#f0f9ff", border: "#7dd3fc", ink: "#0c4a6e", file: "geografi.jpg" }
 };
 
 const W = 1240;

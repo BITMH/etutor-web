@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Sejarah Bab 1","item":"https://etutor.my/kssm/tingkatan-4/sejarah/bab-1/"}]},{"@type":"LearningResource","name":"Sejarah Tingkatan 4 Bab 1: Warisan Negara Bangsa (Alam Melayu & Kesultanan Melayu Melaka)","description":"Memahami kesinambungan ciri-ciri negara bangsa daripada Kerajaan Alam Melayu (Funan, Champa, Srivijaya) kepada Kesultanan Melayu Melaka, sistem Pembesar Empat Lipatan, keunggulan Hukum Kanun Melaka dan Undang-Undang Laut Melaka serta hubungan waadat pemerintah dan rakyat.","url":"https://etutor.my/kssm/tingkatan-4/sejarah/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sejarah KSSM (1249)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -332,16 +341,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sejarah" data-tpl="sejarah" data-subject-slug="sejarah" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_sejarah_Bab_1.pdf" data-form-label="Tingkatan 4" data-subject-name="Sejarah" data-subject-code="1249" data-pages="m.s. 2–19" data-dskp="SK 9.1 (DSKP KSSM Sejarah Tingkatan 4)" data-chapter-heading="Bab 1: Warisan Negara Bangsa (Alam Melayu &amp; Kesultanan Melayu Melaka)" data-hero-summary="Memahami kesinambungan ciri-ciri negara bangsa daripada Kerajaan Alam Melayu (Funan, Champa, Srivijaya) kepada Kesultanan Melayu Melaka, sistem Pembesar Empat Lipatan, keunggulan Hukum Kanun Melaka dan Undang-Undang Laut Melaka serta hubungan waadat pemerintah dan rakyat." style="--tpl-accent:#b45309;--tpl-soft:#fffbeb;--tpl-border:#fcd34d;--tpl-ink:#78350f;--tpl-bg:url('../../../../images/nota-templates/sejarah.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 1: Warisan Negara Bangsa (Alam Melayu &amp; Kesultanan Melayu Melaka)</h2>
-          <p class="kssm-sublead">Memahami kesinambungan ciri-ciri negara bangsa daripada Kerajaan Alam Melayu (Funan, Champa, Srivijaya) kepada Kesultanan Melayu Melaka, sistem Pembesar Empat Lipatan, keunggulan Hukum Kanun Melaka dan Undang-Undang Laut Melaka serta hubungan waadat pemerintah dan rakyat.</p>
-          <p class="kssm-sheet-meta">Tingkatan 4 &bull; Sejarah (1249) &bull; m.s. 2–19 &bull; SK 9.1 (DSKP KSSM Sejarah Tingkatan 4)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menerangkan latar belakang empat ciri negara bangsa Kerajaan Alam Melayu (raja, undang-undang, wilayah pengaruh, rakyat) sejak kerajaan Funan dan Srivijaya.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 4 &bull; Sejarah (1249) &bull; m.s. 2–19</span>
+      </div>
+      <h2>Bab 1: Warisan Negara Bangsa (Alam Melayu &amp; Kesultanan Melayu Melaka)</h2>
+      <p class="kssm-mast-sum">Memahami kesinambungan ciri-ciri negara bangsa daripada Kerajaan Alam Melayu (Funan, Champa, Srivijaya) kepada Kesultanan Melayu Melaka, sistem Pembesar Empat Lipatan, keunggulan Hukum Kanun Melaka dan Undang-Undang Laut Melaka serta hubungan waadat pemerintah dan rakyat.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 9.1 (DSKP KSSM Sejarah Tingkatan 4)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menerangkan latar belakang empat ciri negara bangsa Kerajaan Alam Melayu (raja, undang-undang, wilayah pengaruh, rakyat) sejak kerajaan Funan dan Srivijaya.">
       <span class="kssm-obj-num">01</span>
       <span>Menerangkan latar belakang empat ciri negara bangsa Kerajaan Alam Melayu (raja, undang-undang, wilayah pengaruh, rakyat) sejak kerajaan Funan dan Srivijaya.</span>
     </div>
@@ -357,30 +369,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Menjelaskan kandungan Hukum Kanun Melaka dan Undang-Undang Laut Melaka serta timbal balik peranan pemerintah dan rakyat berteraskan konsep waadat.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–19)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Bagaimanakah Kerajaan Srivijaya memastikan kesetiaan rakyat di wilayah taklukannya pada abad ketujuh?" data-ex-solution="Melalui upacara persetiaan meminum air yang dituang di atas Batu Bersurat (Inskripsi) Telaga Batu sebagai tanda taat setia tidak akan menderhaka kepada raja." data-ex-takeaway="Kesinambungan: Funan &amp; Champa → Srivijaya → Kesultanan Melayu Melaka → Kesultanan Johor-Riau!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Bagaimanakah Kerajaan Srivijaya memastikan kesetiaan rakyat di wilayah taklukannya pada abad ketujuh?" data-ex-solution="Melalui upacara persetiaan meminum air yang dituang di atas Batu Bersurat (Inskripsi) Telaga Batu sebagai tanda taat setia tidak akan menderhaka kepada raja." data-ex-takeaway="Kesinambungan: Funan &amp; Champa → Srivijaya → Kesultanan Melayu Melaka → Kesultanan Johor-Riau!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Latar Belakang Negara Bangsa Kerajaan Alam Melayu (SP 9.1.1)</h3>
       <p class="kssm-sub-summary">Pembentukan negara bangsa moden di Malaysia berakar umbi sejak sebelum kedatangan Barat. Ciri-ciri negara bangsa kerajaan Funan dan Champa diwarisi oleh Kerajaan Srivijaya sebelum diteruskan secara cemerlang oleh Kesultanan Melayu Melaka.</p>
       <ul class="kssm-kp-list"><li>1. Raja: tonggak utama kerajaan yang kedudukannya diperkukuh oleh sistem pentadbiran dibantu pembesar; rakyat menaatinya kerana dianggap suci (contoh Raja Champa dikaitkan dengan Dewa Siva).</li><li>2. Undang-Undang: memastikan kesejahteraan kerajaan (contoh Kerajaan Majapahit menggunakan Kutara Manawa dan Srivijaya berpandukan undang-undang bertulis Telaga Batu).</li><li>3. Wilayah Pengaruh: kawasan pemerintahan raja yang diterima dan diakui rakyat (contoh Funan merangkumi Sungai Mekong hingga Segenting Kra; Srivijaya menguasai Sumatera hingga Semenanjung).</li><li>4. Rakyat: penduduk yang setia dan tidak menderhaka kepada raja (upacara persetiaan rakyat Srivijaya meminum air dari Inskripsi Telaga Batu).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Bagaimanakah Kerajaan Srivijaya memastikan kesetiaan rakyat di wilayah taklukannya pada abad ketujuh?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Melalui upacara persetiaan meminum air yang dituang di atas Batu Bersurat (Inskripsi) Telaga Batu sebagai tanda taat setia tidak akan menderhaka kepada raja.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kesinambungan: Funan &amp; Champa → Srivijaya → Kesultanan Melayu Melaka → Kesultanan Johor-Riau!</p>
+        <p><strong>Contoh:</strong> Bagaimanakah Kerajaan Srivijaya memastikan kesetiaan rakyat di wilayah taklukannya pada abad ketujuh?</p>
+        <p>Penyelesaian: Melalui upacara persetiaan meminum air yang dituang di atas Batu Bersurat (Inskripsi) Telaga Batu sebagai tanda taat setia tidak akan menderhaka kepada raja.</p>
+        <p class="kssm-takeaway">Tip Penting: Kesinambungan: Funan &amp; Champa → Srivijaya → Kesultanan Melayu Melaka → Kesultanan Johor-Riau!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Nyatakan tiga cara Kesultanan Melayu Melaka memperoleh wilayah pengaruhnya yang luas." data-ex-solution="Melalui penaklukan (seperti Pahang, Kampar, Inderagiri), naungan (kerajaan yang meminta perlindungan Melaka) dan perkahwinan diraja (seperti perkahwinan Sultan Mansur Shah dengan puteri Majapahit/Siak)." data-ex-takeaway="Bezakan wilayah &#39;taklukan&#39; (perang), &#39;naungan&#39; (perlindungan sukarela/ufti) dan &#39;perkahwinan&#39;!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Nyatakan tiga cara Kesultanan Melayu Melaka memperoleh wilayah pengaruhnya yang luas." data-ex-solution="Melalui penaklukan (seperti Pahang, Kampar, Inderagiri), naungan (kerajaan yang meminta perlindungan Melaka) dan perkahwinan diraja (seperti perkahwinan Sultan Mansur Shah dengan puteri Majapahit/Siak)." data-ex-takeaway="Bezakan wilayah &#39;taklukan&#39; (perang), &#39;naungan&#39; (perlindungan sukarela/ufti) dan &#39;perkahwinan&#39;!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Enam Ciri Negara Bangsa Kesultanan Melayu Melaka (SP 9.1.2)</h3>
       <p class="kssm-sub-summary">Kesultanan Melayu Melaka memperkukuh warisan Alam Melayu dengan enam ciri negara bangsa yang mantap sehingga menjadi empayar agung pada abad ke-15.</p>
       <ul class="kssm-kp-list"><li>1. Kerajaan (raja pemerintah tertinggi dibantu Pembesar Berempat); 2. Rakyat (orang Melayu dan Orang Laut yang bernaung di bawah sultan); 3. Kedaulatan (lambang kekuasaan tertinggi sultan mengawal negara dan bebas campur tangan asing).</li><li>4. Wilayah Pengaruh (diperoleh melalui penaklukan, naungan dan perkahwinan meliputi seluruh Semenanjung Tanah Melayu dan pantai timur Sumatera); 5. Undang-Undang (Hukum Kanun Melaka dan Undang-Undang Laut Melaka).</li><li>6. Lambang Kebesaran: identiti dan kedaulatan sultan — adat istiadat, penggunaan warna diraja, nobat, regalia (keris, tombak, tepak sirih diraja) serta cap mohor untuk mengesahkan arahan dan surat rasmi.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Nyatakan tiga cara Kesultanan Melayu Melaka memperoleh wilayah pengaruhnya yang luas.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Melalui penaklukan (seperti Pahang, Kampar, Inderagiri), naungan (kerajaan yang meminta perlindungan Melaka) dan perkahwinan diraja (seperti perkahwinan Sultan Mansur Shah dengan puteri Majapahit/Siak).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Bezakan wilayah &#39;taklukan&#39; (perang), &#39;naungan&#39; (perlindungan sukarela/ufti) dan &#39;perkahwinan&#39;!</p>
+        <p><strong>Contoh:</strong> Nyatakan tiga cara Kesultanan Melayu Melaka memperoleh wilayah pengaruhnya yang luas.</p>
+        <p>Penyelesaian: Melalui penaklukan (seperti Pahang, Kampar, Inderagiri), naungan (kerajaan yang meminta perlindungan Melaka) dan perkahwinan diraja (seperti perkahwinan Sultan Mansur Shah dengan puteri Majapahit/Siak).</p>
+        <p class="kssm-takeaway">Tip Penting: Bezakan wilayah &#39;taklukan&#39; (perang), &#39;naungan&#39; (perlindungan sukarela/ufti) dan &#39;perkahwinan&#39;!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Apakah persamaan fungsi antara Temenggung dengan Laksamana, dan di manakah perbezaan bidang kuasa mereka?" data-ex-solution="Kedua-duanya menjaga keselamatan dan keamanan kerajaan Melaka; perbezaannya ialah Temenggung menjaga keamanan kota dan daratan (ketua polis/protokol), manakala Laksamana menjaga keselamatan laut dan perairan sebagai panglima angkatan laut." data-ex-takeaway="Hafal 4 tugas asas: Bendahara = PM/Ketua Pentadbir; Penghulu Bendahari = Menteri Kewangan; Temenggung = Polis Darat; Laksamana = Panglima Laut.">
@@ -389,42 +404,51 @@
       <p class="kssm-sub-summary">Keunggulan pentadbiran Kesultanan Melayu Melaka terletak pada pembahagian tugas dua peringkat (pusat dan jajahan) serta undang-undang berasaskan syariah dan hukum adat.</p>
       <ul class="kssm-kp-list"><li>Pembesar Berempat (Pusat): (1) Bendahara (ketua pentadbir, ketua turus angkatan perang, penasihat sultan, pemangku sultan); (2) Penghulu Bendahari (mengurus perbendaharaan, hasil/cukai dan Syahbandar); (3) Temenggung (ketua polis, keselamatan kota/darat, ketua protokol); (4) Laksamana (panglima angkatan laut, menjaga keselamatan perairan dan utusan diraja).</li><li>Hukum Kanun Melaka (44 fasal): merangkumi jenayah (hukuman qisas/hukuman setimpal terhadap kesalahan membunuh/mencuri), peranan sultan dan pembesar, kekeluargaan (nikah kahwin ikut hukum Islam) dan ekonomi (larangan amalan riba dalam perniagaan).</li><li>Undang-Undang Laut Melaka (diusahakan oleh Nakhoda Jenal, Nakhoda Diri dan Nakhoda Sahak atas perkenan Sultan Mahmud Shah): menjelaskan peranan nakhoda (ibarat raja dalam pelayaran), pelayaran, jenayah di atas kapal dan percukaian perdagangan.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah persamaan fungsi antara Temenggung dengan Laksamana, dan di manakah perbezaan bidang kuasa mereka?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kedua-duanya menjaga keselamatan dan keamanan kerajaan Melaka; perbezaannya ialah Temenggung menjaga keamanan kota dan daratan (ketua polis/protokol), manakala Laksamana menjaga keselamatan laut dan perairan sebagai panglima angkatan laut.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hafal 4 tugas asas: Bendahara = PM/Ketua Pentadbir; Penghulu Bendahari = Menteri Kewangan; Temenggung = Polis Darat; Laksamana = Panglima Laut.</p>
+        <p><strong>Contoh:</strong> Apakah persamaan fungsi antara Temenggung dengan Laksamana, dan di manakah perbezaan bidang kuasa mereka?</p>
+        <p>Penyelesaian: Kedua-duanya menjaga keselamatan dan keamanan kerajaan Melaka; perbezaannya ialah Temenggung menjaga keamanan kota dan daratan (ketua polis/protokol), manakala Laksamana menjaga keselamatan laut dan perairan sebagai panglima angkatan laut.</p>
+        <p class="kssm-takeaway">Tip Penting: Hafal 4 tugas asas: Bendahara = PM/Ketua Pentadbir; Penghulu Bendahari = Menteri Kewangan; Temenggung = Polis Darat; Laksamana = Panglima Laut.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Apakah maksud konsep &#39;waadat&#39; dan apakah kesan jika kedua-dua pihak melanggar perjanjian tersebut?" data-ex-solution="Waadat ialah perjanjian setia antara raja dengan rakyat; jika rakyat derhaka, mereka takut ditimpa tulah, manakala jika pemerintah bersikap zalim, pemerintah akan hilang keberkatan dan kestabilan takhta." data-ex-takeaway="Hubungan saling melengkapi (timbal balik) raja yang adil + rakyat yang setia ialah asas kestabilan negara bangsa hingga kini.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Apakah maksud konsep &#39;waadat&#39; dan apakah kesan jika kedua-dua pihak melanggar perjanjian tersebut?" data-ex-solution="Waadat ialah perjanjian setia antara raja dengan rakyat; jika rakyat derhaka, mereka takut ditimpa tulah, manakala jika pemerintah bersikap zalim, pemerintah akan hilang keberkatan dan kestabilan takhta." data-ex-takeaway="Hubungan saling melengkapi (timbal balik) raja yang adil + rakyat yang setia ialah asas kestabilan negara bangsa hingga kini.">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Peranan Pemerintah dan Rakyat — Konsep Waadat (SP 9.1.4)</h3>
       <p class="kssm-sub-summary">Hubung kait harmoni antara pemerintah dengan rakyat dalam Kesultanan Melayu Melaka berasaskan konsep waadat (perjanjian luhur antara Sang Sapurba dengan Demang Lebar Daun dalam Sulalatus Salatin).</p>
       <ul class="kssm-kp-list"><li>Peranan Pemerintah (Sultan &amp; Pembesar): menaungi keselamatan rakyat, mewujudkan perpaduan, bertanggungjawab memakmurkan dan menstabilkan ekonomi, serta memperkenalkan undang-undang yang adil (tidak menganiaya rakyat).</li><li>Peranan Rakyat: menumpahkan taat setia kepada pemerintah, mematuhi arahan dan tidak menderhaka kerana takut ditimpa tulah, menjadi tentera, menghadiri majlis umum (gotong-royong), menjadi pengayuh/pendayung kapal perang serta menyumbang tenaga kerja membina istana/jalan.</li><li>Keseimbangan hak dan tanggungjawab ini menjamin kestabilan politik dan kegemilangan Melaka sebagai pusat perdagangan serantau.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah maksud konsep &#39;waadat&#39; dan apakah kesan jika kedua-dua pihak melanggar perjanjian tersebut?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Waadat ialah perjanjian setia antara raja dengan rakyat; jika rakyat derhaka, mereka takut ditimpa tulah, manakala jika pemerintah bersikap zalim, pemerintah akan hilang keberkatan dan kestabilan takhta.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hubungan saling melengkapi (timbal balik) raja yang adil + rakyat yang setia ialah asas kestabilan negara bangsa hingga kini.</p>
+        <p><strong>Contoh:</strong> Apakah maksud konsep &#39;waadat&#39; dan apakah kesan jika kedua-dua pihak melanggar perjanjian tersebut?</p>
+        <p>Penyelesaian: Waadat ialah perjanjian setia antara raja dengan rakyat; jika rakyat derhaka, mereka takut ditimpa tulah, manakala jika pemerintah bersikap zalim, pemerintah akan hilang keberkatan dan kestabilan takhta.</p>
+        <p class="kssm-takeaway">Tip Penting: Hubungan saling melengkapi (timbal balik) raja yang adil + rakyat yang setia ialah asas kestabilan negara bangsa hingga kini.</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengelirukan tugas Penghulu Bendahari dengan Bendahara." data-m-correction="Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar." data-m-tip="&#39;Bendahari&#39; mengandungi kata &#39;bendahari&#39; (kewangan/harta).">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan tugas Penghulu Bendahari dengan Bendahara.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.</p>
-      <p><strong>Tip Skor Exam:</strong> &#39;Bendahari&#39; mengandungi kata &#39;bendahari&#39; (kewangan/harta).</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Mengelirukan tugas Penghulu Bendahari dengan Bendahara." data-m-correction="Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar." data-m-tip="&#39;Bendahari&#39; mengandungi kata &#39;bendahari&#39; (kewangan/harta).">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengelirukan tugas Penghulu Bendahari dengan Bendahara.</p>
+      <p class="kssm-m-good">TEPAT: Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: &#39;Bendahari&#39; mengandungi kata &#39;bendahari&#39; (kewangan/harta).</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyatakan Hukum Kanun Melaka digubal oleh empat orang nakhoda kapal." data-m-correction="Nakhoda Jenal, Nakhoda Diri dan Nakhoda Sahak mengusahakan UNDANG-UNDANG LAUT MELAKA, manakala Hukum Kanun Melaka mengandungi 44 fasal hal pentadbiran darat, jenayah, kekeluargaan dan ekonomi." data-m-tip="Nakhoda = kapten kapal → Undang-Undang LAUT Melaka!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyatakan Hukum Kanun Melaka digubal oleh empat orang nakhoda kapal.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Nakhoda Jenal, Nakhoda Diri dan Nakhoda Sahak mengusahakan UNDANG-UNDANG LAUT MELAKA, manakala Hukum Kanun Melaka mengandungi 44 fasal hal pentadbiran darat, jenayah, kekeluargaan dan ekonomi.</p>
-      <p><strong>Tip Skor Exam:</strong> Nakhoda = kapten kapal → Undang-Undang LAUT Melaka!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyatakan Hukum Kanun Melaka digubal oleh empat orang nakhoda kapal.</p>
+      <p class="kssm-m-good">TEPAT: Nakhoda Jenal, Nakhoda Diri dan Nakhoda Sahak mengusahakan UNDANG-UNDANG LAUT MELAKA, manakala Hukum Kanun Melaka mengandungi 44 fasal hal pentadbiran darat, jenayah, kekeluargaan dan ekonomi.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Nakhoda = kapten kapal → Undang-Undang LAUT Melaka!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mengatakan kesemua 6 ciri negara bangsa Melaka sudah wujud dalam Kerajaan Alam Melayu awal dengan istilah sama termasuk kedaulatan dan lambang kebesaran bertulis." data-m-correction="Kerajaan Alam Melayu mempunyai 4 ciri asas (raja, undang-undang, wilayah pengaruh, rakyat), lalu diperluas menjadi 6 ciri dalam Kesultanan Melayu Melaka (kerajaan, rakyat, kedaulatan, wilayah pengaruh, undang-undang, lambang kebesaran)." data-m-tip="Alam Melayu = 4 ciri; Melaka = 6 ciri!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengatakan kesemua 6 ciri negara bangsa Melaka sudah wujud dalam Kerajaan Alam Melayu awal dengan istilah sama termasuk kedaulatan dan lambang kebesaran bertulis.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kerajaan Alam Melayu mempunyai 4 ciri asas (raja, undang-undang, wilayah pengaruh, rakyat), lalu diperluas menjadi 6 ciri dalam Kesultanan Melayu Melaka (kerajaan, rakyat, kedaulatan, wilayah pengaruh, undang-undang, lambang kebesaran).</p>
-      <p><strong>Tip Skor Exam:</strong> Alam Melayu = 4 ciri; Melaka = 6 ciri!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengatakan kesemua 6 ciri negara bangsa Melaka sudah wujud dalam Kerajaan Alam Melayu awal dengan istilah sama termasuk kedaulatan dan lambang kebesaran bertulis.</p>
+      <p class="kssm-m-good">TEPAT: Kerajaan Alam Melayu mempunyai 4 ciri asas (raja, undang-undang, wilayah pengaruh, rakyat), lalu diperluas menjadi 6 ciri dalam Kesultanan Melayu Melaka (kerajaan, rakyat, kedaulatan, wilayah pengaruh, undang-undang, lambang kebesaran).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Alam Melayu = 4 ciri; Melaka = 6 ciri!</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1234,7 +1258,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

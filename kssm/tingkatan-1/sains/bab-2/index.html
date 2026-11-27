@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 1","item":"https://etutor.my/kssm/tingkatan-1/"},{"@type":"ListItem","position":4,"name":"Sains Bab 2","item":"https://etutor.my/kssm/tingkatan-1/sains/bab-2/"}]},{"@type":"LearningResource","name":"Sains Tingkatan 1 Bab 2: Sel sebagai Unit Asas Hidupan (Cell as Basic Unit of Life)","description":"Memahami struktur serta fungsi komponen sel haiwan dan sel tumbuhan, organisasi sel kepada organisma (Sel → Tisu → Organ → Sistem → Organisma) serta perbezaan antara respirasi sel dengan fotosintesis.","url":"https://etutor.my/kssm/tingkatan-1/sains/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 1","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sains KSSM (1511)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sains" data-tpl="sains" data-subject-slug="sains" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T1_sains_Bab_2.pdf" data-form-label="Tingkatan 1" data-subject-name="Sains" data-subject-code="1511" data-pages="pp. 44–69" data-dskp="SK 2.1–2.2 (DSKP KSSM Sains Tingkatan 1)" data-chapter-heading="Bab 2: Sel sebagai Unit Asas Hidupan (Cell as Basic Unit of Life)" data-hero-summary="Memahami struktur serta fungsi komponen sel haiwan dan sel tumbuhan, organisasi sel kepada organisma (Sel → Tisu → Organ → Sistem → Organisma) serta perbezaan antara respirasi sel dengan fotosintesis." style="--tpl-accent:#047857;--tpl-soft:#ecfdf5;--tpl-border:#6ee7b7;--tpl-ink:#064e3b;--tpl-bg:url('../../../../images/nota-templates/sains.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 2: Sel sebagai Unit Asas Hidupan (Cell as Basic Unit of Life)</h2>
-          <p class="kssm-sublead">Memahami struktur serta fungsi komponen sel haiwan dan sel tumbuhan, organisasi sel kepada organisma (Sel → Tisu → Organ → Sistem → Organisma) serta perbezaan antara respirasi sel dengan fotosintesis.</p>
-          <p class="kssm-sheet-meta">Tingkatan 1 &bull; Sains (1511) &bull; pp. 44–69 &bull; SK 2.1–2.2 (DSKP KSSM Sains Tingkatan 1)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menerangkan fungsi utama nukleus, sitoplasma, membran sel, mitokondria, dinding sel, vakuol dan kloroplas.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 1 &bull; Sains (1511) &bull; pp. 44–69</span>
+      </div>
+      <h2>Bab 2: Sel sebagai Unit Asas Hidupan (Cell as Basic Unit of Life)</h2>
+      <p class="kssm-mast-sum">Memahami struktur serta fungsi komponen sel haiwan dan sel tumbuhan, organisasi sel kepada organisma (Sel → Tisu → Organ → Sistem → Organisma) serta perbezaan antara respirasi sel dengan fotosintesis.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 2.1–2.2 (DSKP KSSM Sains Tingkatan 1)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menerangkan fungsi utama nukleus, sitoplasma, membran sel, mitokondria, dinding sel, vakuol dan kloroplas.">
       <span class="kssm-obj-num">01</span>
       <span>Menerangkan fungsi utama nukleus, sitoplasma, membran sel, mitokondria, dinding sel, vakuol dan kloroplas.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Membandingkan proses respirasi sel dengan proses fotosintesis termasuk syarat keperluan cahaya, klorofil, karbon dioksida dan air.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 44–69)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah sel bawang tidak pecah apabila diletakkan dalam air suling manakala sel pipi boleh membengkak dan pecah?" data-ex-solution="Sel bawang (sel tumbuhan) mempunyai dinding sel tegar daripada selulosa yang menyokong dan menghalangnya daripada pecah; sel haiwan hanya ada membran sel yang nipis." data-ex-takeaway="Ingat tiga struktur eksklusif sel tumbuhan: Dinding sel + Kloroplas + Vakuol besar.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Mengapakah sel bawang tidak pecah apabila diletakkan dalam air suling manakala sel pipi boleh membengkak dan pecah?" data-ex-solution="Sel bawang (sel tumbuhan) mempunyai dinding sel tegar daripada selulosa yang menyokong dan menghalangnya daripada pecah; sel haiwan hanya ada membran sel yang nipis." data-ex-takeaway="Ingat tiga struktur eksklusif sel tumbuhan: Dinding sel + Kloroplas + Vakuol besar.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Struktur dan Fungsi Sel Haiwan &amp; Sel Tumbuhan (SK 2.1)</h3>
       <p class="kssm-sub-summary">Robert Hooke mula memerhatikan sel pada tahun 1665. Sel merupakan unit asas hidupan yang berfungsi seperti kilang mikroskopik menjalankan pertumbuhan, respirasi, pembiakan dan perkumuhan.</p>
       <ul class="kssm-kp-list"><li>Struktur SEPUNYA dalam sel haiwan &amp; tumbuhan: Nukleus (mengawal semua aktiviti sel; mengandungi DNA), Sitoplasma (medium tindak balas kimia), Membran sel (mengawal pergerakan bahan keluar masuk sel) dan Mitokondria (menjana tenaga melalui respirasi sel).</li><li>Struktur KHUSUS sel tumbuhan: Dinding sel daripada selulosa (memberi bentuk tetap dan sokongan mekanikal), Kloroplas berisi klorofil (menyerap cahaya untuk fotosintesis) dan Vakuol besar (menyimpan sap sel, garam dan gula).</li><li>Sel haiwan tidak mempunyai dinding sel atau kloroplas, bentuknya tidak tetap dan vakuolnya kecil atau tiada.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah sel bawang tidak pecah apabila diletakkan dalam air suling manakala sel pipi boleh membengkak dan pecah?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Sel bawang (sel tumbuhan) mempunyai dinding sel tegar daripada selulosa yang menyokong dan menghalangnya daripada pecah; sel haiwan hanya ada membran sel yang nipis.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Ingat tiga struktur eksklusif sel tumbuhan: Dinding sel + Kloroplas + Vakuol besar.</p>
+        <p><strong>Contoh:</strong> Mengapakah sel bawang tidak pecah apabila diletakkan dalam air suling manakala sel pipi boleh membengkak dan pecah?</p>
+        <p>Penyelesaian: Sel bawang (sel tumbuhan) mempunyai dinding sel tegar daripada selulosa yang menyokong dan menghalangnya daripada pecah; sel haiwan hanya ada membran sel yang nipis.</p>
+        <p class="kssm-takeaway">Tip Penting: Ingat tiga struktur eksklusif sel tumbuhan: Dinding sel + Kloroplas + Vakuol besar.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Apakah keunikan Euglena sp. atau Chlamydomonas sp. berbanding Amoeba sp.?" data-ex-solution="Chlamydomonas sp. dan Euglena sp. mengandungi kloroplas untuk membuat makanan sendiri melalui fotosintesis, manakala Amoeba sp. menangkap makanan secara fagositosis." data-ex-takeaway="Jangan silap: walaupun bersel satu, Chlamydomonas mempunyai klorofil seperti tumbuhan.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Apakah keunikan Euglena sp. atau Chlamydomonas sp. berbanding Amoeba sp.?" data-ex-solution="Chlamydomonas sp. dan Euglena sp. mengandungi kloroplas untuk membuat makanan sendiri melalui fotosintesis, manakala Amoeba sp. menangkap makanan secara fagositosis." data-ex-takeaway="Jangan silap: walaupun bersel satu, Chlamydomonas mempunyai klorofil seperti tumbuhan.">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Organisma Unisel, Multisel dan Pengkhususan Sel (SK 2.1)</h3>
       <p class="kssm-sub-summary">Hidupan dikelaskan mengikut bilangan sel kepada organisma unisel (satu sel tunggal yang melaksanakan semua proses hidup) dan multisel (banyak sel yang mengalami pengkhususan fungsi).</p>
       <ul class="kssm-kp-list"><li>Contoh organisma unisel: Amoeba sp. dan Paramecium sp. (haiwan unisel), Yis, serta Chlamydomonas sp. dan Euglena sp. (boleh berfotosintesis seperti tumbuhan).</li><li>Contoh organisma multisel: Spirogyra sp., Hydra sp., cendawan mukor, tumbuhan berbunga dan manusia.</li><li>Sel khusus manusia: Sel darah merah (bentuk dwicekung tanpa nukleus mengangkut oksigen), sel saraf (bercabang panjang menghantar impuls), sel epitelium dan sel pengawal pada stoma tumbuhan.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah keunikan Euglena sp. atau Chlamydomonas sp. berbanding Amoeba sp.?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Chlamydomonas sp. dan Euglena sp. mengandungi kloroplas untuk membuat makanan sendiri melalui fotosintesis, manakala Amoeba sp. menangkap makanan secara fagositosis.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Jangan silap: walaupun bersel satu, Chlamydomonas mempunyai klorofil seperti tumbuhan.</p>
+        <p><strong>Contoh:</strong> Apakah keunikan Euglena sp. atau Chlamydomonas sp. berbanding Amoeba sp.?</p>
+        <p>Penyelesaian: Chlamydomonas sp. dan Euglena sp. mengandungi kloroplas untuk membuat makanan sendiri melalui fotosintesis, manakala Amoeba sp. menangkap makanan secara fagositosis.</p>
+        <p class="kssm-takeaway">Tip Penting: Jangan silap: walaupun bersel satu, Chlamydomonas mempunyai klorofil seperti tumbuhan.</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Susun komponen berikut mengikut urutan organisasi sel menaik: Sistem pencernaan, Sel otot licin, Usus kecil, Tisu otot." data-ex-solution="Sel otot licin → Tisu otot → Usus kecil (Organ) → Sistem pencernaan." data-ex-takeaway="Pastikan anda tahu membezakan contoh &#39;tisu&#39; (kumpulan sel sama jenis) daripada &#39;organ&#39; (gabungan beberapa tisu berbeza).">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Dalam organisma multisel, sel yang serupa bergabung membentuk tahap organisasi lebih tinggi untuk bekerjasama menjalankan fungsi tubuh dengan cekap.</p>
       <ul class="kssm-kp-list"><li>Hierarki Organisasi Sel: Sel → Tisu → Organ → Sistem → Organisma.</li><li>Contoh haiwan: Sel epitelium → Tisu epitelium → Perut (organ pencernaan bersama tisu otot &amp; saraf) → Sistem pencernaan → Manusia.</li><li>Sistem penting manusia: Sistem saraf (otak &amp; impuls), sistem peredaran darah (jantung &amp; salur darah), sistem respirasi (peparu), sistem perkumuhan (ginjal &amp; kulit), sistem integumen (melindungi daripada dehidrasi) dan sistem endokrin (hormon).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Susun komponen berikut mengikut urutan organisasi sel menaik: Sistem pencernaan, Sel otot licin, Usus kecil, Tisu otot.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Sel otot licin → Tisu otot → Usus kecil (Organ) → Sistem pencernaan.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pastikan anda tahu membezakan contoh &#39;tisu&#39; (kumpulan sel sama jenis) daripada &#39;organ&#39; (gabungan beberapa tisu berbeza).</p>
+        <p><strong>Contoh:</strong> Susun komponen berikut mengikut urutan organisasi sel menaik: Sistem pencernaan, Sel otot licin, Usus kecil, Tisu otot.</p>
+        <p>Penyelesaian: Sel otot licin → Tisu otot → Usus kecil (Organ) → Sistem pencernaan.</p>
+        <p class="kssm-takeaway">Tip Penting: Pastikan anda tahu membezakan contoh &#39;tisu&#39; (kumpulan sel sama jenis) daripada &#39;organ&#39; (gabungan beberapa tisu berbeza).</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Dalam eksperimen daun bervariegasi (berwarna hijau dan putih), bahagian manakah bertukar biru tua apabila diuji dengan larutan iodin selepas terdedah cahaya?" data-ex-solution="Hanya bahagian hijau sahaja yang bertukar menjadi biru tua kerana ia mengandungi klorofil untuk menjalankan fotosintesis dan menghasilkan kanji." data-ex-takeaway="Fotosintesis membebaskan oksigen dan menyerap karbon dioksida — tepat berlawanan dengan respirasi sel.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Dalam eksperimen daun bervariegasi (berwarna hijau dan putih), bahagian manakah bertukar biru tua apabila diuji dengan larutan iodin selepas terdedah cahaya?" data-ex-solution="Hanya bahagian hijau sahaja yang bertukar menjadi biru tua kerana ia mengandungi klorofil untuk menjalankan fotosintesis dan menghasilkan kanji." data-ex-takeaway="Fotosintesis membebaskan oksigen dan menyerap karbon dioksida — tepat berlawanan dengan respirasi sel.">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Respirasi Sel dan Fotosintesis (SK 2.2)</h3>
       <p class="kssm-sub-summary">Respirasi sel dan fotosintesis ialah dua proses biokimia yang saling melengkapi dalam kitar oksigen dan karbon dioksida serta pemindahan tenaga dalam alam semula jadi.</p>
       <ul class="kssm-kp-list"><li>Respirasi sel berlaku di dalam mitokondria semua sel hidup (siang dan malam): Glukosa + Oksigen → Karbon dioksida + Air + Tenaga.</li><li>Fotosintesis berlaku hanya pada sel berklorofil ketika ada cahaya: Karbon dioksida + Air —(Cahaya + Klorofil)→ Glukosa (disimpan sebagai kanji) + Oksigen.</li><li>Ujian kehadiran kanji pada daun menggunakan larutan iodin bertukar daripada perang kepada biru tua/hitam (Eksperimen 2.1–2.4 menguji keperluan cahaya, klorofil, CO₂ dan air).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Dalam eksperimen daun bervariegasi (berwarna hijau dan putih), bahagian manakah bertukar biru tua apabila diuji dengan larutan iodin selepas terdedah cahaya?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Hanya bahagian hijau sahaja yang bertukar menjadi biru tua kerana ia mengandungi klorofil untuk menjalankan fotosintesis dan menghasilkan kanji.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Fotosintesis membebaskan oksigen dan menyerap karbon dioksida — tepat berlawanan dengan respirasi sel.</p>
+        <p><strong>Contoh:</strong> Dalam eksperimen daun bervariegasi (berwarna hijau dan putih), bahagian manakah bertukar biru tua apabila diuji dengan larutan iodin selepas terdedah cahaya?</p>
+        <p>Penyelesaian: Hanya bahagian hijau sahaja yang bertukar menjadi biru tua kerana ia mengandungi klorofil untuk menjalankan fotosintesis dan menghasilkan kanji.</p>
+        <p class="kssm-takeaway">Tip Penting: Fotosintesis membebaskan oksigen dan menyerap karbon dioksida — tepat berlawanan dengan respirasi sel.</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Menulis fotosintesis hanya menghasilkan kanji secara langsung tanpa menyebut glukosa." data-m-correction="Fotosintesis menghasilkan glukosa dahulu yang kemudian disimpan dalam bentuk kanji di dalam daun." data-m-tip="Dalam persamaan perkataan: Karbon dioksida + Air → Glukosa + Oksigen.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis fotosintesis hanya menghasilkan kanji secara langsung tanpa menyebut glukosa.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Fotosintesis menghasilkan glukosa dahulu yang kemudian disimpan dalam bentuk kanji di dalam daun.</p>
-      <p><strong>Tip Skor Exam:</strong> Dalam persamaan perkataan: Karbon dioksida + Air → Glukosa + Oksigen.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menulis fotosintesis hanya menghasilkan kanji secara langsung tanpa menyebut glukosa." data-m-correction="Fotosintesis menghasilkan glukosa dahulu yang kemudian disimpan dalam bentuk kanji di dalam daun." data-m-tip="Dalam persamaan perkataan: Karbon dioksida + Air → Glukosa + Oksigen.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Menulis fotosintesis hanya menghasilkan kanji secara langsung tanpa menyebut glukosa.</p>
+      <p class="kssm-m-good">TEPAT: Fotosintesis menghasilkan glukosa dahulu yang kemudian disimpan dalam bentuk kanji di dalam daun.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Dalam persamaan perkataan: Karbon dioksida + Air → Glukosa + Oksigen.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menganggap tumbuhan tidak menjalankan respirasi sel pada waktu siang." data-m-correction="Tumbuhan menjalankan respirasi sel 24 jam (siang dan malam) di dalam mitokondria untuk tenaga hidupnya." data-m-tip="Pada waktu siang yang cerah, kadar fotosintesis jauh melebihi kadar respirasi.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap tumbuhan tidak menjalankan respirasi sel pada waktu siang.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Tumbuhan menjalankan respirasi sel 24 jam (siang dan malam) di dalam mitokondria untuk tenaga hidupnya.</p>
-      <p><strong>Tip Skor Exam:</strong> Pada waktu siang yang cerah, kadar fotosintesis jauh melebihi kadar respirasi.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menganggap tumbuhan tidak menjalankan respirasi sel pada waktu siang.</p>
+      <p class="kssm-m-good">TEPAT: Tumbuhan menjalankan respirasi sel 24 jam (siang dan malam) di dalam mitokondria untuk tenaga hidupnya.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Pada waktu siang yang cerah, kadar fotosintesis jauh melebihi kadar respirasi.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mengelirukan peranan nukleus dengan mitokondria dalam jadual struktur sel." data-m-correction="Nukleus mengawal semua aktiviti sel (ibarat otak sel); mitokondria menjana tenaga (ibarat stesen janakuasa sel)." data-m-tip="M-itokondria = M-enjanaan tenaga.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan peranan nukleus dengan mitokondria dalam jadual struktur sel.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Nukleus mengawal semua aktiviti sel (ibarat otak sel); mitokondria menjana tenaga (ibarat stesen janakuasa sel).</p>
-      <p><strong>Tip Skor Exam:</strong> M-itokondria = M-enjanaan tenaga.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengelirukan peranan nukleus dengan mitokondria dalam jadual struktur sel.</p>
+      <p class="kssm-m-good">TEPAT: Nukleus mengawal semua aktiviti sel (ibarat otak sel); mitokondria menjana tenaga (ibarat stesen janakuasa sel).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: M-itokondria = M-enjanaan tenaga.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

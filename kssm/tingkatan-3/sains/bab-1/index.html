@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Sains Bab 1","item":"https://etutor.my/kssm/tingkatan-3/sains/bab-1/"}]},{"@type":"LearningResource","name":"Sains Tingkatan 3 Bab 1: Rangsangan dan Gerak Balas (Saraf, Organ Deria & Tropisme)","description":"Memahami sistem saraf pusat dan periferi, laluan impuls tindakan terkawal vs luar kawal (arka refleks), struktur serta mekanisme 5 organ deria (mata, telinga, hidung, kulit, lidah), pembetulan kecacatan mata, tropisme tumbuhan dan penglihatan stereoskopik vs monokular.","url":"https://etutor.my/kssm/tingkatan-3/sains/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sains KSSM (1511)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sains" data-tpl="sains" data-subject-slug="sains" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_sains_Bab_1.pdf" data-form-label="Tingkatan 3" data-subject-name="Sains" data-subject-code="1511" data-pages="m.s. 2–43" data-dskp="SK 1.1–1.4 (DSKP KSSM Sains Tingkatan 3)" data-chapter-heading="Bab 1: Rangsangan dan Gerak Balas (Saraf, Organ Deria &amp; Tropisme)" data-hero-summary="Memahami sistem saraf pusat dan periferi, laluan impuls tindakan terkawal vs luar kawal (arka refleks), struktur serta mekanisme 5 organ deria (mata, telinga, hidung, kulit, lidah), pembetulan kecacatan mata, tropisme tumbuhan dan penglihatan stereoskopik vs monokular." style="--tpl-accent:#047857;--tpl-soft:#ecfdf5;--tpl-border:#6ee7b7;--tpl-ink:#064e3b;--tpl-bg:url('../../../../images/nota-templates/sains.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 1: Rangsangan dan Gerak Balas (Saraf, Organ Deria &amp; Tropisme)</h2>
-          <p class="kssm-sublead">Memahami sistem saraf pusat dan periferi, laluan impuls tindakan terkawal vs luar kawal (arka refleks), struktur serta mekanisme 5 organ deria (mata, telinga, hidung, kulit, lidah), pembetulan kecacatan mata, tropisme tumbuhan dan penglihatan stereoskopik vs monokular.</p>
-          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Sains (1511) &bull; m.s. 2–43 &bull; SK 1.1–1.4 (DSKP KSSM Sains Tingkatan 3)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menerangkan struktur sistem saraf manusia (pusat: otak &amp; saraf tunjang; periferi: saraf kranium &amp; spina) serta aliran impuls tindakan terkawal dan luar kawal.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 3 &bull; Sains (1511) &bull; m.s. 2–43</span>
+      </div>
+      <h2>Bab 1: Rangsangan dan Gerak Balas (Saraf, Organ Deria &amp; Tropisme)</h2>
+      <p class="kssm-mast-sum">Memahami sistem saraf pusat dan periferi, laluan impuls tindakan terkawal vs luar kawal (arka refleks), struktur serta mekanisme 5 organ deria (mata, telinga, hidung, kulit, lidah), pembetulan kecacatan mata, tropisme tumbuhan dan penglihatan stereoskopik vs monokular.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.1–1.4 (DSKP KSSM Sains Tingkatan 3)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menerangkan struktur sistem saraf manusia (pusat: otak &amp; saraf tunjang; periferi: saraf kranium &amp; spina) serta aliran impuls tindakan terkawal dan luar kawal.">
       <span class="kssm-obj-num">01</span>
       <span>Menerangkan struktur sistem saraf manusia (pusat: otak &amp; saraf tunjang; periferi: saraf kranium &amp; spina) serta aliran impuls tindakan terkawal dan luar kawal.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Membandingkan gerak balas tropisme (fototropisme, geotropisme, hidrotropisme, tigmotropisme) dan nastik tumbuhan serta penglihatan stereoskopik vs monokular haiwan.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–43)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah menarik tangan secara spontan daripada cerek panas dikawal oleh saraf tunjang dan bukan menunggu tafsiran otak dahulu?" data-ex-solution="Laluan pendek arka refleks melalui saraf tunjang memendekkan masa tindak balas supaya otot segera menarik tangan sebelum tisu melecur teruk." data-ex-takeaway="Otak = tindakan terkawal; Medula oblongata = autonomi hidup (nafas/jantung); Saraf tunjang = refleks pantas kecemasan.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Mengapakah menarik tangan secara spontan daripada cerek panas dikawal oleh saraf tunjang dan bukan menunggu tafsiran otak dahulu?" data-ex-solution="Laluan pendek arka refleks melalui saraf tunjang memendekkan masa tindak balas supaya otot segera menarik tangan sebelum tisu melecur teruk." data-ex-takeaway="Otak = tindakan terkawal; Medula oblongata = autonomi hidup (nafas/jantung); Saraf tunjang = refleks pantas kecemasan.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Sistem Saraf Manusia: Tindakan Terkawal vs Luar Kawal (SK 1.1)</h3>
       <p class="kssm-sub-summary">Sistem saraf mengesan rangsangan luar/dalam, menghantar maklumat dalam bentuk impuls elektrik, mentafsirnya dan mengkoordinasi gerak balas pantas.</p>
       <ul class="kssm-kp-list"><li>Sistem saraf terbahagi kepada Sistem Saraf Pusat (otak dan saraf tunjang) dan Sistem Saraf Periferi (saraf kranium dan saraf spina).</li><li>Tindakan Terkawal (disedari, dikawal oleh otak): Rangsangan → Reseptor → Otak (tafsir) → Efektor (otot/kelenjar) → Gerak balas (cth: menangkap pembaris jatuh).</li><li>Tindakan Luar Kawal (serta-merta tanpa berfikir): (a) Melibatkan medula oblongata (denyutan jantung, pernafasan, peristalsis); (b) Melibatkan saraf tunjang / tindakan refleks (menarik tangan daripada benda panas melalui laluan Reseptor → Saraf tunjang → Efektor).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah menarik tangan secara spontan daripada cerek panas dikawal oleh saraf tunjang dan bukan menunggu tafsiran otak dahulu?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Laluan pendek arka refleks melalui saraf tunjang memendekkan masa tindak balas supaya otot segera menarik tangan sebelum tisu melecur teruk.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Otak = tindakan terkawal; Medula oblongata = autonomi hidup (nafas/jantung); Saraf tunjang = refleks pantas kecemasan.</p>
+        <p><strong>Contoh:</strong> Mengapakah menarik tangan secara spontan daripada cerek panas dikawal oleh saraf tunjang dan bukan menunggu tafsiran otak dahulu?</p>
+        <p>Penyelesaian: Laluan pendek arka refleks melalui saraf tunjang memendekkan masa tindak balas supaya otot segera menarik tangan sebelum tisu melecur teruk.</p>
+        <p class="kssm-takeaway">Tip Penting: Otak = tindakan terkawal; Medula oblongata = autonomi hidup (nafas/jantung); Saraf tunjang = refleks pantas kecemasan.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Apakah fungsi salur separuh bulat dan koklea di telinga dalam? Yang manakah terlibat secara langsung dalam pendengaran?" data-ex-solution="Koklea mengesan getaran bunyi dan menukarkannya kepada impuls saraf untuk pendengaran, manakala salur separuh bulat berfungsi mengesan kedudukan kepala untuk keseimbangan badan." data-ex-takeaway="Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Apakah fungsi salur separuh bulat dan koklea di telinga dalam? Yang manakah terlibat secara langsung dalam pendengaran?" data-ex-solution="Koklea mengesan getaran bunyi dan menukarkannya kepada impuls saraf untuk pendengaran, manakala salur separuh bulat berfungsi mengesan kedudukan kepala untuk keseimbangan badan." data-ex-takeaway="Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Lima Organ Deria, Mekanisme &amp; Kecacatan Mata (SK 1.2)</h3>
       <p class="kssm-sub-summary">Manusia mempunyai lima organ deria berreseptor khusus. Sebarang perubahan kelengkungan kanta, panjang bebola mata atau kerosakan struktur telinga boleh dibetulkan dengan alat optik atau akustik.</p>
       <ul class="kssm-kp-list"><li>Laluan Cahaya ke Mata: Kornea → Gelemair → Anak mata (dikawal Iris) → Kanta mata → Gelemaca → Retina (sel rod untuk cahaya malap/hitam putih; sel kon untuk warna R/G/B) → Saraf optik → Otak. Titik Buta tiada fotoreseptor.</li><li>Laluan Bunyi di Telinga: Cuping → Salur telinga → Gegendang telinga → Osikel (tulang kecil menguatkan getaran) → Jendela bujur → Koklea (mengubah getaran kepada impuls saraf) → Saraf auditori → Otak. Tiub Eustachio seimbangkan tekanan udara; salur separuh bulat mengawal keseimbangan badan (bukan pendengaran!).</li><li>Kecacatan Penglihatan: Rabun Jauh (imej fokus DI HADAPAN retina kerana bebola mata terlalu panjang / kanta terlalu tebal → dibetulkan dengan Kanta Cekung); Rabun Dekat (imej fokus DI BELAKANG retina → Kanta Cembung); Astigmatisme (kornea/kanta tidak sekata → Kanta Silinder).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah fungsi salur separuh bulat dan koklea di telinga dalam? Yang manakah terlibat secara langsung dalam pendengaran?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Koklea mengesan getaran bunyi dan menukarkannya kepada impuls saraf untuk pendengaran, manakala salur separuh bulat berfungsi mengesan kedudukan kepala untuk keseimbangan badan.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).</p>
+        <p><strong>Contoh:</strong> Apakah fungsi salur separuh bulat dan koklea di telinga dalam? Yang manakah terlibat secara langsung dalam pendengaran?</p>
+        <p>Penyelesaian: Koklea mengesan getaran bunyi dan menukarkannya kepada impuls saraf untuk pendengaran, manakala salur separuh bulat berfungsi mengesan kedudukan kepala untuk keseimbangan badan.</p>
+        <p class="kssm-takeaway">Tip Penting: Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Mengapakah orang buta menggunakan hujung jari dan bukannya tapak tangan atau siku untuk membaca tulisan Braille?" data-ex-solution="Kerana kulit pada hujung jari mempunyai lapisan epidermis paling nipis dan taburan reseptor sentuhan paling banyak serta rapat berbanding tapak tangan." data-ex-takeaway="Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Kulit mengesan lima rangsangan asas, hidung mengesan bahan kimia meruap di udara (~10 juta sel deria bau), manakala lidah mengesan lima rasa termasuk umami.</p>
       <ul class="kssm-kp-list"><li>Lima reseptor kulit: reseptor sakit (paling dekat permukaan epidermis), sentuhan (tebal di hujung jari untuk membaca Braille &amp; nipis di siku), tekanan (dalam dermis), panas dan sejuk.</li><li>Lidah mengesan manis, masam, masin, pahit dan umami (rasa lazat seperti daging/keju). Semua kawasan lidah peka terhadap kelima-lima rasa tetapi dengan kepekaan berbeza. Bau banyak membantu deria rasa makanan ketika tidak selsema.</li><li>Ilusi optik dan bintik buta menunjukkan had deria manusia yang dibantu peralatan sains seperti mikroskop, teleskop dan stetoskop.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah orang buta menggunakan hujung jari dan bukannya tapak tangan atau siku untuk membaca tulisan Braille?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana kulit pada hujung jari mempunyai lapisan epidermis paling nipis dan taburan reseptor sentuhan paling banyak serta rapat berbanding tapak tangan.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.</p>
+        <p><strong>Contoh:</strong> Mengapakah orang buta menggunakan hujung jari dan bukannya tapak tangan atau siku untuk membaca tulisan Braille?</p>
+        <p>Penyelesaian: Kerana kulit pada hujung jari mempunyai lapisan epidermis paling nipis dan taburan reseptor sentuhan paling banyak serta rapat berbanding tapak tangan.</p>
+        <p class="kssm-takeaway">Tip Penting: Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Biji benih kacang hijau diletakkan di atas kasa dawai di atas kalsium klorida kontang (Eksperimen 1.2). Ke arah manakah akarnya tumbuh dan mengapa?" data-ex-solution="Jika terdapat sumber air atau kapas lembap berdekatan, akar tumbuh ke arah lembapan (hidrotropisme positif) mengatasi tarikan graviti jika kelembapan terhad." data-ex-takeaway="Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya hanya satu sisi kekal lembap!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Biji benih kacang hijau diletakkan di atas kasa dawai di atas kalsium klorida kontang (Eksperimen 1.2). Ke arah manakah akarnya tumbuh dan mengapa?" data-ex-solution="Jika terdapat sumber air atau kapas lembap berdekatan, akar tumbuh ke arah lembapan (hidrotropisme positif) mengatasi tarikan graviti jika kelembapan terhad." data-ex-takeaway="Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya hanya satu sisi kekal lembap!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Tropisme Tumbuhan &amp; Penglihatan Haiwan (SK 1.3–1.4)</h3>
       <p class="kssm-sub-summary">Tumbuhan bergerak balas secara perlahan melalui pertumbuhan berarah (tropisme) atau pantas tanpa arah (gerak balas nastik), manakala haiwan beradaptasi melalui kedudukan mata stereoskopik atau monokular.</p>
       <ul class="kssm-kp-list"><li>Tropisme positif (tumbuh ke arah rangsangan) vs negatif (menjauhi): Pucuk = fototropisme positif &amp; geotropisme negatif; Akar = geotropisme positif &amp; hidrotropisme positif; Sulur paut = tigmotropisme (sentuhan). Gerak balas nastik (daun pokok semalu) ialah pantas dan tidak bergantung arah rangsangan.</li><li>Penglihatan Stereoskopik (pemangsa: harimau, helang, manusia): kedua-dua mata di hadapan kepala, medan penglihatan bertindih/sempit, penglihatan 3D tepat untuk menganggar jarak.</li><li>Penglihatan Monokular (mangsa: arnab, kambing, ikan): mata di sisi kepala, medan penglihatan sangat luas (hampir 360°) untuk mengesan pemangsa dari pelbagai arah, imej 2D kurang tepat menganggar jarak.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Biji benih kacang hijau diletakkan di atas kasa dawai di atas kalsium klorida kontang (Eksperimen 1.2). Ke arah manakah akarnya tumbuh dan mengapa?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Jika terdapat sumber air atau kapas lembap berdekatan, akar tumbuh ke arah lembapan (hidrotropisme positif) mengatasi tarikan graviti jika kelembapan terhad.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya hanya satu sisi kekal lembap!</p>
+        <p><strong>Contoh:</strong> Biji benih kacang hijau diletakkan di atas kasa dawai di atas kalsium klorida kontang (Eksperimen 1.2). Ke arah manakah akarnya tumbuh dan mengapa?</p>
+        <p>Penyelesaian: Jika terdapat sumber air atau kapas lembap berdekatan, akar tumbuh ke arah lembapan (hidrotropisme positif) mengatasi tarikan graviti jika kelembapan terhad.</p>
+        <p class="kssm-takeaway">Tip Penting: Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya hanya satu sisi kekal lembap!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung)." data-m-correction="Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya)." data-m-tip="Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung).</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).</p>
-      <p><strong>Tip Skor Exam:</strong> Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung)." data-m-correction="Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya)." data-m-tip="Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung).</p>
+      <p class="kssm-m-good">TEPAT: Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyatakan salur separuh bulat dan tiub Eustachio membantu proses mendengar bunyi." data-m-correction="Kedua-duanya bahagian telinga yang TIDAK terlibat dalam mekanisme pendengaran: tiub Eustachio mengimbang tekanan udara dan salur separuh bulat mengawal keseimbangan badan." data-m-tip="Senarai laluan bunyi sebenar berakhir di Koklea → Saraf Auditori.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyatakan salur separuh bulat dan tiub Eustachio membantu proses mendengar bunyi.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kedua-duanya bahagian telinga yang TIDAK terlibat dalam mekanisme pendengaran: tiub Eustachio mengimbang tekanan udara dan salur separuh bulat mengawal keseimbangan badan.</p>
-      <p><strong>Tip Skor Exam:</strong> Senarai laluan bunyi sebenar berakhir di Koklea → Saraf Auditori.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyatakan salur separuh bulat dan tiub Eustachio membantu proses mendengar bunyi.</p>
+      <p class="kssm-m-good">TEPAT: Kedua-duanya bahagian telinga yang TIDAK terlibat dalam mekanisme pendengaran: tiub Eustachio mengimbang tekanan udara dan salur separuh bulat mengawal keseimbangan badan.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Senarai laluan bunyi sebenar berakhir di Koklea → Saraf Auditori.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyatakan daun semalu menguncup ialah contoh tigmotropisme." data-m-correction="Daun semalu yang menguncup pantas bila disentuh ialah GERAK BALAS NASTIK (arah kuncup sentiasa sama tidak kira dari mana disentuh); sulur paut yang melilit kayu sokongan ialah tigmotropisme!" data-m-tip="Pantas &amp; arah tetap = Nastik; Pertumbuhan perlahan = Tropisme.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyatakan daun semalu menguncup ialah contoh tigmotropisme.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Daun semalu yang menguncup pantas bila disentuh ialah GERAK BALAS NASTIK (arah kuncup sentiasa sama tidak kira dari mana disentuh); sulur paut yang melilit kayu sokongan ialah tigmotropisme!</p>
-      <p><strong>Tip Skor Exam:</strong> Pantas &amp; arah tetap = Nastik; Pertumbuhan perlahan = Tropisme.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyatakan daun semalu menguncup ialah contoh tigmotropisme.</p>
+      <p class="kssm-m-good">TEPAT: Daun semalu yang menguncup pantas bila disentuh ialah GERAK BALAS NASTIK (arah kuncup sentiasa sama tidak kira dari mana disentuh); sulur paut yang melilit kayu sokongan ialah tigmotropisme!</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Pantas &amp; arah tetap = Nastik; Pertumbuhan perlahan = Tropisme.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

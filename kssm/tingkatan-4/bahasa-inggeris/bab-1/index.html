@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Bahasa Inggeris Bab 1","item":"https://etutor.my/kssm/tingkatan-4/bahasa-inggeris/bab-1/"}]},{"@type":"LearningResource","name":"Bahasa Inggeris Tingkatan 4 Bab 1: Module 1: Let's Chat (Present Tenses, Comparisons & Used To)","description":"Master core CEFR B1 Mid grammar in Full Blast! Plus 4 Module 1: Present Simple vs. Present Continuous (and stative verbs), comparisons ('-er / more', 'as...as', superlatives), past habits with 'used to', and 'be / get used to + -ing' alongside digital communication vocabulary.","url":"https://etutor.my/kssm/tingkatan-4/bahasa-inggeris/bab-1/","inLanguage":"en","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Inggeris KSSM (1119)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -332,16 +341,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-inggeris" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_bahasa-inggeris_Bab_1.pdf" data-form-label="Tingkatan 4" data-subject-name="Bahasa Inggeris" data-subject-code="1119" data-pages="pp. 7–20" data-dskp="CEFR B1 Mid • Full Blast! Plus 4 Module 1 (DSKP KSSM BI T4)" data-chapter-heading="Unit 1: Module 1: Let&#39;s Chat (Present Tenses, Comparisons &amp; Used To)" data-hero-summary="Master core CEFR B1 Mid grammar in Full Blast! Plus 4 Module 1: Present Simple vs. Present Continuous (and stative verbs), comparisons (&#39;-er / more&#39;, &#39;as...as&#39;, superlatives), past habits with &#39;used to&#39;, and &#39;be / get used to + -ing&#39; alongside digital communication vocabulary." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Unit 1: Module 1: Let&#39;s Chat (Present Tenses, Comparisons &amp; Used To)</h2>
-          <p class="kssm-sublead">Master core CEFR B1 Mid grammar in Full Blast! Plus 4 Module 1: Present Simple vs. Present Continuous (and stative verbs), comparisons (&#39;-er / more&#39;, &#39;as...as&#39;, superlatives), past habits with &#39;used to&#39;, and &#39;be / get used to + -ing&#39; alongside digital communication vocabulary.</p>
-          <p class="kssm-sheet-meta">Tingkatan 4 &bull; Bahasa Inggeris (1119) &bull; pp. 7–20 &bull; CEFR B1 Mid • Full Blast! Plus 4 Module 1 (DSKP KSSM BI T4)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Contrast Present Simple (permanent facts, habits) with Present Continuous (actions in progress, temporary changes) and identify stative verbs that resist continuous &#39;-ing&#39;.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 4 &bull; Bahasa Inggeris (1119) &bull; pp. 7–20</span>
+      </div>
+      <h2>Unit 1: Module 1: Let&#39;s Chat (Present Tenses, Comparisons &amp; Used To)</h2>
+      <p class="kssm-mast-sum">Master core CEFR B1 Mid grammar in Full Blast! Plus 4 Module 1: Present Simple vs. Present Continuous (and stative verbs), comparisons (&#39;-er / more&#39;, &#39;as...as&#39;, superlatives), past habits with &#39;used to&#39;, and &#39;be / get used to + -ing&#39; alongside digital communication vocabulary.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: CEFR B1 Mid • Full Blast! Plus 4 Module 1 (DSKP KSSM BI T4)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Contrast Present Simple (permanent facts, habits) with Present Continuous (actions in progress, temporary changes) and identify stative verbs that resist continuous &#39;-ing&#39;.">
       <span class="kssm-obj-num">01</span>
       <span>Contrast Present Simple (permanent facts, habits) with Present Continuous (actions in progress, temporary changes) and identify stative verbs that resist continuous &#39;-ing&#39;.</span>
     </div>
@@ -357,30 +369,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Form nouns ending in &#39;-ion&#39;, &#39;-ation&#39; and &#39;-ment&#39; (word building) and use ICT verbs (&#39;scroll&#39;, &#39;paste&#39;, &#39;delete&#39;, &#39;crash&#39;, &#39;print&#39;) accurately.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (pp. 7–20)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Choose the right tense: &#39;Amir usually ______ (check) his messages after dinner, but tonight he ______ (study) offline so he ______ (need) quiet.&#39;" data-ex-solution="&#39;checks&#39; (routine), &#39;is studying&#39; (temporary action tonight), &#39;needs&#39; (stative verb — no &#39;-ing&#39;)." data-ex-takeaway="Always check if the verb expresses a state of mind/feeling/possession before adding &#39;-ing&#39;!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Choose the right tense: &#39;Amir usually ______ (check) his messages after dinner, but tonight he ______ (study) offline so he ______ (need) quiet.&#39;" data-ex-solution="&#39;checks&#39; (routine), &#39;is studying&#39; (temporary action tonight), &#39;needs&#39; (stative verb — no &#39;-ing&#39;)." data-ex-takeaway="Always check if the verb expresses a state of mind/feeling/possession before adding &#39;-ing&#39;!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Present Simple vs. Present Continuous &amp; Stative Verbs</h3>
       <p class="kssm-sub-summary">Module 1 opens with how technology changes the way we keep in touch. Choosing between Present Simple and Present Continuous depends on whether a situation is permanent or temporary/in progress, and whether the verb is a stative verb.</p>
       <ul class="kssm-kp-list"><li>Present Simple: habits, routines, permanent states (&#39;Young people hardly ever send paper letters&#39;; &#39;Social media connects families worldwide&#39;).</li><li>Present Continuous: actions happening right now or temporary changing trends (&#39;More teens are using voice notes nowadays&#39;; &#39;She is typing a reply right now&#39;).</li><li>Stative Verbs (see, like, want, seem, understand, need, believe, imagine, know, cost, own): normally NOT used in Present Continuous even when true now (&#39;I understand you&#39;, NEVER &#39;I am understanding&#39;). Watch sense/action pairs like &#39;think&#39; (opinion = stative) vs &#39;thinking about&#39; (mental action).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Choose the right tense: &#39;Amir usually ______ (check) his messages after dinner, but tonight he ______ (study) offline so he ______ (need) quiet.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;checks&#39; (routine), &#39;is studying&#39; (temporary action tonight), &#39;needs&#39; (stative verb — no &#39;-ing&#39;).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Always check if the verb expresses a state of mind/feeling/possession before adding &#39;-ing&#39;!</p>
+        <p><strong>Contoh:</strong> Choose the right tense: &#39;Amir usually ______ (check) his messages after dinner, but tonight he ______ (study) offline so he ______ (need) quiet.&#39;</p>
+        <p>Penyelesaian: &#39;checks&#39; (routine), &#39;is studying&#39; (temporary action tonight), &#39;needs&#39; (stative verb — no &#39;-ing&#39;).</p>
+        <p class="kssm-takeaway">Tip Penting: Always check if the verb expresses a state of mind/feeling/possession before adding &#39;-ing&#39;!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Complete using comparison: &#39;In 1983, DynaTAC phones were ______ (heavy) and ______ (expensive) than today&#39;s smartphones, and batteries weren&#39;t as ______ (reliable) as now.&#39;" data-ex-solution="&#39;heavier&#39;, &#39;more expensive&#39;, &#39;reliable&#39; (plain base adjective between &#39;as ... as&#39;)." data-ex-takeaway="Remember: &#39;as + BASE ADJECTIVE + as&#39; — never &#39;as heavier as&#39; or &#39;as more popular as&#39;!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Complete using comparison: &#39;In 1983, DynaTAC phones were ______ (heavy) and ______ (expensive) than today&#39;s smartphones, and batteries weren&#39;t as ______ (reliable) as now.&#39;" data-ex-solution="&#39;heavier&#39;, &#39;more expensive&#39;, &#39;reliable&#39; (plain base adjective between &#39;as ... as&#39;)." data-ex-takeaway="Remember: &#39;as + BASE ADJECTIVE + as&#39; — never &#39;as heavier as&#39; or &#39;as more popular as&#39;!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Comparisons: Comparatives, Superlatives &amp; &#39;as...as&#39;</h3>
       <p class="kssm-sub-summary">When comparing old phones like Martin Cooper&#39;s 1973/1983 Motorola DynaTAC (&#39;From Brick to Smartphone&#39;, p. 11) with modern devices, accurate comparison structures are essential.</p>
       <ul class="kssm-kp-list"><li>One-syllable adjectives take &#39;-er / -est&#39; (lighter, the fastest); multi-syllable adjectives take &#39;more/less ... than&#39; and &#39;the most/least ...&#39; (&#39;more convenient than&#39;, &#39;the most popular&#39;). Irregular: good–better–best, bad–worse–worst, far–farther/further.</li><li>Equality &amp; inequality: &#39;as + adjective + as&#39; (&#39;Sending emails isn&#39;t as popular as instant messaging today&#39;). Note: NEVER use comparative &#39;-er/more&#39; inside &#39;as ___ as&#39;!</li><li>Modifiers before comparatives add nuance: &#39;much / far / a lot easier&#39;, &#39;a bit / slightly cheaper&#39;.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Complete using comparison: &#39;In 1983, DynaTAC phones were ______ (heavy) and ______ (expensive) than today&#39;s smartphones, and batteries weren&#39;t as ______ (reliable) as now.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;heavier&#39;, &#39;more expensive&#39;, &#39;reliable&#39; (plain base adjective between &#39;as ... as&#39;).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Remember: &#39;as + BASE ADJECTIVE + as&#39; — never &#39;as heavier as&#39; or &#39;as more popular as&#39;!</p>
+        <p><strong>Contoh:</strong> Complete using comparison: &#39;In 1983, DynaTAC phones were ______ (heavy) and ______ (expensive) than today&#39;s smartphones, and batteries weren&#39;t as ______ (reliable) as now.&#39;</p>
+        <p>Penyelesaian: &#39;heavier&#39;, &#39;more expensive&#39;, &#39;reliable&#39; (plain base adjective between &#39;as ... as&#39;).</p>
+        <p class="kssm-takeaway">Tip Penting: Remember: &#39;as + BASE ADJECTIVE + as&#39; — never &#39;as heavier as&#39; or &#39;as more popular as&#39;!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Spot the difference: (A) &#39;I used to read print newspapers.&#39; vs (B) &#39;I am used to reading e-books on a tablet.&#39;" data-ex-solution="(A) Past habit that stopped (&#39;used to&#39; + base verb &#39;read&#39;). (B) Present familiarity (&#39;be used to&#39; + &#39;-ing&#39; &#39;reading&#39;)." data-ex-takeaway="No &#39;be/get&#39; = past habit + V1; Has &#39;be/get&#39; = familiarity + V-ing/Noun!">
@@ -389,42 +404,51 @@
       <p class="kssm-sub-summary">Module 1 tests both talking about discontinued past habits (&#39;used to&#39;) and getting comfortable with new technology (&#39;be/get used to&#39;).</p>
       <ul class="kssm-kp-list"><li>&#39;used to + BASE VERB&#39; (only past! No present &#39;use to&#39; for current habits): &#39;People used to carry coins for payphones, but they didn&#39;t use to stream videos.&#39; / &#39;Did your parents use to write letters?&#39; (Drop &#39;-d&#39; after &#39;did/didn&#39;t&#39;!).</li><li>&#39;be used to + NOUN / VERB-ING&#39; = be accustomed/comfortable with now: &#39;Students are used to attending online quizzes now.&#39;</li><li>&#39;get used to + NOUN / VERB-ING&#39; = gradually becoming comfortable: &#39;Grandpa soon got used to making video calls.&#39;</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Spot the difference: (A) &#39;I used to read print newspapers.&#39; vs (B) &#39;I am used to reading e-books on a tablet.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> (A) Past habit that stopped (&#39;used to&#39; + base verb &#39;read&#39;). (B) Present familiarity (&#39;be used to&#39; + &#39;-ing&#39; &#39;reading&#39;).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> No &#39;be/get&#39; = past habit + V1; Has &#39;be/get&#39; = familiarity + V-ing/Noun!</p>
+        <p><strong>Contoh:</strong> Spot the difference: (A) &#39;I used to read print newspapers.&#39; vs (B) &#39;I am used to reading e-books on a tablet.&#39;</p>
+        <p>Penyelesaian: (A) Past habit that stopped (&#39;used to&#39; + base verb &#39;read&#39;). (B) Present familiarity (&#39;be used to&#39; + &#39;-ing&#39; &#39;reading&#39;).</p>
+        <p class="kssm-takeaway">Tip Penting: No &#39;be/get&#39; = past habit + V1; Has &#39;be/get&#39; = familiarity + V-ing/Noun!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Convert the bracketed verbs into nouns: &#39;Video calling brings huge ______ (improve) to global ______ (communicate).&#39;" data-ex-solution="&#39;improvement&#39; and &#39;communication&#39;." data-ex-takeaway="Notice spelling shifts when adding &#39;-ation&#39; or &#39;-ion&#39; (drop silent &#39;-e&#39; in &#39;communicate → communication&#39;).">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Convert the bracketed verbs into nouns: &#39;Video calling brings huge ______ (improve) to global ______ (communicate).&#39;" data-ex-solution="&#39;improvement&#39; and &#39;communication&#39;." data-ex-takeaway="Notice spelling shifts when adding &#39;-ation&#39; or &#39;-ion&#39; (drop silent &#39;-e&#39; in &#39;communicate → communication&#39;).">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 ICT Vocabulary &amp; Word Building (-ion, -ation, -ment)</h3>
       <p class="kssm-sub-summary">Module 1 strengthens SPM essay and Part 2 vocabulary by transforming verbs into abstract nouns and mastering digital collocations.</p>
       <ul class="kssm-kp-list"><li>Word-building nouns: communicate → communication, inform → information, imagine → imagination, educate → education, connect → connection, entertain → entertainment, improve → improvement, equip → equipment.</li><li>Digital collocations (p. 10): scroll down a page, click an icon, paste text, save a document, crash unexpectedly, delete spam, print a draft.</li><li>Informal blog/profile writing: group details into clear categories (Interests, Daily Routine, Contact Preferences) and check tenses consistently.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Convert the bracketed verbs into nouns: &#39;Video calling brings huge ______ (improve) to global ______ (communicate).&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;improvement&#39; and &#39;communication&#39;.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Notice spelling shifts when adding &#39;-ation&#39; or &#39;-ion&#39; (drop silent &#39;-e&#39; in &#39;communicate → communication&#39;).</p>
+        <p><strong>Contoh:</strong> Convert the bracketed verbs into nouns: &#39;Video calling brings huge ______ (improve) to global ______ (communicate).&#39;</p>
+        <p>Penyelesaian: &#39;improvement&#39; and &#39;communication&#39;.</p>
+        <p class="kssm-takeaway">Tip Penting: Notice spelling shifts when adding &#39;-ation&#39; or &#39;-ion&#39; (drop silent &#39;-e&#39; in &#39;communicate → communication&#39;).</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Keeping &#39;-d&#39; on &#39;used to&#39; in questions and negatives: &#39;Did he used to have a Nokia phone?&#39; or &#39;I didn&#39;t used to chat online.&#39;" data-m-correction="Drop &#39;-d&#39; after &#39;did&#39; / &#39;didn&#39;t&#39;: &#39;Did he use to have...?&#39; and &#39;I didn&#39;t use to chat...&#39;." data-m-tip="Just like any regular past verb after &#39;did&#39;, &#39;used&#39; reverts to base &#39;use&#39;!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Keeping &#39;-d&#39; on &#39;used to&#39; in questions and negatives: &#39;Did he used to have a Nokia phone?&#39; or &#39;I didn&#39;t used to chat online.&#39;</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Drop &#39;-d&#39; after &#39;did&#39; / &#39;didn&#39;t&#39;: &#39;Did he use to have...?&#39; and &#39;I didn&#39;t use to chat...&#39;.</p>
-      <p><strong>Tip Skor Exam:</strong> Just like any regular past verb after &#39;did&#39;, &#39;used&#39; reverts to base &#39;use&#39;!</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Keeping &#39;-d&#39; on &#39;used to&#39; in questions and negatives: &#39;Did he used to have a Nokia phone?&#39; or &#39;I didn&#39;t used to chat online.&#39;" data-m-correction="Drop &#39;-d&#39; after &#39;did&#39; / &#39;didn&#39;t&#39;: &#39;Did he use to have...?&#39; and &#39;I didn&#39;t use to chat...&#39;." data-m-tip="Just like any regular past verb after &#39;did&#39;, &#39;used&#39; reverts to base &#39;use&#39;!">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Keeping &#39;-d&#39; on &#39;used to&#39; in questions and negatives: &#39;Did he used to have a Nokia phone?&#39; or &#39;I didn&#39;t used to chat online.&#39;</p>
+      <p class="kssm-m-good">TEPAT: Drop &#39;-d&#39; after &#39;did&#39; / &#39;didn&#39;t&#39;: &#39;Did he use to have...?&#39; and &#39;I didn&#39;t use to chat...&#39;.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Just like any regular past verb after &#39;did&#39;, &#39;used&#39; reverts to base &#39;use&#39;!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Using a base verb after &#39;be/get used to&#39;: &#39;She is used to type fast on mobile.&#39;" data-m-correction="After &#39;be/get used to&#39;, &#39;to&#39; is a preposition, so follow with &#39;-ing&#39; or a noun: &#39;She is used to typing fast.&#39;" data-m-tip="&#39;be used to&#39; + -ING / noun!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using a base verb after &#39;be/get used to&#39;: &#39;She is used to type fast on mobile.&#39;</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> After &#39;be/get used to&#39;, &#39;to&#39; is a preposition, so follow with &#39;-ing&#39; or a noun: &#39;She is used to typing fast.&#39;</p>
-      <p><strong>Tip Skor Exam:</strong> &#39;be used to&#39; + -ING / noun!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Using a base verb after &#39;be/get used to&#39;: &#39;She is used to type fast on mobile.&#39;</p>
+      <p class="kssm-m-good">TEPAT: After &#39;be/get used to&#39;, &#39;to&#39; is a preposition, so follow with &#39;-ing&#39; or a noun: &#39;She is used to typing fast.&#39;</p>
+      <p class="kssm-m-tip">Tip Skor Exam: &#39;be used to&#39; + -ING / noun!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Using &#39;more&#39; or &#39;-er&#39; inside &#39;as ... as&#39; (&#39;Emails aren&#39;t as faster as chats&#39;)." data-m-correction="Use the positive base adjective inside &#39;as ... as&#39;: &#39;Emails aren&#39;t as fast as chats.&#39;" data-m-tip="&#39;as + plain adjective + as&#39;.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Using &#39;more&#39; or &#39;-er&#39; inside &#39;as ... as&#39; (&#39;Emails aren&#39;t as faster as chats&#39;).</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Use the positive base adjective inside &#39;as ... as&#39;: &#39;Emails aren&#39;t as fast as chats.&#39;</p>
-      <p><strong>Tip Skor Exam:</strong> &#39;as + plain adjective + as&#39;.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Using &#39;more&#39; or &#39;-er&#39; inside &#39;as ... as&#39; (&#39;Emails aren&#39;t as faster as chats&#39;).</p>
+      <p class="kssm-m-good">TEPAT: Use the positive base adjective inside &#39;as ... as&#39;: &#39;Emails aren&#39;t as fast as chats.&#39;</p>
+      <p class="kssm-m-tip">Tip Skor Exam: &#39;as + plain adjective + as&#39;.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1234,7 +1258,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

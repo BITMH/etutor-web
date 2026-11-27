@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 1","item":"https://etutor.my/kssm/tingkatan-1/"},{"@type":"ListItem","position":4,"name":"Pendidikan Islam Bab 2","item":"https://etutor.my/kssm/tingkatan-1/pendidikan-islam/bab-2/"}]},{"@type":"LearningResource","name":"Pendidikan Islam Tingkatan 1 Bab 2: Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia & Akhirat)","description":"Menghayati maksud, bacaan bertajwid dan pengajaran Surah al-Baqarah ayat 201 tentang doa keseimbangan kebahagiaan dunia dan akhirat serta perlindungan daripada azab api neraka.","url":"https://etutor.my/kssm/tingkatan-1/pendidikan-islam/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 1","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Pendidikan Islam KSSM (1223)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="islam" data-tpl="islam" data-subject-slug="pendidikan-islam" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T1_pendidikan-islam_Bab_2.pdf" data-form-label="Tingkatan 1" data-subject-name="Pendidikan Islam" data-subject-code="1223" data-pages="m.s. 7–12" data-dskp="SK 1.2 (DSKP KSSM Pendidikan Islam Tingkatan 1)" data-chapter-heading="Pelajaran 2: Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia &amp; Akhirat)" data-hero-summary="Menghayati maksud, bacaan bertajwid dan pengajaran Surah al-Baqarah ayat 201 tentang doa keseimbangan kebahagiaan dunia dan akhirat serta perlindungan daripada azab api neraka." style="--tpl-accent:#0f766e;--tpl-soft:#f0fdfa;--tpl-border:#5eead4;--tpl-ink:#134e4a;--tpl-bg:url('../../../../images/nota-templates/islam.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Pelajaran 2: Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia &amp; Akhirat)</h2>
-          <p class="kssm-sublead">Menghayati maksud, bacaan bertajwid dan pengajaran Surah al-Baqarah ayat 201 tentang doa keseimbangan kebahagiaan dunia dan akhirat serta perlindungan daripada azab api neraka.</p>
-          <p class="kssm-sheet-meta">Tingkatan 1 &bull; Pendidikan Islam (1223) &bull; m.s. 7–12 &bull; SK 1.2 (DSKP KSSM Pendidikan Islam Tingkatan 1)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Membaca dan menghafaz Surah al-Baqarah ayat 201 dengan betul, lancar dan bertajwid.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 1 &bull; Pendidikan Islam (1223) &bull; m.s. 7–12</span>
+      </div>
+      <h2>Pelajaran 2: Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia &amp; Akhirat)</h2>
+      <p class="kssm-mast-sum">Menghayati maksud, bacaan bertajwid dan pengajaran Surah al-Baqarah ayat 201 tentang doa keseimbangan kebahagiaan dunia dan akhirat serta perlindungan daripada azab api neraka.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.2 (DSKP KSSM Pendidikan Islam Tingkatan 1)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Membaca dan menghafaz Surah al-Baqarah ayat 201 dengan betul, lancar dan bertajwid.">
       <span class="kssm-obj-num">01</span>
       <span>Membaca dan menghafaz Surah al-Baqarah ayat 201 dengan betul, lancar dan bertajwid.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Mengamalkan doa ayat 201 berserta adab-adab berdoa selepas solat dan dalam kehidupan harian.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 7–12)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Apakah maksud perkataan &#39;hasanah&#39; dalam doa ayat 201 tersebut?" data-ex-solution="&#39;Hasanah&#39; bermaksud segala bentuk kebaikan, kebajikan, kejayaan dan keberkatan sama ada di dunia mahupun di akhirat." data-ex-takeaway="Islam mengajar umatnya berdoa dengan pandangan jauh — bukan dunia semata-mata dan bukan melupakan usaha dunia.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Apakah maksud perkataan &#39;hasanah&#39; dalam doa ayat 201 tersebut?" data-ex-solution="&#39;Hasanah&#39; bermaksud segala bentuk kebaikan, kebajikan, kejayaan dan keberkatan sama ada di dunia mahupun di akhirat." data-ex-takeaway="Islam mengajar umatnya berdoa dengan pandangan jauh — bukan dunia semata-mata dan bukan melupakan usaha dunia.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Bacaan &amp; Terjemahan Surah al-Baqarah Ayat 201</h3>
       <p class="kssm-sub-summary">Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala kebaikan merangkumi urusan kehidupan dunia dan keselamatan akhirat.</p>
       <ul class="kssm-kp-list"><li>Lafaz rumi: &#39;Wa minhum man yaqulu Rabbana atina fid-dunya hasanah wa fil-akhirati hasanah wa qina azaban-nar.&#39;</li><li>Terjemahan: &#39;Dan di antara mereka pula ada yang berdoa dengan berkata: Wahai Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan peliharalah kami dari azab neraka.&#39;</li><li>Tiga permintaan utama dalam doa ini: (1) Hasanah dunia, (2) Hasanah akhirat, dan (3) Selamat daripada azab neraka.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah maksud perkataan &#39;hasanah&#39; dalam doa ayat 201 tersebut?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;Hasanah&#39; bermaksud segala bentuk kebaikan, kebajikan, kejayaan dan keberkatan sama ada di dunia mahupun di akhirat.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Islam mengajar umatnya berdoa dengan pandangan jauh — bukan dunia semata-mata dan bukan melupakan usaha dunia.</p>
+        <p><strong>Contoh:</strong> Apakah maksud perkataan &#39;hasanah&#39; dalam doa ayat 201 tersebut?</p>
+        <p>Penyelesaian: &#39;Hasanah&#39; bermaksud segala bentuk kebaikan, kebajikan, kejayaan dan keberkatan sama ada di dunia mahupun di akhirat.</p>
+        <p class="kssm-takeaway">Tip Penting: Islam mengajar umatnya berdoa dengan pandangan jauh — bukan dunia semata-mata dan bukan melupakan usaha dunia.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Mengapakah seseorang mukmin perlu berusaha mencari kejayaan akademik dan kerjaya di dunia walaupun matlamat utama ialah akhirat?" data-ex-solution="Kerana kekayaan, ilmu dan kedudukan halal di dunia membolehkan umat Islam menyumbang zakat, sedekah serta membangunkan ummah demi ganjaran akhirat." data-ex-takeaway="Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Mengapakah seseorang mukmin perlu berusaha mencari kejayaan akademik dan kerjaya di dunia walaupun matlamat utama ialah akhirat?" data-ex-solution="Kerana kekayaan, ilmu dan kedudukan halal di dunia membolehkan umat Islam menyumbang zakat, sedekah serta membangunkan ummah demi ganjaran akhirat." data-ex-takeaway="Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Keseimbangan Kebaikan Dunia dan Akhirat</h3>
       <p class="kssm-sub-summary">Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan turut menggalakkan umat berusaha maju di dunia sebagai jambatan menuju akhirat.</p>
       <ul class="kssm-kp-list"><li>Contoh kebaikan di dunia: kesihatan tubuh badan, ilmu bermanfaat, rezeki halal, keluarga harmoni, keselamatan dan kerjaya berkat.</li><li>Contoh kebaikan di akhirat: keampunan dosa, rahmat Allah, kemudahan hisab, syafaat Nabi SAW dan syurga.</li><li>Usaha bersepadu: menuntut ilmu dengan tekun di samping menjaga ibadah wajib seperti solat dan berbuat baik kepada ibu bapa.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah seseorang mukmin perlu berusaha mencari kejayaan akademik dan kerjaya di dunia walaupun matlamat utama ialah akhirat?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana kekayaan, ilmu dan kedudukan halal di dunia membolehkan umat Islam menyumbang zakat, sedekah serta membangunkan ummah demi ganjaran akhirat.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.</p>
+        <p><strong>Contoh:</strong> Mengapakah seseorang mukmin perlu berusaha mencari kejayaan akademik dan kerjaya di dunia walaupun matlamat utama ialah akhirat?</p>
+        <p>Penyelesaian: Kerana kekayaan, ilmu dan kedudukan halal di dunia membolehkan umat Islam menyumbang zakat, sedekah serta membangunkan ummah demi ganjaran akhirat.</p>
+        <p class="kssm-takeaway">Tip Penting: Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Apakah kesilapan sikap jika seseorang membaca doa ayat 201 setiap hari tetapi malas belajar dan sering meninggalkan solat?" data-ex-solution="Berdoa tanpa usaha dan tanpa ketaatan kepada perintah Allah bercanggah dengan prinsip doa yang menuntut kesungguhan usaha dan tawakal." data-ex-takeaway="Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar agar doa dimakbulkan Allah SWT.</p>
       <ul class="kssm-kp-list"><li>Adab berdoa: menghadap kiblat jika mampu, mengangkat kedua-dua tapak tangan, memulakan dengan pujian kepada Allah dan selawat ke atas Nabi SAW.</li><li>Syarat utama kemakbulan doa: bersuci, makan serta memakai harta yang halal dan bersungguh-sungguh yakin dengan doa (tidak tergesa-gesa berputus asa).</li><li>Perlindungan daripada azab neraka dicapai dengan bertaubat daripada dosa serta istiqamah melaksanakan amar makruf nahi mungkar.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah kesilapan sikap jika seseorang membaca doa ayat 201 setiap hari tetapi malas belajar dan sering meninggalkan solat?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Berdoa tanpa usaha dan tanpa ketaatan kepada perintah Allah bercanggah dengan prinsip doa yang menuntut kesungguhan usaha dan tawakal.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.</p>
+        <p><strong>Contoh:</strong> Apakah kesilapan sikap jika seseorang membaca doa ayat 201 setiap hari tetapi malas belajar dan sering meninggalkan solat?</p>
+        <p>Penyelesaian: Berdoa tanpa usaha dan tanpa ketaatan kepada perintah Allah bercanggah dengan prinsip doa yang menuntut kesungguhan usaha dan tawakal.</p>
+        <p class="kssm-takeaway">Tip Penting: Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Kenal pasti dua hukum tajwid yang berbeza pada ungkapan &#39;wa minhum man yaqulu&#39;." data-ex-solution="&#39;Min-hum&#39; mengandungi Izhar Halqi (نْ bertemu ه); &#39;man yaqulu&#39; mengandungi Idgham Ma&#39;al Ghunnah (نْ bertemu ي)." data-ex-takeaway="Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Kenal pasti dua hukum tajwid yang berbeza pada ungkapan &#39;wa minhum man yaqulu&#39;." data-ex-solution="&#39;Min-hum&#39; mengandungi Izhar Halqi (نْ bertemu ه); &#39;man yaqulu&#39; mengandungi Idgham Ma&#39;al Ghunnah (نْ bertemu ي)." data-ex-takeaway="Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Pengamalan Tajwid Ayat 201</h3>
       <p class="kssm-sub-summary">Semakan tajwid pada ayat 201 penting bagi memastikan lafaz hafazan dalam solat dan zikir harian bebas daripada kesalahan makna.</p>
       <ul class="kssm-kp-list"><li>&#39;Minhum man&#39;: Nun mati bertemu Ha ialah Izhar Halqi (dibaca jelas tanpa dengung); Mim mati bertemu Mim ialah Idgham Mislaini/Syafawi (dengung 2 harakat).</li><li>&#39;Man yaqulu&#39;: Nun mati bertemu Ya ialah Idgham Ma&#39;al Ghunnah (masukkan dengan dengung 2 harakat).</li><li>&#39;Fid-dunya&#39; dan &#39;azaban-nar&#39;: mengandungi Alif Lam Syamsiah (huruf Lam tidak dibaca, masuk ke Dal atau Nun bertasydid).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Kenal pasti dua hukum tajwid yang berbeza pada ungkapan &#39;wa minhum man yaqulu&#39;.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;Min-hum&#39; mengandungi Izhar Halqi (نْ bertemu ه); &#39;man yaqulu&#39; mengandungi Idgham Ma&#39;al Ghunnah (نْ bertemu ي).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.</p>
+        <p><strong>Contoh:</strong> Kenal pasti dua hukum tajwid yang berbeza pada ungkapan &#39;wa minhum man yaqulu&#39;.</p>
+        <p>Penyelesaian: &#39;Min-hum&#39; mengandungi Izhar Halqi (نْ bertemu ه); &#39;man yaqulu&#39; mengandungi Idgham Ma&#39;al Ghunnah (نْ bertemu ي).</p>
+        <p class="kssm-takeaway">Tip Penting: Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Menganggap doa &#39;atina fid-dunya hasanah&#39; bermaksud meminta keseronokan dunia tanpa batas." data-m-correction="Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga." data-m-tip="Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap doa &#39;atina fid-dunya hasanah&#39; bermaksud meminta keseronokan dunia tanpa batas.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.</p>
-      <p><strong>Tip Skor Exam:</strong> Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menganggap doa &#39;atina fid-dunya hasanah&#39; bermaksud meminta keseronokan dunia tanpa batas." data-m-correction="Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga." data-m-tip="Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Menganggap doa &#39;atina fid-dunya hasanah&#39; bermaksud meminta keseronokan dunia tanpa batas.</p>
+      <p class="kssm-m-good">TEPAT: Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Tidak mendengungkan bacaan pada &#39;man yaqulu&#39; ketika menghafaz ayat 201." data-m-correction="Nun mati bertemu huruf Ya wajib dibaca secara Idgham Ma&#39;al Ghunnah dengan dengung kadar dua harakat." data-m-tip="Berhenti sekejap mendengar bunyi dengung pada hidung selama dua harakat.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Tidak mendengungkan bacaan pada &#39;man yaqulu&#39; ketika menghafaz ayat 201.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Nun mati bertemu huruf Ya wajib dibaca secara Idgham Ma&#39;al Ghunnah dengan dengung kadar dua harakat.</p>
-      <p><strong>Tip Skor Exam:</strong> Berhenti sekejap mendengar bunyi dengung pada hidung selama dua harakat.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Tidak mendengungkan bacaan pada &#39;man yaqulu&#39; ketika menghafaz ayat 201.</p>
+      <p class="kssm-m-good">TEPAT: Nun mati bertemu huruf Ya wajib dibaca secara Idgham Ma&#39;al Ghunnah dengan dengung kadar dua harakat.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Berhenti sekejap mendengar bunyi dengung pada hidung selama dua harakat.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menulis dalam soalan esei bahawa mukmin cukup berdoa tanpa perlu berusaha." data-m-correction="Doa mesti seiring dengan ikhtiar fizikal dan mental sebelum bertawakal kepada Allah SWT." data-m-tip="Gunakan kata kunci &#39;doa berserta usaha bersungguh-sungguh&#39;.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis dalam soalan esei bahawa mukmin cukup berdoa tanpa perlu berusaha.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Doa mesti seiring dengan ikhtiar fizikal dan mental sebelum bertawakal kepada Allah SWT.</p>
-      <p><strong>Tip Skor Exam:</strong> Gunakan kata kunci &#39;doa berserta usaha bersungguh-sungguh&#39;.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menulis dalam soalan esei bahawa mukmin cukup berdoa tanpa perlu berusaha.</p>
+      <p class="kssm-m-good">TEPAT: Doa mesti seiring dengan ikhtiar fizikal dan mental sebelum bertawakal kepada Allah SWT.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Gunakan kata kunci &#39;doa berserta usaha bersungguh-sungguh&#39;.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

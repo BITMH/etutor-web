@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 2","item":"https://etutor.my/kssm/tingkatan-2/"},{"@type":"ListItem","position":4,"name":"Bahasa Melayu Bab 2","item":"https://etutor.my/kssm/tingkatan-2/bahasa-melayu/bab-2/"}]},{"@type":"LearningResource","name":"Bahasa Melayu Tingkatan 2 Bab 2: Menimba Ilmu (Kata Adjektif & Ayat Gramatis)","description":"Memperkukuh penguasaan kata adjektif jarak, pancaindera, ukuran dan sifatan, kata ganda separa, pembinaan ayat gramatis serta penghayatan kata-kata hikmat dan bahasa berirama dalam Tema Menimba Ilmu.","url":"https://etutor.my/kssm/tingkatan-2/bahasa-melayu/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 2","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Melayu KSSM (1103)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-melayu" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T2_bahasa-melayu_Bab_2.pdf" data-form-label="Tingkatan 2" data-subject-name="Bahasa Melayu" data-subject-code="1103" data-pages="m.s. 14–26" data-dskp="SK 1.2, 2.2, 3.2, 4.2, 5.1 (DSKP KSSM BM Tingkatan 2)" data-chapter-heading="Tema 2: Menimba Ilmu (Kata Adjektif &amp; Ayat Gramatis)" data-hero-summary="Memperkukuh penguasaan kata adjektif jarak, pancaindera, ukuran dan sifatan, kata ganda separa, pembinaan ayat gramatis serta penghayatan kata-kata hikmat dan bahasa berirama dalam Tema Menimba Ilmu." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Tema 2: Menimba Ilmu (Kata Adjektif &amp; Ayat Gramatis)</h2>
-          <p class="kssm-sublead">Memperkukuh penguasaan kata adjektif jarak, pancaindera, ukuran dan sifatan, kata ganda separa, pembinaan ayat gramatis serta penghayatan kata-kata hikmat dan bahasa berirama dalam Tema Menimba Ilmu.</p>
-          <p class="kssm-sheet-meta">Tingkatan 2 &bull; Bahasa Melayu (1103) &bull; m.s. 14–26 &bull; SK 1.2, 2.2, 3.2, 4.2, 5.1 (DSKP KSSM BM Tingkatan 2)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mengenal pasti dan menggunakan kata adjektif sifatan, jarak, ukuran dan pancaindera dengan tepat dalam penulisan cerita serta hujah.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 2 &bull; Bahasa Melayu (1103) &bull; m.s. 14–26</span>
+      </div>
+      <h2>Tema 2: Menimba Ilmu (Kata Adjektif &amp; Ayat Gramatis)</h2>
+      <p class="kssm-mast-sum">Memperkukuh penguasaan kata adjektif jarak, pancaindera, ukuran dan sifatan, kata ganda separa, pembinaan ayat gramatis serta penghayatan kata-kata hikmat dan bahasa berirama dalam Tema Menimba Ilmu.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.2, 2.2, 3.2, 4.2, 5.1 (DSKP KSSM BM Tingkatan 2)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Mengenal pasti dan menggunakan kata adjektif sifatan, jarak, ukuran dan pancaindera dengan tepat dalam penulisan cerita serta hujah.">
       <span class="kssm-obj-num">01</span>
       <span>Mengenal pasti dan menggunakan kata adjektif sifatan, jarak, ukuran dan pancaindera dengan tepat dalam penulisan cerita serta hujah.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Memahami dan menerangkan makna kata-kata hikmat serta bahasa berirama dalam pantun nasihat ilmu.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 14–26)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Kenal pasti kata adjektif dan jenisnya dalam dialog: &#39;Jika tidak bersarapan, badan kita akan lemah dan sukar mendaki bukit yang tinggi serta jauh itu.&#39;" data-ex-solution="&#39;lemah&#39; (sifatan/keadaan), &#39;tinggi&#39; (ukuran), &#39;jauh&#39; (jarak)." data-ex-takeaway="Pastikan kata adjektif seperti &#39;jauh&#39; tidak digandingkan dengan kata penguat gandaan salah seperti &#39;paling tinggi sekali&#39;.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Kenal pasti kata adjektif dan jenisnya dalam dialog: &#39;Jika tidak bersarapan, badan kita akan lemah dan sukar mendaki bukit yang tinggi serta jauh itu.&#39;" data-ex-solution="&#39;lemah&#39; (sifatan/keadaan), &#39;tinggi&#39; (ukuran), &#39;jauh&#39; (jarak)." data-ex-takeaway="Pastikan kata adjektif seperti &#39;jauh&#39; tidak digandingkan dengan kata penguat gandaan salah seperti &#39;paling tinggi sekali&#39;.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Kata Adjektif Jarak, Pancaindera, Ukuran &amp; Sifatan (SP 5.1.1)</h3>
       <p class="kssm-sub-summary">Tema 2 BM Tingkatan 2 memperincikan penggunaan empat kelompok kata adjektif dalam konteks pengembaraan ilmu, adab belajar dan penilaian sumber digital.</p>
       <ul class="kssm-kp-list"><li>Kata adjektif sifatan/keadaan: cerdik, bijak, lemah, cergas, patuh, berhati-hati.</li><li>Kata adjektif jarak: jauh, dekat, hampir, nyaris, renggang (&#39;Wah, jauh juga tempat itu!&#39;).</li><li>Kata adjektif ukuran &amp; pancaindera: tinggi, rendah, panjang (ukuran); manis, lazat, kelat, bising, merdu, lembut, licin (pancaindera rasa, dengar, sentuh, bau, pandang).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Kenal pasti kata adjektif dan jenisnya dalam dialog: &#39;Jika tidak bersarapan, badan kita akan lemah dan sukar mendaki bukit yang tinggi serta jauh itu.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;lemah&#39; (sifatan/keadaan), &#39;tinggi&#39; (ukuran), &#39;jauh&#39; (jarak).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pastikan kata adjektif seperti &#39;jauh&#39; tidak digandingkan dengan kata penguat gandaan salah seperti &#39;paling tinggi sekali&#39;.</p>
+        <p><strong>Contoh:</strong> Kenal pasti kata adjektif dan jenisnya dalam dialog: &#39;Jika tidak bersarapan, badan kita akan lemah dan sukar mendaki bukit yang tinggi serta jauh itu.&#39;</p>
+        <p>Penyelesaian: &#39;lemah&#39; (sifatan/keadaan), &#39;tinggi&#39; (ukuran), &#39;jauh&#39; (jarak).</p>
+        <p class="kssm-takeaway">Tip Penting: Pastikan kata adjektif seperti &#39;jauh&#39; tidak digandingkan dengan kata penguat gandaan salah seperti &#39;paling tinggi sekali&#39;.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Tukarkan kata dasar &#39;tikus&#39; dan &#39;tanya&#39; kepada kata ganda separa yang sesuai dengan ayat masing-masing." data-ex-solution="(1) &#39;tetikus&#39; untuk peranti komputer (Jari Dani menyentuh tetikus); (2) &#39;tertanya-tanya&#39; atau &#39;tanya-menanya&#39; untuk perbuatan saling bertanya." data-ex-takeaway="Kata ganda separa kata tunggal (&#39;tetamu&#39;, &#39;dedaun&#39;) tidak memakai tanda sempang (-), sedangkan berimbuhan (&#39;tolong-menolong&#39;) memakai sempang.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Tukarkan kata dasar &#39;tikus&#39; dan &#39;tanya&#39; kepada kata ganda separa yang sesuai dengan ayat masing-masing." data-ex-solution="(1) &#39;tetikus&#39; untuk peranti komputer (Jari Dani menyentuh tetikus); (2) &#39;tertanya-tanya&#39; atau &#39;tanya-menanya&#39; untuk perbuatan saling bertanya." data-ex-takeaway="Kata ganda separa kata tunggal (&#39;tetamu&#39;, &#39;dedaun&#39;) tidak memakai tanda sempang (-), sedangkan berimbuhan (&#39;tolong-menolong&#39;) memakai sempang.">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Kata Ganda Separa dalam Dialog (SP 5.1)</h3>
       <p class="kssm-sub-summary">Kata ganda separa terbentuk apabila hanya sebahagian daripada kata dasar digandakan — sama ada kata tunggal (suku kata pertama melemah kepada vokal e pepet) ataupun kata berimbuhan.</p>
       <ul class="kssm-kp-list"><li>Kata ganda separa kata tunggal: laki → lelaki, tamu → tetamu, bola → bebola, siku → sesiku, kuda → kekuda, daun → dedaun.</li><li>Kata ganda separa berimbuhan: berura → berura-ura, bantu → bantu-membantu, tanya → tertanya-tanya, kejar → kejar-mengejar.</li><li>Contoh teks (m.s. 37): Dani melayari blog memasak lemang dan teringat ayahnya yang pernah berura-ura memasak secara bergotong-royong.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Tukarkan kata dasar &#39;tikus&#39; dan &#39;tanya&#39; kepada kata ganda separa yang sesuai dengan ayat masing-masing.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> (1) &#39;tetikus&#39; untuk peranti komputer (Jari Dani menyentuh tetikus); (2) &#39;tertanya-tanya&#39; atau &#39;tanya-menanya&#39; untuk perbuatan saling bertanya.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kata ganda separa kata tunggal (&#39;tetamu&#39;, &#39;dedaun&#39;) tidak memakai tanda sempang (-), sedangkan berimbuhan (&#39;tolong-menolong&#39;) memakai sempang.</p>
+        <p><strong>Contoh:</strong> Tukarkan kata dasar &#39;tikus&#39; dan &#39;tanya&#39; kepada kata ganda separa yang sesuai dengan ayat masing-masing.</p>
+        <p>Penyelesaian: (1) &#39;tetikus&#39; untuk peranti komputer (Jari Dani menyentuh tetikus); (2) &#39;tertanya-tanya&#39; atau &#39;tanya-menanya&#39; untuk perbuatan saling bertanya.</p>
+        <p class="kssm-takeaway">Tip Penting: Kata ganda separa kata tunggal (&#39;tetamu&#39;, &#39;dedaun&#39;) tidak memakai tanda sempang (-), sedangkan berimbuhan (&#39;tolong-menolong&#39;) memakai sempang.</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Betulkan ayat tidak gramatis: &#39;Di dalam internet mempunyai banyak maklumat tentang universiti awam.&#39;" data-ex-solution="Internet mempunyai banyak maklumat tentang universiti awam. (Atau: &#39;Di dalam Internet, terdapat banyak maklumat...&#39;) — subjek ayat tidak boleh didahului kata sendi &#39;di&#39;." data-ex-takeaway="Prinsip paling kerap diuji: JANGAN mulakan subjek ayat sebelum kata kerja &#39;mempunyai/adalah/mengandungi&#39; dengan kata sendi &#39;di&#39; atau &#39;dalam&#39;.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Ayat yang gramatis mematuhi tiga prinsip utama dalam buku teks (m.s. 30): struktur ayat betul (Subjek + Predikat), pemilihan perkataan tepat mengikut konteks, dan ejaan serta tanda baca sempurna.</p>
       <ul class="kssm-kp-list"><li>Elakkan bahasa pasar, struktur ayat tergantung tanpa kata kerja utama dan kesilapan hukum D-M (Diterangkan-Menerangkan).</li><li>Contoh hukum D-M betul: &#39;Universiti awam&#39; (bukan &#39;awam universiti&#39;), &#39;klinik kesihatan&#39;, &#39;papan kekunci&#39; (bukan &#39;kekunci papan&#39;).</li><li>Teks Tema 2 mengingatkan pelajar menilai kesahihan maklumat media sosial dan membuat persediaan awal sebelum peperiksaan serta pemilihan aliran.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Betulkan ayat tidak gramatis: &#39;Di dalam internet mempunyai banyak maklumat tentang universiti awam.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Internet mempunyai banyak maklumat tentang universiti awam. (Atau: &#39;Di dalam Internet, terdapat banyak maklumat...&#39;) — subjek ayat tidak boleh didahului kata sendi &#39;di&#39;.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Prinsip paling kerap diuji: JANGAN mulakan subjek ayat sebelum kata kerja &#39;mempunyai/adalah/mengandungi&#39; dengan kata sendi &#39;di&#39; atau &#39;dalam&#39;.</p>
+        <p><strong>Contoh:</strong> Betulkan ayat tidak gramatis: &#39;Di dalam internet mempunyai banyak maklumat tentang universiti awam.&#39;</p>
+        <p>Penyelesaian: Internet mempunyai banyak maklumat tentang universiti awam. (Atau: &#39;Di dalam Internet, terdapat banyak maklumat...&#39;) — subjek ayat tidak boleh didahului kata sendi &#39;di&#39;.</p>
+        <p class="kssm-takeaway">Tip Penting: Prinsip paling kerap diuji: JANGAN mulakan subjek ayat sebelum kata kerja &#39;mempunyai/adalah/mengandungi&#39; dengan kata sendi &#39;di&#39; atau &#39;dalam&#39;.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Terangkan maksud kata-kata hikmat &#39;Ilmu tanpa amal ibarat pohon tanpa buah&#39; dalam konteks pelajar." data-ex-solution="Pengetahuan teori yang tidak dipraktikkan dalam amalan seharian tidak memberikan manfaat sebenar kepada diri sendiri mahupun masyarakat." data-ex-takeaway="Gunakan satu kata hikmat yang tepat di akhir pendahuluan atau penutup karangan untuk menaikkan mutu bahasa.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Terangkan maksud kata-kata hikmat &#39;Ilmu tanpa amal ibarat pohon tanpa buah&#39; dalam konteks pelajar." data-ex-solution="Pengetahuan teori yang tidak dipraktikkan dalam amalan seharian tidak memberikan manfaat sebenar kepada diri sendiri mahupun masyarakat." data-ex-takeaway="Gunakan satu kata hikmat yang tepat di akhir pendahuluan atau penutup karangan untuk menaikkan mutu bahasa.">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Kata-kata Hikmat &amp; Bahasa Berirama (SP 4.2.1)</h3>
       <p class="kssm-sub-summary">Kata-kata hikmat ialah ungkapan pujangga ringkas yang mengandungi nilai pengajaran tinggi dan pengulangan irama puitis untuk memotivasikan pelajar menimba ilmu.</p>
       <ul class="kssm-kp-list"><li>Contoh kata-kata hikmat masyhur: &#39;Ilmu pelita hidup&#39;, &#39;Membaca jambatan ilmu&#39;, &#39;Masa itu emas&#39;, &#39;Rajin pangkal pandai&#39;.</li><li>Dalam pengembaraan hutan Bukit Marak (m.s. 34), Cikgu Halim menggunakan peribahasa &#39;malang tidak berbau&#39; untuk mengingatkan pelajar agar berwaspada.</li><li>Papan cerita (SP 4.3.1) membantu pelajar merancang penyampaian kisah atau pengajaran berdasarkan tema ilmu dengan berkesan.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Terangkan maksud kata-kata hikmat &#39;Ilmu tanpa amal ibarat pohon tanpa buah&#39; dalam konteks pelajar.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Pengetahuan teori yang tidak dipraktikkan dalam amalan seharian tidak memberikan manfaat sebenar kepada diri sendiri mahupun masyarakat.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Gunakan satu kata hikmat yang tepat di akhir pendahuluan atau penutup karangan untuk menaikkan mutu bahasa.</p>
+        <p><strong>Contoh:</strong> Terangkan maksud kata-kata hikmat &#39;Ilmu tanpa amal ibarat pohon tanpa buah&#39; dalam konteks pelajar.</p>
+        <p>Penyelesaian: Pengetahuan teori yang tidak dipraktikkan dalam amalan seharian tidak memberikan manfaat sebenar kepada diri sendiri mahupun masyarakat.</p>
+        <p class="kssm-takeaway">Tip Penting: Gunakan satu kata hikmat yang tepat di akhir pendahuluan atau penutup karangan untuk menaikkan mutu bahasa.</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Menggabungkan &#39;paling&#39; atau &#39;ter-&#39; dengan &#39;sekali&#39; seperti &#39;paling jauh sekali&#39; atau &#39;tercerdik sekali&#39;." data-m-correction="Pilih satu darjah penghabisan sahaja: &#39;paling jauh&#39;, &#39;terjauh&#39; atau &#39;jauh sekali&#39;." data-m-tip="&#39;Sangat/amat + adjektif + sekali&#39; dibenarkan (contoh: &#39;amat bijak sekali&#39;), tetapi &#39;paling/ter- + sekali&#39; SALAH.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menggabungkan &#39;paling&#39; atau &#39;ter-&#39; dengan &#39;sekali&#39; seperti &#39;paling jauh sekali&#39; atau &#39;tercerdik sekali&#39;.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Pilih satu darjah penghabisan sahaja: &#39;paling jauh&#39;, &#39;terjauh&#39; atau &#39;jauh sekali&#39;.</p>
-      <p><strong>Tip Skor Exam:</strong> &#39;Sangat/amat + adjektif + sekali&#39; dibenarkan (contoh: &#39;amat bijak sekali&#39;), tetapi &#39;paling/ter- + sekali&#39; SALAH.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menggabungkan &#39;paling&#39; atau &#39;ter-&#39; dengan &#39;sekali&#39; seperti &#39;paling jauh sekali&#39; atau &#39;tercerdik sekali&#39;." data-m-correction="Pilih satu darjah penghabisan sahaja: &#39;paling jauh&#39;, &#39;terjauh&#39; atau &#39;jauh sekali&#39;." data-m-tip="&#39;Sangat/amat + adjektif + sekali&#39; dibenarkan (contoh: &#39;amat bijak sekali&#39;), tetapi &#39;paling/ter- + sekali&#39; SALAH.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Menggabungkan &#39;paling&#39; atau &#39;ter-&#39; dengan &#39;sekali&#39; seperti &#39;paling jauh sekali&#39; atau &#39;tercerdik sekali&#39;.</p>
+      <p class="kssm-m-good">TEPAT: Pilih satu darjah penghabisan sahaja: &#39;paling jauh&#39;, &#39;terjauh&#39; atau &#39;jauh sekali&#39;.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: &#39;Sangat/amat + adjektif + sekali&#39; dibenarkan (contoh: &#39;amat bijak sekali&#39;), tetapi &#39;paling/ter- + sekali&#39; SALAH.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Meletakkan tanda sempang pada kata ganda separa kata tunggal seperti &#39;te-tamu&#39; atau &#39;be-bola&#39;." data-m-correction="Kata ganda separa tunggal ditulis sebagai satu perkataan rapat: &#39;tetamu&#39;, &#39;bebola&#39;, &#39;kekuda&#39;, &#39;tetikus&#39;." data-m-tip="Tiada sempang jika suku kata hadapan sudah dilemahkan menjadi &#39;e&#39; pepet.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Meletakkan tanda sempang pada kata ganda separa kata tunggal seperti &#39;te-tamu&#39; atau &#39;be-bola&#39;.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Kata ganda separa tunggal ditulis sebagai satu perkataan rapat: &#39;tetamu&#39;, &#39;bebola&#39;, &#39;kekuda&#39;, &#39;tetikus&#39;.</p>
-      <p><strong>Tip Skor Exam:</strong> Tiada sempang jika suku kata hadapan sudah dilemahkan menjadi &#39;e&#39; pepet.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Meletakkan tanda sempang pada kata ganda separa kata tunggal seperti &#39;te-tamu&#39; atau &#39;be-bola&#39;.</p>
+      <p class="kssm-m-good">TEPAT: Kata ganda separa tunggal ditulis sebagai satu perkataan rapat: &#39;tetamu&#39;, &#39;bebola&#39;, &#39;kekuda&#39;, &#39;tetikus&#39;.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Tiada sempang jika suku kata hadapan sudah dilemahkan menjadi &#39;e&#39; pepet.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menggunakan kata &#39;di antara&#39; bagi membandingkan konsep abstrak tanpa jarak ruang." data-m-correction="Gunakan &#39;antara&#39; bagi perkara bukan jarak fizikal (&#39;perbezaan antara aliran sains dengan aliran sastera&#39;) dan &#39;di antara&#39; untuk kedudukan ruang nyata." data-m-tip="Ingat: &#39;di&#39; = lokasi ruang; abstrak/perbandingan guna &#39;antara&#39; sahaja.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menggunakan kata &#39;di antara&#39; bagi membandingkan konsep abstrak tanpa jarak ruang.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Gunakan &#39;antara&#39; bagi perkara bukan jarak fizikal (&#39;perbezaan antara aliran sains dengan aliran sastera&#39;) dan &#39;di antara&#39; untuk kedudukan ruang nyata.</p>
-      <p><strong>Tip Skor Exam:</strong> Ingat: &#39;di&#39; = lokasi ruang; abstrak/perbandingan guna &#39;antara&#39; sahaja.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menggunakan kata &#39;di antara&#39; bagi membandingkan konsep abstrak tanpa jarak ruang.</p>
+      <p class="kssm-m-good">TEPAT: Gunakan &#39;antara&#39; bagi perkara bukan jarak fizikal (&#39;perbezaan antara aliran sains dengan aliran sastera&#39;) dan &#39;di antara&#39; untuk kedudukan ruang nyata.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Ingat: &#39;di&#39; = lokasi ruang; abstrak/perbandingan guna &#39;antara&#39; sahaja.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

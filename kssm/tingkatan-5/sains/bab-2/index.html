@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 5","item":"https://etutor.my/kssm/tingkatan-5/"},{"@type":"ListItem","position":4,"name":"Sains Bab 2","item":"https://etutor.my/kssm/tingkatan-5/sains/bab-2/"}]},{"@type":"LearningResource","name":"Sains Tingkatan 5 Bab 2: Nutrisi dan Teknologi Makanan (Kalori, Kitar Nitrogen & Halal)","description":"Memahami gizi seimbang dan konsep Pinggan Sihat Malaysia ('Suku Suku Separuh'), pengiraan nilai kalori makanan dan kalorimeter bom, makronutrien/mikronutrien tumbuhan (N, P, K), kepentingan Kitar Nitrogen dalam ekosistem serta teknologi pemprosesan makanan dan Akta Makanan 1983 / Pensijilan Halal Malaysia.","url":"https://etutor.my/kssm/tingkatan-5/sains/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 5","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sains KSSM (1511)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -332,16 +341,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sains" data-tpl="sains" data-subject-slug="sains" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T5_sains_Bab_2.pdf" data-form-label="Tingkatan 5" data-subject-name="Sains" data-subject-code="1511" data-pages="m.s. 46–89" data-dskp="SK 2.1–2.5 (DSKP KSSM Sains Tingkatan 5)" data-chapter-heading="Bab 2: Nutrisi dan Teknologi Makanan (Kalori, Kitar Nitrogen &amp; Halal)" data-hero-summary="Memahami gizi seimbang dan konsep Pinggan Sihat Malaysia (&#39;Suku Suku Separuh&#39;), pengiraan nilai kalori makanan dan kalorimeter bom, makronutrien/mikronutrien tumbuhan (N, P, K), kepentingan Kitar Nitrogen dalam ekosistem serta teknologi pemprosesan makanan dan Akta Makanan 1983 / Pensijilan Halal Malaysia." style="--tpl-accent:#047857;--tpl-soft:#ecfdf5;--tpl-border:#6ee7b7;--tpl-ink:#064e3b;--tpl-bg:url('../../../../images/nota-templates/sains.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 2: Nutrisi dan Teknologi Makanan (Kalori, Kitar Nitrogen &amp; Halal)</h2>
-          <p class="kssm-sublead">Memahami gizi seimbang dan konsep Pinggan Sihat Malaysia (&#39;Suku Suku Separuh&#39;), pengiraan nilai kalori makanan dan kalorimeter bom, makronutrien/mikronutrien tumbuhan (N, P, K), kepentingan Kitar Nitrogen dalam ekosistem serta teknologi pemprosesan makanan dan Akta Makanan 1983 / Pensijilan Halal Malaysia.</p>
-          <p class="kssm-sheet-meta">Tingkatan 5 &bull; Sains (1511) &bull; m.s. 46–89 &bull; SK 2.1–2.5 (DSKP KSSM Sains Tingkatan 5)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menerangkan konsep gizi seimbang dan Pinggan Sihat Malaysia KKM serta mengira nilai kalori hidangan makanan (dalam kJ atau kcal) dan kesan obesiti, anoreksia, arteriosklerosis serta diabetes.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 5 &bull; Sains (1511) &bull; m.s. 46–89</span>
+      </div>
+      <h2>Bab 2: Nutrisi dan Teknologi Makanan (Kalori, Kitar Nitrogen &amp; Halal)</h2>
+      <p class="kssm-mast-sum">Memahami gizi seimbang dan konsep Pinggan Sihat Malaysia (&#39;Suku Suku Separuh&#39;), pengiraan nilai kalori makanan dan kalorimeter bom, makronutrien/mikronutrien tumbuhan (N, P, K), kepentingan Kitar Nitrogen dalam ekosistem serta teknologi pemprosesan makanan dan Akta Makanan 1983 / Pensijilan Halal Malaysia.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 2.1–2.5 (DSKP KSSM Sains Tingkatan 5)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menerangkan konsep gizi seimbang dan Pinggan Sihat Malaysia KKM serta mengira nilai kalori hidangan makanan (dalam kJ atau kcal) dan kesan obesiti, anoreksia, arteriosklerosis serta diabetes.">
       <span class="kssm-obj-num">01</span>
       <span>Menerangkan konsep gizi seimbang dan Pinggan Sihat Malaysia KKM serta mengira nilai kalori hidangan makanan (dalam kJ atau kcal) dan kesan obesiti, anoreksia, arteriosklerosis serta diabetes.</span>
     </div>
@@ -357,30 +369,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Membandingkan kaedah teknologi pemprosesan makanan moden (pempasteuran, pengetinan, pendehidratan, penyinaran, pembungkusan vakum) serta hak pengguna di bawah Akta Makanan 1983 dan logo Halal JAKIM.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 46–89)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Hidangan mengandungi 100 g nasi (nilai kalori 15.0 kJ/g) dan 50 g ayam goreng (nilai kalori 12.0 kJ/g). Hitung jumlah nilai kalori hidangan itu." data-ex-solution="(100 × 15.0) + (50 × 12.0) = 1,500 + 600 = 2,100 kJ." data-ex-takeaway="Dalam eksperimen kalorimeter mudah: Tenaga (J) = jisim air (g) × 4.2 J g⁻¹ °C⁻¹ × kenaikan suhu air (°C)!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Hidangan mengandungi 100 g nasi (nilai kalori 15.0 kJ/g) dan 50 g ayam goreng (nilai kalori 12.0 kJ/g). Hitung jumlah nilai kalori hidangan itu." data-ex-solution="(100 × 15.0) + (50 × 12.0) = 1,500 + 600 = 2,100 kJ." data-ex-takeaway="Dalam eksperimen kalorimeter mudah: Tenaga (J) = jisim air (g) × 4.2 J g⁻¹ °C⁻¹ × kenaikan suhu air (°C)!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Gizi Seimbang, Pinggan Sihat Malaysia &amp; Nilai Kalori (SK 2.1)</h3>
       <p class="kssm-sub-summary">Gizi seimbang membekalkan kesemua tujuh kelas makanan dalam kadar mencukupi mengikut umur, jantina, saiz badan dan pekerjaan. Nilai kalori makanan mengukur tenaga haba yang dibebaskan oleh pembakaran lengkap 1 g makanan.</p>
       <ul class="kssm-kp-list"><li>Konsep &#39;Suku Suku Separuh&#39; Pinggan Sihat Malaysia (KKM): Separuh pinggan diisi buah-buahan dan sayur-sayuran; Suku pinggan nasi/karbohidrat bijirin; Suku pinggan ikan/ayam/daging/kekacang (protein).</li><li>Nilai tenaga piawai 1 g makanan: Karbohidrat = 17 kJ g⁻¹, Protein = 17 kJ g⁻¹, Lemak = 39 kJ g⁻¹ (lemak membekalkan lebih dua kali ganda tenaga berbanding karbohidrat/protein!). Unit: joule (J) / kilojoule (kJ) atau kalori (1 kal = 4.2 J).</li><li>Kalorimeter bom makmal (Eksperimen 2.1 m.s. 62) menghasilkan bacaan sedikit lebih rendah daripada jadual sebenar kerana sebahagian haba hilang ke persekitaran atau terlepas sebelum memanaskan air. Pengambilan kalori berlebihan jangka panjang mencetuskan obesiti, diabetes melitus, hipertensi dan arteriosklerosis (plak kolesterol menyumbat arteri).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Hidangan mengandungi 100 g nasi (nilai kalori 15.0 kJ/g) dan 50 g ayam goreng (nilai kalori 12.0 kJ/g). Hitung jumlah nilai kalori hidangan itu.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> (100 × 15.0) + (50 × 12.0) = 1,500 + 600 = 2,100 kJ.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Dalam eksperimen kalorimeter mudah: Tenaga (J) = jisim air (g) × 4.2 J g⁻¹ °C⁻¹ × kenaikan suhu air (°C)!</p>
+        <p><strong>Contoh:</strong> Hidangan mengandungi 100 g nasi (nilai kalori 15.0 kJ/g) dan 50 g ayam goreng (nilai kalori 12.0 kJ/g). Hitung jumlah nilai kalori hidangan itu.</p>
+        <p>Penyelesaian: (100 × 15.0) + (50 × 12.0) = 1,500 + 600 = 2,100 kJ.</p>
+        <p class="kssm-takeaway">Tip Penting: Dalam eksperimen kalorimeter mudah: Tenaga (J) = jisim air (g) × 4.2 J g⁻¹ °C⁻¹ × kenaikan suhu air (°C)!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Dalam Eksperimen 2.2 larutan kultur Knop, botol yang tidak mengandungi fosforus (P) dibalut kertas hitam. Mengapakah kertas hitam diperlukan dan apakah pemerhatian anak benih jagung?" data-ex-solution="Kertas hitam menghalang cahaya matahari supaya alga hijau tidak tumbuh di dalam larutan kultur dan menyerap nutrien tumbuhan. Anak benih kekurangan fosforus menunjukkan pertumbuhan akar sangat lemah dan daun berwarna keunguan." data-ex-takeaway="Hafal 3 tanda kekurangan NPK: Kurang N = Daun Kuning; Kurang P = Akar Lemah/Daun Ungu; Kurang K = Tepi Daun Perang/Mati!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Dalam Eksperimen 2.2 larutan kultur Knop, botol yang tidak mengandungi fosforus (P) dibalut kertas hitam. Mengapakah kertas hitam diperlukan dan apakah pemerhatian anak benih jagung?" data-ex-solution="Kertas hitam menghalang cahaya matahari supaya alga hijau tidak tumbuh di dalam larutan kultur dan menyerap nutrien tumbuhan. Anak benih kekurangan fosforus menunjukkan pertumbuhan akar sangat lemah dan daun berwarna keunguan." data-ex-takeaway="Hafal 3 tanda kekurangan NPK: Kurang N = Daun Kuning; Kurang P = Akar Lemah/Daun Ungu; Kurang K = Tepi Daun Perang/Mati!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Keperluan Nutrien Tumbuhan: Makro &amp; Mikronutrien (SK 2.2)</h3>
       <p class="kssm-sub-summary">Tumbuhan memerlukan unsur makronutrien dalam kuantiti banyak (C, H, O, N, P, K, Ca, Mg, S) dan mikronutrien dalam kuantiti kecil (B, Fe, Zn, Cu, Mn, Mo).</p>
       <ul class="kssm-kp-list"><li>Nitrogen (N): mensintesis protein, klorofil dan asid nukleik untuk pertumbuhan daun hijau subur. KEKURANGAN N → daun tua bertukar KUNING (klorosis) dan pertumbuhan terbantut.</li><li>Fosforus (P): pertumbuhan akar sihat, pembahagian sel dan sintesis ATP/asid nukleik. KEKURANGAN P → akar kurang bercabang dan daun bertepi UNGU/merah gelap.</li><li>Kalium (K): sintesis protein, metabolisme karbohidrat dan kesegahan sel. KEKURANGAN K → daun bertepi KUNING/PERANG melengkung serta cepat mati pada hujung daun (tumbuhan lemah mudah layu).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Dalam Eksperimen 2.2 larutan kultur Knop, botol yang tidak mengandungi fosforus (P) dibalut kertas hitam. Mengapakah kertas hitam diperlukan dan apakah pemerhatian anak benih jagung?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kertas hitam menghalang cahaya matahari supaya alga hijau tidak tumbuh di dalam larutan kultur dan menyerap nutrien tumbuhan. Anak benih kekurangan fosforus menunjukkan pertumbuhan akar sangat lemah dan daun berwarna keunguan.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Hafal 3 tanda kekurangan NPK: Kurang N = Daun Kuning; Kurang P = Akar Lemah/Daun Ungu; Kurang K = Tepi Daun Perang/Mati!</p>
+        <p><strong>Contoh:</strong> Dalam Eksperimen 2.2 larutan kultur Knop, botol yang tidak mengandungi fosforus (P) dibalut kertas hitam. Mengapakah kertas hitam diperlukan dan apakah pemerhatian anak benih jagung?</p>
+        <p>Penyelesaian: Kertas hitam menghalang cahaya matahari supaya alga hijau tidak tumbuh di dalam larutan kultur dan menyerap nutrien tumbuhan. Anak benih kekurangan fosforus menunjukkan pertumbuhan akar sangat lemah dan daun berwarna keunguan.</p>
+        <p class="kssm-takeaway">Tip Penting: Hafal 3 tanda kekurangan NPK: Kurang N = Daun Kuning; Kurang P = Akar Lemah/Daun Ungu; Kurang K = Tepi Daun Perang/Mati!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Mengapakah petani menanam pokok kekacang seperti kacang tanah atau kacang panjang secara bergilir selepas menuai padi?" data-ex-solution="Bakteria Rhizobium sp. yang bersimbiosis di dalam nodul akar pokok kekacang mengikat gas nitrogen udara menjadi ion nitrat semula jadi untuk memulihkan kesuburan tanah tanpa bergantung sepenuhnya kepada baja kimia." data-ex-takeaway="Bezakan tiga bakteria Kitar Nitrogen: Pengikat Nitrogen (udara → tanah), Penitritan (ammonia → nitrit → nitrat), Pendenitritan (nitrat → gas N₂ udara)!">
@@ -389,42 +404,51 @@
       <p class="kssm-sub-summary">Walaupun ~78% atmosfera ialah gas nitrogen (N₂), tumbuhan hanya dapat menyerap nitrogen dalam bentuk ION NITRAT (NO₃⁻) yang terlarut di dalam air tanah melalui Kitar Nitrogen.</p>
       <ul class="kssm-kp-list"><li>Proses MENAMBAH ion nitrat tanah: (1) Kilat &amp; letusan gunung berapi mengoksidakan N₂ → nitrogen dioksida lalu larut hujan menjadi asid nitrik/garam nitrat; (2) Bakteria Pengikat Nitrogen (Rhizobium sp. dalam nodul akar kekacang &amp; Azotobacter dalam tanah) menukar N₂ udara kepada sebatian ammonium/nitrat; (3) Penguraian tumbuhan/haiwan mati oleh saprofit menghasilkan ammonia → ditukar oleh Bakteria Penitritan (Nitrosomonas → nitrit, Nitrobacter → nitrat).</li><li>Proses MENYINGKIRKAN ion nitrat: (1) Penyerapan ion nitrat oleh akar tumbuhan; (2) Larut resap (leaching) dibawa air hujan ke sungai; (3) Bakteria Pendenitritan menukar semula nitrat tanah kepada gas N₂ bebas kembali ke udara!</li><li>Kepentingan: mengekalkan kesuburan tanah, pembekalan berterusan protein tumbuhan/haiwan dan mengurangkan pencemaran air akibat baja berlebihan.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah petani menanam pokok kekacang seperti kacang tanah atau kacang panjang secara bergilir selepas menuai padi?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Bakteria Rhizobium sp. yang bersimbiosis di dalam nodul akar pokok kekacang mengikat gas nitrogen udara menjadi ion nitrat semula jadi untuk memulihkan kesuburan tanah tanpa bergantung sepenuhnya kepada baja kimia.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Bezakan tiga bakteria Kitar Nitrogen: Pengikat Nitrogen (udara → tanah), Penitritan (ammonia → nitrit → nitrat), Pendenitritan (nitrat → gas N₂ udara)!</p>
+        <p><strong>Contoh:</strong> Mengapakah petani menanam pokok kekacang seperti kacang tanah atau kacang panjang secara bergilir selepas menuai padi?</p>
+        <p>Penyelesaian: Bakteria Rhizobium sp. yang bersimbiosis di dalam nodul akar pokok kekacang mengikat gas nitrogen udara menjadi ion nitrat semula jadi untuk memulihkan kesuburan tanah tanpa bergantung sepenuhnya kepada baja kimia.</p>
+        <p class="kssm-takeaway">Tip Penting: Bezakan tiga bakteria Kitar Nitrogen: Pengikat Nitrogen (udara → tanah), Penitritan (ammonia → nitrit → nitrat), Pendenitritan (nitrat → gas N₂ udara)!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Apakah perbezaan tempoh penyimpanan susu segar yang melalui kaedah Pempasteuran berbanding kaedah Suhu Ultra Tinggi (UHT)?" data-ex-solution="Susu pempasteuran (72°C/15 saat) masih mengekalkan rasa asli dan perlu disimpan di dalam peti sejuk (tahan beberapa hari), manakala susu UHT (135°C beberapa saat) membunuh semua mikroorganisma termasuk spora sehingga boleh disimpan pada suhu bilik berbulan-bulan sebelum dibuka." data-ex-takeaway="Sentiasa baca senarai ramuan pada label mengikut Akta Makanan 1983: bahan paling berat sentiasa ditulis PERTAMA!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Apakah perbezaan tempoh penyimpanan susu segar yang melalui kaedah Pempasteuran berbanding kaedah Suhu Ultra Tinggi (UHT)?" data-ex-solution="Susu pempasteuran (72°C/15 saat) masih mengekalkan rasa asli dan perlu disimpan di dalam peti sejuk (tahan beberapa hari), manakala susu UHT (135°C beberapa saat) membunuh semua mikroorganisma termasuk spora sehingga boleh disimpan pada suhu bilik berbulan-bulan sebelum dibuka." data-ex-takeaway="Sentiasa baca senarai ramuan pada label mengikut Akta Makanan 1983: bahan paling berat sentiasa ditulis PERTAMA!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Teknologi Makanan, Pelabelan &amp; Akta Makanan 1983 (SK 2.4–2.5)</h3>
       <p class="kssm-sub-summary">Teknologi pemprosesan makanan memanjangkan jangka hayat, membunuh patogen, memudahkan pengangkutan dan memastikan keselamatan pengguna melalui penguatkuasaan undang-undang serta pensijilan Halal JAKIM.</p>
       <ul class="kssm-kp-list"><li>Kaedah utama: Pempasteuran (susu dipanaskan 63°C selama 30 minit atau 72°C selama 15 saat lalu disejuk cepat — kekalkan rasa/nutrien tetapi perlu simpan sejuk); Pengetinan/Suhu Ultra Tinggi UHT (132°C+, bunuh spora bakteria); Penyejukbekuan (-18°C); Penyinaran gama (bunuh serangga/lambat percambahan ubi); Pendehidratan/pengeringan &amp; Pembungkusan Vakum.</li><li>Bahan Tambahan Makanan: pengawet (natrium nitrit/benzoat), penstabil, pengemulsi (lesitin), antioksidan (asid askorbik) dan pemekat.</li><li>Akta Makanan 1983 &amp; Peraturan-Peraturan Makanan 1985: mewajibkan label produk memaparkan nama makanan, senarai ramuan mengikut turutan berat menurun, tarikh luput (&#39;guna sebelum&#39; / &#39;baik sebelum&#39;), berat bersih, nama pengilang dan maklumat nutrisi; produk berstatus Halal JAKIM mematuhi hukum syarak dan kebersihan Toyyiban.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah perbezaan tempoh penyimpanan susu segar yang melalui kaedah Pempasteuran berbanding kaedah Suhu Ultra Tinggi (UHT)?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Susu pempasteuran (72°C/15 saat) masih mengekalkan rasa asli dan perlu disimpan di dalam peti sejuk (tahan beberapa hari), manakala susu UHT (135°C beberapa saat) membunuh semua mikroorganisma termasuk spora sehingga boleh disimpan pada suhu bilik berbulan-bulan sebelum dibuka.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa baca senarai ramuan pada label mengikut Akta Makanan 1983: bahan paling berat sentiasa ditulis PERTAMA!</p>
+        <p><strong>Contoh:</strong> Apakah perbezaan tempoh penyimpanan susu segar yang melalui kaedah Pempasteuran berbanding kaedah Suhu Ultra Tinggi (UHT)?</p>
+        <p>Penyelesaian: Susu pempasteuran (72°C/15 saat) masih mengekalkan rasa asli dan perlu disimpan di dalam peti sejuk (tahan beberapa hari), manakala susu UHT (135°C beberapa saat) membunuh semua mikroorganisma termasuk spora sehingga boleh disimpan pada suhu bilik berbulan-bulan sebelum dibuka.</p>
+        <p class="kssm-takeaway">Tip Penting: Sentiasa baca senarai ramuan pada label mengikut Akta Makanan 1983: bahan paling berat sentiasa ditulis PERTAMA!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen." data-m-correction="Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera." data-m-tip="De-nitritan = &#39;De&#39; bererti membuang/mengurangkan nitrat tanah!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.</p>
-      <p><strong>Tip Skor Exam:</strong> De-nitritan = &#39;De&#39; bererti membuang/mengurangkan nitrat tanah!</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen." data-m-correction="Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera." data-m-tip="De-nitritan = &#39;De&#39; bererti membuang/mengurangkan nitrat tanah!">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen.</p>
+      <p class="kssm-m-good">TEPAT: Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: De-nitritan = &#39;De&#39; bererti membuang/mengurangkan nitrat tanah!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menganggap tumbuhan menyerap terus gas nitrogen (N₂) dari udara melalui stoma daun untuk membuat protein." data-m-correction="Tumbuhan TIDAK boleh menggunakan N₂ udara secara langsung; ia hanya menyerap sebatian ion NITRAT (NO₃⁻) atau ion ammonium terlarut melalui akar." data-m-tip="Kilat &amp; Bakteria pengikat nitrogen ialah &#39;jambatan&#39; wajib menukar N₂ udara → NO₃⁻!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap tumbuhan menyerap terus gas nitrogen (N₂) dari udara melalui stoma daun untuk membuat protein.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Tumbuhan TIDAK boleh menggunakan N₂ udara secara langsung; ia hanya menyerap sebatian ion NITRAT (NO₃⁻) atau ion ammonium terlarut melalui akar.</p>
-      <p><strong>Tip Skor Exam:</strong> Kilat &amp; Bakteria pengikat nitrogen ialah &#39;jambatan&#39; wajib menukar N₂ udara → NO₃⁻!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menganggap tumbuhan menyerap terus gas nitrogen (N₂) dari udara melalui stoma daun untuk membuat protein.</p>
+      <p class="kssm-m-good">TEPAT: Tumbuhan TIDAK boleh menggunakan N₂ udara secara langsung; ia hanya menyerap sebatian ion NITRAT (NO₃⁻) atau ion ammonium terlarut melalui akar.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Kilat &amp; Bakteria pengikat nitrogen ialah &#39;jambatan&#39; wajib menukar N₂ udara → NO₃⁻!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyangka pempasteuran membunuh spora bakteria sehingga susu tidak perlu dimasukkan ke peti sejuk." data-m-correction="Pempasteuran (63°C/30 minit atau 72°C/15 saat) hanya membunuh bakteria aktif patogen supaya vitamin serta rasa susu terpelihara; spora masih kekal, jadi susu WAJIB disimpan dingin." data-m-tip="Pempasteuran = wajib sejuk; UHT / Pengetinan = suhu bilik!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyangka pempasteuran membunuh spora bakteria sehingga susu tidak perlu dimasukkan ke peti sejuk.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Pempasteuran (63°C/30 minit atau 72°C/15 saat) hanya membunuh bakteria aktif patogen supaya vitamin serta rasa susu terpelihara; spora masih kekal, jadi susu WAJIB disimpan dingin.</p>
-      <p><strong>Tip Skor Exam:</strong> Pempasteuran = wajib sejuk; UHT / Pengetinan = suhu bilik!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyangka pempasteuran membunuh spora bakteria sehingga susu tidak perlu dimasukkan ke peti sejuk.</p>
+      <p class="kssm-m-good">TEPAT: Pempasteuran (63°C/30 minit atau 72°C/15 saat) hanya membunuh bakteria aktif patogen supaya vitamin serta rasa susu terpelihara; spora masih kekal, jadi susu WAJIB disimpan dingin.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Pempasteuran = wajib sejuk; UHT / Pengetinan = suhu bilik!</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1234,7 +1258,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

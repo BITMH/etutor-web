@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 2","item":"https://etutor.my/kssm/tingkatan-2/"},{"@type":"ListItem","position":4,"name":"Bahasa Inggeris Bab 1","item":"https://etutor.my/kssm/tingkatan-2/bahasa-inggeris/bab-1/"}]},{"@type":"LearningResource","name":"Bahasa Inggeris Tingkatan 2 Bab 1: Unit 1 (Pulse 2 Unit 6): Money & Future Plans","description":"Master vocabulary related to jobs, chores and smart money habits alongside future forms ('be going to' vs 'will' / 'won't') and polite expressions using 'would like + infinitive'.","url":"https://etutor.my/kssm/tingkatan-2/bahasa-inggeris/bab-1/","inLanguage":"en","educationalLevel":"Tingkatan 2","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Bahasa Inggeris KSSM (1119)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="bahasa" data-tpl="bahasa" data-subject-slug="bahasa-inggeris" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T2_bahasa-inggeris_Bab_1.pdf" data-form-label="Tingkatan 2" data-subject-name="Bahasa Inggeris" data-subject-code="1119" data-pages="DSKP m.s. 50 / Unit 6" data-dskp="CEFR A2 High • Pulse 2 Unit 6 (DSKP KSSM BI Tingkatan 2)" data-chapter-heading="Unit 1: Unit 1 (Pulse 2 Unit 6): Money &amp; Future Plans" data-hero-summary="Master vocabulary related to jobs, chores and smart money habits alongside future forms (&#39;be going to&#39; vs &#39;will&#39; / &#39;won&#39;t&#39;) and polite expressions using &#39;would like + infinitive&#39;." style="--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;--tpl-bg:url('../../../../images/nota-templates/bahasa.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Unit 1: Unit 1 (Pulse 2 Unit 6): Money &amp; Future Plans</h2>
-          <p class="kssm-sublead">Master vocabulary related to jobs, chores and smart money habits alongside future forms (&#39;be going to&#39; vs &#39;will&#39; / &#39;won&#39;t&#39;) and polite expressions using &#39;would like + infinitive&#39;.</p>
-          <p class="kssm-sheet-meta">Tingkatan 2 &bull; Bahasa Inggeris (1119) &bull; DSKP m.s. 50 / Unit 6 &bull; CEFR A2 High • Pulse 2 Unit 6 (DSKP KSSM BI Tingkatan 2)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Use &#39;be going to&#39; accurately to express planned future intentions and decisions made before speaking.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 2 &bull; Bahasa Inggeris (1119) &bull; DSKP m.s. 50 / Unit 6</span>
+      </div>
+      <h2>Unit 1: Unit 1 (Pulse 2 Unit 6): Money &amp; Future Plans</h2>
+      <p class="kssm-mast-sum">Master vocabulary related to jobs, chores and smart money habits alongside future forms (&#39;be going to&#39; vs &#39;will&#39; / &#39;won&#39;t&#39;) and polite expressions using &#39;would like + infinitive&#39;.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: CEFR A2 High • Pulse 2 Unit 6 (DSKP KSSM BI Tingkatan 2)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Use &#39;be going to&#39; accurately to express planned future intentions and decisions made before speaking.">
       <span class="kssm-obj-num">01</span>
       <span>Use &#39;be going to&#39; accurately to express planned future intentions and decisions made before speaking.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Read and write advice on online message boards about teenagers earning and saving pocket money responsibly.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (DSKP m.s. 50 / Unit 6)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Choose the correct verb: &#39;Could you (lend / borrow) me RM10? I promise I will pay it back tomorrow.&#39;" data-ex-solution="lend (the speaker asks someone else to give money temporarily; &#39;Can I borrow RM10 from you?&#39; reverses the subject)." data-ex-takeaway="Remember: Borrow FROM a lender; Lend TO a borrower.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Choose the correct verb: &#39;Could you (lend / borrow) me RM10? I promise I will pay it back tomorrow.&#39;" data-ex-solution="lend (the speaker asks someone else to give money temporarily; &#39;Can I borrow RM10 from you?&#39; reverses the subject)." data-ex-takeaway="Remember: Borrow FROM a lender; Lend TO a borrower.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Earning &amp; Saving Money Vocabulary (Pulse 2 Unit 6)</h3>
       <p class="kssm-sub-summary">DSKP Form 2 opens the Pulse 2 textbook syllabus at Unit 6 (&#39;Money&#39;), exploring part-time chores, budgeting, charity fundraising and smart consumer choices for teenagers.</p>
       <ul class="kssm-kp-list"><li>Chores &amp; pocket money verbs: babysit, do the washing-up, walk the dog, wash cars, deliver newspapers, clean windows.</li><li>Money verbs: earn, save, spend (on), borrow (from), lend (to), swap, pay for, waste, collect money for charity.</li><li>Compare pairs carefully: &#39;borrow from&#39; means taking temporarily; &#39;lend to&#39; means giving temporarily.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Choose the correct verb: &#39;Could you (lend / borrow) me RM10? I promise I will pay it back tomorrow.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> lend (the speaker asks someone else to give money temporarily; &#39;Can I borrow RM10 from you?&#39; reverses the subject).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Remember: Borrow FROM a lender; Lend TO a borrower.</p>
+        <p><strong>Contoh:</strong> Choose the correct verb: &#39;Could you (lend / borrow) me RM10? I promise I will pay it back tomorrow.&#39;</p>
+        <p>Penyelesaian: lend (the speaker asks someone else to give money temporarily; &#39;Can I borrow RM10 from you?&#39; reverses the subject).</p>
+        <p class="kssm-takeaway">Tip Penting: Remember: Borrow FROM a lender; Lend TO a borrower.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Complete with &#39;going to&#39;: &#39;Adam saved RM80 last month because he ______ (buy) a new school bag.&#39;" data-ex-solution="is going to buy (a pre-decided plan supported by prior action)." data-ex-takeaway="Always include the right form of &#39;be&#39; (am/is/are) before &#39;going to&#39; + base verb.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Complete with &#39;going to&#39;: &#39;Adam saved RM80 last month because he ______ (buy) a new school bag.&#39;" data-ex-solution="is going to buy (a pre-decided plan supported by prior action)." data-ex-takeaway="Always include the right form of &#39;be&#39; (am/is/are) before &#39;going to&#39; + base verb.">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Future Plans with &#39;be going to&#39;</h3>
       <p class="kssm-sub-summary">When talking about concrete plans, budgets or intentions decided BEFORE the moment of speaking, English uses &#39;am/is/are + going to + base verb&#39;.</p>
       <ul class="kssm-kp-list"><li>Affirmative: &#39;I am going to save half of my pocket money this month.&#39; / &#39;She is going to wash her neighbour&#39;s car.&#39;</li><li>Negative: &#39;We aren&#39;t going to waste money on expensive snacks.&#39;</li><li>Questions: &#39;Are you going to buy a second-hand bicycle?&#39; -&gt; &#39;Yes, I am.&#39; / &#39;No, I&#39;m not.&#39;</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Complete with &#39;going to&#39;: &#39;Adam saved RM80 last month because he ______ (buy) a new school bag.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> is going to buy (a pre-decided plan supported by prior action).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Always include the right form of &#39;be&#39; (am/is/are) before &#39;going to&#39; + base verb.</p>
+        <p><strong>Contoh:</strong> Complete with &#39;going to&#39;: &#39;Adam saved RM80 last month because he ______ (buy) a new school bag.&#39;</p>
+        <p>Penyelesaian: is going to buy (a pre-decided plan supported by prior action).</p>
+        <p class="kssm-takeaway">Tip Penting: Always include the right form of &#39;be&#39; (am/is/are) before &#39;going to&#39; + base verb.</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Decide between &#39;will&#39; and &#39;am going to&#39;: &#39;Look, my sister is carrying heavy groceries! Wait, I ______ help her.&#39;" data-ex-solution="&#39;will / &#39;ll&#39; (a spontaneous decision made right at the moment of speaking)." data-ex-takeaway="Pre-planned before now = &#39;going to&#39;; Instant reaction right now = &#39;will&#39;.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Use &#39;will&#39; (or contracted &#39;&#39;ll&#39;) and &#39;will not&#39; (&#39;won&#39;t&#39;) followed by the bare infinitive when making general predictions, promises or spontaneous offers on the spot.</p>
       <ul class="kssm-kp-list"><li>Spontaneous offer/decision: &#39;Oh, you forgot your wallet! I&#39;ll pay for your bus ticket today.&#39;</li><li>General prediction: &#39;In the future, more shops will accept cashless payments.&#39;</li><li>Notice: Never add &#39;to&#39; or &#39;-s&#39; after &#39;will&#39; or &#39;won&#39;t&#39; (&#39;He will helps&#39; is wrong -&gt; &#39;He will help&#39;).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Decide between &#39;will&#39; and &#39;am going to&#39;: &#39;Look, my sister is carrying heavy groceries! Wait, I ______ help her.&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;will / &#39;ll&#39; (a spontaneous decision made right at the moment of speaking).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pre-planned before now = &#39;going to&#39;; Instant reaction right now = &#39;will&#39;.</p>
+        <p><strong>Contoh:</strong> Decide between &#39;will&#39; and &#39;am going to&#39;: &#39;Look, my sister is carrying heavy groceries! Wait, I ______ help her.&#39;</p>
+        <p>Penyelesaian: &#39;will / &#39;ll&#39; (a spontaneous decision made right at the moment of speaking).</p>
+        <p class="kssm-takeaway">Tip Penting: Pre-planned before now = &#39;going to&#39;; Instant reaction right now = &#39;will&#39;.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Respond politely in short form to: &#39;Would you like to volunteer at the charity book fair?&#39;" data-ex-solution="&#39;Yes, I would.&#39; (Avoid saying &#39;Yes, I would like.&#39; as the standalone short answer; either &#39;Yes, I would.&#39; or &#39;Yes, I&#39;d love to.&#39;)." data-ex-takeaway="DSKP target rule: &#39;Yes, I would.&#39; / &#39;No, I wouldn&#39;t.&#39;">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Respond politely in short form to: &#39;Would you like to volunteer at the charity book fair?&#39;" data-ex-solution="&#39;Yes, I would.&#39; (Avoid saying &#39;Yes, I would like.&#39; as the standalone short answer; either &#39;Yes, I would.&#39; or &#39;Yes, I&#39;d love to.&#39;)." data-ex-takeaway="DSKP target rule: &#39;Yes, I would.&#39; / &#39;No, I wouldn&#39;t.&#39;">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Polite Preferences: &#39;would like + infinitive&#39; (DSKP p. 50)</h3>
       <p class="kssm-sub-summary">DSKP Form 2 explicitly specifies &#39;would like + infinitive (to + verb)&#39; for stating wishes politely and answering Yes/No questions cleanly.</p>
       <ul class="kssm-kp-list"><li>Affirmative &amp; Negative: &#39;Jess would like to earn extra money.&#39; / &#39;Jess wouldn&#39;t like to babysit noisy toddlers.&#39;</li><li>Questions &amp; Short Answers: &#39;Would you like to go shopping with us?&#39; -&gt; &#39;Yes, I would.&#39; / &#39;No, I wouldn&#39;t.&#39;</li><li>Contrast &#39;would like to + verb&#39; (polite specific wish) with &#39;like + verb-ing&#39; (general hobby: &#39;I like saving coins&#39;).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Respond politely in short form to: &#39;Would you like to volunteer at the charity book fair?&#39;</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> &#39;Yes, I would.&#39; (Avoid saying &#39;Yes, I would like.&#39; as the standalone short answer; either &#39;Yes, I would.&#39; or &#39;Yes, I&#39;d love to.&#39;).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> DSKP target rule: &#39;Yes, I would.&#39; / &#39;No, I wouldn&#39;t.&#39;</p>
+        <p><strong>Contoh:</strong> Respond politely in short form to: &#39;Would you like to volunteer at the charity book fair?&#39;</p>
+        <p>Penyelesaian: &#39;Yes, I would.&#39; (Avoid saying &#39;Yes, I would like.&#39; as the standalone short answer; either &#39;Yes, I would.&#39; or &#39;Yes, I&#39;d love to.&#39;).</p>
+        <p class="kssm-takeaway">Tip Penting: DSKP target rule: &#39;Yes, I would.&#39; / &#39;No, I wouldn&#39;t.&#39;</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Writing &#39;I would like going shopping&#39; instead of &#39;to go shopping&#39;." data-m-correction="Always follow &#39;would like&#39; with &#39;to + infinitive&#39;: &#39;I would like to go shopping.&#39;" data-m-tip="&#39;Would like&#39; wants &#39;to&#39;; plain &#39;like&#39; often takes &#39;-ing&#39;.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Writing &#39;I would like going shopping&#39; instead of &#39;to go shopping&#39;.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Always follow &#39;would like&#39; with &#39;to + infinitive&#39;: &#39;I would like to go shopping.&#39;</p>
-      <p><strong>Tip Skor Exam:</strong> &#39;Would like&#39; wants &#39;to&#39;; plain &#39;like&#39; often takes &#39;-ing&#39;.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Writing &#39;I would like going shopping&#39; instead of &#39;to go shopping&#39;." data-m-correction="Always follow &#39;would like&#39; with &#39;to + infinitive&#39;: &#39;I would like to go shopping.&#39;" data-m-tip="&#39;Would like&#39; wants &#39;to&#39;; plain &#39;like&#39; often takes &#39;-ing&#39;.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Writing &#39;I would like going shopping&#39; instead of &#39;to go shopping&#39;.</p>
+      <p class="kssm-m-good">TEPAT: Always follow &#39;would like&#39; with &#39;to + infinitive&#39;: &#39;I would like to go shopping.&#39;</p>
+      <p class="kssm-m-tip">Tip Skor Exam: &#39;Would like&#39; wants &#39;to&#39;; plain &#39;like&#39; often takes &#39;-ing&#39;.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mixing up &#39;borrow&#39; and &#39;lend&#39;: &#39;Can you borrow me your pen?&#39;" data-m-correction="Say &#39;Can you lend me your pen?&#39; or &#39;Can I borrow your pen?&#39;" data-m-tip="You lend OUT; you borrow IN.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mixing up &#39;borrow&#39; and &#39;lend&#39;: &#39;Can you borrow me your pen?&#39;</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Say &#39;Can you lend me your pen?&#39; or &#39;Can I borrow your pen?&#39;</p>
-      <p><strong>Tip Skor Exam:</strong> You lend OUT; you borrow IN.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Mixing up &#39;borrow&#39; and &#39;lend&#39;: &#39;Can you borrow me your pen?&#39;</p>
+      <p class="kssm-m-good">TEPAT: Say &#39;Can you lend me your pen?&#39; or &#39;Can I borrow your pen?&#39;</p>
+      <p class="kssm-m-tip">Tip Skor Exam: You lend OUT; you borrow IN.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Dropping &#39;be&#39; in &#39;be going to&#39;, e.g., &#39;She going to save money.&#39;" data-m-correction="Include am/is/are: &#39;She is going to save money.&#39;" data-m-tip="Three parts required: BE + GOING TO + BASE VERB.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Dropping &#39;be&#39; in &#39;be going to&#39;, e.g., &#39;She going to save money.&#39;</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Include am/is/are: &#39;She is going to save money.&#39;</p>
-      <p><strong>Tip Skor Exam:</strong> Three parts required: BE + GOING TO + BASE VERB.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Dropping &#39;be&#39; in &#39;be going to&#39;, e.g., &#39;She going to save money.&#39;</p>
+      <p class="kssm-m-good">TEPAT: Include am/is/are: &#39;She is going to save money.&#39;</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Three parts required: BE + GOING TO + BASE VERB.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

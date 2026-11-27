@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Geografi Bab 2","item":"https://etutor.my/kssm/tingkatan-3/geografi/bab-2/"}]},{"@type":"LearningResource","name":"Geografi Tingkatan 3 Bab 2: Carta Pai (Peratus, Saiz Sudut Sektor & Tafsiran)","description":"Menguasai ciri dan kegunaan carta pai, rumus tepat mengira peratus (%) serta saiz sudut sektor (°) daripada jadual, langkah melukis carta pai menggunakan jangka lukis dan jangka sudut mengikut arah pusingan jam (terbesar ke terkecil) serta mentafsir pecahan data.","url":"https://etutor.my/kssm/tingkatan-3/geografi/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Geografi KSSM (2280)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="geografi" data-tpl="geografi" data-subject-slug="geografi" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_geografi_Bab_2.pdf" data-form-label="Tingkatan 3" data-subject-name="Geografi" data-subject-code="2280" data-pages="m.s. 20–28" data-dskp="SK 1.2 Kemahiran Geografi: Carta Pai (DSKP KSSM Geografi T3)" data-chapter-heading="Bab 2: Carta Pai (Peratus, Saiz Sudut Sektor &amp; Tafsiran)" data-hero-summary="Menguasai ciri dan kegunaan carta pai, rumus tepat mengira peratus (%) serta saiz sudut sektor (°) daripada jadual, langkah melukis carta pai menggunakan jangka lukis dan jangka sudut mengikut arah pusingan jam (terbesar ke terkecil) serta mentafsir pecahan data." style="--tpl-accent:#0369a1;--tpl-soft:#f0f9ff;--tpl-border:#7dd3fc;--tpl-ink:#0c4a6e;--tpl-bg:url('../../../../images/nota-templates/geografi.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 2: Carta Pai (Peratus, Saiz Sudut Sektor &amp; Tafsiran)</h2>
-          <p class="kssm-sublead">Menguasai ciri dan kegunaan carta pai, rumus tepat mengira peratus (%) serta saiz sudut sektor (°) daripada jadual, langkah melukis carta pai menggunakan jangka lukis dan jangka sudut mengikut arah pusingan jam (terbesar ke terkecil) serta mentafsir pecahan data.</p>
-          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Geografi (2280) &bull; m.s. 20–28 &bull; SK 1.2 Kemahiran Geografi: Carta Pai (DSKP KSSM Geografi T3)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menyatakan definisi dan enam ciri wajib carta pai (sektor, saiz sudut, nilai peratus, tajuk, petunjuk dan jumlah keseluruhan).">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 3 &bull; Geografi (2280) &bull; m.s. 20–28</span>
+      </div>
+      <h2>Bab 2: Carta Pai (Peratus, Saiz Sudut Sektor &amp; Tafsiran)</h2>
+      <p class="kssm-mast-sum">Menguasai ciri dan kegunaan carta pai, rumus tepat mengira peratus (%) serta saiz sudut sektor (°) daripada jadual, langkah melukis carta pai menggunakan jangka lukis dan jangka sudut mengikut arah pusingan jam (terbesar ke terkecil) serta mentafsir pecahan data.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.2 Kemahiran Geografi: Carta Pai (DSKP KSSM Geografi T3)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menyatakan definisi dan enam ciri wajib carta pai (sektor, saiz sudut, nilai peratus, tajuk, petunjuk dan jumlah keseluruhan).">
       <span class="kssm-obj-num">01</span>
       <span>Menyatakan definisi dan enam ciri wajib carta pai (sektor, saiz sudut, nilai peratus, tajuk, petunjuk dan jumlah keseluruhan).</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Mentafsir carta pai dengan menyatakan sektor tertinggi, sektor terendah, perbezaan nilai serta sebab pola data berkenaan.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 20–28)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Mengapakah jumlah peratus semua sektor dalam carta pai mesti sama dengan 100% dan jumlah sudut mesti sama dengan 360°?" data-ex-solution="Kerana satu bulatan penuh berjumlah 360° mewakili keseluruhan 100% kuantiti data yang dibahagikan kepada semua sektor." data-ex-takeaway="Sentiasa buat semakan akhir: Jumlah Peratus = 100%, Jumlah Sudut = 360° sebelum mula melukis!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Mengapakah jumlah peratus semua sektor dalam carta pai mesti sama dengan 100% dan jumlah sudut mesti sama dengan 360°?" data-ex-solution="Kerana satu bulatan penuh berjumlah 360° mewakili keseluruhan 100% kuantiti data yang dibahagikan kepada semua sektor." data-ex-takeaway="Sentiasa buat semakan akhir: Jumlah Peratus = 100%, Jumlah Sudut = 360° sebelum mula melukis!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Definisi, Ciri-ciri &amp; Kegunaan Carta Pai (SP 1.2.1)</h3>
       <p class="kssm-sub-summary">Carta pai ialah rajah perwakilan grafik berbentuk bulatan (360°) yang dibahagikan kepada beberapa sektor bagi memaparkan pecahan atau perbandingan bahagian data daripada satu jumlah keseluruhan (100%).</p>
       <ul class="kssm-kp-list"><li>Enam ciri wajib carta pai lengkap: (1) Tajuk jelas; (2) Sektor berlainan warna atau lorekan; (3) Saiz sudut setiap sektor berkadaran dengan kuantitinya; (4) Nilai setiap sektor dilabel dalam peratus (%); (5) Petunjuk (legenda) padanan warna/lorekan; (6) Jumlah keseluruhan kuantiti dinyatakan.</li><li>Kegunaan utama: membandingkan kadar pecahan atau komposisi sektor dalam satu set data dengan cepat dan menarik secara visual.</li><li>Tidak seperti graf garisan, carta pai sesuai untuk data pecahan pada SATU masa tertentu, bukannya siri masa bertahun-tahun.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah jumlah peratus semua sektor dalam carta pai mesti sama dengan 100% dan jumlah sudut mesti sama dengan 360°?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana satu bulatan penuh berjumlah 360° mewakili keseluruhan 100% kuantiti data yang dibahagikan kepada semua sektor.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa buat semakan akhir: Jumlah Peratus = 100%, Jumlah Sudut = 360° sebelum mula melukis!</p>
+        <p><strong>Contoh:</strong> Mengapakah jumlah peratus semua sektor dalam carta pai mesti sama dengan 100% dan jumlah sudut mesti sama dengan 360°?</p>
+        <p>Penyelesaian: Kerana satu bulatan penuh berjumlah 360° mewakili keseluruhan 100% kuantiti data yang dibahagikan kepada semua sektor.</p>
+        <p class="kssm-takeaway">Tip Penting: Sentiasa buat semakan akhir: Jumlah Peratus = 100%, Jumlah Sudut = 360° sebelum mula melukis!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Daripada jumlah 200 orang murid, seramai 50 orang datang menaiki bas dan 80 orang menaiki kereta. Hitung peratus dan saiz sudut sektor bagi Bas dan Kereta." data-ex-solution="Bas: (50 ÷ 200) × 100% = 25%; Sudut = (50 ÷ 200) × 360° = 90°. Kereta: (80 ÷ 200) × 100% = 40%; Sudut = (80 ÷ 200) × 360° = 144°." data-ex-takeaway="Pintasan pantas semakan: 10% daripada bulatan ialah 36°, 25% ialah 90°, dan 50% ialah 180°!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Daripada jumlah 200 orang murid, seramai 50 orang datang menaiki bas dan 80 orang menaiki kereta. Hitung peratus dan saiz sudut sektor bagi Bas dan Kereta." data-ex-solution="Bas: (50 ÷ 200) × 100% = 25%; Sudut = (50 ÷ 200) × 360° = 90°. Kereta: (80 ÷ 200) × 100% = 40%; Sudut = (80 ÷ 200) × 360° = 144°." data-ex-takeaway="Pintasan pantas semakan: 10% daripada bulatan ialah 36°, 25% ialah 90°, dan 50% ialah 180°!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Rumus Mengira Peratus (%) dan Saiz Sudut Sektor (°) (SP 1.2.2)</h3>
       <p class="kssm-sub-summary">Langkah paling kritikal sebelum melukis carta pai ialah membina jadual pengiraan yang menukar nilai kuantiti mentah kepada peratus dan saiz sudut darjah.</p>
       <ul class="kssm-kp-list"><li>Rumus Peratus Sektor = (Nilai sesuatu sektor ÷ Jumlah keseluruhan nilai) × 100%.</li><li>Rumus Saiz Sudut Sektor = (Nilai sesuatu sektor ÷ Jumlah keseluruhan nilai) × 360° (ATAU: Peratus sektor × 3.6° kerana 360 ÷ 100 = 3.6° per 1%).</li><li>Sekiranya berlaku perpuluhan panjang semasa membundar ke satu tempat perpuluhan atau nombor bulat, pastikan hasil tambah semua sudut sektor genap 360°.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Daripada jumlah 200 orang murid, seramai 50 orang datang menaiki bas dan 80 orang menaiki kereta. Hitung peratus dan saiz sudut sektor bagi Bas dan Kereta.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Bas: (50 ÷ 200) × 100% = 25%; Sudut = (50 ÷ 200) × 360° = 90°. Kereta: (80 ÷ 200) × 100% = 40%; Sudut = (80 ÷ 200) × 360° = 144°.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pintasan pantas semakan: 10% daripada bulatan ialah 36°, 25% ialah 90°, dan 50% ialah 180°!</p>
+        <p><strong>Contoh:</strong> Daripada jumlah 200 orang murid, seramai 50 orang datang menaiki bas dan 80 orang menaiki kereta. Hitung peratus dan saiz sudut sektor bagi Bas dan Kereta.</p>
+        <p>Penyelesaian: Bas: (50 ÷ 200) × 100% = 25%; Sudut = (50 ÷ 200) × 360° = 90°. Kereta: (80 ÷ 200) × 100% = 40%; Sudut = (80 ÷ 200) × 360° = 144°.</p>
+        <p class="kssm-takeaway">Tip Penting: Pintasan pantas semakan: 10% daripada bulatan ialah 36°, 25% ialah 90°, dan 50% ialah 180°!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Jika empat sektor mempunyai sudut 144°, 90°, 72° dan 54°, sektor manakah dilukis dahulu bermula dari garisan tegak atas ikut arah jam?" data-ex-solution="Lukis 144° dahulu, diikuti 90°, kemudian 72° dan akhir sekali 54° (susunan menurun dari terbesar ke terkecil mengikut arah pusingan jam)." data-ex-takeaway="Alat wajib carta pai: Jangka lukis (bulatan) + Jangka sudut/Protraktor (sudut sektor) + Pembaris (jejari)!">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Buku Teks Geografi Tingkatan 3 (m.s. 31–32) menetapkan urutan piawai melukis carta pai supaya kemas, seragam dan mudah dibaca pemeriksa.</p>
       <ul class="kssm-kp-list"><li>1. Susun data jadual mengikut peratus dan sudut; lukiskan bulatan berjejari sesuai (contoh 5 cm) menggunakan JANGKA LUKIS.</li><li>2. Lukiskan satu garisan jejari tegak ke atas (pukul 12 pada jam) dari pusat bulatan sebagai garisan permulaan (0°).</li><li>3. Ukur dan lukis sektor bermula daripada NILAI TERBESAR hingga NILAI TERKECIL mengikut ARAH PUSINGAN JAM menggunakan jangka sudut (protraktor).</li><li>4. Warna atau lorek setiap sektor berbeza, labelkan peratus (%) dalam atau tepi sektor, serta lengkapkan Tajuk, Petunjuk dan Jumlah Keseluruhan di bahagian bawah/tepi.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Jika empat sektor mempunyai sudut 144°, 90°, 72° dan 54°, sektor manakah dilukis dahulu bermula dari garisan tegak atas ikut arah jam?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Lukis 144° dahulu, diikuti 90°, kemudian 72° dan akhir sekali 54° (susunan menurun dari terbesar ke terkecil mengikut arah pusingan jam).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Alat wajib carta pai: Jangka lukis (bulatan) + Jangka sudut/Protraktor (sudut sektor) + Pembaris (jejari)!</p>
+        <p><strong>Contoh:</strong> Jika empat sektor mempunyai sudut 144°, 90°, 72° dan 54°, sektor manakah dilukis dahulu bermula dari garisan tegak atas ikut arah jam?</p>
+        <p>Penyelesaian: Lukis 144° dahulu, diikuti 90°, kemudian 72° dan akhir sekali 54° (susunan menurun dari terbesar ke terkecil mengikut arah pusingan jam).</p>
+        <p class="kssm-takeaway">Tip Penting: Alat wajib carta pai: Jangka lukis (bulatan) + Jangka sudut/Protraktor (sudut sektor) + Pembaris (jejari)!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Suatu carta pai menunjukkan 500 pelancong ke Pahang: Negara X (42%) dan Negara Y (8%). Hitung beza bilangan pelancong antara kedua-dua negara itu." data-ex-solution="Beza peratus = 42% - 8% = 34%. Beza bilangan = 34% × 500 = 170 orang pelancong (atau 210 - 40 = 170)." data-ex-takeaway="Tolak peratus dahulu (42% - 8% = 34%) baru darab jumlah keseluruhan — jauh lebih cepat dan kurang silap kira!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Suatu carta pai menunjukkan 500 pelancong ke Pahang: Negara X (42%) dan Negara Y (8%). Hitung beza bilangan pelancong antara kedua-dua negara itu." data-ex-solution="Beza peratus = 42% - 8% = 34%. Beza bilangan = 34% × 500 = 170 orang pelancong (atau 210 - 40 = 170)." data-ex-takeaway="Tolak peratus dahulu (42% - 8% = 34%) baru darab jumlah keseluruhan — jauh lebih cepat dan kurang silap kira!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Langkah Mentafsir Carta Pai (SP 1.2.3)</h3>
       <p class="kssm-sub-summary">Tafsiran carta pai yang cemerlang menggabungkan pembacaan peratus, nilai mutlak kuantiti, perbezaan antara sektor serta inferens sebab geografi.</p>
       <ul class="kssm-kp-list"><li>Enam perkara wajib dalam jawapan tafsiran (m.s. 34): (1) Tajuk carta pai; (2) Senarai semua sektor; (3) Jumlah keseluruhan dan nilai setiap sektor; (4) Sektor nilai TERTINGGI (% dan kuantiti); (5) Sektor nilai TERENDAH (% dan kuantiti); (6) Perbezaan nilai antara sektor tertinggi dengan terendah serta sebab/rumusan.</li><li>Jika soalan hanya memberi peratus dan jumlah keseluruhan (cth Jumlah = 400 pelancong, Singapura = 45%), tukar kembali kepada nilai sebenar: 45/100 × 400 = 180 orang.</li><li>Jelaskan faktor geografi atau sosioekonomi di sebalik dominasi sektor tertinggi (contoh kedudukan berhampiran atau kos murah).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Suatu carta pai menunjukkan 500 pelancong ke Pahang: Negara X (42%) dan Negara Y (8%). Hitung beza bilangan pelancong antara kedua-dua negara itu.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Beza peratus = 42% - 8% = 34%. Beza bilangan = 34% × 500 = 170 orang pelancong (atau 210 - 40 = 170).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Tolak peratus dahulu (42% - 8% = 34%) baru darab jumlah keseluruhan — jauh lebih cepat dan kurang silap kira!</p>
+        <p><strong>Contoh:</strong> Suatu carta pai menunjukkan 500 pelancong ke Pahang: Negara X (42%) dan Negara Y (8%). Hitung beza bilangan pelancong antara kedua-dua negara itu.</p>
+        <p>Penyelesaian: Beza peratus = 42% - 8% = 34%. Beza bilangan = 34% × 500 = 170 orang pelancong (atau 210 - 40 = 170).</p>
+        <p class="kssm-takeaway">Tip Penting: Tolak peratus dahulu (42% - 8% = 34%) baru darab jumlah keseluruhan — jauh lebih cepat dan kurang silap kira!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Melukis sektor secara rawak tanpa menyusun daripada nilai terbesar kepada nilai terkecil mengikut arah jam." data-m-correction="Aturan KSSM m.s. 32 mewajibkan melukis sektor daripada NILAI TERBESAR kepada TERKECIL mengikut arah pusingan jam bermula dari garis tegak ke atas." data-m-tip="Susun semula baris jadual anda menurun (paling besar di atas) sebelum mula menggunakan jangka sudut!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Melukis sektor secara rawak tanpa menyusun daripada nilai terbesar kepada nilai terkecil mengikut arah jam.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Aturan KSSM m.s. 32 mewajibkan melukis sektor daripada NILAI TERBESAR kepada TERKECIL mengikut arah pusingan jam bermula dari garis tegak ke atas.</p>
-      <p><strong>Tip Skor Exam:</strong> Susun semula baris jadual anda menurun (paling besar di atas) sebelum mula menggunakan jangka sudut!</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Melukis sektor secara rawak tanpa menyusun daripada nilai terbesar kepada nilai terkecil mengikut arah jam." data-m-correction="Aturan KSSM m.s. 32 mewajibkan melukis sektor daripada NILAI TERBESAR kepada TERKECIL mengikut arah pusingan jam bermula dari garis tegak ke atas." data-m-tip="Susun semula baris jadual anda menurun (paling besar di atas) sebelum mula menggunakan jangka sudut!">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Melukis sektor secara rawak tanpa menyusun daripada nilai terbesar kepada nilai terkecil mengikut arah jam.</p>
+      <p class="kssm-m-good">TEPAT: Aturan KSSM m.s. 32 mewajibkan melukis sektor daripada NILAI TERBESAR kepada TERKECIL mengikut arah pusingan jam bermula dari garis tegak ke atas.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Susun semula baris jadual anda menurun (paling besar di atas) sebelum mula menggunakan jangka sudut!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Melabelkan sudut darjah (°) di dalam sektor carta pai yang sudah siap sebagai ganti peratus (%)." data-m-correction="Nilai sudut (°) hanya alat membantu semasa melukis dengan jangka sudut; label rasmi yang dipamerkan dalam sektor carta pai ialah PERATUS (%)." data-m-tip="Simpan nilai darjah di dalam jadual kerja; tulis peratus (%) pada rajah carta pai!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Melabelkan sudut darjah (°) di dalam sektor carta pai yang sudah siap sebagai ganti peratus (%).</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Nilai sudut (°) hanya alat membantu semasa melukis dengan jangka sudut; label rasmi yang dipamerkan dalam sektor carta pai ialah PERATUS (%).</p>
-      <p><strong>Tip Skor Exam:</strong> Simpan nilai darjah di dalam jadual kerja; tulis peratus (%) pada rajah carta pai!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Melabelkan sudut darjah (°) di dalam sektor carta pai yang sudah siap sebagai ganti peratus (%).</p>
+      <p class="kssm-m-good">TEPAT: Nilai sudut (°) hanya alat membantu semasa melukis dengan jangka sudut; label rasmi yang dipamerkan dalam sektor carta pai ialah PERATUS (%).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Simpan nilai darjah di dalam jadual kerja; tulis peratus (%) pada rajah carta pai!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Terlupa menyatakan Jumlah Keseluruhan data di bawah atau sebelah carta pai." data-m-correction="Setiap carta pai wajib mencatatkan Jumlah Keseluruhan (contoh: Jumlah = 200 murid) supaya pembaca tahu saiz mutlak di sebalik peratus." data-m-tip="Semak senarai 6 ciri wajib carta pai: Tajuk, Bulatan Sektor, Peratus (%), Petunjuk, Jumlah, Kemas.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Terlupa menyatakan Jumlah Keseluruhan data di bawah atau sebelah carta pai.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Setiap carta pai wajib mencatatkan Jumlah Keseluruhan (contoh: Jumlah = 200 murid) supaya pembaca tahu saiz mutlak di sebalik peratus.</p>
-      <p><strong>Tip Skor Exam:</strong> Semak senarai 6 ciri wajib carta pai: Tajuk, Bulatan Sektor, Peratus (%), Petunjuk, Jumlah, Kemas.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Terlupa menyatakan Jumlah Keseluruhan data di bawah atau sebelah carta pai.</p>
+      <p class="kssm-m-good">TEPAT: Setiap carta pai wajib mencatatkan Jumlah Keseluruhan (contoh: Jumlah = 200 murid) supaya pembaca tahu saiz mutlak di sebalik peratus.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Semak senarai 6 ciri wajib carta pai: Tajuk, Bulatan Sektor, Peratus (%), Petunjuk, Jumlah, Kemas.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

@@ -73,13 +73,13 @@ function openIllustratedPrintWindow(sheet, bgUrl, th) {
 
   w.document.open();
   w.document.write(`<!DOCTYPE html><html lang="ms"><head><meta charset="UTF-8"><title>${title} | Cetak PDF</title><style>
-    @page { size: A4 portrait; margin: 8mm; }
+    @page { size: A4 portrait; margin: 0; }
     * { box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { margin: 0; font-family: "Plus Jakarta Sans", system-ui, sans-serif; color: #0f172a; background: #fff; }
     .print-toolbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 16px; background: #1e3a8a; color: #fff; }
     .print-toolbar button { padding: 8px 14px; border-radius: 9px; border: none; font-weight: 700; cursor: pointer; background: #10b981; color: #fff; }
     .print-toolbar button.sec { background: rgba(255,255,255,0.2); margin-left: 8px; }
-    .print-wrap { max-width: 900px; margin: 14px auto; padding: 0 12px; }
+    .print-wrap { max-width: 840px; margin: 16px auto; padding: 0 12px; }
     ${styles}
     .kssm-studio-bar { display: none !important; }
     @media print { .print-toolbar { display: none !important; } .print-wrap { max-width: 100%; margin: 0; padding: 0; } }

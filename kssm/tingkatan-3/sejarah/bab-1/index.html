@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Sejarah Bab 1","item":"https://etutor.my/kssm/tingkatan-3/sejarah/bab-1/"}]},{"@type":"LearningResource","name":"Sejarah Tingkatan 3 Bab 1: Kedatangan Kuasa Barat (Kestabilan, Faktor & Strategi)","description":"Memahami kestabilan pemerintahan dan kemakmuran ekonomi negara kita sebelum kedatangan Barat, faktor pendorong imperialisme Barat dari abad ke-16 hingga ke-20 (rempah, Revolusi Perindustrian, kereta, Terusan Suez) serta perbezaan strategi Portugis, Belanda dan British.","url":"https://etutor.my/kssm/tingkatan-3/sejarah/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Sejarah KSSM (1249)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="sejarah" data-tpl="sejarah" data-subject-slug="sejarah" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_sejarah_Bab_1.pdf" data-form-label="Tingkatan 3" data-subject-name="Sejarah" data-subject-code="1249" data-pages="m.s. 2–27" data-dskp="SK 7.1 (DSKP KSSM Sejarah Tingkatan 3)" data-chapter-heading="Bab 1: Kedatangan Kuasa Barat (Kestabilan, Faktor &amp; Strategi)" data-hero-summary="Memahami kestabilan pemerintahan dan kemakmuran ekonomi negara kita sebelum kedatangan Barat, faktor pendorong imperialisme Barat dari abad ke-16 hingga ke-20 (rempah, Revolusi Perindustrian, kereta, Terusan Suez) serta perbezaan strategi Portugis, Belanda dan British." style="--tpl-accent:#b45309;--tpl-soft:#fffbeb;--tpl-border:#fcd34d;--tpl-ink:#78350f;--tpl-bg:url('../../../../images/nota-templates/sejarah.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 1: Kedatangan Kuasa Barat (Kestabilan, Faktor &amp; Strategi)</h2>
-          <p class="kssm-sublead">Memahami kestabilan pemerintahan dan kemakmuran ekonomi negara kita sebelum kedatangan Barat, faktor pendorong imperialisme Barat dari abad ke-16 hingga ke-20 (rempah, Revolusi Perindustrian, kereta, Terusan Suez) serta perbezaan strategi Portugis, Belanda dan British.</p>
-          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Sejarah (1249) &bull; m.s. 2–27 &bull; SK 7.1 (DSKP KSSM Sejarah Tingkatan 3)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menghuraikan kestabilan sistem pemerintahan beraja, pembesar, undang-undang bertulis/tidak bertulis dan pendidikan tempatan sebelum kedatangan Barat.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 3 &bull; Sejarah (1249) &bull; m.s. 2–27</span>
+      </div>
+      <h2>Bab 1: Kedatangan Kuasa Barat (Kestabilan, Faktor &amp; Strategi)</h2>
+      <p class="kssm-mast-sum">Memahami kestabilan pemerintahan dan kemakmuran ekonomi negara kita sebelum kedatangan Barat, faktor pendorong imperialisme Barat dari abad ke-16 hingga ke-20 (rempah, Revolusi Perindustrian, kereta, Terusan Suez) serta perbezaan strategi Portugis, Belanda dan British.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 7.1 (DSKP KSSM Sejarah Tingkatan 3)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menghuraikan kestabilan sistem pemerintahan beraja, pembesar, undang-undang bertulis/tidak bertulis dan pendidikan tempatan sebelum kedatangan Barat.">
       <span class="kssm-obj-num">01</span>
       <span>Menghuraikan kestabilan sistem pemerintahan beraja, pembesar, undang-undang bertulis/tidak bertulis dan pendidikan tempatan sebelum kedatangan Barat.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Membandingkan strategi serangan fizikal, pakatan, perjanjian dan manipulasi yang digunakan oleh Portugis, Belanda dan British.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–27)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Buktikan bahawa masyarakat negara kita telah mempunyai sistem pendidikan dan ekonomi teratur sebelum abad ke-16." data-ex-solution="Pendidikan formal dilaksanakan di istana (ilmu pentadbiran), masjid, surau, pondok dan madrasah, manakala pelabuhan tempatan telah menggunakan sistem sukat, timbang dan syiling logam di bawah seliaan syahbandar." data-ex-takeaway="Jangan ulangi pandangan berat sebelah penjajah: Tanah Melayu, Sarawak dan Sabah telah stabil dan bertamadun sebelum kedatangan Barat.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Buktikan bahawa masyarakat negara kita telah mempunyai sistem pendidikan dan ekonomi teratur sebelum abad ke-16." data-ex-solution="Pendidikan formal dilaksanakan di istana (ilmu pentadbiran), masjid, surau, pondok dan madrasah, manakala pelabuhan tempatan telah menggunakan sistem sukat, timbang dan syiling logam di bawah seliaan syahbandar." data-ex-takeaway="Jangan ulangi pandangan berat sebelah penjajah: Tanah Melayu, Sarawak dan Sabah telah stabil dan bertamadun sebelum kedatangan Barat.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Kestabilan Pemerintahan &amp; Kemakmuran Negara Kita (SP 7.1.1)</h3>
       <p class="kssm-sub-summary">Sebelum campur tangan kuasa Barat, negeri-negeri Melayu, Sarawak dan Sabah bukanlah mundur; sebaliknya memiliki sistem pemerintahan stabil, perundangan tersusun dan ekonomi makmur.</p>
       <ul class="kssm-kp-list"><li>Sistem Pemerintahan: Sistem beraja/kesultanan di Tanah Melayu (Sultan → Pembesar → Penghulu) dan Adat Perpatih berhierarki di Negeri Sembilan; Sistem Kesukuan, Kesultanan (Brunei/Sulu) dan Ketua Bebas di Sarawak dan Sabah.</li><li>Perundangan &amp; Intelektual: Hukum Kanun Melaka, Hukum Kanun Pahang, Undang-Undang 99 Perak dan adat tempatan menjamin keamanan; pendidikan tidak formal (pantun, kraf tangan) dan formal (masjid, surau, pondok, madrasah, istana).</li><li>Kemakmuran Ekonomi: Kaya hasil bumi (bijih timah, emas, bijih besi), hasil hutan/laut, serta pelabuhan entrepot yang diurus syahbandar dengan sistem timbangan, sukatan dan mata wang logam tersendiri.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Buktikan bahawa masyarakat negara kita telah mempunyai sistem pendidikan dan ekonomi teratur sebelum abad ke-16.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Pendidikan formal dilaksanakan di istana (ilmu pentadbiran), masjid, surau, pondok dan madrasah, manakala pelabuhan tempatan telah menggunakan sistem sukat, timbang dan syiling logam di bawah seliaan syahbandar.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Jangan ulangi pandangan berat sebelah penjajah: Tanah Melayu, Sarawak dan Sabah telah stabil dan bertamadun sebelum kedatangan Barat.</p>
+        <p><strong>Contoh:</strong> Buktikan bahawa masyarakat negara kita telah mempunyai sistem pendidikan dan ekonomi teratur sebelum abad ke-16.</p>
+        <p>Penyelesaian: Pendidikan formal dilaksanakan di istana (ilmu pentadbiran), masjid, surau, pondok dan madrasah, manakala pelabuhan tempatan telah menggunakan sistem sukat, timbang dan syiling logam di bawah seliaan syahbandar.</p>
+        <p class="kssm-takeaway">Tip Penting: Jangan ulangi pandangan berat sebelah penjajah: Tanah Melayu, Sarawak dan Sabah telah stabil dan bertamadun sebelum kedatangan Barat.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Mengapakah pembukaan Terusan Suez pada tahun 1869 dan ciptaan telegraf merancakkan kedatangan kuasa Barat ke Alam Melayu?" data-ex-solution="Terusan Suez memendekkan masa dan kos perjalanan kapal antara Eropah dengan Asia tanpa mengelilingi benua Afrika, manakala telegraf membolehkan arahan perniagaan dan politik dihantar serta-merta dari Eropah." data-ex-takeaway="Ingat 4 pemacu abad ke-19–20: Kereta/Getah + Bijih Timah/Pengetinan + Kapal Wap &amp; Telegraf + Terusan Suez!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Mengapakah pembukaan Terusan Suez pada tahun 1869 dan ciptaan telegraf merancakkan kedatangan kuasa Barat ke Alam Melayu?" data-ex-solution="Terusan Suez memendekkan masa dan kos perjalanan kapal antara Eropah dengan Asia tanpa mengelilingi benua Afrika, manakala telegraf membolehkan arahan perniagaan dan politik dihantar serta-merta dari Eropah." data-ex-takeaway="Ingat 4 pemacu abad ke-19–20: Kereta/Getah + Bijih Timah/Pengetinan + Kapal Wap &amp; Telegraf + Terusan Suez!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Faktor Kedatangan Kuasa Barat Abad ke-16 hingga ke-20 (SP 7.1.2)</h3>
       <p class="kssm-sub-summary">Motif kedatangan kuasa Barat berubah mengikut perkembangan ekonomi Eropah daripada mencari rempah-ratus hingga keperluan bahan mentah industri berat dan pembukaan laluan moden.</p>
       <ul class="kssm-kp-list"><li>Abad ke-16: Menguasai barangan mewah (rempah-ratus, minyak wangi, emas, batu permata, gading), pusat pengumpulan barang ke China serta menyebarkan agama Kristian (&#39;Gold, Gospel, Glory&#39;).</li><li>Abad ke-17 &amp; ke-18: Revolusi Perindustrian di Britain (dan Eropah menjelang 1870-an) mewujudkan keperluan mendesak terhadap bahan mentah kilang (bijih timah) serta pasaran baharu barangan kilang.</li><li>Abad ke-19 &amp; ke-20: Perkembangan industri kereta &amp; ciptaan tayar melonjakkan permintaan getah asli; ciptaan kapal wap mempercepat pelayaran membawa muatan besar; Pembukaan Terusan Suez (1869) menghubungkan Laut Mediterranean dan Laut Merah memendekkan jarak pelayaran; persaingan kuasa Barat &amp; penciptaan telegraf.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah pembukaan Terusan Suez pada tahun 1869 dan ciptaan telegraf merancakkan kedatangan kuasa Barat ke Alam Melayu?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Terusan Suez memendekkan masa dan kos perjalanan kapal antara Eropah dengan Asia tanpa mengelilingi benua Afrika, manakala telegraf membolehkan arahan perniagaan dan politik dihantar serta-merta dari Eropah.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Ingat 4 pemacu abad ke-19–20: Kereta/Getah + Bijih Timah/Pengetinan + Kapal Wap &amp; Telegraf + Terusan Suez!</p>
+        <p><strong>Contoh:</strong> Mengapakah pembukaan Terusan Suez pada tahun 1869 dan ciptaan telegraf merancakkan kedatangan kuasa Barat ke Alam Melayu?</p>
+        <p>Penyelesaian: Terusan Suez memendekkan masa dan kos perjalanan kapal antara Eropah dengan Asia tanpa mengelilingi benua Afrika, manakala telegraf membolehkan arahan perniagaan dan politik dihantar serta-merta dari Eropah.</p>
+        <p class="kssm-takeaway">Tip Penting: Ingat 4 pemacu abad ke-19–20: Kereta/Getah + Bijih Timah/Pengetinan + Kapal Wap &amp; Telegraf + Terusan Suez!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Apakah kesan kebangkitan Jerman dan Perancis dalam Revolusi Perindustrian 1870-an terhadap dasar Britain di Tanah Melayu?" data-ex-solution="Ia mencetuskan kebimbangan Britain akan kehilangan monopoli bahan mentah dan laluan strategik Selat Melaka, lalu mendorong campur tangan terus British di Negeri-negeri Melayu." data-ex-takeaway="Persaingan antara kuasa Barat di Eropah mencetuskan perlumbaan penjajahan di Asia Tenggara.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Menjelang abad ke-19, Britain, Perancis, Jerman, Sepanyol, Belanda dan Amerika Syarikat berlumba-lumba menakluk wilayah luar Eropah demi prestij kuasa besar dan sumber kekayaan.</p>
       <ul class="kssm-kp-list"><li>Kuasa Barat menganggap pemilikan tanah jajahan melambangkan kekuatan empayar (&#39;Imperialisme Baru&#39;) serta beban moral palsu (&#39;Beban Orang Putih&#39; / menyebarkan tamadun).</li><li>Britain bimbang Jerman, Perancis, Amerika Syarikat atau Rusia bertapak di Negeri-negeri Melayu jika Britain lambat bertindak.</li><li>Britain mula beralih daripada dasar tidak campur tangan kepada dasar campur tangan aktif di Perak, Selangor, Negeri Sembilan dan Pahang.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Apakah kesan kebangkitan Jerman dan Perancis dalam Revolusi Perindustrian 1870-an terhadap dasar Britain di Tanah Melayu?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Ia mencetuskan kebimbangan Britain akan kehilangan monopoli bahan mentah dan laluan strategik Selat Melaka, lalu mendorong campur tangan terus British di Negeri-negeri Melayu.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Persaingan antara kuasa Barat di Eropah mencetuskan perlumbaan penjajahan di Asia Tenggara.</p>
+        <p><strong>Contoh:</strong> Apakah kesan kebangkitan Jerman dan Perancis dalam Revolusi Perindustrian 1870-an terhadap dasar Britain di Tanah Melayu?</p>
+        <p>Penyelesaian: Ia mencetuskan kebimbangan Britain akan kehilangan monopoli bahan mentah dan laluan strategik Selat Melaka, lalu mendorong campur tangan terus British di Negeri-negeri Melayu.</p>
+        <p class="kssm-takeaway">Tip Penting: Persaingan antara kuasa Barat di Eropah mencetuskan perlumbaan penjajahan di Asia Tenggara.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Bezakan strategi utama British berbanding strategi Portugis untuk menguasai negeri di negara kita." data-ex-solution="Portugis mengutamakan serangan fizikal secara langsung (menawan Melaka 1511), manakala British lebih banyak menggunakan strategi manipulasi krisis tempatan, tipu helah dan perjanjian rasmi untuk mengelakkan perang mahal." data-ex-takeaway="Kata kunci strategi: Portugis = Serangan Fizikal; Belanda = Serangan + Pakatan; British = Manipulasi + Tipu Helah + Perjanjian.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Bezakan strategi utama British berbanding strategi Portugis untuk menguasai negeri di negara kita." data-ex-solution="Portugis mengutamakan serangan fizikal secara langsung (menawan Melaka 1511), manakala British lebih banyak menggunakan strategi manipulasi krisis tempatan, tipu helah dan perjanjian rasmi untuk mengelakkan perang mahal." data-ex-takeaway="Kata kunci strategi: Portugis = Serangan Fizikal; Belanda = Serangan + Pakatan; British = Manipulasi + Tipu Helah + Perjanjian.">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Perbezaan Strategi Kuasa Barat (Portugis, Belanda, British) (SP 7.1.4)</h3>
       <p class="kssm-sub-summary">Kuasa Barat menyesuaikan taktik antara kekerasan ketenteraan dengan tipu helah diplomasi mengikut kekuatan tempatan dan zaman masing-masing.</p>
       <ul class="kssm-kp-list"><li>Strategi Portugis: Menyerang secara fizikal (serangan Alfonso de Albuquerque menawan Melaka pada tahun 1511).</li><li>Strategi Belanda: Gabungan serangan fizikal (berperang di Pulau Pangkor 1650 dan Kuala Perak 1651 akibat monopoli bijih timah), pakatan dengan Johor (menyerang Portugis di Melaka 1641) dan perjanjian dengan Perak serta Selangor.</li><li>Strategi British (lebih licik &amp; berdiplomasi): Manipulasi (mengambil peluang perebutan takhta Perak 1871, isu lanun/kapal karam di Selangor, pertikaian Sungai Linggi), Tipu Helah (menduduki Pulau Pinang 1786), Ugutan/Desakan, Perjanjian (Perjanjian Pangkor 1874) dan Pajakan (SBUB di Sabah).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Bezakan strategi utama British berbanding strategi Portugis untuk menguasai negeri di negara kita.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Portugis mengutamakan serangan fizikal secara langsung (menawan Melaka 1511), manakala British lebih banyak menggunakan strategi manipulasi krisis tempatan, tipu helah dan perjanjian rasmi untuk mengelakkan perang mahal.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kata kunci strategi: Portugis = Serangan Fizikal; Belanda = Serangan + Pakatan; British = Manipulasi + Tipu Helah + Perjanjian.</p>
+        <p><strong>Contoh:</strong> Bezakan strategi utama British berbanding strategi Portugis untuk menguasai negeri di negara kita.</p>
+        <p>Penyelesaian: Portugis mengutamakan serangan fizikal secara langsung (menawan Melaka 1511), manakala British lebih banyak menggunakan strategi manipulasi krisis tempatan, tipu helah dan perjanjian rasmi untuk mengelakkan perang mahal.</p>
+        <p class="kssm-takeaway">Tip Penting: Kata kunci strategi: Portugis = Serangan Fizikal; Belanda = Serangan + Pakatan; British = Manipulasi + Tipu Helah + Perjanjian.</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Mengatakan Revolusi Perindustrian dan ciptaan kereta berlaku pada abad ke-16." data-m-correction="Abad ke-16 didorong oleh rempah-ratus dan barangan mewah; Revolusi Perindustrian bermula abad ke-17/18 (memuncak di Eropah 1870-an) manakala industri kereta dan getah memacu abad ke-19 hingga ke-20." data-m-tip="Susun kronologi: Abad 16 (Rempah) → 17–18 (Kilang/Timah) → 19–20 (Kereta/Getah/Terusan Suez).">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengatakan Revolusi Perindustrian dan ciptaan kereta berlaku pada abad ke-16.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Abad ke-16 didorong oleh rempah-ratus dan barangan mewah; Revolusi Perindustrian bermula abad ke-17/18 (memuncak di Eropah 1870-an) manakala industri kereta dan getah memacu abad ke-19 hingga ke-20.</p>
-      <p><strong>Tip Skor Exam:</strong> Susun kronologi: Abad 16 (Rempah) → 17–18 (Kilang/Timah) → 19–20 (Kereta/Getah/Terusan Suez).</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Mengatakan Revolusi Perindustrian dan ciptaan kereta berlaku pada abad ke-16." data-m-correction="Abad ke-16 didorong oleh rempah-ratus dan barangan mewah; Revolusi Perindustrian bermula abad ke-17/18 (memuncak di Eropah 1870-an) manakala industri kereta dan getah memacu abad ke-19 hingga ke-20." data-m-tip="Susun kronologi: Abad 16 (Rempah) → 17–18 (Kilang/Timah) → 19–20 (Kereta/Getah/Terusan Suez).">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengatakan Revolusi Perindustrian dan ciptaan kereta berlaku pada abad ke-16.</p>
+      <p class="kssm-m-good">TEPAT: Abad ke-16 didorong oleh rempah-ratus dan barangan mewah; Revolusi Perindustrian bermula abad ke-17/18 (memuncak di Eropah 1870-an) manakala industri kereta dan getah memacu abad ke-19 hingga ke-20.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Susun kronologi: Abad 16 (Rempah) → 17–18 (Kilang/Timah) → 19–20 (Kereta/Getah/Terusan Suez).</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyatakan Belanda hanya menggunakan perjanjian tanpa peperangan di Tanah Melayu." data-m-correction="Belanda juga menggunakan serangan fizikal seperti menyerang Pulau Pangkor (1650) dan Kuala Perak (1651) serta berpakat dengan Johor menawan Melaka (1641)." data-m-tip="Belanda menggabungkan serangan fizikal + pakatan + perjanjian.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyatakan Belanda hanya menggunakan perjanjian tanpa peperangan di Tanah Melayu.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Belanda juga menggunakan serangan fizikal seperti menyerang Pulau Pangkor (1650) dan Kuala Perak (1651) serta berpakat dengan Johor menawan Melaka (1641).</p>
-      <p><strong>Tip Skor Exam:</strong> Belanda menggabungkan serangan fizikal + pakatan + perjanjian.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyatakan Belanda hanya menggunakan perjanjian tanpa peperangan di Tanah Melayu.</p>
+      <p class="kssm-m-good">TEPAT: Belanda juga menggunakan serangan fizikal seperti menyerang Pulau Pangkor (1650) dan Kuala Perak (1651) serta berpakat dengan Johor menawan Melaka (1641).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Belanda menggabungkan serangan fizikal + pakatan + perjanjian.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menganggap peristiwa perebutan takhta di Perak pada tahun 1871 berlaku tanpa campur tangan British." data-m-correction="British menggunakan taktik MANIPULASI ke atas krisis perebutan takhta Perak serta pergaduhan kongsi gelap Larut untuk menandatangani Perjanjian Pangkor 1874." data-m-tip="Perak (perebutan takhta 1871) &amp; Selangor (kes lanun/perang saudara) = contoh klasik strategi MANIPULASI British.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap peristiwa perebutan takhta di Perak pada tahun 1871 berlaku tanpa campur tangan British.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> British menggunakan taktik MANIPULASI ke atas krisis perebutan takhta Perak serta pergaduhan kongsi gelap Larut untuk menandatangani Perjanjian Pangkor 1874.</p>
-      <p><strong>Tip Skor Exam:</strong> Perak (perebutan takhta 1871) &amp; Selangor (kes lanun/perang saudara) = contoh klasik strategi MANIPULASI British.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menganggap peristiwa perebutan takhta di Perak pada tahun 1871 berlaku tanpa campur tangan British.</p>
+      <p class="kssm-m-good">TEPAT: British menggunakan taktik MANIPULASI ke atas krisis perebutan takhta Perak serta pergaduhan kongsi gelap Larut untuk menandatangani Perjanjian Pangkor 1874.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Perak (perebutan takhta 1871) &amp; Selangor (kes lanun/perang saudara) = contoh klasik strategi MANIPULASI British.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

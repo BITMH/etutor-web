@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 5","item":"https://etutor.my/kssm/tingkatan-5/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 2","item":"https://etutor.my/kssm/tingkatan-5/matematik/bab-2/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 5 Bab 2: Matriks (Operasi Asas & Matriks Songsang)","description":"Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks.","url":"https://etutor.my/kssm/tingkatan-5/matematik/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 5","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -332,16 +341,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T5_matematik_Bab_2.pdf" data-form-label="Tingkatan 5" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 34–71" data-dskp="SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 5)" data-chapter-heading="Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang)" data-hero-summary="Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang)</h2>
-          <p class="kssm-sublead">Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks.</p>
-          <p class="kssm-sheet-meta">Tingkatan 5 &bull; Matematik (1449) &bull; m.s. 34–71 &bull; SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 5)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mewakilkan maklumat jadual dalam bentuk matriks, menyatakan peringkat m × n (baris × lajur) serta menentukan unsur a_ij dan kesamaan matriks.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 5 &bull; Matematik (1449) &bull; m.s. 34–71</span>
+      </div>
+      <h2>Bab 2: Matriks (Operasi Asas &amp; Matriks Songsang)</h2>
+      <p class="kssm-mast-sum">Menguasai perwakilan data dalam matriks, peringkat matriks (m × n) dan kesamaan matriks, operasi tambah/tolak/darab skalar, syarat pendaraban dua matriks, matriks identiti (I), matriks songsang (A⁻¹ = 1/(ad-bc) [d -b; -c a]) serta menyelesaikan persamaan linear serentak dengan kaedah matriks.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 5)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Mewakilkan maklumat jadual dalam bentuk matriks, menyatakan peringkat m × n (baris × lajur) serta menentukan unsur a_ij dan kesamaan matriks.">
       <span class="kssm-obj-num">01</span>
       <span>Mewakilkan maklumat jadual dalam bentuk matriks, menyatakan peringkat m × n (baris × lajur) serta menentukan unsur a_ij dan kesamaan matriks.</span>
     </div>
@@ -357,30 +369,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Mengira matriks songsang bagi matriks 2 × 2 apabila ad - bc ≠ 0 dan menggunakannya untuk menyelesaikan persamaan linear serentak.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 34–71)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Nyatakan peringkat matriks M = [4  -1  7; 8  0  2] (2 baris, 3 lajur) dan nilai unsur m₁₃ + m₂₁." data-ex-solution="Peringkat M ialah 2 × 3. m₁₃ (baris 1 lajur 3) = 7 dan m₂₁ (baris 2 lajur 1) = 8 → jumlah = 7 + 8 = 15." data-ex-takeaway="Ingat urutan: B-L (Baris dahulu, Lajur kedua — seperti &#39;Bilik&#39; dan &#39;Lantai&#39; atau &#39;Ba-La&#39;)!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Nyatakan peringkat matriks M = [4  -1  7; 8  0  2] (2 baris, 3 lajur) dan nilai unsur m₁₃ + m₂₁." data-ex-solution="Peringkat M ialah 2 × 3. m₁₃ (baris 1 lajur 3) = 7 dan m₂₁ (baris 2 lajur 1) = 8 → jumlah = 7 + 8 = 15." data-ex-takeaway="Ingat urutan: B-L (Baris dahulu, Lajur kedua — seperti &#39;Bilik&#39; dan &#39;Lantai&#39; atau &#39;Ba-La&#39;)!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Peringkat Matriks, Unsur &amp; Kesamaan Matriks (SK 2.1)</h3>
       <p class="kssm-sub-summary">Matriks ialah susunan nombor dalam baris (mendatar) dan lajur (menegak) yang diapit tanda kurung siku. Setiap kedudukan unsur dikenal pasti secara unik dengan peringkatnya.</p>
       <ul class="kssm-kp-list"><li>Peringkat matriks ditulis sebagai: (bilangan BARIS) × (bilangan LAJUR). Contoh: matriks dengan 3 baris dan 2 lajur berperingkat 3 × 2 (BUKAN 2 × 3!).</li><li>Unsur a_ij merujuk unsur pada baris ke-i dan lajur ke-j (cth a₂₃ = baris ke-2, lajur ke-3).</li><li>Dua matriks A dan B adalah SAMA (A = B) jika dan hanya jika kedua-duanya mempunyai peringkat yang SAMA dan setiap unsur sepadan adalah sama nilai (membantu mencari nilai pemboleh ubah tidak diketahui!).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Nyatakan peringkat matriks M = [4  -1  7; 8  0  2] (2 baris, 3 lajur) dan nilai unsur m₁₃ + m₂₁.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Peringkat M ialah 2 × 3. m₁₃ (baris 1 lajur 3) = 7 dan m₂₁ (baris 2 lajur 1) = 8 → jumlah = 7 + 8 = 15.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Ingat urutan: B-L (Baris dahulu, Lajur kedua — seperti &#39;Bilik&#39; dan &#39;Lantai&#39; atau &#39;Ba-La&#39;)!</p>
+        <p><strong>Contoh:</strong> Nyatakan peringkat matriks M = [4  -1  7; 8  0  2] (2 baris, 3 lajur) dan nilai unsur m₁₃ + m₂₁.</p>
+        <p>Penyelesaian: Peringkat M ialah 2 × 3. m₁₃ (baris 1 lajur 3) = 7 dan m₂₁ (baris 2 lajur 1) = 8 → jumlah = 7 + 8 = 15.</p>
+        <p class="kssm-takeaway">Tip Penting: Ingat urutan: B-L (Baris dahulu, Lajur kedua — seperti &#39;Bilik&#39; dan &#39;Lantai&#39; atau &#39;Ba-La&#39;)!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Diberi P = [7 9; -3 8] dan Q = [2 -3; 1 5], hitung 3(P - Q)." data-ex-solution="P - Q = [7-2, 9-(-3); -3-1, 8-5] = [5 12; -4 3]. Darab 3: 3(P - Q) = [15 36; -12 9]." data-ex-takeaway="Awasi penolakan nombor negatif: 9 - (-3) = 9 + 3 = 12!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Diberi P = [7 9; -3 8] dan Q = [2 -3; 1 5], hitung 3(P - Q)." data-ex-solution="P - Q = [7-2, 9-(-3); -3-1, 8-5] = [5 12; -4 3]. Darab 3: 3(P - Q) = [15 36; -12 9]." data-ex-takeaway="Awasi penolakan nombor negatif: 9 - (-3) = 9 + 3 = 12!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Penambahan, Penolakan &amp; Pendaraban Skalar (SK 2.2)</h3>
       <p class="kssm-sub-summary">Penambahan dan penolakan hanya boleh dilaksanakan ke atas dua matriks yang mempunyai peringkat yang SAMA TEPAT dengan menambah atau menolak unsur-unsur pada kedudukan sepadan.</p>
       <ul class="kssm-kp-list"><li>Contoh (m.s. 54): Jika D + E = C, samakan setiap unsur sepadan satu demi satu (cth 2x - 1 + x = 8 → 3x = 9 → x = 3).</li><li>Pendaraban Skalar kA: darabkan nombor skalar k dengan SETIAP unsur di dalam matriks A secara seragam.</li><li>Sifat asas: (A + B) = (B + A) [kalis tukar tertib untuk tambah], tetapi tolak dan darab matriks secara amnya TIDAK kalis tukar tertib.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Diberi P = [7 9; -3 8] dan Q = [2 -3; 1 5], hitung 3(P - Q).</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> P - Q = [7-2, 9-(-3); -3-1, 8-5] = [5 12; -4 3]. Darab 3: 3(P - Q) = [15 36; -12 9].</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Awasi penolakan nombor negatif: 9 - (-3) = 9 + 3 = 12!</p>
+        <p><strong>Contoh:</strong> Diberi P = [7 9; -3 8] dan Q = [2 -3; 1 5], hitung 3(P - Q).</p>
+        <p>Penyelesaian: P - Q = [7-2, 9-(-3); -3-1, 8-5] = [5 12; -4 3]. Darab 3: 3(P - Q) = [15 36; -12 9].</p>
+        <p class="kssm-takeaway">Tip Penting: Awasi penolakan nombor negatif: 9 - (-3) = 9 + 3 = 12!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Tentukan sama ada pendaraban matriks C_(2×1) dengan D_(2×2) boleh menghasilkan CD dan DC, dan nyatakan peringkat hasil yang sah." data-ex-solution="CD: (2×1)(2×2) → nombor dalam 1 ≠ 2, TIDAK boleh didarab. DC: (2×2)(2×1) → nombor dalam 2 = 2, BOLEH didarab dan menghasilkan peringkat 2 × 1!" data-ex-takeaway="Pendaraban matriks TIDAK bersifat kalis tukar tertib (secara umum AB ≠ BA)!">
@@ -389,42 +404,51 @@
       <p class="kssm-sub-summary">Dua matriks A_(m×p) dan B_(q×n) hanya boleh didarabkan apabila bilangan LAJUR matriks kiri sama dengan bilangan BARIS matriks kanan (p = q), dan hasil matriks berperingkat m × n.</p>
       <ul class="kssm-kp-list"><li>Uji dimensi dalam → luar: (m × p) · (p × n) → p sama di tengah boleh didarab, peringkat jawapan ialah (m × n)! Oleh itu, AB mungkin wujud walaupun BA tidak wujud!</li><li>Cara mendarab: Darabkan setiap baris matriks kiri dengan setiap lajur matriks kanan secara hasil darab bintik: (baris × lajur) → jumlahkan.</li><li>Matriks Identiti I bagi peringkat 2 × 2 ialah [1 0; 0 1] yang memenuhi sifat AI = IA = A (diagon utama = 1, unsur lain = 0).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Tentukan sama ada pendaraban matriks C_(2×1) dengan D_(2×2) boleh menghasilkan CD dan DC, dan nyatakan peringkat hasil yang sah.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> CD: (2×1)(2×2) → nombor dalam 1 ≠ 2, TIDAK boleh didarab. DC: (2×2)(2×1) → nombor dalam 2 = 2, BOLEH didarab dan menghasilkan peringkat 2 × 1!</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pendaraban matriks TIDAK bersifat kalis tukar tertib (secara umum AB ≠ BA)!</p>
+        <p><strong>Contoh:</strong> Tentukan sama ada pendaraban matriks C_(2×1) dengan D_(2×2) boleh menghasilkan CD dan DC, dan nyatakan peringkat hasil yang sah.</p>
+        <p>Penyelesaian: CD: (2×1)(2×2) → nombor dalam 1 ≠ 2, TIDAK boleh didarab. DC: (2×2)(2×1) → nombor dalam 2 = 2, BOLEH didarab dan menghasilkan peringkat 2 × 1!</p>
+        <p class="kssm-takeaway">Tip Penting: Pendaraban matriks TIDAK bersifat kalis tukar tertib (secara umum AB ≠ BA)!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Selesaikan persamaan serentak 2x + 3y = 12 dan x - y = 1 menggunakan kaedah matriks." data-ex-solution="Matriks A = [2 3; 1 -1]. Penentu ad - bc = (2)(-1) - (3)(1) = -2 - 3 = -5. Jadi [x; y] = (1/-5)[-1 -3; -1 2][12; 1] = (-1/5)[-12 - 3; -12 + 2] = (-1/5)[-15; -10] = [3; 2] → x = 3, y = 2." data-ex-takeaway="Sentiasa uji x dan y ke dalam kedua-dua persamaan asal (2(3)+3(2)=12, 3-2=1) dan JANGAN biarkan tanda kurung matriks pada jawapan akhir x dan y!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Selesaikan persamaan serentak 2x + 3y = 12 dan x - y = 1 menggunakan kaedah matriks." data-ex-solution="Matriks A = [2 3; 1 -1]. Penentu ad - bc = (2)(-1) - (3)(1) = -2 - 3 = -5. Jadi [x; y] = (1/-5)[-1 -3; -1 2][12; 1] = (-1/5)[-12 - 3; -12 + 2] = (-1/5)[-15; -10] = [3; 2] → x = 3, y = 2." data-ex-takeaway="Sentiasa uji x dan y ke dalam kedua-dua persamaan asal (2(3)+3(2)=12, 3-2=1) dan JANGAN biarkan tanda kurung matriks pada jawapan akhir x dan y!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Matriks Songsang &amp; Persamaan Linear Serentak (SK 2.2)</h3>
       <p class="kssm-sub-summary">Kemuncak Bab 2 Matematik SPM ialah mencari matriks songsang A⁻¹ bagi menyelesaikan dua persamaan linear serentak tanpa menggunakan kaedah penggantian atau penghapusan.</p>
       <ul class="kssm-kp-list"><li>Jika A = [a b; c d], penentu (determinant) ialah (ad - bc). Matriks songsang A⁻¹ wujud jika dan hanya jika (ad - bc) ≠ 0.</li><li>Rumus Matriks Songsang: A⁻¹ = 1 / (ad - bc) · [d  -b; -c  a] (tukar tempat a dengan d, dan tukar tanda b dengan c!). Apabila A didarab A⁻¹, hasilnya ialah Matriks Identiti I = [1 0; 0 1].</li><li>Menyelesaikan ax + by = h dan cx + dy = k: tulis dalam bentuk matriks A[x; y] = [h; k] → maka [x; y] = A⁻¹[h; k] = 1/(ad-bc) [d -b; -c a][h; k]!</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Selesaikan persamaan serentak 2x + 3y = 12 dan x - y = 1 menggunakan kaedah matriks.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Matriks A = [2 3; 1 -1]. Penentu ad - bc = (2)(-1) - (3)(1) = -2 - 3 = -5. Jadi [x; y] = (1/-5)[-1 -3; -1 2][12; 1] = (-1/5)[-12 - 3; -12 + 2] = (-1/5)[-15; -10] = [3; 2] → x = 3, y = 2.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa uji x dan y ke dalam kedua-dua persamaan asal (2(3)+3(2)=12, 3-2=1) dan JANGAN biarkan tanda kurung matriks pada jawapan akhir x dan y!</p>
+        <p><strong>Contoh:</strong> Selesaikan persamaan serentak 2x + 3y = 12 dan x - y = 1 menggunakan kaedah matriks.</p>
+        <p>Penyelesaian: Matriks A = [2 3; 1 -1]. Penentu ad - bc = (2)(-1) - (3)(1) = -2 - 3 = -5. Jadi [x; y] = (1/-5)[-1 -3; -1 2][12; 1] = (-1/5)[-12 - 3; -12 + 2] = (-1/5)[-15; -10] = [3; 2] → x = 3, y = 2.</p>
+        <p class="kssm-takeaway">Tip Penting: Sentiasa uji x dan y ke dalam kedua-dua persamaan asal (2(3)+3(2)=12, 3-2=1) dan JANGAN biarkan tanda kurung matriks pada jawapan akhir x dan y!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2." data-m-correction="Dalam soalan SPM &#39;dengan menggunakan kaedah matriks, hitung nilai x dan nilai y&#39;, baris akhir WAJIB menyatakan nilai skalar: &#39;x = 3, y = 2&#39;." data-m-tip="Keluarkan x dan y dari kurung matriks di baris penutup!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Dalam soalan SPM &#39;dengan menggunakan kaedah matriks, hitung nilai x dan nilai y&#39;, baris akhir WAJIB menyatakan nilai skalar: &#39;x = 3, y = 2&#39;.</p>
-      <p><strong>Tip Skor Exam:</strong> Keluarkan x dan y dari kurung matriks di baris penutup!</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2." data-m-correction="Dalam soalan SPM &#39;dengan menggunakan kaedah matriks, hitung nilai x dan nilai y&#39;, baris akhir WAJIB menyatakan nilai skalar: &#39;x = 3, y = 2&#39;." data-m-tip="Keluarkan x dan y dari kurung matriks di baris penutup!">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2.</p>
+      <p class="kssm-m-good">TEPAT: Dalam soalan SPM &#39;dengan menggunakan kaedah matriks, hitung nilai x dan nilai y&#39;, baris akhir WAJIB menyatakan nilai skalar: &#39;x = 3, y = 2&#39;.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Keluarkan x dan y dari kurung matriks di baris penutup!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Lupa menukar kedudukan a dengan d atau salah tukar tanda dalam rumus A⁻¹." data-m-correction="Utama (a ke/dari d): TUKAR TEMPAT; Pepenjuru satu lagi (b, c): KEKAL TEMPAT tetapi TUKAR TANDA (+ jadi -, - jadi +)." data-m-tip="A = [a b; c d] → A⁻¹ = 1/(ad-bc) × [d -b; -c a]. Uji darab A·A⁻¹ untuk sahkan mendapat [1 0; 0 1]!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Lupa menukar kedudukan a dengan d atau salah tukar tanda dalam rumus A⁻¹.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Utama (a ke/dari d): TUKAR TEMPAT; Pepenjuru satu lagi (b, c): KEKAL TEMPAT tetapi TUKAR TANDA (+ jadi -, - jadi +).</p>
-      <p><strong>Tip Skor Exam:</strong> A = [a b; c d] → A⁻¹ = 1/(ad-bc) × [d -b; -c a]. Uji darab A·A⁻¹ untuk sahkan mendapat [1 0; 0 1]!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Lupa menukar kedudukan a dengan d atau salah tukar tanda dalam rumus A⁻¹.</p>
+      <p class="kssm-m-good">TEPAT: Utama (a ke/dari d): TUKAR TEMPAT; Pepenjuru satu lagi (b, c): KEKAL TEMPAT tetapi TUKAR TANDA (+ jadi -, - jadi +).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: A = [a b; c d] → A⁻¹ = 1/(ad-bc) × [d -b; -c a]. Uji darab A·A⁻¹ untuk sahkan mendapat [1 0; 0 1]!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mendarab dua matriks unsur-demi-unsur seperti penambahan (memadankan a₁₁×b₁₁ terus)." data-m-correction="Pendaraban matriks mesti menggunakan &#39;Baris kiri × Lajur kanan&#39; diikuti penjumlahan hasil darab." data-m-tip="Gunakan jari kiri menyusuri baris mendatar dan jari kanan menuruni lajur menegak!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mendarab dua matriks unsur-demi-unsur seperti penambahan (memadankan a₁₁×b₁₁ terus).</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Pendaraban matriks mesti menggunakan &#39;Baris kiri × Lajur kanan&#39; diikuti penjumlahan hasil darab.</p>
-      <p><strong>Tip Skor Exam:</strong> Gunakan jari kiri menyusuri baris mendatar dan jari kanan menuruni lajur menegak!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Mendarab dua matriks unsur-demi-unsur seperti penambahan (memadankan a₁₁×b₁₁ terus).</p>
+      <p class="kssm-m-good">TEPAT: Pendaraban matriks mesti menggunakan &#39;Baris kiri × Lajur kanan&#39; diikuti penjumlahan hasil darab.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Gunakan jari kiri menyusuri baris mendatar dan jari kanan menuruni lajur menegak!</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1234,7 +1258,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 1","item":"https://etutor.my/kssm/tingkatan-1/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 2","item":"https://etutor.my/kssm/tingkatan-1/matematik/bab-2/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 1 Bab 2: Faktor dan Gandaan (FSTB & GSTK)","description":"Menguasai konsep faktor, faktor perdana (Saringan Eratosthenes & pemfaktoran perdana), Faktor Sepunya Terbesar (FSTB), gandaan sepunya dan Gandaan Sepunya Terkecil (GSTK) bagi menyelesaikan masalah pembahagian serta kitaran masa.","url":"https://etutor.my/kssm/tingkatan-1/matematik/bab-2/","inLanguage":"ms","educationalLevel":"Tingkatan 1","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T1_matematik_Bab_2.pdf" data-form-label="Tingkatan 1" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 30–45" data-dskp="SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 1)" data-chapter-heading="Bab 2: Faktor dan Gandaan (FSTB &amp; GSTK)" data-hero-summary="Menguasai konsep faktor, faktor perdana (Saringan Eratosthenes &amp; pemfaktoran perdana), Faktor Sepunya Terbesar (FSTB), gandaan sepunya dan Gandaan Sepunya Terkecil (GSTK) bagi menyelesaikan masalah pembahagian serta kitaran masa." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 2: Faktor dan Gandaan (FSTB &amp; GSTK)</h2>
-          <p class="kssm-sublead">Menguasai konsep faktor, faktor perdana (Saringan Eratosthenes &amp; pemfaktoran perdana), Faktor Sepunya Terbesar (FSTB), gandaan sepunya dan Gandaan Sepunya Terkecil (GSTK) bagi menyelesaikan masalah pembahagian serta kitaran masa.</p>
-          <p class="kssm-sheet-meta">Tingkatan 1 &bull; Matematik (1449) &bull; m.s. 30–45 &bull; SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 1)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menentukan dan menyenaraikan faktor, faktor perdana serta faktor sepunya bagi dua atau tiga nombor bulat.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 1 &bull; Matematik (1449) &bull; m.s. 30–45</span>
+      </div>
+      <h2>Bab 2: Faktor dan Gandaan (FSTB &amp; GSTK)</h2>
+      <p class="kssm-mast-sum">Menguasai konsep faktor, faktor perdana (Saringan Eratosthenes &amp; pemfaktoran perdana), Faktor Sepunya Terbesar (FSTB), gandaan sepunya dan Gandaan Sepunya Terkecil (GSTK) bagi menyelesaikan masalah pembahagian serta kitaran masa.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 2.1–2.2 (DSKP KSSM Matematik Tingkatan 1)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menentukan dan menyenaraikan faktor, faktor perdana serta faktor sepunya bagi dua atau tiga nombor bulat.">
       <span class="kssm-obj-num">01</span>
       <span>Menentukan dan menyenaraikan faktor, faktor perdana serta faktor sepunya bagi dua atau tiga nombor bulat.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Menyelesaikan masalah harian yang melibatkan pembahagian sama saiz maksimum (FSTB) dan pertemuan semula/kitaran minimum (GSTK).</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 30–45)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Ungkapkan 60 sebagai hasil darab faktor perdananya." data-ex-solution="60 ÷ 2 = 30; 30 ÷ 2 = 15; 15 ÷ 3 = 5; 5 ÷ 5 = 1. Maka 60 = 2 × 2 × 3 × 5 (faktor perdana ialah 2, 3 dan 5)." data-ex-takeaway="Sentiasa bahagikan dengan nombor perdana terkecil (2, 3, 5, 7...) sehingga baki akhir menjadi 1.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Ungkapkan 60 sebagai hasil darab faktor perdananya." data-ex-solution="60 ÷ 2 = 30; 30 ÷ 2 = 15; 15 ÷ 3 = 5; 5 ÷ 5 = 1. Maka 60 = 2 × 2 × 3 × 5 (faktor perdana ialah 2, 3 dan 5)." data-ex-takeaway="Sentiasa bahagikan dengan nombor perdana terkecil (2, 3, 5, 7...) sehingga baki akhir menjadi 1.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>2.1 Faktor dan Faktor Perdana (SK 2.1)</h3>
       <p class="kssm-sub-summary">Faktor bagi suatu nombor bulat ialah nombor yang membahagi nombor itu dengan tepat tanpa baki. Faktor perdana pula ialah faktor yang juga merupakan nombor perdana (hanya boleh dibahagi dengan 1 dan dirinya sendiri).</p>
       <ul class="kssm-kp-list"><li>Nombor perdana terkecil ialah 2 (satu-satunya nombor perdana genap); 1 bukan nombor perdana.</li><li>Contoh faktor bagi 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. Faktor perdananya hanyalah 2 dan 3.</li><li>Dua kaedah mencari faktor perdana: Pokok Faktor (factor tree) dan Pembahagian Berulang dengan nombor perdana (2, 3, 5, 7, ...).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Ungkapkan 60 sebagai hasil darab faktor perdananya.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> 60 ÷ 2 = 30; 30 ÷ 2 = 15; 15 ÷ 3 = 5; 5 ÷ 5 = 1. Maka 60 = 2 × 2 × 3 × 5 (faktor perdana ialah 2, 3 dan 5).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa bahagikan dengan nombor perdana terkecil (2, 3, 5, 7...) sehingga baki akhir menjadi 1.</p>
+        <p><strong>Contoh:</strong> Ungkapkan 60 sebagai hasil darab faktor perdananya.</p>
+        <p>Penyelesaian: 60 ÷ 2 = 30; 30 ÷ 2 = 15; 15 ÷ 3 = 5; 5 ÷ 5 = 1. Maka 60 = 2 × 2 × 3 × 5 (faktor perdana ialah 2, 3 dan 5).</p>
+        <p class="kssm-takeaway">Tip Penting: Sentiasa bahagikan dengan nombor perdana terkecil (2, 3, 5, 7...) sehingga baki akhir menjadi 1.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Cari FSTB bagi 36, 90 dan 108 menggunakan pembahagian berulang." data-ex-solution="Bahagi serentak dengan 2 → (18, 45, 54). Tidak semua boleh dibahagi 2, cuba 3 → (6, 15, 18). Cuba 3 lagi → (2, 5, 6). Tiada pembahagi sepunya &gt; 1 lagi. FSTB = 2 × 3 × 3 = 18." data-ex-takeaway="Berhenti membahagi untuk FSTB apabila tiada lagi nombor perdana yang dapat membahagi KESEMUA nombor itu.">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Cari FSTB bagi 36, 90 dan 108 menggunakan pembahagian berulang." data-ex-solution="Bahagi serentak dengan 2 → (18, 45, 54). Tidak semua boleh dibahagi 2, cuba 3 → (6, 15, 18). Cuba 3 lagi → (2, 5, 6). Tiada pembahagi sepunya &gt; 1 lagi. FSTB = 2 × 3 × 3 = 18." data-ex-takeaway="Berhenti membahagi untuk FSTB apabila tiada lagi nombor perdana yang dapat membahagi KESEMUA nombor itu.">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>2.2 Faktor Sepunya Terbesar (FSTB) (SK 2.1)</h3>
       <p class="kssm-sub-summary">Faktor sepunya ialah nombor yang membahagi dengan tepat dua atau lebih nombor yang diberi. Nilai terbesar dalam kalangan faktor sepunya ialah FSTB.</p>
       <ul class="kssm-kp-list"><li>Contoh: Faktor 18 = {1,2,3,6,9,18}, Faktor 24 = {1,2,3,4,6,8,12,24}. Faktor sepunya = {1,2,3,6}, maka FSTB = 6.</li><li>Dalam kaedah pembahagian berulang untuk FSTB, pembahagi MESTI dapat membahagi SEMUA nombor secara serentak tanpa baki.</li><li>Kata kunci soalan FSTB: &#39;saiz terbesar/terpanjang&#39;, &#39;bilangan bungkusan maksimum&#39;, &#39;potong sama panjang tanpa lebihan&#39;.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Cari FSTB bagi 36, 90 dan 108 menggunakan pembahagian berulang.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Bahagi serentak dengan 2 → (18, 45, 54). Tidak semua boleh dibahagi 2, cuba 3 → (6, 15, 18). Cuba 3 lagi → (2, 5, 6). Tiada pembahagi sepunya &gt; 1 lagi. FSTB = 2 × 3 × 3 = 18.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Berhenti membahagi untuk FSTB apabila tiada lagi nombor perdana yang dapat membahagi KESEMUA nombor itu.</p>
+        <p><strong>Contoh:</strong> Cari FSTB bagi 36, 90 dan 108 menggunakan pembahagian berulang.</p>
+        <p>Penyelesaian: Bahagi serentak dengan 2 → (18, 45, 54). Tidak semua boleh dibahagi 2, cuba 3 → (6, 15, 18). Cuba 3 lagi → (2, 5, 6). Tiada pembahagi sepunya &gt; 1 lagi. FSTB = 2 × 3 × 3 = 18.</p>
+        <p class="kssm-takeaway">Tip Penting: Berhenti membahagi untuk FSTB apabila tiada lagi nombor perdana yang dapat membahagi KESEMUA nombor itu.</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Tentukan GSTK bagi 6, 8 dan 12 dengan pembahagian berulang." data-ex-solution="÷2 → (3, 4, 6); ÷2 → (3, 2, 3); ÷2 → (3, 1, 3); ÷3 → (1, 1, 1). GSTK = 2 × 2 × 2 × 3 = 24." data-ex-takeaway="Bezakan syarat berhenti: FSTB berhenti bila tiada pembahagi semua; GSTK terus hingga semua menjadi 1.">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Gandaan diperoleh dengan mendarab suatu nombor dengan integer positif (1, 2, 3, ...). Gandaan sepunya terkecil (GSTK) ialah gandaan sepunya bukan sifar yang paling kecil bagi dua atau lebih nombor.</p>
       <ul class="kssm-kp-list"><li>Contoh: Gandaan 2 = {2,4,6,8,10,12...}, Gandaan 3 = {3,6,9,12...}, Gandaan 4 = {4,8,12,16...}. Gandaan sepunya pertama = 12, maka GSTK = 12.</li><li>Dalam pembahagian berulang GSTK, teruskan membahagi selagi sekurang-kurangnya SATU nombor boleh dibahagi (salin semula nombor yang tidak boleh dibahagi) sehingga baris bawah menjadi (1, 1, 1).</li><li>Semua gandaan sepunya seterusnya ialah gandaan kepada GSTK (contoh: 12, 24, 36, 48...).</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Tentukan GSTK bagi 6, 8 dan 12 dengan pembahagian berulang.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> ÷2 → (3, 4, 6); ÷2 → (3, 2, 3); ÷2 → (3, 1, 3); ÷3 → (1, 1, 1). GSTK = 2 × 2 × 2 × 3 = 24.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Bezakan syarat berhenti: FSTB berhenti bila tiada pembahagi semua; GSTK terus hingga semua menjadi 1.</p>
+        <p><strong>Contoh:</strong> Tentukan GSTK bagi 6, 8 dan 12 dengan pembahagian berulang.</p>
+        <p>Penyelesaian: ÷2 → (3, 4, 6); ÷2 → (3, 2, 3); ÷2 → (3, 1, 3); ÷3 → (1, 1, 1). GSTK = 2 × 2 × 2 × 3 = 24.</p>
+        <p class="kssm-takeaway">Tip Penting: Bezakan syarat berhenti: FSTB berhenti bila tiada pembahagi semua; GSTK terus hingga semua menjadi 1.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Lampu A berkelip setiap 8 saat dan Lampu B setiap 12 saat. Jika kedua-duanya berkelip bersama pada jam 9:00 pagi, pukul berapakah ia berkelip bersama semula?" data-ex-solution="GSTK(8, 12) = 24 saat. Maka kedua-dua lampu berkelip serentak semula pada jam 9:00:24 pagi." data-ex-takeaway="Tanya diri sendiri: adakah jawapan mesti lebih kecil/sama dengan nombor asal (FSTB) atau lebih besar/sama (GSTK)?">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Lampu A berkelip setiap 8 saat dan Lampu B setiap 12 saat. Jika kedua-duanya berkelip bersama pada jam 9:00 pagi, pukul berapakah ia berkelip bersama semula?" data-ex-solution="GSTK(8, 12) = 24 saat. Maka kedua-dua lampu berkelip serentak semula pada jam 9:00:24 pagi." data-ex-takeaway="Tanya diri sendiri: adakah jawapan mesti lebih kecil/sama dengan nombor asal (FSTB) atau lebih besar/sama (GSTK)?">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>2.4 Aplikasi Masalah FSTB vs GSTK (SK 2.1–2.2)</h3>
       <p class="kssm-sub-summary">Kejayaan dalam soalan KBAT Matematik Bab 2 bergantung pada keupayaan pelajar mengenal pasti sama ada situasi menghendaki FSTB (pembahagian maksimum) atau GSTK (penyelarasan masa/kuantiti minimum).</p>
       <ul class="kssm-kp-list"><li>Situasi FSTB: Memotong tiga utas tali 192 cm, 240 cm dan 324 cm kepada bahagian sama panjang yang paling panjang.</li><li>Situasi GSTK: Ainun membeli kopi (6 tin sekotak) dan teh (9 tin sekotak) dengan jumlah tin sama dan bilangan kotak paling kurang → GSTK(6,9) = 18 tin (3 kotak kopi, 2 kotak teh).</li><li>Situasi lampu isyarat berkelip atau bas bertolak serentak pada kekerapan berbeza juga diselesaikan menggunakan GSTK.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Lampu A berkelip setiap 8 saat dan Lampu B setiap 12 saat. Jika kedua-duanya berkelip bersama pada jam 9:00 pagi, pukul berapakah ia berkelip bersama semula?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> GSTK(8, 12) = 24 saat. Maka kedua-dua lampu berkelip serentak semula pada jam 9:00:24 pagi.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Tanya diri sendiri: adakah jawapan mesti lebih kecil/sama dengan nombor asal (FSTB) atau lebih besar/sama (GSTK)?</p>
+        <p><strong>Contoh:</strong> Lampu A berkelip setiap 8 saat dan Lampu B setiap 12 saat. Jika kedua-duanya berkelip bersama pada jam 9:00 pagi, pukul berapakah ia berkelip bersama semula?</p>
+        <p>Penyelesaian: GSTK(8, 12) = 24 saat. Maka kedua-dua lampu berkelip serentak semula pada jam 9:00:24 pagi.</p>
+        <p class="kssm-takeaway">Tip Penting: Tanya diri sendiri: adakah jawapan mesti lebih kecil/sama dengan nombor asal (FSTB) atau lebih besar/sama (GSTK)?</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Keliru antara FSTB dengan GSTK semasa kaedah pembahagian berulang, lalu mendarab nombor yang tidak dikongsi ke dalam FSTB." data-m-correction="Untuk FSTB, darabkan pembahagi yang boleh membahagi KESEMUA lajur sahaja; untuk GSTK, darabkan semua pembahagi hingga baris akhir (1,1,1)." data-m-tip="Tulis tajuk kaedah (&#39;FSTB&#39; atau &#39;GSTK&#39;) di atas jadual bahagi sebelum mula membahagi.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Keliru antara FSTB dengan GSTK semasa kaedah pembahagian berulang, lalu mendarab nombor yang tidak dikongsi ke dalam FSTB.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Untuk FSTB, darabkan pembahagi yang boleh membahagi KESEMUA lajur sahaja; untuk GSTK, darabkan semua pembahagi hingga baris akhir (1,1,1).</p>
-      <p><strong>Tip Skor Exam:</strong> Tulis tajuk kaedah (&#39;FSTB&#39; atau &#39;GSTK&#39;) di atas jadual bahagi sebelum mula membahagi.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Keliru antara FSTB dengan GSTK semasa kaedah pembahagian berulang, lalu mendarab nombor yang tidak dikongsi ke dalam FSTB." data-m-correction="Untuk FSTB, darabkan pembahagi yang boleh membahagi KESEMUA lajur sahaja; untuk GSTK, darabkan semua pembahagi hingga baris akhir (1,1,1)." data-m-tip="Tulis tajuk kaedah (&#39;FSTB&#39; atau &#39;GSTK&#39;) di atas jadual bahagi sebelum mula membahagi.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Keliru antara FSTB dengan GSTK semasa kaedah pembahagian berulang, lalu mendarab nombor yang tidak dikongsi ke dalam FSTB.</p>
+      <p class="kssm-m-good">TEPAT: Untuk FSTB, darabkan pembahagi yang boleh membahagi KESEMUA lajur sahaja; untuk GSTK, darabkan semua pembahagi hingga baris akhir (1,1,1).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Tulis tajuk kaedah (&#39;FSTB&#39; atau &#39;GSTK&#39;) di atas jadual bahagi sebelum mula membahagi.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menyenaraikan 1 sebagai faktor perdana suatu nombor." data-m-correction="1 ialah faktor bagi semua nombor, tetapi 1 BUKAN nombor perdana kerana hanya ada satu pembahagi." data-m-tip="Nombor perdana mesti ada tepat dua pembahagi: 1 dan dirinya sendiri.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menyenaraikan 1 sebagai faktor perdana suatu nombor.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> 1 ialah faktor bagi semua nombor, tetapi 1 BUKAN nombor perdana kerana hanya ada satu pembahagi.</p>
-      <p><strong>Tip Skor Exam:</strong> Nombor perdana mesti ada tepat dua pembahagi: 1 dan dirinya sendiri.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menyenaraikan 1 sebagai faktor perdana suatu nombor.</p>
+      <p class="kssm-m-good">TEPAT: 1 ialah faktor bagi semua nombor, tetapi 1 BUKAN nombor perdana kerana hanya ada satu pembahagi.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Nombor perdana mesti ada tepat dua pembahagi: 1 dan dirinya sendiri.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Terlupa membahagi jawapan akhir GSTK dengan isi sekotak dalam soalan pembelian pek minimum." data-m-correction="Selepas dapat jumlah item (GSTK = 18), bahagikan dengan bilangan per pek (18÷6 = 3 kotak kopi)." data-m-tip="Semak kehendak soalan sama ada mahu &#39;jumlah tin&#39; atau &#39;bilangan kotak&#39;.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Terlupa membahagi jawapan akhir GSTK dengan isi sekotak dalam soalan pembelian pek minimum.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Selepas dapat jumlah item (GSTK = 18), bahagikan dengan bilangan per pek (18÷6 = 3 kotak kopi).</p>
-      <p><strong>Tip Skor Exam:</strong> Semak kehendak soalan sama ada mahu &#39;jumlah tin&#39; atau &#39;bilangan kotak&#39;.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Terlupa membahagi jawapan akhir GSTK dengan isi sekotak dalam soalan pembelian pek minimum.</p>
+      <p class="kssm-m-good">TEPAT: Selepas dapat jumlah item (GSTK = 18), bahagikan dengan bilangan per pek (18÷6 = 3 kotak kopi).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Semak kehendak soalan sama ada mahu &#39;jumlah tin&#39; atau &#39;bilangan kotak&#39;.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

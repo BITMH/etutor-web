@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 1","item":"https://etutor.my/kssm/tingkatan-4/matematik/bab-1/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 4 Bab 1: Fungsi dan Persamaan Kuadratik dalam Satu Pemboleh Ubah","description":"Menguasai ciri ungkapan dan fungsi kuadratik f(x) = ax² + bx + c (a ≠ 0), kesan perubahan nilai a, b dan c pada lengkung parabola, paksi simetri, titik maksimum/minimum, kaedah pemfaktoran punca dan lakaran graf serta masalah SPM.","url":"https://etutor.my/kssm/tingkatan-4/matematik/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -332,16 +341,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_matematik_Bab_1.pdf" data-form-label="Tingkatan 4" data-subject-name="Matematik" data-subject-code="1449" data-pages="m.s. 1–32" data-dskp="SK 1.1 (DSKP KSSM Matematik Tingkatan 4)" data-chapter-heading="Bab 1: Fungsi dan Persamaan Kuadratik dalam Satu Pemboleh Ubah" data-hero-summary="Menguasai ciri ungkapan dan fungsi kuadratik f(x) = ax² + bx + c (a ≠ 0), kesan perubahan nilai a, b dan c pada lengkung parabola, paksi simetri, titik maksimum/minimum, kaedah pemfaktoran punca dan lakaran graf serta masalah SPM." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 1: Fungsi dan Persamaan Kuadratik dalam Satu Pemboleh Ubah</h2>
-          <p class="kssm-sublead">Menguasai ciri ungkapan dan fungsi kuadratik f(x) = ax² + bx + c (a ≠ 0), kesan perubahan nilai a, b dan c pada lengkung parabola, paksi simetri, titik maksimum/minimum, kaedah pemfaktoran punca dan lakaran graf serta masalah SPM.</p>
-          <p class="kssm-sheet-meta">Tingkatan 4 &bull; Matematik (1449) &bull; m.s. 1–32 &bull; SK 1.1 (DSKP KSSM Matematik Tingkatan 4)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Mengenal pasti ungkapan kuadratik dalam satu pemboleh ubah (kuasa tertinggi tepat 2, bukan punca kuasa atau indeks negatif).">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 4 &bull; Matematik (1449) &bull; m.s. 1–32</span>
+      </div>
+      <h2>Bab 1: Fungsi dan Persamaan Kuadratik dalam Satu Pemboleh Ubah</h2>
+      <p class="kssm-mast-sum">Menguasai ciri ungkapan dan fungsi kuadratik f(x) = ax² + bx + c (a ≠ 0), kesan perubahan nilai a, b dan c pada lengkung parabola, paksi simetri, titik maksimum/minimum, kaedah pemfaktoran punca dan lakaran graf serta masalah SPM.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.1 (DSKP KSSM Matematik Tingkatan 4)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Mengenal pasti ungkapan kuadratik dalam satu pemboleh ubah (kuasa tertinggi tepat 2, bukan punca kuasa atau indeks negatif).">
       <span class="kssm-obj-num">01</span>
       <span>Mengenal pasti ungkapan kuadratik dalam satu pemboleh ubah (kuasa tertinggi tepat 2, bukan punca kuasa atau indeks negatif).</span>
     </div>
@@ -357,30 +369,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Melakar graf fungsi kuadratik serta menyelesaikan masalah harian melibatkan luas, perimeter atau panjang dalam bentuk persamaan kuadratik.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 1–32)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Tentukan sama ada g(x) = 3x - 2x² + 7 ialah fungsi kuadratik dan nyatakan nilai a, b, c serta titik ekstremnya (maksimum atau minimum)." data-ex-solution="Susun semula: g(x) = -2x² + 3x + 7. Ya, fungsi kuadratik satu pemboleh ubah dengan a = -2, b = 3, c = 7. Kerana a &lt; 0, graf berbentuk ∩ dan mempunyai titik MAKSIMUM." data-ex-takeaway="Berhati-hati apabila sebutan disusun tidak mengikut tertib! Nilai &#39;a&#39; sentiasa pekali bagi x², bukan nombor yang ditulis paling hadapan!">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Tentukan sama ada g(x) = 3x - 2x² + 7 ialah fungsi kuadratik dan nyatakan nilai a, b, c serta titik ekstremnya (maksimum atau minimum)." data-ex-solution="Susun semula: g(x) = -2x² + 3x + 7. Ya, fungsi kuadratik satu pemboleh ubah dengan a = -2, b = 3, c = 7. Kerana a &lt; 0, graf berbentuk ∩ dan mempunyai titik MAKSIMUM." data-ex-takeaway="Berhati-hati apabila sebutan disusun tidak mengikut tertib! Nilai &#39;a&#39; sentiasa pekali bagi x², bukan nombor yang ditulis paling hadapan!">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Ungkapan &amp; Fungsi Kuadratik dalam Satu Pemboleh Ubah (m.s. 3–10)</h3>
       <p class="kssm-sub-summary">Ungkapan kuadratik dalam satu pemboleh ubah mempunyai bentuk am ax² + bx + c dengan a, b, c ialah pemalar dan a ≠ 0. Hanya SATU jenis pemboleh ubah wujud dengan kuasa tertinggi tepat 2.</p>
       <ul class="kssm-kp-list"><li>Contoh SAH: x² - 5 (a=1, b=0, c=-5), -(1/2)y² + 3y. Contoh BUKAN kuadratik: 2x² + x⁻² (ada kuasa -2), 3y² - 3x + 1 (ada dua pemboleh ubah y &amp; x), x³ - 2x (kuasa tertinggi 3).</li><li>Fungsi kuadratik f(x) = ax² + bx + c ialah hubungan BANYAK KEPADA SATU (garisan mengufuk memotong graf pada dua titik berbeza).</li><li>Bentuk graf parabola: Jika a &gt; 0, graf berbentuk ∪ (senyum) dan mempunyai satu TITIK MINIMUM; jika a &lt; 0, graf berbentuk ∩ (masam) dan mempunyai satu TITIK MAKSIMUM.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Tentukan sama ada g(x) = 3x - 2x² + 7 ialah fungsi kuadratik dan nyatakan nilai a, b, c serta titik ekstremnya (maksimum atau minimum).</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Susun semula: g(x) = -2x² + 3x + 7. Ya, fungsi kuadratik satu pemboleh ubah dengan a = -2, b = 3, c = 7. Kerana a &lt; 0, graf berbentuk ∩ dan mempunyai titik MAKSIMUM.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Berhati-hati apabila sebutan disusun tidak mengikut tertib! Nilai &#39;a&#39; sentiasa pekali bagi x², bukan nombor yang ditulis paling hadapan!</p>
+        <p><strong>Contoh:</strong> Tentukan sama ada g(x) = 3x - 2x² + 7 ialah fungsi kuadratik dan nyatakan nilai a, b, c serta titik ekstremnya (maksimum atau minimum).</p>
+        <p>Penyelesaian: Susun semula: g(x) = -2x² + 3x + 7. Ya, fungsi kuadratik satu pemboleh ubah dengan a = -2, b = 3, c = 7. Kerana a &lt; 0, graf berbentuk ∩ dan mempunyai titik MAKSIMUM.</p>
+        <p class="kssm-takeaway">Tip Penting: Berhati-hati apabila sebutan disusun tidak mengikut tertib! Nilai &#39;a&#39; sentiasa pekali bagi x², bukan nombor yang ditulis paling hadapan!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Diberi f(x) = x² - 6x + 5. Cari persamaan paksi simetri, koordinat titik minimum dan pintasan-y." data-ex-solution="a=1, b=-6, c=5. Paksi simetri: x = -(-6)/(2×1) = 3. Ganti x=3: f(3) = 3² - 6(3) + 5 = -4. Titik minimum ialah (3, -4) dan pintasan-y ialah 5." data-ex-takeaway="Rumus pantas titik pusingan: cari x = -b/(2a) dahulu, atau ambil purata dua punca x = (x₁ + x₂)/2!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Diberi f(x) = x² - 6x + 5. Cari persamaan paksi simetri, koordinat titik minimum dan pintasan-y." data-ex-solution="a=1, b=-6, c=5. Paksi simetri: x = -(-6)/(2×1) = 3. Ganti x=3: f(3) = 3² - 6(3) + 5 = -4. Titik minimum ialah (3, -4) dan pintasan-y ialah 5." data-ex-takeaway="Rumus pantas titik pusingan: cari x = -b/(2a) dahulu, atau ambil purata dua punca x = (x₁ + x₂)/2!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Kesan Perubahan Nilai a, b dan c pada Graf (m.s. 12–15)</h3>
       <p class="kssm-sub-summary">Setiap pemalar dalam f(x) = ax² + bx + c mengawal ciri geometri lengkung parabola secara bebas dan boleh diuji melalui lakaran perbandingan graf.</p>
       <ul class="kssm-kp-list"><li>Nilai |a| mengawal KELEBARAN graf: semakin besar |a|, semakin SEMPIT/mencuram bukaan lengkung parabola (graf lebih kurus menghampiri paksi-y); semakin kecil |a|, semakin lebar.</li><li>Nilai b bersama a menentukan kedudukan paksi simetri x = -b / (2a): jika a dan b bertanda SAMA, paksi simetri berada di sebelah KIRI paksi-y (x &lt; 0); jika bertanda BERBEZA, di sebelah KANAN (x &gt; 0); jika b = 0, paksi simetri tepat pada paksi-y (x = 0).</li><li>Nilai c ialah PINTASAN-y iaitu koordinat (0, c) tempat graf memotong paksi menegak.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Diberi f(x) = x² - 6x + 5. Cari persamaan paksi simetri, koordinat titik minimum dan pintasan-y.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> a=1, b=-6, c=5. Paksi simetri: x = -(-6)/(2×1) = 3. Ganti x=3: f(3) = 3² - 6(3) + 5 = -4. Titik minimum ialah (3, -4) dan pintasan-y ialah 5.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Rumus pantas titik pusingan: cari x = -b/(2a) dahulu, atau ambil purata dua punca x = (x₁ + x₂)/2!</p>
+        <p><strong>Contoh:</strong> Diberi f(x) = x² - 6x + 5. Cari persamaan paksi simetri, koordinat titik minimum dan pintasan-y.</p>
+        <p>Penyelesaian: a=1, b=-6, c=5. Paksi simetri: x = -(-6)/(2×1) = 3. Ganti x=3: f(3) = 3² - 6(3) + 5 = -4. Titik minimum ialah (3, -4) dan pintasan-y ialah 5.</p>
+        <p class="kssm-takeaway">Tip Penting: Rumus pantas titik pusingan: cari x = -b/(2a) dahulu, atau ambil purata dua punca x = (x₁ + x₂)/2!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Selesaikan persamaan kuadratik 2x² = 9 - 3x menggunakan kaedah pemfaktoran." data-ex-solution="Bentuk am: 2x² + 3x - 9 = 0 → (2x - 3)(x + 3) = 0 → x = 3/2 atau x = -3." data-ex-takeaway="JANGAN lupa bahagikan kedua-dua belah dengan faktor atau tukar ke bentuk am (= 0) sebelum memfaktorkan!">
@@ -389,42 +404,51 @@
       <p class="kssm-sub-summary">Punca bagi persamaan kuadratik ax² + bx + c = 0 ialah nilai pemboleh ubah x yang memuaskan persamaan itu, yang secara geometrinya merupakan PINTASAN-x (tempat graf f(x) memotong paksi mengufuk).</p>
       <ul class="kssm-kp-list"><li>Langkah Wajib sebelum memfaktorkan: Susun persamaan kepada BENTUK AM ax² + bx + c = 0 (sebelah kanan MESTI sifar!). Contoh: 3x² - 7x + 5 = 3 → 3x² - 7x + 2 = 0.</li><li>Faktorkan menjadi (px + r)(qx + s) = 0, kemudian selesaikan px + r = 0 atau qx + s = 0.</li><li>Jika graf f(x) tidak bersilang dengan paksi-x (cth f(x) = x² + 1 sentiasa di atas paksi-x), persamaan kuadratik tidak mempunyai punca nyata.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Selesaikan persamaan kuadratik 2x² = 9 - 3x menggunakan kaedah pemfaktoran.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Bentuk am: 2x² + 3x - 9 = 0 → (2x - 3)(x + 3) = 0 → x = 3/2 atau x = -3.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> JANGAN lupa bahagikan kedua-dua belah dengan faktor atau tukar ke bentuk am (= 0) sebelum memfaktorkan!</p>
+        <p><strong>Contoh:</strong> Selesaikan persamaan kuadratik 2x² = 9 - 3x menggunakan kaedah pemfaktoran.</p>
+        <p>Penyelesaian: Bentuk am: 2x² + 3x - 9 = 0 → (2x - 3)(x + 3) = 0 → x = 3/2 atau x = -3.</p>
+        <p class="kssm-takeaway">Tip Penting: JANGAN lupa bahagikan kedua-dua belah dengan faktor atau tukar ke bentuk am (= 0) sebelum memfaktorkan!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Sebuah padang segi empat tepat mempunyai panjang (5x + 20) m dan lebar x m. Jika luasnya ialah 160 m², cari nilai x." data-ex-solution="Luas = x(5x + 20) = 160 → 5x² + 20x - 160 = 0. Bahagi 5: x² + 4x - 32 = 0 → (x + 8)(x - 4) = 0 → x = 4 (tolak x = -8 kerana lebar tidak boleh negatif)." data-ex-takeaway="Sentiasa permudahkan persamaan kuadratik dengan membahagi FSTB (seperti ÷5) supaya nombor lebih mudah difaktorkan!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Sebuah padang segi empat tepat mempunyai panjang (5x + 20) m dan lebar x m. Jika luasnya ialah 160 m², cari nilai x." data-ex-solution="Luas = x(5x + 20) = 160 → 5x² + 20x - 160 = 0. Bahagi 5: x² + 4x - 32 = 0 → (x + 8)(x - 4) = 0 → x = 4 (tolak x = -8 kerana lebar tidak boleh negatif)." data-ex-takeaway="Sentiasa permudahkan persamaan kuadratik dengan membahagi FSTB (seperti ÷5) supaya nombor lebih mudah difaktorkan!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Melakar Graf &amp; Masalah Harian Kuadratik (m.s. 25–30)</h3>
       <p class="kssm-sub-summary">Lakaran graf kuadratik lengkap dan aplikasi geometri segi empat tepat (luas padang, taman bunga atau rangka kuboid seperti Contoh 10) kerap menjadi soalan berstruktur SPM.</p>
       <ul class="kssm-kp-list"><li>Empat ciri wajib pada lakaran graf kuadratik: (1) Bentuk ∪ (a&gt;0) atau ∩ (a&lt;0); (2) Pintasan-y pada (0, c); (3) Punca/pintasan-x jika bersilang; (4) Titik maksimum/minimum &amp; paksi simetri.</li><li>Dalam masalah geometri: tulis ungkapan luas/perimeter dalam sebutan x (contoh Luas = x(5x + 20)), samakan dengan luas diberi, susun menjadi ax² + bx + c = 0 dan faktorkan.</li><li>TOLAK nilai x negatif apabila x mewakili panjang fizikal, umur atau bilangan objek nyata (cth panjang = x &gt; 0)!</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Sebuah padang segi empat tepat mempunyai panjang (5x + 20) m dan lebar x m. Jika luasnya ialah 160 m², cari nilai x.</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Luas = x(5x + 20) = 160 → 5x² + 20x - 160 = 0. Bahagi 5: x² + 4x - 32 = 0 → (x + 8)(x - 4) = 0 → x = 4 (tolak x = -8 kerana lebar tidak boleh negatif).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Sentiasa permudahkan persamaan kuadratik dengan membahagi FSTB (seperti ÷5) supaya nombor lebih mudah difaktorkan!</p>
+        <p><strong>Contoh:</strong> Sebuah padang segi empat tepat mempunyai panjang (5x + 20) m dan lebar x m. Jika luasnya ialah 160 m², cari nilai x.</p>
+        <p>Penyelesaian: Luas = x(5x + 20) = 160 → 5x² + 20x - 160 = 0. Bahagi 5: x² + 4x - 32 = 0 → (x + 8)(x - 4) = 0 → x = 4 (tolak x = -8 kerana lebar tidak boleh negatif).</p>
+        <p class="kssm-takeaway">Tip Penting: Sentiasa permudahkan persamaan kuadratik dengan membahagi FSTB (seperti ÷5) supaya nombor lebih mudah difaktorkan!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Menganggap x(x - 3) = 4 bermakna x = 4 atau x - 3 = 4." data-m-correction="Sifat hasil darab sifar hanya sah apabila sebelah kanan ialah SIFAR (= 0)! Kembangkan dahulu menjadi x² - 3x - 4 = 0 → (x - 4)(x + 1) = 0." data-m-tip="Bentuk am WAJIB &#39;= 0&#39; sebelum menulis faktor berasingan!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menganggap x(x - 3) = 4 bermakna x = 4 atau x - 3 = 4.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Sifat hasil darab sifar hanya sah apabila sebelah kanan ialah SIFAR (= 0)! Kembangkan dahulu menjadi x² - 3x - 4 = 0 → (x - 4)(x + 1) = 0.</p>
-      <p><strong>Tip Skor Exam:</strong> Bentuk am WAJIB &#39;= 0&#39; sebelum menulis faktor berasingan!</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menganggap x(x - 3) = 4 bermakna x = 4 atau x - 3 = 4." data-m-correction="Sifat hasil darab sifar hanya sah apabila sebelah kanan ialah SIFAR (= 0)! Kembangkan dahulu menjadi x² - 3x - 4 = 0 → (x - 4)(x + 1) = 0." data-m-tip="Bentuk am WAJIB &#39;= 0&#39; sebelum menulis faktor berasingan!">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Menganggap x(x - 3) = 4 bermakna x = 4 atau x - 3 = 4.</p>
+      <p class="kssm-m-good">TEPAT: Sifat hasil darab sifar hanya sah apabila sebelah kanan ialah SIFAR (= 0)! Kembangkan dahulu menjadi x² - 3x - 4 = 0 → (x - 4)(x + 1) = 0.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Bentuk am WAJIB &#39;= 0&#39; sebelum menulis faktor berasingan!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Menulis kedua-dua punca x = 4 dan x = -8 sebagai jawapan panjang atau lebar sisi tanah." data-m-correction="Nyatakan secara jelas bahawa punca negatif ditolak kerana ukuran panjang atau jarak tidak mungkin negatif." data-m-tip="Sentiasa tulis catatan &#39;Oleh kerana x &gt; 0, maka x = 4&#39; pada baris akhir masalah harian.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Menulis kedua-dua punca x = 4 dan x = -8 sebagai jawapan panjang atau lebar sisi tanah.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Nyatakan secara jelas bahawa punca negatif ditolak kerana ukuran panjang atau jarak tidak mungkin negatif.</p>
-      <p><strong>Tip Skor Exam:</strong> Sentiasa tulis catatan &#39;Oleh kerana x &gt; 0, maka x = 4&#39; pada baris akhir masalah harian.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Menulis kedua-dua punca x = 4 dan x = -8 sebagai jawapan panjang atau lebar sisi tanah.</p>
+      <p class="kssm-m-good">TEPAT: Nyatakan secara jelas bahawa punca negatif ditolak kerana ukuran panjang atau jarak tidak mungkin negatif.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Sentiasa tulis catatan &#39;Oleh kerana x &gt; 0, maka x = 4&#39; pada baris akhir masalah harian.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mengelirukan kesan nilai |a| terhadap lebar parabola: menyangka |a| besar bermaksud graf lebih lebar." data-m-correction="Semakin besar |a| (seperti y = 4x² berbanding y = ½x²), nilai y naik lebih cepat → graf lebih SEMPIT (kurus)." data-m-tip="Uji x = 1: y = 4(1)² = 4 (tinggi/sempit) vs y = ½(1)² = 0.5 (rendah/lebar)!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mengelirukan kesan nilai |a| terhadap lebar parabola: menyangka |a| besar bermaksud graf lebih lebar.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Semakin besar |a| (seperti y = 4x² berbanding y = ½x²), nilai y naik lebih cepat → graf lebih SEMPIT (kurus).</p>
-      <p><strong>Tip Skor Exam:</strong> Uji x = 1: y = 4(1)² = 4 (tinggi/sempit) vs y = ½(1)² = 0.5 (rendah/lebar)!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Mengelirukan kesan nilai |a| terhadap lebar parabola: menyangka |a| besar bermaksud graf lebih lebar.</p>
+      <p class="kssm-m-good">TEPAT: Semakin besar |a| (seperti y = 4x² berbanding y = ½x²), nilai y naik lebih cepat → graf lebih SEMPIT (kurus).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Uji x = 1: y = 4(1)² = 4 (tinggi/sempit) vs y = ½(1)² = 0.5 (rendah/lebar)!</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1234,7 +1258,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

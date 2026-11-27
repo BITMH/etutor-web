@@ -100,7 +100,7 @@
   .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
   .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
   .kssm-tab-panel[hidden]{display:none !important}
-  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
   .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
   .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
   .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
@@ -113,35 +113,41 @@
   .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
   .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
   .kssm-print-btn:hover{background:#eff6ff}
-  .kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;position:relative;border-radius:22px;padding:clamp(22px,4vw,42px) clamp(14px,3.5vw,38px);background-color:#fff;background-image:var(--tpl-bg);background-size:100% auto;background-repeat:repeat-y;background-position:top center;border:1.5px solid var(--tpl-border);box-shadow:0 12px 30px rgb(15 23 42 / .08);display:grid;gap:18px;margin-bottom:20px}
-  .kssm-sheet-head{background:rgb(255 255 255 / .94);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-accent);border-top:5px solid var(--tpl-accent);border-radius:16px;padding:18px 20px}
-  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.04em;margin-bottom:8px}
-  .kssm-sheet-head h2{margin:0 0 6px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.55rem)}
-  .kssm-sheet-meta{margin:8px 0 0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
-  .kssm-sheet-card{background:rgb(255 255 255 / .93);backdrop-filter:blur(4px);border:1.5px solid var(--tpl-border);border-radius:16px;padding:18px 20px;margin-bottom:0}
-  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tpl-accent,#2563eb);margin-bottom:4px}
-  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
-  .kssm-obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
-  .kssm-obj-item{display:flex;align-items:flex-start;gap:10px;background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:12px;padding:11px 13px;color:#0f172a;font-size:.9rem;line-height:1.5}
-  .kssm-obj-num{flex:0 0 26px;height:26px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.74rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
-  .kssm-subtopics-grid{display:grid;gap:16px;margin-top:14px}
-  .kssm-sub-card{border:1px solid var(--tpl-border,#e2e8f0);border-top:4px solid var(--tpl-accent,#2563eb);border-radius:16px;padding:18px;background:rgb(255 255 255 / .96);box-shadow:0 4px 12px rgb(15 23 42 / .04)}
-  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 9px;border-radius:999px;margin-bottom:8px}
-  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink,#1e3a8a);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.08rem}
-  .kssm-sub-summary{margin:0 0 10px;color:#334155;line-height:1.6}
-  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.93rem;line-height:1.55}
-  .kssm-example-box{background:var(--tpl-soft,#f8fafc);border:1px dashed var(--tpl-border,#cbd5e1);border-radius:12px;padding:13px 15px}
-  .kssm-example-box p{margin:0 0 7px;font-size:.91rem;line-height:1.55;color:#1e293b}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
   .kssm-example-box p:last-child{margin-bottom:0}
-  .kssm-ex-pill{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:6px;background:var(--tpl-accent);color:#fff;margin-right:6px}
-  .kssm-takeaway{color:#047857 !important;font-weight:600}
-  .kssm-mistakes-grid,.kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
-  .kssm-mistake-card{border:1px solid #fde68a;border-top:4px solid #d97706;background:#fffbeb;border-radius:14px;padding:15px}
-  .kssm-mistake-card p{margin:0 0 8px;font-size:.9rem;line-height:1.5}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
   .kssm-mistake-card p:last-child{margin-bottom:0}
-  .kssm-mistake-tag{display:inline-block;font-size:.69rem;font-weight:800;text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-right:6px}
-  .kssm-mistake-tag.is-bad{background:#fee2e2;color:#991b1b}
-  .kssm-mistake-tag.is-good{background:#dcfce7;color:#065f46}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
   .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
@@ -204,6 +210,7 @@
   .cikgu-ai-p{margin:0 0 6px}
   .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
   .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -213,15 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
-  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-nota-sheet{padding:18px 12px}}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
     body{background:#fff !important;color:#0f172a !important}
     .lp-container{max-width:100% !important;padding:0 !important}
     #panel-nota{display:block !important}
-    .kssm-nota-sheet{padding:18px 16px !important;box-shadow:none !important}
-    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-item{break-inside:avoid;page-break-inside:avoid}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
   }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 3","item":"https://etutor.my/kssm/tingkatan-3/"},{"@type":"ListItem","position":4,"name":"Geografi Bab 1","item":"https://etutor.my/kssm/tingkatan-3/geografi/bab-1/"}]},{"@type":"LearningResource","name":"Geografi Tingkatan 3 Bab 1: Jadual dan Graf (Graf Bar Mudah, Garisan & Gabungan)","description":"Menguasai kaedah pengumpulan maklumat geografi (pemerhatian, temu bual, banci, soal selidik, rujukan kepustakaan), ciri serta pembinaan jadual lengkap, graf bar mudah, graf garisan mudah dan graf gabungan suhu-hujan beserta pentafsiran data.","url":"https://etutor.my/kssm/tingkatan-3/geografi/bab-1/","inLanguage":"ms","educationalLevel":"Tingkatan 3","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Geografi KSSM (2280)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
@@ -327,16 +336,19 @@
       </div>
     </div>
       <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="geografi" data-tpl="geografi" data-subject-slug="geografi" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T3_geografi_Bab_1.pdf" data-form-label="Tingkatan 3" data-subject-name="Geografi" data-subject-code="2280" data-pages="m.s. 2–19" data-dskp="SK 1.1 Kemahiran Geografi: Jadual dan Graf (DSKP KSSM Geografi T3)" data-chapter-heading="Bab 1: Jadual dan Graf (Graf Bar Mudah, Garisan &amp; Gabungan)" data-hero-summary="Menguasai kaedah pengumpulan maklumat geografi (pemerhatian, temu bual, banci, soal selidik, rujukan kepustakaan), ciri serta pembinaan jadual lengkap, graf bar mudah, graf garisan mudah dan graf gabungan suhu-hujan beserta pentafsiran data." style="--tpl-accent:#0369a1;--tpl-soft:#f0f9ff;--tpl-border:#7dd3fc;--tpl-ink:#0c4a6e;--tpl-bg:url('../../../../images/nota-templates/geografi.jpg')">
-        <header class="kssm-sheet-head">
-          <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA RINGKAS KSSM</span>
-          <h2>Bab 1: Jadual dan Graf (Graf Bar Mudah, Garisan &amp; Gabungan)</h2>
-          <p class="kssm-sublead">Menguasai kaedah pengumpulan maklumat geografi (pemerhatian, temu bual, banci, soal selidik, rujukan kepustakaan), ciri serta pembinaan jadual lengkap, graf bar mudah, graf garisan mudah dan graf gabungan suhu-hujan beserta pentafsiran data.</p>
-          <p class="kssm-sheet-meta">Tingkatan 3 &bull; Geografi (2280) &bull; m.s. 2–19 &bull; SK 1.1 Kemahiran Geografi: Jadual dan Graf (DSKP KSSM Geografi T3)</p>
-        </header>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Objektif Pembelajaran DSKP</span>
-          <h2>Sasaran Penguasaan Bab Ini</h2>
-          <div class="kssm-obj-grid"><div class="kssm-obj-item" data-obj-text="Menjelaskan lima kaedah pengumpulan maklumat geografi di lapangan serta langkah menyusun data ke dalam jadual yang tersusun.">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 3 &bull; Geografi (2280) &bull; m.s. 2–19</span>
+      </div>
+      <h2>Bab 1: Jadual dan Graf (Graf Bar Mudah, Garisan &amp; Gabungan)</h2>
+      <p class="kssm-mast-sum">Menguasai kaedah pengumpulan maklumat geografi (pemerhatian, temu bual, banci, soal selidik, rujukan kepustakaan), ciri serta pembinaan jadual lengkap, graf bar mudah, graf garisan mudah dan graf gabungan suhu-hujan beserta pentafsiran data.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 1.1 Kemahiran Geografi: Jadual dan Graf (DSKP KSSM Geografi T3)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Menjelaskan lima kaedah pengumpulan maklumat geografi di lapangan serta langkah menyusun data ke dalam jadual yang tersusun.">
       <span class="kssm-obj-num">01</span>
       <span>Menjelaskan lima kaedah pengumpulan maklumat geografi di lapangan serta langkah menyusun data ke dalam jadual yang tersusun.</span>
     </div>
@@ -352,30 +364,33 @@
       <span class="kssm-obj-num">04</span>
       <span>Mentafsir data jadual dan graf dengan menyatakan nilai maksimum, minimum, perbezaan, pola peningkatan/penurunan serta faktor sebabnya.</span>
     </div></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Nota Ringkas &amp; Contoh Terkawal (m.s. 2–19)</span>
-          <h2>Ringkasan Teras Mengikut Subtopik</h2>
-          <div class="kssm-subtopics-grid"><article class="kssm-sub-card" data-ex-prompt="Seorang murid ingin mengetahui cara 30 orang rakan sekelasnya datang ke sekolah setiap pagi. Apakah dua kaedah pengumpulan data yang paling cepat dan tepat?" data-ex-solution="Kaedah soal selidik (mengedar borang pilihan mod pengangkutan) atau kaedah temu bual/pemerhatian terus di kelas." data-ex-takeaway="Pastikan setiap jadual mempunyai tajuk lengkap (apa, di mana, bila) serta unit data pada kepala lajur.">
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Seorang murid ingin mengetahui cara 30 orang rakan sekelasnya datang ke sekolah setiap pagi. Apakah dua kaedah pengumpulan data yang paling cepat dan tepat?" data-ex-solution="Kaedah soal selidik (mengedar borang pilihan mod pengangkutan) atau kaedah temu bual/pemerhatian terus di kelas." data-ex-takeaway="Pastikan setiap jadual mempunyai tajuk lengkap (apa, di mana, bila) serta unit data pada kepala lajur.">
       <span class="kssm-sub-tag">SUBTOPIK 01</span>
       <h3>1.1 Kaedah Pengumpulan Data &amp; Pembinaan Jadual (SP 1.1.1–1.1.2)</h3>
       <p class="kssm-sub-summary">Jadual merupakan cara mempersembahkan data atau maklumat secara tersusun mengikut baris dan lajur supaya lebih mudah dibaca, difahami dan ditafsir.</p>
       <ul class="kssm-kp-list"><li>Lima kaedah pengumpulan maklumat: (1) Pemerhatian (melihat &amp; mencatat terus di lapangan); (2) Temu bual (bersoal jawab secara lisan dengan responden); (3) Banci (mengumpul maklumat menyeluruh sesebuah populasi); (4) Soal selidik (mengedarkan borang soalan bertulis); (5) Rujukan kepustakaan (buku, jurnal, laporan agensi).</li><li>Ciri jadual lengkap: Tajuk jelas di bahagian atas, kepala lajur dan unit ukuran dinyatakan (cth °C, mm, orang), nilai tepat dan jumlah keseluruhan.</li><li>Kelebihan jadual: data lebih terperinci dan memudahkan kerja penukaran kepada graf atau carta pai.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Seorang murid ingin mengetahui cara 30 orang rakan sekelasnya datang ke sekolah setiap pagi. Apakah dua kaedah pengumpulan data yang paling cepat dan tepat?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kaedah soal selidik (mengedar borang pilihan mod pengangkutan) atau kaedah temu bual/pemerhatian terus di kelas.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Pastikan setiap jadual mempunyai tajuk lengkap (apa, di mana, bila) serta unit data pada kepala lajur.</p>
+        <p><strong>Contoh:</strong> Seorang murid ingin mengetahui cara 30 orang rakan sekelasnya datang ke sekolah setiap pagi. Apakah dua kaedah pengumpulan data yang paling cepat dan tepat?</p>
+        <p>Penyelesaian: Kaedah soal selidik (mengedar borang pilihan mod pengangkutan) atau kaedah temu bual/pemerhatian terus di kelas.</p>
+        <p class="kssm-takeaway">Tip Penting: Pastikan setiap jadual mempunyai tajuk lengkap (apa, di mana, bila) serta unit data pada kepala lajur.</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Dalam Graf Garisan guna tenaga Malaysia 2010–2014 (m.s. 19), garisan bergerak curam naik dari 11,900 ribu orang kepada 13,576 ribu orang. Apakah tafsirannya?" data-ex-solution="Bilangan guna tenaga di Malaysia mengalami peningkatan berterusan yang ketara sepanjang tahun 2010 hingga 2014 disebabkan pertambahan peluang pekerjaan oleh majikan." data-ex-takeaway="Guna Graf Bar untuk KATEGORI berasingan; guna Graf Garisan untuk TREND MASA berterusan!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Dalam Graf Garisan guna tenaga Malaysia 2010–2014 (m.s. 19), garisan bergerak curam naik dari 11,900 ribu orang kepada 13,576 ribu orang. Apakah tafsirannya?" data-ex-solution="Bilangan guna tenaga di Malaysia mengalami peningkatan berterusan yang ketara sepanjang tahun 2010 hingga 2014 disebabkan pertambahan peluang pekerjaan oleh majikan." data-ex-takeaway="Guna Graf Bar untuk KATEGORI berasingan; guna Graf Garisan untuk TREND MASA berterusan!">
       <span class="kssm-sub-tag">SUBTOPIK 02</span>
       <h3>1.2 Graf Bar Mudah &amp; Graf Garisan Mudah (SP 1.1.3)</h3>
       <p class="kssm-sub-summary">Graf bar mudah membandingkan kuantiti berasingan antara kategori, manakala graf garisan mudah menggambarkan perubahan data secara berterusan mengikut siri masa (tahun/bulan).</p>
       <ul class="kssm-kp-list"><li>Graf Bar Mudah: menggunakan bar menegak atau mendatar yang sama lebar dengan jarak selang antara bar yang seragam. Sesuai untuk kategori berbeza (cara datang ke sekolah, sukan kegemaran, jumlah eksport mengikut negeri).</li><li>Graf Garisan Mudah: plot titik disambungkan garis lurus mengikut masa (tahun 2010–2014). Garisan curam naik = peningkatan mendadak; garisan landai = perubahan kecil; garisan mendatar = tiada perubahan/malar.</li><li>Setiap graf wajib mempunyai Tajuk, Paksi Mendatar (paksi-x), Paksi Menegak (paksi-y) berunit dan Skala seragam.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Dalam Graf Garisan guna tenaga Malaysia 2010–2014 (m.s. 19), garisan bergerak curam naik dari 11,900 ribu orang kepada 13,576 ribu orang. Apakah tafsirannya?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Bilangan guna tenaga di Malaysia mengalami peningkatan berterusan yang ketara sepanjang tahun 2010 hingga 2014 disebabkan pertambahan peluang pekerjaan oleh majikan.</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Guna Graf Bar untuk KATEGORI berasingan; guna Graf Garisan untuk TREND MASA berterusan!</p>
+        <p><strong>Contoh:</strong> Dalam Graf Garisan guna tenaga Malaysia 2010–2014 (m.s. 19), garisan bergerak curam naik dari 11,900 ribu orang kepada 13,576 ribu orang. Apakah tafsirannya?</p>
+        <p>Penyelesaian: Bilangan guna tenaga di Malaysia mengalami peningkatan berterusan yang ketara sepanjang tahun 2010 hingga 2014 disebabkan pertambahan peluang pekerjaan oleh majikan.</p>
+        <p class="kssm-takeaway">Tip Penting: Guna Graf Bar untuk KATEGORI berasingan; guna Graf Garisan untuk TREND MASA berterusan!</p>
       </div>
     </article>
 <article class="kssm-sub-card" data-ex-prompt="Mengapakah graf gabungan menggunakan dua paksi menegak yang berlainan pada kiri dan kanan rajah?" data-ex-solution="Kerana ia memaparkan dua pemboleh ubah berbeza unit serta berbeza julat nilai serentak — contohnya hujan dalam milimeter (0–350 mm) dan suhu dalam darjah Celsius (24°C–30°C)." data-ex-takeaway="Kunci graf gabungan klimogram: Bar = Hujan (mm); Garisan = Suhu (°C), titik dipusatkan di tengah setiap bar!">
@@ -384,42 +399,51 @@
       <p class="kssm-sub-summary">Graf gabungan menggabungkan graf bar mudah dan graf garisan mudah pada paksi mendatar yang sama untuk memaparkan dua maklumat berlainan unit yang saling berkait (seperti jumlah hujan dan min suhu bulanan).</p>
       <ul class="kssm-kp-list"><li>Mempunyai DUA paksi menegak (kiri dan kanan) dengan skala berbeza: contohnya paksi kiri menunjukkan Jumlah Hujan (mm) melalui bar, manakala paksi kanan menunjukkan Min Suhu (°C) melalui titik garisan.</li><li>Langkah melukis (m.s. 21): Lukis bar jumlah hujan bagi setiap bulan (J hingga D) dahulu → plot titik min suhu tepat di TENGAH-TENGAH lebar setiap bar bulan → sambungkan titik suhu dengan pembaris → lengkapkan tajuk dan petunjuk.</li><li>JANGAN biarkan titik suhu terkeluar di tepi bar; sentiasa tanda tepat di garisan tengah setiap bulan!</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Mengapakah graf gabungan menggunakan dua paksi menegak yang berlainan pada kiri dan kanan rajah?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Kerana ia memaparkan dua pemboleh ubah berbeza unit serta berbeza julat nilai serentak — contohnya hujan dalam milimeter (0–350 mm) dan suhu dalam darjah Celsius (24°C–30°C).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Kunci graf gabungan klimogram: Bar = Hujan (mm); Garisan = Suhu (°C), titik dipusatkan di tengah setiap bar!</p>
+        <p><strong>Contoh:</strong> Mengapakah graf gabungan menggunakan dua paksi menegak yang berlainan pada kiri dan kanan rajah?</p>
+        <p>Penyelesaian: Kerana ia memaparkan dua pemboleh ubah berbeza unit serta berbeza julat nilai serentak — contohnya hujan dalam milimeter (0–350 mm) dan suhu dalam darjah Celsius (24°C–30°C).</p>
+        <p class="kssm-takeaway">Tip Penting: Kunci graf gabungan klimogram: Bar = Hujan (mm); Garisan = Suhu (°C), titik dipusatkan di tengah setiap bar!</p>
       </div>
-    </article>
-<article class="kssm-sub-card" data-ex-prompt="Jika suhu tertinggi di Bandaraya Kuala Lumpur ialah 27.7°C (April–Mei) dan terendah 26.5°C (Januari), berapakah julat suhu tahunannya?" data-ex-solution="Julat suhu tahunan = 27.7°C - 26.5°C = 1.2°C (julat suhu tahunan kecil menandakan iklim Khatulistiwa panas dan lembap sepanjang tahun)." data-ex-takeaway="Skim pemarkahan Geografi PT3/UASA memberi markah penuh apabila jawapan menyertakan DATA ANGKA tepat bersama UNIT daripada graf!">
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Jika suhu tertinggi di Bandaraya Kuala Lumpur ialah 27.7°C (April–Mei) dan terendah 26.5°C (Januari), berapakah julat suhu tahunannya?" data-ex-solution="Julat suhu tahunan = 27.7°C - 26.5°C = 1.2°C (julat suhu tahunan kecil menandakan iklim Khatulistiwa panas dan lembap sepanjang tahun)." data-ex-takeaway="Skim pemarkahan Geografi PT3/UASA memberi markah penuh apabila jawapan menyertakan DATA ANGKA tepat bersama UNIT daripada graf!">
       <span class="kssm-sub-tag">SUBTOPIK 04</span>
       <h3>1.4 Mentafsir Jadual &amp; Graf Secara Tepat (SP 1.1.4)</h3>
       <p class="kssm-sub-summary">Tafsiran jadual atau graf bukan sekadar membaca satu angka, tetapi menghuraikan pola keseluruhan, nilai ekstrem serta hubung kait sebab-akibat geografi.</p>
       <ul class="kssm-kp-list"><li>Lima elemen wajib semasa mentafsir graf: (1) Tajuk dan perkara yang diwakili; (2) Nilai tertinggi (maksimum) dan bulan/kategorinya; (3) Nilai terendah (minimum); (4) Beza atau julat antara tertinggi dengan terendah / aliran menaik atau menurun; (5) Faktor geografi yang menjelaskan pola tersebut.</li><li>Contoh tafsiran: Bagi data suhu bulanan, kira juga Julat Suhu Tahunan (Min Suhu Tertinggi - Min Suhu Terendah) dan Jumlah Hujan Tahunan (hasil tambah 12 bulan).</li><li>Dalam contoh graf bar sukan (m.s. 23), nyatakan sukan paling diminati (bola sepak, 12 orang) diikuti sukan kedua, dan rumuskan kecenderungan keseluruhan murid.</li></ul>
       <div class="kssm-example-box">
-        <p><span class="kssm-ex-pill">Contoh</span> Jika suhu tertinggi di Bandaraya Kuala Lumpur ialah 27.7°C (April–Mei) dan terendah 26.5°C (Januari), berapakah julat suhu tahunannya?</p>
-        <p><span class="kssm-ex-pill">Penyelesaian</span> Julat suhu tahunan = 27.7°C - 26.5°C = 1.2°C (julat suhu tahunan kecil menandakan iklim Khatulistiwa panas dan lembap sepanjang tahun).</p>
-        <p class="kssm-takeaway"><span class="kssm-ex-pill">Tip Penting</span> Skim pemarkahan Geografi PT3/UASA memberi markah penuh apabila jawapan menyertakan DATA ANGKA tepat bersama UNIT daripada graf!</p>
+        <p><strong>Contoh:</strong> Jika suhu tertinggi di Bandaraya Kuala Lumpur ialah 27.7°C (April–Mei) dan terendah 26.5°C (Januari), berapakah julat suhu tahunannya?</p>
+        <p>Penyelesaian: Julat suhu tahunan = 27.7°C - 26.5°C = 1.2°C (julat suhu tahunan kecil menandakan iklim Khatulistiwa panas dan lembap sepanjang tahun).</p>
+        <p class="kssm-takeaway">Tip Penting: Skim pemarkahan Geografi PT3/UASA memberi markah penuh apabila jawapan menyertakan DATA ANGKA tepat bersama UNIT daripada graf!</p>
       </div>
-    </article></div>
-        </section>
-        <section class="kssm-sheet-card">
-          <span class="kssm-eyebrow">Amaran Pemeriksa</span>
-          <h2>3 Kesilapan Lazim &amp; Tip Skor Exam</h2>
-          <div class="kssm-mistakes-grid"><article class="kssm-mistake-card" data-m-mistake="Melukis lebar bar yang berbeza-beza atau menyambungkan bar tanpa jarak selang dalam Graf Bar Mudah." data-m-correction="Dalam Graf Bar Mudah, lebar setiap bar dan jarak ruang di antara bar mestilah SAMA SAIZ dan seragam." data-m-tip="Gunakan kertas graf dan pilih 2 petak lebar bar + 1 petak selang secara konsisten.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Melukis lebar bar yang berbeza-beza atau menyambungkan bar tanpa jarak selang dalam Graf Bar Mudah.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Dalam Graf Bar Mudah, lebar setiap bar dan jarak ruang di antara bar mestilah SAMA SAIZ dan seragam.</p>
-      <p><strong>Tip Skor Exam:</strong> Gunakan kertas graf dan pilih 2 petak lebar bar + 1 petak selang secara konsisten.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Melukis lebar bar yang berbeza-beza atau menyambungkan bar tanpa jarak selang dalam Graf Bar Mudah." data-m-correction="Dalam Graf Bar Mudah, lebar setiap bar dan jarak ruang di antara bar mestilah SAMA SAIZ dan seragam." data-m-tip="Gunakan kertas graf dan pilih 2 petak lebar bar + 1 petak selang secara konsisten.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Melukis lebar bar yang berbeza-beza atau menyambungkan bar tanpa jarak selang dalam Graf Bar Mudah.</p>
+      <p class="kssm-m-good">TEPAT: Dalam Graf Bar Mudah, lebar setiap bar dan jarak ruang di antara bar mestilah SAMA SAIZ dan seragam.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Gunakan kertas graf dan pilih 2 petak lebar bar + 1 petak selang secara konsisten.</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Meletakkan titik garisan suhu pada sisi kiri atau kanan bar dalam Graf Gabungan." data-m-correction="Titik nilai garisan mesti diplot tepat di TENGAH lebar bar setiap bulan sebelum disambungkan." data-m-tip="Jika lebar bar ialah 2 petak besar, letak titik tepat di garisan tengah (1 petak)!">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Meletakkan titik garisan suhu pada sisi kiri atau kanan bar dalam Graf Gabungan.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Titik nilai garisan mesti diplot tepat di TENGAH lebar bar setiap bulan sebelum disambungkan.</p>
-      <p><strong>Tip Skor Exam:</strong> Jika lebar bar ialah 2 petak besar, letak titik tepat di garisan tengah (1 petak)!</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Meletakkan titik garisan suhu pada sisi kiri atau kanan bar dalam Graf Gabungan.</p>
+      <p class="kssm-m-good">TEPAT: Titik nilai garisan mesti diplot tepat di TENGAH lebar bar setiap bulan sebelum disambungkan.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Jika lebar bar ialah 2 petak besar, letak titik tepat di garisan tengah (1 petak)!</p>
     </article>
 <article class="kssm-mistake-card" data-m-mistake="Mentafsir graf dengan hanya menulis &#39;hujan banyak pada akhir tahun&#39; tanpa memetik angka sebenar." data-m-correction="Sentiasa sertakan nilai angka berserta unit dan bulan/tahun: &#39;Jumlah hujan tertinggi ialah 310 mm pada bulan November&#39;." data-m-tip="Formula tafsiran penuh: Fakta Tertinggi/Terendah + Angka &amp; Unit + Bulan/Kategori + Rumusan Aliran.">
-      <p><span class="kssm-mistake-tag is-bad">Elakkan</span> Mentafsir graf dengan hanya menulis &#39;hujan banyak pada akhir tahun&#39; tanpa memetik angka sebenar.</p>
-      <p><span class="kssm-mistake-tag is-good">Tepat</span> Sentiasa sertakan nilai angka berserta unit dan bulan/tahun: &#39;Jumlah hujan tertinggi ialah 310 mm pada bulan November&#39;.</p>
-      <p><strong>Tip Skor Exam:</strong> Formula tafsiran penuh: Fakta Tertinggi/Terendah + Angka &amp; Unit + Bulan/Kategori + Rumusan Aliran.</p>
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Mentafsir graf dengan hanya menulis &#39;hujan banyak pada akhir tahun&#39; tanpa memetik angka sebenar.</p>
+      <p class="kssm-m-good">TEPAT: Sentiasa sertakan nilai angka berserta unit dan bulan/tahun: &#39;Jumlah hujan tertinggi ialah 310 mm pada bulan November&#39;.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Formula tafsiran penuh: Fakta Tertinggi/Terendah + Angka &amp; Unit + Bulan/Kategori + Rumusan Aliran.</p>
     </article></div>
-        </section>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
       </div>
     </div>
     <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
@@ -1229,7 +1253,7 @@
   renderAll();
 })();
 </script>
-  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=1"></script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
   <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
 </body>
 </html>

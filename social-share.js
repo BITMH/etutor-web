@@ -521,7 +521,7 @@
   /**
    * src/features/social-share/socialShareModalController.js
    * Pengawal dialog kongsi bersepadu (#etutorSocialShareDialog) + pengikat butang
-   * halaman statik SEO (/tips-spm/, /soalan-percubaan-spm/, /soalan-klon-spm/).
+   * halaman statik SEO (/artikel/, /soalan-percubaan-spm/, /soalan-klon-spm/).
    */
 
 

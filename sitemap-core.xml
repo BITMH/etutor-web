@@ -1249,32 +1249,38 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://etutor.my/tips-spm/</loc>
+    <loc>https://etutor.my/artikel/</loc>
     <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://etutor.my/tips-spm/panduan-guna-skema-jawapan-trial-spm/</loc>
+    <loc>https://etutor.my/artikel/tips-spm/</loc>
     <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://etutor.my/artikel/tips-spm/panduan-guna-skema-jawapan-trial-spm/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://etutor.my/tips-spm/persediaan-malam-sebelum-exam-spm/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <loc>https://etutor.my/artikel/tips-spm/persediaan-malam-sebelum-exam-spm/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://etutor.my/tips-spm/teknik-jawab-sejarah-dan-sains-spm/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <loc>https://etutor.my/artikel/tips-spm/teknik-jawab-sejarah-dan-sains-spm/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://etutor.my/tips-spm/strategi-ulang-kaji-pecutan-akhir-spm/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <loc>https://etutor.my/artikel/tips-spm/strategi-ulang-kaji-pecutan-akhir-spm/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

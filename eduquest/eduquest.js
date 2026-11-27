@@ -20,7 +20,7 @@
   function esc(v) { return String(v == null ? "" : v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   function readStore(k) { try { var r = localStorage.getItem(k); return r ? JSON.parse(r) : {}; } catch (e) { return {}; } }
   function writeStore(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  function calcStars(xp) { var v = Math.max(0, Number(xp) || 0); return v >= 80 ? 3 : (v >= 50 ? 2 : (v > 0 ? 1 : 0)); }
+  function calcStars(xp, max) { var p = (Math.max(0, Number(xp) || 0) / Math.max(1, Number(max) || 100)) * 100; return p >= 80 ? 3 : (p >= 50 ? 2 : (p > 0 ? 1 : 0)); }
   function calcNotaStars(rec, uCnt) {
     if (!rec || typeof rec !== "object") return 0;
     var d = Math.max(0, Number(rec.completedUnits) || 0), t = Math.max(1, Number(rec.totalUnits) || Number(uCnt) || 6);
@@ -132,7 +132,7 @@
       var notaId = (n && n.id) || (k && k.playableNoteId) || "";
       var nRec = notaId ? (notaProg[notaId] || null) : null;
       var xp = Math.max(kRec ? (Number(kRec.earnedXp) || 0) : 0, nRec ? (Number(nRec.xp) || 0) : 0);
-      var stars = locked ? 0 : Math.max(calcStars(kRec && kRec.earnedXp), calcNotaStars(nRec, n && n.unitCount));
+      var stars = locked ? 0 : Math.max(calcStars(kRec && kRec.earnedXp, k && k.mcqCount ? k.mcqCount * 10 : 200), calcNotaStars(nRec, n && n.unitCount));
       var videos = (!locked && n && Array.isArray(n.videos)) ? n.videos : [];
       if (!locked) unlockedCount += 1;
       if (!locked && (stars > 0 || xp > 0)) cleared += 1;

@@ -3,9 +3,9 @@
     return String(v == null ? "" : v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
-  function calcKssmStars(xp) {
-    var v = Math.max(0, Number(xp) || 0);
-    return v >= 80 ? 3 : (v >= 50 ? 2 : (v > 0 ? 1 : 0));
+  function calcKssmStars(xp, maxXp) {
+    var pct = (Math.max(0, Number(xp) || 0) / Math.max(1, Number(maxXp) || 200)) * 100;
+    return pct >= 80 ? 3 : (pct >= 50 ? 2 : (xp > 0 ? 1 : 0));
   }
 
   function renderSection(enriched, activeForm, def, kMap) {
@@ -17,7 +17,7 @@
 
     var isUasa = Number(activeForm) <= 3;
     var examTag = isUasa ? "UASA" : "SPM";
-    var paperLabel = isUasa ? "10 MCQ &amp; 2 Struktur" : "10 MCQ &amp; 2 Kertas 2";
+    var paperLabel = isUasa ? "20 MCQ &amp; 2 Struktur" : "20 MCQ &amp; 2 Kertas 2";
     var headHtml = '<h2 class="eq-latihan-title">Ujian Topikal ' + examTag + " &bull; " + esc(def.name) + " (Ting. " + Number(activeForm) + ")</h2>";
 
     if (!items.length) {
@@ -32,7 +32,8 @@
     var cardsHtml = items.map(function (item) {
       var kRec = (kMap && kMap[item.kssmTajuk]) || null;
       var kXp = kRec ? (Number(kRec.earnedXp) || 0) : 0;
-      var kStars = calcKssmStars(kXp);
+      var maxXp = (Number(item.kssm && item.kssm.mcqCount) || 20) * 10;
+      var kStars = calcKssmStars(kXp, maxXp);
       var starsHtml = [1, 2, 3].map(function (s) {
         return '<span class="' + (s <= kStars ? "eq-star-on" : "eq-star-off") + '">&#9733;</span>';
       }).join("");
@@ -41,7 +42,7 @@
       return '<article class="eq-latihan-card">' +
         '  <div class="eq-latihan-top"><span class="eq-node-bab">Bab ' + item.bab + '</span><span class="eq-pin-stars-bar">' + starsHtml + "</span></div>" +
         '  <h3 class="eq-latihan-card-title">' + esc((item.kssm && item.kssm.title) || item.title) + "</h3>" +
-        '  <span class="eq-node-xp">' + kXp + " / 100 XP (Format " + examTag + " &bull; " + paperLabel + ")</span>" +
+        '  <span class="eq-node-xp">' + kXp + " / " + maxXp + " XP (Format " + examTag + " &bull; " + paperLabel + ")</span>" +
         '  <button type="button" class="eq-latihan-btn" data-open-tajuk="' + esc(item.kssmTajuk) + '" data-src="' + esc(src) + '" data-title="' + esc("Ujian Topikal " + examTag + " Bab " + item.bab + ": " + item.title) + '" data-note-id="">' + btnTxt + "</button>" +
         "</article>";
     }).join("");

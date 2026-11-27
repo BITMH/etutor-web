@@ -82,16 +82,31 @@
   </style>
   <style>/* kssm-page-css */
   .kssm-hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);color:#fff;border-radius:20px;padding:24px;margin-bottom:20px;box-shadow:0 12px 28px rgb(30 58 138 / .18)}
-  .kssm-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .kssm-hero-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+  .kssm-pill-row{display:flex;flex-wrap:wrap;gap:8px}
   .kssm-pill{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:.76rem;font-weight:700;background:rgb(255 255 255 / .16);color:#fff;border:1px solid rgb(255 255 255 / .24)}
   .kssm-pill.is-emerald{background:#059669;border-color:#10b981}
   .kssm-pill.is-gold{background:#d97706;border-color:#f59e0b}
+  .kssm-playable-icon-btn{position:relative;flex:0 0 auto;width:46px;height:46px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#10b981 0%,#06b6d4 100%);color:#fff;text-decoration:none;border:1.5px solid rgb(255 255 255 / .65);box-shadow:0 6px 16px rgb(6 182 212 / .35);animation:kssmIconFloat 2.8s ease-in-out infinite;transition:transform .18s ease,box-shadow .18s ease}
+  .kssm-playable-icon-btn::after{content:"";position:absolute;inset:-4px;border-radius:17px;border:2px solid rgb(16 185 129 / .65);pointer-events:none;animation:kssmPulseRing 2.2s ease-out infinite}
+  .kssm-playable-icon-btn:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 10px 22px rgb(6 182 212 / .5)}
+  @keyframes kssmIconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  @keyframes kssmPulseRing{0%{transform:scale(.95);opacity:.85}75%,100%{transform:scale(1.22);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.kssm-playable-icon-btn,.kssm-playable-icon-btn::after{animation:none}}
   .kssm-hero h1{margin:0 0 10px;font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.45rem,2.6vw,2.05rem);line-height:1.25;color:#fff}
   .kssm-hero-desc{margin:0 0 16px;color:#e0f2fe;font-size:.96rem;line-height:1.6}
   .kssm-hero-actions,.kssm-kw-row,.kssm-p2-cta-row,.kssm-filter-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .kssm-tab-btn{border:1.5px solid rgb(255 255 255 / .4);background:rgb(255 255 255 / .12);color:#fff;font-weight:700;padding:9px 15px;border-radius:11px;display:inline-flex;align-items:center;gap:6px;font-size:.86rem;cursor:pointer;transition:background .16s ease,color .16s ease,border-color .16s ease}
+  .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
+  .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
+  .kssm-tab-panel[hidden]{display:none !important}
+  .kssm-print-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;margin-bottom:18px}
+  .kssm-print-bar p{margin:0;font-size:.88rem;color:#334155;font-weight:600}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#1e3a8a;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#1d4ed8;border-color:#1d4ed8}
+  .kssm-print-header{display:none;justify-content:space-between;align-items:center;border-bottom:2px solid #1e3a8a;padding-bottom:8px;margin-bottom:14px;font-size:.85rem;color:#1e3a8a;font-weight:700}
   .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
   .kssm-cta-ghost{background:rgb(255 255 255 / .12);color:#fff;border:1px solid rgb(255 255 255 / .38);font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
-  .kssm-playable-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(120deg,#ecfdf5 0%,#eff6ff 100%);border:2px solid #059669;border-radius:16px;padding:16px 20px;margin-bottom:20px}
   .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
   .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
   .kssm-obj-list{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;color:#1e293b;line-height:1.55}
@@ -139,6 +154,36 @@
   .kssm-kw-chip{font-size:.76rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
   .kssm-p2-hint-body{padding-top:10px}
   .kssm-p2-hint-body p{margin:8px 0 0;font-size:.88rem;color:#334155}
+  .kssm-p2-grader{margin:12px 0;padding:14px;border-radius:14px;background:#fff;border:1.5px solid #cbd5e1}
+  .kssm-p2-grader-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-size:.82rem;font-weight:700;color:#1e3a8a}
+  .kssm-p2-token-chip{padding:3px 9px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:.74rem;font-weight:700}
+  .kssm-p2-textarea{width:100%;box-sizing:border-box;border:1.5px solid #cbd5e1;border-radius:11px;padding:10px 12px;font-family:inherit;font-size:.91rem;line-height:1.5;color:#0f172a;background:#f8fafc;resize:vertical;min-height:92px}
+  .kssm-p2-textarea:focus{outline:none;border-color:#2563eb;background:#fff}
+  .kssm-p2-img-preview{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 10px;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0}
+  .kssm-p2-img-preview[hidden]{display:none !important}
+  .kssm-p2-img-thumb{width:44px;height:44px;object-fit:cover;border-radius:8px;border:1px solid #cbd5e1;flex:0 0 auto}
+  .kssm-p2-img-meta{flex:1;min-width:0;display:grid;gap:2px;font-size:.8rem;color:#065f46}
+  .kssm-p2-img-meta strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .kssm-p2-img-rm{width:28px;height:28px;border-radius:8px;border:1px solid #a7f3d0;background:#fff;color:#065f46;font-size:1rem;font-weight:700;cursor:pointer;line-height:1}
+  .kssm-p2-controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+  .kssm-p2-upload-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:10px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-p2-upload-btn:hover{border-color:#2563eb;background:#eff6ff}
+  .kssm-p2-submit-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-p2-submit-btn:hover:not(:disabled){background:#047857}
+  .kssm-p2-submit-btn:disabled{opacity:.6;cursor:not-allowed}
+  .kssm-p2-ai-box{margin-top:12px;padding:12px 14px;border-radius:12px;background:#f8fafc;border:1.5px solid #93c5fd}
+  .kssm-p2-ai-box[hidden]{display:none !important}
+  .kssm-p2-ai-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #dbeafe}
+  .kssm-p2-ai-title{font-size:.82rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-p2-ai-score{padding:3px 10px;border-radius:999px;background:#fef3c7;color:#92400e;font-weight:800;font-size:.8rem}
+  .kssm-p2-ai-score[hidden]{display:none !important}
+  .kssm-p2-ai-body{font-size:.9rem;line-height:1.55;color:#0f172a}
+  .kssm-p2-ai-err{margin:0;color:#991b1b;font-weight:600;font-size:.87rem}
+  .cikgu-ai-sec-badge{display:inline-flex;align-items:center;margin:6px 0 4px;padding:3px 9px;border-radius:999px;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;font-size:.75rem;font-weight:800}
+  .cikgu-ai-mark-pill{display:inline-block;padding:1px 6px;border-radius:999px;background:#fef3c7;color:#92400e;font-weight:700;font-size:.75rem}
+  .cikgu-ai-p{margin:0 0 6px}
+  .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
+  .cikgu-ai-spacer{height:6px}
   .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
   .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
   .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
@@ -149,6 +194,18 @@
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
   @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}}
+  @media print{
+    .lp-header,header,.seo-breadcrumb,.kssm-hero-actions,.kssm-playable-icon-btn,.kssm-print-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    body{background:#fff !important;color:#0f172a !important}
+    .lp-container{max-width:100% !important;padding:0 !important}
+    .kssm-print-header{display:flex !important}
+    #panel-nota{display:block !important}
+    .kssm-hero{background:#fff !important;color:#0f172a !important;border:1.5px solid #1e3a8a;box-shadow:none !important;padding:14px !important}
+    .kssm-hero h1,.kssm-hero-desc{color:#0f172a !important}
+    .kssm-pill{color:#1e3a8a !important;border-color:#94a3b8 !important;background:#f8fafc !important}
+    .seo-section-card{box-shadow:none !important;border:1px solid #cbd5e1 !important;padding:14px !important;margin-bottom:12px !important}
+    .kssm-sub-card,.kssm-mistake-card{break-inside:avoid;page-break-inside:avoid}
+  }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Hab Nota KSSM T1–T5","item":"https://etutor.my/kssm/"}]},{"@type":"CollectionPage","name":"Hab Nota & Latihan KSSM Tingkatan 1 hingga 5 (66 Halaman Bab 1–2)","url":"https://etutor.my/kssm/","description":"Koleksi lengkap 33 trek subjek teras & Geografi Tingkatan 1–5 (66 halaman Bab 1–2 KSSM) dengan latihan MCQ +10 XP dan Kertas 2 Cikgu AI."}]}</script>
 </head>
@@ -202,7 +259,7 @@
     <section class="kssm-hero">
       <div class="kssm-pill-row"><span class="kssm-pill">33 Trek KSSM</span><span class="kssm-pill">66 Halaman Bab 1–2</span><span class="kssm-pill is-emerald">Percuma • 0 Token</span></div>
       <h1>Hab Pembelajaran KSSM Tingkatan 1 hingga 5</h1>
-      <p class="kssm-hero-desc">Nota padat berpandukan Buku Teks &amp; DSKP KPM, 10 soalan MCQ berhuraian (+10 XP) dan 2 soalan Kertas 2 berserta bimbingan Mod Hibrid Cikgu AI.</p>
+      <p class="kssm-hero-desc">Nota padat berpandukan Buku Teks &amp; DSKP KPM, 20 soalan MCQ berhuraian (+10 XP) dan 2 soalan Kertas 2 berserta bimbingan Mod Hibrid Cikgu AI.</p>
       <div class="kssm-hero-actions"><a href="tingkatan-1/" class="kssm-cta-light">Tingkatan 1</a><a href="tingkatan-2/" class="kssm-cta-light">Tingkatan 2</a><a href="tingkatan-3/" class="kssm-cta-light">Tingkatan 3</a><a href="tingkatan-4/" class="kssm-cta-light">Tingkatan 4</a><a href="tingkatan-5/" class="kssm-cta-light">Tingkatan 5</a></div>
     </section>
     <section class="seo-section-card">

@@ -18915,7 +18915,7 @@
     const examTag = isUasa ? "UASA" : "SPM";
     const cardsHtml = visible.map((ch) => {
       const href = "./" + String(ch.url || "").replace(/^\/+/, "");
-      return `<a class="kssm-qc-card" href="${kssmQuickCardsEscape_(href)}"><span class="kssm-qc-meta">${kssmQuickCardsEscape_(ch.subject)} • Bab ${Number(ch.bab)}</span><span class="kssm-qc-name">${kssmQuickCardsEscape_(ch.title)}</span><span class="kssm-qc-foot">${Number(ch.mcqCount) || 10} MCQ + ${Number(ch.essayCount) || 2} ${isUasa ? "Struktur" : "Kertas 2"}</span></a>`;
+      return `<a class="kssm-qc-card" href="${kssmQuickCardsEscape_(href)}"><span class="kssm-qc-meta">${kssmQuickCardsEscape_(ch.subject)} • Bab ${Number(ch.bab)}</span><span class="kssm-qc-name">${kssmQuickCardsEscape_(ch.title)}</span><span class="kssm-qc-foot">${Number(ch.mcqCount) || 20} MCQ + ${Number(ch.essayCount) || 2} ${isUasa ? "Struktur" : "Kertas 2"}</span></a>`;
     }).join("");
     host.innerHTML = `<div class="kssm-qc-head"><h3 class="kssm-qc-title">Nota &amp; Ujian Topikal ${examTag} Tingkatan ${formNum} (Bab 1–2 &bull; 0 Token)</h3><div class="kssm-qc-badges"><span class="kssm-qc-pill">0 Token</span>${xpHtml}<a class="kssm-qc-all" href="./kssm/tingkatan-${formNum}/">Semua Subjek T${formNum}</a></div></div><div class="kssm-qc-grid">${cardsHtml}</div>`;
     host.hidden = false;

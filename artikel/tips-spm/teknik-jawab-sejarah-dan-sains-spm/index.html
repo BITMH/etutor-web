@@ -80,6 +80,74 @@
     .tips-time-step { background:#f8fafc; border:1px solid var(--border-subtle); border-top:3px solid var(--brand-accent); border-radius:12px; padding:14px; }
     .tips-time-badge { font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--brand-accent); margin-bottom:4px; }
   </style>
+  <style>
+    .art-tldr-box { margin:18px 0 0; padding:16px 18px; border-radius:14px; background:#eff6ff; border:1px solid #bfdbfe; border-top:4px solid #2563eb; }
+    .art-tldr-title { display:flex; align-items:center; gap:8px; font-weight:800; font-size:0.95rem; color:#1e3a8a; margin:0 0 8px; }
+    .art-tldr-list { margin:0; padding-left:18px; display:grid; gap:6px; font-size:0.9rem; line-height:1.5; color:#1e293b; }
+    .art-sec-fig { margin:14px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--border-subtle); background:#f8fafc; box-shadow:0 6px 18px rgb(15 23 42 / 0.05); }
+    .art-sec-fig img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .art-sec-fig figcaption { padding:9px 14px; font-size:0.82rem; color:var(--text-secondary); border-top:1px solid var(--border-subtle); }
+    .art-mark-box { margin:16px 0 0; padding:16px; border-radius:14px; background:#f8fafc; border:1px solid var(--border-subtle); }
+    .art-mark-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px; }
+    .art-mark-title { font-weight:800; font-size:0.95rem; color:var(--brand-navy); }
+    .art-mark-total { font-family:var(--font-mono); font-size:0.8rem; font-weight:700; padding:4px 10px; border-radius:999px; background:#1e3a8a; color:#ffffff; }
+    .art-mark-bar { display:flex; height:14px; border-radius:999px; overflow:hidden; background:#e2e8f0; gap:2px; margin-bottom:14px; }
+    .art-mark-seg { height:100%; min-width:14px; }
+    .art-tone-blue { background:#2563eb; }
+    .art-tone-emerald { background:#059669; }
+    .art-tone-amber { background:#d97706; }
+    .art-tone-indigo { background:#4f46e5; }
+    .art-mark-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:10px; }
+    .art-mark-card { background:#ffffff; border:1px solid var(--border-subtle); border-top:3px solid #2563eb; border-radius:12px; padding:12px; }
+    .art-mark-card.is-emerald { border-top-color:#059669; }
+    .art-mark-card.is-amber { border-top-color:#d97706; }
+    .art-mark-card.is-indigo { border-top-color:#4f46e5; }
+    .art-mark-val { font-family:var(--font-heading); font-size:1.15rem; font-weight:800; color:var(--brand-navy); }
+    .art-mark-lbl { font-size:0.82rem; font-weight:700; color:#1e293b; margin-top:2px; }
+    .art-mark-desc { font-size:0.78rem; line-height:1.45; color:var(--text-secondary); margin:4px 0 0; }
+    .art-flow-box { margin:16px 0 0; padding:16px; border-radius:14px; background:#f8fafc; border:1px solid var(--border-subtle); }
+    .art-flow-title { font-weight:800; font-size:0.94rem; color:var(--brand-navy); margin:0 0 12px; }
+    .art-flow-wrap { display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; }
+    .art-flow-step { flex:1 1 160px; background:#ffffff; border:1px solid var(--border-subtle); border-left:4px solid #2563eb; border-radius:12px; padding:12px; }
+    .art-flow-step.is-emerald { border-left-color:#059669; }
+    .art-flow-step.is-amber { border-left-color:#d97706; }
+    .art-flow-step.is-indigo { border-left-color:#4f46e5; }
+    .art-flow-badge { font-family:var(--font-mono); font-size:0.74rem; font-weight:700; color:#2563eb; margin-bottom:4px; }
+    .art-flow-step.is-emerald .art-flow-badge { color:#059669; }
+    .art-flow-step.is-amber .art-flow-badge { color:#b45309; }
+    .art-flow-step.is-indigo .art-flow-badge { color:#4338ca; }
+    .art-flow-arrow { display:flex; align-items:center; justify-content:center; color:#64748b; flex:0 0 auto; }
+    .art-paper-sheet { margin:16px 0 0; border-radius:14px; overflow:hidden; border:1px solid #cbd5e1; background:#ffffff; box-shadow:0 8px 22px rgb(15 23 42 / 0.06); }
+    .art-paper-head { background:#121e48; color:#ffffff; padding:12px 16px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; }
+    .art-paper-title { font-weight:800; font-size:0.88rem; letter-spacing:0.02em; }
+    .art-paper-sub { font-family:var(--font-mono); font-size:0.76rem; color:#fde68a; font-weight:700; }
+    .art-paper-legend { display:flex; flex-wrap:wrap; gap:8px; padding:10px 16px; background:#f8fafc; border-bottom:1px solid #e2e8f0; font-size:0.78rem; font-weight:700; }
+    .art-leg-pill { display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:999px; border:1px solid #cbd5e1; background:#ffffff; color:#1e293b; }
+    .art-leg-dot { width:9px; height:9px; border-radius:999px; display:inline-block; }
+    .art-paper-body { padding:14px 16px 14px 22px; border-left:3px solid #fca5a5; margin-left:14px; background-image:repeating-linear-gradient(to bottom, transparent 0, transparent 27px, #f1f5f9 27px, #f1f5f9 28px); }
+    .art-paper-para { margin:0 0 12px; font-size:0.9rem; line-height:1.75; color:#0f172a; }
+    .art-paper-para:last-child { margin-bottom:0; }
+    .art-paper-badge { display:inline-block; font-family:var(--font-mono); font-size:0.72rem; font-weight:700; padding:1px 7px; border-radius:6px; background:#0f172a; color:#ffffff; margin-right:6px; vertical-align:middle; }
+    .art-hl-f1 { background:#dbeafe; color:#1e3a8a; padding:1px 4px; border-radius:4px; font-weight:600; }
+    .art-hl-f2 { background:#d1fae5; color:#065f46; padding:1px 4px; border-radius:4px; font-weight:600; }
+    .art-hl-pw { background:#fef3c7; color:#92400e; padding:1px 4px; border-radius:4px; font-weight:700; }
+    .art-paper-foot { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; padding:10px 16px; background:#ecfdf5; border-top:1px solid #a7f3d0; font-size:0.82rem; color:#065f46; }
+    .art-paper-stamp { font-family:var(--font-mono); font-weight:800; padding:3px 9px; border:1.5px solid #059669; border-radius:8px; background:#ffffff; }
+    .art-kp-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:10px; margin:14px 0 0; }
+    .art-kp-card { background:#f8fafc; border:1px solid var(--border-subtle); border-radius:12px; padding:13px 14px; display:flex; gap:10px; align-items:flex-start; }
+    .art-kp-num { flex:0 0 26px; height:26px; border-radius:999px; background:#2563eb; color:#ffffff; font-weight:800; font-size:0.8rem; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+    .art-kp-title { font-weight:800; font-size:0.9rem; color:var(--brand-navy); margin:0 0 4px; line-height:1.35; }
+    .art-kp-desc { font-size:0.84rem; line-height:1.5; color:var(--text-secondary); margin:0; }
+    .art-kp-tag { display:inline-block; margin-top:6px; font-size:0.75rem; font-weight:700; color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:999px; padding:2px 8px; }
+    .art-quick-check { margin:14px 0 0; border-radius:12px; border:1px solid #bfdbfe; background:#eff6ff; padding:12px 15px; }
+    .art-quick-check summary { cursor:pointer; font-weight:800; font-size:0.9rem; color:#1e3a8a; }
+    .art-quick-ans { margin-top:8px; padding-top:8px; border-top:1px dashed #93c5fd; font-size:0.86rem; line-height:1.55; color:#0f172a; }
+    @media (max-width: 640px) {
+      .art-flow-wrap { flex-direction:column; }
+      .art-flow-arrow { transform:rotate(90deg); height:18px; }
+      .art-paper-body { margin-left:6px; padding-left:12px; }
+    }
+  </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Laman Utama eTutor.my","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Artikel & Panduan","item":"https://etutor.my/artikel/"},{"@type":"ListItem","position":3,"name":"Tips & Panduan Exam SPM","item":"https://etutor.my/artikel/tips-spm/"},{"@type":"ListItem","position":4,"name":"Tips Jawab Sejarah & Sains SPM 2026 Elak Markah Bocor","item":"https://etutor.my/artikel/tips-spm/teknik-jawab-sejarah-dan-sains-spm/"}]},{"@type":"Article","@id":"https://etutor.my/artikel/tips-spm/teknik-jawab-sejarah-dan-sains-spm/#article","headline":"Tips Jawab Sejarah & Sains SPM 2026 Elak Markah Bocor","description":"Panduan cikgu teknik menjawab Sejarah 1249 (Fakta, Huraian, Contoh & KBAT) serta Sains 1511 (Pemboleh Ubah & Hipotesis) supaya jawapan menepati skema.","image":"https://etutor.my/images/tips/tips-sejarah-sains.jpg","datePublished":"2026-11-24","dateModified":"2026-11-24","inLanguage":"ms-MY","articleSection":"Tips & Panduan Exam SPM","author":{"@type":"Person","name":"Cikgu eTutor"},"publisher":{"@type":"Organization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
 </head>
 <body class="lp-shell">
@@ -163,6 +231,7 @@
         <p style="font-size:1.02rem;line-height:1.7;color:var(--text-secondary);max-inline-size:74ch;margin:18px 0 0">Salam sejahtera anak-anak calon SPM. Menjelang kertas Sejarah (30 Nov) dan Sains (3 Dis), Cikgu kongsikan teknik menjawab Kertas 2 yang paling kerap menyelamatkan calon daripada kehilangan markah mudah.</p>
         <div class="seo-reminder-box"><strong>Pesan Cikgu eTutor:</strong> Untuk soalan KBAT bernilai 4 hingga 8 markah, jangan sesekali biarkan ruangan kosong. Tulis pendirian jelas bersama sebab yang munasabah mengikut tema soalan kerana pemeriksa memberi markah bagi setiap isi yang bernas.</div>
         
+        
         <section style="margin-top:24px;padding-top:18px;border-top:1px solid var(--border-subtle)">
           <h2 style="font-size:1.25rem;color:var(--brand-navy);margin:0 0 10px">1. Sejarah Kertas 2 (1249/2): Guna Formula Pendirian + F + H + C</h2>
           <p style="font-size:0.96rem;line-height:1.68;color:var(--text-primary);max-inline-size:74ch;margin:0 0 10px">Apabila soalan KBAT bertanya &#39;Wajarkah&#39; atau &#39;Setujukah anda&#39;, letakkan pendirian pada ayat pertama. Selepas itu, susun Fakta (F), Huraian (H) dan Contoh atau Kesan (C) dengan penanda wacana yang kemas.</p>
@@ -242,7 +311,7 @@
 
           <a href="../../teknik-subjek/teknik-rumusan-bahasa-melayu-spm/" class="seo-related-card">
             <div>
-              <div class="tips-card-media"><img src="../../../images/tips/tips-skema-jawapan.jpg" alt="Pelajar SPM menyemak latihan Bahasa Melayu bersama penanda wacana dan kanta pembesar" width="1200" height="675" loading="lazy" decoding="async"></div>
+              <div class="tips-card-media"><img src="../../../images/artikel/rumusan-bm-hero.jpg" alt="Ilustrasi kartun cikgu membimbing pelajar menyemak dua helai kertas jawapan dengan pen penyerlah kuning dan hijau" width="1200" height="675" loading="lazy" decoding="async"></div>
               <span class="status-badge badge-subject">Teknik Subjek KSSM</span>
               <div style="font-weight:700;color:var(--brand-navy);font-size:0.96rem;margin-top:8px;line-height:1.35">Teknik Rumusan Bahasa Melayu SPM KSSM: Cara Raih 28/30 Markah</div>
             </div>

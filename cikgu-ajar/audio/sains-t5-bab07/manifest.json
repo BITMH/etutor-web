@@ -1,0 +1,375 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t5-bab07/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Manakah pemerhatian dan langkah penentuan titik fokus F yang TEPAT bagi kanta cekung?",
+      "duration": 6.112,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "lazing",
+          "start": 0.42,
+          "end": 0.74
+        },
+        {
+          "word": "science,",
+          "start": 0.74,
+          "end": 1.1
+        },
+        {
+          "word": "maneka",
+          "start": 1.44,
+          "end": 1.96
+        },
+        {
+          "word": "pemerhatian",
+          "start": 1.96,
+          "end": 2.66
+        },
+        {
+          "word": "dan",
+          "start": 2.66,
+          "end": 2.82
+        },
+        {
+          "word": "langkah",
+          "start": 2.82,
+          "end": 3.14
+        },
+        {
+          "word": "penentuan",
+          "start": 3.14,
+          "end": 3.6
+        },
+        {
+          "word": "titik",
+          "start": 3.6,
+          "end": 3.96
+        },
+        {
+          "word": "focus",
+          "start": 3.96,
+          "end": 4.18
+        },
+        {
+          "word": "F",
+          "start": 4.18,
+          "end": 4.48
+        },
+        {
+          "word": "yang",
+          "start": 4.48,
+          "end": 4.62
+        },
+        {
+          "word": "tapat",
+          "start": 4.62,
+          "end": 5.0
+        },
+        {
+          "word": "bagikan",
+          "start": 5.0,
+          "end": 5.32
+        },
+        {
+          "word": "tercukur.",
+          "start": 5.32,
+          "end": 5.78
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t5-bab07/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Antara pernyataan berikut, manakah hasil ukuran panjang fokus dan pemerhatian yang BETUL?",
+      "duration": 7.488,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "raja",
+          "start": 0.68,
+          "end": 0.92
+        },
+        {
+          "word": "konsep",
+          "start": 0.92,
+          "end": 1.42
+        },
+        {
+          "word": "nipapan",
+          "start": 1.42,
+          "end": 1.76
+        },
+        {
+          "word": "antara",
+          "start": 1.76,
+          "end": 2.78
+        },
+        {
+          "word": "penyataan",
+          "start": 2.78,
+          "end": 3.28
+        },
+        {
+          "word": "berikut",
+          "start": 3.28,
+          "end": 3.68
+        },
+        {
+          "word": "manakah",
+          "start": 3.68,
+          "end": 4.52
+        },
+        {
+          "word": "hasil",
+          "start": 4.52,
+          "end": 4.9
+        },
+        {
+          "word": "ukuran",
+          "start": 4.9,
+          "end": 5.2
+        },
+        {
+          "word": "panjang",
+          "start": 5.2,
+          "end": 5.56
+        },
+        {
+          "word": "fokus",
+          "start": 5.56,
+          "end": 5.9
+        },
+        {
+          "word": "dan",
+          "start": 5.9,
+          "end": 6.06
+        },
+        {
+          "word": "pemerhatian",
+          "start": 6.06,
+          "end": 6.62
+        },
+        {
+          "word": "yang",
+          "start": 6.62,
+          "end": 6.7
+        },
+        {
+          "word": "itu?",
+          "start": 6.7,
+          "end": 6.9
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t5-bab07/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah kedudukan skrin v dan ciri imej yang terbentuk apabila lilin berada pada u sama dengan 30 cm (tepat di 2F)?",
+      "duration": 8.139,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "raja",
+          "start": 0.52,
+          "end": 0.78
+        },
+        {
+          "word": "konsep",
+          "start": 0.78,
+          "end": 1.22
+        },
+        {
+          "word": "di",
+          "start": 1.22,
+          "end": 1.3
+        },
+        {
+          "word": "Papan,",
+          "start": 1.3,
+          "end": 1.72
+        },
+        {
+          "word": "apakah",
+          "start": 1.92,
+          "end": 2.66
+        },
+        {
+          "word": "kedudukan",
+          "start": 2.66,
+          "end": 3.14
+        },
+        {
+          "word": "screen",
+          "start": 3.14,
+          "end": 3.46
+        },
+        {
+          "word": "V",
+          "start": 3.46,
+          "end": 3.74
+        },
+        {
+          "word": "dan",
+          "start": 3.74,
+          "end": 4.0
+        },
+        {
+          "word": "seri",
+          "start": 4.0,
+          "end": 4.42
+        },
+        {
+          "word": "image",
+          "start": 4.42,
+          "end": 4.76
+        },
+        {
+          "word": "yang",
+          "start": 4.76,
+          "end": 4.98
+        },
+        {
+          "word": "terbentuk",
+          "start": 4.98,
+          "end": 5.48
+        },
+        {
+          "word": "apabila",
+          "start": 5.48,
+          "end": 5.86
+        },
+        {
+          "word": "riling",
+          "start": 5.86,
+          "end": 6.1
+        },
+        {
+          "word": "berada",
+          "start": 6.1,
+          "end": 6.44
+        },
+        {
+          "word": "pada",
+          "start": 6.44,
+          "end": 6.64
+        },
+        {
+          "word": "Usama",
+          "start": 6.64,
+          "end": 7.04
+        },
+        {
+          "word": "dengan",
+          "start": 7.04,
+          "end": 7.24
+        },
+        {
+          "word": "3CM?",
+          "start": 7.24,
+          "end": 7.92
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t5-bab07/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Pilih kenyataan sintesis paling tepat merentas ketiga-tiga peralatan optik tersebut:",
+      "duration": 6.315,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "urutan",
+          "start": 0.56,
+          "end": 0.98
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.98,
+          "end": 1.5
+        },
+        {
+          "word": "di",
+          "start": 1.5,
+          "end": 1.64
+        },
+        {
+          "word": "papan.",
+          "start": 1.64,
+          "end": 1.98
+        },
+        {
+          "word": "Milih",
+          "start": 2.18,
+          "end": 2.7
+        },
+        {
+          "word": "kenyataan",
+          "start": 2.7,
+          "end": 3.16
+        },
+        {
+          "word": "synthesis",
+          "start": 3.16,
+          "end": 3.5
+        },
+        {
+          "word": "paling",
+          "start": 3.5,
+          "end": 3.82
+        },
+        {
+          "word": "tepat",
+          "start": 3.82,
+          "end": 4.14
+        },
+        {
+          "word": "merentas",
+          "start": 4.14,
+          "end": 4.62
+        },
+        {
+          "word": "ketika",
+          "start": 4.62,
+          "end": 4.9
+        },
+        {
+          "word": "3",
+          "start": 4.9,
+          "end": 5.1
+        },
+        {
+          "word": "peralatan",
+          "start": 5.1,
+          "end": 5.52
+        },
+        {
+          "word": "optik",
+          "start": 5.52,
+          "end": 5.9
+        },
+        {
+          "word": "tersebut.",
+          "start": 5.9,
+          "end": 6.22
+        }
+      ]
+    }
+  }
+}

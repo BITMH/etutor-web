@@ -1,0 +1,415 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/geografi-t1-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Geografi! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Lapan Arah Mata Angin (SP 1 perpuluhan satu.1)?",
+      "duration": 8.523,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "Lazim",
+          "start": 0.42,
+          "end": 0.76
+        },
+        {
+          "word": "Geografi.",
+          "start": 0.76,
+          "end": 1.42
+        },
+        {
+          "word": "Awas",
+          "start": 1.64,
+          "end": 2.0
+        },
+        {
+          "word": "Perangkap.",
+          "start": 2.0,
+          "end": 2.5
+        },
+        {
+          "word": "Manakah",
+          "start": 2.92,
+          "end": 3.32
+        },
+        {
+          "word": "fakta",
+          "start": 3.32,
+          "end": 3.76
+        },
+        {
+          "word": "atau",
+          "start": 3.76,
+          "end": 3.92
+        },
+        {
+          "word": "langkah",
+          "start": 3.92,
+          "end": 4.26
+        },
+        {
+          "word": "yang",
+          "start": 4.26,
+          "end": 4.4
+        },
+        {
+          "word": "betul",
+          "start": 4.4,
+          "end": 4.78
+        },
+        {
+          "word": "tentang",
+          "start": 4.78,
+          "end": 5.04
+        },
+        {
+          "word": "1",
+          "start": 5.04,
+          "end": 5.4
+        },
+        {
+          "word": ".1",
+          "start": 5.4,
+          "end": 5.74
+        },
+        {
+          "word": ".8",
+          "start": 5.74,
+          "end": 6.78
+        },
+        {
+          "word": "arah",
+          "start": 6.78,
+          "end": 7.14
+        },
+        {
+          "word": "mata",
+          "start": 7.14,
+          "end": 7.26
+        },
+        {
+          "word": "angin?",
+          "start": 7.26,
+          "end": 7.66
+        },
+        {
+          "word": "S.",
+          "start": 7.98,
+          "end": 8.28
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/geografi-t1-bab01/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Antara berikut, yang manakah merupakan empat arah mata angin perantaraan?",
+      "duration": 6.507,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "raja",
+          "start": 0.6,
+          "end": 0.98
+        },
+        {
+          "word": "konsep",
+          "start": 0.98,
+          "end": 1.44
+        },
+        {
+          "word": "di",
+          "start": 1.44,
+          "end": 1.5
+        },
+        {
+          "word": "Papan",
+          "start": 1.5,
+          "end": 1.88
+        },
+        {
+          "word": "antara",
+          "start": 1.88,
+          "end": 2.7
+        },
+        {
+          "word": "berikut",
+          "start": 2.7,
+          "end": 3.1
+        },
+        {
+          "word": "yang",
+          "start": 3.1,
+          "end": 3.76
+        },
+        {
+          "word": "manakah",
+          "start": 3.76,
+          "end": 4.1
+        },
+        {
+          "word": "merupakan",
+          "start": 4.1,
+          "end": 4.64
+        },
+        {
+          "word": "empat",
+          "start": 4.64,
+          "end": 5.04
+        },
+        {
+          "word": "arah",
+          "start": 5.04,
+          "end": 5.34
+        },
+        {
+          "word": "mata",
+          "start": 5.34,
+          "end": 5.56
+        },
+        {
+          "word": "anjing",
+          "start": 5.56,
+          "end": 5.8
+        },
+        {
+          "word": "peran",
+          "start": 5.8,
+          "end": 6.06
+        },
+        {
+          "word": "terahan.",
+          "start": 6.06,
+          "end": 6.34
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/geografi-t1-bab01/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Jika kamu berdiri menghadap arah matahari terbit pada waktu pagi, arah apakah yang berada di sebelah tangan kirimu?",
+      "duration": 8.597,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "raja",
+          "start": 0.62,
+          "end": 0.88
+        },
+        {
+          "word": "konsek",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "word": "di",
+          "start": 1.28,
+          "end": 1.36
+        },
+        {
+          "word": "Papang",
+          "start": 1.36,
+          "end": 1.8
+        },
+        {
+          "word": "jika",
+          "start": 1.8,
+          "end": 2.68
+        },
+        {
+          "word": "kamu",
+          "start": 2.68,
+          "end": 2.9
+        },
+        {
+          "word": "berdiri",
+          "start": 2.9,
+          "end": 3.34
+        },
+        {
+          "word": "menghadap",
+          "start": 3.34,
+          "end": 3.82
+        },
+        {
+          "word": "arah",
+          "start": 3.82,
+          "end": 4.08
+        },
+        {
+          "word": "matahari",
+          "start": 4.08,
+          "end": 4.48
+        },
+        {
+          "word": "terbit",
+          "start": 4.48,
+          "end": 4.84
+        },
+        {
+          "word": "pada",
+          "start": 4.84,
+          "end": 5.08
+        },
+        {
+          "word": "waktu",
+          "start": 5.08,
+          "end": 5.3
+        },
+        {
+          "word": "pagi,",
+          "start": 5.3,
+          "end": 6.0
+        },
+        {
+          "word": "arah",
+          "start": 6.0,
+          "end": 6.46
+        },
+        {
+          "word": "apakah",
+          "start": 6.46,
+          "end": 6.8
+        },
+        {
+          "word": "yang",
+          "start": 6.8,
+          "end": 6.98
+        },
+        {
+          "word": "berada",
+          "start": 6.98,
+          "end": 7.24
+        },
+        {
+          "word": "di",
+          "start": 7.24,
+          "end": 7.42
+        },
+        {
+          "word": "sebelah",
+          "start": 7.42,
+          "end": 7.7
+        },
+        {
+          "word": "tangan",
+          "start": 7.7,
+          "end": 7.88
+        },
+        {
+          "word": "Kirimu.",
+          "start": 7.88,
+          "end": 8.28
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/geografi-t1-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Mengapakah kompas magnetik mesti dijauhkan daripada pagar besi atau kereta semasa mengambil bacaan?",
+      "duration": 7.605,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "urutan",
+          "start": 0.54,
+          "end": 1.0
+        },
+        {
+          "word": "prestiur",
+          "start": 1.0,
+          "end": 1.5
+        },
+        {
+          "word": "di",
+          "start": 1.5,
+          "end": 1.64
+        },
+        {
+          "word": "Papan,",
+          "start": 1.64,
+          "end": 2.02
+        },
+        {
+          "word": "mengapakah",
+          "start": 2.46,
+          "end": 3.2
+        },
+        {
+          "word": "kompas",
+          "start": 3.2,
+          "end": 3.66
+        },
+        {
+          "word": "magnetik",
+          "start": 3.66,
+          "end": 4.16
+        },
+        {
+          "word": "mesti",
+          "start": 4.16,
+          "end": 4.36
+        },
+        {
+          "word": "dijawakan",
+          "start": 4.36,
+          "end": 4.82
+        },
+        {
+          "word": "daripada",
+          "start": 4.82,
+          "end": 5.14
+        },
+        {
+          "word": "pagah",
+          "start": 5.14,
+          "end": 5.44
+        },
+        {
+          "word": "besi",
+          "start": 5.44,
+          "end": 5.76
+        },
+        {
+          "word": "atau",
+          "start": 5.76,
+          "end": 5.9
+        },
+        {
+          "word": "kereta",
+          "start": 5.9,
+          "end": 6.28
+        },
+        {
+          "word": "semasa",
+          "start": 6.28,
+          "end": 6.58
+        },
+        {
+          "word": "mengambil",
+          "start": 6.58,
+          "end": 6.84
+        },
+        {
+          "word": "bacaan?",
+          "start": 6.84,
+          "end": 7.26
+        }
+      ]
+    }
+  }
+}

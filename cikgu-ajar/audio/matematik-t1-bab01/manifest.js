@@ -1,0 +1,366 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t1-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t1-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Integer dan Garis Nombor (SK 1 perpuluhan satu)?",
+      "duration": 9.461,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "lazim",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "matematik.",
+          "start": 0.92,
+          "end": 1.48
+        },
+        {
+          "word": "Awas",
+          "start": 1.78,
+          "end": 2.08
+        },
+        {
+          "word": "perangkap.",
+          "start": 2.08,
+          "end": 2.66
+        },
+        {
+          "word": "Manakah",
+          "start": 3.02,
+          "end": 3.44
+        },
+        {
+          "word": "fakta",
+          "start": 3.44,
+          "end": 3.84
+        },
+        {
+          "word": "atau",
+          "start": 3.84,
+          "end": 4.0
+        },
+        {
+          "word": "langkah",
+          "start": 4.0,
+          "end": 4.3
+        },
+        {
+          "word": "yang",
+          "start": 4.3,
+          "end": 4.44
+        },
+        {
+          "word": "betul",
+          "start": 4.44,
+          "end": 4.76
+        },
+        {
+          "word": "tentang",
+          "start": 4.76,
+          "end": 5.0
+        },
+        {
+          "word": "1",
+          "start": 5.0,
+          "end": 5.3
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.3,
+          "end": 5.82
+        },
+        {
+          "word": "1",
+          "start": 5.82,
+          "end": 6.08
+        },
+        {
+          "word": "tinggi",
+          "start": 6.08,
+          "end": 6.5
+        },
+        {
+          "word": "dia",
+          "start": 6.5,
+          "end": 6.68
+        },
+        {
+          "word": "dan",
+          "start": 6.68,
+          "end": 6.94
+        },
+        {
+          "word": "garis",
+          "start": 6.94,
+          "end": 7.18
+        },
+        {
+          "word": "nombor",
+          "start": 7.18,
+          "end": 7.56
+        },
+        {
+          "word": "SK",
+          "start": 7.56,
+          "end": 8.18
+        },
+        {
+          "word": "perpuluhan",
+          "start": 8.18,
+          "end": 8.7
+        },
+        {
+          "word": "1?",
+          "start": 8.7,
+          "end": 8.92
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t1-bab01/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Antara berikut, senarai nombor manakah kesemuanya merupakan integer?",
+      "duration": 5.632,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "langkah",
+          "start": 0.64,
+          "end": 0.96
+        },
+        {
+          "word": "di",
+          "start": 0.96,
+          "end": 1.08
+        },
+        {
+          "word": "papan",
+          "start": 1.08,
+          "end": 1.44
+        },
+        {
+          "word": "antara",
+          "start": 1.44,
+          "end": 2.34
+        },
+        {
+          "word": "berikut",
+          "start": 2.34,
+          "end": 2.7
+        },
+        {
+          "word": "senarai",
+          "start": 2.7,
+          "end": 3.2
+        },
+        {
+          "word": "nombor",
+          "start": 3.2,
+          "end": 3.46
+        },
+        {
+          "word": "manekah",
+          "start": 3.46,
+          "end": 3.92
+        },
+        {
+          "word": "kesemuanya",
+          "start": 3.92,
+          "end": 4.42
+        },
+        {
+          "word": "merupakan",
+          "start": 4.42,
+          "end": 4.84
+        },
+        {
+          "word": "integer.",
+          "start": 4.84,
+          "end": 5.2
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t1-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Jika positif 1000 mewakili keuntungan 1000 ringgit Malaysia apakah integer bagi kerugian 850 ringgit Malaysia?",
+      "duration": 7.979,
+      "words": [
+        {
+          "word": "Korangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "Mathematik",
+          "start": 0.9,
+          "end": 1.44
+        },
+        {
+          "word": "jika",
+          "start": 1.44,
+          "end": 1.78
+        },
+        {
+          "word": "positif,",
+          "start": 1.78,
+          "end": 2.26
+        },
+        {
+          "word": "wanita",
+          "start": 2.3,
+          "end": 2.54
+        },
+        {
+          "word": "memawak",
+          "start": 2.54,
+          "end": 2.9
+        },
+        {
+          "word": "kili",
+          "start": 2.9,
+          "end": 3.08
+        },
+        {
+          "word": "keuntungan",
+          "start": 3.08,
+          "end": 3.5
+        },
+        {
+          "word": "sepuluh",
+          "start": 3.5,
+          "end": 3.78
+        },
+        {
+          "word": "turing",
+          "start": 3.78,
+          "end": 4.02
+        },
+        {
+          "word": "gate",
+          "start": 4.02,
+          "end": 4.14
+        },
+        {
+          "word": "Malaysia",
+          "start": 4.14,
+          "end": 4.38
+        },
+        {
+          "word": "apakah",
+          "start": 4.38,
+          "end": 5.3
+        },
+        {
+          "word": "integer",
+          "start": 5.3,
+          "end": 5.74
+        },
+        {
+          "word": "bagi",
+          "start": 5.74,
+          "end": 6.12
+        },
+        {
+          "word": "kerugian,",
+          "start": 6.12,
+          "end": 6.56
+        },
+        {
+          "word": "etis",
+          "start": 6.82,
+          "end": 7.32
+        },
+        {
+          "word": "tijat.",
+          "start": 7.32,
+          "end": 7.64
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t1-bab01/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Nilaikan negatif 12 - 15 darab (-3) - (-6).",
+      "duration": 6.101,
+      "words": [
+        {
+          "word": "dihatalkan",
+          "start": 0.0,
+          "end": 0.74
+        },
+        {
+          "word": "di",
+          "start": 0.74,
+          "end": 0.86
+        },
+        {
+          "word": "papan,",
+          "start": 0.86,
+          "end": 1.22
+        },
+        {
+          "word": "nilaikan",
+          "start": 1.54,
+          "end": 2.26
+        },
+        {
+          "word": "negatif",
+          "start": 2.26,
+          "end": 2.58
+        },
+        {
+          "word": "kuat",
+          "start": 2.58,
+          "end": 2.8
+        },
+        {
+          "word": "-pila",
+          "start": 2.8,
+          "end": 3.0
+        },
+        {
+          "word": "sis",
+          "start": 3.0,
+          "end": 3.82
+        },
+        {
+          "word": "-air",
+          "start": 3.82,
+          "end": 4.1
+        },
+        {
+          "word": "-up.",
+          "start": 4.1,
+          "end": 4.32
+        },
+        {
+          "word": "Boleh",
+          "start": 4.5,
+          "end": 4.92
+        },
+        {
+          "word": "fahad.",
+          "start": 4.92,
+          "end": 5.1
+        }
+      ]
+    }
+  }
+};

@@ -1,0 +1,845 @@
+{
+  "deckId": "sejarah-t1-bab02",
+  "title": "Zaman Air Batu (Garis Masa & Kesan di Asia Tenggara)",
+  "shortTitle": "Zaman Air Batu",
+  "subject": "Sejarah",
+  "form": "T1",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Zaman Air Batu",
+    "desc": "Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Dunia Kita & Pembentukan Daratan serta Lautan (SP…?",
+        "spokenText": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Dunia Kita & Pembentukan Daratan serta Lautan (SP ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Dunia Kita & Pembentukan Daratan serta Lautan (SP…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menukar susunan Zaman Pliosen dengan Pleistosen dalam garis masa.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menukar susunan Zaman Pliosen dengan Pleistosen dalam garis masa.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.. Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+              "spokenText": "Fakta sebenar: Pliosen datang sebelum Pleistosen: Miosen , menghasilkan Pliosen , menghasilkan Pleistosen , menghasilkan Holosen.. Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyatakan manusia Zaman Pleistosen membina piramid dan bandar moden.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.. Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+              "spokenText": "Fakta sebenar: Pliosen datang sebelum Pleistosen: Miosen , menghasilkan Pliosen , menghasilkan Pleistosen , menghasilkan Holosen.. Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ingat singkatan 'Mi Pi Plei Ho' mengikut turutan dari tua ke moden.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Pliosen datang sebelum Pleistosen: Miosen → Pliosen → Pleistosen → Holosen.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 2.1 Dunia Kita &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berapakah anggaran usia bumi oleh ahli sains?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berapakah anggaran usia bumi oleh ahli sains?"
+      },
+      "board": {
+        "promptPill": "Berapakah anggaran usia bumi oleh ahli sains?",
+        "title": "2.1 Dunia Kita & Pembentukan Daratan serta Lautan (SP 2.1.1)",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Subtopik 2.1",
+            "title": "2.1 Dunia Kita & Pembentukan Daratan serta…",
+            "detail": "Ahli sains menganggarkan usia bumi melebihi 4.6 bilion tahun. Perubahan suhu dan iklim yang drastik…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.2",
+            "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+            "detail": "Zaman Air Batu merujuk tempoh geologi apabila suhu bumi menurun dan sebahagian besar kawasan litupan bumi…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.3",
+            "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+            "detail": "Bermula kira-kira 8,500 tahun dahulu, suhu dunia meningkat menyebabkan kecairan air batu secara…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "195 juta tahun",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 195 juta tahun tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 195 juta tahun tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4.6 bilion tahun.",
+              "spokenText": "Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4 perpuluhan enam bilion tahun.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Dunia Kita & Pembentukan Daratan serta…",
+                    "detail": "Ahli sains menganggarkan usia bumi melebihi 4.6 bilion tahun. Perubahan suhu dan iklim yang drastik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+                    "detail": "Zaman Air Batu merujuk tempoh geologi apabila suhu bumi menurun dan sebahagian besar kawasan litupan bumi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+                    "detail": "Bermula kira-kira 8,500 tahun dahulu, suhu dunia meningkat menyebabkan kecairan air batu secara…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Melebihi 4.6 bilion tahun",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "650 juta tahun",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 650 juta tahun tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 650 juta tahun tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4.6 bilion tahun.",
+              "spokenText": "Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4 perpuluhan enam bilion tahun.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Dunia Kita & Pembentukan Daratan serta…",
+                    "detail": "Ahli sains menganggarkan usia bumi melebihi 4.6 bilion tahun. Perubahan suhu dan iklim yang drastik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+                    "detail": "Zaman Air Batu merujuk tempoh geologi apabila suhu bumi menurun dan sebahagian besar kawasan litupan bumi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+                    "detail": "Bermula kira-kira 8,500 tahun dahulu, suhu dunia meningkat menyebabkan kecairan air batu secara…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Dunia Kita & Pembentukan Daratan serta…",
+              "detail": "Ahli sains menganggarkan usia bumi melebihi 4.6 bilion tahun. Perubahan suhu dan iklim yang drastik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+              "detail": "Zaman Air Batu merujuk tempoh geologi apabila suhu bumi menurun dan sebahagian besar kawasan litupan bumi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+              "detail": "Bermula kira-kira 8,500 tahun dahulu, suhu dunia meningkat menyebabkan kecairan air batu secara…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Dunia Kita &",
+          "desc": "Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4.6 bilion tahun.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4.6 bilion tahun.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Buku Teks Sejarah T1 menyatakan ahli sains menjangkakan usia bumi melebihi 4 perpuluhan enam bilion tahun.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Dunia Kita & Pembentukan Daratan serta…",
+              "detail": "Ahli sains menganggarkan usia bumi melebihi 4.6 bilion tahun. Perubahan suhu dan iklim yang drastik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+              "detail": "Zaman Air Batu merujuk tempoh geologi apabila suhu bumi menurun dan sebahagian besar kawasan litupan bumi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+              "detail": "Bermula kira-kira 8,500 tahun dahulu, suhu dunia meningkat menyebabkan kecairan air batu secara…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Sejarah! Apakah proses pencairan air batu secara besar-besaran akibat peningkatan suhu dunia pada akhir Zaman Air Batu?",
+        "spokenText": "Perangkap lazim Sejarah! Apakah proses pencairan air batu secara besar-besaran akibat peningkatan suhu dunia pada akhir Zaman Air Batu?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah proses pencairan air batu secara besar-besaran akibat peningkatan suhu dunia pada akhir Zaman Air Batu?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Pemeluwapan awan",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Pengglasieran (pencairan glasier)",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pengglasieran (pencairan glasier)",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Pemeluwapan awan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Pengglasieran (pencairan glasier). Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai…",
+              "spokenText": "Fakta sebenar: Pengglasieran (pencairan glasier). Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Pengglasieran (pencairan glasier)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai proses pengglasieran dalam teks KSSM.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Hakisan pantai",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Pengglasieran (pencairan glasier). Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai…",
+              "spokenText": "Fakta sebenar: Pengglasieran (pencairan glasier). Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Pengglasieran (pencairan glasier)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai proses pengglasieran dalam teks KSSM.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Pengglasieran (pencairan glasier)",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai proses pengglasieran dalam teks KSSM.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai proses pengglasieran dalam…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kecairan air batu akibat suhu bumi meningkat sekitar 8,500 tahun dahulu dikenali sebagai proses pengglasieran dalam",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Pengglasieran (pencairan glasier)",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Zaman Air Batu",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah urutan garis masa Zaman Air Batu dari paling awal hingga paling akhir?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah urutan garis masa Zaman Air Batu dari paling awal hingga paling akhir?"
+      },
+      "board": {
+        "promptPill": "Manakah urutan garis masa Zaman Air Batu dari paling awal hingga paling akhir?",
+        "title": "Rumusan: Zaman Air Batu",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+            "detail": "Urutan wajib hafal: Miosen → Pliosen → Pleistosen → Holosen (M-P-P-H).",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+            "detail": "Pemanasan iklim mengubah kedua-dua muka bumi dan ekosistem hidupan.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Kesan Zaman Air Batu di Asia Tenggara (SP…",
+            "detail": "Pentas Sunda ialah kata kunci utama bagi menjawab kesan Zaman Air Batu di Asia Tenggara.",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pliosen → Miosen → Pleistosen → Holosen",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pliosen → Miosen → Pleistosen → Holosen tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pliosen , menghasilkan Miosen , menghasilkan Pleistosen , menghasilkan Holosen tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5.3j), Pleistosen (2.5j) dan Holosen (10,000 thn lalu).",
+              "spokenText": "Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5 perpuluhan tigaj), Pleistosen (2 perpuluhan limaj) dan Holosen (10,000 thn lalu).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+                    "detail": "Urutan wajib hafal: Miosen → Pliosen → Pleistosen → Holosen (M-P-P-H).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+                    "detail": "Pemanasan iklim mengubah kedua-dua muka bumi dan ekosistem hidupan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Kesan Zaman Air Batu di Asia Tenggara (SP…",
+                    "detail": "Pentas Sunda ialah kata kunci utama bagi menjawab kesan Zaman Air Batu di Asia Tenggara.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Miosen → Pliosen → Pleistosen → Holosen",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Pleistosen → Miosen → Holosen → Pliosen",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pleistosen → Miosen → Holosen → Pliosen tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pleistosen , menghasilkan Miosen , menghasilkan Holosen , menghasilkan Pliosen tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5.3j), Pleistosen (2.5j) dan Holosen (10,000 thn lalu).",
+              "spokenText": "Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5 perpuluhan tigaj), Pleistosen (2 perpuluhan limaj) dan Holosen (10,000 thn lalu).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+                    "detail": "Urutan wajib hafal: Miosen → Pliosen → Pleistosen → Holosen (M-P-P-H).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+                    "detail": "Pemanasan iklim mengubah kedua-dua muka bumi dan ekosistem hidupan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Kesan Zaman Air Batu di Asia Tenggara (SP…",
+                    "detail": "Pentas Sunda ialah kata kunci utama bagi menjawab kesan Zaman Air Batu di Asia Tenggara.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+              "detail": "Urutan wajib hafal: Miosen → Pliosen → Pleistosen → Holosen (M-P-P-H).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+              "detail": "Pemanasan iklim mengubah kedua-dua muka bumi dan ekosistem hidupan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Kesan Zaman Air Batu di Asia Tenggara (SP…",
+              "detail": "Pentas Sunda ialah kata kunci utama bagi menjawab kesan Zaman Air Batu di Asia Tenggara.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Zaman Air Batu",
+          "desc": "Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5.3j), Pleistosen (2.5j) dan Holosen (10,000 thn lalu).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5.3j), Pleistosen (2.5j) dan Holosen (10,000 thn lalu).",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Empat tahap Zaman Air Batu ialah Miosen (23j), Pliosen (5 perpuluhan tigaj), Pleistosen (2 perpuluhan limaj) dan Holosen (10,000 thn lalu).",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Empat Garis Masa Zaman Air Batu (SP 2.1.2)",
+              "detail": "Urutan wajib hafal: Miosen → Pliosen → Pleistosen → Holosen (M-P-P-H).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Ciri & Perubahan Zaman Air Batu Akhir (SP…",
+              "detail": "Pemanasan iklim mengubah kedua-dua muka bumi dan ekosistem hidupan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Kesan Zaman Air Batu di Asia Tenggara (SP…",
+              "detail": "Pentas Sunda ialah kata kunci utama bagi menjawab kesan Zaman Air Batu di Asia Tenggara.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

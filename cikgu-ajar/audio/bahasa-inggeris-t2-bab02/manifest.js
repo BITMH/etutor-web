@@ -1,0 +1,366 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["bahasa-inggeris-t2-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-inggeris-t2-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Present Perfect Tense: Form & Irregular Participles?",
+      "duration": 8.555,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "Lazim",
+          "start": 0.48,
+          "end": 0.82
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.82,
+          "end": 1.12
+        },
+        {
+          "word": "Inggris",
+          "start": 1.12,
+          "end": 1.5
+        },
+        {
+          "word": "Awas",
+          "start": 1.5,
+          "end": 1.82
+        },
+        {
+          "word": "Perangkap",
+          "start": 1.82,
+          "end": 2.3
+        },
+        {
+          "word": "manakah",
+          "start": 2.3,
+          "end": 2.74
+        },
+        {
+          "word": "fakta",
+          "start": 2.74,
+          "end": 3.22
+        },
+        {
+          "word": "atau",
+          "start": 3.22,
+          "end": 3.38
+        },
+        {
+          "word": "langkah",
+          "start": 3.38,
+          "end": 3.76
+        },
+        {
+          "word": "yang",
+          "start": 3.76,
+          "end": 3.9
+        },
+        {
+          "word": "betul",
+          "start": 3.9,
+          "end": 4.22
+        },
+        {
+          "word": "tentang",
+          "start": 4.22,
+          "end": 4.46
+        },
+        {
+          "word": "tour",
+          "start": 4.46,
+          "end": 4.74
+        },
+        {
+          "word": "perpuluhan",
+          "start": 4.74,
+          "end": 5.3
+        },
+        {
+          "word": "satu",
+          "start": 5.3,
+          "end": 5.52
+        },
+        {
+          "word": "prisen",
+          "start": 5.52,
+          "end": 5.78
+        },
+        {
+          "word": "Perfektans?",
+          "start": 5.78,
+          "end": 6.44
+        },
+        {
+          "word": "Forman",
+          "start": 6.74,
+          "end": 7.18
+        },
+        {
+          "word": "Irregular",
+          "start": 7.18,
+          "end": 7.62
+        },
+        {
+          "word": "Partisipitas?",
+          "start": 7.62,
+          "end": 8.24
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-inggeris-t2-bab02/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Complete with the correct word: 'My cousins have waited at KL Sentral ______ 9:30 a.m.'",
+      "duration": 7.328,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "binaan",
+          "start": 0.5,
+          "end": 0.86
+        },
+        {
+          "word": "kata",
+          "start": 0.86,
+          "end": 1.12
+        },
+        {
+          "word": "dan",
+          "start": 1.12,
+          "end": 1.26
+        },
+        {
+          "word": "ayat",
+          "start": 1.26,
+          "end": 1.58
+        },
+        {
+          "word": "di",
+          "start": 1.58,
+          "end": 1.64
+        },
+        {
+          "word": "papan",
+          "start": 1.64,
+          "end": 1.96
+        },
+        {
+          "word": "Complete",
+          "start": 1.96,
+          "end": 2.8
+        },
+        {
+          "word": "with",
+          "start": 2.8,
+          "end": 3.02
+        },
+        {
+          "word": "the",
+          "start": 3.02,
+          "end": 3.1
+        },
+        {
+          "word": "correct",
+          "start": 3.1,
+          "end": 3.28
+        },
+        {
+          "word": "word",
+          "start": 3.28,
+          "end": 3.56
+        },
+        {
+          "word": "My",
+          "start": 3.56,
+          "end": 4.18
+        },
+        {
+          "word": "cousins",
+          "start": 4.18,
+          "end": 4.54
+        },
+        {
+          "word": "have",
+          "start": 4.54,
+          "end": 4.86
+        },
+        {
+          "word": "waited",
+          "start": 4.86,
+          "end": 5.14
+        },
+        {
+          "word": "at",
+          "start": 5.14,
+          "end": 5.38
+        },
+        {
+          "word": "KL",
+          "start": 5.38,
+          "end": 5.6
+        },
+        {
+          "word": "Central",
+          "start": 5.6,
+          "end": 6.1
+        },
+        {
+          "word": "Lexidosium",
+          "start": 6.1,
+          "end": 7.04
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-inggeris-t2-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Which question accurately asks about a travel experience?",
+      "duration": 5.12,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.88
+        },
+        {
+          "word": "bahasainya,",
+          "start": 0.88,
+          "end": 1.42
+        },
+        {
+          "word": "mana",
+          "start": 1.6,
+          "end": 2.1
+        },
+        {
+          "word": "pertanyaan",
+          "start": 2.1,
+          "end": 2.64
+        },
+        {
+          "word": "betul",
+          "start": 2.64,
+          "end": 2.9
+        },
+        {
+          "word": "-betul",
+          "start": 2.9,
+          "end": 3.1
+        },
+        {
+          "word": "berkata",
+          "start": 3.1,
+          "end": 3.36
+        },
+        {
+          "word": "tentang",
+          "start": 3.36,
+          "end": 3.58
+        },
+        {
+          "word": "pengalaman.",
+          "start": 3.58,
+          "end": 4.46
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-inggeris-t2-bab02/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Choose the sentence that uses 'for' correctly with the Present Perfect.",
+      "duration": 5.931,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "binaan",
+          "start": 0.54,
+          "end": 0.94
+        },
+        {
+          "word": "kata",
+          "start": 0.94,
+          "end": 1.26
+        },
+        {
+          "word": "dan",
+          "start": 1.26,
+          "end": 1.42
+        },
+        {
+          "word": "ayat",
+          "start": 1.42,
+          "end": 1.72
+        },
+        {
+          "word": "di",
+          "start": 1.72,
+          "end": 1.8
+        },
+        {
+          "word": "Papang,",
+          "start": 1.8,
+          "end": 2.14
+        },
+        {
+          "word": "pilih",
+          "start": 2.34,
+          "end": 2.94
+        },
+        {
+          "word": "perjalanan",
+          "start": 2.94,
+          "end": 3.5
+        },
+        {
+          "word": "yang",
+          "start": 3.5,
+          "end": 3.58
+        },
+        {
+          "word": "digunakan",
+          "start": 3.58,
+          "end": 4.02
+        },
+        {
+          "word": "dengan",
+          "start": 4.02,
+          "end": 4.5
+        },
+        {
+          "word": "sempurna",
+          "start": 4.5,
+          "end": 4.76
+        },
+        {
+          "word": "dengan",
+          "start": 4.76,
+          "end": 4.96
+        },
+        {
+          "word": "sedap.",
+          "start": 4.96,
+          "end": 5.48
+        }
+      ]
+    }
+  }
+};

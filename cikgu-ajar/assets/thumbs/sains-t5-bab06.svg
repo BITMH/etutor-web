@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="480" height="270" role="img" aria-label="Elektrokimia">
+  <defs>
+    <linearGradient id="g_sains_t5_bab06" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C4A6E"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <radialGradient id="g_sains_t5_bab06_glow" cx="78%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#0F766E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="270" rx="18" fill="url(#g_sains_t5_bab06)"/>
+  <rect width="480" height="270" rx="18" fill="url(#g_sains_t5_bab06_glow)"/>
+  <g opacity="0.10" stroke="#FFFFFF" stroke-width="1">
+    <line x1="78" y1="0" x2="78" y2="270"/>
+    <line x1="158" y1="0" x2="158" y2="270"/>
+    <line x1="238" y1="0" x2="238" y2="270"/>
+    <line x1="0" y1="83" x2="480" y2="83"/>
+    <line x1="0" y1="173" x2="480" y2="173"/>
+  </g>
+  
+      <g transform="translate(298, 42)" opacity="0.94">
+        <circle cx="78" cy="70" r="14" fill="#2DD4BF"/>
+        <ellipse cx="78" cy="70" rx="58" ry="22" transform="rotate(30 78 70)" fill="none" stroke="#38BDF8" stroke-width="2.6"/>
+        <ellipse cx="78" cy="70" rx="58" ry="22" transform="rotate(-30 78 70)" fill="none" stroke="#2DD4BF" stroke-width="2.6"/>
+        <ellipse cx="78" cy="70" rx="58" ry="22" transform="rotate(90 78 70)" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2"/>
+      </g>
+  <rect x="26" y="24" width="92" height="26" rx="13" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+  <text x="72" y="41" text-anchor="middle" font-size="11.5" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">T5 · BAB 6</text>
+  <rect x="126" y="24" width="84" height="26" rx="13" fill="#0891B2"/>
+  <text x="168" y="41" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">Sains</text>
+  <text x="26" y="92" font-size="22" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif"><tspan x="26" dy="0">Elektrokimia</tspan></text>
+  <rect x="26" y="216" width="136" height="28" rx="10" fill="rgba(15,23,42,0.52)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <text x="94" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E2E8F0" font-family="Plus Jakarta Sans, Arial, sans-serif">Perangkap SPM</text>
+  <rect x="170" y="216" width="112" height="28" rx="10" fill="rgba(16,185,129,0.24)" stroke="rgba(52,211,153,0.55)" stroke-width="1"/>
+  <text x="226" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#A7F3D0" font-family="Plus Jakarta Sans, Arial, sans-serif">Suara BM 100%</text>
+  <text x="454" y="234" text-anchor="end" font-size="11.5" font-weight="800" fill="#2DD4BF" font-family="Plus Jakarta Sans, Arial, sans-serif">4 Kad</text>
+</svg>

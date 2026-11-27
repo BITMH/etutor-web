@@ -1,0 +1,845 @@
+{
+  "deckId": "sejarah-t3-bab02",
+  "title": "Pentadbiran Negeri-negeri Selat & Perjanjian London 1824",
+  "shortTitle": "Pentadbiran Negeri-negeri Selat &",
+  "subject": "Sejarah",
+  "form": "T3",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Pentadbiran Negeri-negeri Selat &",
+    "desc": "Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Peluasan Kuasa British di Pulau Pinang (1786) &…?",
+        "spokenText": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Peluasan Kuasa British di Pulau Pinang (1786) & ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Peluasan Kuasa British di Pulau Pinang (1786) &…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengatakan Perjanjian London 1824 ditandatangani antara British dengan Sultan Johor.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengatakan Perjanjian London 1824 ditandatangani antara British dengan Sultan Johor.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.. Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+              "spokenText": "Fakta sebenar: Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.. Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA,…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menukar arah pertukaran wilayah antara British dengan Belanda dalam Perjanjian London 1824.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.. Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+              "spokenText": "Fakta sebenar: Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.. Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Nama penuhnya ialah Perjanjian Inggeris-Belanda 1824.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Perjanjian London 1824 ditandatangani antara dua kuasa Eropah sahaja: BRITAIN dan BELANDA, tanpa penyertaan Raja-Raja Melayu.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 2.1 Peluasan Kuasa British",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah pelabuhan yang dimiliki British sebelum 1819 tetapi gagal menyaingi kemajuan pelabuhan Belanda di Betawi?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah pelabuhan yang dimiliki British sebelum 1819 tetapi gagal menyaingi kemajuan pelabuhan Belanda di Betawi?"
+      },
+      "board": {
+        "promptPill": "Apakah pelabuhan yang dimiliki British sebelum 1819 tetapi gagal menyaingi kemajuan…",
+        "title": "2.1 Peluasan Kuasa British di Pulau Pinang (1786) & Singapura…",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Subtopik 2.1",
+            "title": "2.1 Peluasan Kuasa British di Pulau Pinang…",
+            "detail": "Selepas kehilangan tanah jajahan di Amerika dan perkembangan perdagangan teh China, British mencari…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.2",
+            "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+            "detail": "Pertikaian British-Belanda selepas pendudukan Singapura diselesaikan menerusi Pakatan Perjanjian London pada…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.3",
+            "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+            "detail": "Setelah British memiliki Pulau Pinang, Singapura dan Melaka melalui penguasaan penuh, ketiga-tiga pelabuhan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Melaka dan Kuching",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Melaka dan Kuching tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Melaka dan Kuching tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+              "spokenText": "Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Peluasan Kuasa British di Pulau Pinang…",
+                    "detail": "Selepas kehilangan tanah jajahan di Amerika dan perkembangan perdagangan teh China, British mencari…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+                    "detail": "Pertikaian British-Belanda selepas pendudukan Singapura diselesaikan menerusi Pakatan Perjanjian London pada…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+                    "detail": "Setelah British memiliki Pulau Pinang, Singapura dan Melaka melalui penguasaan penuh, ketiga-tiga pelabuhan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Pulau Pinang dan Bangkahulu",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Singapura dan Palembang",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Singapura dan Palembang tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Singapura dan Palembang tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+              "spokenText": "Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Peluasan Kuasa British di Pulau Pinang…",
+                    "detail": "Selepas kehilangan tanah jajahan di Amerika dan perkembangan perdagangan teh China, British mencari…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+                    "detail": "Pertikaian British-Belanda selepas pendudukan Singapura diselesaikan menerusi Pakatan Perjanjian London pada…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+                    "detail": "Setelah British memiliki Pulau Pinang, Singapura dan Melaka melalui penguasaan penuh, ketiga-tiga pelabuhan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Peluasan Kuasa British di Pulau Pinang…",
+              "detail": "Selepas kehilangan tanah jajahan di Amerika dan perkembangan perdagangan teh China, British mencari…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+              "detail": "Pertikaian British-Belanda selepas pendudukan Singapura diselesaikan menerusi Pakatan Perjanjian London pada…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+              "detail": "Setelah British memiliki Pulau Pinang, Singapura dan Melaka melalui penguasaan penuh, ketiga-tiga pelabuhan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Peluasan Kuasa British",
+          "desc": "Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Halaman 47 menyatakan Pulau Pinang dan Bangkahulu tidak mampu menyaingi pelabuhan Belanda di Alam Melayu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Peluasan Kuasa British di Pulau Pinang…",
+              "detail": "Selepas kehilangan tanah jajahan di Amerika dan perkembangan perdagangan teh China, British mencari…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+              "detail": "Pertikaian British-Belanda selepas pendudukan Singapura diselesaikan menerusi Pakatan Perjanjian London pada…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+              "detail": "Setelah British memiliki Pulau Pinang, Singapura dan Melaka melalui penguasaan penuh, ketiga-tiga pelabuhan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Sejarah! Siapakah tokoh SHTI yang memeterai perjanjian dengan Sultan Abdullah bagi menduduki Pulau Pinang pada tahun 1786?",
+        "spokenText": "Perangkap lazim Sejarah! Siapakah tokoh SHTI yang memeterai perjanjian dengan Sultan Abdullah bagi menduduki Pulau Pinang pada tahun 1786?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Siapakah tokoh SHTI yang memeterai perjanjian dengan Sultan Abdullah bagi menduduki Pulau Pinang pada tahun 1786?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Stamford Raffles",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Francis Light",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Stamford Raffles",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Francis Light. Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan…",
+              "spokenText": "Fakta sebenar: Francis Light. Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Francis Light",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan Pulau Pinang pada 1786.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Francis Light",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "John Crawfurd",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Francis Light. Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan…",
+              "spokenText": "Fakta sebenar: Francis Light. Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Francis Light",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan Pulau Pinang pada 1786.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Francis Light",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan Pulau Pinang pada 1786.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan Pulau Pinang pada 1786.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Francis Light berjanji membantu Sultan Abdullah menghadapi ancaman Siam bagi mendapatkan Pulau Pinang pada 1786.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Francis Light",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Pentadbiran Negeri-negeri Selat",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan syarat Perjanjian London 1824, wilayah manakah yang diserahkan oleh Belanda kepada British?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan syarat Perjanjian London 1824, wilayah manakah yang diserahkan oleh Belanda kepada British?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan syarat Perjanjian London 1824, wilayah manakah yang diserahkan oleh…",
+        "title": "Rumusan: Pentadbiran Negeri-negeri Selat &",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+            "detail": "Kuasa Barat membahagikan peta Alam Melayu sesama mereka di London tanpa berunding dengan sultan tempatan.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+            "detail": "Tahun penting: 1826 penubuhan NNS; 1832 pemindahan ibu negeri ke Singapura.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Perubahan Pentadbiran: India Office ke…",
+            "detail": "Pemindahan 1867 menjadikan NNS ditadbir terus dari London melalui Gabenor dan Majlis Undangan!",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Bangkahulu dan Sumatera",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Bangkahulu dan Sumatera tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Bangkahulu dan Sumatera tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada Belanda.",
+              "spokenText": "Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada Belanda.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+                    "detail": "Kuasa Barat membahagikan peta Alam Melayu sesama mereka di London tanpa berunding dengan sultan tempatan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+                    "detail": "Tahun penting: 1826 penubuhan NNS; 1832 pemindahan ibu negeri ke Singapura.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Perubahan Pentadbiran: India Office ke…",
+                    "detail": "Pemindahan 1867 menjadikan NNS ditadbir terus dari London melalui Gabenor dan Majlis Undangan!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Melaka dan kawasan taklukannya serta pengiktirafan British di Singapura",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Pulau Jawa dan Betawi",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pulau Jawa dan Betawi tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pulau Jawa dan Betawi tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada Belanda.",
+              "spokenText": "Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada Belanda.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+                    "detail": "Kuasa Barat membahagikan peta Alam Melayu sesama mereka di London tanpa berunding dengan sultan tempatan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+                    "detail": "Tahun penting: 1826 penubuhan NNS; 1832 pemindahan ibu negeri ke Singapura.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Perubahan Pentadbiran: India Office ke…",
+                    "detail": "Pemindahan 1867 menjadikan NNS ditadbir terus dari London melalui Gabenor dan Majlis Undangan!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+              "detail": "Kuasa Barat membahagikan peta Alam Melayu sesama mereka di London tanpa berunding dengan sultan tempatan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+              "detail": "Tahun penting: 1826 penubuhan NNS; 1832 pemindahan ibu negeri ke Singapura.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Perubahan Pentadbiran: India Office ke…",
+              "detail": "Pemindahan 1867 menjadikan NNS ditadbir terus dari London melalui Gabenor dan Majlis Undangan!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Pentadbiran Negeri-negeri Selat",
+          "desc": "Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada Belanda.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Dalam Perjanjian London 1824, Belanda menyerahkan Melaka kepada British manakala British menyerahkan Bangkahulu kepada",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Perjanjian London 1824 (Inggeris-Belanda)…",
+              "detail": "Kuasa Barat membahagikan peta Alam Melayu sesama mereka di London tanpa berunding dengan sultan tempatan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Pembentukan Negeri-negeri Selat 1826 (SP…",
+              "detail": "Tahun penting: 1826 penubuhan NNS; 1832 pemindahan ibu negeri ke Singapura.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Perubahan Pentadbiran: India Office ke…",
+              "detail": "Pemindahan 1867 menjadikan NNS ditadbir terus dari London melalui Gabenor dan Majlis Undangan!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

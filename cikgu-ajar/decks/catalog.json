@@ -1,0 +1,2658 @@
+{
+  "version": "1.0",
+  "subjects": [
+    "Matematik",
+    "Matematik Tambahan",
+    "Fizik",
+    "Kimia",
+    "Biologi",
+    "Sains",
+    "Sejarah",
+    "Bahasa Melayu",
+    "Bahasa Inggeris",
+    "Pendidikan Islam",
+    "Pendidikan Moral",
+    "Geografi"
+  ],
+  "activeSubjects": [
+    "Matematik",
+    "Fizik",
+    "Kimia",
+    "Sains",
+    "Sejarah",
+    "Bahasa Melayu",
+    "Bahasa Inggeris",
+    "Pendidikan Islam",
+    "Geografi"
+  ],
+  "forms": [
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5"
+  ],
+  "totalDecks": 139,
+  "decks": [
+    {
+      "deckId": "matematik-t1-bab01",
+      "title": "Nombor Nisbah (Integer, Pecahan & Perpuluhan)",
+      "shortTitle": "Nombor Nisbah",
+      "subject": "Matematik",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai perwakilan integer pada garis nombor, operasi aritmetik integer dengan hukum kalis agihan, susunan pecahan dan perpuluhan…",
+      "thumbnail": "assets/thumbs/matematik-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t1-bab02",
+      "title": "Faktor dan Gandaan (FSTB & GSTK)",
+      "shortTitle": "Faktor dan Gandaan",
+      "subject": "Matematik",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai konsep faktor, faktor perdana (Saringan Eratosthenes & pemfaktoran perdana), Faktor Sepunya Terbesar (FSTB), gandaan sepunya dan…",
+      "thumbnail": "assets/thumbs/matematik-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "sains-t1-bab01",
+      "title": "Pengenalan kepada Penyiasatan Saintifik (Scientific Investigation)",
+      "shortTitle": "Pengenalan kepada Penyiasatan Saintifik",
+      "subject": "Sains",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai bidang sains, radas dan simbol amaran makmal, kuantiti fizik serta imbuhan unit S.I., alat pengukur jitu (angkup vernier, tolok…",
+      "thumbnail": "assets/thumbs/sains-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sains-t1-bab02",
+      "title": "Sel sebagai Unit Asas Hidupan (Cell as Basic Unit of Life)",
+      "shortTitle": "Sel sebagai Unit Asas",
+      "subject": "Sains",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami struktur serta fungsi komponen sel haiwan dan sel tumbuhan, organisasi sel kepada organisma (Sel → Tisu → Organ → Sistem →…",
+      "thumbnail": "assets/thumbs/sains-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sejarah-t1-bab01",
+      "title": "Mengenali Sejarah (Sumber, Penyelidikan & Tafsiran)",
+      "shortTitle": "Mengenali Sejarah",
+      "subject": "Sejarah",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami pengertian sejarah mengikut bahasa Melayu, Inggeris dan pandangan sejarawan tersohor, konsep masa silam, sumber primer vs…",
+      "thumbnail": "assets/thumbs/sejarah-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t1-bab02",
+      "title": "Zaman Air Batu (Garis Masa & Kesan di Asia Tenggara)",
+      "shortTitle": "Zaman Air Batu",
+      "subject": "Sejarah",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Mempelajari pembentukan fizikal bumi berusia lebih 4.6 bilion tahun, empat garis masa Zaman Air Batu (Miosen, Pliosen, Pleistosen,…",
+      "thumbnail": "assets/thumbs/sejarah-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t1-bab01",
+      "title": "Amalan Gaya Hidup Sihat (Kata Nama & Penulisan)",
+      "shortTitle": "Amalan Gaya Hidup Sihat",
+      "subject": "Bahasa Melayu",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai kata nama am, kata nama khas, kata adjektif serta kemahiran membina ayat dan menulis rencana bertemakan kesihatan diri serta…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t1-bab02",
+      "title": "Beringat Supaya Selamat (Kata Seru, Tanya & Kerja Tak Transitif)",
+      "shortTitle": "Beringat Supaya Selamat",
+      "subject": "Bahasa Melayu",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami penggunaan kata seru, kata tanya dengan partikel '-kah', perbandingan semacam, repetisi/sinkope dalam puisi serta kata kerja tak…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t1-bab01",
+      "title": "Chapter 1: New Year, New You (Nouns & Articles)",
+      "shortTitle": "Chapter 1: New Year,",
+      "subject": "Bahasa Inggeris",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master common and proper nouns, countable and uncountable nouns, and correct use of indefinite articles 'a' and 'an' while exploring New…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t1-bab02",
+      "title": "Chapter 2: It's a Small World (Present Simple & Cyber Safety)",
+      "shortTitle": "Chapter 2: It's a",
+      "subject": "Bahasa Inggeris",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master the Simple Present Tense, polite email replies replacing Internet slang with standard English, and Bubble Maps to describe digital…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t1-bab01",
+      "title": "Pelajaran 1: Surah al-Baqarah Ayat 1–5 (Mukmin Bertakwa)",
+      "shortTitle": "Surah al-Baqarah Ayat 1–5",
+      "subject": "Pendidikan Islam",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari Surah al-Baqarah ayat 1 hingga 5 tentang keagungan al-Quran sebagai petunjuk mutlak serta…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t1-bab02",
+      "title": "Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia & Akhirat)",
+      "shortTitle": "Surah al-Baqarah Ayat 201",
+      "subject": "Pendidikan Islam",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menghayati maksud, bacaan bertajwid dan pengajaran Surah al-Baqarah ayat 201 tentang doa keseimbangan kebahagiaan dunia dan akhirat serta…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "geografi-t1-bab01",
+      "title": "Arah (Mata Angin, Kompas & Bearing Sudutan)",
+      "shortTitle": "Arah",
+      "subject": "Geografi",
+      "form": "T1",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai lapan arah mata angin utama dan perantaraan, teknik menentukan arah berpandukan matahari serta kompas magnetik, dan langkah…",
+      "thumbnail": "assets/thumbs/geografi-t1-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "geografi-t1-bab02",
+      "title": "Kedudukan (Kedudukan Relatif, Latitud & Longitud)",
+      "shortTitle": "Kedudukan",
+      "subject": "Geografi",
+      "form": "T1",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami cara menentukan kedudukan relatif menggunakan titik rujukan (hadapan, belakang, kiri, kanan) serta kedudukan mutlak di permukaan…",
+      "thumbnail": "assets/thumbs/geografi-t1-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "matematik-t2-bab01",
+      "title": "Pola dan Jujukan (Nombor Fibonacci & Ungkapan)",
+      "shortTitle": "Pola dan Jujukan",
+      "subject": "Matematik",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Mengenal pasti pola pelbagai set nombor (termasuk nombor genap/ganjil, Segi Tiga Pascal dan Nombor Fibonacci), mentakrifkan jujukan serta…",
+      "thumbnail": "assets/thumbs/matematik-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t2-bab02",
+      "title": "Pemfaktoran dan Pecahan Algebra",
+      "shortTitle": "Pemfaktoran dan Pecahan Algebra",
+      "subject": "Matematik",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai kembangan satu dan dua kurungan ungkapan algebra, empat kaedah pemfaktoran (FSTB, beza dua kuasa dua, pendaraban silang dan…",
+      "thumbnail": "assets/thumbs/matematik-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "sains-t2-bab01",
+      "title": "Biodiversiti (Kepelbagaian & Pengelasan Organisma)",
+      "shortTitle": "Biodiversiti",
+      "subject": "Sains",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami kepentingan biodiversiti dan usaha pemeliharaan/pemuliharaan spesies endemik Malaysia, pengelasan haiwan invertebrata dan 5 kelas…",
+      "thumbnail": "assets/thumbs/sains-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sains-t2-bab02",
+      "title": "Ekosistem (Aliran Tenaga, Kitar Nutrien & Interaksi)",
+      "shortTitle": "Ekosistem",
+      "subject": "Sains",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami pengeluar, pengguna dan pengurai dalam rantai dan siratan makanan, kitar nutrien (kitar air, karbon dan oksigen), interaksi…",
+      "thumbnail": "assets/thumbs/sains-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sejarah-t2-bab01",
+      "title": "Kerajaan Alam Melayu (Konsep, Kemasyhuran & Hubungan Luar)",
+      "shortTitle": "Kerajaan Alam Melayu",
+      "subject": "Sejarah",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami konsep Alam Melayu daripada aspek geografi, bahasa dan budaya serumpun, kemasyhuran tujuh kerajaan awal (Funan, Champa,…",
+      "thumbnail": "assets/thumbs/sejarah-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t2-bab02",
+      "title": "Sistem Pemerintahan dan Kegiatan Ekonomi Alam Melayu",
+      "shortTitle": "Sistem Pemerintahan dan Kegiatan",
+      "subject": "Sejarah",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami sistem pemerintahan beraja peringkat pusat dan wilayah bagi tujuh kerajaan Alam Melayu serta lima teras kegiatan ekonomi:…",
+      "thumbnail": "assets/thumbs/sejarah-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t2-bab01",
+      "title": "Kesihatan dan Kebersihan (Kata Ganti Nama & Akronim)",
+      "shortTitle": "Kesihatan dan Kebersihan",
+      "subject": "Bahasa Melayu",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai kata ganti nama diri pertama, kedua dan ketiga, pembentukan empat jenis akronim, teknik bacaan 5W1H serta mengenal pasti maksud…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t2-bab02",
+      "title": "Menimba Ilmu (Kata Adjektif & Ayat Gramatis)",
+      "shortTitle": "Menimba Ilmu",
+      "subject": "Bahasa Melayu",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memperkukuh penguasaan kata adjektif jarak, pancaindera, ukuran dan sifatan, kata ganda separa, pembinaan ayat gramatis serta penghayatan…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t2-bab01",
+      "title": "Unit 1 (Pulse 2 Unit 6): Money & Future Plans",
+      "shortTitle": "Unit 1 : Money",
+      "subject": "Bahasa Inggeris",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master vocabulary related to jobs, chores and smart money habits alongside future forms ('be going to' vs 'will' / 'won't') and polite…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t2-bab02",
+      "title": "Unit 2 (Pulse 2 Unit 7): Journeys & Present Perfect",
+      "shortTitle": "Unit 2 : Journeys",
+      "subject": "Bahasa Inggeris",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master the Present Perfect Tense ('have/has + past participle') with 'ever', 'never', 'for' and 'since' alongside transport vocabulary and…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t2-bab01",
+      "title": "Pelajaran 1: Surah Ali Imran Ayat 8 (Allah SWT Pengurnia Hidayah)",
+      "shortTitle": "Surah Ali Imran Ayat",
+      "subject": "Pendidikan Islam",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari Surah Ali Imran ayat 8 tentang doa memohon ketetapan hati di atas hidayah iman serta…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t2-bab02",
+      "title": "Pelajaran 2: Surah Ali Imran Ayat 18 (Keesaan & Keagungan Allah SWT)",
+      "shortTitle": "Surah Ali Imran Ayat",
+      "subject": "Pendidikan Islam",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari Surah Ali Imran ayat 18 tentang pengiktirafan keesaan Allah SWT oleh diri-Nya sendiri,…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "geografi-t2-bab01",
+      "title": "Skala dan Jarak (Skala Lurus, Penyata & Pecahan Wakilan)",
+      "shortTitle": "Skala dan Jarak",
+      "subject": "Geografi",
+      "form": "T2",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai tiga jenis skala peta (skala lurus, skala penyata, pecahan wakilan), perbezaan jarak mutlak berbanding jarak relatif (masa &…",
+      "thumbnail": "assets/thumbs/geografi-t2-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "geografi-t2-bab02",
+      "title": "Peta Topografi (Garisan Timuran, Utaraan & Rujukan Grid)",
+      "shortTitle": "Peta Topografi",
+      "subject": "Geografi",
+      "form": "T2",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai ciri peta topografi, membaca garisan timuran dan garisan utaraan, menentukan Rujukan Grid (RG) 4 angka bagi kawasan luas dan RG…",
+      "thumbnail": "assets/thumbs/geografi-t2-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "matematik-t3-bab01",
+      "title": "Indeks (Tatatanda & Hukum Indeks)",
+      "shortTitle": "Indeks",
+      "subject": "Matematik",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai tatatanda indeks aⁿ, pembahagian berulang menukar nombor kepada bentuk indeks, serta kesemua tujuh Hukum Indeks termasuk kuasa…",
+      "thumbnail": "assets/thumbs/matematik-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t3-bab02",
+      "title": "Bentuk Piawai (Angka Bererti & Notasi Saintifik)",
+      "shortTitle": "Bentuk Piawai",
+      "subject": "Matematik",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai penentuan bilangan angka bererti (a.b.) dan pembundaran integer serta perpuluhan, menulis nombor sangat besar atau sangat kecil…",
+      "thumbnail": "assets/thumbs/matematik-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "sains-t3-bab01",
+      "title": "Rangsangan dan Gerak Balas (Saraf, Organ Deria & Tropisme)",
+      "shortTitle": "Rangsangan dan Gerak Balas",
+      "subject": "Sains",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami sistem saraf pusat dan periferi, laluan impuls tindakan terkawal vs luar kawal (arka refleks), struktur serta mekanisme 5 organ…",
+      "thumbnail": "assets/thumbs/sains-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sains-t3-bab02",
+      "title": "Respirasi (Pertukaran Gas & Kesihatan Peparu)",
+      "shortTitle": "Respirasi",
+      "subject": "Sains",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami struktur sistem respirasi manusia, mekanisme menarik dan menghembus nafas, resapan gas di alveolus dan adaptasinya, kesan bahan…",
+      "thumbnail": "assets/thumbs/sains-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sejarah-t3-bab01",
+      "title": "Kedatangan Kuasa Barat (Kestabilan, Faktor & Strategi)",
+      "shortTitle": "Kedatangan Kuasa Barat",
+      "subject": "Sejarah",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami kestabilan pemerintahan dan kemakmuran ekonomi negara kita sebelum kedatangan Barat, faktor pendorong imperialisme Barat dari…",
+      "thumbnail": "assets/thumbs/sejarah-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t3-bab02",
+      "title": "Pentadbiran Negeri-negeri Selat & Perjanjian London 1824",
+      "shortTitle": "Pentadbiran Negeri-negeri Selat &",
+      "subject": "Sejarah",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami kronologi peluasan kuasa British di Pulau Pinang (1786), Singapura (1819) dan Melaka, syarat serta impak Perjanjian London 1824…",
+      "thumbnail": "assets/thumbs/sejarah-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t3-bab01",
+      "title": "Suluh Masa Depan (Kata Nama & Kata Pinjaman)",
+      "shortTitle": "Suluh Masa Depan",
+      "subject": "Bahasa Melayu",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai kata nama dan pengejaan kata pinjaman bahasa Inggeris serta Arab/Sanskrit yang tepat, laras bahasa laporan dan berita tentang…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t3-bab02",
+      "title": "Bersih Selalu, Sihat Sentiasa (Ayat Aktif & Pasif)",
+      "shortTitle": "Bersih Selalu, Sihat Sentiasa",
+      "subject": "Bahasa Melayu",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai transformasi Ayat Aktif kepada Ayat Pasif untuk kata ganti nama diri pertama, kedua dan ketiga mengikut hukum tatabahasa Dewan,…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t3-bab01",
+      "title": "Unit 1: People & Culture (Present Perfect & B1 Communication)",
+      "shortTitle": "Unit 1: People &",
+      "subject": "Bahasa Inggeris",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master CEFR B1 Form 3 grammar targets for people, traditions and culture: Present Perfect Simple with 'just', 'already', 'yet', 'for' and…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t3-bab02",
+      "title": "Unit 2: Health, Environment & Modals (B1 Grammar & Writing)",
+      "shortTitle": "Unit 2: Health, Environment",
+      "subject": "Bahasa Inggeris",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master Form 3 B1 grammar essentials: Present Perfect Continuous vs. Simple, all four Future Forms ('will', 'going to', Present Continuous,…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t3-bab01",
+      "title": "Pelajaran 1: Surah al-A'raf Ayat 23 (Taubat & Memohon Keampunan)",
+      "shortTitle": "Surah al-A'raf Ayat 23",
+      "subject": "Pendidikan Islam",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari Surah al-A'raf ayat 23 tentang doa taubat Nabi Adam a.s. dan Hawa ('Rabbana zalamna…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t3-bab02",
+      "title": "Pelajaran 2: Surah al-Kahfi Ayat 1–10 (Al-Quran Petunjuk Kebenaran)",
+      "shortTitle": "Surah al-Kahfi Ayat 1–10",
+      "subject": "Pendidikan Islam",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari 10 ayat pertama Surah al-Kahfi tentang al-Quran sebagai kitab lurus sempurna tanpa…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "geografi-t3-bab01",
+      "title": "Jadual dan Graf (Graf Bar Mudah, Garisan & Gabungan)",
+      "shortTitle": "Jadual dan Graf",
+      "subject": "Geografi",
+      "form": "T3",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai kaedah pengumpulan maklumat geografi (pemerhatian, temu bual, banci, soal selidik, rujukan kepustakaan), ciri serta pembinaan…",
+      "thumbnail": "assets/thumbs/geografi-t3-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "geografi-t3-bab02",
+      "title": "Carta Pai (Peratus, Saiz Sudut Sektor & Tafsiran)",
+      "shortTitle": "Carta Pai",
+      "subject": "Geografi",
+      "form": "T3",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Menguasai ciri dan kegunaan carta pai, rumus tepat mengira peratus (%) serta saiz sudut sektor (°) daripada jadual, langkah melukis carta…",
+      "thumbnail": "assets/thumbs/geografi-t3-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-geo.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab01",
+      "title": "Fungsi & Persamaan Kuadratik dalam Satu Pemboleh Ubah",
+      "shortTitle": "Fungsi Kuadratik",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "graph-slider"
+      ],
+      "hasCustomAudio": true,
+      "priority": true,
+      "summary": "Bentuk am ax^2 + bx + c, kesan pekali parabola, paksi simetri, pemfaktoran, punca graf dan penyelesaian masalah KBAT SPM.",
+      "thumbnail": "assets/thumbs/matematik-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/matematik-t4-bab01.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab02",
+      "title": "Asas Nombor",
+      "shortTitle": "Asas Nombor",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1 KSSM (31 Langkah Bit-by-Bit) — Digit Sah Asas 2–10, Brahmagupta & Konrad Zuse, Nilai Tempat aⁿ, Nilai Digit & Cerakinan,…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab03",
+      "title": "Bab 3: Penaakulan Logik",
+      "shortTitle": "Bab 3: Penaakulan Logik",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.2 KSSM (42 Langkah Bit-by-Bit) — Pernyataan Benar/Palsu, Pengkuantiti, Penafian (~p), Pernyataan Majmuk (dan/atau),…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab04",
+      "title": "Bab 4: Operasi Set",
+      "shortTitle": "Bab 4: Operasi Set",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.3 KSSM (40 Langkah Bit-by-Bit) — Persilangan Set (P ∩ Q), Pelengkap Persilangan (P ∩ Q)', Kesatuan Set (P ∪ Q), Pelengkap…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab05",
+      "title": "Bab 5: Rangkaian dalam Teori Graf",
+      "shortTitle": "Bab 5: Rangkaian dalam",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1 KSSM (35 Langkah Bit-by-Bit) — Bucu V, Tepi E, Darjah d(v), Teorem ∑d = 2E, Graf Mudah vs Berbilang Tepi & Gelung, Graf…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab06",
+      "title": "Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah",
+      "shortTitle": "Bab 6: Ketaksamaan Linear",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.2 KSSM (37 Langkah Bit-by-Bit) — Pemodelan Situasi & Penukaran Unit, Tentusah Titik (Atas/Pada/Bawah), Garis Padu vs…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab07",
+      "title": "Graf Gerakan",
+      "shortTitle": "Graf Gerakan",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.2 KSSM (35 Langkah Bit-by-Bit) — Melukis & Mentafsir Graf Jarak-Masa (Kecerunan = Laju, Pegun, Patah Balik, Laju Purata),…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab07.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab08",
+      "title": "Sukatan Serakan Data Tak Terkumpul",
+      "shortTitle": "Sukatan Serakan Data Tak",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1–8.2 KSSM (33 Langkah Bit-by-Bit) — Konsep Serakan, Plot Batang-dan-Daun & Plot Titik, Julat, Kuartil (Q1, Q2, Q3) & Kekerapan…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab08.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab09",
+      "title": "Kebarangkalian Peristiwa Bergabung",
+      "shortTitle": "Kebarangkalian Peristiwa Bergabung",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 9,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 9.1–9.4 KSSM (35 Langkah Bit-by-Bit) — Ruang Sampel S & Pasangan Bertertib, Peristiwa Bersandar vs Tak Bersandar, Gambar Rajah…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab09.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t4-bab10",
+      "title": "Matematik Pengguna: Pengurusan Kewangan",
+      "shortTitle": "Matematik Pengguna: Pengurusan Kewangan",
+      "subject": "Matematik",
+      "form": "T4",
+      "bab": 10,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 10.1 KSSM (30 Langkah Bit-by-Bit) — Lima Proses Pengurusan Kewangan, Matlamat SMART, Penilaian Aset vs Liabiliti, Aliran Tunai…",
+      "thumbnail": "assets/thumbs/matematik-t4-bab10.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab01",
+      "title": "Pengukuran",
+      "shortTitle": "Pengukuran",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": true,
+      "summary": "Metrik vs Imperial, 7 Kuantiti Asas & 10 Terbitan S.I., Skalar & Vektor, 6 Bentuk Graf, Luas Bawah Graf serta Eksperimen 1.1 Bandul…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/fizik-t4-bab01.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab02",
+      "title": "Daya dan Gerakan I",
+      "shortTitle": "Daya dan Gerakan I",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.8 KSSM (44 Langkah Bit-by-Bit) — Gerakan Linear, Pita Detik 50 Hz & SUVAT, Graf s-t/v-t/a-t, Jatuh Bebas & Eksperimen 2.1,…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab03",
+      "title": "Kegravitian",
+      "shortTitle": "Kegravitian",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.3 KSSM (33 Langkah Bit-by-Bit) — Hukum Kegravitian Semesta Newton (F = GMm/r²), Pecutan Graviti g(h), Daya Memusat & Jisim…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab04",
+      "title": "Haba",
+      "shortTitle": "Haba",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.4 KSSM — Keseimbangan Terma & Penentu Ukuran Termometer, Muatan Haba Tentu (Q = mcΔθ) & Bayu Pantai, Haba Pendam Tentu (Q =…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab05",
+      "title": "Gelombang",
+      "shortTitle": "Gelombang",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.7 KSSM (46 Langkah Bit-by-Bit) — Asas Gelombang & Tangki Riak, Pelembapan & Bandul Barton, Pantulan (i = r), Pembiasan…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t4-bab06",
+      "title": "Cahaya dan Optik",
+      "shortTitle": "Cahaya dan Optik",
+      "subject": "Fizik",
+      "form": "T4",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.6 KSSM — Pembiasan Cahaya & Hukum Snell, Dalam Nyata vs Ketara (Eksperimen 6.1–6.2), Pantulan Dalam Penuh &…",
+      "thumbnail": "assets/thumbs/fizik-t4-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab01",
+      "title": "Pengenalan kepada Kimia",
+      "shortTitle": "Pengenalan kepada Kimia",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.3 KSSM (34 Langkah) — Asal 'al-kimiya', Nanokimia, Bahan Harian & Kerjaya, 11 Langkah Kaedah Saintifik & Eksperimen 1.1…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab02",
+      "title": "Jirim dan Struktur Atom",
+      "shortTitle": "Jirim dan Struktur Atom",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.4 KSSM (42 Langkah Bit-by-Bit) — Konsep Asas Jirim, Lengkung Pemanasan & Penyejukan Naftalena/Asid Laurik/Asetamida, 5…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab03",
+      "title": "Konsep Mol, Formula dan Persamaan Kimia",
+      "shortTitle": "Konsep Mol, Formula dan",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.4 KSSM (44 Langkah Bit-by-Bit) — Skala Piawai C-12, JAR, JMR & JFR, Konsep Mol & Pemalar Avogadro, Jisim & Isi Padu Molar…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab04",
+      "title": "Jadual Berkala Unsur",
+      "shortTitle": "Jadual Berkala Unsur",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.7 KSSM (40 Langkah Bit-by-Bit) — Sejarah Lavoisier hingga Moseley, Susunan 18 Kumpulan & 7 Kala, Gas Adi Kumpulan 18, Logam…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab05",
+      "title": "Ikatan Kimia",
+      "shortTitle": "Ikatan Kimia",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.7 KSSM (44 Langkah Bit-by-Bit) — Susunan Duplet & Oktet, Ikatan Ion (NaCl, MgO, MgCl₂), Ikatan Kovalen (Tunggal, Ganda Dua,…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab06",
+      "title": "Asid, Bes dan Garam",
+      "shortTitle": "Asid, Bes dan Garam",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.11 KSSM (40 Langkah Bit-by-Bit) — Peranan Air, Nilai pH & pOH, Kekuatan Asid & Alkali, Sifat Kimia, Kepekatan & Larutan…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab07",
+      "title": "Kadar Tindak Balas",
+      "shortTitle": "Kadar Tindak Balas",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1-7.4 KSSM (37 Langkah Bit-by-Bit) — Penentuan Kadar Purata & Tangen Seketika, Eksperimen 7.1-7.4 Faktor Kadar & Tekanan Gas,…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab07.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t4-bab08",
+      "title": "Bahan Buatan dalam Industri",
+      "shortTitle": "Bahan Buatan dalam Industri",
+      "subject": "Kimia",
+      "form": "T4",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1–8.4 KSSM (36 Langkah Bit-by-Bit) — Aloi & Eksperimen 8.1, 4 Jenis Kaca (Silika Terlakur, Soda Kapur, Borosilikat, Plumbum),…",
+      "thumbnail": "assets/thumbs/kimia-t4-bab08.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab01",
+      "title": "Langkah Keselamatan di dalam Makmal",
+      "shortTitle": "Langkah Keselamatan di dalam",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": true,
+      "summary": "Peralatan perlindungan diri (PPE), pengurusan sisa singki & biologi Kategori A-D, SOP tumpahan kimia/merkuri, dan jenis pemadam kebakaran.",
+      "thumbnail": "assets/thumbs/sains-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab01.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab02",
+      "title": "Bantuan Kecemasan (CPR & Heimlich Manoeuvre)",
+      "shortTitle": "Bantuan Kecemasan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1 & 2.2 KSSM — Talian 999, Kaedah & Kepentingan CPR (30:2), Heimlich Manoeuvre & Penyelamatan Diri Sendiri.",
+      "thumbnail": "assets/thumbs/sains-t4-bab02.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab02.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab03",
+      "title": "Teknik Mengukur Parameter Kesihatan Badan",
+      "shortTitle": "Teknik Mengukur Parameter Kesihatan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.4 KSSM (48 Langkah Bit-by-Bit) — Termometer 3D, Titik Nadi & Eksperimen 3.1, Sfigmomanometer & CPG 2018, Rumus BMI &…",
+      "thumbnail": "assets/thumbs/sains-t4-bab03.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab03.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab04",
+      "title": "Teknologi Hijau dalam Melestarikan Alam",
+      "shortTitle": "Teknologi Hijau dalam Melestarikan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.6 KSSM (45 Langkah Bit-by-Bit) — 4 Tonggak & 7 Sektor, Tenaga Boleh Baharu, Sisa 5R, Pertanian & Perhutanan, Pengangkutan…",
+      "thumbnail": "assets/thumbs/sains-t4-bab04.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab04.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab05",
+      "title": "Genetik",
+      "shortTitle": "Genetik",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.5 KSSM (46 Langkah Interaktif) — DNA, Mitosis & Meiosis, Pewarisan Mendel, Mutasi & Kariotip, Kejuruteraan Genetik GMO &…",
+      "thumbnail": "assets/thumbs/sains-t4-bab05.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab05.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab06",
+      "title": "Sokongan, Pergerakan dan Pertumbuhan",
+      "shortTitle": "Sokongan, Pergerakan dan Pertumbuhan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.3 KSSM (46 Langkah Bit-by-Bit) — 3 Jenis Rangka & Daya Apungan, Lengkung Ekdisis & Pusat Graviti, Otot Antagonis, Pola…",
+      "thumbnail": "assets/thumbs/sains-t4-bab06.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab06.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab07",
+      "title": "Koordinasi Badan",
+      "shortTitle": "Koordinasi Badan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.3 KSSM (46 Langkah Bit-by-Bit) — Sistem Endokrin & 6 Kelenjar Utama, Ketidakseimbangan Hormon, 4 Kategori Dadah, Kesan…",
+      "thumbnail": "assets/thumbs/sains-t4-bab07.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab07.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab08",
+      "title": "Unsur dan Bahan",
+      "shortTitle": "Unsur dan Bahan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1–8.3 KSSM (45 Langkah Bit-by-Bit) — Asas Jirim (Atom, Molekul, Ion & Sifat Fizik), Jadual Berkala Unsur Moden, Susunan…",
+      "thumbnail": "assets/thumbs/sains-t4-bab08.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab08.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab09",
+      "title": "Kimia Industri",
+      "shortTitle": "Kimia Industri",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 9,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 9.1–9.3 KSSM (45 Langkah Bit-by-Bit) — Aloi & Superkonduktor, 4 Jenis Kaca & Seramik, Polimer, Lateks, Pemvulkanan & Teknologi…",
+      "thumbnail": "assets/thumbs/sains-t4-bab09.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab09.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab10",
+      "title": "Kimia dalam Perubatan dan Kesihatan",
+      "shortTitle": "Kimia dalam Perubatan dan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 10,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 10.1–10.4 KSSM (45 Langkah Bit-by-Bit) — Perubatan Tradisional, Moden & Komplementari, Radikal Bebas, Antioksidan, Eksperimen…",
+      "thumbnail": "assets/thumbs/sains-t4-bab10.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab10.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab11",
+      "title": "Daya dan Gerakan",
+      "shortTitle": "Daya dan Gerakan",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 11,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 11.1–11.4 KSSM (46 Langkah Bit-by-Bit) — Gerakan Linear & Pita Detik 50 Hz, Graf s-t dan v-t, Pecutan Graviti & Jatuh Bebas…",
+      "thumbnail": "assets/thumbs/sains-t4-bab11.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab11.jpg"
+    },
+    {
+      "deckId": "sains-t4-bab12",
+      "title": "Tenaga Nuklear",
+      "shortTitle": "Tenaga Nuklear",
+      "subject": "Sains",
+      "form": "T4",
+      "bab": 12,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 12.1–12.4 KSSM (44 Langkah Bit-by-Bit) — Manfaat vs Risiko, Pembelahan & Pelakuran Nukleus, Reaktor Penjanaan Elektrik, Impak…",
+      "thumbnail": "assets/thumbs/sains-t4-bab12.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t4-bab12.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab01",
+      "title": "Warisan Negara Bangsa",
+      "shortTitle": "Warisan Negara Bangsa",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": true,
+      "summary": "Dari Tujuh Kerajaan Alam Melayu hingga Pembesar Empat Lipatan, Dwi-Kanun Bertulis Melaka & Waadat — Lengkap Foto Arkib & Audio ElevenLabs v4",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab01.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab02",
+      "title": "Kebangkitan Nasionalisme",
+      "shortTitle": "Kebangkitan Nasionalisme",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Edisi Sinematik & Suara AI — Audio Penerangan Auto-Main ElevenLabs v4, Galeri Potret Arkib Wikimedia, Simulasi Mesin Cetak & SFX Tematik",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab02.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab02.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab03",
+      "title": "Konflik Dunia & Pendudukan Jepun di Negara Kita",
+      "shortTitle": "Konflik Dunia & Pendudukan",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Nasionalisme awal, PD1 (1914–1918), PD2 Eropah & Asia Pasifik, serangan & dasar Jepun, Force 136, KMM/KRIS serta Bintang Tiga & Dato' Onn.",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab03.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab03.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab04",
+      "title": "Era Peralihan Kuasa British di Negara Kita",
+      "shortTitle": "Era Peralihan Kuasa British",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.7 KSSM (48 Langkah Bit-by-Bit) — BMA, Gagasan & Bantahan Malayan Union, UMNO, Penyerahan Sarawak (Rukun 13) & Penyerahan…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab04.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab04.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab05",
+      "title": "Persekutuan Tanah Melayu 1948",
+      "shortTitle": "Persekutuan Tanah Melayu 1948",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.4 KSSM (45 Langkah Bit-by-Bit) — Jawatankuasa Kerja, PUTERA–AMCJA & Perlembagaan Rakyat, Faktor Penubuhan, Ciri-ciri…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab05.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab05.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab06",
+      "title": "Ancaman Komunis dan Perisytiharan Darurat",
+      "shortTitle": "Ancaman Komunis dan Perisytiharan",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.4 KSSM (46 Langkah Bit-by-Bit) — Kemasukan Pengaruh Komunis, PKM, Perisytiharan Darurat, 9 Usaha Pembanterasan, Rundingan…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab06.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab06.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab07",
+      "title": "Usaha ke Arah Kemerdekaan",
+      "shortTitle": "Usaha ke Arah Kemerdekaan",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.5 KSSM (45 Langkah Bit-by-Bit) — Idea Negara Merdeka, Jawatankuasa Hubungan Antara Kaum (CLC), Sistem Ahli, Sistem…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab07.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab07.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab08",
+      "title": "Pilihan Raya",
+      "shortTitle": "Pilihan Raya",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1-8.4 KSSM (46 Langkah Bit-by-Bit) — Perkembangan Pilihan Raya (1950-1962), Proses PRU Pertama 1955, Majlis Perundangan…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab08.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab08.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab09",
+      "title": "Perlembagaan Persekutuan Tanah Melayu 1957",
+      "shortTitle": "Perlembagaan Persekutuan Tanah Melayu",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 9,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 9.1–9.4 KSSM (46 Langkah Bit-by-Bit) — Rundingan Kemerdekaan London, Suruhanjaya Reid, Penggubalan & Inti Pati Perjanjian PTM 1957.",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab09.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab09.jpg"
+    },
+    {
+      "deckId": "sejarah-t4-bab10",
+      "title": "Pemasyhuran Kemerdekaan",
+      "shortTitle": "Pemasyhuran Kemerdekaan",
+      "subject": "Sejarah",
+      "form": "T4",
+      "bab": 10,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 10.1–10.5 KSSM (46 Langkah Bit-by-Bit) — Pengertian Kemerdekaan, Persediaan Fizikal & Sambutan, Detik 30–31 Ogos 1957, Kesan…",
+      "thumbnail": "assets/thumbs/sejarah-t4-bab10.svg",
+      "bgPhoto": "assets/bg/chapters/sejarah-t4-bab10.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t4-bab01",
+      "title": "Sistem Bahasa KSSM: Morfologi & Sintaksis (SP 5.1–5.3)",
+      "shortTitle": "Sistem Bahasa KSSM: Morfologi",
+      "subject": "Bahasa Melayu",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Kata tunggal, majmuk, terbitan, ganda & akronim, golongan kata, frasa, 4 pola ayat dasar, ayat songsang, majmuk serta ragam ayat SPM.",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/bahasa-melayu-t4-tatabahasa.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t4-bab02",
+      "title": "Insan Terdidik, Negara Sejahtera (Homograf, Homofon & Kata Terbitan)",
+      "shortTitle": "Insan Terdidik, Negara Sejahtera",
+      "subject": "Bahasa Melayu",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Membezakan homograf (ejaan sama, bunyi dan makna berbeza seperti e taling vs e pepet pada 'perang' dan 'semak') daripada homofon (sebutan…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t4-bab01",
+      "title": "Module 1: Let's Chat (1119 CEFR Grammar & Communication)",
+      "shortTitle": "Let's Chat",
+      "subject": "Bahasa Inggeris",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Present Simple vs Continuous, Stative Verbs, Comparisons, Past Simple, Used to vs Be/Get Used to, Suffix Nouns (-ion/-ation/-ment) &…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t4-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/bahasa-inggeris-t4-mod01.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t4-bab02",
+      "title": "Module 2: Ready for Anything (Quantifiers & Relative Clauses)",
+      "shortTitle": "Ready for Anything",
+      "subject": "Bahasa Inggeris",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master Countable/Uncountable Quantifiers ('plenty of', 'a few', 'a little', 'many/much'), Defining vs. Non-Defining Relative Clauses…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t4-bab01",
+      "title": "Pelajaran 1: Surah al-An'am Ayat 162–163 (Ikhlas dalam Ibadat & Hidup)",
+      "shortTitle": "Surah al-An'am Ayat 162–163",
+      "subject": "Pendidikan Islam",
+      "form": "T4",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari Surah al-An'am ayat 162 hingga 163 tentang ikrar keikhlasan hidup dan mati semata-mata…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t4-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t4-bab02",
+      "title": "Pelajaran 2: Surah al-Kahfi Ayat 101–110 (Golongan Rugi vs Untung)",
+      "shortTitle": "Surah al-Kahfi Ayat 101–110",
+      "subject": "Pendidikan Islam",
+      "form": "T4",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari penutup Surah al-Kahfi ayat 101 hingga 110 tentang golongan paling rugi amalannya di…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t4-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab01",
+      "title": "Ubahan",
+      "shortTitle": "Ubahan",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.3 KSSM (32 Langkah Bit-by-Bit) — Ubahan Langsung y ∝ x^n & Graf Asalan, Ubahan Tercantum & Hukum Charles, Ubahan Songsang y…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab02",
+      "title": "Matriks",
+      "shortTitle": "Matriks",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.2 KSSM (35 Langkah Bit-by-Bit) — Mewakilkan Maklumat, Peringkat m × n & Unsur aᵢⱼ, Matriks Sama, Tambah & Tolak, Pendaraban…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab03",
+      "title": "Matematik Pengguna: Insurans",
+      "shortTitle": "Matematik Pengguna: Insurans",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1 KSSM (34 Langkah Bit-by-Bit) — Konsep Risiko, Akta Insurans 1996, Prinsip Indemniti, Insurans Hayat vs 5 Insurans Am &…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab04",
+      "title": "Matematik Pengguna: Percukaian",
+      "shortTitle": "Matematik Pengguna: Percukaian",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1 KSSM (34 Langkah Bit-by-Bit) — Tujuan Percukaian, 5 Jenis Cukai & Kesan Pengelakan, Pendapatan Bercukai & Kadar Progresif,…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab05",
+      "title": "Kekongruenan, Pembesaran dan Gabungan Transformasi",
+      "shortTitle": "Kekongruenan, Pembesaran dan Gabungan",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.4 KSSM (31 Langkah Bit-by-Bit) — Kekongruenan Poligon & Segi Tiga (SSS, SAS, ASA, AAS, RHS vs AAA/SSA), Keserupaan & Faktor…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab06",
+      "title": "Nisbah dan Graf Fungsi Trigonometri",
+      "shortTitle": "Nisbah dan Graf Fungsi",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.2 KSSM (35 Langkah Bit-by-Bit) — Bulatan Unit (kos θ, sin θ), 4 Sukuan & Petua ASTC, Sudut Rujukan Sepadan α, Sudut Khas…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab07",
+      "title": "Sukatan Serakan Data Terkumpul",
+      "shortTitle": "Sukatan Serakan Data Terkumpul",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.2 KSSM (35 Langkah Bit-by-Bit) — Had & Sempadan Kelas, Histogram & Poligon Kekerapan, 5 Bentuk Taburan, Ogif (Q1, Q2, Q3 &…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab07.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "matematik-t5-bab08",
+      "title": "Pemodelan Matematik",
+      "shortTitle": "Pemodelan Matematik",
+      "subject": "Matematik",
+      "form": "T5",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1 KSSM (33 Langkah Bit-by-Bit) — 6 Komponen Pemodelan & Gelung Pemurnian, Terowong SMART & Soalan Terbuka, Kajian Kes Pasar…",
+      "thumbnail": "assets/thumbs/matematik-t5-bab08.svg",
+      "bgPhoto": "assets/bg/world/world-math.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab01",
+      "title": "Daya dan Gerakan II",
+      "shortTitle": "Daya dan Gerakan II",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.4 KSSM (40 Langkah Bit-by-Bit) — Daya Paduan & Lif (R = mg ± ma), Leraian Daya & Satah Condong, Keseimbangan Segi Tiga Daya…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab02",
+      "title": "Tekanan",
+      "shortTitle": "Tekanan",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.6 KSSM — Tekanan Cecair (P = hρg), Barometer Atmosfera (760 mm Hg), Manometer Tiub-U & Tolok Bourdon, Prinsip Pascal (F₁/A₁…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab03",
+      "title": "Elektrik",
+      "shortTitle": "Elektrik",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.4 KSSM (39 Langkah Bit-by-Bit) — Medan Elektrik, Nyalaan Lilin & Bola Polistirena, I = Q/t & V = E/Q, Hukum Ohm & R = ρl/A,…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab04",
+      "title": "Keelektromagnetan",
+      "shortTitle": "Keelektromagnetan",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.3 KSSM — Medan Lastik & Petua Tangan Kiri Fleming, Motor a.t. & Motor Tanpa Berus, Aruhan Elektromagnet, Hukum Faraday &…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab05",
+      "title": "Elektronik",
+      "shortTitle": "Elektronik",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.3 KSSM (37 Langkah Bit-by-Bit) — Pancaran Termion & Tiub Sinar Katod (eV = ½mv²), Pesongan Medan Elektrik & Magnet,…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab06",
+      "title": "Fizik Nuklear",
+      "shortTitle": "Fizik Nuklear",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.2 KSSM — Reputan Radioaktif (α, β, γ), Separuh Hayat N = (½)ⁿN₀ & Pentarikhan Usia, Pembelahan U-235 vs Pelakuran Suria,…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "fizik-t5-bab07",
+      "title": "Fizik Kuantum",
+      "shortTitle": "Fizik Kuantum",
+      "subject": "Fizik",
+      "form": "T5",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.3 KSSM (37 Langkah Bit-by-Bit) — Jasad Hitam & Bencana Ultraungu, Kuanta Tenaga Max Planck E=hf, Kedualan Gelombang-Zarah &…",
+      "thumbnail": "assets/thumbs/fizik-t5-bab07.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t5-bab01",
+      "title": "Keseimbangan Redoks",
+      "shortTitle": "Keseimbangan Redoks",
+      "subject": "Kimia",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.6 KSSM (44 Langkah Bit-by-Bit) — 4 Takrifan Redoks & Tiub-U, Nombor Pengoksidaan & IUPAC, Penyesaran Logam/Halogen, Siri E°…",
+      "thumbnail": "assets/thumbs/kimia-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t5-bab02",
+      "title": "Sebatian Karbon",
+      "shortTitle": "Sebatian Karbon",
+      "subject": "Kimia",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.4 KSSM (46 Langkah Bit-by-Bit) — Sebatian Organik vs Tak Organik, Penyulingan Berperingkat Petroleum & Peretakan…",
+      "thumbnail": "assets/thumbs/kimia-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t5-bab03",
+      "title": "Termokimia",
+      "shortTitle": "Termokimia",
+      "subject": "Kimia",
+      "form": "T5",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.3 KSSM (37 Langkah Bit-by-Bit) — Eksotermik vs Endotermik, Gambar Rajah Aras Tenaga & Tenaga Ikatan, Kalorimetri Q = mcθ…",
+      "thumbnail": "assets/thumbs/kimia-t5-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t5-bab04",
+      "title": "Polimer",
+      "shortTitle": "Polimer",
+      "subject": "Kimia",
+      "form": "T5",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.3 KSSM (35 Langkah Bit-by-Bit) — Polimer Semula Jadi & Sintetik, Termoplastik, Termoset & Elastomer, Pempolimeran…",
+      "thumbnail": "assets/thumbs/kimia-t5-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "kimia-t5-bab05",
+      "title": "Kimia Konsumer dan Industri",
+      "shortTitle": "Kimia Konsumer dan Industri",
+      "subject": "Kimia",
+      "form": "T5",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "formula-steps",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.6 KSSM (42 Langkah Bit-by-Bit) — Minyak & Lemak serta Penghidrogenan 180°C (Ni), Saponifikasi Sabun (+NaCl) vs Pensulfonan…",
+      "thumbnail": "assets/thumbs/kimia-t5-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-sains.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab01",
+      "title": "Mikroorganisma",
+      "shortTitle": "Mikroorganisma",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.3 KSSM (44 Langkah Bit-by-Bit) — Flora Normal & 5 Kumpulan Mikrob, Eksperimen 1.1–1.2 & 5 Faktor Pertumbuhan, Mikrob…",
+      "thumbnail": "assets/thumbs/sains-t5-bab01.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab01.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab02",
+      "title": "Nutrisi dan Teknologi Makanan",
+      "shortTitle": "Nutrisi dan Teknologi Makanan",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.6 KSSM (45 Langkah Bit-by-Bit) — Gizi Seimbang & Kalori, Nutrien Tumbuhan, Kitar Nitrogen, Pengeluaran Makanan, Pemprosesan…",
+      "thumbnail": "assets/thumbs/sains-t5-bab02.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab02.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab03",
+      "title": "Kelestarian Alam Sekitar",
+      "shortTitle": "Kelestarian Alam Sekitar",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.3 KSSM (44 Langkah Bit-by-Bit) — Jejak & Tapak Tangan Karbon, Cradle-to-Cradle Upcycle & Mikroplastik, 4 Jenis Pencemaran &…",
+      "thumbnail": "assets/thumbs/sains-t5-bab03.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab03.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab04",
+      "title": "Kadar Tindak Balas",
+      "shortTitle": "Kadar Tindak Balas",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.3 KSSM (45 Langkah Bit-by-Bit) — Tindak Balas Cepat vs Perlahan, Kadar Purata & Tangen Seketika, Eksperimen 4.1–4.4 (Suhu,…",
+      "thumbnail": "assets/thumbs/sains-t5-bab04.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab04.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab05",
+      "title": "Sebatian Karbon",
+      "shortTitle": "Sebatian Karbon",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.5 KSSM (46 Langkah Bit-by-Bit) — Sebatian Karbon Organik vs Bukan Organik, Kitar Karbon, Penyulingan Berperingkat Petroleum…",
+      "thumbnail": "assets/thumbs/sains-t5-bab05.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab05.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab06",
+      "title": "Elektrokimia",
+      "shortTitle": "Elektrokimia",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.2 KSSM (45 Langkah Bit-by-Bit) — Sel Elektrolitik, Elektrolit vs Bukan Elektrolit, Eksperimen 6.1–6.4, Siri Elektrokimia,…",
+      "thumbnail": "assets/thumbs/sains-t5-bab06.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab06.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab07",
+      "title": "Cahaya dan Optik",
+      "shortTitle": "Cahaya dan Optik",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.2 KSSM (44 Langkah Bit-by-Bit) — Kanta Cembung (Penumpu) vs Kanta Cekung (Pencapah), Aktiviti 7.1–7.2, Jadual 7.1–7.4 Rajah…",
+      "thumbnail": "assets/thumbs/sains-t5-bab07.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab07.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab08",
+      "title": "Daya dan Tekanan",
+      "shortTitle": "Daya dan Tekanan",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1 KSSM (43 Langkah Bit-by-Bit) — Prinsip Pascal, Sistem Tertutup, Formula Hidraulik F1/A1 = F2/A2, Jek, Brek & Kerusi Gigi,…",
+      "thumbnail": "assets/thumbs/sains-t5-bab08.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab08.jpg"
+    },
+    {
+      "deckId": "sains-t5-bab09",
+      "title": "Teknologi Angkasa Lepas",
+      "shortTitle": "Teknologi Angkasa Lepas",
+      "subject": "Sains",
+      "form": "T5",
+      "bab": 9,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "diagram-pin",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 9.1–9.2 KSSM (45 Langkah Bit-by-Bit) — 5 Jenis Orbit Satelit (LEO, MEO, HEO, GSO, GEO), Apogi & Perigi, Halaju vs Ketinggian,…",
+      "thumbnail": "assets/thumbs/sains-t5-bab09.svg",
+      "bgPhoto": "assets/bg/chapters/sains-t5-bab09.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab01",
+      "title": "Bab 1: Kedaulatan Negara",
+      "shortTitle": "Bab 1: Kedaulatan Negara",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 1.1–1.4 KSSM (37 Langkah Playable) — Takrif 4 Bahasa & 5 Tokoh, 4 Jenis Kedaulatan, 4 Ciri Negara Berdaulat (Peta CC0 Sempadan),…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab02",
+      "title": "Bab 2: Perlembagaan Persekutuan",
+      "shortTitle": "Bab 2: Perlembagaan Persekutuan",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 2.1–2.4 KSSM (38 Langkah Bit-by-Bit) — Asas Undang-Undang Melayu & Charter of Justice, Penggubalan 1877–1957 & Suruhanjaya Reid,…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab03",
+      "title": "Bab 3: Raja Berperlembagaan dan Demokrasi Berparlimen",
+      "shortTitle": "Bab 3: Raja Berperlembagaan",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 3,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 3.1–3.5 KSSM (43 Langkah Bit-by-Bit) — Evolusi Pemerintahan Beraja (Melaka hingga Merdeka), Institusi Majlis Raja-Raja & Mohor…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab03.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab04",
+      "title": "Bab 4: Sistem Persekutuan",
+      "shortTitle": "Bab 4: Sistem Persekutuan",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 4,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 4.1–4.4 — Evolusi Negara Bersekutu, Tiga Senarai Kuasa, Sinergi Pusat–Negeri & Keluhuran Perlembagaan",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab04.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab05",
+      "title": "Bab 5: Pembentukan Malaysia",
+      "shortTitle": "Bab 5: Pembentukan Malaysia",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 5,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 5.1–5.6 KSSM (42 Langkah Bit-by-Bit) — Konsep Gagasan Malaysia, Perkembangan Idea & 4 Rasional, Reaksi Tempatan & Jiran,…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab05.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab06",
+      "title": "Bab 6: Cabaran Selepas Pembentukan Malaysia",
+      "shortTitle": "Bab 6: Cabaran Selepas",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 6,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 6.1–6.5 KSSM — Cabaran Dalaman Borneo & Krisis Sarawak 1966, Pemisahan Singapura 1965, Ancaman Komunis (RASCOM & Hat Yai 1989),…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab06.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab07",
+      "title": "Bab 7: Membina Kesejahteraan Negara",
+      "shortTitle": "Bab 7: Membina Kesejahteraan",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 7,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 7.1–7.6 KSSM (44 Langkah Playable) — Perpaduan & Integrasi Nasional, Dasar Pendidikan Kebangsaan, Bahasa Melayu Bahasa Ilmu &…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab07.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab08",
+      "title": "Bab 8: Membina Kemakmuran Negara",
+      "shortTitle": "Bab 8: Membina Kemakmuran",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 8,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 8.1–8.5 — Pembentukan & Pelaksanaan DEB (1970–1990), Pembentukan & Pelaksanaan DPN (1991–2000) serta Pencapaian Sosial dan…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab08.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab09",
+      "title": "Bab 9: Dasar Luar Malaysia",
+      "shortTitle": "Bab 9: Dasar Luar",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 9,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 9.1–9.8 KSSM (43 Langkah Bit-by-Bit) — Evolusi Hubungan Luar (424 M–Kini), Wisma Putra & 4 Faktor Penggubalan, PBB (Piagam,…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab09.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "sejarah-t5-bab10",
+      "title": "Bab 10: Kecemerlangan Malaysia di Persada Dunia",
+      "shortTitle": "Bab 10: Kecemerlangan Malaysia",
+      "subject": "Sejarah",
+      "form": "T5",
+      "bab": 10,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar",
+        "diagram-pin"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Subtopik 10.1–10.5 — Isu Global Kontemporari, Peranan Ekonomi Antarabangsa (AFTA & RM3.80), Misi Kemanusiaan (Palestin, Syria & Tsunami),…",
+      "thumbnail": "assets/thumbs/sejarah-t5-bab10.svg",
+      "bgPhoto": "assets/bg/world/world-sejarah.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t5-bab01",
+      "title": "Anda Bersih, Anda Sihat (Kata Tunggal & Kata Majmuk)",
+      "shortTitle": "Anda Bersih, Anda Sihat",
+      "subject": "Bahasa Melayu",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Mengaplikasikan bentuk kata tunggal dan kata majmuk dalam pelbagai laras bahasa (berita kesihatan wabak influenza, terapi seni, petua…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-melayu-t5-bab02",
+      "title": "Sukan dan Rekreasi (Kata Terbitan Pelbagai Laras)",
+      "shortTitle": "Sukan dan Rekreasi",
+      "subject": "Bahasa Melayu",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Mengaplikasikan pelbagai kata terbitan (awalan, akhiran, apitan, sisipan) merentas laras sukan gimrama, prosa tradisional permainan Melayu…",
+      "thumbnail": "assets/thumbs/bahasa-melayu-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bm.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t5-bab01",
+      "title": "Unit 1: It's Personal! (Family, Present Tenses & Relative Clauses)",
+      "shortTitle": "Unit 1: It's Personal!",
+      "subject": "Bahasa Inggeris",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master Form 5 Unit 1 themes and grammar from Download B1+: family types (extended, blended, adoptive, single-parent), household chore…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "bahasa-inggeris-t5-bab02",
+      "title": "Unit 2: Life's Great Mysteries (Past Tenses, Used To & Would)",
+      "shortTitle": "Unit 2: Life's Great",
+      "subject": "Bahasa Inggeris",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Master Form 5 Unit 2 mysteries ('Winchester Mystery House'): contrasting Past Simple vs. Past Continuous, past habits and states with…",
+      "thumbnail": "assets/thumbs/bahasa-inggeris-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-bi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t5-bab01",
+      "title": "Pelajaran 1: Surah at-Taubah Ayat 128–129 (Rasulullah SAW Penyebar Rahmat)",
+      "shortTitle": "Surah at-Taubah Ayat 128–129",
+      "subject": "Pendidikan Islam",
+      "form": "T5",
+      "bab": 1,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari penutup Surah at-Taubah ayat 128 hingga 129 tentang sifat kasih sayang agung Rasulullah…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t5-bab01.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    },
+    {
+      "deckId": "pendidikan-islam-t5-bab02",
+      "title": "Pelajaran 2: Surah al-Hasyr Ayat 21–24 (Keagungan Al-Quran & Asmaul Husna)",
+      "shortTitle": "Surah al-Hasyr Ayat 21–24",
+      "subject": "Pendidikan Islam",
+      "form": "T5",
+      "bab": 2,
+      "cardCount": 4,
+      "templates": [
+        "split-trap",
+        "timeline-grammar"
+      ],
+      "hasCustomAudio": true,
+      "priority": false,
+      "summary": "Memahami bacaan, hafazan bertajwid dan inti sari empat ayat penutup Surah al-Hasyr (ayat 21–24) mengenai kehebatan al-Quran yang mampu…",
+      "thumbnail": "assets/thumbs/pendidikan-islam-t5-bab02.svg",
+      "bgPhoto": "assets/bg/world/world-pi.jpg"
+    }
+  ],
+  "worldBg": {
+    "Matematik": "assets/bg/world/world-math.jpg",
+    "Matematik Tambahan": "assets/bg/world/world-math.jpg",
+    "Fizik": "assets/bg/world/world-sains.jpg",
+    "Kimia": "assets/bg/world/world-sains.jpg",
+    "Biologi": "assets/bg/world/world-sains.jpg",
+    "Sains": "assets/bg/world/world-sains.jpg",
+    "Sejarah": "assets/bg/world/world-sejarah.jpg",
+    "Bahasa Melayu": "assets/bg/world/world-bm.jpg",
+    "Bahasa Inggeris": "assets/bg/world/world-bi.jpg",
+    "Pendidikan Islam": "assets/bg/world/world-pi.jpg",
+    "Pendidikan Moral": "assets/bg/world/world-pi.jpg",
+    "Geografi": "assets/bg/world/world-geo.jpg"
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eTutor.my · Cikgu Ajar — Nota Interaktif KSSM &amp; SPM</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231E3A8A'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='28' fill='%23FCD34D'%3EeT%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+
+    <!-- ==================== CATALOG VIEW ==================== -->
+    <section id="catalog-view" class="catalog-view" aria-label="Katalog Bab Cikgu Ajar">
+      <div id="catalog-bg-layer" class="catalog-bg-layer" aria-hidden="true">
+        <img id="catalog-bg-img" class="catalog-bg-img" src="assets/bg/world/world-math.jpg" alt="" />
+        <div class="catalog-bg-scrim"></div>
+      </div>
+
+      <header class="top-bar catalog-top-bar">
+        <div class="brand-group">
+          <span class="brand-pill">eTutor.my</span>
+          <span class="program-pill">Cikgu Ajar</span>
+          <span id="catalog-count-badge" class="topic-badge">Memuatkan bab...</span>
+        </div>
+        <div class="header-actions">
+          <div class="xp-pill" title="XP Terkumpul">
+            <span aria-hidden="true">⚡</span>
+            <span id="catalog-xp-val">0</span>
+            <span>XP</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="catalog-scroll">
+        <div class="catalog-container">
+          <div id="catalog-hero" class="catalog-hero sketch-card">
+            <div class="catalog-hero-lead">
+              <div id="catalog-mascot-host" class="catalog-mascot-host" aria-hidden="true"></div>
+              <div class="catalog-hero-text">
+                <span class="analogy-tag">Papan Putih AI · KSSM T1–T5</span>
+                <h1 class="catalog-title">Belajar Laju Dengan Cikgu AI</h1>
+                <p id="catalog-stats-line" class="catalog-subtitle">139 Bab KSSM · 556 Kad Interaktif · 100% Suara BM</p>
+              </div>
+            </div>
+            <div class="catalog-search-wrap">
+              <input id="catalog-search" class="catalog-search-input" type="search" placeholder="Cari topik, bab, atau kata kunci..." aria-label="Cari topik atau bab" />
+            </div>
+          </div>
+
+          <div class="filter-panel" aria-label="Penapis bab">
+            <div class="filter-row">
+              <span class="filter-label">Tingkatan:</span>
+              <div id="form-filters" class="filter-chips" role="tablist" aria-label="Penapis Tingkatan"></div>
+            </div>
+            <div class="filter-row">
+              <span class="filter-label">Subjek:</span>
+              <div id="subject-filters" class="filter-chips filter-chips-scroll" role="tablist" aria-label="Penapis Subjek"></div>
+            </div>
+          </div>
+
+          <div id="catalog-status" class="catalog-status" aria-live="polite"></div>
+          <div id="catalog-grid" class="catalog-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LESSON VIEW ==================== -->
+    <section id="lesson-view" class="lesson-view is-hidden" aria-label="Mod Pembelajaran Cikgu Ajar">
+      <header id="top-bar" class="top-bar">
+        <div class="brand-group">
+          <button id="btn-back-catalog" class="back-btn" type="button" title="Kembali ke Katalog">
+            <span aria-hidden="true">←</span>
+            <span class="back-btn-label">Katalog</span>
+          </button>
+          <span class="brand-pill">eTutor.my</span>
+          <span class="program-pill">Cikgu Ajar</span>
+          <span id="topic-badge" class="topic-badge">SPM</span>
+        </div>
+
+        <nav id="stage-pills" class="stage-pills" aria-label="Kad Cikgu Ajar"></nav>
+
+        <div class="header-actions">
+          <span id="sr-badge" class="sr-badge is-hidden" title="Kad silap dijadual semula">↻ Ulang</span>
+          <div class="xp-pill" title="XP Terkumpul">
+            <span aria-hidden="true">⚡</span>
+            <span id="xp-val">0</span>
+            <span>XP</span>
+          </div>
+          <button id="btn-speed" class="icon-btn" type="button" title="Kelajuan Suara">1×</button>
+          <button id="btn-sound" class="icon-btn" type="button" title="Suara &amp; SFX" aria-pressed="true">
+            <span class="sound-icon" aria-hidden="true">🔊</span>
+          </button>
+          <button id="btn-replay" class="icon-btn" type="button" title="Ulang Kad">↻</button>
+        </div>
+      </header>
+
+      <main id="viewport" class="viewport" aria-label="Papan putih interaktif Cikgu Ajar">
+        <div id="stage-bg-layer" class="stage-bg-layer" aria-hidden="true">
+          <img id="stage-bg-img" class="stage-bg-img" src="assets/bg/world/world-math.jpg" alt="" />
+          <div class="stage-bg-scrim"></div>
+        </div>
+
+        <aside class="wb-toolbar" aria-label="Kawalan papan putih">
+          <div class="wb-live-dot" title="Cikgu Ajar Aktif">
+            <span class="dot-pulse"></span>
+          </div>
+          <button id="btn-zoom-in" class="wb-tool-btn" type="button" title="Zum Masuk (+)">+</button>
+          <button id="btn-zoom-out" class="wb-tool-btn" type="button" title="Zum Keluar (−)">−</button>
+          <button id="btn-zoom-reset" class="wb-tool-btn" type="button" title="Set Semula (⟲)">⟲</button>
+        </aside>
+
+        <div id="camera-badge" class="camera-badge">
+          <span class="cam-dot"></span>
+          <span id="camera-label">100% · Papan Utama</span>
+        </div>
+
+        <div id="board-stage" class="board-stage">
+          <div id="board-heading-wrap" class="board-heading-wrap">
+            <h1 id="board-heading" class="board-heading">Memuatkan Kad...</h1>
+            <svg class="heading-underline-svg" viewBox="0 0 360 22" preserveAspectRatio="none" aria-hidden="true">
+              <path id="heading-underline-path" d="M 6 14 Q 95 4, 185 13 T 352 10" fill="none" stroke="#4F46E5" stroke-width="6" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <div class="stage-grid">
+            <section id="board-content" class="board-content" aria-live="polite">
+              <div id="top-card" class="sketch-card equation-card"></div>
+              <div class="visual-pair">
+                <div id="main-visual-card" class="sketch-card graph-card"></div>
+                <div id="analogy-card" class="sketch-card analogy-card is-hidden"></div>
+              </div>
+            </section>
+
+            <aside id="mascot-layer" class="mascot-layer" aria-label="Maskot Cikgu AI">
+              <div id="mascot-host" class="mascot-host"></div>
+            </aside>
+          </div>
+        </div>
+
+        <footer id="bottom-dock" class="bottom-dock">
+          <div class="subtitle-row">
+            <div id="subtitle-pill" class="subtitle-pill" aria-live="polite">
+              <div id="subtitle-words" class="subtitle-words"></div>
+            </div>
+            <button id="btn-skip" class="skip-btn is-hidden" type="button">Langkau ⏭</button>
+          </div>
+          <div id="controls-area" class="controls-area"></div>
+        </footer>
+      </main>
+    </section>
+
+  </div>
+
+  <script src="audio-cdn-config.js"></script>
+  <script src="mascot-2d.js"></script>
+  <script src="board-engine.js"></script>
+  <script src="template-renderer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

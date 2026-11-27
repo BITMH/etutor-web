@@ -1,0 +1,396 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["kimia-t4-bab06"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t4-bab06/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Apakah pemerhatian pada kertas litmus merah K dan L berserta inferens yang tepat?",
+      "duration": 5.877,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "Lazim",
+          "start": 0.64,
+          "end": 0.92
+        },
+        {
+          "word": "Kimia",
+          "start": 0.92,
+          "end": 1.36
+        },
+        {
+          "word": "apakah",
+          "start": 1.36,
+          "end": 2.2
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.2,
+          "end": 2.88
+        },
+        {
+          "word": "pada",
+          "start": 2.88,
+          "end": 3.1
+        },
+        {
+          "word": "kereta",
+          "start": 3.1,
+          "end": 3.48
+        },
+        {
+          "word": "Selikmus",
+          "start": 3.48,
+          "end": 3.9
+        },
+        {
+          "word": "Merah",
+          "start": 3.9,
+          "end": 4.28
+        },
+        {
+          "word": "K",
+          "start": 4.28,
+          "end": 4.42
+        },
+        {
+          "word": "dan",
+          "start": 4.42,
+          "end": 4.58
+        },
+        {
+          "word": "L",
+          "start": 4.58,
+          "end": 4.8
+        },
+        {
+          "word": "bersetai",
+          "start": 4.8,
+          "end": 5.2
+        },
+        {
+          "word": "influence",
+          "start": 5.2,
+          "end": 5.44
+        },
+        {
+          "word": "yang",
+          "start": 5.44,
+          "end": 5.6
+        },
+        {
+          "word": "tepat?",
+          "start": 5.6,
+          "end": 5.84
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t4-bab06/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Penerangan manakah yang PALING tepat menjelaskan perbezaan nilai p H kedua-dua larutan alkali tersebut?",
+      "duration": 6.304,
+      "words": [
+        {
+          "word": "Ihat",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "langkah",
+          "start": 0.36,
+          "end": 0.66
+        },
+        {
+          "word": "di",
+          "start": 0.66,
+          "end": 0.76
+        },
+        {
+          "word": "Papan,",
+          "start": 0.76,
+          "end": 1.14
+        },
+        {
+          "word": "penerangan",
+          "start": 1.66,
+          "end": 2.1
+        },
+        {
+          "word": "manakah",
+          "start": 2.1,
+          "end": 2.48
+        },
+        {
+          "word": "yang",
+          "start": 2.48,
+          "end": 2.68
+        },
+        {
+          "word": "paling",
+          "start": 2.68,
+          "end": 3.0
+        },
+        {
+          "word": "tepat",
+          "start": 3.0,
+          "end": 3.42
+        },
+        {
+          "word": "menjelaskan",
+          "start": 3.42,
+          "end": 3.96
+        },
+        {
+          "word": "perbezaan",
+          "start": 3.96,
+          "end": 4.42
+        },
+        {
+          "word": "ilai",
+          "start": 4.42,
+          "end": 4.62
+        },
+        {
+          "word": "PH",
+          "start": 4.62,
+          "end": 4.82
+        },
+        {
+          "word": "kedua",
+          "start": 4.82,
+          "end": 5.16
+        },
+        {
+          "word": "-dua",
+          "start": 5.16,
+          "end": 5.28
+        },
+        {
+          "word": "larutan",
+          "start": 5.28,
+          "end": 5.56
+        },
+        {
+          "word": "akari",
+          "start": 5.56,
+          "end": 5.82
+        },
+        {
+          "word": "tersebut.",
+          "start": 5.82,
+          "end": 6.16
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t4-bab06/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berapakah isi padu air suling yang PERLU DITAMBAH dan mengapa natrium hidroksida tidak sesuai digunakan?",
+      "duration": 7.829,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "raja",
+          "start": 0.68,
+          "end": 0.96
+        },
+        {
+          "word": "konsek",
+          "start": 0.96,
+          "end": 1.36
+        },
+        {
+          "word": "depapan",
+          "start": 1.36,
+          "end": 1.8
+        },
+        {
+          "word": "berapakah",
+          "start": 1.8,
+          "end": 2.86
+        },
+        {
+          "word": "isi",
+          "start": 2.86,
+          "end": 3.22
+        },
+        {
+          "word": "padu",
+          "start": 3.22,
+          "end": 3.54
+        },
+        {
+          "word": "air",
+          "start": 3.54,
+          "end": 3.68
+        },
+        {
+          "word": "suling",
+          "start": 3.68,
+          "end": 4.06
+        },
+        {
+          "word": "yang",
+          "start": 4.06,
+          "end": 4.22
+        },
+        {
+          "word": "perlu",
+          "start": 4.22,
+          "end": 4.52
+        },
+        {
+          "word": "ditambah",
+          "start": 4.52,
+          "end": 5.28
+        },
+        {
+          "word": "dan",
+          "start": 5.28,
+          "end": 5.44
+        },
+        {
+          "word": "mengapa",
+          "start": 5.44,
+          "end": 5.74
+        },
+        {
+          "word": "nitrium",
+          "start": 5.74,
+          "end": 6.16
+        },
+        {
+          "word": "hidup",
+          "start": 6.16,
+          "end": 6.5
+        },
+        {
+          "word": "sida",
+          "start": 6.5,
+          "end": 6.72
+        },
+        {
+          "word": "tidak",
+          "start": 6.72,
+          "end": 6.88
+        },
+        {
+          "word": "sesuai",
+          "start": 6.88,
+          "end": 7.24
+        },
+        {
+          "word": "digunakan?",
+          "start": 7.24,
+          "end": 7.6
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t4-bab06/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berapakah isi padu purata H dua S O empat yang digunakan DAN kemolaran larutan natrium hidroksida tersebut?",
+      "duration": 9.493,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "urutan",
+          "start": 0.68,
+          "end": 1.1
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.1,
+          "end": 1.64
+        },
+        {
+          "word": "di",
+          "start": 1.64,
+          "end": 1.76
+        },
+        {
+          "word": "Papan,",
+          "start": 1.76,
+          "end": 2.16
+        },
+        {
+          "word": "berapakah",
+          "start": 2.74,
+          "end": 3.16
+        },
+        {
+          "word": "isi",
+          "start": 3.16,
+          "end": 3.44
+        },
+        {
+          "word": "padu",
+          "start": 3.44,
+          "end": 3.68
+        },
+        {
+          "word": "purata",
+          "start": 3.68,
+          "end": 3.98
+        },
+        {
+          "word": "H2SO4",
+          "start": 3.98,
+          "end": 5.24
+        },
+        {
+          "word": "yang",
+          "start": 5.24,
+          "end": 5.46
+        },
+        {
+          "word": "digunakan",
+          "start": 5.46,
+          "end": 5.86
+        },
+        {
+          "word": "DAN,",
+          "start": 5.86,
+          "end": 6.46
+        },
+        {
+          "word": "kemolaran",
+          "start": 6.64,
+          "end": 7.48
+        },
+        {
+          "word": "larutan",
+          "start": 7.48,
+          "end": 7.9
+        },
+        {
+          "word": "netriam",
+          "start": 7.9,
+          "end": 8.56
+        },
+        {
+          "word": "hidroksida",
+          "start": 8.56,
+          "end": 9.04
+        },
+        {
+          "word": "tersebut.",
+          "start": 9.04,
+          "end": 9.4
+        }
+      ]
+    }
+  }
+};

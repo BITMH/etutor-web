@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t5-bab10",
+  "title": "Bab 10: Kecemerlangan Malaysia di Persada Dunia",
+  "shortTitle": "Bab 10: Kecemerlangan Malaysia",
+  "subject": "Sejarah",
+  "form": "T5",
+  "bab": 10,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bab 10: Kecemerlangan Malaysia",
+    "desc": "Bezakan dua keputusan ICJ untuk Kertas 1: Sipadan & Ligitan -> Malaysia (2002), Batu Putih -> Singapura (2008); manakala Spratly dituntut melalui…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Apakah rasional utama Malaysia memperkenalkan pensijilan MSPO (2019), menyertai RSPO dan mengamalkan GAP untuk menangani kempen…",
+        "spokenText": "Perangkap lazim Sejarah! Apakah rasional utama Malaysia memperkenalkan pensijilan MSPO (2019), menyertai RSPO dan mengamalkan GAP untuk menangani kempen"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah rasional utama Malaysia memperkenalkan pensijilan MSPO (2019), menyertai RSPO dan mengamalkan GAP untuk menangani kempen antiminyak sawit?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menghentikan kesemua eksport minyak sawit ke luar negara supaya hanya digunakan bagi kegunaan domestik",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya saing pasaran…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menghentikan kesemua eksport minyak sawit ke luar negara supaya hanya digunakan bagi kegunaan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya…. Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan…",
+              "spokenText": "Fakta sebenar: Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya . Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya saing pasaran antarabangsa…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan pencemaran alam secara berfakta, meyakinkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menggantikan seluruh ladang kelapa sawit Malaysia dengan penanaman kacang soya untuk pasaran…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya…. Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan…",
+              "spokenText": "Fakta sebenar: Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya . Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya saing pasaran antarabangsa…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan pencemaran alam secara berfakta, meyakinkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya saing pasaran antarabangsa…",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan pencemaran alam secara berfakta, meyakinkan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan pencemaran alam secara berfakta,…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Penyertaan dalam RSPO, pensijilan MSPO (sejak 2019) dan amalan GAP menepis dakwaan pencemaran alam secara berfakta,",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Membuktikan pengeluaran sawit Malaysia mematuhi piawaian alam sekitar mampan di samping mengekalkan hubungan diplomatik dan daya saing pasaran antarabangsa…",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Kempen Antiminyak Sawit: ASA,",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Mengapakah Malaysia sering dijadikan lokasi transit oleh sindiket pemerdagangan orang antarabangsa, dan agensi PBB…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Mengapakah Malaysia sering dijadikan lokasi transit oleh sindiket pemerdagangan orang antarabangsa, dan agensi PBB"
+      },
+      "board": {
+        "promptPill": "Mengapakah Malaysia sering dijadikan lokasi transit oleh sindiket pemerdagangan…",
+        "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+            "detail": "Kebijaksanaan diplomasi Malaysia terpancar melalui komitmen memerangi dadah peringkat global dan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+            "detail": "Gerakan antiminyak sawit oleh pengeluar soya Barat dan NGO Eropah ditangani Malaysia secara diplomatik…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit…",
+            "detail": "Malaysia bertindak tegas mengekang jenayah pemerdagangan orang serta berjaya menurunkan jangkitan AIDS…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kedudukan Malaysia yang strategik di Asia Tenggara; agensi Pertubuhan Kesihatan Sedunia…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Ketiadaan undang-undang jenayah di negara ini; agensi UNESCO",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Ketiadaan undang-undang jenayah di… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Ketiadaan undang-undang jenayah di tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit pemerdagangan orang, manakala WHO…",
+              "spokenText": "M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit pemerdagangan orang, manakala WHO",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+                    "detail": "Kebijaksanaan diplomasi Malaysia terpancar melalui komitmen memerangi dadah peringkat global dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+                    "detail": "Gerakan antiminyak sawit oleh pengeluar soya Barat dan NGO Eropah ditangani Malaysia secara diplomatik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit…",
+                    "detail": "Malaysia bertindak tegas mengekang jenayah pemerdagangan orang serta berjaya menurunkan jangkitan AIDS…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kelonggaran syarat imigresen terhadap semua pelawat; agensi ILO",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kelonggaran syarat imigresen terhadap… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kelonggaran syarat imigresen terhadap tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit pemerdagangan orang, manakala WHO…",
+              "spokenText": "M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit pemerdagangan orang, manakala WHO",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+                    "detail": "Kebijaksanaan diplomasi Malaysia terpancar melalui komitmen memerangi dadah peringkat global dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+                    "detail": "Gerakan antiminyak sawit oleh pengeluar soya Barat dan NGO Eropah ditangani Malaysia secara diplomatik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit…",
+                    "detail": "Malaysia bertindak tegas mengekang jenayah pemerdagangan orang serta berjaya menurunkan jangkitan AIDS…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+              "detail": "Kebijaksanaan diplomasi Malaysia terpancar melalui komitmen memerangi dadah peringkat global dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+              "detail": "Gerakan antiminyak sawit oleh pengeluar soya Barat dan NGO Eropah ditangani Malaysia secara diplomatik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit…",
+              "detail": "Malaysia bertindak tegas mengekang jenayah pemerdagangan orang serta berjaya menurunkan jangkitan AIDS…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Kempen Antiminyak Sawit: ASA,",
+          "desc": "M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit pemerdagangan orang,…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: M/s 116 & 136: Kedudukan strategik di Asia Tenggara (di samping kemakmuran ekonomi) menarik sindiket transit",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "10.1 Penyalahgunaan Dadah & Pertindihan Sempadan",
+              "detail": "Kebijaksanaan diplomasi Malaysia terpancar melalui komitmen memerangi dadah peringkat global dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kempen Antiminyak Sawit: ASA, NGO Eropah & MSPO",
+              "detail": "Gerakan antiminyak sawit oleh pengeluar soya Barat dan NGO Eropah ditangani Malaysia secara diplomatik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit…",
+              "detail": "Malaysia bertindak tegas mengekang jenayah pemerdagangan orang serta berjaya menurunkan jangkitan AIDS…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pemerdagangan Orang & Penyakit",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Mengapakah tindakan Malaysia menambat kadar pertukaran pada RM3.80 bagi USD1 serta menolak pelan IMF berjaya memulihkan…",
+        "spokenText": "Perhatikan rajah konsep di papan! Mengapakah tindakan Malaysia menambat kadar pertukaran pada 3 perpuluhan lapan kosong ringgit Malaysia bagi USD1 serta menolak pelan IMF berjaya memulihkan"
+      },
+      "board": {
+        "promptPill": "Mengapakah tindakan Malaysia menambat kadar pertukaran pada RM3.80 bagi USD1 serta…",
+        "title": "Pemerdagangan Orang (ATIPSOM/MAPO) & Penyakit AIDS (WHO 2018)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "AFTA (1992)",
+            "detail": "Mengurangkan tarif dan cukai barangan sesama negara ASEAN",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "APEC & PBB",
+            "detail": "Forum Malaysia menuntut layanan saksama daripada negara maju",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "IMT-GT",
+            "detail": "Segi Tiga Pertumbuhan Indonesia, Malaysia dan Thailand",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menghapuskan ruang spekulasi mata wang, menstabilkan nilai ringgit untuk perdagangan dan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menghentikan kesemua urusan perdagangan import dan eksport Malaysia bersama negara Asia…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menghentikan kesemua urusan perdagangan… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menghentikan kesemua urusan perdagangan tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan membolehkan Malaysia…",
+              "spokenText": "Tambatan tetap 3 perpuluhan lapan kosong ringgit Malaysia sama dengan USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan membolehkan Malaysia",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pemerdagangan Orang & Penyakit",
+                "desc": "Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menyerahkan penetapan kadar ringgit setiap hari kepada spekulator pasaran mata wang asing",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menyerahkan penetapan kadar ringgit… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menyerahkan penetapan kadar ringgit tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan membolehkan Malaysia…",
+              "spokenText": "Tambatan tetap 3 perpuluhan lapan kosong ringgit Malaysia sama dengan USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan membolehkan Malaysia",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pemerdagangan Orang & Penyakit",
+                "desc": "Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pemerdagangan Orang & Penyakit",
+          "desc": "Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada pengeksport dan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Tambatan tetap RM3.80 = USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Tambatan tetap 3 perpuluhan lapan kosong ringgit Malaysia sama dengan USD1 menutup peluang spekulator memanipulasi kadar tukaran, memberi kepastian kepada"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Bab 10: Kecemerlangan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan Inti Pati dan Rumusan Bab 10 (m/s 112 & 132), apakah iktibar terpenting daripada kecemerlangan Malaysia di…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan Inti Pati dan Rumusan Bab 10 ( meter per saat 112 & 132), apakah iktibar terpenting daripada kecemerlangan Malaysia di"
+      },
+      "board": {
+        "promptPill": "Berdasarkan Inti Pati dan Rumusan Bab 10 (m/s 112 & 132), apakah iktibar terpenting…",
+        "title": "Rumusan: Bab 10: Kecemerlangan Malaysia",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Antartika sebagai Warisan Manusia Sejagat &…",
+            "detail": "Ingat dua tokoh dan dua badan Antartika dalam buku teks: Dr. Haji Omar Abdul Rahman (1985), Dr. Azizan Abu…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "10.5 Komuniti ASEAN (2015), Keselamatan…",
+            "detail": "Angka wajib diingat: 2015 (Deklarasi KL Komuniti ASEAN ke-27), 50,000 tan (Simpanan Beras Kecemasan ASEAN),…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "SEANWFZ (1995), Reformasi Veto PBB & Hak Asasi…",
+            "detail": "Hafal formula reformasi veto Malaysia: 2 negara kuasa veto + 3 anggota bukan veto; serta tiga kata kunci…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menghargai kebijaksanaan pengurusan isu global secara diplomasi tanpa kekerasan, memupuk…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Mengutamakan peperangan ketenteraan berbanding perundingan di Mahkamah Antarabangsa…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Mengutamakan peperangan ketenteraan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Mengutamakan peperangan ketenteraan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk kesukarelawanan sejagat dan…",
+              "spokenText": "Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk kesukarelawanan sejagat dan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Antartika sebagai Warisan Manusia Sejagat &…",
+                    "detail": "Ingat dua tokoh dan dua badan Antartika dalam buku teks: Dr. Haji Omar Abdul Rahman (1985), Dr. Azizan Abu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "10.5 Komuniti ASEAN (2015), Keselamatan…",
+                    "detail": "Angka wajib diingat: 2015 (Deklarasi KL Komuniti ASEAN ke-27), 50,000 tan (Simpanan Beras Kecemasan ASEAN),…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "SEANWFZ (1995), Reformasi Veto PBB & Hak Asasi…",
+                    "detail": "Hafal formula reformasi veto Malaysia: 2 negara kuasa veto + 3 anggota bukan veto; serta tiga kata kunci…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menghentikan penglibatan rakyat dalam pertubuhan sukarela luar negara kerana merugikan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menghentikan penglibatan rakyat dalam… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menghentikan penglibatan rakyat dalam tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk kesukarelawanan sejagat dan…",
+              "spokenText": "Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk kesukarelawanan sejagat dan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Antartika sebagai Warisan Manusia Sejagat &…",
+                    "detail": "Ingat dua tokoh dan dua badan Antartika dalam buku teks: Dr. Haji Omar Abdul Rahman (1985), Dr. Azizan Abu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "10.5 Komuniti ASEAN (2015), Keselamatan…",
+                    "detail": "Angka wajib diingat: 2015 (Deklarasi KL Komuniti ASEAN ke-27), 50,000 tan (Simpanan Beras Kecemasan ASEAN),…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "SEANWFZ (1995), Reformasi Veto PBB & Hak Asasi…",
+                    "detail": "Hafal formula reformasi veto Malaysia: 2 negara kuasa veto + 3 anggota bukan veto; serta tiga kata kunci…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Antartika sebagai Warisan Manusia Sejagat &…",
+              "detail": "Ingat dua tokoh dan dua badan Antartika dalam buku teks: Dr. Haji Omar Abdul Rahman (1985), Dr. Azizan Abu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "10.5 Komuniti ASEAN (2015), Keselamatan…",
+              "detail": "Angka wajib diingat: 2015 (Deklarasi KL Komuniti ASEAN ke-27), 50,000 tan (Simpanan Beras Kecemasan ASEAN),…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "SEANWFZ (1995), Reformasi Veto PBB & Hak Asasi…",
+              "detail": "Hafal formula reformasi veto Malaysia: 2 negara kuasa veto + 3 anggota bukan veto; serta tiga kata kunci…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bab 10: Kecemerlangan",
+          "desc": "Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk kesukarelawanan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Nilai sivik Bab 10 menyeru rakyat menghargai kebijaksanaan diplomasi berhemah, peka terhadap isu serantau, memupuk",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Antartika sebagai Warisan Manusia Sejagat &…",
+              "detail": "Ingat dua tokoh dan dua badan Antartika dalam buku teks: Dr. Haji Omar Abdul Rahman (1985), Dr. Azizan Abu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "10.5 Komuniti ASEAN (2015), Keselamatan…",
+              "detail": "Angka wajib diingat: 2015 (Deklarasi KL Komuniti ASEAN ke-27), 50,000 tan (Simpanan Beras Kecemasan ASEAN),…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "SEANWFZ (1995), Reformasi Veto PBB & Hak Asasi…",
+              "detail": "Hafal formula reformasi veto Malaysia: 2 negara kuasa veto + 3 anggota bukan veto; serta tiga kata kunci…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

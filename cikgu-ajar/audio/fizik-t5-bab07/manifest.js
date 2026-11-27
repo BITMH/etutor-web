@@ -1,0 +1,516 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["fizik-t5-bab07"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/fizik-t5-bab07/c1_intro.mp3",
+      "text": "Perangkap lazim Fizik! Sebuah jasad hitam pada suhu 4 500 K kelihatan berwarna kuning jingga. Apabila jasad itu dipanaskan sehingga mencapai suhu 9 000",
+      "duration": 3.285,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "lasing",
+          "start": 0.42,
+          "end": 0.74
+        },
+        {
+          "word": "fizik",
+          "start": 0.74,
+          "end": 1.16
+        },
+        {
+          "word": "sebuah",
+          "start": 1.16,
+          "end": 1.62
+        },
+        {
+          "word": "jasat",
+          "start": 1.62,
+          "end": 1.94
+        },
+        {
+          "word": "hitam",
+          "start": 1.94,
+          "end": 2.26
+        },
+        {
+          "word": "pada",
+          "start": 2.26,
+          "end": 2.4
+        },
+        {
+          "word": "suhu",
+          "start": 2.4,
+          "end": 2.72
+        },
+        {
+          "word": "Buat",
+          "start": 2.72,
+          "end": 2.94
+        },
+        {
+          "word": "Fire.",
+          "start": 2.94,
+          "end": 3.16
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/fizik-t5-bab07/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Satu sumber cahaya memancarkan foton dengan panjang gelombang lambda sama dengan 300 nm. Berapakah tenaga bagi satu foton tersebut?",
+      "duration": 8.181,
+      "words": [
+        {
+          "word": "Dihat",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "langkah",
+          "start": 0.38,
+          "end": 0.66
+        },
+        {
+          "word": "di",
+          "start": 0.66,
+          "end": 0.78
+        },
+        {
+          "word": "papan,",
+          "start": 0.78,
+          "end": 1.08
+        },
+        {
+          "word": "satu",
+          "start": 1.54,
+          "end": 1.82
+        },
+        {
+          "word": "sumber",
+          "start": 1.82,
+          "end": 2.16
+        },
+        {
+          "word": "cahaya",
+          "start": 2.16,
+          "end": 2.4
+        },
+        {
+          "word": "memancangkan",
+          "start": 2.4,
+          "end": 2.88
+        },
+        {
+          "word": "foton",
+          "start": 2.88,
+          "end": 3.24
+        },
+        {
+          "word": "dengan",
+          "start": 3.24,
+          "end": 3.4
+        },
+        {
+          "word": "panjang",
+          "start": 3.4,
+          "end": 3.76
+        },
+        {
+          "word": "gelombang",
+          "start": 3.76,
+          "end": 4.16
+        },
+        {
+          "word": "lambur",
+          "start": 4.16,
+          "end": 4.5
+        },
+        {
+          "word": "sama",
+          "start": 4.5,
+          "end": 4.64
+        },
+        {
+          "word": "dengan",
+          "start": 4.64,
+          "end": 4.92
+        },
+        {
+          "word": "3D",
+          "start": 4.92,
+          "end": 5.22
+        },
+        {
+          "word": "TENM.",
+          "start": 5.22,
+          "end": 5.88
+        },
+        {
+          "word": "Berapakah",
+          "start": 6.06,
+          "end": 6.66
+        },
+        {
+          "word": "tenaga",
+          "start": 6.66,
+          "end": 6.98
+        },
+        {
+          "word": "bagi",
+          "start": 6.98,
+          "end": 7.24
+        },
+        {
+          "word": "satu",
+          "start": 7.24,
+          "end": 7.4
+        },
+        {
+          "word": "foton",
+          "start": 7.4,
+          "end": 7.8
+        },
+        {
+          "word": "tersebut?",
+          "start": 7.8,
+          "end": 8.08
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/fizik-t5-bab07/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Sebutir pasir (m sama dengan 5 darab sepuluh kuasa negatif satu kosong kg) jatuh dengan halaju kosong perpuluhan empat meter per saat melalui lubang kecil berdiameter 1 mm. Adakah pasir itu",
+      "duration": 13.845,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "raja",
+          "start": 0.58,
+          "end": 0.88
+        },
+        {
+          "word": "konsep",
+          "start": 0.88,
+          "end": 1.32
+        },
+        {
+          "word": "di",
+          "start": 1.32,
+          "end": 1.4
+        },
+        {
+          "word": "papan.",
+          "start": 1.4,
+          "end": 2.04
+        },
+        {
+          "word": "Sebutia",
+          "start": 2.04,
+          "end": 2.52
+        },
+        {
+          "word": "pasir,",
+          "start": 2.52,
+          "end": 2.94
+        },
+        {
+          "word": "M",
+          "start": 3.32,
+          "end": 3.64
+        },
+        {
+          "word": "sama",
+          "start": 3.64,
+          "end": 3.86
+        },
+        {
+          "word": "dengan",
+          "start": 3.86,
+          "end": 4.12
+        },
+        {
+          "word": "NIFI",
+          "start": 4.12,
+          "end": 4.54
+        },
+        {
+          "word": "daripada",
+          "start": 4.54,
+          "end": 4.8
+        },
+        {
+          "word": "10",
+          "start": 4.8,
+          "end": 5.02
+        },
+        {
+          "word": "kawasan",
+          "start": 5.02,
+          "end": 5.34
+        },
+        {
+          "word": "negatif",
+          "start": 5.34,
+          "end": 5.7
+        },
+        {
+          "word": "1",
+          "start": 5.7,
+          "end": 5.96
+        },
+        {
+          "word": ".0",
+          "start": 5.96,
+          "end": 6.28
+        },
+        {
+          "word": "kg.",
+          "start": 6.28,
+          "end": 6.52
+        },
+        {
+          "word": "Jatuh",
+          "start": 6.92,
+          "end": 7.56
+        },
+        {
+          "word": "dengan",
+          "start": 7.56,
+          "end": 7.76
+        },
+        {
+          "word": "halaju",
+          "start": 7.76,
+          "end": 8.18
+        },
+        {
+          "word": "kosong",
+          "start": 8.18,
+          "end": 8.5
+        },
+        {
+          "word": "perpuluhan",
+          "start": 8.5,
+          "end": 8.88
+        },
+        {
+          "word": "4",
+          "start": 8.88,
+          "end": 9.12
+        },
+        {
+          "word": "meter",
+          "start": 9.12,
+          "end": 9.4
+        },
+        {
+          "word": "per",
+          "start": 9.4,
+          "end": 9.58
+        },
+        {
+          "word": "saat,",
+          "start": 9.58,
+          "end": 9.82
+        },
+        {
+          "word": "melalui",
+          "start": 10.2,
+          "end": 10.62
+        },
+        {
+          "word": "lubang",
+          "start": 10.62,
+          "end": 10.86
+        },
+        {
+          "word": "kecil,",
+          "start": 10.86,
+          "end": 11.26
+        },
+        {
+          "word": "berdain",
+          "start": 11.72,
+          "end": 12.1
+        },
+        {
+          "word": "meter",
+          "start": 12.1,
+          "end": 12.46
+        },
+        {
+          "word": "pasir",
+          "start": 12.46,
+          "end": 13.36
+        },
+        {
+          "word": "itu.",
+          "start": 13.36,
+          "end": 13.58
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/fizik-t5-bab07/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apabila sebuah fotodiod disinari cahaya merah ( lambda satu sama dengan 700 nm) dan kemudian cahaya biru ( lambda dua sama dengan 400 nm), tenaga kinetik",
+      "duration": 9.589,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "urutan",
+          "start": 0.48,
+          "end": 0.86
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.86,
+          "end": 1.32
+        },
+        {
+          "word": "di",
+          "start": 1.32,
+          "end": 1.44
+        },
+        {
+          "word": "papan.",
+          "start": 1.44,
+          "end": 1.78
+        },
+        {
+          "word": "Apabila",
+          "start": 2.02,
+          "end": 2.64
+        },
+        {
+          "word": "sebuah",
+          "start": 2.64,
+          "end": 2.92
+        },
+        {
+          "word": "foto",
+          "start": 2.92,
+          "end": 3.08
+        },
+        {
+          "word": "dia",
+          "start": 3.08,
+          "end": 3.28
+        },
+        {
+          "word": "di",
+          "start": 3.28,
+          "end": 3.4
+        },
+        {
+          "word": "sinari",
+          "start": 3.4,
+          "end": 3.78
+        },
+        {
+          "word": "cahaya",
+          "start": 3.78,
+          "end": 4.1
+        },
+        {
+          "word": "merah,",
+          "start": 4.1,
+          "end": 4.58
+        },
+        {
+          "word": "alam",
+          "start": 4.58,
+          "end": 4.9
+        },
+        {
+          "word": "satu",
+          "start": 4.9,
+          "end": 5.16
+        },
+        {
+          "word": "sama",
+          "start": 5.16,
+          "end": 5.38
+        },
+        {
+          "word": "dengan",
+          "start": 5.38,
+          "end": 5.6
+        },
+        {
+          "word": "cerapa",
+          "start": 5.6,
+          "end": 5.9
+        },
+        {
+          "word": "damat",
+          "start": 5.9,
+          "end": 6.28
+        },
+        {
+          "word": "dan",
+          "start": 6.28,
+          "end": 6.48
+        },
+        {
+          "word": "kemudian",
+          "start": 6.48,
+          "end": 6.84
+        },
+        {
+          "word": "cahaya",
+          "start": 6.84,
+          "end": 7.08
+        },
+        {
+          "word": "biru",
+          "start": 7.08,
+          "end": 7.34
+        },
+        {
+          "word": "kita",
+          "start": 7.34,
+          "end": 7.46
+        },
+        {
+          "word": "mendo",
+          "start": 7.46,
+          "end": 7.82
+        },
+        {
+          "word": "sama",
+          "start": 7.82,
+          "end": 8.08
+        },
+        {
+          "word": "dengan",
+          "start": 8.08,
+          "end": 8.46
+        },
+        {
+          "word": "tenaga",
+          "start": 8.46,
+          "end": 9.1
+        },
+        {
+          "word": "kinetik.",
+          "start": 9.1,
+          "end": 9.56
+        }
+      ]
+    }
+  }
+};

@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-melayu-t3-bab02",
+  "title": "Bersih Selalu, Sihat Sentiasa (Ayat Aktif & Pasif)",
+  "shortTitle": "Bersih Selalu, Sihat Sentiasa",
+  "subject": "Bahasa Melayu",
+  "form": "T3",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Bersih Selalu, Sihat Sentiasa",
+    "desc": "Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Hukum Ayat Aktif kepada Ayat Pasif Diri Pertama &…?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Hukum Ayat Aktif kepada Ayat Pasif Diri Pertama & ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Hukum Ayat Aktif kepada Ayat Pasif Diri Pertama &…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menggunakan awalan 'di-' pada kata ganti nama diri pertama/kedua: 'Risalah itu dibaca oleh saya.'",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menggunakan awalan 'di-' pada kata ganti nama diri pertama/kedua: 'Risalah itu dibaca oleh…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).. Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM…",
+              "spokenText": "Fakta sebenar: Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).. Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku sama dengan saya/kami/kita/awak/anda, HARAM",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Memisahkan kata ganti nama diri pertama/kedua daripada kata kerja dengan 'sudah/telah/akan':…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).. Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM…",
+              "spokenText": "Fakta sebenar: Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).. Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku sama dengan saya/kami/kita/awak/anda, HARAM",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku = saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Uji setiap ayat pasif: bulatkan pelaku! Jika pelaku sama dengan saya/kami/kita/awak/anda, HARAM guna 'di-... oleh'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tulis 'Risalah itu saya baca.' (tiada 'di-' dan tiada 'oleh' bagi diri 1 & 2).",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 2.1 Hukum Ayat Aktif",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Tukarkan ayat aktif berikut kepada ayat pasif yang betul: 'Kami telah membersihkan longkang di belakang kantin pagi…",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Tukarkan ayat aktif berikut kepada ayat pasif yang betul: 'Kami telah membersihkan longkang di belakang kantin pagi"
+      },
+      "board": {
+        "promptPill": "Tukarkan ayat aktif berikut kepada ayat pasif yang betul: 'Kami telah membersihkan…",
+        "title": "2.1 Hukum Ayat Aktif kepada Ayat Pasif Diri Pertama & Kedua (SP 5.1)",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Rumus Diri 1 & 2",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Contoh Aktif",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "PANTANG LARANG BESAR",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Pastikan kata bantu ('harus') diletakkan SEBELUM 'anda', dan kata kerja 'menjaga' digugurkan awalan menjadi 'jaga'!"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Longkang di belakang kantin telah dibersihkan oleh kami pagi tadi.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Longkang di belakang kantin telah… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Longkang di belakang kantin telah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'.",
+              "spokenText": "'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Longkang di belakang kantin kami telah bersihkan pagi tadi.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Longkang di belakang kantin kami telah… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Longkang di belakang kantin kami telah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'.",
+              "spokenText": "'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Longkang di belakang kantin telah kami bersihkan pagi tadi.",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Hukum Ayat Aktif",
+          "desc": "'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'Kami' ialah diri pertama, maka kata bantu 'telah' mesti mendahului 'kami bersihkan' tanpa 'di-' atau 'oleh'."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Pilih ayat pasif bagi Kata Ganti Nama Diri Kedua yang gramatis.",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Pilih ayat pasif bagi Kata Ganti Nama Diri Kedua yang gramatis."
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih ayat pasif bagi Kata Ganti Nama Diri Kedua yang gramatis.",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Nasihat doktor itu awak mesti patuhi setiap hari.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Nasihat doktor itu awak mesti patuhi setiap hari.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Nasihat doktor itu mesti awak patuhi setiap hari.. Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-'…",
+              "spokenText": "Fakta sebenar: Nasihat doktor itu mesti awak patuhi setiap hari.. Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-'",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-' iaitu 'patuhi'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Nasihat doktor itu mesti dipatuhi oleh awak setiap hari.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Nasihat doktor itu mesti awak patuhi setiap hari.. Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-'…",
+              "spokenText": "Fakta sebenar: Nasihat doktor itu mesti awak patuhi setiap hari.. Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-'",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-' iaitu 'patuhi'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-' iaitu 'patuhi'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-' iaitu 'patuhi'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kata bantu 'mesti' berada di hadapan pelaku 'awak', diikuti kata kerja pasif tanpa 'me-' iaitu 'patuhi'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Nasihat doktor itu mesti awak patuhi setiap hari.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Bersih Selalu, Sihat",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Tukarkan ayat pasif ini kepada ayat aktif: 'Risalah penjagaan postur diserahkan oleh Doktor Fatimah kepada Rania.'",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Tukarkan ayat pasif ini kepada ayat aktif: 'Risalah penjagaan postur diserahkan oleh Doktor Fatimah kepada Rania.'"
+      },
+      "board": {
+        "promptPill": "Tukarkan ayat pasif ini kepada ayat aktif: 'Risalah penjagaan postur diserahkan…",
+        "title": "Rumusan: Bersih Selalu, Sihat Sentiasa",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Struktur jawapan pendapat",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Elakkan kata kerja aktif…",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Gabungkan ayat majmuk…",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Pastikan ayat pendapat mengandungi kata hubung sebab ('kerana') dan kesan ('agar/supaya')."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Doktor Fatimah diserahkan risalah penjagaan postur kepada Rania.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Doktor Fatimah diserahkan risalah… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Doktor Fatimah diserahkan risalah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek.",
+              "spokenText": "Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Doktor Fatimah menyerahkan risalah penjagaan postur kepada Rania.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Rania menyerahkan risalah penjagaan postur kepada Doktor Fatimah.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Rania menyerahkan risalah penjagaan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Rania menyerahkan risalah penjagaan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek.",
+              "spokenText": "Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bersih Selalu, Sihat",
+          "desc": "Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pelaku 'Doktor Fatimah' menjadi subjek, 'diserahkan' ditukar kepada kata kerja aktif 'menyerahkan', diikuti objek."
+      }
+    }
+  ]
+}

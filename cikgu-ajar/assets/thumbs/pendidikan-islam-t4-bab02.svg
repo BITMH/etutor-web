@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="480" height="270" role="img" aria-label="Pelajaran 2: Surah al-Kahfi Ayat 101–110 (Golongan Rugi vs Untung)">
+  <defs>
+    <linearGradient id="g_pendidikan_islam_t4_bab02" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <radialGradient id="g_pendidikan_islam_t4_bab02_glow" cx="78%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="270" rx="18" fill="url(#g_pendidikan_islam_t4_bab02)"/>
+  <rect width="480" height="270" rx="18" fill="url(#g_pendidikan_islam_t4_bab02_glow)"/>
+  <g opacity="0.10" stroke="#FFFFFF" stroke-width="1">
+    <line x1="66" y1="0" x2="66" y2="270"/>
+    <line x1="146" y1="0" x2="146" y2="270"/>
+    <line x1="226" y1="0" x2="226" y2="270"/>
+    <line x1="0" y1="71" x2="480" y2="71"/>
+    <line x1="0" y1="161" x2="480" y2="161"/>
+  </g>
+  
+    <g transform="translate(298, 44)" opacity="0.94">
+      <path d="M 36 118 L 36 62 Q 36 28 78 16 Q 120 28 120 62 L 120 118 Z" fill="rgba(252,211,77,0.12)" stroke="#FCD34D" stroke-width="2.8"/>
+      <path d="M 84 48 A 22 22 0 1 0 102 82 A 17 17 0 1 1 84 48 Z" fill="#FCD34D"/>
+      <polygon points="104,54 107,61 114,61 108,65 110,72 104,68 98,72 100,65 94,61 101,61" fill="#fff"/>
+    </g>
+  <rect x="26" y="24" width="92" height="26" rx="13" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+  <text x="72" y="41" text-anchor="middle" font-size="11.5" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">T4 · BAB 2</text>
+  <rect x="126" y="24" width="148.8" height="26" rx="13" fill="#059669"/>
+  <text x="200.4" y="41" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">Pendidikan Islam</text>
+  <text x="26" y="92" font-size="22" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif"><tspan x="26" dy="0">Pelajaran 2: Surah</tspan><tspan x="26" dy="28">al-Kahfi Ayat 101–110</tspan><tspan x="26" dy="28">(Golongan…</tspan></text>
+  <rect x="26" y="216" width="136" height="28" rx="10" fill="rgba(15,23,42,0.52)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <text x="94" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E2E8F0" font-family="Plus Jakarta Sans, Arial, sans-serif">Perangkap SPM</text>
+  <rect x="170" y="216" width="112" height="28" rx="10" fill="rgba(16,185,129,0.24)" stroke="rgba(52,211,153,0.55)" stroke-width="1"/>
+  <text x="226" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#A7F3D0" font-family="Plus Jakarta Sans, Arial, sans-serif">Suara BM 100%</text>
+  <text x="454" y="234" text-anchor="end" font-size="11.5" font-weight="800" fill="#FCD34D" font-family="Plus Jakarta Sans, Arial, sans-serif">4 Kad</text>
+</svg>

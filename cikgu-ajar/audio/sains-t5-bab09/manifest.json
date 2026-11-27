@@ -1,0 +1,375 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t5-bab09/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Orbit manakah yang memenuhi keperluan tersebut beserta ciri altitud dan tempoh orbitnya?",
+      "duration": 7.136,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "Lazim",
+          "start": 0.64,
+          "end": 1.02
+        },
+        {
+          "word": "Science.",
+          "start": 1.02,
+          "end": 1.4
+        },
+        {
+          "word": "Orbit",
+          "start": 1.76,
+          "end": 2.12
+        },
+        {
+          "word": "manakah",
+          "start": 2.12,
+          "end": 2.52
+        },
+        {
+          "word": "yang",
+          "start": 2.52,
+          "end": 2.78
+        },
+        {
+          "word": "memenuhi",
+          "start": 2.78,
+          "end": 3.4
+        },
+        {
+          "word": "keperluan",
+          "start": 3.4,
+          "end": 3.94
+        },
+        {
+          "word": "tersebut",
+          "start": 3.94,
+          "end": 4.3
+        },
+        {
+          "word": "bersterciri",
+          "start": 4.3,
+          "end": 5.1
+        },
+        {
+          "word": "altitude",
+          "start": 5.1,
+          "end": 5.56
+        },
+        {
+          "word": "dan",
+          "start": 5.56,
+          "end": 5.98
+        },
+        {
+          "word": "tempoh",
+          "start": 5.98,
+          "end": 6.44
+        },
+        {
+          "word": "orbitnya.",
+          "start": 6.44,
+          "end": 6.88
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t5-bab09/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Antara padanan orbit P, Q, R dan S berikut, manakah yang BETUL?",
+      "duration": 6.08,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "raja",
+          "start": 0.56,
+          "end": 0.84
+        },
+        {
+          "word": "konsep",
+          "start": 0.84,
+          "end": 1.22
+        },
+        {
+          "word": "di",
+          "start": 1.22,
+          "end": 1.28
+        },
+        {
+          "word": "papan",
+          "start": 1.28,
+          "end": 1.64
+        },
+        {
+          "word": "antara",
+          "start": 1.64,
+          "end": 2.24
+        },
+        {
+          "word": "padanan",
+          "start": 2.24,
+          "end": 2.56
+        },
+        {
+          "word": "OB",
+          "start": 2.56,
+          "end": 2.82
+        },
+        {
+          "word": "-P,",
+          "start": 2.82,
+          "end": 3.1
+        },
+        {
+          "word": "QR",
+          "start": 3.26,
+          "end": 3.58
+        },
+        {
+          "word": "dan",
+          "start": 3.58,
+          "end": 3.84
+        },
+        {
+          "word": "S",
+          "start": 3.84,
+          "end": 4.04
+        },
+        {
+          "word": "berikut.",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "word": "Manakah",
+          "start": 4.8,
+          "end": 5.22
+        },
+        {
+          "word": "yang",
+          "start": 5.22,
+          "end": 5.4
+        },
+        {
+          "word": "betul?",
+          "start": 5.4,
+          "end": 5.7
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t5-bab09/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Ramalkan perubahan halaju satelit dari kedudukan paling dekat (Perigi) ke kedudukan paling jauh (Apogi):",
+      "duration": 7.691,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "raja",
+          "start": 0.64,
+          "end": 0.9
+        },
+        {
+          "word": "konsep",
+          "start": 0.9,
+          "end": 1.32
+        },
+        {
+          "word": "di",
+          "start": 1.32,
+          "end": 1.4
+        },
+        {
+          "word": "papan.",
+          "start": 1.4,
+          "end": 1.74
+        },
+        {
+          "word": "Ramalkan",
+          "start": 1.96,
+          "end": 2.72
+        },
+        {
+          "word": "perubahan",
+          "start": 2.72,
+          "end": 3.12
+        },
+        {
+          "word": "halaju",
+          "start": 3.12,
+          "end": 3.52
+        },
+        {
+          "word": "satellite",
+          "start": 3.52,
+          "end": 3.94
+        },
+        {
+          "word": "dari",
+          "start": 3.94,
+          "end": 4.16
+        },
+        {
+          "word": "kedudukan",
+          "start": 4.16,
+          "end": 4.62
+        },
+        {
+          "word": "paling",
+          "start": 4.62,
+          "end": 4.88
+        },
+        {
+          "word": "dekat",
+          "start": 4.88,
+          "end": 5.2
+        },
+        {
+          "word": "Perigi",
+          "start": 5.2,
+          "end": 5.64
+        },
+        {
+          "word": "ke",
+          "start": 5.64,
+          "end": 5.8
+        },
+        {
+          "word": "kedudukan",
+          "start": 5.8,
+          "end": 6.18
+        },
+        {
+          "word": "paling",
+          "start": 6.18,
+          "end": 6.36
+        },
+        {
+          "word": "jauh",
+          "start": 6.36,
+          "end": 6.8
+        },
+        {
+          "word": "apogisi.",
+          "start": 6.8,
+          "end": 7.3
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t5-bab09/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Pilih pelan kejuruteraan misi dan penukaran koordinat Darjah Desimal (DD) yang PALING tepat:",
+      "duration": 8.053,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "urutan",
+          "start": 0.64,
+          "end": 1.12
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.12,
+          "end": 1.6
+        },
+        {
+          "word": "di",
+          "start": 1.6,
+          "end": 1.72
+        },
+        {
+          "word": "Papuan,",
+          "start": 1.72,
+          "end": 2.14
+        },
+        {
+          "word": "pilih",
+          "start": 2.62,
+          "end": 2.9
+        },
+        {
+          "word": "pelan",
+          "start": 2.9,
+          "end": 3.06
+        },
+        {
+          "word": "kejuru",
+          "start": 3.06,
+          "end": 3.36
+        },
+        {
+          "word": "teraan",
+          "start": 3.36,
+          "end": 3.7
+        },
+        {
+          "word": "misi,",
+          "start": 3.7,
+          "end": 4.2
+        },
+        {
+          "word": "dan",
+          "start": 4.3,
+          "end": 4.6
+        },
+        {
+          "word": "penukaran",
+          "start": 4.6,
+          "end": 5.08
+        },
+        {
+          "word": "koordinat",
+          "start": 5.08,
+          "end": 5.62
+        },
+        {
+          "word": "darjah",
+          "start": 5.62,
+          "end": 5.98
+        },
+        {
+          "word": "decimal",
+          "start": 5.98,
+          "end": 6.32
+        },
+        {
+          "word": "P",
+          "start": 6.32,
+          "end": 6.84
+        },
+        {
+          "word": "yang",
+          "start": 6.84,
+          "end": 7.52
+        },
+        {
+          "word": "lain",
+          "start": 7.52,
+          "end": 7.64
+        },
+        {
+          "word": "tepat.",
+          "start": 7.64,
+          "end": 7.94
+        }
+      ]
+    }
+  }
+}

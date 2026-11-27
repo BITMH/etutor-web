@@ -1,0 +1,810 @@
+{
+  "deckId": "matematik-t3-bab02",
+  "title": "Bentuk Piawai (Angka Bererti & Notasi Saintifik)",
+  "shortTitle": "Bentuk Piawai",
+  "subject": "Matematik",
+  "form": "T3",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Bentuk Piawai",
+    "desc": "Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Menentukan Bilangan Angka Bererti (a.b.) (SK 2.1)?",
+        "spokenText": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Menentukan Bilangan Angka Bererti (a.b.) (SK 2 perpuluhan satu)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Menentukan Bilangan Angka Bererti (a.b.) (SK 2.1)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Meninggalkan jawapan bentuk piawai sebagai 37.5 × 10⁻⁹ atau 0.65 × 10⁴.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Meninggalkan jawapan bentuk piawai sebagai 37.5 × 10⁻⁹ atau 0.65 × 10⁴.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.. Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+              "spokenText": "Fakta sebenar: Nilai A MESTI memenuhi 1 kurang atau sama dengan A kurang daripada 10, jadi ubah kepada 3 perpuluhan tujuh lima darab sepuluh kuasa negatif lapan atau 6 perpuluhan lima darab sepuluh kuasa tiga.. Apabila A mengecil 1 langkah (37 perpuluhan lima , menghasilkan 3 perpuluhan tujuh lima), kuasa 10 BERTAMBAH positif 1 (-9 positif 1 sama dengan negatif 8)!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mengira sifar di hadapan 0.0045 sebagai angka bererti lalu membundarkan 0.0045 kepada 2 a.b.…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.. Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+              "spokenText": "Fakta sebenar: Nilai A MESTI memenuhi 1 kurang atau sama dengan A kurang daripada 10, jadi ubah kepada 3 perpuluhan tujuh lima darab sepuluh kuasa negatif lapan atau 6 perpuluhan lima darab sepuluh kuasa tiga.. Apabila A mengecil 1 langkah (37 perpuluhan lima , menghasilkan 3 perpuluhan tujuh lima), kuasa 10 BERTAMBAH positif 1 (-9 positif 1 sama dengan negatif 8)!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Apabila A mengecil 1 langkah (37.5 → 3.75), kuasa 10 BERTAMBAH +1 (-9 + 1 = -8)!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Apabila A mengecil 1 langkah (37 perpuluhan lima , menghasilkan 3 perpuluhan tujuh lima), kuasa 10 BERTAMBAH positif 1 (-9 positif 1 sama dengan negatif 8)!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Nilai A MESTI memenuhi 1 ≤ A < 10, jadi ubah kepada 3.75 × 10⁻⁸ atau 6.5 × 10³.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: 2.1 Menentukan Bilangan Angka",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Berapakah bilangan angka bererti bagi nombor 0.07040?",
+        "spokenText": "Lihat langkah di papan! Berapakah bilangan angka bererti bagi nombor kosong perpuluhan kosong tujuh kosong empat kosong?"
+      },
+      "board": {
+        "promptPill": "Berapakah bilangan angka bererti bagi nombor 0.07040?",
+        "title": "2.1 Menentukan Bilangan Angka Bererti (a.b.) (SK 2.1)",
+        "given": "Angka bererti (significant figures) menunjukkan tahap kejituan sesuatu ukuran atau penghampiran. Kunci menguasainya…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Situasi",
+            "expr": "Nyatakan bilangan angka bererti bagi: (a) 0.008025 dan (b) 35.070.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Konsep",
+            "expr": "1. Semua digit bukan sifar (1–9) SENTIASA angka bererti.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 3,
+            "label": "Penyelesaian",
+            "expr": "(a) 4 angka bererti (tiga sifar di hadapan hanya penunjuk tempat perpuluhan, maka kira…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "6",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 6 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 6 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 → 4 angka bererti.",
+              "spokenText": "Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 , menghasilkan 4 angka bererti.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Situasi",
+                    "expr": "Nyatakan bilangan angka bererti bagi: (a) 0.008025 dan (b) 35.070.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Konsep",
+                    "expr": "1. Semua digit bukan sifar (1–9) SENTIASA angka bererti.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Penyelesaian",
+                    "expr": "(a) 4 angka bererti (tiga sifar di hadapan hanya penunjuk tempat perpuluhan, maka kira…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "5",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 5 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 5 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 → 4 angka bererti.",
+              "spokenText": "Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 , menghasilkan 4 angka bererti.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Situasi",
+                    "expr": "Nyatakan bilangan angka bererti bagi: (a) 0.008025 dan (b) 35.070.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Konsep",
+                    "expr": "1. Semua digit bukan sifar (1–9) SENTIASA angka bererti.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Penyelesaian",
+                    "expr": "(a) 4 angka bererti (tiga sifar di hadapan hanya penunjuk tempat perpuluhan, maka kira…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "4",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Situasi",
+              "expr": "Nyatakan bilangan angka bererti bagi: (a) 0.008025 dan (b) 35.070.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Konsep",
+              "expr": "1. Semua digit bukan sifar (1–9) SENTIASA angka bererti.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Penyelesaian",
+              "expr": "(a) 4 angka bererti (tiga sifar di hadapan hanya penunjuk tempat perpuluhan, maka kira…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "2.1 Menentukan Bilangan Angka",
+          "desc": "Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 → 4 angka bererti.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 → 4 angka bererti.",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Kira bermula dari digit bukan sifar pertama (7): 7, 0, 4, 0 , menghasilkan 4 angka bererti.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Situasi",
+              "expr": "Nyatakan bilangan angka bererti bagi: (a) 0.008025 dan (b) 35.070.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Konsep",
+              "expr": "1. Semua digit bukan sifar (1–9) SENTIASA angka bererti.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Penyelesaian",
+              "expr": "(a) 4 angka bererti (tiga sifar di hadapan hanya penunjuk tempat perpuluhan, maka kira…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Bundarkan 68.79 kepada 1 angka bererti.",
+        "spokenText": "Perangkap lazim Matematik! Bundarkan 68 perpuluhan tujuh sembilan kepada 1 angka bererti."
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Bundarkan 68.79 kepada 1 angka bererti.",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "7",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "70",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "7",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 70. Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan…",
+              "spokenText": "Fakta sebenar: 70. Digit pertama 6 diikuti 8 ( lebih atau sama dengan 5) menjadi 7, dan digit 8 sebelum titik perpuluhan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "70",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan digantikan dengan 0 → 70.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "60",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 70. Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan…",
+              "spokenText": "Fakta sebenar: 70. Digit pertama 6 diikuti 8 ( lebih atau sama dengan 5) menjadi 7, dan digit 8 sebelum titik perpuluhan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "70",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan digantikan dengan 0 → 70.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "70",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "70",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan digantikan dengan 0 → 70.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Digit pertama 6 diikuti 8 (≥5) menjadi 7, dan digit 8 sebelum titik perpuluhan digantikan dengan 0 → 70.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Digit pertama 6 diikuti 8 ( lebih atau sama dengan 5) menjadi 7, dan digit 8 sebelum titik perpuluhan digantikan dengan 0 , menghasilkan 70.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "70",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: 2.4 Operasi Aritmetik Bentuk",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Ungkapkan 0.000385 dalam bentuk piawai.",
+        "spokenText": "Lihat langkah di papan! Ungkapkan kosong perpuluhan kosong kosong kosong tiga lapan lima dalam bentuk piawai."
+      },
+      "board": {
+        "promptPill": "Ungkapkan 0.000385 dalam bentuk piawai.",
+        "title": "2.4 Operasi Aritmetik Bentuk Piawai (+, -, ×, ÷) (SK 2.2)",
+        "given": "Hitung (7.5 × 10⁻³) × (5 × 10⁻⁶) dan nyatakan jawapan dalam bentuk piawai.",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Prinsip",
+            "expr": "Tambah & Tolak: samakan indeks kuasa 10 kepada kuasa yang lebih besar terlebih dahulu!…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Semakan",
+            "expr": "Sentiasa periksa syarat 1 ≤ A < 10 sebelum menyerahkan jawapan akhir bentuk piawai!",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "38.5 × 10⁻⁵",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 38.5 × 10⁻⁵ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 38 perpuluhan lima darab sepuluh kuasa negatif lima tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3.85, maka kuasanya ialah -4.",
+              "spokenText": "Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3 perpuluhan lapan lima, maka kuasanya ialah negatif 4.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Prinsip",
+                    "expr": "Tambah & Tolak: samakan indeks kuasa 10 kepada kuasa yang lebih besar terlebih dahulu!…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Semakan",
+                    "expr": "Sentiasa periksa syarat 1 ≤ A < 10 sebelum menyerahkan jawapan akhir bentuk piawai!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "3.85 × 10⁻⁴",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "3.85 × 10⁴",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 3.85 × 10⁴ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 3 perpuluhan lapan lima darab sepuluh kuasa empat tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3.85, maka kuasanya ialah -4.",
+              "spokenText": "Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3 perpuluhan lapan lima, maka kuasanya ialah negatif 4.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Prinsip",
+                    "expr": "Tambah & Tolak: samakan indeks kuasa 10 kepada kuasa yang lebih besar terlebih dahulu!…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Semakan",
+                    "expr": "Sentiasa periksa syarat 1 ≤ A < 10 sebelum menyerahkan jawapan akhir bentuk piawai!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Prinsip",
+              "expr": "Tambah & Tolak: samakan indeks kuasa 10 kepada kuasa yang lebih besar terlebih dahulu!…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Semakan",
+              "expr": "Sentiasa periksa syarat 1 ≤ A < 10 sebelum menyerahkan jawapan akhir bentuk piawai!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "2.4 Operasi Aritmetik Bentuk",
+          "desc": "Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3.85, maka kuasanya ialah -4.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3.85, maka kuasanya ialah -4.",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Gerakkan titik perpuluhan 4 tempat ke kanan untuk mendapat 3 perpuluhan lapan lima, maka kuasanya ialah negatif 4.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Prinsip",
+              "expr": "Tambah & Tolak: samakan indeks kuasa 10 kepada kuasa yang lebih besar terlebih dahulu!…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Semakan",
+              "expr": "Sentiasa periksa syarat 1 ≤ A < 10 sebelum menyerahkan jawapan akhir bentuk piawai!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:39.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t4-bab03/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Apakah nilai kebenaran bagi pernyataan p dan penafiannya (~p)?",
+      "duration": 6.037,
+      "words": [
+        {
+          "word": "perangkap",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "lazim",
+          "start": 0.6,
+          "end": 0.94
+        },
+        {
+          "word": "matematik?",
+          "start": 0.94,
+          "end": 1.52
+        },
+        {
+          "word": "Apakah",
+          "start": 1.9,
+          "end": 2.28
+        },
+        {
+          "word": "nilai",
+          "start": 2.28,
+          "end": 2.62
+        },
+        {
+          "word": "kebenaran",
+          "start": 2.62,
+          "end": 3.04
+        },
+        {
+          "word": "bagi",
+          "start": 3.04,
+          "end": 3.38
+        },
+        {
+          "word": "penyataan",
+          "start": 3.38,
+          "end": 3.9
+        },
+        {
+          "word": "P",
+          "start": 3.9,
+          "end": 4.12
+        },
+        {
+          "word": "dan",
+          "start": 4.12,
+          "end": 4.96
+        },
+        {
+          "word": "penafianya?",
+          "start": 4.96,
+          "end": 5.88
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t4-bab03/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Antara pernyataan berikut, yang manakah bernilai BENAR?",
+      "duration": 5.621,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "langkah",
+          "start": 0.58,
+          "end": 0.88
+        },
+        {
+          "word": "di",
+          "start": 0.88,
+          "end": 1.0
+        },
+        {
+          "word": "papan",
+          "start": 1.0,
+          "end": 1.38
+        },
+        {
+          "word": "antara",
+          "start": 1.38,
+          "end": 2.1
+        },
+        {
+          "word": "penyataan",
+          "start": 2.1,
+          "end": 2.56
+        },
+        {
+          "word": "berikut",
+          "start": 2.56,
+          "end": 2.92
+        },
+        {
+          "word": "yang",
+          "start": 2.92,
+          "end": 3.52
+        },
+        {
+          "word": "manakah",
+          "start": 3.52,
+          "end": 3.86
+        },
+        {
+          "word": "bernilai",
+          "start": 3.86,
+          "end": 4.52
+        },
+        {
+          "word": "BEAA",
+          "start": 4.52,
+          "end": 5.16
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t4-bab03/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Pernyataan (Ada Nilai Benar / Palsu)\":",
+      "duration": 6.624,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "lazim",
+          "start": 0.5,
+          "end": 0.8
+        },
+        {
+          "word": "matematik",
+          "start": 0.8,
+          "end": 1.42
+        },
+        {
+          "word": "bila",
+          "start": 1.42,
+          "end": 1.98
+        },
+        {
+          "word": "item",
+          "start": 1.98,
+          "end": 2.34
+        },
+        {
+          "word": "yang",
+          "start": 2.34,
+          "end": 2.52
+        },
+        {
+          "word": "tepat",
+          "start": 2.52,
+          "end": 2.88
+        },
+        {
+          "word": "bagi",
+          "start": 2.88,
+          "end": 3.14
+        },
+        {
+          "word": "kategori",
+          "start": 3.14,
+          "end": 3.64
+        },
+        {
+          "word": "penyantahan",
+          "start": 3.64,
+          "end": 4.5
+        },
+        {
+          "word": "ada",
+          "start": 4.5,
+          "end": 4.88
+        },
+        {
+          "word": "nilai",
+          "start": 4.88,
+          "end": 5.46
+        },
+        {
+          "word": "benar,",
+          "start": 5.46,
+          "end": 5.86
+        },
+        {
+          "word": "danar.",
+          "start": 5.98,
+          "end": 6.44
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t4-bab03/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Berdasarkan rumus pola umum 2^(6 - n) darab ( pai positif 2) cm, berapakah perimeter bagi semi bulatan yang ke-8 (n sama dengan 8) dalam sebutan pai ?",
+      "duration": 12.384,
+      "words": [
+        {
+          "word": "Gihat",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "langkah",
+          "start": 0.54,
+          "end": 0.82
+        },
+        {
+          "word": "di",
+          "start": 0.82,
+          "end": 0.96
+        },
+        {
+          "word": "Papan,",
+          "start": 0.96,
+          "end": 1.34
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.84,
+          "end": 2.38
+        },
+        {
+          "word": "Rumus",
+          "start": 2.38,
+          "end": 2.66
+        },
+        {
+          "word": "Polak",
+          "start": 2.66,
+          "end": 2.92
+        },
+        {
+          "word": "Umang",
+          "start": 2.92,
+          "end": 3.16
+        },
+        {
+          "word": "2,",
+          "start": 3.16,
+          "end": 3.38
+        },
+        {
+          "word": "pilih",
+          "start": 3.8,
+          "end": 4.44
+        },
+        {
+          "word": "ini",
+          "start": 4.44,
+          "end": 4.72
+        },
+        {
+          "word": "darat",
+          "start": 4.72,
+          "end": 5.84
+        },
+        {
+          "word": "pa",
+          "start": 5.84,
+          "end": 6.38
+        },
+        {
+          "word": "-positif",
+          "start": 6.38,
+          "end": 6.88
+        },
+        {
+          "word": "dua",
+          "start": 6.88,
+          "end": 7.24
+        },
+        {
+          "word": "berapakah",
+          "start": 7.24,
+          "end": 8.74
+        },
+        {
+          "word": "premita",
+          "start": 8.74,
+          "end": 9.16
+        },
+        {
+          "word": "bagi",
+          "start": 9.16,
+          "end": 9.42
+        },
+        {
+          "word": "semi",
+          "start": 9.42,
+          "end": 9.58
+        },
+        {
+          "word": "-gulatan",
+          "start": 9.58,
+          "end": 9.92
+        },
+        {
+          "word": "yang",
+          "start": 9.92,
+          "end": 10.1
+        },
+        {
+          "word": "kreatan",
+          "start": 10.1,
+          "end": 10.96
+        },
+        {
+          "word": "dalam",
+          "start": 10.96,
+          "end": 11.22
+        },
+        {
+          "word": "sebuah",
+          "start": 11.22,
+          "end": 11.52
+        },
+        {
+          "word": "tampai.",
+          "start": 11.52,
+          "end": 11.84
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-melayu-t1-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Kata Seru dan Ayat Seruan (SP 5 perpuluhan satu.3)?",
+      "duration": 10.389,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.96
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.96,
+          "end": 1.2
+        },
+        {
+          "word": "Melayu,",
+          "start": 1.2,
+          "end": 1.76
+        },
+        {
+          "word": "awas",
+          "start": 1.88,
+          "end": 2.48
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.48,
+          "end": 3.04
+        },
+        {
+          "word": "manakah",
+          "start": 3.5,
+          "end": 3.84
+        },
+        {
+          "word": "fakta",
+          "start": 3.84,
+          "end": 4.3
+        },
+        {
+          "word": "atau",
+          "start": 4.3,
+          "end": 4.5
+        },
+        {
+          "word": "langkah",
+          "start": 4.5,
+          "end": 4.9
+        },
+        {
+          "word": "yang",
+          "start": 4.9,
+          "end": 5.08
+        },
+        {
+          "word": "betul",
+          "start": 5.08,
+          "end": 5.44
+        },
+        {
+          "word": "tentang",
+          "start": 5.44,
+          "end": 5.72
+        },
+        {
+          "word": "dua",
+          "start": 5.72,
+          "end": 6.1
+        },
+        {
+          "word": "perpuluhan",
+          "start": 6.1,
+          "end": 6.68
+        },
+        {
+          "word": "satu",
+          "start": 6.68,
+          "end": 6.94
+        },
+        {
+          "word": "kata",
+          "start": 6.94,
+          "end": 7.2
+        },
+        {
+          "word": "seru",
+          "start": 7.2,
+          "end": 7.54
+        },
+        {
+          "word": "dan",
+          "start": 7.54,
+          "end": 7.68
+        },
+        {
+          "word": "ayat",
+          "start": 7.68,
+          "end": 7.94
+        },
+        {
+          "word": "seluruhan",
+          "start": 7.94,
+          "end": 8.68
+        },
+        {
+          "word": "SPPV.",
+          "start": 8.68,
+          "end": 10.0
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-melayu-t1-bab02/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Ayat seruan manakah yang betul daripada segi penggunaan kata seru dan tanda baca?",
+      "duration": 6.912,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "binaan",
+          "start": 0.58,
+          "end": 0.94
+        },
+        {
+          "word": "kata",
+          "start": 0.94,
+          "end": 1.28
+        },
+        {
+          "word": "dan",
+          "start": 1.28,
+          "end": 1.46
+        },
+        {
+          "word": "ayat",
+          "start": 1.46,
+          "end": 1.8
+        },
+        {
+          "word": "di",
+          "start": 1.8,
+          "end": 1.88
+        },
+        {
+          "word": "Papan,",
+          "start": 1.88,
+          "end": 2.24
+        },
+        {
+          "word": "ayat",
+          "start": 2.68,
+          "end": 3.08
+        },
+        {
+          "word": "Seruang",
+          "start": 3.08,
+          "end": 3.34
+        },
+        {
+          "word": "Vanakkah",
+          "start": 3.34,
+          "end": 3.76
+        },
+        {
+          "word": "yang",
+          "start": 3.76,
+          "end": 3.88
+        },
+        {
+          "word": "betul",
+          "start": 3.88,
+          "end": 4.2
+        },
+        {
+          "word": "daripada",
+          "start": 4.2,
+          "end": 4.48
+        },
+        {
+          "word": "singi",
+          "start": 4.48,
+          "end": 4.76
+        },
+        {
+          "word": "penggunaan",
+          "start": 4.76,
+          "end": 5.18
+        },
+        {
+          "word": "kata",
+          "start": 5.18,
+          "end": 5.4
+        },
+        {
+          "word": "seru",
+          "start": 5.4,
+          "end": 5.72
+        },
+        {
+          "word": "dan",
+          "start": 5.72,
+          "end": 5.88
+        },
+        {
+          "word": "tanda",
+          "start": 5.88,
+          "end": 6.1
+        },
+        {
+          "word": "baca.",
+          "start": 6.1,
+          "end": 6.42
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-melayu-t1-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Pilih ayat tanya yang paling gramatis mengikut tatabahasa Dewan.",
+      "duration": 5.301,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "lazing",
+          "start": 0.48,
+          "end": 0.8
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.8,
+          "end": 1.06
+        },
+        {
+          "word": "Melayu",
+          "start": 1.06,
+          "end": 1.72
+        },
+        {
+          "word": "pilih",
+          "start": 1.72,
+          "end": 2.42
+        },
+        {
+          "word": "ayat",
+          "start": 2.42,
+          "end": 2.62
+        },
+        {
+          "word": "tanya",
+          "start": 2.62,
+          "end": 2.86
+        },
+        {
+          "word": "yang",
+          "start": 2.86,
+          "end": 2.98
+        },
+        {
+          "word": "paling",
+          "start": 2.98,
+          "end": 3.16
+        },
+        {
+          "word": "dramatis",
+          "start": 3.16,
+          "end": 3.62
+        },
+        {
+          "word": "mengikut",
+          "start": 3.62,
+          "end": 3.94
+        },
+        {
+          "word": "Tata",
+          "start": 3.94,
+          "end": 4.2
+        },
+        {
+          "word": "Bahasa",
+          "start": 4.2,
+          "end": 4.5
+        },
+        {
+          "word": "Dewan",
+          "start": 4.5,
+          "end": 4.84
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-melayu-t1-bab02/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Apakah maksud gaya bahasa sinkope dalam puisi?",
+      "duration": 6.005,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "binaan",
+          "start": 0.6,
+          "end": 0.96
+        },
+        {
+          "word": "kata",
+          "start": 0.96,
+          "end": 1.32
+        },
+        {
+          "word": "dan",
+          "start": 1.32,
+          "end": 2.02
+        },
+        {
+          "word": "ayat",
+          "start": 2.02,
+          "end": 2.34
+        },
+        {
+          "word": "di",
+          "start": 2.34,
+          "end": 2.44
+        },
+        {
+          "word": "Papan",
+          "start": 2.44,
+          "end": 2.8
+        },
+        {
+          "word": "apakah",
+          "start": 2.8,
+          "end": 3.64
+        },
+        {
+          "word": "maksud",
+          "start": 3.64,
+          "end": 3.96
+        },
+        {
+          "word": "daya",
+          "start": 3.96,
+          "end": 4.26
+        },
+        {
+          "word": "bahasa",
+          "start": 4.26,
+          "end": 4.52
+        },
+        {
+          "word": "Singapore",
+          "start": 4.52,
+          "end": 4.74
+        },
+        {
+          "word": "Pay",
+          "start": 4.74,
+          "end": 5.02
+        },
+        {
+          "word": "dalam",
+          "start": 5.02,
+          "end": 5.26
+        },
+        {
+          "word": "pusi.",
+          "start": 5.26,
+          "end": 5.68
+        }
+      ]
+    }
+  }
+}

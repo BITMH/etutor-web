@@ -1,0 +1,845 @@
+{
+  "deckId": "pendidikan-islam-t2-bab02",
+  "title": "Pelajaran 2: Surah Ali Imran Ayat 18 (Keesaan & Keagungan Allah SWT)",
+  "shortTitle": "Surah Ali Imran Ayat",
+  "subject": "Pendidikan Islam",
+  "form": "T2",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Surah Ali Imran Ayat",
+    "desc": "Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK 1.11)?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Bacaan, Terjemahan & Tiga Saksi Tauhid (SK 1 perpuluhan satu satu)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK 1.11)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Tidak menukarkan bunyi tanwin kepada bunyi Mim berdengung pada kalimah 'qa'iman bil-qist'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tidak menukarkan bunyi tanwin kepada bunyi Mim berdengung pada kalimah 'qa'iman bil-qist'.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).. Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin…",
+              "spokenText": "Fakta sebenar: Apabila Nun Sakinah atau Tanwin bertemu huruf Ba ( kalimah Arab ), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).. Kamus/mushaf Resam Uthmani menanda huruf Mim kecil ( kalimah Arab ) di atas huruf Nun atau tanwin",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm'…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menganggap Mad Wajib Muttasil dalam 'al-mala'ikatu' dibaca 2 harakat sahaja.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).. Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin…",
+              "spokenText": "Fakta sebenar: Apabila Nun Sakinah atau Tanwin bertemu huruf Ba ( kalimah Arab ), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).. Kamus/mushaf Resam Uthmani menanda huruf Mim kecil ( kalimah Arab ) di atas huruf Nun atau tanwin",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kamus/mushaf Resam Uthmani menanda huruf Mim kecil (م) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kamus/mushaf Resam Uthmani menanda huruf Mim kecil ( kalimah Arab ) di atas huruf Nun atau tanwin sebagai petunjuk Iqlab!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Apabila Nun Sakinah atau Tanwin bertemu huruf Ba (ب), wajib dibaca secara Iqlab (bunyi 'm' dengan dengung 2 harakat).",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 2.1 Bacaan, Terjemahan &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Siapakah tiga pihak yang menjadi saksi keesaan Allah SWT menurut Surah Ali Imran ayat 18?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Siapakah tiga pihak yang menjadi saksi keesaan Allah SWT menurut Surah Ali Imran ayat 18?"
+      },
+      "board": {
+        "promptPill": "Siapakah tiga pihak yang menjadi saksi keesaan Allah SWT menurut Surah Ali Imran…",
+        "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK 1.11)",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Subtopik 2.1",
+            "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK…",
+            "detail": "Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.2",
+            "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+            "detail": "Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.3",
+            "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+            "detail": "Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Para nabi, gunung-ganang dan lautan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Para nabi, gunung-ganang dan lautan tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Para nabi, gunung-ganang dan lautan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+              "spokenText": "Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK…",
+                    "detail": "Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+                    "detail": "Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+                    "detail": "Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Allah SWT, para malaikat dan golongan berilmu (ulul-'ilmi)",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Malaikat, jin dan haiwan melata",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Malaikat, jin dan haiwan melata tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Malaikat, jin dan haiwan melata tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+              "spokenText": "Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK…",
+                    "detail": "Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+                    "detail": "Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+                    "detail": "Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK…",
+              "detail": "Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+              "detail": "Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+              "detail": "Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Bacaan, Terjemahan &",
+          "desc": "Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kalimah 'Syahidallahu... wal-mala'ikatu wa ulul-'ilmi' menyebut Allah, malaikat dan ahli ilmu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Bacaan, Terjemahan & Tiga Saksi Tauhid (SK…",
+              "detail": "Surah Ali Imran ayat 18 memaparkan penyaksian paling agung dalam alam semesta tentang keesaan Allah SWT…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+              "detail": "Ayat 18 menegaskan tiada Tuhan melainkan Allah yang berdiri tegak menegakkan keadilan sejagat serta memiliki…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+              "detail": "Bacaan Surah Ali Imran ayat 18 kaya dengan hukum Mad panjang dan hukum Tanwin yang perlu dijaga kadar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Apakah maksud ungkapan 'Qa'iman bil-qist' dalam ayat 18 Surah Ali Imran?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Apakah maksud ungkapan 'Qa'iman bil-qist' dalam ayat 18 Surah Ali Imran?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah maksud ungkapan 'Qa'iman bil-qist' dalam ayat 18 Surah Ali Imran?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Yang duduk di atas takhta",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Yang duduk di atas takhta",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Yang mentadbir dan menegakkan keadilan dengan saksama. 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh…",
+              "spokenText": "Fakta sebenar: Yang mentadbir dan menegakkan keadilan dengan saksama. 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh pemerintahan dan pembalasan-Nya.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Yang mencipta tujuh petala langit",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Yang mentadbir dan menegakkan keadilan dengan saksama. 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh…",
+              "spokenText": "Fakta sebenar: Yang mentadbir dan menegakkan keadilan dengan saksama. 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh pemerintahan dan pembalasan-Nya.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh pemerintahan dan pembalasan-Nya.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh pemerintahan dan pembalasan-Nya.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Qa'iman bil-qist' bererti berdiri tegak melaksanakan keadilan dalam seluruh pemerintahan dan pembalasan-Nya.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Yang mentadbir dan menegakkan keadilan dengan saksama",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Surah Ali Imran",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah hukum tajwid apabila tanwin pada 'qa'iman' bertemu huruf Ba pada 'bil-qist'?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah hukum tajwid apabila tanwin pada 'qa'iman' bertemu huruf Ba pada 'bil-qist'?"
+      },
+      "board": {
+        "promptPill": "Apakah hukum tajwid apabila tanwin pada 'qa'iman' bertemu huruf Ba pada 'bil-qist'?",
+        "title": "Rumusan: Surah Ali Imran Ayat",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+            "detail": "Beriman dengan Al-'Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+            "detail": "Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Pengajaran & Tanggungjawab Pelajar Berilmu",
+            "detail": "Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Izhar Halqi",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Izhar Halqi tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Izhar Halqi tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanwin atau Nun Sakinah bertemu huruf Ba (ب) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+              "spokenText": "Tanwin atau Nun Sakinah bertemu huruf Ba ( kalimah Arab ) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+                    "detail": "Beriman dengan Al-'Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+                    "detail": "Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Pengajaran & Tanggungjawab Pelajar Berilmu",
+                    "detail": "Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Iqlab",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Idgham Bila Ghunnah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Idgham Bila Ghunnah tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Idgham Bila Ghunnah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanwin atau Nun Sakinah bertemu huruf Ba (ب) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+              "spokenText": "Tanwin atau Nun Sakinah bertemu huruf Ba ( kalimah Arab ) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+                    "detail": "Beriman dengan Al-'Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+                    "detail": "Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Pengajaran & Tanggungjawab Pelajar Berilmu",
+                    "detail": "Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+              "detail": "Beriman dengan Al-'Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+              "detail": "Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Pengajaran & Tanggungjawab Pelajar Berilmu",
+              "detail": "Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Surah Ali Imran",
+          "desc": "Tanwin atau Nun Sakinah bertemu huruf Ba (ب) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tanwin atau Nun Sakinah bertemu huruf Ba (ب) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tanwin atau Nun Sakinah bertemu huruf Ba ( kalimah Arab ) membentuk hukum Iqlab dengan bunyi Mim samar berdengung 2 harakat.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Keadilan Allah (Qa'iman bil-Qist), Al-Aziz…",
+              "detail": "Beriman dengan Al-'Aziz dan Al-Hakim melahirkan jiwa berani pada kebenaran serta reda menghadapi ujian.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Tajwid Ayat 18: Mad Wajib Muttasil, Mad…",
+              "detail": "Iqlab sangat mudah diingat: hanya ada SATU huruf iaitu Ba (ب)!",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Pengajaran & Tanggungjawab Pelajar Berilmu",
+              "detail": "Ilmu + Iman + Adil ialah tiga tunjang pengajaran Surah Ali Imran ayat 18.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

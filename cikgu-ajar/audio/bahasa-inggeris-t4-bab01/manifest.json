@@ -1,0 +1,445 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-inggeris-t4-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Module 1: Let's Chat (1119 CEFR Grammar & ?",
+      "duration": 7.115,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "Lazim",
+          "start": 0.54,
+          "end": 0.9
+        },
+        {
+          "word": "basi",
+          "start": 0.9,
+          "end": 1.14
+        },
+        {
+          "word": "Inggris,",
+          "start": 1.14,
+          "end": 1.9
+        },
+        {
+          "word": "awas",
+          "start": 1.9,
+          "end": 2.26
+        },
+        {
+          "word": "perangkap.",
+          "start": 2.26,
+          "end": 2.78
+        },
+        {
+          "word": "Manakah",
+          "start": 3.24,
+          "end": 3.6
+        },
+        {
+          "word": "fakta",
+          "start": 3.6,
+          "end": 4.02
+        },
+        {
+          "word": "atau",
+          "start": 4.02,
+          "end": 4.2
+        },
+        {
+          "word": "langkah",
+          "start": 4.2,
+          "end": 4.62
+        },
+        {
+          "word": "yang",
+          "start": 4.62,
+          "end": 4.78
+        },
+        {
+          "word": "bitul",
+          "start": 4.78,
+          "end": 5.14
+        },
+        {
+          "word": "tentang",
+          "start": 5.14,
+          "end": 5.38
+        },
+        {
+          "word": "module",
+          "start": 5.38,
+          "end": 5.7
+        },
+        {
+          "word": "WAN?",
+          "start": 5.7,
+          "end": 6.02
+        },
+        {
+          "word": "Let's",
+          "start": 6.46,
+          "end": 6.8
+        },
+        {
+          "word": "chat.",
+          "start": 6.8,
+          "end": 6.9
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-inggeris-t4-bab01/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! In the reading text (p.8 hingga 9), Alicia writes 'I can't see any drawback there' while Emma says 'I'm thinking about",
+      "duration": 8.267,
+      "words": [
+        {
+          "word": "teliti",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "binaan",
+          "start": 0.32,
+          "end": 0.72
+        },
+        {
+          "word": "kata",
+          "start": 0.72,
+          "end": 1.0
+        },
+        {
+          "word": "dan",
+          "start": 1.0,
+          "end": 1.24
+        },
+        {
+          "word": "ayat",
+          "start": 1.24,
+          "end": 1.58
+        },
+        {
+          "word": "di",
+          "start": 1.58,
+          "end": 1.66
+        },
+        {
+          "word": "papan.",
+          "start": 1.66,
+          "end": 2.04
+        },
+        {
+          "word": "Dalam",
+          "start": 2.28,
+          "end": 2.68
+        },
+        {
+          "word": "teks",
+          "start": 2.68,
+          "end": 3.14
+        },
+        {
+          "word": "tiba",
+          "start": 3.14,
+          "end": 3.4
+        },
+        {
+          "word": "-tiba",
+          "start": 3.4,
+          "end": 3.5
+        },
+        {
+          "word": "di",
+          "start": 3.5,
+          "end": 3.5
+        },
+        {
+          "word": "Vendek,",
+          "start": 3.5,
+          "end": 3.84
+        },
+        {
+          "word": "Alishah",
+          "start": 3.96,
+          "end": 4.34
+        },
+        {
+          "word": "reks",
+          "start": 4.34,
+          "end": 4.58
+        },
+        {
+          "word": "saya",
+          "start": 4.58,
+          "end": 4.74
+        },
+        {
+          "word": "dapat",
+          "start": 4.74,
+          "end": 4.9
+        },
+        {
+          "word": "melihat",
+          "start": 4.9,
+          "end": 5.16
+        },
+        {
+          "word": "pakaian",
+          "start": 5.16,
+          "end": 6.0
+        },
+        {
+          "word": "di",
+          "start": 6.0,
+          "end": 6.0
+        },
+        {
+          "word": "sana",
+          "start": 6.0,
+          "end": 6.18
+        },
+        {
+          "word": "semasa",
+          "start": 6.18,
+          "end": 6.56
+        },
+        {
+          "word": "Emma",
+          "start": 6.56,
+          "end": 6.78
+        },
+        {
+          "word": "kata",
+          "start": 6.78,
+          "end": 7.06
+        },
+        {
+          "word": "saya",
+          "start": 7.06,
+          "end": 7.32
+        },
+        {
+          "word": "fikir",
+          "start": 7.32,
+          "end": 7.82
+        },
+        {
+          "word": "tentang...",
+          "start": 7.82,
+          "end": 8.24
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-inggeris-t4-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Pilih item yang tepat bagi kategori \"Present Simple (Habit / Timetable / Stative)\":",
+      "duration": 7.669,
+      "words": [
+        {
+          "word": "Perangkat",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "Blazim",
+          "start": 0.56,
+          "end": 0.9
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.9,
+          "end": 1.14
+        },
+        {
+          "word": "Inggris,",
+          "start": 1.14,
+          "end": 1.76
+        },
+        {
+          "word": "pilih",
+          "start": 1.86,
+          "end": 2.48
+        },
+        {
+          "word": "item",
+          "start": 2.48,
+          "end": 2.74
+        },
+        {
+          "word": "yang",
+          "start": 2.74,
+          "end": 2.96
+        },
+        {
+          "word": "tepat",
+          "start": 2.96,
+          "end": 3.38
+        },
+        {
+          "word": "bagi",
+          "start": 3.38,
+          "end": 3.72
+        },
+        {
+          "word": "kategori",
+          "start": 3.72,
+          "end": 4.22
+        },
+        {
+          "word": "Present",
+          "start": 4.22,
+          "end": 4.62
+        },
+        {
+          "word": "Simple",
+          "start": 4.62,
+          "end": 5.14
+        },
+        {
+          "word": "Habit",
+          "start": 5.14,
+          "end": 6.02
+        },
+        {
+          "word": "T",
+          "start": 6.02,
+          "end": 6.2
+        },
+        {
+          "word": "-Table",
+          "start": 6.2,
+          "end": 6.48
+        },
+        {
+          "word": "Solstitif.",
+          "start": 6.48,
+          "end": 7.14
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-inggeris-t4-bab01/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Choose the most natural response pair (Round-up p.20 E): (1) 'I'm visiting Sam next weekend.' (2) 'Are you coming to",
+      "duration": 9.44,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "Binaan",
+          "start": 0.28,
+          "end": 0.64
+        },
+        {
+          "word": "Kata",
+          "start": 0.64,
+          "end": 0.94
+        },
+        {
+          "word": "dan",
+          "start": 0.94,
+          "end": 1.14
+        },
+        {
+          "word": "Ayat",
+          "start": 1.14,
+          "end": 1.46
+        },
+        {
+          "word": "Dipapun",
+          "start": 1.46,
+          "end": 1.96
+        },
+        {
+          "word": "Pilih",
+          "start": 1.96,
+          "end": 2.74
+        },
+        {
+          "word": "jawapan",
+          "start": 2.74,
+          "end": 2.82
+        },
+        {
+          "word": "yang",
+          "start": 2.82,
+          "end": 2.82
+        },
+        {
+          "word": "terbaik",
+          "start": 2.82,
+          "end": 3.28
+        },
+        {
+          "word": "daripada",
+          "start": 3.28,
+          "end": 4.04
+        },
+        {
+          "word": "Roundup",
+          "start": 4.56,
+          "end": 4.96
+        },
+        {
+          "word": "Petrura",
+          "start": 4.96,
+          "end": 5.56
+        },
+        {
+          "word": "Chi",
+          "start": 5.56,
+          "end": 6.12
+        },
+        {
+          "word": "Sama",
+          "start": 6.6,
+          "end": 6.96
+        },
+        {
+          "word": "Ziting",
+          "start": 6.96,
+          "end": 7.28
+        },
+        {
+          "word": "Sam",
+          "start": 7.28,
+          "end": 7.52
+        },
+        {
+          "word": "sebulan",
+          "start": 7.52,
+          "end": 8.14
+        },
+        {
+          "word": "Adakah",
+          "start": 8.14,
+          "end": 8.86
+        },
+        {
+          "word": "anda",
+          "start": 8.86,
+          "end": 8.88
+        },
+        {
+          "word": "datang",
+          "start": 8.88,
+          "end": 9.1
+        },
+        {
+          "word": "untuk...",
+          "start": 9.1,
+          "end": 9.42
+        }
+      ]
+    }
+  }
+}

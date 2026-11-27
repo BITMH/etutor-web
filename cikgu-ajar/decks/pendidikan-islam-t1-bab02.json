@@ -1,0 +1,845 @@
+{
+  "deckId": "pendidikan-islam-t1-bab02",
+  "title": "Pelajaran 2: Surah al-Baqarah Ayat 201 (Kebahagiaan Dunia & Akhirat)",
+  "shortTitle": "Surah al-Baqarah Ayat 201",
+  "subject": "Pendidikan Islam",
+  "form": "T1",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Surah al-Baqarah Ayat 201",
+    "desc": "Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat 201?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Bacaan & Terjemahan Surah al-Baqarah Ayat 201?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat 201?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menganggap doa 'atina fid-dunya hasanah' bermaksud meminta keseronokan dunia tanpa batas.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menganggap doa 'atina fid-dunya hasanah' bermaksud meminta keseronokan dunia tanpa batas.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.. Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+              "spokenText": "Fakta sebenar: Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.. Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu,…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Tidak mendengungkan bacaan pada 'man yaqulu' ketika menghafaz ayat 201.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.. Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+              "spokenText": "Fakta sebenar: Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.. Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sertakan niat keberkatan setiap kali memohon rezeki dan kejayaan peperiksaan.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kebaikan dunia dalam Islam merujuk perkara halal yang membawa keberkatan seperti ilmu, kesihatan dan ketenangan keluarga.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 2.1 Bacaan & Terjemahan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah tiga permohonan utama yang terkandung dalam doa Surah al-Baqarah ayat 201?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah tiga permohonan utama yang terkandung dalam doa Surah al-Baqarah ayat 201?"
+      },
+      "board": {
+        "promptPill": "Apakah tiga permohonan utama yang terkandung dalam doa Surah al-Baqarah ayat 201?",
+        "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat 201",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Subtopik 2.1",
+            "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat…",
+            "detail": "Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.2",
+            "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+            "detail": "Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.3",
+            "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+            "detail": "Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kekayaan melimpah, kuasa politik dan umur panjang",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kekayaan melimpah, kuasa politik dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kekayaan melimpah, kuasa politik dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+              "spokenText": "Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat…",
+                    "detail": "Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+                    "detail": "Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+                    "detail": "Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kebaikan dunia, kebaikan akhirat dan perlindungan daripada azab neraka",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Pangkat tinggi, rakan ramai dan kenderaan mewah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pangkat tinggi, rakan ramai dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pangkat tinggi, rakan ramai dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+              "spokenText": "Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat…",
+                    "detail": "Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+                    "detail": "Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+                    "detail": "Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat…",
+              "detail": "Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+              "detail": "Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+              "detail": "Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Bacaan & Terjemahan",
+          "desc": "Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Doa ini memohon hasanah di dunia, hasanah di akhirat dan perlindungan daripada azab api neraka.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Bacaan & Terjemahan Surah al-Baqarah Ayat…",
+              "detail": "Ayat 201 mengandungi doa paling menyeluruh yang sering dibaca oleh Rasulullah SAW untuk memohon segala…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+              "detail": "Islam menolak sikap melampau yang hanya mengejar kemewahan dunia tanpa memikirkan pembalasan akhirat, dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+              "detail": "Doa yang dimohon dalam ayat 201 memerlukan adab yang betul serta diiringi tindakan menjauhi perkara mungkar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Apakah maksud ungkapan 'Wa qina azaban-nar'?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Apakah maksud ungkapan 'Wa qina azaban-nar'?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah maksud ungkapan 'Wa qina azaban-nar'?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Dan kurniakanlah kami rezeki halal",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Dan peliharalah kami daripada azab api neraka",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Dan kurniakanlah kami rezeki halal",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Dan peliharalah kami daripada azab api neraka. 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+              "spokenText": "Fakta sebenar: Dan peliharalah kami daripada azab api neraka. 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Dan peliharalah kami daripada azab api neraka",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Dan peliharalah kami daripada azab api neraka",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Dan ampunilah dosa ibu bapa kami",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Dan peliharalah kami daripada azab api neraka. 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+              "spokenText": "Fakta sebenar: Dan peliharalah kami daripada azab api neraka. 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Dan peliharalah kami daripada azab api neraka",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Dan peliharalah kami daripada azab api neraka",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Wa qina azaban-nar' bermaksud 'dan peliharalah kami daripada azab neraka'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Dan peliharalah kami daripada azab api neraka",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Surah al-Baqarah Ayat",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah contoh 'hasanah' (kebaikan) di akhirat yang dimaksudkan oleh ayat 201?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah contoh 'hasanah' (kebaikan) di akhirat yang dimaksudkan oleh ayat 201?"
+      },
+      "board": {
+        "promptPill": "Manakah contoh 'hasanah' (kebaikan) di akhirat yang dimaksudkan oleh ayat 201?",
+        "title": "Rumusan: Surah al-Baqarah Ayat 201",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+            "detail": "Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+            "detail": "Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Pengamalan Tajwid Ayat 201",
+            "detail": "Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Memiliki rumah besar",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Memiliki rumah besar tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Memiliki rumah besar tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+              "spokenText": "Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+                    "detail": "Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+                    "detail": "Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Pengamalan Tajwid Ayat 201",
+                    "detail": "Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Mendapat keampunan Allah SWT dan dimasukkan ke syurga",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menang pertandingan sukan sekolah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menang pertandingan sukan sekolah tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menang pertandingan sukan sekolah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+              "spokenText": "Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+                    "detail": "Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+                    "detail": "Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Pengamalan Tajwid Ayat 201",
+                    "detail": "Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+              "detail": "Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+              "detail": "Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Pengamalan Tajwid Ayat 201",
+              "detail": "Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Surah al-Baqarah Ayat",
+          "desc": "Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kebaikan akhirat ialah keselamatan daripada hisab yang berat, keampunan Allah serta nikmat syurga.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Keseimbangan Kebaikan Dunia dan Akhirat",
+              "detail": "Dunia ialah ladang tanaman bagi menuai hasil kebahagiaan kekal di akhirat.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Adab Berdoa & Usaha Mengelak Azab Neraka",
+              "detail": "Formula kejayaan Islam ialah Doa + Usaha Gigih + Tawakal kepada Allah SWT.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Pengamalan Tajwid Ayat 201",
+              "detail": "Perhatikan huruf selepas Nun Sakinah: huruf Halaq (ه) dibaca jelas, manakala huruf ي memerlukan dengung.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

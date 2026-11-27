@@ -1,0 +1,465 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/pendidikan-islam-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Golongan Paling Rugi Amalannya (Ayat 101 hingga 106)?",
+      "duration": 10.688,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.94
+        },
+        {
+          "word": "Pendidikan",
+          "start": 0.94,
+          "end": 1.3
+        },
+        {
+          "word": "Islam.",
+          "start": 1.3,
+          "end": 1.66
+        },
+        {
+          "word": "Awas",
+          "start": 1.96,
+          "end": 2.4
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.4,
+          "end": 2.9
+        },
+        {
+          "word": "manakah",
+          "start": 3.3,
+          "end": 3.74
+        },
+        {
+          "word": "fakta",
+          "start": 3.74,
+          "end": 4.18
+        },
+        {
+          "word": "atau",
+          "start": 4.18,
+          "end": 4.4
+        },
+        {
+          "word": "langkah",
+          "start": 4.4,
+          "end": 4.74
+        },
+        {
+          "word": "yang",
+          "start": 4.74,
+          "end": 4.86
+        },
+        {
+          "word": "itu",
+          "start": 4.86,
+          "end": 5.12
+        },
+        {
+          "word": "tentang",
+          "start": 5.12,
+          "end": 5.48
+        },
+        {
+          "word": "dua",
+          "start": 5.48,
+          "end": 5.96
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.96,
+          "end": 6.74
+        },
+        {
+          "word": "satu",
+          "start": 6.74,
+          "end": 7.04
+        },
+        {
+          "word": "golongan",
+          "start": 7.04,
+          "end": 7.52
+        },
+        {
+          "word": "paling",
+          "start": 7.52,
+          "end": 7.76
+        },
+        {
+          "word": "rugi",
+          "start": 7.76,
+          "end": 8.08
+        },
+        {
+          "word": "amalannya?",
+          "start": 8.08,
+          "end": 8.54
+        },
+        {
+          "word": "Ayat",
+          "start": 8.86,
+          "end": 9.3
+        },
+        {
+          "word": "Bahagia",
+          "start": 9.3,
+          "end": 9.56
+        },
+        {
+          "word": "Puan",
+          "start": 9.56,
+          "end": 9.72
+        },
+        {
+          "word": "Singapura.",
+          "start": 9.72,
+          "end": 10.18
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/pendidikan-islam-t4-bab02/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Siapakah yang dimaksudkan dengan golongan 'al-akhsarina a'mala' (paling rugi amalannya) dalam Surah al-Kahfi ayat",
+      "duration": 8.469,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "urutan",
+          "start": 0.32,
+          "end": 0.7
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.7,
+          "end": 1.16
+        },
+        {
+          "word": "di",
+          "start": 1.16,
+          "end": 1.26
+        },
+        {
+          "word": "Papan",
+          "start": 1.26,
+          "end": 1.6
+        },
+        {
+          "word": "siapakah",
+          "start": 1.6,
+          "end": 2.5
+        },
+        {
+          "word": "yang",
+          "start": 2.5,
+          "end": 2.68
+        },
+        {
+          "word": "dimaksudkan",
+          "start": 2.68,
+          "end": 3.24
+        },
+        {
+          "word": "dengan",
+          "start": 3.24,
+          "end": 3.44
+        },
+        {
+          "word": "golongan",
+          "start": 3.44,
+          "end": 3.9
+        },
+        {
+          "word": "Al",
+          "start": 3.9,
+          "end": 4.1
+        },
+        {
+          "word": "-Asrina",
+          "start": 4.1,
+          "end": 4.58
+        },
+        {
+          "word": "Amalak,",
+          "start": 4.58,
+          "end": 5.0
+        },
+        {
+          "word": "paling",
+          "start": 5.26,
+          "end": 5.72
+        },
+        {
+          "word": "unggig",
+          "start": 5.72,
+          "end": 6.06
+        },
+        {
+          "word": "amalannya",
+          "start": 6.06,
+          "end": 6.54
+        },
+        {
+          "word": "dalam",
+          "start": 6.54,
+          "end": 7.36
+        },
+        {
+          "word": "surat",
+          "start": 7.36,
+          "end": 7.72
+        },
+        {
+          "word": "Al",
+          "start": 7.72,
+          "end": 7.84
+        },
+        {
+          "word": "-Kafi",
+          "start": 7.84,
+          "end": 8.14
+        },
+        {
+          "word": "Ayat.",
+          "start": 8.14,
+          "end": 8.44
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/pendidikan-islam-t4-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Apakah nama syurga yang dijanjikan dalam ayat 107 sebagai tempat tinggal abadi orang beriman dan beramal soleh?",
+      "duration": 7.093,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "Lazim",
+          "start": 0.68,
+          "end": 1.04
+        },
+        {
+          "word": "pendidikan",
+          "start": 1.04,
+          "end": 1.42
+        },
+        {
+          "word": "Islam,",
+          "start": 1.42,
+          "end": 1.82
+        },
+        {
+          "word": "apakah",
+          "start": 2.06,
+          "end": 2.36
+        },
+        {
+          "word": "nama",
+          "start": 2.36,
+          "end": 2.6
+        },
+        {
+          "word": "surga",
+          "start": 2.6,
+          "end": 3.0
+        },
+        {
+          "word": "yang",
+          "start": 3.0,
+          "end": 3.14
+        },
+        {
+          "word": "dijangkikan",
+          "start": 3.14,
+          "end": 3.62
+        },
+        {
+          "word": "dalam",
+          "start": 3.62,
+          "end": 3.78
+        },
+        {
+          "word": "ayat",
+          "start": 3.78,
+          "end": 4.1
+        },
+        {
+          "word": "seperti",
+          "start": 4.1,
+          "end": 4.5
+        },
+        {
+          "word": "sebagai",
+          "start": 4.5,
+          "end": 4.66
+        },
+        {
+          "word": "tempat",
+          "start": 4.66,
+          "end": 5.04
+        },
+        {
+          "word": "tinggal",
+          "start": 5.04,
+          "end": 5.28
+        },
+        {
+          "word": "abadi",
+          "start": 5.28,
+          "end": 5.56
+        },
+        {
+          "word": "orang",
+          "start": 5.56,
+          "end": 5.72
+        },
+        {
+          "word": "beriman",
+          "start": 5.72,
+          "end": 6.12
+        },
+        {
+          "word": "dan",
+          "start": 6.12,
+          "end": 6.3
+        },
+        {
+          "word": "beramasole?",
+          "start": 6.3,
+          "end": 6.88
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/pendidikan-islam-t4-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah perumpamaan yang digunakan dalam ayat 109 bagi menggambarkan keluasan ilmu serta kalimah Allah SWT?",
+      "duration": 7.765,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "urutan",
+          "start": 0.48,
+          "end": 0.8
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.8,
+          "end": 1.24
+        },
+        {
+          "word": "di",
+          "start": 1.24,
+          "end": 1.36
+        },
+        {
+          "word": "Papan",
+          "start": 1.36,
+          "end": 1.7
+        },
+        {
+          "word": "apakah",
+          "start": 1.7,
+          "end": 2.58
+        },
+        {
+          "word": "perumpamaan",
+          "start": 2.58,
+          "end": 3.08
+        },
+        {
+          "word": "yang",
+          "start": 3.08,
+          "end": 3.28
+        },
+        {
+          "word": "digunakan",
+          "start": 3.28,
+          "end": 3.72
+        },
+        {
+          "word": "dalam",
+          "start": 3.72,
+          "end": 3.92
+        },
+        {
+          "word": "ayat",
+          "start": 3.92,
+          "end": 4.24
+        },
+        {
+          "word": "10",
+          "start": 4.24,
+          "end": 4.44
+        },
+        {
+          "word": "hari",
+          "start": 4.44,
+          "end": 4.62
+        },
+        {
+          "word": "bagi",
+          "start": 4.62,
+          "end": 4.94
+        },
+        {
+          "word": "menggambarkan",
+          "start": 4.94,
+          "end": 5.4
+        },
+        {
+          "word": "keluasan",
+          "start": 5.4,
+          "end": 5.72
+        },
+        {
+          "word": "ilmu",
+          "start": 5.72,
+          "end": 6.06
+        },
+        {
+          "word": "setakah",
+          "start": 6.06,
+          "end": 6.44
+        },
+        {
+          "word": "di",
+          "start": 6.44,
+          "end": 6.52
+        },
+        {
+          "word": "Mahgulah",
+          "start": 6.52,
+          "end": 6.94
+        },
+        {
+          "word": "Hswt.",
+          "start": 6.94,
+          "end": 7.56
+        }
+      ]
+    }
+  }
+}

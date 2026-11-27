@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-melayu-t5-bab01",
+  "title": "Anda Bersih, Anda Sihat (Kata Tunggal & Kata Majmuk)",
+  "shortTitle": "Anda Bersih, Anda Sihat",
+  "subject": "Bahasa Melayu",
+  "form": "T5",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Anda Bersih, Anda Sihat",
+    "desc": "Sentiasa uji terhadap 15 kata majmuk mantap sahaja."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Kata Tunggal & Kata Majmuk Pelbagai Laras (SP…?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Kata Tunggal & Kata Majmuk Pelbagai Laras (SP ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Kata Tunggal & Kata Majmuk Pelbagai Laras (SP…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menulis kata majmuk laras sains dan harian secara bercantum seperti 'bilikair', 'serbukpenaik' atau 'penyakitberjangkit'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit berjangkit'.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menulis kata majmuk laras sains dan harian secara bercantum seperti 'bilikair',…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit…. Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+              "spokenText": "Fakta sebenar: Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit . Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit berjangkit'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air',…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mengelirukan akronim dengan kata majmuk apabila menganalisis morfologi teks.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit…. Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+              "spokenText": "Fakta sebenar: Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit . Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit berjangkit'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit berjangkit'.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sentiasa uji terhadap 15 kata majmuk mantap sahaja.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kesemuanya bukan dalam senarai 15 kata majmuk mantap, jadi wajib dieja terpisah: 'bilik air', 'serbuk penaik', 'penyakit berjangkit'.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 1.1 Kata Tunggal &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Apakah yang dimaksudkan dengan teknik bacaan THRILD dalam Buku Teks BM Tingkatan 5 (m.s. 21)?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Apakah yang dimaksudkan dengan teknik bacaan THRILD dalam Buku Teks BM Tingkatan 5 (muka surat 21)?"
+      },
+      "board": {
+        "promptPill": "Apakah yang dimaksudkan dengan teknik bacaan THRILD dalam Buku Teks BM Tingkatan 5…",
+        "title": "1.1 Kata Tunggal & Kata Majmuk Pelbagai Laras (SP 5.1.1)",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Laras berita penyakit…",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Laras petua kebersihan rumah…",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "Kata majmuk mantap kekal…",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Dalam kertas Morfologi SPM, kenal pasti dahulu sama ada kata majmuk itu mantap (rapat) atau terpisah sebelum membina…"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Title, Heading, Read, Illustrations, Last Paragraph, Discussion",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Tema, Huraian, Rumusan, Isi, Laras, Dialog",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Tema, Huraian, Rumusan, Isi, Laras, Dialog tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Tema, Huraian, Rumusan, Isi, Laras, Dialog tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph, Discussion.",
+              "spokenText": "THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph, Discussion."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Tajuk, Huruf, Rangkai kata, Imbuhan, Logik, Definisi",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Tajuk, Huruf, Rangkai kata, Imbuhan,… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Tajuk, Huruf, Rangkai kata, Imbuhan, tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph, Discussion.",
+              "spokenText": "THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph, Discussion."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "1.1 Kata Tunggal &",
+          "desc": "THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph, Discussion.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph,…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: THRILD merujuk langkah prabaca pantas: Title, Heading, Read perenggan pertama, Illustrations, Last paragraph,"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Antara pasangan kata berikut, manakah KATA MAJMUK MANTAP yang dieja betul daripada laras kesihatan awam?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Antara pasangan kata berikut, manakah KATA MAJMUK MANTAP yang dieja betul daripada laras kesihatan awam?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Antara pasangan kata berikut, manakah KATA MAJMUK MANTAP yang dieja betul daripada laras kesihatan awam?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "warga negara dan tanggung jawab",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "warganegara, kerjasama dan tanggungjawab",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "warga negara dan tanggung jawab",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: warganegara, kerjasama dan tanggungjawab. Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk…",
+              "spokenText": "Fakta sebenar: warganegara, kerjasama dan tanggungjawab. Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "warganegara, kerjasama dan tanggungjawab",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk penaik dan penyakit berjangkit mesti…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "warganegara, kerjasama dan tanggungjawab",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "bilikair dan serbukpenaik",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: warganegara, kerjasama dan tanggungjawab. Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk…",
+              "spokenText": "Fakta sebenar: warganegara, kerjasama dan tanggungjawab. Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "warganegara, kerjasama dan tanggungjawab",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk penaik dan penyakit berjangkit mesti…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "warganegara, kerjasama dan tanggungjawab",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk penaik dan penyakit berjangkit mesti…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk penaik dan penyakit berjangkit…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Warganegara, kerjasama dan tanggungjawab ialah kata majmuk mantap; bilik air, serbuk penaik dan penyakit berjangkit",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "warganegara, kerjasama dan tanggungjawab",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Anda Bersih, Anda",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Apakah fungsi utama teknik bacaan 'Paragambar'?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Apakah fungsi utama teknik bacaan 'Paragambar'?"
+      },
+      "board": {
+        "promptPill": "Apakah fungsi utama teknik bacaan 'Paragambar'?",
+        "title": "Rumusan: Anda Bersih, Anda Sihat",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Langkah 1",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Langkah 2",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Contoh m.s. 38",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Elakkan menyalin bulat-bulat kata kunci asal; gantikan 'mutasi' (perubahan struktur genetik) dan 'penularan'…"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Melukis poster iklan komersial",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Melukis poster iklan komersial tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Melukis poster iklan komersial tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang.",
+              "spokenText": "Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Meringkaskan idea utama setiap perenggan menggunakan perwakilan gambar/visual di ruang…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menghafal kamus dewan muka surat demi muka surat",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menghafal kamus dewan muka surat demi… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menghafal kamus dewan muka surat demi tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang.",
+              "spokenText": "Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Anda Bersih, Anda",
+          "desc": "Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Paragambar merumuskan idea penting pada tepi teks menggunakan gambar/simbol bagi meningkatkan ingatan jangka panjang."
+      }
+    }
+  ]
+}

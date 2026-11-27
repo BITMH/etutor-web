@@ -1,0 +1,416 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sains-t2-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t2-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Kepelbagaian Organisma & Pengurusan Biodiversiti ?",
+      "duration": 8.981,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "Lazim",
+          "start": 0.5,
+          "end": 0.78
+        },
+        {
+          "word": "Science,",
+          "start": 0.78,
+          "end": 1.18
+        },
+        {
+          "word": "awas",
+          "start": 1.6,
+          "end": 2.02
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.02,
+          "end": 2.78
+        },
+        {
+          "word": "manakah",
+          "start": 2.9,
+          "end": 3.22
+        },
+        {
+          "word": "fakta",
+          "start": 3.22,
+          "end": 3.64
+        },
+        {
+          "word": "atau",
+          "start": 3.64,
+          "end": 3.82
+        },
+        {
+          "word": "langkah",
+          "start": 3.82,
+          "end": 4.2
+        },
+        {
+          "word": "yang",
+          "start": 4.2,
+          "end": 4.34
+        },
+        {
+          "word": "betul",
+          "start": 4.34,
+          "end": 4.68
+        },
+        {
+          "word": "tentang",
+          "start": 4.68,
+          "end": 4.92
+        },
+        {
+          "word": "wampu",
+          "start": 4.92,
+          "end": 5.36
+        },
+        {
+          "word": "puluhan",
+          "start": 5.36,
+          "end": 5.6
+        },
+        {
+          "word": "satu",
+          "start": 5.6,
+          "end": 5.86
+        },
+        {
+          "word": "keperbagaian",
+          "start": 5.86,
+          "end": 6.5
+        },
+        {
+          "word": "organismen",
+          "start": 6.5,
+          "end": 7.1
+        },
+        {
+          "word": "dan",
+          "start": 7.1,
+          "end": 7.26
+        },
+        {
+          "word": "pengurusan",
+          "start": 7.26,
+          "end": 7.74
+        },
+        {
+          "word": "biodiversiti?",
+          "start": 7.74,
+          "end": 8.58
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t2-bab01/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah yang dimaksudkan dengan organisma poikiloterma seperti amfibia, ikan dan reptilia?",
+      "duration": 7.115,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "raja",
+          "start": 0.46,
+          "end": 0.7
+        },
+        {
+          "word": "konsep",
+          "start": 0.7,
+          "end": 1.12
+        },
+        {
+          "word": "di",
+          "start": 1.12,
+          "end": 1.18
+        },
+        {
+          "word": "Papan.",
+          "start": 1.18,
+          "end": 1.52
+        },
+        {
+          "word": "Apakah",
+          "start": 1.78,
+          "end": 2.38
+        },
+        {
+          "word": "yang",
+          "start": 2.38,
+          "end": 2.56
+        },
+        {
+          "word": "dimaksudkan",
+          "start": 2.56,
+          "end": 3.12
+        },
+        {
+          "word": "dengan",
+          "start": 3.12,
+          "end": 3.3
+        },
+        {
+          "word": "organisme",
+          "start": 3.3,
+          "end": 3.78
+        },
+        {
+          "word": "pohichila",
+          "start": 3.78,
+          "end": 4.3
+        },
+        {
+          "word": "termasuk",
+          "start": 4.3,
+          "end": 4.86
+        },
+        {
+          "word": "seperti",
+          "start": 4.86,
+          "end": 4.94
+        },
+        {
+          "word": "amphibia,",
+          "start": 4.94,
+          "end": 5.54
+        },
+        {
+          "word": "ikan",
+          "start": 5.9,
+          "end": 6.24
+        },
+        {
+          "word": "dan",
+          "start": 6.24,
+          "end": 6.32
+        },
+        {
+          "word": "rektilia?",
+          "start": 6.32,
+          "end": 6.78
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t2-bab01/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Antara haiwan berikut, manakah haiwan vertebrata yang bersifat homoioterma dan bernafas melalui peparu serta menyusukan",
+      "duration": 8.576,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "raja",
+          "start": 0.46,
+          "end": 0.7
+        },
+        {
+          "word": "konsek",
+          "start": 0.7,
+          "end": 1.08
+        },
+        {
+          "word": "di",
+          "start": 1.08,
+          "end": 1.16
+        },
+        {
+          "word": "papan.",
+          "start": 1.16,
+          "end": 1.52
+        },
+        {
+          "word": "Antara",
+          "start": 1.86,
+          "end": 2.44
+        },
+        {
+          "word": "haiwan",
+          "start": 2.44,
+          "end": 2.7
+        },
+        {
+          "word": "berikut,",
+          "start": 2.7,
+          "end": 3.04
+        },
+        {
+          "word": "manakah",
+          "start": 3.3,
+          "end": 3.6
+        },
+        {
+          "word": "haiwan",
+          "start": 3.6,
+          "end": 4.04
+        },
+        {
+          "word": "verteberata",
+          "start": 4.04,
+          "end": 4.74
+        },
+        {
+          "word": "yang",
+          "start": 4.74,
+          "end": 4.96
+        },
+        {
+          "word": "bersifat",
+          "start": 4.96,
+          "end": 5.44
+        },
+        {
+          "word": "homa",
+          "start": 5.44,
+          "end": 5.7
+        },
+        {
+          "word": "yuterma",
+          "start": 5.7,
+          "end": 6.0
+        },
+        {
+          "word": "dan",
+          "start": 6.0,
+          "end": 6.4
+        },
+        {
+          "word": "bernafas",
+          "start": 6.4,
+          "end": 6.9
+        },
+        {
+          "word": "melalui",
+          "start": 6.9,
+          "end": 7.28
+        },
+        {
+          "word": "perparu",
+          "start": 7.28,
+          "end": 7.7
+        },
+        {
+          "word": "setengah",
+          "start": 7.7,
+          "end": 8.04
+        },
+        {
+          "word": "yusukan?",
+          "start": 8.04,
+          "end": 8.34
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t2-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah ciri sepunya bagi tumbuhan monokotiledon seperti pokok jagung dan pokok padi?",
+      "duration": 6.699,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "urutan",
+          "start": 0.52,
+          "end": 0.92
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.92,
+          "end": 1.42
+        },
+        {
+          "word": "di",
+          "start": 1.42,
+          "end": 1.54
+        },
+        {
+          "word": "papan,",
+          "start": 1.54,
+          "end": 1.9
+        },
+        {
+          "word": "manakah",
+          "start": 2.06,
+          "end": 2.62
+        },
+        {
+          "word": "ciri",
+          "start": 2.62,
+          "end": 3.04
+        },
+        {
+          "word": "sepunyai",
+          "start": 3.04,
+          "end": 3.32
+        },
+        {
+          "word": "bagi",
+          "start": 3.32,
+          "end": 3.56
+        },
+        {
+          "word": "tumbuhan",
+          "start": 3.56,
+          "end": 3.92
+        },
+        {
+          "word": "monokotil",
+          "start": 3.92,
+          "end": 4.5
+        },
+        {
+          "word": "laluan",
+          "start": 4.5,
+          "end": 4.8
+        },
+        {
+          "word": "seperti",
+          "start": 4.8,
+          "end": 5.06
+        },
+        {
+          "word": "pokok",
+          "start": 5.06,
+          "end": 5.44
+        },
+        {
+          "word": "jagung",
+          "start": 5.44,
+          "end": 5.78
+        },
+        {
+          "word": "dan",
+          "start": 5.78,
+          "end": 5.94
+        },
+        {
+          "word": "pokok",
+          "start": 5.94,
+          "end": 6.22
+        },
+        {
+          "word": "badi.",
+          "start": 6.22,
+          "end": 6.46
+        }
+      ]
+    }
+  }
+};

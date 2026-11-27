@@ -1,0 +1,431 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["fizik-t5-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/fizik-t5-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Fizik! Apakah yang berlaku kepada magnitud daya paduan (yang diwakili pemberat di Takal C) apabila sudut antara dua daya itu bertambah",
+      "duration": 8.789,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "lazim",
+          "start": 0.36,
+          "end": 0.64
+        },
+        {
+          "word": "fizik",
+          "start": 0.64,
+          "end": 1.02
+        },
+        {
+          "word": "apakah",
+          "start": 1.02,
+          "end": 1.56
+        },
+        {
+          "word": "yang",
+          "start": 1.56,
+          "end": 1.7
+        },
+        {
+          "word": "berlaku",
+          "start": 1.7,
+          "end": 2.12
+        },
+        {
+          "word": "kepada",
+          "start": 2.12,
+          "end": 2.34
+        },
+        {
+          "word": "magnitude",
+          "start": 2.34,
+          "end": 2.78
+        },
+        {
+          "word": "daya",
+          "start": 2.78,
+          "end": 3.18
+        },
+        {
+          "word": "paduan?",
+          "start": 3.18,
+          "end": 3.6
+        },
+        {
+          "word": "Wakili",
+          "start": 4.04,
+          "end": 4.8
+        },
+        {
+          "word": "pemberat",
+          "start": 4.8,
+          "end": 5.22
+        },
+        {
+          "word": "bintang",
+          "start": 5.22,
+          "end": 5.54
+        },
+        {
+          "word": "kalsisi",
+          "start": 5.54,
+          "end": 5.96
+        },
+        {
+          "word": "apabila",
+          "start": 5.96,
+          "end": 6.74
+        },
+        {
+          "word": "sudut",
+          "start": 6.74,
+          "end": 7.14
+        },
+        {
+          "word": "antara",
+          "start": 7.14,
+          "end": 7.48
+        },
+        {
+          "word": "dua",
+          "start": 7.48,
+          "end": 7.68
+        },
+        {
+          "word": "daya",
+          "start": 7.68,
+          "end": 7.98
+        },
+        {
+          "word": "itu",
+          "start": 7.98,
+          "end": 8.12
+        },
+        {
+          "word": "bertambah?",
+          "start": 8.12,
+          "end": 8.68
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/fizik-t5-bab01/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Berapakah magnitud tindak balas normal R yang dikenakan oleh lantai lif ke atas penumpang tersebut?",
+      "duration": 6.368,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "langkah",
+          "start": 0.4,
+          "end": 0.72
+        },
+        {
+          "word": "di",
+          "start": 0.72,
+          "end": 0.84
+        },
+        {
+          "word": "papan?",
+          "start": 0.84,
+          "end": 1.16
+        },
+        {
+          "word": "Berapakah",
+          "start": 1.64,
+          "end": 2.16
+        },
+        {
+          "word": "magnitude",
+          "start": 2.16,
+          "end": 2.52
+        },
+        {
+          "word": "tindak",
+          "start": 2.52,
+          "end": 2.88
+        },
+        {
+          "word": "balas",
+          "start": 2.88,
+          "end": 3.16
+        },
+        {
+          "word": "normal",
+          "start": 3.16,
+          "end": 3.38
+        },
+        {
+          "word": "R",
+          "start": 3.38,
+          "end": 3.7
+        },
+        {
+          "word": "yang",
+          "start": 3.7,
+          "end": 3.84
+        },
+        {
+          "word": "dikenakan",
+          "start": 3.84,
+          "end": 4.2
+        },
+        {
+          "word": "oleh",
+          "start": 4.2,
+          "end": 4.4
+        },
+        {
+          "word": "lantai",
+          "start": 4.4,
+          "end": 4.78
+        },
+        {
+          "word": "lift",
+          "start": 4.78,
+          "end": 4.98
+        },
+        {
+          "word": "ke",
+          "start": 4.98,
+          "end": 5.14
+        },
+        {
+          "word": "atas",
+          "start": 5.14,
+          "end": 5.4
+        },
+        {
+          "word": "penumpang",
+          "start": 5.4,
+          "end": 5.76
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.76,
+          "end": 6.08
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/fizik-t5-bab01/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berapakah magnitud dan sudut arah daya paduan yang bertindak ke atas bola tersebut?",
+      "duration": 6.101,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "raja",
+          "start": 0.68,
+          "end": 0.94
+        },
+        {
+          "word": "konsep",
+          "start": 0.94,
+          "end": 1.4
+        },
+        {
+          "word": "di",
+          "start": 1.4,
+          "end": 1.48
+        },
+        {
+          "word": "Papai",
+          "start": 1.48,
+          "end": 1.86
+        },
+        {
+          "word": "berapakah",
+          "start": 1.86,
+          "end": 2.86
+        },
+        {
+          "word": "magnetit",
+          "start": 2.86,
+          "end": 3.28
+        },
+        {
+          "word": "dan",
+          "start": 3.28,
+          "end": 3.42
+        },
+        {
+          "word": "sudut",
+          "start": 3.42,
+          "end": 3.74
+        },
+        {
+          "word": "arah",
+          "start": 3.74,
+          "end": 3.98
+        },
+        {
+          "word": "daya",
+          "start": 3.98,
+          "end": 4.18
+        },
+        {
+          "word": "paduan",
+          "start": 4.18,
+          "end": 4.44
+        },
+        {
+          "word": "yang",
+          "start": 4.44,
+          "end": 4.54
+        },
+        {
+          "word": "bertindak",
+          "start": 4.54,
+          "end": 4.94
+        },
+        {
+          "word": "ke",
+          "start": 4.94,
+          "end": 5.02
+        },
+        {
+          "word": "atas",
+          "start": 5.02,
+          "end": 5.18
+        },
+        {
+          "word": "bola",
+          "start": 5.18,
+          "end": 5.36
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.36,
+          "end": 5.72
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/fizik-t5-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berapakah daya F yang diperlukan untuk meregangkan spring tersebut sehingga pemanjangan x dua sama dengan 3 perpuluhan kosong cm (kosong perpuluhan kosong tiga m)?",
+      "duration": 10.048,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "urutan",
+          "start": 0.52,
+          "end": 0.92
+        },
+        {
+          "word": "prestiwa",
+          "start": 0.92,
+          "end": 1.34
+        },
+        {
+          "word": "di",
+          "start": 1.34,
+          "end": 1.46
+        },
+        {
+          "word": "papan,",
+          "start": 1.46,
+          "end": 1.76
+        },
+        {
+          "word": "berapakah",
+          "start": 2.34,
+          "end": 2.8
+        },
+        {
+          "word": "daya",
+          "start": 2.8,
+          "end": 3.14
+        },
+        {
+          "word": "F",
+          "start": 3.14,
+          "end": 3.36
+        },
+        {
+          "word": "yang",
+          "start": 3.36,
+          "end": 3.54
+        },
+        {
+          "word": "diperlukan",
+          "start": 3.54,
+          "end": 3.94
+        },
+        {
+          "word": "untuk",
+          "start": 3.94,
+          "end": 4.2
+        },
+        {
+          "word": "meredangkan",
+          "start": 4.2,
+          "end": 4.72
+        },
+        {
+          "word": "spring",
+          "start": 4.72,
+          "end": 5.0
+        },
+        {
+          "word": "tersebut",
+          "start": 5.0,
+          "end": 5.4
+        },
+        {
+          "word": "sehingga",
+          "start": 5.4,
+          "end": 5.74
+        },
+        {
+          "word": "penganjangan",
+          "start": 5.74,
+          "end": 6.12
+        },
+        {
+          "word": "X2",
+          "start": 6.12,
+          "end": 6.56
+        },
+        {
+          "word": "sama",
+          "start": 6.56,
+          "end": 6.76
+        },
+        {
+          "word": "dengan",
+          "start": 6.76,
+          "end": 7.04
+        },
+        {
+          "word": "3",
+          "start": 7.04,
+          "end": 7.24
+        },
+        {
+          "word": ".0CM04030R",
+          "start": 7.24,
+          "end": 9.42
+        }
+      ]
+    }
+  }
+};

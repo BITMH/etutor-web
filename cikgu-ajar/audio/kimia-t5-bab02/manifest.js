@@ -1,0 +1,471 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["kimia-t5-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t5-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Apakah pemerhatian yang BENAR tentang pecahan 4 (160 hingga 200 darjah Celsius) berbanding pecahan 1 (30 hingga 80 darjah Celsius)?",
+      "duration": 11.2,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "Lazin",
+          "start": 0.54,
+          "end": 0.86
+        },
+        {
+          "word": "Kimia,",
+          "start": 0.86,
+          "end": 1.34
+        },
+        {
+          "word": "apakah",
+          "start": 1.98,
+          "end": 2.42
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.42,
+          "end": 3.04
+        },
+        {
+          "word": "yang",
+          "start": 3.04,
+          "end": 3.18
+        },
+        {
+          "word": "benar",
+          "start": 3.18,
+          "end": 3.5
+        },
+        {
+          "word": "tentang",
+          "start": 3.5,
+          "end": 3.78
+        },
+        {
+          "word": "pecahan",
+          "start": 3.78,
+          "end": 4.36
+        },
+        {
+          "word": "pikesinggao",
+          "start": 4.36,
+          "end": 5.46
+        },
+        {
+          "word": "singgabui",
+          "start": 5.46,
+          "end": 6.32
+        },
+        {
+          "word": "raja",
+          "start": 6.32,
+          "end": 6.6
+        },
+        {
+          "word": "Celsius",
+          "start": 6.6,
+          "end": 7.1
+        },
+        {
+          "word": "berbanding",
+          "start": 7.1,
+          "end": 8.02
+        },
+        {
+          "word": "pecahan",
+          "start": 8.02,
+          "end": 8.82
+        },
+        {
+          "word": "kinga",
+          "start": 8.82,
+          "end": 9.18
+        },
+        {
+          "word": "-kinga",
+          "start": 9.18,
+          "end": 10.0
+        },
+        {
+          "word": "baku",
+          "start": 10.0,
+          "end": 10.3
+        },
+        {
+          "word": "raja",
+          "start": 10.3,
+          "end": 10.52
+        },
+        {
+          "word": "Celsius?",
+          "start": 10.52,
+          "end": 10.94
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t5-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Apakah formula molekul bagi hidrokarbon Y serta identiti mangkin M dan sebab kepentingan proses peretakan ini?",
+      "duration": 7.947,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "langkah",
+          "start": 0.36,
+          "end": 0.66
+        },
+        {
+          "word": "depapan,",
+          "start": 0.66,
+          "end": 1.08
+        },
+        {
+          "word": "apakah",
+          "start": 1.6,
+          "end": 2.16
+        },
+        {
+          "word": "formula",
+          "start": 2.16,
+          "end": 2.46
+        },
+        {
+          "word": "molekul",
+          "start": 2.46,
+          "end": 3.1
+        },
+        {
+          "word": "bagi",
+          "start": 3.1,
+          "end": 3.36
+        },
+        {
+          "word": "hijrokarbon",
+          "start": 3.36,
+          "end": 3.88
+        },
+        {
+          "word": "y",
+          "start": 3.88,
+          "end": 4.08
+        },
+        {
+          "word": "seperti",
+          "start": 4.08,
+          "end": 4.28
+        },
+        {
+          "word": "identiti",
+          "start": 4.28,
+          "end": 4.84
+        },
+        {
+          "word": "makin",
+          "start": 4.84,
+          "end": 5.22
+        },
+        {
+          "word": "M",
+          "start": 5.22,
+          "end": 5.48
+        },
+        {
+          "word": "dan",
+          "start": 5.48,
+          "end": 6.02
+        },
+        {
+          "word": "sebab",
+          "start": 6.02,
+          "end": 6.28
+        },
+        {
+          "word": "kepentingan",
+          "start": 6.28,
+          "end": 6.76
+        },
+        {
+          "word": "proses",
+          "start": 6.76,
+          "end": 7.08
+        },
+        {
+          "word": "peratakan",
+          "start": 7.08,
+          "end": 7.52
+        },
+        {
+          "word": "ini.",
+          "start": 7.52,
+          "end": 7.7
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t5-bab02/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berdasarkan Jadual 2 perpuluhan satu tiga, manakah ramalan sifat fizik bagi P, Q, R dan S yang TEPAT?",
+      "duration": 9.461,
+      "words": [
+        {
+          "word": "Kehantikan",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "raja",
+          "start": 0.56,
+          "end": 0.8
+        },
+        {
+          "word": "konsep",
+          "start": 0.8,
+          "end": 1.16
+        },
+        {
+          "word": "di",
+          "start": 1.16,
+          "end": 1.26
+        },
+        {
+          "word": "papan,",
+          "start": 1.26,
+          "end": 1.56
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.88,
+          "end": 2.66
+        },
+        {
+          "word": "jadual",
+          "start": 2.66,
+          "end": 3.08
+        },
+        {
+          "word": "2,",
+          "start": 3.08,
+          "end": 3.38
+        },
+        {
+          "word": "perpuluhan",
+          "start": 3.56,
+          "end": 3.96
+        },
+        {
+          "word": "1,",
+          "start": 3.96,
+          "end": 4.2
+        },
+        {
+          "word": "3,",
+          "start": 4.28,
+          "end": 4.56
+        },
+        {
+          "word": "manakah",
+          "start": 4.98,
+          "end": 5.48
+        },
+        {
+          "word": "ramalan",
+          "start": 5.48,
+          "end": 5.86
+        },
+        {
+          "word": "sifat",
+          "start": 5.86,
+          "end": 6.26
+        },
+        {
+          "word": "fizik",
+          "start": 6.26,
+          "end": 6.58
+        },
+        {
+          "word": "bagi",
+          "start": 6.58,
+          "end": 6.84
+        },
+        {
+          "word": "P,",
+          "start": 6.84,
+          "end": 7.08
+        },
+        {
+          "word": "Q,",
+          "start": 7.3,
+          "end": 7.58
+        },
+        {
+          "word": "R,",
+          "start": 7.7,
+          "end": 7.82
+        },
+        {
+          "word": "dan",
+          "start": 7.98,
+          "end": 8.0
+        },
+        {
+          "word": "S",
+          "start": 8.0,
+          "end": 8.32
+        },
+        {
+          "word": "yang",
+          "start": 8.32,
+          "end": 8.96
+        },
+        {
+          "word": "tepat.",
+          "start": 8.96,
+          "end": 9.36
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t5-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah persamaan pembakaran seimbang serta isi padu gas C O dua yang terbebas bagi 14 g butena dan 2 perpuluhan tiga g etanol?",
+      "duration": 10.549,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "urutan",
+          "start": 0.56,
+          "end": 0.96
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.96,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.58
+        },
+        {
+          "word": "Papan,",
+          "start": 1.58,
+          "end": 2.0
+        },
+        {
+          "word": "apakah",
+          "start": 2.54,
+          "end": 2.9
+        },
+        {
+          "word": "persamaan",
+          "start": 2.9,
+          "end": 3.32
+        },
+        {
+          "word": "pembakaran",
+          "start": 3.32,
+          "end": 3.84
+        },
+        {
+          "word": "si",
+          "start": 3.84,
+          "end": 4.04
+        },
+        {
+          "word": "imbang",
+          "start": 4.04,
+          "end": 4.32
+        },
+        {
+          "word": "seter",
+          "start": 4.32,
+          "end": 4.72
+        },
+        {
+          "word": "isi",
+          "start": 4.72,
+          "end": 4.98
+        },
+        {
+          "word": "padugasi",
+          "start": 4.98,
+          "end": 5.52
+        },
+        {
+          "word": "O2",
+          "start": 5.52,
+          "end": 5.94
+        },
+        {
+          "word": "yang",
+          "start": 5.94,
+          "end": 6.06
+        },
+        {
+          "word": "terbebas",
+          "start": 6.06,
+          "end": 6.4
+        },
+        {
+          "word": "bagi",
+          "start": 6.4,
+          "end": 6.68
+        },
+        {
+          "word": "Fakul",
+          "start": 6.68,
+          "end": 6.92
+        },
+        {
+          "word": "S.",
+          "start": 6.92,
+          "end": 7.04
+        },
+        {
+          "word": "Jibutena",
+          "start": 7.12,
+          "end": 7.8
+        },
+        {
+          "word": "dan",
+          "start": 7.8,
+          "end": 8.1
+        },
+        {
+          "word": "2",
+          "start": 8.1,
+          "end": 8.82
+        },
+        {
+          "word": "populan",
+          "start": 8.82,
+          "end": 9.32
+        },
+        {
+          "word": "3G",
+          "start": 9.32,
+          "end": 9.76
+        },
+        {
+          "word": "Aetanol.",
+          "start": 9.76,
+          "end": 10.18
+        }
+      ]
+    }
+  }
+};

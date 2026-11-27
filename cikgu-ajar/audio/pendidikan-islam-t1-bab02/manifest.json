@@ -1,0 +1,375 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/pendidikan-islam-t1-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Bacaan & Terjemahan Surah al-Baqarah Ayat 201?",
+      "duration": 9.611,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.72
+        },
+        {
+          "word": "Lazim",
+          "start": 0.72,
+          "end": 1.18
+        },
+        {
+          "word": "pendidikan",
+          "start": 1.18,
+          "end": 1.58
+        },
+        {
+          "word": "Islam,",
+          "start": 1.58,
+          "end": 1.9
+        },
+        {
+          "word": "awas",
+          "start": 2.28,
+          "end": 2.52
+        },
+        {
+          "word": "perangkap",
+          "start": 2.52,
+          "end": 3.12
+        },
+        {
+          "word": "manakah",
+          "start": 3.12,
+          "end": 3.88
+        },
+        {
+          "word": "fakta",
+          "start": 3.88,
+          "end": 4.34
+        },
+        {
+          "word": "atau",
+          "start": 4.34,
+          "end": 4.52
+        },
+        {
+          "word": "langkah",
+          "start": 4.52,
+          "end": 4.82
+        },
+        {
+          "word": "yang",
+          "start": 4.82,
+          "end": 4.96
+        },
+        {
+          "word": "betul",
+          "start": 4.96,
+          "end": 5.24
+        },
+        {
+          "word": "tentang",
+          "start": 5.24,
+          "end": 5.46
+        },
+        {
+          "word": "dua",
+          "start": 5.46,
+          "end": 5.86
+        },
+        {
+          "word": "perkuluhan",
+          "start": 5.86,
+          "end": 6.4
+        },
+        {
+          "word": "satu",
+          "start": 6.4,
+          "end": 6.6
+        },
+        {
+          "word": "bacan",
+          "start": 6.6,
+          "end": 7.0
+        },
+        {
+          "word": "dan",
+          "start": 7.0,
+          "end": 7.1
+        },
+        {
+          "word": "terjemahan",
+          "start": 7.1,
+          "end": 7.48
+        },
+        {
+          "word": "Sulah",
+          "start": 7.48,
+          "end": 7.78
+        },
+        {
+          "word": "Al",
+          "start": 7.78,
+          "end": 7.9
+        },
+        {
+          "word": "-Bakara",
+          "start": 7.9,
+          "end": 8.2
+        },
+        {
+          "word": "Hayat",
+          "start": 8.2,
+          "end": 8.46
+        },
+        {
+          "word": "20an?",
+          "start": 8.46,
+          "end": 8.92
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/pendidikan-islam-t1-bab02/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah tiga permohonan utama yang terkandung dalam doa Surah al-Baqarah ayat 201?",
+      "duration": 7.584,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "urutan",
+          "start": 0.64,
+          "end": 1.04
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.04,
+          "end": 1.7
+        },
+        {
+          "word": "di",
+          "start": 1.7,
+          "end": 1.92
+        },
+        {
+          "word": "Papan.",
+          "start": 1.92,
+          "end": 2.42
+        },
+        {
+          "word": "Apakah",
+          "start": 2.92,
+          "end": 3.48
+        },
+        {
+          "word": "tiga",
+          "start": 3.48,
+          "end": 3.8
+        },
+        {
+          "word": "permohonan",
+          "start": 3.8,
+          "end": 4.28
+        },
+        {
+          "word": "utama",
+          "start": 4.28,
+          "end": 4.68
+        },
+        {
+          "word": "yang",
+          "start": 4.68,
+          "end": 4.86
+        },
+        {
+          "word": "terkandung",
+          "start": 4.86,
+          "end": 5.36
+        },
+        {
+          "word": "dalam",
+          "start": 5.36,
+          "end": 5.54
+        },
+        {
+          "word": "doa",
+          "start": 5.54,
+          "end": 5.9
+        },
+        {
+          "word": "Surah",
+          "start": 5.9,
+          "end": 6.18
+        },
+        {
+          "word": "Al",
+          "start": 6.18,
+          "end": 6.28
+        },
+        {
+          "word": "-Bakarah",
+          "start": 6.28,
+          "end": 6.64
+        },
+        {
+          "word": "ayat",
+          "start": 6.64,
+          "end": 6.9
+        },
+        {
+          "word": "2T?",
+          "start": 6.9,
+          "end": 7.2
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/pendidikan-islam-t1-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Apakah maksud ungkapan 'Wa qina azaban-nar'?",
+      "duration": 4.277,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "Lazim",
+          "start": 0.5,
+          "end": 0.86
+        },
+        {
+          "word": "penerdikan",
+          "start": 0.86,
+          "end": 1.28
+        },
+        {
+          "word": "Islam",
+          "start": 1.28,
+          "end": 1.66
+        },
+        {
+          "word": "apakah",
+          "start": 1.66,
+          "end": 2.36
+        },
+        {
+          "word": "maksud",
+          "start": 2.36,
+          "end": 2.7
+        },
+        {
+          "word": "unggapan",
+          "start": 2.7,
+          "end": 3.12
+        },
+        {
+          "word": "Wakina",
+          "start": 3.12,
+          "end": 3.62
+        },
+        {
+          "word": "Azabana?",
+          "start": 3.62,
+          "end": 4.08
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/pendidikan-islam-t1-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah contoh 'hasanah' (kebaikan) di akhirat yang dimaksudkan oleh ayat 201?",
+      "duration": 6.763,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "urutan",
+          "start": 0.6,
+          "end": 1.02
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.02,
+          "end": 1.58
+        },
+        {
+          "word": "di",
+          "start": 1.58,
+          "end": 1.72
+        },
+        {
+          "word": "papan.",
+          "start": 1.72,
+          "end": 2.12
+        },
+        {
+          "word": "Mana",
+          "start": 2.42,
+          "end": 2.78
+        },
+        {
+          "word": "kau",
+          "start": 2.78,
+          "end": 2.98
+        },
+        {
+          "word": "contoh",
+          "start": 2.98,
+          "end": 3.3
+        },
+        {
+          "word": "hasanah",
+          "start": 3.3,
+          "end": 3.64
+        },
+        {
+          "word": "kebaikan",
+          "start": 3.64,
+          "end": 4.04
+        },
+        {
+          "word": "di",
+          "start": 4.04,
+          "end": 4.9
+        },
+        {
+          "word": "akhirat",
+          "start": 4.9,
+          "end": 5.3
+        },
+        {
+          "word": "yang",
+          "start": 5.3,
+          "end": 5.4
+        },
+        {
+          "word": "dimaksudkan",
+          "start": 5.4,
+          "end": 5.84
+        },
+        {
+          "word": "oleh",
+          "start": 5.84,
+          "end": 6.0
+        },
+        {
+          "word": "Ayat",
+          "start": 6.0,
+          "end": 6.26
+        },
+        {
+          "word": "Dugiuri?",
+          "start": 6.26,
+          "end": 6.54
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t4-bab01",
+  "title": "Warisan Negara Bangsa",
+  "shortTitle": "Warisan Negara Bangsa",
+  "subject": "Sejarah",
+  "form": "T4",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Warisan Negara Bangsa",
+    "desc": "Hafal 4 bukti khusus buku teks bagi ciri negara bangsa Alam Melayu: Champa (Dewa Siva), Majapahit (Kutara Manawa), Funan (Sungai Mekong hingga…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Warisan Negara Bangsa?",
+        "spokenText": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Warisan Negara Bangsa?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Warisan Negara Bangsa?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengelirukan tugas Penghulu Bendahari dengan Bendahara.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengelirukan tugas Penghulu Bendahari dengan Bendahara.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan…. 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+              "spokenText": "Fakta sebenar: Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan . 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyatakan Hukum Kanun Melaka digubal oleh empat orang nakhoda kapal.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan…. 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+              "spokenText": "Fakta sebenar: Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan . 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Bendahari' mengandungi kata 'bendahari' (kewangan/harta).",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Bendahara ialah ketua pentadbir dan ketua angkatan perang, manakala Penghulu Bendahari mengurus perbendaharaan negara, cukai dan syahbandar.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Enam Tonggak Negara Bangsa",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Dalam bahasa Sanskrit, perkataan 'Srivijaya' membawa maksud bercahaya dan kemenangan. Kerajaan manakah yang meneruskan…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Dalam bahasa Sanskrit, perkataan 'Srivijaya' membawa maksud bercahaya dan kemenangan. Kerajaan manakah yang meneruskan"
+      },
+      "board": {
+        "promptPill": "Dalam bahasa Sanskrit, perkataan 'Srivijaya' membawa maksud bercahaya dan…",
+        "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu Melaka",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "Kesinambungan Tujuh Kerajaan Alam Melayu…",
+            "detail": "Pembentukan negara bangsa kita tidak bermula secara mendadak pada abad ke-15. Ia diwarisi merentasi Funan,…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu…",
+            "detail": "Pada abad ke-15, Melaka muncul sebagai empayar berdaulat kerana memiliki sistem pemerintahan Islam…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+            "detail": "Pentadbiran Melaka tersusun kepada Pentadbiran Peringkat Pusat oleh Pembesar Berempat dan Pentadbiran…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kesultanan Johor-Riau dengan menekankan kepentingan agama Islam",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kerajaan Funan dengan memperluaskan pengaruh ke Teluk Cam Ranh",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerajaan Funan dengan memperluaskan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kerajaan Funan dengan memperluaskan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan kepentingan ajaran Islam.",
+              "spokenText": "Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan kepentingan ajaran Islam.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "Kesinambungan Tujuh Kerajaan Alam Melayu…",
+                    "detail": "Pembentukan negara bangsa kita tidak bermula secara mendadak pada abad ke-15. Ia diwarisi merentasi Funan,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu…",
+                    "detail": "Pada abad ke-15, Melaka muncul sebagai empayar berdaulat kerana memiliki sistem pemerintahan Islam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+                    "detail": "Pentadbiran Melaka tersusun kepada Pentadbiran Peringkat Pusat oleh Pembesar Berempat dan Pentadbiran…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kerajaan Gangga Nagara melalui undang-undang Kutara Manawa",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerajaan Gangga Nagara melalui… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kerajaan Gangga Nagara melalui tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan kepentingan ajaran Islam.",
+              "spokenText": "Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan kepentingan ajaran Islam.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "Kesinambungan Tujuh Kerajaan Alam Melayu…",
+                    "detail": "Pembentukan negara bangsa kita tidak bermula secara mendadak pada abad ke-15. Ia diwarisi merentasi Funan,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu…",
+                    "detail": "Pada abad ke-15, Melaka muncul sebagai empayar berdaulat kerana memiliki sistem pemerintahan Islam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+                    "detail": "Pentadbiran Melaka tersusun kepada Pentadbiran Peringkat Pusat oleh Pembesar Berempat dan Pentadbiran…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "Kesinambungan Tujuh Kerajaan Alam Melayu…",
+              "detail": "Pembentukan negara bangsa kita tidak bermula secara mendadak pada abad ke-15. Ia diwarisi merentasi Funan,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu…",
+              "detail": "Pada abad ke-15, Melaka muncul sebagai empayar berdaulat kerana memiliki sistem pemerintahan Islam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+              "detail": "Pentadbiran Melaka tersusun kepada Pentadbiran Peringkat Pusat oleh Pembesar Berempat dan Pentadbiran…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Enam Tonggak Negara Bangsa",
+          "desc": "Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan kepentingan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Selepas Kesultanan Melayu Melaka, ciri negara bangsa tersebut diteruskan oleh Kesultanan Johor-Riau yang menekankan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "Kesinambungan Tujuh Kerajaan Alam Melayu…",
+              "detail": "Pembentukan negara bangsa kita tidak bermula secara mendadak pada abad ke-15. Ia diwarisi merentasi Funan,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Enam Tonggak Negara Bangsa Kesultanan Melayu…",
+              "detail": "Pada abad ke-15, Melaka muncul sebagai empayar berdaulat kerana memiliki sistem pemerintahan Islam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+              "detail": "Pentadbiran Melaka tersusun kepada Pentadbiran Peringkat Pusat oleh Pembesar Berempat dan Pentadbiran…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pentadbiran Pusat vs Jajahan",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Ramal & Uji: Bagaimanakah penghantaran utusan Dinasti Ming pimpinan Laksamana Cheng Ho mengukuhkan negara bangsa Melaka?",
+        "spokenText": "Perhatikan rajah konsep di papan! Ramal & Uji: Bagaimanakah penghantaran utusan Dinasti Ming pimpinan Laksamana Cheng Ho mengukuhkan negara bangsa Melaka?"
+      },
+      "board": {
+        "promptPill": "Ramal & Uji: Bagaimanakah penghantaran utusan Dinasti Ming pimpinan Laksamana Cheng…",
+        "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Cap Mohor",
+            "detail": "Mengesahkan arahan dan surat rasmi daripada Sultan Melaka",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Kedaulatan",
+            "detail": "Bebas campur tangan asing & diiktiraf utusan Laksamana Cheng Ho",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Gelaran Sultan",
+            "detail": "Digunakan oleh pemerintah Melaka selepas kedatangan Islam",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengiktiraf kedaulatan Melaka secara antarabangsa dan mengelakkan ancaman luar",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menyerahkan seluruh kutipan cukai pelabuhan Melaka kepada Bendahara China",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menyerahkan seluruh kutipan cukai… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menyerahkan seluruh kutipan cukai tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan Melaka dan menjamin…",
+              "spokenText": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan Melaka dan menjamin",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pentadbiran Pusat vs Jajahan",
+                "desc": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menggantikan bahasa Melayu dengan bahasa Mandarin sebagai bahasa istana",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menggantikan bahasa Melayu dengan bahasa… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menggantikan bahasa Melayu dengan bahasa tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan Melaka dan menjamin…",
+              "spokenText": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan Melaka dan menjamin",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pentadbiran Pusat vs Jajahan",
+                "desc": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pentadbiran Pusat vs Jajahan",
+          "desc": "Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan Sultan Melaka…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Tepat sekali! Hubungan diplomatik erat bersama Dinasti Ming membuktikan pengiktirafan antarabangsa terhadap kedaulatan"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Warisan Negara Bangsa",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah rumusan paling menyeluruh menjelaskan keunggulan Kesultanan Melayu Melaka sebelum kedatangan kuasa Barat?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah rumusan paling menyeluruh menjelaskan keunggulan Kesultanan Melayu Melaka sebelum kedatangan kuasa Barat?"
+      },
+      "board": {
+        "promptPill": "Manakah rumusan paling menyeluruh menjelaskan keunggulan Kesultanan Melayu Melaka…",
+        "title": "Rumusan: Warisan Negara Bangsa",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+            "detail": "Beza penting untuk Kertas 1: Penghulu Bendahari mengurus perbendaharaan kerajaan, manakala Syahbandar…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Keunggulan Hukum Kanun Melaka (44 Fasal) &…",
+            "detail": "Jangan sesekali tertukar nombor fasal SPM: Fasal 30 Hukum Kanun Melaka (haram riba/perdagangan darat) vs…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Golongan Pemerintah, Diperintah & Perjanjian…",
+            "detail": "Petikan wajib Sejarah Melayu: 'Rakyat itu umpama akar, yang raja itu umpama pohon; jikalau tiada akar…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Gabungan 6 ciri negara bangsa, pentadbiran Pembesar Empat Lipatan, dwi-kanun bertulis…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Penghapusan semua bentuk cukai dan pembubaran sistem beraja di pelabuhan Melaka",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Penghapusan semua bentuk cukai dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Penghapusan semua bentuk cukai dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara bangsa kita sehingga kini.",
+              "spokenText": "Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara bangsa kita sehingga kini.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+                    "detail": "Beza penting untuk Kertas 1: Penghulu Bendahari mengurus perbendaharaan kerajaan, manakala Syahbandar…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Keunggulan Hukum Kanun Melaka (44 Fasal) &…",
+                    "detail": "Jangan sesekali tertukar nombor fasal SPM: Fasal 30 Hukum Kanun Melaka (haram riba/perdagangan darat) vs…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Golongan Pemerintah, Diperintah & Perjanjian…",
+                    "detail": "Petikan wajib Sejarah Melayu: 'Rakyat itu umpama akar, yang raja itu umpama pohon; jikalau tiada akar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Pergantungan sepenuhnya kepada undang-undang lisan tanpa catatan atau pegawai kapal",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pergantungan sepenuhnya kepada… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pergantungan sepenuhnya kepada tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara bangsa kita sehingga kini.",
+              "spokenText": "Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara bangsa kita sehingga kini.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+                    "detail": "Beza penting untuk Kertas 1: Penghulu Bendahari mengurus perbendaharaan kerajaan, manakala Syahbandar…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Keunggulan Hukum Kanun Melaka (44 Fasal) &…",
+                    "detail": "Jangan sesekali tertukar nombor fasal SPM: Fasal 30 Hukum Kanun Melaka (haram riba/perdagangan darat) vs…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Golongan Pemerintah, Diperintah & Perjanjian…",
+                    "detail": "Petikan wajib Sejarah Melayu: 'Rakyat itu umpama akar, yang raja itu umpama pohon; jikalau tiada akar…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+              "detail": "Beza penting untuk Kertas 1: Penghulu Bendahari mengurus perbendaharaan kerajaan, manakala Syahbandar…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Keunggulan Hukum Kanun Melaka (44 Fasal) &…",
+              "detail": "Jangan sesekali tertukar nombor fasal SPM: Fasal 30 Hukum Kanun Melaka (haram riba/perdagangan darat) vs…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Golongan Pemerintah, Diperintah & Perjanjian…",
+              "detail": "Petikan wajib Sejarah Melayu: 'Rakyat itu umpama akar, yang raja itu umpama pohon; jikalau tiada akar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Warisan Negara Bangsa",
+          "desc": "Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara bangsa kita…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Cemerlang! Keempat-empat subtopik Bab 1 saling berkait membentuk sebuah empayar berdaulat yang menjadi acuan negara",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Pentadbiran Pusat vs Jajahan & Kawasan Pegangan",
+              "detail": "Beza penting untuk Kertas 1: Penghulu Bendahari mengurus perbendaharaan kerajaan, manakala Syahbandar…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Keunggulan Hukum Kanun Melaka (44 Fasal) &…",
+              "detail": "Jangan sesekali tertukar nombor fasal SPM: Fasal 30 Hukum Kanun Melaka (haram riba/perdagangan darat) vs…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Golongan Pemerintah, Diperintah & Perjanjian…",
+              "detail": "Petikan wajib Sejarah Melayu: 'Rakyat itu umpama akar, yang raja itu umpama pohon; jikalau tiada akar…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t5-bab02",
+  "title": "Bab 2: Perlembagaan Persekutuan",
+  "shortTitle": "Bab 2: Perlembagaan Persekutuan",
+  "subject": "Sejarah",
+  "form": "T5",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bab 2: Perlembagaan Persekutuan",
+    "desc": "Hafal empat contoh undang-undang bertulis negeri Melayu selain Melaka: Hukum Kanun Pahang, Undang-Undang Kedah, Undang-Undang Johor dan…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bab 2: Perlembagaan Persekutuan?",
+        "spokenText": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bab 2: Perlembagaan Persekutuan?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bab 2: Perlembagaan Persekutuan?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengelaskan 'Agama Islam' atau 'Bahasa Melayu' sebagai Ciri Moden Perlembagaan Persekutuan.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden ialah Kerajaan…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengelaskan 'Agama Islam' atau 'Bahasa Melayu' sebagai Ciri Moden Perlembagaan Persekutuan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden…. Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden…",
+              "spokenText": "Fakta sebenar: Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden . Ciri Tradisional sama dengan unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden ialah Kerajaan Persekutuan,…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden = struktur negara baharu (Persekutuan,…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyatakan pindaan Perlembagaan 1965 menambah kuasa Singapura dalam Malaysia.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden…. Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden…",
+              "spokenText": "Fakta sebenar: Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden . Ciri Tradisional sama dengan unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden ialah Kerajaan Persekutuan,…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden = struktur negara baharu (Persekutuan,…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden ialah Kerajaan Persekutuan,…",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden = struktur negara baharu (Persekutuan,…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ciri Tradisional = unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden = struktur negara baharu…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ciri Tradisional sama dengan unsur berakar sebelum 1957 (Raja, Islam, BM, Perkara 153); Ciri Moden sama dengan struktur negara baharu",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Empat ciri tradisi asal ialah Kesultanan, Agama Islam, Bahasa Melayu dan Kedudukan Istimewa Melayu/Bumiputera; tiga ciri moden ialah Kerajaan Persekutuan,…",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Charter of Justice I,",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan sumber primer Proclamation of Sarawak Constitution (31 Mac 1941), apakah pembaharuan pentadbiran yang…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan sumber primer Proclamation of Sarawak Constitution (31 Mac 1941), apakah pembaharuan pentadbiran yang"
+      },
+      "board": {
+        "promptPill": "Berdasarkan sumber primer Proclamation of Sarawak Constitution (31 Mac 1941),…",
+        "title": "Charter of Justice I, II & III di Negeri-Negeri Selat",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "2.1 Asas Pembentukan & Undang-Undang Negeri…",
+            "detail": "Perlembagaan ialah dokumen undang-undang tertinggi yang menjadi teras pentadbiran negara berteraskan nilai…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Charter of Justice I, II & III di…",
+            "detail": "British memperkenalkan Charter of Justice di Pulau Pinang, Melaka dan Singapura bertujuan membela penduduk…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Perkembangan Undang-Undang di Sarawak & Sabah…",
+            "detail": "Sarawak dan Sabah mengalami transformasi perlembagaan daripada ordinan undang-undang lazim Inggeris kepada…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menyerahkan kuasa menggubal undang-undang kepada Majlis Persekutuan di Kuala Lumpur.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menyerahkan kuasa menggubal… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menyerahkan kuasa menggubal tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan bagi menggantikan pemerintahan…",
+              "spokenText": "Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan bagi menggantikan pemerintahan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "2.1 Asas Pembentukan & Undang-Undang Negeri…",
+                    "detail": "Perlembagaan ialah dokumen undang-undang tertinggi yang menjadi teras pentadbiran negara berteraskan nilai…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Charter of Justice I, II & III di…",
+                    "detail": "British memperkenalkan Charter of Justice di Pulau Pinang, Melaka dan Singapura bertujuan membela penduduk…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Perkembangan Undang-Undang di Sarawak & Sabah…",
+                    "detail": "Sarawak dan Sabah mengalami transformasi perlembagaan daripada ordinan undang-undang lazim Inggeris kepada…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Menggantikan pemerintahan mutlak kepada bentuk kerajaan berasaskan perwakilan dan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyatukan mahkamah Sarawak dengan Singapura, Melaka dan Pulau Pinang.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menyatukan mahkamah Sarawak dengan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menyatukan mahkamah Sarawak dengan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan bagi menggantikan pemerintahan…",
+              "spokenText": "Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan bagi menggantikan pemerintahan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "2.1 Asas Pembentukan & Undang-Undang Negeri…",
+                    "detail": "Perlembagaan ialah dokumen undang-undang tertinggi yang menjadi teras pentadbiran negara berteraskan nilai…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Charter of Justice I, II & III di…",
+                    "detail": "British memperkenalkan Charter of Justice di Pulau Pinang, Melaka dan Singapura bertujuan membela penduduk…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Perkembangan Undang-Undang di Sarawak & Sabah…",
+                    "detail": "Sarawak dan Sabah mengalami transformasi perlembagaan daripada ordinan undang-undang lazim Inggeris kepada…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "2.1 Asas Pembentukan & Undang-Undang Negeri…",
+              "detail": "Perlembagaan ialah dokumen undang-undang tertinggi yang menjadi teras pentadbiran negara berteraskan nilai…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Charter of Justice I, II & III di…",
+              "detail": "British memperkenalkan Charter of Justice di Pulau Pinang, Melaka dan Singapura bertujuan membela penduduk…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Perkembangan Undang-Undang di Sarawak & Sabah…",
+              "detail": "Sarawak dan Sabah mengalami transformasi perlembagaan daripada ordinan undang-undang lazim Inggeris kepada…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Charter of Justice I,",
+          "desc": "Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan bagi…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Proclamation of Sarawak Constitution (31 Mac 1941) mengarahkan Jawatankuasa Pentadbiran merangka langkah perundangan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "2.1 Asas Pembentukan & Undang-Undang Negeri…",
+              "detail": "Perlembagaan ialah dokumen undang-undang tertinggi yang menjadi teras pentadbiran negara berteraskan nilai…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Charter of Justice I, II & III di…",
+              "detail": "British memperkenalkan Charter of Justice di Pulau Pinang, Melaka dan Singapura bertujuan membela penduduk…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Perkembangan Undang-Undang di Sarawak & Sabah…",
+              "detail": "Sarawak dan Sabah mengalami transformasi perlembagaan daripada ordinan undang-undang lazim Inggeris kepada…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Perkembangan Undang-Undang di Sarawak",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Perlembagaan Persekutuan Tanah Melayu 1957 disesuaikan dengan Model Westminster dari Britain. Mengapakah negara kita…",
+        "spokenText": "Perhatikan rajah konsep di papan! Perlembagaan Persekutuan Tanah Melayu 1957 disesuaikan dengan Model Westminster dari Britain. Mengapakah negara kita"
+      },
+      "board": {
+        "promptPill": "Perlembagaan Persekutuan Tanah Melayu 1957 disesuaikan dengan Model Westminster…",
+        "title": "Perkembangan Undang-Undang di Sarawak & Sabah (1941–1959)",
+        "diagramType": "geo-map",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Perak (1877)",
+            "detail": "Majlis Negeri Perak dipengerusikan oleh Raja Muda Yusuf",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Negeri-Negeri Selat (1946)",
+            "detail": "Majlis Undangan Negeri",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Negeri-Negeri Melayu Bersekutu (1946)",
+            "detail": "Majlis Persekutuan",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kerana negara kita memang mempunyai asas sistem perundangan bertulis yang sedia kukuh…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kerana Britain memaksa Tanah Melayu menggunakan perlembagaan tidak bertulis sepenuhnya.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kerana Britain memaksa Tanah Melayu… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kerana Britain memaksa Tanah Melayu tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut banyak membantu proses…",
+              "spokenText": "Menurut huraian K S S M, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut banyak membantu proses",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Perkembangan Undang-Undang di Sarawak",
+                "desc": "Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kerana Majlis Negeri Perak pada 1877 telah membubarkan semua Dewan Rakyat dan Dewan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kerana Majlis Negeri Perak pada 1877… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kerana Majlis Negeri Perak pada 1877 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut banyak membantu proses…",
+              "spokenText": "Menurut huraian K S S M, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut banyak membantu proses",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Perkembangan Undang-Undang di Sarawak",
+                "desc": "Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Perkembangan Undang-Undang di Sarawak",
+          "desc": "Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal tersebut banyak…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Menurut huraian KSSM, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Menurut huraian K S S M, memandangkan negara kita sudah mempunyai asas sistem perundangan bertulis sejak dahulu, hal"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Bab 2: Perlembagaan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan penutup Bab 2 (m/s 41–45), apakah gandingan tanggungjawab rakyat, ahli Parlimen dan institusi seperti…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan penutup Bab 2 ( meter per saat 41 hingga 45), apakah gandingan tanggungjawab rakyat, ahli Parlimen dan institusi seperti"
+      },
+      "board": {
+        "promptPill": "Berdasarkan penutup Bab 2 (m/s 41–45), apakah gandingan tanggungjawab rakyat, ahli…",
+        "title": "Rumusan: Bab 2: Perlembagaan Persekutuan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.4 Tujuan Pindaan 1963 & Struktur Mahkamah…",
+            "detail": "Bezakan angka 3 dan fungsi puncak: 1 Mahkamah Persekutuan (puncak) + 3 Mahkamah Atasan (PTM, Sarawak &…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Mahkamah Tinggi Borneo & Jawatan Yang…",
+            "detail": "Bezakan badan penasihat Yang di-Pertua Negeri: Sarawak = Majlis Tertinggi; Sabah = Kabinet Negeri (soalan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Pindaan Perlembagaan 1965 (Pindaan Singapura)",
+            "detail": "Ingat kod IKLP bagi 4 contoh perkara berkaitan Singapura yang dimansuhkan pada 1965: Imigresen, Kewangan,…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Rakyat perlu peka terhadap sejarah, mematuhi undang-undang dan menyemarakkan bahasa…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Rakyat wajar menyerahkan urusan perpaduan kepada mahkamah luar negara tanpa mempelajari…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Rakyat wajar menyerahkan urusan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Rakyat wajar menyerahkan urusan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan bahasa Melayu sebagai bahasa…",
+              "spokenText": "Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan bahasa Melayu sebagai bahasa",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.4 Tujuan Pindaan 1963 & Struktur Mahkamah…",
+                    "detail": "Bezakan angka 3 dan fungsi puncak: 1 Mahkamah Persekutuan (puncak) + 3 Mahkamah Atasan (PTM, Sarawak &…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Mahkamah Tinggi Borneo & Jawatan Yang…",
+                    "detail": "Bezakan badan penasihat Yang di-Pertua Negeri: Sarawak = Majlis Tertinggi; Sabah = Kabinet Negeri (soalan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Pindaan Perlembagaan 1965 (Pindaan Singapura)",
+                    "detail": "Ingat kod IKLP bagi 4 contoh perkara berkaitan Singapura yang dimansuhkan pada 1965: Imigresen, Kewangan,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Ahli Parlimen memansuhkan ciri tradisional supaya hanya ciri moden sahaja diamalkan di…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Ahli Parlimen memansuhkan ciri… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Ahli Parlimen memansuhkan ciri tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan bahasa Melayu sebagai bahasa…",
+              "spokenText": "Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan bahasa Melayu sebagai bahasa",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.4 Tujuan Pindaan 1963 & Struktur Mahkamah…",
+                    "detail": "Bezakan angka 3 dan fungsi puncak: 1 Mahkamah Persekutuan (puncak) + 3 Mahkamah Atasan (PTM, Sarawak &…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Mahkamah Tinggi Borneo & Jawatan Yang…",
+                    "detail": "Bezakan badan penasihat Yang di-Pertua Negeri: Sarawak = Majlis Tertinggi; Sabah = Kabinet Negeri (soalan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Pindaan Perlembagaan 1965 (Pindaan Singapura)",
+                    "detail": "Ingat kod IKLP bagi 4 contoh perkara berkaitan Singapura yang dimansuhkan pada 1965: Imigresen, Kewangan,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.4 Tujuan Pindaan 1963 & Struktur Mahkamah…",
+              "detail": "Bezakan angka 3 dan fungsi puncak: 1 Mahkamah Persekutuan (puncak) + 3 Mahkamah Atasan (PTM, Sarawak &…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Mahkamah Tinggi Borneo & Jawatan Yang…",
+              "detail": "Bezakan badan penasihat Yang di-Pertua Negeri: Sarawak = Majlis Tertinggi; Sabah = Kabinet Negeri (soalan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Pindaan Perlembagaan 1965 (Pindaan Singapura)",
+              "detail": "Ingat kod IKLP bagi 4 contoh perkara berkaitan Singapura yang dimansuhkan pada 1965: Imigresen, Kewangan,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bab 2: Perlembagaan",
+          "desc": "Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan bahasa Melayu…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Penghayatan nilai sivik Bab 2 menuntut rakyat memahami kronologi warisan beraja, mematuhi undang-undang, memartabatkan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.4 Tujuan Pindaan 1963 & Struktur Mahkamah…",
+              "detail": "Bezakan angka 3 dan fungsi puncak: 1 Mahkamah Persekutuan (puncak) + 3 Mahkamah Atasan (PTM, Sarawak &…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Mahkamah Tinggi Borneo & Jawatan Yang…",
+              "detail": "Bezakan badan penasihat Yang di-Pertua Negeri: Sarawak = Majlis Tertinggi; Sabah = Kabinet Negeri (soalan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Pindaan Perlembagaan 1965 (Pindaan Singapura)",
+              "detail": "Ingat kod IKLP bagi 4 contoh perkara berkaitan Singapura yang dimansuhkan pada 1965: Imigresen, Kewangan,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

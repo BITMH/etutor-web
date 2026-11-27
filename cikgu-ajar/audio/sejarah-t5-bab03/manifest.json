@@ -1,0 +1,440 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t5-bab03/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Mengapakah pemerintah tentera Jepun memutuskan untuk mengekalkan kedudukan Raja-raja Melayu sebagai ketua agama Islam dan",
+      "duration": 7.125,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "lazim",
+          "start": 0.4,
+          "end": 0.74
+        },
+        {
+          "word": "sejarah",
+          "start": 0.74,
+          "end": 1.24
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.24,
+          "end": 1.86
+        },
+        {
+          "word": "pemerintah",
+          "start": 1.86,
+          "end": 2.42
+        },
+        {
+          "word": "kentera",
+          "start": 2.42,
+          "end": 2.72
+        },
+        {
+          "word": "Jepun",
+          "start": 2.72,
+          "end": 3.06
+        },
+        {
+          "word": "memutuskan",
+          "start": 3.06,
+          "end": 3.66
+        },
+        {
+          "word": "untuk",
+          "start": 3.66,
+          "end": 3.86
+        },
+        {
+          "word": "mengakalkan",
+          "start": 3.86,
+          "end": 4.5
+        },
+        {
+          "word": "kedudukan",
+          "start": 4.5,
+          "end": 4.88
+        },
+        {
+          "word": "raja",
+          "start": 4.88,
+          "end": 5.12
+        },
+        {
+          "word": "-raja",
+          "start": 5.12,
+          "end": 5.28
+        },
+        {
+          "word": "Melayu",
+          "start": 5.28,
+          "end": 5.62
+        },
+        {
+          "word": "sebagai",
+          "start": 5.62,
+          "end": 5.8
+        },
+        {
+          "word": "ketua",
+          "start": 5.8,
+          "end": 6.18
+        },
+        {
+          "word": "agama",
+          "start": 6.18,
+          "end": 6.5
+        },
+        {
+          "word": "Islam",
+          "start": 6.5,
+          "end": 6.74
+        },
+        {
+          "word": "dan",
+          "start": 6.74,
+          "end": 6.94
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t5-bab03/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah kesan utama penggubalan Undang-Undang Tubuh di negeri-negeri Melayu selepas Perjanjian Persekutuan Tanah Melayu",
+      "duration": 7.531,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "urutan",
+          "start": 0.26,
+          "end": 0.62
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.62,
+          "end": 1.12
+        },
+        {
+          "word": "di",
+          "start": 1.12,
+          "end": 1.24
+        },
+        {
+          "word": "Papuan,",
+          "start": 1.24,
+          "end": 1.64
+        },
+        {
+          "word": "apakah",
+          "start": 1.76,
+          "end": 2.54
+        },
+        {
+          "word": "kesan",
+          "start": 2.54,
+          "end": 2.88
+        },
+        {
+          "word": "utama",
+          "start": 2.88,
+          "end": 3.22
+        },
+        {
+          "word": "pengubalan",
+          "start": 3.22,
+          "end": 3.7
+        },
+        {
+          "word": "undang",
+          "start": 3.7,
+          "end": 4.0
+        },
+        {
+          "word": "-undang",
+          "start": 4.0,
+          "end": 4.2
+        },
+        {
+          "word": "tubuh",
+          "start": 4.2,
+          "end": 4.52
+        },
+        {
+          "word": "di",
+          "start": 4.52,
+          "end": 4.68
+        },
+        {
+          "word": "negeri",
+          "start": 4.68,
+          "end": 5.02
+        },
+        {
+          "word": "-negeri",
+          "start": 5.02,
+          "end": 5.24
+        },
+        {
+          "word": "Melayu",
+          "start": 5.24,
+          "end": 5.6
+        },
+        {
+          "word": "selepas",
+          "start": 5.6,
+          "end": 5.96
+        },
+        {
+          "word": "perjanjian",
+          "start": 5.96,
+          "end": 6.44
+        },
+        {
+          "word": "persekutuan",
+          "start": 6.44,
+          "end": 6.92
+        },
+        {
+          "word": "Tanah",
+          "start": 6.92,
+          "end": 7.12
+        },
+        {
+          "word": "Melayu?",
+          "start": 7.12,
+          "end": 7.5
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t5-bab03/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Mengapakah Majlis Sultan-Sultan gagal dilaksanakan sepanjang tempoh pentadbiran Malayan Union pada tahun 1946?",
+      "duration": 8.437,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "raja",
+          "start": 0.56,
+          "end": 0.8
+        },
+        {
+          "word": "konsep",
+          "start": 0.8,
+          "end": 1.24
+        },
+        {
+          "word": "di",
+          "start": 1.24,
+          "end": 1.32
+        },
+        {
+          "word": "Papal",
+          "start": 1.32,
+          "end": 1.68
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.68,
+          "end": 2.78
+        },
+        {
+          "word": "Manjili",
+          "start": 2.78,
+          "end": 3.14
+        },
+        {
+          "word": "Sultan",
+          "start": 3.14,
+          "end": 3.34
+        },
+        {
+          "word": "-Sultan",
+          "start": 3.34,
+          "end": 3.74
+        },
+        {
+          "word": "Ganggal",
+          "start": 3.74,
+          "end": 4.18
+        },
+        {
+          "word": "dilaksanakan",
+          "start": 4.18,
+          "end": 4.8
+        },
+        {
+          "word": "sepanjang",
+          "start": 4.8,
+          "end": 5.36
+        },
+        {
+          "word": "tempoh",
+          "start": 5.36,
+          "end": 5.78
+        },
+        {
+          "word": "Penta",
+          "start": 5.78,
+          "end": 5.96
+        },
+        {
+          "word": "Biran",
+          "start": 5.96,
+          "end": 6.28
+        },
+        {
+          "word": "Melayang",
+          "start": 6.28,
+          "end": 6.6
+        },
+        {
+          "word": "Union",
+          "start": 6.6,
+          "end": 6.88
+        },
+        {
+          "word": "pada",
+          "start": 6.88,
+          "end": 7.44
+        },
+        {
+          "word": "tahun",
+          "start": 7.44,
+          "end": 7.7
+        },
+        {
+          "word": "1995.",
+          "start": 7.7,
+          "end": 7.96
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t5-bab03/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Bab 3 ( meter per saat 71 & 73), apakah kepentingan pindaan Undi 18 tahun (Julai 2019) serta iktibar daripada",
+      "duration": 9.995,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "urutan",
+          "start": 0.52,
+          "end": 0.96
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.96,
+          "end": 1.48
+        },
+        {
+          "word": "di",
+          "start": 1.48,
+          "end": 1.62
+        },
+        {
+          "word": "Papayang,",
+          "start": 1.62,
+          "end": 2.5
+        },
+        {
+          "word": "berdasarkan",
+          "start": 2.5,
+          "end": 2.94
+        },
+        {
+          "word": "Rumusan",
+          "start": 2.94,
+          "end": 3.32
+        },
+        {
+          "word": "Bap",
+          "start": 3.32,
+          "end": 3.66
+        },
+        {
+          "word": "Timur",
+          "start": 3.66,
+          "end": 4.34
+        },
+        {
+          "word": "Perpesaan",
+          "start": 4.34,
+          "end": 5.0
+        },
+        {
+          "word": "Ciamin",
+          "start": 5.0,
+          "end": 5.42
+        },
+        {
+          "word": "Satses",
+          "start": 5.42,
+          "end": 5.88
+        },
+        {
+          "word": "I",
+          "start": 5.88,
+          "end": 6.1
+        },
+        {
+          "word": "apakah",
+          "start": 6.1,
+          "end": 6.7
+        },
+        {
+          "word": "kepentingan",
+          "start": 6.7,
+          "end": 7.26
+        },
+        {
+          "word": "pindahan",
+          "start": 7.26,
+          "end": 7.66
+        },
+        {
+          "word": "ungi",
+          "start": 7.66,
+          "end": 8.0
+        },
+        {
+          "word": "sikit",
+          "start": 8.0,
+          "end": 8.32
+        },
+        {
+          "word": "tahun,",
+          "start": 8.32,
+          "end": 8.64
+        },
+        {
+          "word": "cedua",
+          "start": 9.12,
+          "end": 9.46
+        },
+        {
+          "word": "padai.",
+          "start": 9.46,
+          "end": 9.82
+        }
+      ]
+    }
+  }
+}

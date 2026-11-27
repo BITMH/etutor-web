@@ -1,0 +1,845 @@
+{
+  "deckId": "pendidikan-islam-t5-bab02",
+  "title": "Pelajaran 2: Surah al-Hasyr Ayat 21–24 (Keagungan Al-Quran & Asmaul Husna)",
+  "shortTitle": "Surah al-Hasyr Ayat 21–24",
+  "subject": "Pendidikan Islam",
+  "form": "T5",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Surah al-Hasyr Ayat 21–24",
+    "desc": "Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Keagungan Al-Quran & Perumpamaan Gunung Hancur…?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Keagungan Al-Quran & Perumpamaan Gunung Hancur ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Keagungan Al-Quran & Perumpamaan Gunung Hancur…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengelirukan maksud Al-Bari' dengan Al-Musawwir dalam ayat 24.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha Membentuk rupa makhluk…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengelirukan maksud Al-Bari' dengan Al-Musawwir dalam ayat 24.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha…. Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+              "spokenText": "Fakta sebenar: Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha . Al-Musawwir berkait dengan 'taswir / sawara' sama dengan rupa/bentuk!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha Membentuk rupa makhluk dengan…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang,…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menulis sifat manusia sombong boleh memakai gelaran 'Al-Mutakabbir'.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha…. Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+              "spokenText": "Fakta sebenar: Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha . Al-Musawwir berkait dengan 'taswir / sawara' sama dengan rupa/bentuk!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha Membentuk rupa makhluk dengan…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha Membentuk rupa makhluk dengan…",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Al-Musawwir berkait dengan 'taswir / sawara' = rupa/bentuk!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Al-Musawwir berkait dengan 'taswir / sawara' sama dengan rupa/bentuk!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Al-Bari' bermaksud Maha Mengadakan/Menjadikan makhluk daripada tiada dengan seimbang, manakala Al-Musawwir bermaksud Maha Membentuk rupa makhluk dengan…",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 2.1 Keagungan Al-Quran &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah maksud perumpamaan dalam Surah al-Hasyr ayat 21 apabila al-Quran digambarkan sekiranya diturunkan ke atas…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah maksud perumpamaan dalam Surah al-Hasyr ayat 21 apabila al-Quran digambarkan sekiranya diturunkan ke atas"
+      },
+      "board": {
+        "promptPill": "Apakah maksud perumpamaan dalam Surah al-Hasyr ayat 21 apabila al-Quran digambarkan…",
+        "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung Hancur (Ayat 21)",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Subtopik 2.1",
+            "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung…",
+            "detail": "Ayat 21 menegur keras hati manusia yang enggan tersentuh apabila mendengar al-Quran, sedangkan makhluk kaku…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.2",
+            "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+            "detail": "Ayat 22–23 memperkenalkan kesempurnaan zat Allah SWT yang mentadbir perkara tersembunyi mahupun nyata,…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Subtopik 2.3",
+            "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+            "detail": "Ayat 24 melengkapkan himpunan Asmaul Husna dengan menonjolkan kehebatan Allah sebagai Pencipta yang tiada…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Gunung itu akan bertukar menjadi emas",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Gunung itu akan bertukar menjadi emas tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Gunung itu akan bertukar menjadi emas tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+              "spokenText": "Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung…",
+                    "detail": "Ayat 21 menegur keras hati manusia yang enggan tersentuh apabila mendengar al-Quran, sedangkan makhluk kaku…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+                    "detail": "Ayat 22–23 memperkenalkan kesempurnaan zat Allah SWT yang mentadbir perkara tersembunyi mahupun nyata,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+                    "detail": "Ayat 24 melengkapkan himpunan Asmaul Husna dengan menonjolkan kehebatan Allah sebagai Pencipta yang tiada…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Gunung itu pasti akan khusyuk dan pecah berkecai kerana takut kepada Allah SWT",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Gunung itu akan terus membisu tanpa kesan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Gunung itu akan terus membisu tanpa kesan tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Gunung itu akan terus membisu tanpa kesan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+              "spokenText": "Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Subtopik 2.1",
+                    "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung…",
+                    "detail": "Ayat 21 menegur keras hati manusia yang enggan tersentuh apabila mendengar al-Quran, sedangkan makhluk kaku…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.2",
+                    "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+                    "detail": "Ayat 22–23 memperkenalkan kesempurnaan zat Allah SWT yang mentadbir perkara tersembunyi mahupun nyata,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Subtopik 2.3",
+                    "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+                    "detail": "Ayat 24 melengkapkan himpunan Asmaul Husna dengan menonjolkan kehebatan Allah sebagai Pencipta yang tiada…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung…",
+              "detail": "Ayat 21 menegur keras hati manusia yang enggan tersentuh apabila mendengar al-Quran, sedangkan makhluk kaku…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+              "detail": "Ayat 22–23 memperkenalkan kesempurnaan zat Allah SWT yang mentadbir perkara tersembunyi mahupun nyata,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+              "detail": "Ayat 24 melengkapkan himpunan Asmaul Husna dengan menonjolkan kehebatan Allah sebagai Pencipta yang tiada…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Keagungan Al-Quran &",
+          "desc": "Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ayat 21 menyebut 'khasyi'an mutasaddi'an min khasyyatillah' (tunduk khusyuk dan pecah belah kerana takutkan Allah).",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Subtopik 2.1",
+              "title": "2.1 Keagungan Al-Quran & Perumpamaan Gunung…",
+              "detail": "Ayat 21 menegur keras hati manusia yang enggan tersentuh apabila mendengar al-Quran, sedangkan makhluk kaku…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.2",
+              "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+              "detail": "Ayat 22–23 memperkenalkan kesempurnaan zat Allah SWT yang mentadbir perkara tersembunyi mahupun nyata,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Subtopik 2.3",
+              "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+              "detail": "Ayat 24 melengkapkan himpunan Asmaul Husna dengan menonjolkan kehebatan Allah sebagai Pencipta yang tiada…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Pendidikan Islam! Apakah tujuan Allah SWT mengemukakan perumpamaan gunung dalam ayat 21 kepada manusia?",
+        "spokenText": "Perangkap lazim Pendidikan Islam! Apakah tujuan Allah SWT mengemukakan perumpamaan gunung dalam ayat 21 kepada manusia?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah tujuan Allah SWT mengemukakan perumpamaan gunung dalam ayat 21 kepada manusia?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Supaya manusia takut mendaki gunung",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Supaya manusia takut mendaki gunung",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah. 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir…",
+              "spokenText": "Fakta sebenar: Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah. 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' , supaya manusia berfikir",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir dan menginsafi keagungan al-Quran.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Untuk mengharamkan perlombongan batu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Pendidikan Islam. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah. 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir…",
+              "spokenText": "Fakta sebenar: Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah. 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' , supaya manusia berfikir",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir dan menginsafi keagungan al-Quran.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir dan menginsafi keagungan al-Quran.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' — supaya manusia berfikir dan menginsafi keagungan…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Wa tilkal-amsalu nadribuha lin-nasi la'allahum yatafakkarun' , supaya manusia berfikir dan menginsafi keagungan",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Supaya manusia memikirkan kebesaran al-Quran dan melembutkan hati untuk tunduk patuh kepada Allah",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Surah al-Hasyr Ayat",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah maksud Asmaul Husna 'Al-Khaliq', 'Al-Bari'' dan 'Al-Musawwir' dalam ayat 24?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah maksud Asmaul Husna 'Al-Khaliq', 'Al-Bari'' dan 'Al-Musawwir' dalam ayat 24?"
+      },
+      "board": {
+        "promptPill": "Apakah maksud Asmaul Husna 'Al-Khaliq', 'Al-Bari'' dan 'Al-Musawwir' dalam ayat 24?",
+        "title": "Rumusan: Surah al-Hasyr Ayat 21–24",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+            "detail": "Hafalkan pasangan maksud nama Allah ayat 23–24 kerana amat kerap diuji dalam soalan isi tempat kosong &…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+            "detail": "Susunan penciptaan yang teratur dalam ayat 24: Rancang (Al-Khaliq) → Wujudkan (Al-Bari') → Bentuk rupa unik…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Tajwid Ayat 21–24 & Amalan Menghayati…",
+            "detail": "Jika terdapat tanda tasydid tepat di atas huruf selepas 'Al-' pada nama Allah, ia pasti Alif Lam Syamsiah!",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Maha Pengampun, Maha Kaya, Maha Sabar",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Maha Pengampun, Maha Kaya, Maha Sabar tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Maha Pengampun, Maha Kaya, Maha Sabar tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir (Pembentuk Rupa).",
+              "spokenText": "Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir (Pembentuk Rupa).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+                    "detail": "Hafalkan pasangan maksud nama Allah ayat 23–24 kerana amat kerap diuji dalam soalan isi tempat kosong &…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+                    "detail": "Susunan penciptaan yang teratur dalam ayat 24: Rancang (Al-Khaliq) → Wujudkan (Al-Bari') → Bentuk rupa unik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Tajwid Ayat 21–24 & Amalan Menghayati…",
+                    "detail": "Jika terdapat tanda tasydid tepat di atas huruf selepas 'Al-' pada nama Allah, ia pasti Alif Lam Syamsiah!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Maha Pencipta, Maha Mengadakan (dari tiada), Maha Membentuk rupa makhluk",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Maha Mendengar, Maha Melihat, Maha Mengetahui",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Maha Mendengar, Maha Melihat, Maha… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Maha Mendengar, Maha Melihat, Maha tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir (Pembentuk Rupa).",
+              "spokenText": "Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir (Pembentuk Rupa).",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+                    "detail": "Hafalkan pasangan maksud nama Allah ayat 23–24 kerana amat kerap diuji dalam soalan isi tempat kosong &…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+                    "detail": "Susunan penciptaan yang teratur dalam ayat 24: Rancang (Al-Khaliq) → Wujudkan (Al-Bari') → Bentuk rupa unik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Tajwid Ayat 21–24 & Amalan Menghayati…",
+                    "detail": "Jika terdapat tanda tasydid tepat di atas huruf selepas 'Al-' pada nama Allah, ia pasti Alif Lam Syamsiah!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+              "detail": "Hafalkan pasangan maksud nama Allah ayat 23–24 kerana amat kerap diuji dalam soalan isi tempat kosong &…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+              "detail": "Susunan penciptaan yang teratur dalam ayat 24: Rancang (Al-Khaliq) → Wujudkan (Al-Bari') → Bentuk rupa unik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Tajwid Ayat 21–24 & Amalan Menghayati…",
+              "detail": "Jika terdapat tanda tasydid tepat di atas huruf selepas 'Al-' pada nama Allah, ia pasti Alif Lam Syamsiah!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Surah al-Hasyr Ayat",
+          "desc": "Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir (Pembentuk Rupa).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ayat 24 merangkumkan tiga sifat penciptaan Allah: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan) dan Al-Musawwir",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Pengetahuan Alam Ghaib, Nyata & Asmaul…",
+              "detail": "Hafalkan pasangan maksud nama Allah ayat 23–24 kerana amat kerap diuji dalam soalan isi tempat kosong &…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Penciptaan Sempurna & Tasbih Alam Semesta…",
+              "detail": "Susunan penciptaan yang teratur dalam ayat 24: Rancang (Al-Khaliq) → Wujudkan (Al-Bari') → Bentuk rupa unik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Tajwid Ayat 21–24 & Amalan Menghayati…",
+              "detail": "Jika terdapat tanda tasydid tepat di atas huruf selepas 'Al-' pada nama Allah, ia pasti Alif Lam Syamsiah!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

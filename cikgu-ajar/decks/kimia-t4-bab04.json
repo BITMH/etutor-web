@@ -1,0 +1,791 @@
+{
+  "deckId": "kimia-t4-bab04",
+  "title": "Jadual Berkala Unsur",
+  "shortTitle": "Jadual Berkala Unsur",
+  "subject": "Kimia",
+  "form": "T4",
+  "bab": 4,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Jadual Berkala Unsur",
+    "desc": "Untuk soalan sejarah 4.1: bezakan kelemahan Lavoisier (masukkan cahaya & haba), Triad Dobereiner (3 unsur: Ca-Sr-Ba, Cl-Br-I) dan had Hukum Oktaf…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Kimia! Berdasarkan kajian sinar-X Henry Moseley, bagaimanakah unsur disusun dalam Jadual Berkala Moden dan empat unsur manakah berjaya…",
+        "spokenText": "Perangkap lazim Kimia! Berdasarkan kajian sinar-X Henry Moseley, bagaimanakah unsur disusun dalam Jadual Berkala Moden dan empat unsur manakah berjaya"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Berdasarkan kajian sinar-X Henry Moseley, bagaimanakah unsur disusun dalam Jadual Berkala Moden dan empat unsur manakah berjaya diramalnya?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Disusun mengikut pertambahan jisim atom relatif; meramal klorin, bromin, iodin dan fluorin",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re)",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm),…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Disusun mengikut pertambahan jisim atom relatif; meramal klorin, bromin, iodin dan fluorin",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re). Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun…",
+              "spokenText": "Fakta sebenar: Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re). Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun unsur mengikut tertib nombor proton yang…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Disusun mengikut Hukum Oktaf tujuh unsur sebaris; meramal helium, neon, argon dan kripton",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re). Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun…",
+              "spokenText": "Fakta sebenar: Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re). Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun unsur mengikut tertib nombor proton yang…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re)",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun unsur mengikut tertib nombor proton yang…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun unsur mengikut tertib nombor…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Moseley mengaitkan frekuensi sinar-X dengan nombor proton setiap unsur lalu menyusun unsur mengikut tertib nombor",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Disusun mengikut tertib nombor proton yang menaik; meramal teknetium (Tc), prometium (Pm), hafnium (Hf) dan renium (Re)",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Meyer, Mendeleev & Moseley:",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Nombor proton bagi Karbon (C) ialah 6 dan Klorin (Cl) ialah 17. Manakah susunan elektron, kumpulan dan kala yang TEPAT bagi…",
+        "spokenText": "Lihat langkah di papan! Nombor proton bagi Karbon (C) ialah 6 dan Klorin (Cl) ialah 17. Manakah susunan elektron, kumpulan dan kala yang TEPAT bagi"
+      },
+      "board": {
+        "promptPill": "Nombor proton bagi Karbon (C) ialah 6 dan Klorin (Cl) ialah 17. Manakah susunan…",
+        "title": "Meyer, Mendeleev & Moseley: Prinsip Jadual Berkala Moden",
+        "given": "Mendeleev memperkenalkan lajur menegak dan ruang kosong ramalan, manakala Henry Moseley menetapkan prinsip asas moden…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Lothar Meyer & Dmitri Mendeleev (1834–1907): Meyer memplot graf isi padu atom melawan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Henry Moseley & Unsur Baharu (1–118): Kajian frekuensi spektrum sinar-X oleh Moseley…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "C: susunan 2.4, Kumpulan 4, Kala 2 | Cl: susunan 2.8.7, Kumpulan 7, Kala 3",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan C: susunan 2.4, Kumpulan 4, Kala 2 | Cl:… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan C: susunan 2 perpuluhan empat, Kumpulan 4, Kala 2 | Cl: tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Karbon (Z=6) bersusunan 2.4 -> 4 elektron valens (4+10 = Kumpulan 14), 2 petala (Kala 2). Klorin (Z=17) bersusunan 2.8.7 -> 7 elektron valens (7+10…",
+              "spokenText": "Karbon (Z sama dengan 6) bersusunan 2 perpuluhan empat - lebih daripada 4 elektron valens (4 positif 10 sama dengan Kumpulan 14), 2 petala (Kala 2). Klorin (Z sama dengan 17) bersusunan 2 perpuluhan lapan.7 - lebih daripada 7 elektron valens (7 positif 10",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Lothar Meyer & Dmitri Mendeleev (1834–1907): Meyer memplot graf isi padu atom melawan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Henry Moseley & Unsur Baharu (1–118): Kajian frekuensi spektrum sinar-X oleh Moseley…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "C: susunan 2.4, Kumpulan 14, Kala 2 | Cl: susunan 2.8.7, Kumpulan 17, Kala 3",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "C: susunan 2.2.2, Kumpulan 12, Kala 3 | Cl: susunan 2.8.7, Kumpulan 17, Kala 4",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan C: susunan 2.2.2, Kumpulan 12, Kala 3 | Cl:… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan C: susunan 2 perpuluhan dua.2, Kumpulan 12, Kala 3 | Cl: tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Karbon (Z=6) bersusunan 2.4 -> 4 elektron valens (4+10 = Kumpulan 14), 2 petala (Kala 2). Klorin (Z=17) bersusunan 2.8.7 -> 7 elektron valens (7+10…",
+              "spokenText": "Karbon (Z sama dengan 6) bersusunan 2 perpuluhan empat - lebih daripada 4 elektron valens (4 positif 10 sama dengan Kumpulan 14), 2 petala (Kala 2). Klorin (Z sama dengan 17) bersusunan 2 perpuluhan lapan.7 - lebih daripada 7 elektron valens (7 positif 10",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Lothar Meyer & Dmitri Mendeleev (1834–1907): Meyer memplot graf isi padu atom melawan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Henry Moseley & Unsur Baharu (1–118): Kajian frekuensi spektrum sinar-X oleh Moseley…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Lothar Meyer & Dmitri Mendeleev (1834–1907): Meyer memplot graf isi padu atom melawan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Henry Moseley & Unsur Baharu (1–118): Kajian frekuensi spektrum sinar-X oleh Moseley…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Meyer, Mendeleev & Moseley:",
+          "desc": "Karbon (Z=6) bersusunan 2.4 -> 4 elektron valens (4+10 = Kumpulan 14), 2 petala (Kala 2). Klorin (Z=17) bersusunan 2.8.7 -> 7 elektron…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Karbon (Z=6) bersusunan 2.4 -> 4 elektron valens (4+10 = Kumpulan 14), 2 petala (Kala 2). Klorin (Z=17) bersusunan…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Karbon (Z sama dengan 6) bersusunan 2 perpuluhan empat - lebih daripada 4 elektron valens (4 positif 10 sama dengan Kumpulan 14), 2 petala (Kala 2). Klorin (Z sama dengan 17) bersusunan",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Lothar Meyer & Dmitri Mendeleev (1834–1907): Meyer memplot graf isi padu atom melawan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Henry Moseley & Unsur Baharu (1–118): Kajian frekuensi spektrum sinar-X oleh Moseley…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 4.2 Jadual Berkala Moden:",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Manakah penjelasan yang TEPAT mengenai kedudukan Helium dan bentuk zarah Argon pada suhu bilik?",
+        "spokenText": "Perhatikan rajah konsep di papan! Manakah penjelasan yang TEPAT mengenai kedudukan Helium dan bentuk zarah Argon pada suhu bilik?"
+      },
+      "board": {
+        "promptPill": "Manakah penjelasan yang TEPAT mengenai kedudukan Helium dan bentuk zarah Argon pada…",
+        "title": "4.2 Jadual Berkala Moden: 18 Kumpulan, 7 Kala & Susunan Elektron",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Helium (He)",
+            "detail": "Diisikan ke dalam belon kaji cuaca dan tangki oksigen penyelam",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Neon (Ne) & Argon (Ar)",
+            "detail": "Lampu papan iklan (Ne); mentol elektrik dan atmosfera lengai kerja mengimpal (Ar)",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kripton (Kr)",
+            "detail": "Lampu denyar kilat pada kamera dan laser untuk rawatan retina mata",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Helium mempunyai 1 petala yang telah penuh (duplet stabil) menjadikannya lengai seperti…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Helium diletakkan di Kumpulan 18 kerana boleh menderma 2 elektron dengan mudah; Argon…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Helium diletakkan di Kumpulan 18 kerana… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Helium diletakkan di Kumpulan 18 kerana tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat lengai dengan gas adi…",
+              "spokenText": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat lengai dengan gas adi",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "4.2 Jadual Berkala Moden:",
+                "desc": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Helium diletakkan di Kumpulan 18 secara rawak kerana merupakan logam paling ringan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Helium diletakkan di Kumpulan 18 secara… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Helium diletakkan di Kumpulan 18 secara tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat lengai dengan gas adi…",
+              "spokenText": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat lengai dengan gas adi",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "4.2 Jadual Berkala Moden:",
+                "desc": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "4.2 Jadual Berkala Moden:",
+          "desc": "Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet), sama sifat lengai…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet),…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Petala pertama hanya boleh diisi maksimum 2 elektron, jadi Helium (2) sudah penuh dan stabil secara kimia (duplet),"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Jadual Berkala Unsur",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah sintesis saintifik yang PALING tepat bagi perbezaan arah kereaktifan kumpulan X dan Y serta persamaan kimia X…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah sintesis saintifik yang PALING tepat bagi perbezaan arah kereaktifan kumpulan X dan Y serta persamaan kimia X"
+      },
+      "board": {
+        "promptPill": "Manakah sintesis saintifik yang PALING tepat bagi perbezaan arah kereaktifan…",
+        "title": "Rumusan: Jadual Berkala Unsur",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Eksperimen 4.2: Sifat Oksida Kala 3 & Metaloid…",
+            "detail": "Untuk Penilaian Prestasi 4 No. 5: Unsur Kala 3 yang membentuk oksida amfoterik ialah ALUMINIUM (Al₂O₃).…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "4.7 Kedudukan, Sifat Logam & 4 Ciri Istimewa…",
+            "detail": "Bezakan pasangan hijau vs perang bagi ferum (Penilaian Prestasi 4 No. 10): Ion ferum(II) Fe²⁺ berwarna…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Mangkin Industri, Aloi Nitinol, Permata &…",
+            "detail": "Ingat akronim HOSP untuk mangkin industri: Haber = Fe -> NH₃ | Ostwald = Pt -> HNO₃ | Sentuh = V₂O₅ -> H₂SO₄…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menuruni kumpulan X: jarak elektron valens dari nukleus membesar -> tarikan nukleus…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menuruni kedua-dua kumpulan X dan Y: saiz atom mengecut lalu kedua-duanya sukar menderma…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menuruni kedua-dua kumpulan X dan Y:… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menuruni kedua-dua kumpulan X dan Y: tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Pilihan A tepat 100%: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke bawah, tetapi X (logam alkali)…",
+              "spokenText": "Tahniah! Pilihan A tepat 100 peratus: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke bawah, tetapi X (logam alkali)",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Eksperimen 4.2: Sifat Oksida Kala 3 & Metaloid…",
+                    "detail": "Untuk Penilaian Prestasi 4 No. 5: Unsur Kala 3 yang membentuk oksida amfoterik ialah ALUMINIUM (Al₂O₃).…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "4.7 Kedudukan, Sifat Logam & 4 Ciri Istimewa…",
+                    "detail": "Bezakan pasangan hijau vs perang bagi ferum (Penilaian Prestasi 4 No. 10): Ion ferum(II) Fe²⁺ berwarna…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Mangkin Industri, Aloi Nitinol, Permata &…",
+                    "detail": "Ingat akronim HOSP untuk mangkin industri: Haber = Fe -> NH₃ | Ostwald = Pt -> HNO₃ | Sentuh = V₂O₅ -> H₂SO₄…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menuruni kumpulan X: sukar menderma elektron (kereaktifan↓); Menuruni kumpulan Y: mudah…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menuruni kumpulan X: sukar menderma… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menuruni kumpulan X: sukar menderma tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Pilihan A tepat 100%: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke bawah, tetapi X (logam alkali)…",
+              "spokenText": "Tahniah! Pilihan A tepat 100 peratus: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke bawah, tetapi X (logam alkali)",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Eksperimen 4.2: Sifat Oksida Kala 3 & Metaloid…",
+                    "detail": "Untuk Penilaian Prestasi 4 No. 5: Unsur Kala 3 yang membentuk oksida amfoterik ialah ALUMINIUM (Al₂O₃).…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "4.7 Kedudukan, Sifat Logam & 4 Ciri Istimewa…",
+                    "detail": "Bezakan pasangan hijau vs perang bagi ferum (Penilaian Prestasi 4 No. 10): Ion ferum(II) Fe²⁺ berwarna…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Mangkin Industri, Aloi Nitinol, Permata &…",
+                    "detail": "Ingat akronim HOSP untuk mangkin industri: Haber = Fe -> NH₃ | Ostwald = Pt -> HNO₃ | Sentuh = V₂O₅ -> H₂SO₄…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Eksperimen 4.2: Sifat Oksida Kala 3 & Metaloid…",
+              "detail": "Untuk Penilaian Prestasi 4 No. 5: Unsur Kala 3 yang membentuk oksida amfoterik ialah ALUMINIUM (Al₂O₃).…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "4.7 Kedudukan, Sifat Logam & 4 Ciri Istimewa…",
+              "detail": "Bezakan pasangan hijau vs perang bagi ferum (Penilaian Prestasi 4 No. 10): Ion ferum(II) Fe²⁺ berwarna…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Mangkin Industri, Aloi Nitinol, Permata &…",
+              "detail": "Ingat akronim HOSP untuk mangkin industri: Haber = Fe -> NH₃ | Ostwald = Pt -> HNO₃ | Sentuh = V₂O₅ -> H₂SO₄…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Jadual Berkala Unsur",
+          "desc": "Tahniah! Pilihan A tepat 100%: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke bawah, tetapi X…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Pilihan A tepat 100%: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Pilihan A tepat 100 peratus: kedua-dua kumpulan mengalami pertambahan saiz atom dan kelemahan tarikan nukleus ke",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Eksperimen 4.2: Sifat Oksida Kala 3 & Metaloid…",
+              "detail": "Untuk Penilaian Prestasi 4 No. 5: Unsur Kala 3 yang membentuk oksida amfoterik ialah ALUMINIUM (Al₂O₃).…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "4.7 Kedudukan, Sifat Logam & 4 Ciri Istimewa…",
+              "detail": "Bezakan pasangan hijau vs perang bagi ferum (Penilaian Prestasi 4 No. 10): Ion ferum(II) Fe²⁺ berwarna…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Mangkin Industri, Aloi Nitinol, Permata &…",
+              "detail": "Ingat akronim HOSP untuk mangkin industri: Haber = Fe -> NH₃ | Ostwald = Pt -> HNO₃ | Sentuh = V₂O₅ -> H₂SO₄…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

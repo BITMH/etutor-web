@@ -1,0 +1,775 @@
+{
+  "deckId": "matematik-t5-bab02",
+  "title": "Matriks",
+  "shortTitle": "Matriks",
+  "subject": "Matematik",
+  "form": "T5",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Matriks",
+    "desc": "Sentiasa tulis huruf besar (seperti A, P atau M) untuk menamakan matriks dan kurung kesemua unsur di dalam kurungan siku [ ] atau lengkung ( ) tanpa…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Matriks?",
+        "spokenText": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Matriks?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Matriks?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa menyatakan x = 3, y = 2.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x = 3, y = 2'.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menulis x = [3] dan y = [2] atau meninggalkan jawapan akhir sebagai matriks [3; 2] tanpa…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x…. Keluarkan x dan y dari kurung matriks di baris penutup!",
+              "spokenText": "Fakta sebenar: Dalam soalan S P M 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x . Keluarkan x dan y dari kurung matriks di baris penutup!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x = 3, y = 2'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Keluarkan x dan y dari kurung matriks di baris penutup!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Lupa menukar kedudukan a dengan d atau salah tukar tanda dalam rumus A⁻¹.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x…. Keluarkan x dan y dari kurung matriks di baris penutup!",
+              "spokenText": "Fakta sebenar: Dalam soalan S P M 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x . Keluarkan x dan y dari kurung matriks di baris penutup!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x = 3, y = 2'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Keluarkan x dan y dari kurung matriks di baris penutup!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x = 3, y = 2'.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Keluarkan x dan y dari kurung matriks di baris penutup!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Keluarkan x dan y dari kurung matriks di baris penutup!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Keluarkan x dan y dari kurung matriks di baris penutup!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Dalam soalan SPM 'dengan menggunakan kaedah matriks, hitung nilai x dan nilai y', baris akhir WAJIB menyatakan nilai skalar: 'x = 3, y = 2'.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Peringkat Matriks m ×",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Diberi [[4a, 6], [3b - 1, c + 5]] = [[20, 6], [b + 7, -2a]]. Hitung nilai a + b + c.",
+        "spokenText": "Lihat langkah di papan! Diberi [[4a, 6], [3b - 1, c positif 5]] sama dengan [[20, 6], [b positif 7, negatif 2a]]. Hitung nilai a + b + c."
+      },
+      "board": {
+        "promptPill": "Diberi [[4a, 6], [3b - 1, c + 5]] = [[20, 6], [b + 7, -2a]]. Hitung nilai a + b + c.",
+        "title": "Peringkat Matriks m × n, Unsur aᵢⱼ & Syarat Matriks Sama",
+        "given": "Peringkat matriks ditentukan melalui bilangan baris (m) diikuti bilangan lajur (n), setiap nombor dalamnya ialah unsur…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Peringkat m × n & Tatatanda Unsur aᵢⱼ: Matriks dengan m baris dan n lajur berperingkat m…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Syarat Mutlak Matriks Sama (M = N): M = N jika dan hanya jika (1) kedua-dua matriks…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "-6",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "4",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 4 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 4 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Daripada unsur sepadan: 4a = 20 memberi a = 5; kemudian 3b - 1 = b + 7 memberi 2b = 8 iaitu b = 4; seterusnya c + 5 = -2a = -2(5) = -10 menghasilkan…",
+              "spokenText": "Daripada unsur sepadan: 4a sama dengan 20 memberi a sama dengan 5; kemudian 3b - 1 sama dengan b positif 7 memberi 2b sama dengan 8 iaitu b sama dengan 4; seterusnya c positif 5 sama dengan negatif 2a sama dengan negatif 2(5) sama dengan negatif 10 menghasilkan",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Peringkat m × n & Tatatanda Unsur aᵢⱼ: Matriks dengan m baris dan n lajur berperingkat m…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Syarat Mutlak Matriks Sama (M = N): M = N jika dan hanya jika (1) kedua-dua matriks…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "14",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 14 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 14 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Daripada unsur sepadan: 4a = 20 memberi a = 5; kemudian 3b - 1 = b + 7 memberi 2b = 8 iaitu b = 4; seterusnya c + 5 = -2a = -2(5) = -10 menghasilkan…",
+              "spokenText": "Daripada unsur sepadan: 4a sama dengan 20 memberi a sama dengan 5; kemudian 3b - 1 sama dengan b positif 7 memberi 2b sama dengan 8 iaitu b sama dengan 4; seterusnya c positif 5 sama dengan negatif 2a sama dengan negatif 2(5) sama dengan negatif 10 menghasilkan",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Peringkat m × n & Tatatanda Unsur aᵢⱼ: Matriks dengan m baris dan n lajur berperingkat m…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Syarat Mutlak Matriks Sama (M = N): M = N jika dan hanya jika (1) kedua-dua matriks…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Peringkat m × n & Tatatanda Unsur aᵢⱼ: Matriks dengan m baris dan n lajur berperingkat m…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Syarat Mutlak Matriks Sama (M = N): M = N jika dan hanya jika (1) kedua-dua matriks…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Peringkat Matriks m ×",
+          "desc": "Daripada unsur sepadan: 4a = 20 memberi a = 5; kemudian 3b - 1 = b + 7 memberi 2b = 8 iaitu b = 4; seterusnya c + 5 = -2a = -2(5) = -10…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Daripada unsur sepadan: 4a = 20 memberi a = 5; kemudian 3b - 1 = b + 7 memberi 2b = 8 iaitu b = 4; seterusnya c + 5 =…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Daripada unsur sepadan: 4a sama dengan 20 memberi a sama dengan 5; kemudian 3b - 1 sama dengan b positif 7 memberi 2b sama dengan 8 iaitu b sama dengan 4; seterusnya c positif 5 sama dengan",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Peringkat m × n & Tatatanda Unsur aᵢⱼ: Matriks dengan m baris dan n lajur berperingkat m…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Syarat Mutlak Matriks Sama (M = N): M = N jika dan hanya jika (1) kedua-dua matriks…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Matriks Baris (1 × n) / Lajur (m × 1)\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Matriks Baris (1 darab n) / Lajur (m darab 1)\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Matriks Baris (1 × n) / Lajur (m × 1)\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "[[13, 5, 1], [10, 2, 4], [8, 8, 9]] (3 baris, 3 lajur)",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "[[13, 5, 1], [10, 2, 4], [8, 8, 9]] (3 baris, 3 lajur)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: [1700 2100 2000 1800] (1 baris, 4 lajur). Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+              "spokenText": "Fakta sebenar: [1700 2100 2000 1800] (1 baris, 4 lajur). Hanya satu baris (1 darab 4): dikenali sebagai matriks baris.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "[[-2, 5], [0, 4], [1, 9]] (3 baris, 2 lajur)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: [1700 2100 2000 1800] (1 baris, 4 lajur). Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+              "spokenText": "Fakta sebenar: [1700 2100 2000 1800] (1 baris, 4 lajur). Hanya satu baris (1 darab 4): dikenali sebagai matriks baris.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hanya satu baris (1 × 4): dikenali sebagai matriks baris.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hanya satu baris (1 darab 4): dikenali sebagai matriks baris.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "[1700 2100 2000 1800] (1 baris, 4 lajur)",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Matriks",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Cabaran Boss Akhir (Kertas 2 KBAT): Sebuah kedai menjual fon kepala Alpha (RM200, komisen 5%) dan Beta (RM150, komisen 4%).…",
+        "spokenText": "Lihat langkah di papan! Cabaran Boss Akhir (Kertas 2 K B A T): Sebuah kedai menjual fon kepala Alpha (200 ringgit Malaysia komisen 5 peratus) dan Beta (150 ringgit Malaysia komisen 4 peratus)."
+      },
+      "board": {
+        "promptPill": "Cabaran Boss Akhir (Kertas 2 KBAT): Sebuah kedai menjual fon kepala Alpha (RM200,…",
+        "title": "Uji Minda Akhir: Matriks",
+        "given": "Persamaan linear serentak ax + by = p dan cx + dy = q diselesaikan melalui perwakilan AX = B yang menghasilkan X =…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "4 Langkah Kaedah Matriks AX = B -> X = A⁻¹B: (1) Susun persamaan supaya pemboleh ubah x…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Tiada Penyelesaian & Kriptografi: Jika sistem px + by = r dan qx + dy = s dinyatakan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Alpha = 20 unit, Beta = 40 unit",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Alpha = 40 unit, Beta = 20 unit",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Alpha = 40 unit, Beta = 20 unit tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Alpha sama dengan 40 unit, Beta sama dengan 20 unit tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] = [[60], [440]]. Penentu = 1(6) - 1(10) = -4. Maka [[x], [y]] = (1 / -4)[[6, -1], [-10, 1]][[60], [440]]…",
+              "spokenText": "Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] sama dengan [[60], [440]]. Penentu sama dengan 1(6) - 1(10) sama dengan negatif 4. Maka [[x], [y]] sama dengan (1 / negatif 4)[[6, negatif 1], [-10, 1]][[60], [440]]",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "4 Langkah Kaedah Matriks AX = B -> X = A⁻¹B: (1) Susun persamaan supaya pemboleh ubah x…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Tiada Penyelesaian & Kriptografi: Jika sistem px + by = r dan qx + dy = s dinyatakan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Alpha = 25 unit, Beta = 35 unit",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Alpha = 25 unit, Beta = 35 unit tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Alpha sama dengan 25 unit, Beta sama dengan 35 unit tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] = [[60], [440]]. Penentu = 1(6) - 1(10) = -4. Maka [[x], [y]] = (1 / -4)[[6, -1], [-10, 1]][[60], [440]]…",
+              "spokenText": "Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] sama dengan [[60], [440]]. Penentu sama dengan 1(6) - 1(10) sama dengan negatif 4. Maka [[x], [y]] sama dengan (1 / negatif 4)[[6, negatif 1], [-10, 1]][[60], [440]]",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "4 Langkah Kaedah Matriks AX = B -> X = A⁻¹B: (1) Susun persamaan supaya pemboleh ubah x…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Tiada Penyelesaian & Kriptografi: Jika sistem px + by = r dan qx + dy = s dinyatakan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "4 Langkah Kaedah Matriks AX = B -> X = A⁻¹B: (1) Susun persamaan supaya pemboleh ubah x…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Tiada Penyelesaian & Kriptografi: Jika sistem px + by = r dan qx + dy = s dinyatakan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Matriks",
+          "desc": "Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] = [[60], [440]]. Penentu = 1(6) - 1(10) = -4. Maka [[x], [y]] = (1 / -4)[[6, -1], [-10,…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] = [[60], [440]]. Penentu = 1(6) - 1(10) = -4. Maka [[x], [y]] = (1 /…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Bentuk matriks: [[1, 1], [10, 6]][[x], [y]] sama dengan [[60], [440]]. Penentu sama dengan 1(6) - 1(10) sama dengan negatif 4. Maka [[x], [y]] sama dengan (1 /",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "4 Langkah Kaedah Matriks AX = B -> X = A⁻¹B: (1) Susun persamaan supaya pemboleh ubah x…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Tiada Penyelesaian & Kriptografi: Jika sistem px + by = r dan qx + dy = s dinyatakan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

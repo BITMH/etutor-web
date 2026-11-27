@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t4-bab02",
+  "title": "Kebangkitan Nasionalisme",
+  "shortTitle": "Kebangkitan Nasionalisme",
+  "subject": "Sejarah",
+  "form": "T4",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Kebangkitan Nasionalisme",
+    "desc": "Untuk soalan Kertas 1 & Kertas 2 subtopik 2.1, bezakan pandangan sejarawan Barat (Hans Kohn — kesetiaan kepada negara) dengan tokoh tempatan (Dato'…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Kebangkitan Nasionalisme?",
+        "spokenText": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Kebangkitan Nasionalisme?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Kebangkitan Nasionalisme?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengatakan nasionalisme di Thailand bertujuan menghalau penjajah British atau Perancis dari Bangkok.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran dan mengekalkan…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengatakan nasionalisme di Thailand bertujuan menghalau penjajah British atau Perancis dari…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran…. Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+              "spokenText": "Fakta sebenar: Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran . Thailand sama dengan Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran dan mengekalkan kedaulatan…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mengaitkan penubuhan Kesatuan Melayu Muda (KMM) pada tahun 1938 dengan Mohammad Eunos Abdullah.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran…. Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+              "spokenText": "Fakta sebenar: Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran . Thailand sama dengan Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran dan mengekalkan kedaulatan…",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran dan mengekalkan kedaulatan…",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Thailand = Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Thailand sama dengan Pemodenan oleh Raja (untuk KEKAL merdeka), bukan gerakan antipenjajah!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Thailand tidak pernah dijajah; nasionalismenya dipelopori oleh Raja Mongkut dan Raja Chulalongkorn untuk memodenkan pentadbiran dan mengekalkan kedaulatan…",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Tiga Revolusi Pencetus Idea",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Ramal & Uji: Bagaimanakah seruan Pan-Islamisme dan fatwa Empayar Uthmaniyah tahun 1914 memberi kesan langsung di Tanah…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Ramal & Uji: Bagaimanakah seruan Pan-Islamisme dan fatwa Empayar Uthmaniyah tahun 1914 memberi kesan langsung di Tanah"
+      },
+      "board": {
+        "promptPill": "Ramal & Uji: Bagaimanakah seruan Pan-Islamisme dan fatwa Empayar Uthmaniyah tahun…",
+        "title": "Tiga Revolusi Pencetus Idea Nasionalisme di Barat",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "Pengertian Nasionalisme & Tafsiran Tujuh Tokoh",
+            "detail": "Nasionalisme ialah perasaan cinta mendalam terhadap bangsa dan tanah air yang mendorong usaha membebaskan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Tiga Revolusi Pencetus Idea Nasionalisme di…",
+            "detail": "Di Eropah dan Amerika Utara, kesedaran kebangsaan tercetus sebagai tindak balas menentang pemerintahan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Kebangkitan Anti-Penjajah & Pembaharuan di…",
+            "detail": "Pertembungan dengan kuasa Eropah mencetuskan dua bentuk gerakan di Asia: gerakan menamatkan penjajahan asing…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Penduduk Kelantan memulakan penanaman getah secara komersial untuk tentera Uthmaniyah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Penduduk Kelantan memulakan penanaman… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Penduduk Kelantan memulakan penanaman tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara langsung melalui kebangkitan Tok…",
+              "spokenText": "Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara langsung melalui kebangkitan Tok",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "Pengertian Nasionalisme & Tafsiran Tujuh Tokoh",
+                    "detail": "Nasionalisme ialah perasaan cinta mendalam terhadap bangsa dan tanah air yang mendorong usaha membebaskan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Tiga Revolusi Pencetus Idea Nasionalisme di…",
+                    "detail": "Di Eropah dan Amerika Utara, kesedaran kebangsaan tercetus sebagai tindak balas menentang pemerintahan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Kebangkitan Anti-Penjajah & Pembaharuan di…",
+                    "detail": "Pertembungan dengan kuasa Eropah mencetuskan dua bentuk gerakan di Asia: gerakan menamatkan penjajahan asing…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Mencetuskan sokongan umat Islam tempatan termasuk kebangkitan Tok Janggut menentang…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Membubarkan semua madrasah Islam di Johor Bahru dan Pulau Pinang",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Membubarkan semua madrasah Islam di… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Membubarkan semua madrasah Islam di tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara langsung melalui kebangkitan Tok…",
+              "spokenText": "Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara langsung melalui kebangkitan Tok",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "Pengertian Nasionalisme & Tafsiran Tujuh Tokoh",
+                    "detail": "Nasionalisme ialah perasaan cinta mendalam terhadap bangsa dan tanah air yang mendorong usaha membebaskan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Tiga Revolusi Pencetus Idea Nasionalisme di…",
+                    "detail": "Di Eropah dan Amerika Utara, kesedaran kebangsaan tercetus sebagai tindak balas menentang pemerintahan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Kebangkitan Anti-Penjajah & Pembaharuan di…",
+                    "detail": "Pertembungan dengan kuasa Eropah mencetuskan dua bentuk gerakan di Asia: gerakan menamatkan penjajahan asing…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "Pengertian Nasionalisme & Tafsiran Tujuh Tokoh",
+              "detail": "Nasionalisme ialah perasaan cinta mendalam terhadap bangsa dan tanah air yang mendorong usaha membebaskan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Tiga Revolusi Pencetus Idea Nasionalisme di…",
+              "detail": "Di Eropah dan Amerika Utara, kesedaran kebangsaan tercetus sebagai tindak balas menentang pemerintahan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Kebangkitan Anti-Penjajah & Pembaharuan di…",
+              "detail": "Pertembungan dengan kuasa Eropah mencetuskan dua bentuk gerakan di Asia: gerakan menamatkan penjajahan asing…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Tiga Revolusi Pencetus Idea",
+          "desc": "Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara langsung melalui…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tepat! Gerakan Pan-Islamisme dan fatwa Uthmaniyah 1914 mendapat sambutan hangat di Tanah Melayu, dibuktikan secara",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "Pengertian Nasionalisme & Tafsiran Tujuh Tokoh",
+              "detail": "Nasionalisme ialah perasaan cinta mendalam terhadap bangsa dan tanah air yang mendorong usaha membebaskan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Tiga Revolusi Pencetus Idea Nasionalisme di…",
+              "detail": "Di Eropah dan Amerika Utara, kesedaran kebangsaan tercetus sebagai tindak balas menentang pemerintahan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Kebangkitan Anti-Penjajah & Pembaharuan di…",
+              "detail": "Pertembungan dengan kuasa Eropah mencetuskan dua bentuk gerakan di Asia: gerakan menamatkan penjajahan asing…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Kebangkitan Anti-Penjajah & Pembaharuan",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Mengapakah Revolusi China pada tahun 1911 dianggap berjaya memenuhi asas perjuangan Dr. Sun Yat Sen?",
+        "spokenText": "Perhatikan rajah konsep di papan! Mengapakah Revolusi China pada tahun 1911 dianggap berjaya memenuhi asas perjuangan Dr. Sun Yat Sen?"
+      },
+      "board": {
+        "promptPill": "Mengapakah Revolusi China pada tahun 1911 dianggap berjaya memenuhi asas perjuangan…",
+        "title": "Kebangkitan Anti-Penjajah & Pembaharuan di India serta China",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Satyagraha (India)",
+            "detail": "Pegangan tanpa kekerasan Mahatma Gandhi tidak bekerjasama dengan British",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "San Min Chu-i (China)",
+            "detail": "Ideologi Nasionalisme, Demokrasi & Kebajikan Sosial Dr. Sun Yat Sen",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "al-Urwah al-Wuthqa (1883)",
+            "detail": "Pertubuhan & akhbar oleh al-Afghani menyebar idea Pan-Islamisme",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Berjaya menjadikan China sebuah kuasa imperialisme baharu bersama Jepun",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Berjaya menjadikan China sebuah kuasa… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Berjaya menjadikan China sebuah kuasa tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang kehilangan mandat lalu…",
+              "spokenText": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang kehilangan mandat lalu",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kebangkitan Anti-Penjajah & Pembaharuan",
+                "desc": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Berjaya menumbangkan pemerintahan Dinasti Manchu dan menubuhkan pemerintahan republik",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Berjaya memisahkan negara China kepada dua buah wilayah merdeka seperti India-Pakistan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Berjaya memisahkan negara China kepada… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Berjaya memisahkan negara China kepada tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang kehilangan mandat lalu…",
+              "spokenText": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang kehilangan mandat lalu",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kebangkitan Anti-Penjajah & Pembaharuan",
+                "desc": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Kebangkitan Anti-Penjajah & Pembaharuan",
+          "desc": "Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang kehilangan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Berpandukan ideologi Tiga Prinsip Rakyat (San Min Chu-i), Revolusi China 1911 berjaya menumbangkan Dinasti Manchu yang"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Kebangkitan Nasionalisme",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah pernyataan paling tepat merangkumkan perkembangan menyeluruh kesan nasionalisme sebelum Perang Dunia Kedua di…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah pernyataan paling tepat merangkumkan perkembangan menyeluruh kesan nasionalisme sebelum Perang Dunia Kedua di"
+      },
+      "board": {
+        "promptPill": "Manakah pernyataan paling tepat merangkumkan perkembangan menyeluruh kesan…",
+        "title": "Rumusan: Kebangkitan Nasionalisme",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Perjuangan Melalui Akhbar, Majalah & Karya…",
+            "detail": "Perhatikan perubahan fokus Nanyang Siang Pao pada tahun 1930-an di Pulau Pinang: bukan lagi sekadar isu…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Perjuangan Melalui Persatuan Sosiobudaya &…",
+            "detail": "Bezakan singkatan organisasi dengan tepat: KMS (1926, Singapura), PASPAM (1934, Pulau Pinang -> Borneo), KMM…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Impak Politik, Ekonomi & Sosial Sebelum Perang…",
+            "detail": "Kuasai dua angka perbandingan sahih buku teks untuk soalan struktur/esei: MCS Melayu 7 (1930) -> 20 (1937)…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pertambahan pegawai Melayu dalam MCS (7 kepada 20), lonjakan lepasan SITC (58 kepada…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kemerosotan penyertaan wanita dalam bidang perguruan di Johor Bahru serta penutupan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kemerosotan penyertaan wanita dalam… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kemerosotan penyertaan wanita dalam tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi), ekonomi (semangat berniaga &…",
+              "spokenText": "Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi), ekonomi (semangat berniaga &",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Perjuangan Melalui Akhbar, Majalah & Karya…",
+                    "detail": "Perhatikan perubahan fokus Nanyang Siang Pao pada tahun 1930-an di Pulau Pinang: bukan lagi sekadar isu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Perjuangan Melalui Persatuan Sosiobudaya &…",
+                    "detail": "Bezakan singkatan organisasi dengan tepat: KMS (1926, Singapura), PASPAM (1934, Pulau Pinang -> Borneo), KMM…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Impak Politik, Ekonomi & Sosial Sebelum Perang…",
+                    "detail": "Kuasai dua angka perbandingan sahih buku teks untuk soalan struktur/esei: MCS Melayu 7 (1930) -> 20 (1937)…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Penghapusan sistem pendidikan agama Islam sepenuhnya apabila sekolah Mandarin dibuka…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Penghapusan sistem pendidikan agama… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Penghapusan sistem pendidikan agama tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi), ekonomi (semangat berniaga &…",
+              "spokenText": "Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi), ekonomi (semangat berniaga &",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Perjuangan Melalui Akhbar, Majalah & Karya…",
+                    "detail": "Perhatikan perubahan fokus Nanyang Siang Pao pada tahun 1930-an di Pulau Pinang: bukan lagi sekadar isu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Perjuangan Melalui Persatuan Sosiobudaya &…",
+                    "detail": "Bezakan singkatan organisasi dengan tepat: KMS (1926, Singapura), PASPAM (1934, Pulau Pinang -> Borneo), KMM…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Impak Politik, Ekonomi & Sosial Sebelum Perang…",
+                    "detail": "Kuasai dua angka perbandingan sahih buku teks untuk soalan struktur/esei: MCS Melayu 7 (1930) -> 20 (1937)…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Perjuangan Melalui Akhbar, Majalah & Karya…",
+              "detail": "Perhatikan perubahan fokus Nanyang Siang Pao pada tahun 1930-an di Pulau Pinang: bukan lagi sekadar isu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Perjuangan Melalui Persatuan Sosiobudaya &…",
+              "detail": "Bezakan singkatan organisasi dengan tepat: KMS (1926, Singapura), PASPAM (1934, Pulau Pinang -> Borneo), KMM…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Impak Politik, Ekonomi & Sosial Sebelum Perang…",
+              "detail": "Kuasai dua angka perbandingan sahih buku teks untuk soalan struktur/esei: MCS Melayu 7 (1930) -> 20 (1937)…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Kebangkitan Nasionalisme",
+          "desc": "Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi), ekonomi (semangat…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi),…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Gerakan nasionalisme sebelum PD2 meninggalkan kesan bersepadu dalam bidang politik (MCS & desentralisasi),",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Perjuangan Melalui Akhbar, Majalah & Karya…",
+              "detail": "Perhatikan perubahan fokus Nanyang Siang Pao pada tahun 1930-an di Pulau Pinang: bukan lagi sekadar isu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Perjuangan Melalui Persatuan Sosiobudaya &…",
+              "detail": "Bezakan singkatan organisasi dengan tepat: KMS (1926, Singapura), PASPAM (1934, Pulau Pinang -> Borneo), KMM…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Impak Politik, Ekonomi & Sosial Sebelum Perang…",
+              "detail": "Kuasai dua angka perbandingan sahih buku teks untuk soalan struktur/esei: MCS Melayu 7 (1930) -> 20 (1937)…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["kimia-t4-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Mengapakah kulit terasa sejuk apabila disapu dengan alkohol?",
+      "duration": 4.363,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "lazing",
+          "start": 0.34,
+          "end": 0.6
+        },
+        {
+          "word": "kimya,",
+          "start": 0.6,
+          "end": 1.0
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.48,
+          "end": 1.94
+        },
+        {
+          "word": "kulit",
+          "start": 1.94,
+          "end": 2.26
+        },
+        {
+          "word": "rasa",
+          "start": 2.26,
+          "end": 2.42
+        },
+        {
+          "word": "sejuk",
+          "start": 2.42,
+          "end": 2.86
+        },
+        {
+          "word": "apabila",
+          "start": 2.86,
+          "end": 3.24
+        },
+        {
+          "word": "disapu",
+          "start": 3.24,
+          "end": 3.56
+        },
+        {
+          "word": "dengan",
+          "start": 3.56,
+          "end": 3.7
+        },
+        {
+          "word": "alcohol?",
+          "start": 3.7,
+          "end": 3.98
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t4-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Antara bahan berikut, yang manakah dipadankan dengan BETUL bersama jenis zarah dan pengelasannya?",
+      "duration": 6.763,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "langkah",
+          "start": 0.48,
+          "end": 0.78
+        },
+        {
+          "word": "di",
+          "start": 0.78,
+          "end": 0.9
+        },
+        {
+          "word": "papan",
+          "start": 0.9,
+          "end": 1.26
+        },
+        {
+          "word": "antara",
+          "start": 1.26,
+          "end": 2.0
+        },
+        {
+          "word": "bahan",
+          "start": 2.0,
+          "end": 2.26
+        },
+        {
+          "word": "berikut",
+          "start": 2.26,
+          "end": 2.62
+        },
+        {
+          "word": "yang",
+          "start": 2.62,
+          "end": 3.24
+        },
+        {
+          "word": "manakah",
+          "start": 3.24,
+          "end": 3.52
+        },
+        {
+          "word": "dipadangkan",
+          "start": 3.52,
+          "end": 4.02
+        },
+        {
+          "word": "dengan",
+          "start": 4.02,
+          "end": 4.14
+        },
+        {
+          "word": "bitul",
+          "start": 4.14,
+          "end": 4.56
+        },
+        {
+          "word": "bersama",
+          "start": 4.56,
+          "end": 5.26
+        },
+        {
+          "word": "jenis",
+          "start": 5.26,
+          "end": 5.54
+        },
+        {
+          "word": "zarah",
+          "start": 5.54,
+          "end": 5.84
+        },
+        {
+          "word": "dan",
+          "start": 5.84,
+          "end": 5.98
+        },
+        {
+          "word": "pengalasannya.",
+          "start": 5.98,
+          "end": 6.5
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t4-bab02/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah fenomena yang akan berlaku pada lengkung penyejukan naftalena tersebut?",
+      "duration": 6.101,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "raja",
+          "start": 0.58,
+          "end": 0.86
+        },
+        {
+          "word": "konsep",
+          "start": 0.86,
+          "end": 1.24
+        },
+        {
+          "word": "di",
+          "start": 1.24,
+          "end": 1.32
+        },
+        {
+          "word": "Papan",
+          "start": 1.32,
+          "end": 1.68
+        },
+        {
+          "word": "apakah",
+          "start": 1.68,
+          "end": 2.5
+        },
+        {
+          "word": "fenomena",
+          "start": 2.5,
+          "end": 2.96
+        },
+        {
+          "word": "yang",
+          "start": 2.96,
+          "end": 3.18
+        },
+        {
+          "word": "akan",
+          "start": 3.18,
+          "end": 3.34
+        },
+        {
+          "word": "berlaku",
+          "start": 3.34,
+          "end": 3.68
+        },
+        {
+          "word": "pada",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "lengkung",
+          "start": 3.86,
+          "end": 4.22
+        },
+        {
+          "word": "penyejukan",
+          "start": 4.22,
+          "end": 4.8
+        },
+        {
+          "word": "naftalinah",
+          "start": 4.8,
+          "end": 5.34
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.34,
+          "end": 5.64
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t4-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Atom P ( kuasa satu kuasa dua enamP), Atom Q ( kuasa satu kuasa empat enamQ), Atom R ( kuasa dua kuasa empat satu duaR) dan Atom S ( kuasa dua kuasa lapan satu empatS) dikaji. Pasangan manakah ialah isotop, dan berapakah",
+      "duration": 18.304,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "urutan",
+          "start": 0.48,
+          "end": 0.94
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.94,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.56
+        },
+        {
+          "word": "papan.",
+          "start": 1.56,
+          "end": 1.92
+        },
+        {
+          "word": "Atom",
+          "start": 2.2,
+          "end": 2.68
+        },
+        {
+          "word": "P,",
+          "start": 2.68,
+          "end": 2.98
+        },
+        {
+          "word": "kursa",
+          "start": 3.48,
+          "end": 3.84
+        },
+        {
+          "word": "satu",
+          "start": 3.84,
+          "end": 4.04
+        },
+        {
+          "word": "kursa",
+          "start": 4.04,
+          "end": 4.48
+        },
+        {
+          "word": "26P,",
+          "start": 4.48,
+          "end": 5.88
+        },
+        {
+          "word": "Atom",
+          "start": 6.32,
+          "end": 6.72
+        },
+        {
+          "word": "Q,",
+          "start": 6.72,
+          "end": 6.96
+        },
+        {
+          "word": "kursa",
+          "start": 7.24,
+          "end": 7.48
+        },
+        {
+          "word": "satu",
+          "start": 7.48,
+          "end": 7.66
+        },
+        {
+          "word": "kursa",
+          "start": 7.66,
+          "end": 7.92
+        },
+        {
+          "word": "4,",
+          "start": 7.92,
+          "end": 8.14
+        },
+        {
+          "word": "6Q.",
+          "start": 8.22,
+          "end": 8.6
+        },
+        {
+          "word": "Atom",
+          "start": 8.82,
+          "end": 9.3
+        },
+        {
+          "word": "R,",
+          "start": 9.3,
+          "end": 9.5
+        },
+        {
+          "word": "kursa",
+          "start": 9.78,
+          "end": 10.04
+        },
+        {
+          "word": "2,",
+          "start": 10.04,
+          "end": 10.18
+        },
+        {
+          "word": "kursa",
+          "start": 10.18,
+          "end": 10.4
+        },
+        {
+          "word": "4,",
+          "start": 10.4,
+          "end": 10.64
+        },
+        {
+          "word": "1",
+          "start": 10.7,
+          "end": 10.86
+        },
+        {
+          "word": "duar.",
+          "start": 10.86,
+          "end": 11.16
+        },
+        {
+          "word": "Dan",
+          "start": 11.58,
+          "end": 11.74
+        },
+        {
+          "word": "Atom",
+          "start": 11.74,
+          "end": 12.06
+        },
+        {
+          "word": "S,",
+          "start": 12.06,
+          "end": 12.34
+        },
+        {
+          "word": "kursa",
+          "start": 12.72,
+          "end": 13.0
+        },
+        {
+          "word": "2,",
+          "start": 13.0,
+          "end": 13.12
+        },
+        {
+          "word": "kursa",
+          "start": 13.2,
+          "end": 13.36
+        },
+        {
+          "word": "8,",
+          "start": 13.36,
+          "end": 13.52
+        },
+        {
+          "word": "1,",
+          "start": 13.58,
+          "end": 13.72
+        },
+        {
+          "word": "4S",
+          "start": 13.88,
+          "end": 14.24
+        },
+        {
+          "word": "di",
+          "start": 14.24,
+          "end": 14.66
+        },
+        {
+          "word": "kaji.",
+          "start": 14.66,
+          "end": 14.98
+        },
+        {
+          "word": "Kursangan",
+          "start": 15.44,
+          "end": 15.76
+        },
+        {
+          "word": "mana",
+          "start": 15.76,
+          "end": 15.96
+        },
+        {
+          "word": "kahilah",
+          "start": 15.96,
+          "end": 16.38
+        },
+        {
+          "word": "isotop",
+          "start": 16.38,
+          "end": 17.22
+        },
+        {
+          "word": "dan",
+          "start": 17.22,
+          "end": 17.76
+        },
+        {
+          "word": "berapakah?",
+          "start": 17.76,
+          "end": 18.14
+        }
+      ]
+    }
+  }
+};

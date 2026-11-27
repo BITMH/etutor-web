@@ -1,0 +1,791 @@
+{
+  "deckId": "kimia-t4-bab03",
+  "title": "Konsep Mol, Formula dan Persamaan Kimia",
+  "shortTitle": "Konsep Mol, Formula dan",
+  "subject": "Kimia",
+  "form": "T4",
+  "bab": 3,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Konsep Mol, Formula dan",
+    "desc": "Jawapan wajib Aktiviti 3.1 & Soalan SPM: Karbon-12 dipilih sebagai piawai kerana pepejal pada suhu bilik (mudah dikendali), mudah berpadu membentuk…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Kimia! Berapakah bilangan atom helium (JAR = 4) yang diperlukan untuk menyamai jisim satu atom argentum (JAR = 108)?",
+        "spokenText": "Perangkap lazim Kimia! Berapakah bilangan atom helium (JAR sama dengan 4) yang diperlukan untuk menyamai jisim satu atom argentum (JAR sama dengan 108)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Berapakah bilangan atom helium (JAR = 4) yang diperlukan untuk menyamai jisim satu atom argentum (JAR = 108)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "12 atom helium",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "27 atom helium",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "12 atom helium",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 27 atom helium. Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan…",
+              "spokenText": "Fakta sebenar: 27 atom helium. Bilangan atom helium sama dengan JAR Ag / JAR He sama dengan 108 / 4 sama dengan 27 atom helium. Konsep perbandingan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "27 atom helium",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan JAR membolehkan atom dibandingkan terus…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "27 atom helium",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "36 atom helium",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 27 atom helium. Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan…",
+              "spokenText": "Fakta sebenar: 27 atom helium. Bilangan atom helium sama dengan JAR Ag / JAR He sama dengan 108 / 4 sama dengan 27 atom helium. Konsep perbandingan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "27 atom helium",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan JAR membolehkan atom dibandingkan terus…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "27 atom helium",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan JAR membolehkan atom dibandingkan terus…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Bilangan atom helium = JAR Ag / JAR He = 108 / 4 = 27 atom helium. Konsep perbandingan JAR membolehkan atom…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Bilangan atom helium sama dengan JAR Ag / JAR He sama dengan 108 / 4 sama dengan 27 atom helium. Konsep perbandingan JAR membolehkan atom",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "27 atom helium",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Jisim Molekul Relatif ,",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Apakah nilai JFR yang TEPAT bagi kalium dikromat(VI), K2Cr2O7 dan ferum(III) nitrat, Fe(NO3)3?",
+        "spokenText": "Lihat langkah di papan! Apakah nilai JFR yang TEPAT bagi kalium dikromat(VI), K2Cr2O7 dan ferum(III) nitrat, Fe(NO3)3?"
+      },
+      "board": {
+        "promptPill": "Apakah nilai JFR yang TEPAT bagi kalium dikromat(VI), K2Cr2O7 dan ferum(III)…",
+        "title": "Jisim Molekul Relatif (JMR), Jisim Formula Relatif (JFR) & Aktiviti…",
+        "given": "JMR dan JFR kedua-duanya dihitung dengan menjumlahkan jisim atom relatif semua atom yang terkandung dalam formula…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Aktiviti 3.2 & Jisim Molekul Relatif (JMR): Dalam analogi neraca dua piring, 1 model…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Jisim Formula Relatif (JFR) Bahan Ion: Digunakan khusus untuk sebatian ion kerana wujud…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "K2Cr2O7 = 294 | Fe(NO3)3 = 242",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "K2Cr2O7 = 216 | Fe(NO3)3 = 180",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan K2Cr2O7 = 216 | Fe(NO3)3 = 180 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan K2Cr2O7 sama dengan 216 | Fe(NO3)3 sama dengan 180 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "K2Cr2O7 = 2(39) + 2(52) + 7(16) = 78 + 104 + 112 = 294. Fe(NO3)3 = 56 + 3[14 + 3(16)] = 56 + 3(62) = 56 + 186 = 242.",
+              "spokenText": "K2Cr2O7 sama dengan 2(39) positif 2(52) positif 7(16) sama dengan 78 positif 104 positif 112 sama dengan 294. Fe(NO3)3 sama dengan 56 positif 3[14 positif 3(16)] sama dengan 56 positif 3(62) sama dengan 56 positif 186 sama dengan 242.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Aktiviti 3.2 & Jisim Molekul Relatif (JMR): Dalam analogi neraca dua piring, 1 model…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Jisim Formula Relatif (JFR) Bahan Ion: Digunakan khusus untuk sebatian ion kerana wujud…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "K2Cr2O7 = 294 | Fe(NO3)3 = 146",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan K2Cr2O7 = 294 | Fe(NO3)3 = 146 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan K2Cr2O7 sama dengan 294 | Fe(NO3)3 sama dengan 146 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "K2Cr2O7 = 2(39) + 2(52) + 7(16) = 78 + 104 + 112 = 294. Fe(NO3)3 = 56 + 3[14 + 3(16)] = 56 + 3(62) = 56 + 186 = 242.",
+              "spokenText": "K2Cr2O7 sama dengan 2(39) positif 2(52) positif 7(16) sama dengan 78 positif 104 positif 112 sama dengan 294. Fe(NO3)3 sama dengan 56 positif 3[14 positif 3(16)] sama dengan 56 positif 3(62) sama dengan 56 positif 186 sama dengan 242.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Aktiviti 3.2 & Jisim Molekul Relatif (JMR): Dalam analogi neraca dua piring, 1 model…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Jisim Formula Relatif (JFR) Bahan Ion: Digunakan khusus untuk sebatian ion kerana wujud…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Aktiviti 3.2 & Jisim Molekul Relatif (JMR): Dalam analogi neraca dua piring, 1 model…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Jisim Formula Relatif (JFR) Bahan Ion: Digunakan khusus untuk sebatian ion kerana wujud…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Jisim Molekul Relatif ,",
+          "desc": "K2Cr2O7 = 2(39) + 2(52) + 7(16) = 78 + 104 + 112 = 294. Fe(NO3)3 = 56 + 3[14 + 3(16)] = 56 + 3(62) = 56 + 186 = 242.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: K2Cr2O7 = 2(39) + 2(52) + 7(16) = 78 + 104 + 112 = 294. Fe(NO3)3 = 56 + 3[14 + 3(16)] = 56 + 3(62) = 56 + 186 = 242.",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: K2Cr2O7 sama dengan 2(39) positif 2(52) positif 7(16) sama dengan 78 positif 104 positif 112 sama dengan 294. Fe(NO3)3 sama dengan 56 positif 3[14 positif 3(16)] sama dengan 56 positif 3(62) sama dengan 56 positif 186 sama dengan 242.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Aktiviti 3.2 & Jisim Molekul Relatif (JMR): Dalam analogi neraca dua piring, 1 model…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Jisim Formula Relatif (JFR) Bahan Ion: Digunakan khusus untuk sebatian ion kerana wujud…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Takrif Mol, Pemalar Avogadro",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah pasangan bilangan MOLEKUL oksigen (O2) dan bilangan ATOM oksigen (O) yang tepat dalam balang tersebut?",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah pasangan bilangan MOLEKUL oksigen (O dua) dan bilangan ATOM oksigen (O) yang tepat dalam balang tersebut?"
+      },
+      "board": {
+        "promptPill": "Apakah pasangan bilangan MOLEKUL oksigen (O2) dan bilangan ATOM oksigen (O) yang…",
+        "title": "Takrif Mol, Pemalar Avogadro (NA) & Jenis Zarah Bahan",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Jisim 1.5 mol aluminium, Al (Contoh 6)",
+            "detail": "40.5 g (1.5 x 27)",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Bilangan mol dalam 32 g gas SO2…",
+            "detail": "0.5 mol (32 / 64)",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Bilangan mol dalam 4.7 g kalium…",
+            "detail": "0.05 mol (4.7 / 94)",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "1.204 x 10^24 molekul O2 dan 1.204 x 10^24 atom O",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 1.204 x 10^24 molekul O2 dan 1.204 x… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 1 perpuluhan dua kosong empat x 10 kuasa 24 molekul O dua dan 1 perpuluhan dua kosong empat x tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom O, bilangan atom O = 1.204 x…",
+              "spokenText": "Bilangan molekul O dua sama dengan 2 x 6 perpuluhan kosong dua x 10 kuasa 23 sama dengan 1 perpuluhan dua kosong empat x 10 kuasa 24 molekul. Oleh sebab setiap molekul O dua terbina daripada 2 atom O, bilangan atom O sama dengan 1 perpuluhan dua kosong empat x",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Takrif Mol, Pemalar Avogadro",
+                "desc": "Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom O, bilangan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "1.204 x 10^24 molekul O2 dan 2.408 x 10^24 atom O",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "6.02 x 10^23 molekul O2 dan 1.204 x 10^24 atom O",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 6.02 x 10^23 molekul O2 dan 1.204 x… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 6 perpuluhan kosong dua x 10 kuasa 23 molekul O dua dan 1 perpuluhan dua kosong empat x tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom O, bilangan atom O = 1.204 x…",
+              "spokenText": "Bilangan molekul O dua sama dengan 2 x 6 perpuluhan kosong dua x 10 kuasa 23 sama dengan 1 perpuluhan dua kosong empat x 10 kuasa 24 molekul. Oleh sebab setiap molekul O dua terbina daripada 2 atom O, bilangan atom O sama dengan 1 perpuluhan dua kosong empat x",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Takrif Mol, Pemalar Avogadro",
+                "desc": "Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom O, bilangan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Takrif Mol, Pemalar Avogadro",
+          "desc": "Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom O, bilangan atom…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Bilangan molekul O2 = 2 x 6.02 x 10^23 = 1.204 x 10^24 molekul. Oleh sebab setiap molekul O2 terbina daripada 2 atom…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Bilangan molekul O dua sama dengan 2 x 6 perpuluhan kosong dua x 10 kuasa 23 sama dengan 1 perpuluhan dua kosong empat x 10 kuasa 24 molekul. Oleh sebab setiap molekul O dua terbina daripada 2 atom"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Konsep Mol, Formula",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Hitungkan bilangan minimum tabung penyerap LiOH (750 g setiap tabung) yang mesti dibawa untuk misi 18 hari tersebut:",
+        "spokenText": "Ikuti urutan peristiwa di papan! Hitungkan bilangan minimum tabung penyerap LiOH (750 g setiap tabung) yang mesti dibawa untuk misi 18 hari tersebut:"
+      },
+      "board": {
+        "promptPill": "Hitungkan bilangan minimum tabung penyerap LiOH (750 g setiap tabung) yang mesti…",
+        "title": "Rumusan: Konsep Mol, Formula dan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Penamaan Sebatian Ion (Angka Roman) & Sebatian…",
+            "detail": "Awas perbezaan mutlak: Jangan sesekali menggunakan awalan Yunani ('diklorida', 'trioksida') untuk SEBATIAN…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "5 Langkah Menulis & Mengimbangi Persamaan…",
+            "detail": "Kesilapan lazim mengimbangi persamaan: Apabila diminta persamaan tindak balas Pb(NO3)2(ak) + KI(ak) ->…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "3 Tindak Balas Aktiviti 3.18 & Kaedah 3…",
+            "detail": "Dalam peperiksaan, jangan lupa menulis persamaan kimia seimbang dahulu jika tidak diberi, kerana nisbah…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "66 tabung penyerap LiOH",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 66 tabung penyerap LiOH tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 66 tabung penyerap LiOH tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Langkah 1: Jumlah jisim CO2 = 5 x (18 x 24) x 42 = 90 720 g -> n(CO2) = 90 720 / 44 = 2061.82 mol. Langkah 2: Nisbah 2LiOH : 1CO2 -> n(LiOH) = 2 x…",
+              "spokenText": "Langkah 1: Jumlah jisim C O dua sama dengan 5 x (18 x 24) x 42 sama dengan 90 720 g - lebih daripada n(C O dua) sama dengan 90 720 / 44 sama dengan 2061 perpuluhan lapan dua mol. Langkah 2: Nisbah 2LiOH : 1C O dua - lebih daripada n(LiOH) sama dengan 2 x",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Penamaan Sebatian Ion (Angka Roman) & Sebatian…",
+                    "detail": "Awas perbezaan mutlak: Jangan sesekali menggunakan awalan Yunani ('diklorida', 'trioksida') untuk SEBATIAN…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "5 Langkah Menulis & Mengimbangi Persamaan…",
+                    "detail": "Kesilapan lazim mengimbangi persamaan: Apabila diminta persamaan tindak balas Pb(NO3)2(ak) + KI(ak) ->…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "3 Tindak Balas Aktiviti 3.18 & Kaedah 3…",
+                    "detail": "Dalam peperiksaan, jangan lupa menulis persamaan kimia seimbang dahulu jika tidak diberi, kerana nisbah…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "120 tabung penyerap LiOH",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 120 tabung penyerap LiOH tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 120 tabung penyerap LiOH tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Langkah 1: Jumlah jisim CO2 = 5 x (18 x 24) x 42 = 90 720 g -> n(CO2) = 90 720 / 44 = 2061.82 mol. Langkah 2: Nisbah 2LiOH : 1CO2 -> n(LiOH) = 2 x…",
+              "spokenText": "Langkah 1: Jumlah jisim C O dua sama dengan 5 x (18 x 24) x 42 sama dengan 90 720 g - lebih daripada n(C O dua) sama dengan 90 720 / 44 sama dengan 2061 perpuluhan lapan dua mol. Langkah 2: Nisbah 2LiOH : 1C O dua - lebih daripada n(LiOH) sama dengan 2 x",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Penamaan Sebatian Ion (Angka Roman) & Sebatian…",
+                    "detail": "Awas perbezaan mutlak: Jangan sesekali menggunakan awalan Yunani ('diklorida', 'trioksida') untuk SEBATIAN…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "5 Langkah Menulis & Mengimbangi Persamaan…",
+                    "detail": "Kesilapan lazim mengimbangi persamaan: Apabila diminta persamaan tindak balas Pb(NO3)2(ak) + KI(ak) ->…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "3 Tindak Balas Aktiviti 3.18 & Kaedah 3…",
+                    "detail": "Dalam peperiksaan, jangan lupa menulis persamaan kimia seimbang dahulu jika tidak diberi, kerana nisbah…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "132 tabung penyerap LiOH",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Penamaan Sebatian Ion (Angka Roman) & Sebatian…",
+              "detail": "Awas perbezaan mutlak: Jangan sesekali menggunakan awalan Yunani ('diklorida', 'trioksida') untuk SEBATIAN…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "5 Langkah Menulis & Mengimbangi Persamaan…",
+              "detail": "Kesilapan lazim mengimbangi persamaan: Apabila diminta persamaan tindak balas Pb(NO3)2(ak) + KI(ak) ->…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "3 Tindak Balas Aktiviti 3.18 & Kaedah 3…",
+              "detail": "Dalam peperiksaan, jangan lupa menulis persamaan kimia seimbang dahulu jika tidak diberi, kerana nisbah…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Konsep Mol, Formula",
+          "desc": "Langkah 1: Jumlah jisim CO2 = 5 x (18 x 24) x 42 = 90 720 g -> n(CO2) = 90 720 / 44 = 2061.82 mol. Langkah 2: Nisbah 2LiOH : 1CO2 ->…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Langkah 1: Jumlah jisim CO2 = 5 x (18 x 24) x 42 = 90 720 g -> n(CO2) = 90 720 / 44 = 2061.82 mol. Langkah 2: Nisbah…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Langkah 1: Jumlah jisim C O dua sama dengan 5 x (18 x 24) x 42 sama dengan 90 720 g - lebih daripada n(C O dua) sama dengan 90 720 / 44 sama dengan 2061 perpuluhan lapan dua mol. Langkah 2: Nisbah",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Penamaan Sebatian Ion (Angka Roman) & Sebatian…",
+              "detail": "Awas perbezaan mutlak: Jangan sesekali menggunakan awalan Yunani ('diklorida', 'trioksida') untuk SEBATIAN…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "5 Langkah Menulis & Mengimbangi Persamaan…",
+              "detail": "Kesilapan lazim mengimbangi persamaan: Apabila diminta persamaan tindak balas Pb(NO3)2(ak) + KI(ak) ->…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "3 Tindak Balas Aktiviti 3.18 & Kaedah 3…",
+              "detail": "Dalam peperiksaan, jangan lupa menulis persamaan kimia seimbang dahulu jika tidak diberi, kerana nisbah…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

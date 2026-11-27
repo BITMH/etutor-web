@@ -1,0 +1,435 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/pendidikan-islam-t3-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Keagungan Al-Quran & Penolakan Syirik (Ayat 1 hingga 5)?",
+      "duration": 9.739,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "melazirkan",
+          "start": 0.64,
+          "end": 1.0
+        },
+        {
+          "word": "pendidikan",
+          "start": 1.0,
+          "end": 1.36
+        },
+        {
+          "word": "Islam,",
+          "start": 1.36,
+          "end": 1.74
+        },
+        {
+          "word": "awas",
+          "start": 2.26,
+          "end": 2.64
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.64,
+          "end": 3.22
+        },
+        {
+          "word": "manakah",
+          "start": 3.6,
+          "end": 3.9
+        },
+        {
+          "word": "fakta",
+          "start": 3.9,
+          "end": 4.34
+        },
+        {
+          "word": "atau",
+          "start": 4.34,
+          "end": 4.5
+        },
+        {
+          "word": "langkah",
+          "start": 4.5,
+          "end": 4.82
+        },
+        {
+          "word": "yang",
+          "start": 4.82,
+          "end": 4.98
+        },
+        {
+          "word": "betul",
+          "start": 4.98,
+          "end": 5.28
+        },
+        {
+          "word": "tentang",
+          "start": 5.28,
+          "end": 5.5
+        },
+        {
+          "word": "dua",
+          "start": 5.5,
+          "end": 5.82
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.82,
+          "end": 6.32
+        },
+        {
+          "word": "satu",
+          "start": 6.32,
+          "end": 6.54
+        },
+        {
+          "word": "keagungan",
+          "start": 6.54,
+          "end": 7.08
+        },
+        {
+          "word": "al",
+          "start": 7.08,
+          "end": 7.24
+        },
+        {
+          "word": "-Quran",
+          "start": 7.24,
+          "end": 7.5
+        },
+        {
+          "word": "dan",
+          "start": 7.5,
+          "end": 7.6
+        },
+        {
+          "word": "penolakan",
+          "start": 7.6,
+          "end": 7.98
+        },
+        {
+          "word": "syirik.",
+          "start": 7.98,
+          "end": 8.4
+        },
+        {
+          "word": "Ayat",
+          "start": 8.52,
+          "end": 8.88
+        },
+        {
+          "word": "lain",
+          "start": 8.88,
+          "end": 9.0
+        },
+        {
+          "word": "hingga",
+          "start": 9.0,
+          "end": 9.28
+        },
+        {
+          "word": "ini.",
+          "start": 9.28,
+          "end": 9.42
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/pendidikan-islam-t3-bab02/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah maksud ungkapan al-Quran bersifat 'qayyiman' dalam ayat 2 Surah al-Kahfi?",
+      "duration": 5.963,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "urutan",
+          "start": 0.54,
+          "end": 0.94
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.94,
+          "end": 1.48
+        },
+        {
+          "word": "di",
+          "start": 1.48,
+          "end": 1.6
+        },
+        {
+          "word": "papan.",
+          "start": 1.6,
+          "end": 1.96
+        },
+        {
+          "word": "Apakah",
+          "start": 2.42,
+          "end": 2.82
+        },
+        {
+          "word": "maksud",
+          "start": 2.82,
+          "end": 3.16
+        },
+        {
+          "word": "unggapan",
+          "start": 3.16,
+          "end": 3.5
+        },
+        {
+          "word": "al",
+          "start": 3.5,
+          "end": 3.74
+        },
+        {
+          "word": "-Quran",
+          "start": 3.74,
+          "end": 4.0
+        },
+        {
+          "word": "besifat",
+          "start": 4.0,
+          "end": 4.38
+        },
+        {
+          "word": "kayuman",
+          "start": 4.38,
+          "end": 4.7
+        },
+        {
+          "word": "dalam",
+          "start": 4.7,
+          "end": 4.88
+        },
+        {
+          "word": "ayat",
+          "start": 4.88,
+          "end": 5.16
+        },
+        {
+          "word": "2",
+          "start": 5.16,
+          "end": 5.28
+        },
+        {
+          "word": "Surah",
+          "start": 5.28,
+          "end": 5.5
+        },
+        {
+          "word": "Al",
+          "start": 5.5,
+          "end": 5.58
+        },
+        {
+          "word": "-Kafi?",
+          "start": 5.58,
+          "end": 5.9
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/pendidikan-islam-t3-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Berdasarkan ayat 7 Surah al-Kahfi, mengapakah Allah SWT menjadikan segala keindahan di atas bumi sebagai perhiasan?",
+      "duration": 8.864,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "lazim",
+          "start": 0.46,
+          "end": 0.84
+        },
+        {
+          "word": "pendidikan",
+          "start": 0.84,
+          "end": 1.22
+        },
+        {
+          "word": "Islam",
+          "start": 1.22,
+          "end": 1.58
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.58,
+          "end": 2.68
+        },
+        {
+          "word": "ayat",
+          "start": 2.68,
+          "end": 2.96
+        },
+        {
+          "word": "Sibsu",
+          "start": 2.96,
+          "end": 3.28
+        },
+        {
+          "word": "Al",
+          "start": 3.28,
+          "end": 3.38
+        },
+        {
+          "word": "-Kafi",
+          "start": 3.38,
+          "end": 3.82
+        },
+        {
+          "word": "mengapakah",
+          "start": 3.82,
+          "end": 4.96
+        },
+        {
+          "word": "Allah",
+          "start": 4.96,
+          "end": 5.24
+        },
+        {
+          "word": "Hasabiti",
+          "start": 5.24,
+          "end": 5.78
+        },
+        {
+          "word": "menjadikan",
+          "start": 5.78,
+          "end": 6.2
+        },
+        {
+          "word": "segala",
+          "start": 6.2,
+          "end": 6.5
+        },
+        {
+          "word": "keindahan",
+          "start": 6.5,
+          "end": 6.88
+        },
+        {
+          "word": "di",
+          "start": 6.88,
+          "end": 7.02
+        },
+        {
+          "word": "atas",
+          "start": 7.02,
+          "end": 7.28
+        },
+        {
+          "word": "mumi",
+          "start": 7.28,
+          "end": 7.56
+        },
+        {
+          "word": "sebagai",
+          "start": 7.56,
+          "end": 7.74
+        },
+        {
+          "word": "periasan.",
+          "start": 7.74,
+          "end": 8.84
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/pendidikan-islam-t3-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah doa utama pemuda Ashabul Kahfi dalam ayat 10 Surah al-Kahfi?",
+      "duration": 6.091,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "urutan",
+          "start": 0.54,
+          "end": 0.92
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.92,
+          "end": 1.38
+        },
+        {
+          "word": "di",
+          "start": 1.38,
+          "end": 1.5
+        },
+        {
+          "word": "Papan",
+          "start": 1.5,
+          "end": 1.86
+        },
+        {
+          "word": "apakah",
+          "start": 1.86,
+          "end": 2.66
+        },
+        {
+          "word": "doa",
+          "start": 2.66,
+          "end": 2.94
+        },
+        {
+          "word": "utama",
+          "start": 2.94,
+          "end": 3.28
+        },
+        {
+          "word": "pemuda",
+          "start": 3.28,
+          "end": 3.64
+        },
+        {
+          "word": "Asyabur",
+          "start": 3.64,
+          "end": 4.06
+        },
+        {
+          "word": "Kaffi",
+          "start": 4.06,
+          "end": 4.44
+        },
+        {
+          "word": "dalam",
+          "start": 4.44,
+          "end": 5.0
+        },
+        {
+          "word": "ayat",
+          "start": 5.0,
+          "end": 5.26
+        },
+        {
+          "word": "10",
+          "start": 5.26,
+          "end": 5.42
+        },
+        {
+          "word": "Surat",
+          "start": 5.42,
+          "end": 5.64
+        },
+        {
+          "word": "Kaffi?",
+          "start": 5.64,
+          "end": 5.98
+        }
+      ]
+    }
+  }
+}

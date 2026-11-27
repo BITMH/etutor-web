@@ -1,0 +1,435 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t5-bab08/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Mengapakah kerajaan menggabungkan rundingan MAPEN (pelbagai lapisan masyarakat) dengan kepakaran Dr. Rais Saniman, Dr. Just",
+      "duration": 8.768,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "lazim",
+          "start": 0.32,
+          "end": 0.6
+        },
+        {
+          "word": "sejarah?",
+          "start": 0.6,
+          "end": 1.42
+        },
+        {
+          "word": "Mengapakah",
+          "start": 1.5,
+          "end": 2.02
+        },
+        {
+          "word": "kerajaan",
+          "start": 2.02,
+          "end": 2.46
+        },
+        {
+          "word": "menggabungkan",
+          "start": 2.46,
+          "end": 3.0
+        },
+        {
+          "word": "rondingan",
+          "start": 3.0,
+          "end": 3.36
+        },
+        {
+          "word": "MAP,",
+          "start": 3.36,
+          "end": 3.74
+        },
+        {
+          "word": "NTA,",
+          "start": 3.88,
+          "end": 4.22
+        },
+        {
+          "word": "IPM,",
+          "start": 4.46,
+          "end": 4.68
+        },
+        {
+          "word": "kebagaian",
+          "start": 4.76,
+          "end": 5.08
+        },
+        {
+          "word": "lapisan",
+          "start": 5.08,
+          "end": 5.32
+        },
+        {
+          "word": "masyarakat",
+          "start": 5.32,
+          "end": 6.16
+        },
+        {
+          "word": "dengan",
+          "start": 6.16,
+          "end": 6.46
+        },
+        {
+          "word": "kepakaran",
+          "start": 6.46,
+          "end": 7.04
+        },
+        {
+          "word": "Dr.",
+          "start": 7.04,
+          "end": 7.26
+        },
+        {
+          "word": "Rai",
+          "start": 7.36,
+          "end": 7.58
+        },
+        {
+          "word": "Saniman,",
+          "start": 7.58,
+          "end": 7.96
+        },
+        {
+          "word": "Dr.",
+          "start": 8.1,
+          "end": 8.22
+        },
+        {
+          "word": "Jess?",
+          "start": 8.34,
+          "end": 8.5
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t5-bab08/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! DEB dilaksanakan dari tahun 1970 hingga 1990 untuk memupuk perpaduan dan kesejahteraan kaum melalui strategi serampang",
+      "duration": 10.379,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "urutan",
+          "start": 0.54,
+          "end": 0.94
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.94,
+          "end": 1.44
+        },
+        {
+          "word": "di",
+          "start": 1.44,
+          "end": 1.58
+        },
+        {
+          "word": "Papan,",
+          "start": 1.58,
+          "end": 1.98
+        },
+        {
+          "word": "DEB",
+          "start": 2.36,
+          "end": 3.3
+        },
+        {
+          "word": "dilaksanakan",
+          "start": 3.3,
+          "end": 4.02
+        },
+        {
+          "word": "dari",
+          "start": 4.02,
+          "end": 4.32
+        },
+        {
+          "word": "tahun",
+          "start": 4.32,
+          "end": 4.58
+        },
+        {
+          "word": "1999",
+          "start": 4.58,
+          "end": 5.3
+        },
+        {
+          "word": "untuk",
+          "start": 5.3,
+          "end": 6.3
+        },
+        {
+          "word": "mengupuk",
+          "start": 6.3,
+          "end": 6.8
+        },
+        {
+          "word": "perpaduan",
+          "start": 6.8,
+          "end": 7.3
+        },
+        {
+          "word": "dan",
+          "start": 7.3,
+          "end": 7.68
+        },
+        {
+          "word": "kesejahteraan",
+          "start": 7.68,
+          "end": 8.42
+        },
+        {
+          "word": "kaum",
+          "start": 8.42,
+          "end": 8.68
+        },
+        {
+          "word": "melalui",
+          "start": 8.68,
+          "end": 9.18
+        },
+        {
+          "word": "strategi",
+          "start": 9.18,
+          "end": 9.8
+        },
+        {
+          "word": "serampang.",
+          "start": 9.8,
+          "end": 10.22
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t5-bab08/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah bukti paling jelas daripada rekod FELDA Lurah Bilut, Keratong dan Sendayan mengenai dasar pembasmian kemiskinan",
+      "duration": 10.101,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "raja",
+          "start": 0.44,
+          "end": 0.7
+        },
+        {
+          "word": "konsep",
+          "start": 0.7,
+          "end": 1.18
+        },
+        {
+          "word": "di",
+          "start": 1.18,
+          "end": 1.26
+        },
+        {
+          "word": "papan,",
+          "start": 1.26,
+          "end": 1.62
+        },
+        {
+          "word": "apakah",
+          "start": 1.9,
+          "end": 2.22
+        },
+        {
+          "word": "bukti",
+          "start": 2.22,
+          "end": 2.58
+        },
+        {
+          "word": "paling",
+          "start": 2.58,
+          "end": 2.76
+        },
+        {
+          "word": "jelas",
+          "start": 2.76,
+          "end": 3.08
+        },
+        {
+          "word": "daripada",
+          "start": 3.08,
+          "end": 3.54
+        },
+        {
+          "word": "rekod",
+          "start": 4.64,
+          "end": 5.36
+        },
+        {
+          "word": "FELDA",
+          "start": 5.36,
+          "end": 6.08
+        },
+        {
+          "word": "diurah",
+          "start": 6.08,
+          "end": 6.5
+        },
+        {
+          "word": "bilut?",
+          "start": 6.5,
+          "end": 6.84
+        },
+        {
+          "word": "Keratong",
+          "start": 7.14,
+          "end": 7.62
+        },
+        {
+          "word": "dan",
+          "start": 7.62,
+          "end": 7.78
+        },
+        {
+          "word": "sedayaan",
+          "start": 7.78,
+          "end": 8.22
+        },
+        {
+          "word": "mengenai",
+          "start": 8.22,
+          "end": 8.54
+        },
+        {
+          "word": "dasar",
+          "start": 8.54,
+          "end": 8.92
+        },
+        {
+          "word": "pembasungan",
+          "start": 8.92,
+          "end": 9.4
+        },
+        {
+          "word": "kemiskinan",
+          "start": 9.4,
+          "end": 9.94
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t5-bab08/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan Nilai, Patriotisme dan Iktibar Bab 8 ( meter per saat 78), apakah sikap rakyat yang menjamin kelangsungan kemakmuran",
+      "duration": 9.504,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.7
+        },
+        {
+          "word": "urutan",
+          "start": 0.7,
+          "end": 1.18
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.18,
+          "end": 1.68
+        },
+        {
+          "word": "di",
+          "start": 1.68,
+          "end": 1.8
+        },
+        {
+          "word": "papan,",
+          "start": 1.8,
+          "end": 2.14
+        },
+        {
+          "word": "berdasarkan",
+          "start": 2.6,
+          "end": 2.96
+        },
+        {
+          "word": "nilai,",
+          "start": 2.96,
+          "end": 3.44
+        },
+        {
+          "word": "patriotisme",
+          "start": 3.82,
+          "end": 4.48
+        },
+        {
+          "word": "dan",
+          "start": 4.48,
+          "end": 4.64
+        },
+        {
+          "word": "itibabak",
+          "start": 4.64,
+          "end": 5.22
+        },
+        {
+          "word": "apakah",
+          "start": 5.22,
+          "end": 5.8
+        },
+        {
+          "word": "sikap",
+          "start": 5.8,
+          "end": 6.2
+        },
+        {
+          "word": "raih,",
+          "start": 6.2,
+          "end": 6.56
+        },
+        {
+          "word": "apakah",
+          "start": 6.8,
+          "end": 7.26
+        },
+        {
+          "word": "sikap",
+          "start": 7.26,
+          "end": 7.68
+        },
+        {
+          "word": "rakyat",
+          "start": 7.68,
+          "end": 7.96
+        },
+        {
+          "word": "yang",
+          "start": 7.96,
+          "end": 8.06
+        },
+        {
+          "word": "menjamin",
+          "start": 8.06,
+          "end": 8.38
+        },
+        {
+          "word": "kelasungan",
+          "start": 8.38,
+          "end": 8.88
+        },
+        {
+          "word": "kemakmuran?",
+          "start": 8.88,
+          "end": 9.3
+        }
+      ]
+    }
+  }
+}

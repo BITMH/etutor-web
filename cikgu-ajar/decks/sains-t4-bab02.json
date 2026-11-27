@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t4-bab02",
+  "title": "Bantuan Kecemasan (CPR & Heimlich Manoeuvre)",
+  "shortTitle": "Bantuan Kecemasan",
+  "subject": "Sains",
+  "form": "T4",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bantuan Kecemasan",
+    "desc": "APMM merujuk kepada Agensi Penguatkuasaan Maritim Malaysia manakala APM ialah Angkatan Pertahanan Awam Malaysia."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bantuan Kecemasan (CPR & Heimlich Manoeuvre)?",
+        "spokenText": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bantuan Kecemasan (CPR & Heimlich Manoeuvre)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bantuan Kecemasan (CPR & Heimlich Manoeuvre)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Meletakkan genggaman Heimlich Manoeuvre tepat di atas tulang dada atau terlalu rendah di bawah pusat.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan tulang rusuk.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Meletakkan genggaman Heimlich Manoeuvre tepat di atas tulang dada atau terlalu rendah di…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan…. Ingat kawasan lembut tepat di atas pusat!",
+              "spokenText": "Fakta sebenar: Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan . Ingat kawasan lembut tepat di atas pusat!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan tulang rusuk.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ingat kawasan lembut tepat di atas pusat!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menulis nisbah CPR sebagai 15 tekanan dada : 2 hembusan atau kedalaman 10 cm.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan…. Ingat kawasan lembut tepat di atas pusat!",
+              "spokenText": "Fakta sebenar: Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan . Ingat kawasan lembut tepat di atas pusat!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan tulang rusuk.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ingat kawasan lembut tepat di atas pusat!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan tulang rusuk.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Ingat kawasan lembut tepat di atas pusat!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ingat kawasan lembut tepat di atas pusat!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ingat kawasan lembut tepat di atas pusat!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kedudukan tepat ialah pada bahagian lembut abdomen DI ANTARA PUSAT DENGAN BAWAH RUSUK untuk menolak diafragma tanpa mematahkan tulang rusuk.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: 2.1 Definisi CPR, 3",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Semasa melakukan tekanan dada langkah 3 CPR dewasa, berapakah julat kedalaman dan kadar tekanan seminit yang tepat mengikut…",
+        "spokenText": "Perhatikan rajah konsep di papan! Semasa melakukan tekanan dada langkah 3 CPR dewasa, berapakah julat kedalaman dan kadar tekanan seminit yang tepat mengikut"
+      },
+      "board": {
+        "promptPill": "Semasa melakukan tekanan dada langkah 3 CPR dewasa, berapakah julat kedalaman dan…",
+        "title": "2.1 Definisi CPR, 3 Tanda (Rajah 2.1) & 4 Punca (Rajah 2.2)",
+        "diagramType": "force",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "APM",
+            "detail": "Angkatan Pertahanan Awam Malaysia",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "JBPM",
+            "detail": "Jabatan Bomba dan Penyelamat Malaysia",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "APMM",
+            "detail": "Agensi Penguatkuasaan Maritim Malaysia",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "2 – 3 cm pada kadar 60 – 70 tekanan per minit.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 2 – 3 cm pada kadar 60 – 70 tekanan per… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 2 hingga 3 cm pada kadar 60 hingga 70 tekanan per tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar 100–120 tekanan per minit.",
+              "spokenText": "Manual Basic Life Support KKM ( meter per saat 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar 100 hingga 120 tekanan per minit.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.1 Definisi CPR, 3",
+                "desc": "Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "5 – 6 cm (tidak lebih 6 cm) pada kadar 100 – 120 tekanan per minit.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "8 – 10 cm pada kadar 140 – 160 tekanan per minit.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 8 – 10 cm pada kadar 140 – 160 tekanan… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 8 hingga 10 cm pada kadar 140 hingga 160 tekanan tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar 100–120 tekanan per minit.",
+              "spokenText": "Manual Basic Life Support KKM ( meter per saat 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar 100 hingga 120 tekanan per minit.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.1 Definisi CPR, 3",
+                "desc": "Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "2.1 Definisi CPR, 3",
+          "desc": "Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada kadar 100–120…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Manual Basic Life Support KKM (m/s 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Manual Basic Life Support KKM ( meter per saat 23) menetapkan tekanan ke bawah kira-kira 5 cm dan tidak lebih daripada 6 cm pada"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 5 Langkah Kaedah CPR",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Jika seseorang tidak selesa melakukan hembusan mulut ke mulut semasa memberi bantuan CPR, apakah tindakan yang disyorkan…",
+        "spokenText": "Perhatikan rajah konsep di papan! Jika seseorang tidak selesa melakukan hembusan mulut ke mulut semasa memberi bantuan CPR, apakah tindakan yang disyorkan"
+      },
+      "board": {
+        "promptPill": "Jika seseorang tidak selesa melakukan hembusan mulut ke mulut semasa memberi…",
+        "title": "5 Langkah Kaedah CPR Dewasa (Rajah 2.3)",
+        "diagramType": "cell",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Mangsa tercekik seorang diri & lemah",
+            "detail": "Tolak abdomen pada kerusi/meja separas pinggang",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Wanita mengandung tercekik makanan",
+            "detail": "Tekanan dada (elak tekanan abdomen)",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Mangsa CPR mula bernafas tetapi…",
+            "detail": "Ubah kedudukan badan kepada mengiring",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Memberi mangsa minuman manis bagi memulihkan tenaga jantung.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Memberi mangsa minuman manis bagi… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Memberi mangsa minuman manis bagi tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran darah sementara…",
+              "spokenText": "Galeri Sains meter per saat 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran darah sementara",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "5 Langkah Kaedah CPR",
+                "desc": "Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Melakukan kaedah tekanan dada sahaja (Hands-Only CPR) secara berterusan dan menghubungi…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menunggu di tepi mangsa tanpa menyentuh dada mangsa langsung.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menunggu di tepi mangsa tanpa menyentuh… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menunggu di tepi mangsa tanpa menyentuh tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran darah sementara…",
+              "spokenText": "Galeri Sains meter per saat 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran darah sementara",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "5 Langkah Kaedah CPR",
+                "desc": "Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "5 Langkah Kaedah CPR",
+          "desc": "Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan mengekalkan aliran darah…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Galeri Sains m/s 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Galeri Sains meter per saat 24 menyatakan garis panduan AHA 2016 mengesahkan kaedah tekanan dada sahaja masih berkesan"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Bantuan Kecemasan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah risiko utama jika teknik tekanan dada CPR dilakukan secara salah atau terlalu kasar pada dada mangsa (m/s 22)?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah risiko utama jika teknik tekanan dada CPR dilakukan secara salah atau terlalu kasar pada dada mangsa ( meter per saat 22)?"
+      },
+      "board": {
+        "promptPill": "Apakah risiko utama jika teknik tekanan dada CPR dilakukan secara salah atau…",
+        "title": "Rumusan: Bantuan Kecemasan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "4 Langkah Kaedah Heimlich Manoeuvre (Rajah 2.5)",
+            "detail": "Soalan lazim SPM: 'Bagaimana Heimlich menolak makanan?' -> 'Menambahkan tekanan di dalam peparu supaya…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Heimlich Diri Sendiri (Rajah 2.6) & KBAT Ibu…",
+            "detail": "Ketinggian objek sokongan diri sendiri mestilah SEPARAS PINGGANG (seperti kerusi atau meja), bukan terlalu…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Perbandingan Triaj Pantas: CPR vs Heimlich &…",
+            "detail": "Kunci skor penuh Kertas 2 Soalan 5 (Cabar Minda): Kenal pasti tujuan -> analisis pilihan -> pilih kaedah…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tekanan darah mangsa meningkat menjadi terlalu tinggi.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Tekanan darah mangsa meningkat menjadi… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Tekanan darah mangsa meningkat menjadi tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau udara yang dihembus mungkin…",
+              "spokenText": "Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau udara yang dihembus mungkin",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "4 Langkah Kaedah Heimlich Manoeuvre (Rajah 2.5)",
+                    "detail": "Soalan lazim SPM: 'Bagaimana Heimlich menolak makanan?' -> 'Menambahkan tekanan di dalam peparu supaya…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Heimlich Diri Sendiri (Rajah 2.6) & KBAT Ibu…",
+                    "detail": "Ketinggian objek sokongan diri sendiri mestilah SEPARAS PINGGANG (seperti kerusi atau meja), bukan terlalu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Perbandingan Triaj Pantas: CPR vs Heimlich &…",
+                    "detail": "Kunci skor penuh Kertas 2 Soalan 5 (Cabar Minda): Kenal pasti tujuan -> analisis pilihan -> pilih kaedah…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Tulang rusuk mangsa boleh patah atau udara gagal sampai ke dalam peparu.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Saluran pemakanan mangsa akan tersumbat oleh bendasing.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Saluran pemakanan mangsa akan tersumbat… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Saluran pemakanan mangsa akan tersumbat tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau udara yang dihembus mungkin…",
+              "spokenText": "Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau udara yang dihembus mungkin",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "4 Langkah Kaedah Heimlich Manoeuvre (Rajah 2.5)",
+                    "detail": "Soalan lazim SPM: 'Bagaimana Heimlich menolak makanan?' -> 'Menambahkan tekanan di dalam peparu supaya…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Heimlich Diri Sendiri (Rajah 2.6) & KBAT Ibu…",
+                    "detail": "Ketinggian objek sokongan diri sendiri mestilah SEPARAS PINGGANG (seperti kerusi atau meja), bukan terlalu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Perbandingan Triaj Pantas: CPR vs Heimlich &…",
+                    "detail": "Kunci skor penuh Kertas 2 Soalan 5 (Cabar Minda): Kenal pasti tujuan -> analisis pilihan -> pilih kaedah…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "4 Langkah Kaedah Heimlich Manoeuvre (Rajah 2.5)",
+              "detail": "Soalan lazim SPM: 'Bagaimana Heimlich menolak makanan?' -> 'Menambahkan tekanan di dalam peparu supaya…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Heimlich Diri Sendiri (Rajah 2.6) & KBAT Ibu…",
+              "detail": "Ketinggian objek sokongan diri sendiri mestilah SEPARAS PINGGANG (seperti kerusi atau meja), bukan terlalu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Perbandingan Triaj Pantas: CPR vs Heimlich &…",
+              "detail": "Kunci skor penuh Kertas 2 Soalan 5 (Cabar Minda): Kenal pasti tujuan -> analisis pilihan -> pilih kaedah…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bantuan Kecemasan",
+          "desc": "Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau udara yang…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Halaman 22 memberi amaran jelas: jika kaedah CPR tidak dilakukan dengan betul, tulang rusuk mangsa boleh patah atau",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "4 Langkah Kaedah Heimlich Manoeuvre (Rajah 2.5)",
+              "detail": "Soalan lazim SPM: 'Bagaimana Heimlich menolak makanan?' -> 'Menambahkan tekanan di dalam peparu supaya…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Heimlich Diri Sendiri (Rajah 2.6) & KBAT Ibu…",
+              "detail": "Ketinggian objek sokongan diri sendiri mestilah SEPARAS PINGGANG (seperti kerusi atau meja), bukan terlalu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Perbandingan Triaj Pantas: CPR vs Heimlich &…",
+              "detail": "Kunci skor penuh Kertas 2 Soalan 5 (Cabar Minda): Kenal pasti tujuan -> analisis pilihan -> pilih kaedah…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

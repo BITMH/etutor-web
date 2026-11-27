@@ -1,0 +1,431 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t3-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:39.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t3-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Kestabilan Pemerintahan & Kemakmuran Negara Kita ?",
+      "duration": 8.459,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "lazim",
+          "start": 0.44,
+          "end": 0.74
+        },
+        {
+          "word": "sejarah,",
+          "start": 0.74,
+          "end": 1.38
+        },
+        {
+          "word": "awas",
+          "start": 1.46,
+          "end": 1.8
+        },
+        {
+          "word": "perangkap,",
+          "start": 1.8,
+          "end": 2.38
+        },
+        {
+          "word": "manakah",
+          "start": 2.66,
+          "end": 3.1
+        },
+        {
+          "word": "fakta",
+          "start": 3.1,
+          "end": 3.52
+        },
+        {
+          "word": "atau",
+          "start": 3.52,
+          "end": 3.72
+        },
+        {
+          "word": "langkah",
+          "start": 3.72,
+          "end": 4.1
+        },
+        {
+          "word": "yang",
+          "start": 4.1,
+          "end": 4.24
+        },
+        {
+          "word": "diturut",
+          "start": 4.24,
+          "end": 4.66
+        },
+        {
+          "word": "tentang",
+          "start": 4.66,
+          "end": 4.86
+        },
+        {
+          "word": "huan",
+          "start": 4.86,
+          "end": 5.16
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.16,
+          "end": 5.6
+        },
+        {
+          "word": "satu",
+          "start": 5.6,
+          "end": 5.86
+        },
+        {
+          "word": "kestabilan",
+          "start": 5.86,
+          "end": 6.44
+        },
+        {
+          "word": "pemerintahan",
+          "start": 6.44,
+          "end": 6.96
+        },
+        {
+          "word": "dan",
+          "start": 6.96,
+          "end": 7.18
+        },
+        {
+          "word": "kemakmuran",
+          "start": 7.18,
+          "end": 7.66
+        },
+        {
+          "word": "negara",
+          "start": 7.66,
+          "end": 7.94
+        },
+        {
+          "word": "kita?",
+          "start": 7.94,
+          "end": 8.16
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t3-bab01/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Antara berikut, manakah BUKTI kestabilan sistem perundangan tempatan sebelum kedatangan kuasa Barat?",
+      "duration": 8.064,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": "urutan",
+          "start": 0.66,
+          "end": 1.08
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.08,
+          "end": 1.5
+        },
+        {
+          "word": "di",
+          "start": 1.5,
+          "end": 1.6
+        },
+        {
+          "word": "Papan",
+          "start": 1.6,
+          "end": 2.0
+        },
+        {
+          "word": "antara",
+          "start": 2.0,
+          "end": 2.92
+        },
+        {
+          "word": "berikut",
+          "start": 2.92,
+          "end": 3.3
+        },
+        {
+          "word": "manakah",
+          "start": 3.3,
+          "end": 4.18
+        },
+        {
+          "word": "bukti",
+          "start": 4.18,
+          "end": 4.64
+        },
+        {
+          "word": "A",
+          "start": 4.64,
+          "end": 4.74
+        },
+        {
+          "word": "Kestabilan",
+          "start": 4.74,
+          "end": 5.32
+        },
+        {
+          "word": "Sistem",
+          "start": 5.32,
+          "end": 5.68
+        },
+        {
+          "word": "Perundangan",
+          "start": 5.68,
+          "end": 6.16
+        },
+        {
+          "word": "Tempatan",
+          "start": 6.16,
+          "end": 6.62
+        },
+        {
+          "word": "Sebelum",
+          "start": 6.62,
+          "end": 6.98
+        },
+        {
+          "word": "Kedatangan",
+          "start": 6.98,
+          "end": 7.38
+        },
+        {
+          "word": "Kuasa",
+          "start": 7.38,
+          "end": 7.64
+        },
+        {
+          "word": "Barat",
+          "start": 7.64,
+          "end": 7.98
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t3-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Apakah barangan utama yang menarik kedatangan orang Eropah ke Alam Melayu pada abad ke-16?",
+      "duration": 6.027,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "lazim",
+          "start": 0.34,
+          "end": 0.66
+        },
+        {
+          "word": "sejarah",
+          "start": 0.66,
+          "end": 1.18
+        },
+        {
+          "word": "apakah",
+          "start": 1.18,
+          "end": 1.6
+        },
+        {
+          "word": "barangan",
+          "start": 1.6,
+          "end": 1.98
+        },
+        {
+          "word": "utama",
+          "start": 1.98,
+          "end": 2.34
+        },
+        {
+          "word": "yang",
+          "start": 2.34,
+          "end": 2.52
+        },
+        {
+          "word": "menarik",
+          "start": 2.52,
+          "end": 2.86
+        },
+        {
+          "word": "kedatangan",
+          "start": 2.86,
+          "end": 3.3
+        },
+        {
+          "word": "orang",
+          "start": 3.3,
+          "end": 3.48
+        },
+        {
+          "word": "Eropah",
+          "start": 3.48,
+          "end": 4.0
+        },
+        {
+          "word": "ke",
+          "start": 4.0,
+          "end": 4.1
+        },
+        {
+          "word": "Alam",
+          "start": 4.1,
+          "end": 4.28
+        },
+        {
+          "word": "Melayu",
+          "start": 4.28,
+          "end": 4.54
+        },
+        {
+          "word": "pada",
+          "start": 4.54,
+          "end": 4.7
+        },
+        {
+          "word": "abad",
+          "start": 4.7,
+          "end": 4.96
+        },
+        {
+          "word": "keisimnas?",
+          "start": 4.96,
+          "end": 5.46
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t3-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Kemunculan industri kereta dan ciptaan tayar di Eropah pada abad ke-19 telah meningkatkan permintaan mendadak terhadap",
+      "duration": 9.419,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "urutan",
+          "start": 0.44,
+          "end": 1.0
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.0,
+          "end": 1.62
+        },
+        {
+          "word": "di",
+          "start": 1.62,
+          "end": 1.78
+        },
+        {
+          "word": "Papan,",
+          "start": 1.78,
+          "end": 2.22
+        },
+        {
+          "word": "kemunculan",
+          "start": 2.42,
+          "end": 3.28
+        },
+        {
+          "word": "industri",
+          "start": 3.28,
+          "end": 3.6
+        },
+        {
+          "word": "kereta",
+          "start": 3.6,
+          "end": 4.16
+        },
+        {
+          "word": "dan",
+          "start": 4.16,
+          "end": 4.4
+        },
+        {
+          "word": "ciptaan",
+          "start": 4.4,
+          "end": 4.94
+        },
+        {
+          "word": "taya",
+          "start": 4.94,
+          "end": 5.2
+        },
+        {
+          "word": "di",
+          "start": 5.2,
+          "end": 5.36
+        },
+        {
+          "word": "Eropah",
+          "start": 5.36,
+          "end": 5.78
+        },
+        {
+          "word": "pada",
+          "start": 5.78,
+          "end": 5.98
+        },
+        {
+          "word": "abad",
+          "start": 5.98,
+          "end": 6.32
+        },
+        {
+          "word": "ke",
+          "start": 6.32,
+          "end": 6.46
+        },
+        {
+          "word": "90",
+          "start": 6.46,
+          "end": 6.82
+        },
+        {
+          "word": "-s",
+          "start": 6.82,
+          "end": 7.06
+        },
+        {
+          "word": "telah",
+          "start": 7.06,
+          "end": 7.36
+        },
+        {
+          "word": "meningkatkan",
+          "start": 7.36,
+          "end": 7.9
+        },
+        {
+          "word": "peningkatan",
+          "start": 7.9,
+          "end": 8.46
+        },
+        {
+          "word": "mendadak",
+          "start": 8.46,
+          "end": 8.9
+        },
+        {
+          "word": "terhadap.",
+          "start": 8.9,
+          "end": 9.32
+        }
+      ]
+    }
+  }
+};

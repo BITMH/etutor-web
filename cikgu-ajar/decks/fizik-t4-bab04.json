@@ -1,0 +1,791 @@
+{
+  "deckId": "fizik-t4-bab04",
+  "title": "Haba",
+  "shortTitle": "Haba",
+  "subject": "Fizik",
+  "form": "T4",
+  "bab": 4,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Haba",
+    "desc": "Skema Kertas 2 SPM: Jangan tulis haba berhenti berpindah semasa keseimbangan terma! Sebaliknya nyatakan kadar pemindahan haba antara kedua-dua jasad…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Fizik! Apakah suhu larutan X tersebut dalam unit darjah Celsius?",
+        "spokenText": "Perangkap lazim Fizik! Apakah suhu larutan X tersebut dalam unit darjah Celsius?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah suhu larutan X tersebut dalam unit darjah Celsius?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "55.0°C",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "65.0°C",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "55.0°C",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Fizik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Fizik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 65.0°C. Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)]…",
+              "spokenText": "Fakta sebenar: 65 perpuluhan kosong darjah Celsius. Menggunakan rumus theta sama dengan [(L theta - L0) / (L100 - L0)] darab 100 darjah Celsius sama dengan [(15 perpuluhan kosong - 2 perpuluhan kosong) / (22 perpuluhan kosong - 2 perpuluhan kosong)]",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "65.0°C",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)] × 100 = (13.0 / 20.0) × 100 = 65.0°C.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "65.0°C",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "68.2°C",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Fizik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Fizik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 65.0°C. Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)]…",
+              "spokenText": "Fakta sebenar: 65 perpuluhan kosong darjah Celsius. Menggunakan rumus theta sama dengan [(L theta - L0) / (L100 - L0)] darab 100 darjah Celsius sama dengan [(15 perpuluhan kosong - 2 perpuluhan kosong) / (22 perpuluhan kosong - 2 perpuluhan kosong)]",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "65.0°C",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)] × 100 = (13.0 / 20.0) × 100 = 65.0°C.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "65.0°C",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)] × 100 = (13.0 / 20.0) × 100 = 65.0°C.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Menggunakan rumus θ = [(Lθ - L0) / (L100 - L0)] × 100°C = [(15.0 - 2.0) / (22.0 - 2.0)] × 100 = (13.0 / 20.0) × 100 =…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Menggunakan rumus theta sama dengan [(L theta - L0) / (L100 - L0)] darab 100 darjah Celsius sama dengan [(15 perpuluhan kosong - 2 perpuluhan kosong) / (22 perpuluhan kosong - 2 perpuluhan kosong)] darab 100 sama dengan (13 perpuluhan kosong / 20 perpuluhan kosong) darab 100 sama dengan",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "65.0°C",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Penentu Ukuran Termometer Menggunakan",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Mengapakah badan manusia yang sihat tidak mencapai keseimbangan terma kekal pada suhu 24°C di dalam sebuah bilik berhawa…",
+        "spokenText": "Lihat langkah di papan! Mengapakah badan manusia yang sihat tidak mencapai keseimbangan terma kekal pada suhu 24 darjah Celsius di dalam sebuah bilik berhawa"
+      },
+      "board": {
+        "promptPill": "Mengapakah badan manusia yang sihat tidak mencapai keseimbangan terma kekal pada…",
+        "title": "Penentu Ukuran Termometer Menggunakan Dua Takat Tetap",
+        "given": "Penentu ukuran ialah proses menskalakan termometer menggunakan sifat termometrik (panjang turus cecair) berpandukan…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Takat Tetap & Rumus (Aktiviti 4.3): Panjang turus cecair ditanda pada 0°C (L0 dalam ais…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Langkah Berjaga-jaga Makmal: Bebuli termometer tidak boleh menyentuh dasar atau dinding…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kerana sel badan sentiasa menjana haba melalui respirasi metabolisme dan sistem kawal…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kerana kulit manusia bertindak sebagai penebat mutlak yang menghalang sebarang…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerana kulit manusia bertindak sebagai… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Kerana kulit manusia bertindak sebagai tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Walaupun haba badan mengalir keluar ke persekitaran 24°C, badan manusia bukan objek pasif; tindak balas metabolisme sentiasa menghasilkan tenaga…",
+              "spokenText": "Walaupun haba badan mengalir keluar ke persekitaran 24 darjah Celsius, badan manusia bukan objek pasif; tindak balas metabolisme sentiasa menghasilkan tenaga",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Takat Tetap & Rumus (Aktiviti 4.3): Panjang turus cecair ditanda pada 0°C (L0 dalam ais…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Langkah Berjaga-jaga Makmal: Bebuli termometer tidak boleh menyentuh dasar atau dinding…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kerana udara bilik berhawa dingin mempunyai suhu lebih tinggi daripada suhu darah manusia",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerana udara bilik berhawa dingin mempunyai… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Kerana udara bilik berhawa dingin mempunyai tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Walaupun haba badan mengalir keluar ke persekitaran 24°C, badan manusia bukan objek pasif; tindak balas metabolisme sentiasa menghasilkan tenaga…",
+              "spokenText": "Walaupun haba badan mengalir keluar ke persekitaran 24 darjah Celsius, badan manusia bukan objek pasif; tindak balas metabolisme sentiasa menghasilkan tenaga",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Takat Tetap & Rumus (Aktiviti 4.3): Panjang turus cecair ditanda pada 0°C (L0 dalam ais…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Langkah Berjaga-jaga Makmal: Bebuli termometer tidak boleh menyentuh dasar atau dinding…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Takat Tetap & Rumus (Aktiviti 4.3): Panjang turus cecair ditanda pada 0°C (L0 dalam ais…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Langkah Berjaga-jaga Makmal: Bebuli termometer tidak boleh menyentuh dasar atau dinding…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Penentu Ukuran Termometer Menggunakan",
+          "desc": "Walaupun haba badan mengalir keluar ke persekitaran 24°C, badan manusia bukan objek pasif; tindak balas metabolisme sentiasa menghasilkan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Walaupun haba badan mengalir keluar ke persekitaran 24°C, badan manusia bukan objek pasif; tindak balas metabolisme…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Walaupun haba badan mengalir keluar ke persekitaran 24 darjah Celsius, badan manusia bukan objek pasif; tindak balas metabolisme",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Takat Tetap & Rumus (Aktiviti 4.3): Panjang turus cecair ditanda pada 0°C (L0 dalam ais…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Langkah Berjaga-jaga Makmal: Bebuli termometer tidak boleh menyentuh dasar atau dinding…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Muatan Haba vs Muatan",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Bahan manakah mencatat suhu akhir paling tinggi, dan mengapa nilai c eksperimen lazimnya lebih besar daripada nilai piawai…",
+        "spokenText": "Perhatikan rajah konsep di papan! Bahan manakah mencatat suhu akhir paling tinggi, dan mengapa nilai c eksperimen lazimnya lebih besar daripada nilai piawai"
+      },
+      "board": {
+        "promptPill": "Bahan manakah mencatat suhu akhir paling tinggi, dan mengapa nilai c eksperimen…",
+        "title": "Muatan Haba (C) vs Muatan Haba Tentu (c) & Kalorimetri",
+        "diagramType": "cycle",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Air dalam sistem radiator kereta",
+            "detail": "Muatan haba tentu tinggi (4200 J kg⁻¹ °C⁻¹) menyerap haba enjin dengan kenaikan suhu kecil",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Badan periuk aluminium & kuali logam",
+            "detail": "Muatan haba tentu rendah supaya cepat menjadi panas semasa memasak",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Pemegang periuk plastik & periuk…",
+            "detail": "Muatan haba tentu tinggi supaya lambat panas, selamat dipegang dan makanan kekal hangat",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kuprum mencatat suhu akhir jauh lebih tinggi (+30.8°C berbanding +2.9°C pada air); nilai…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Air mencatat suhu akhir jauh lebih tinggi kerana air mempunyai muatan haba tentu paling…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Air mencatat suhu akhir jauh lebih… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Air mencatat suhu akhir jauh lebih tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C). Dalam eksperimen sebenar,…",
+              "spokenText": "delta theta sama dengan Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami delta theta jauh lebih besar (30 perpuluhan lapan darjah Celsius) berbanding air (2 perpuluhan sembilan darjah Celsius). Dalam eksperimen sebenar,",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Muatan Haba vs Muatan",
+                "desc": "Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C). Dalam…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kedua-duanya mencatat suhu akhir tepat sama kerana kuasa pemanas dan masa pemanasan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kedua-duanya mencatat suhu akhir tepat… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kedua-duanya mencatat suhu akhir tepat tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C). Dalam eksperimen sebenar,…",
+              "spokenText": "delta theta sama dengan Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami delta theta jauh lebih besar (30 perpuluhan lapan darjah Celsius) berbanding air (2 perpuluhan sembilan darjah Celsius). Dalam eksperimen sebenar,",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Muatan Haba vs Muatan",
+                "desc": "Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C). Dalam…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Muatan Haba vs Muatan",
+          "desc": "Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C). Dalam eksperimen…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Δθ = Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami Δθ jauh lebih besar (30.8°C) berbanding air (2.9°C).…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. delta theta sama dengan Q / (mc), jadi bahan dengan c kecil (Kuprum 390) mengalami delta theta jauh lebih besar (30 perpuluhan lapan darjah Celsius) berbanding air (2 perpuluhan sembilan darjah Celsius)."
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Haba",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berapakah tekanan baharu udara di dalam tayar kereta lumba tersebut dan apakah andaian yang digunakan?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berapakah tekanan baharu udara di dalam tayar kereta lumba tersebut dan apakah andaian yang digunakan?"
+      },
+      "board": {
+        "promptPill": "Berapakah tekanan baharu udara di dalam tayar kereta lumba tersebut dan apakah…",
+        "title": "Rumusan: Haba",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Eksperimen 4.3 (Set Kawalan) serta Penyejukan…",
+            "detail": "Soalan wajib Kertas 2: Mengapakah kecederaan akibat stim pada 100°C jauh lebih parah daripada air mendidih…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Teori Kinetik Gas & Hukum Boyle (P₁V₁ = P₂V₂)",
+            "detail": "Soalan Perbincangan Eksperimen 4.4: Mengapakah omboh picagari mesti ditolak dengan PERLAHAN? Supaya haba…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Hukum Charles, Hukum Gay-Lussac & Sifar Mutlak…",
+            "detail": "Perangkap NOMBOR SATU Hukum Gas SPM: Jangan sesekali masukkan suhu °C ke dalam V1/T1 = V2/T2 atau P1/T1 =…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "264 kPa, dengan andaian isi padu dan jisim udara di dalam tayar adalah malar (Hukum…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "709 kPa, dengan andaian suhu dalam darjah Celsius berkadar terus dengan tekanan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 709 kPa, dengan andaian suhu dalam… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 709 kilopascal, dengan andaian suhu dalam tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "T1 = 27 + 273 = 300 K; T2 = 87 + 273 = 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac memberi P1/T1 = P2/T2 -> P2 =…",
+              "spokenText": "T1 sama dengan 27 positif 273 sama dengan 300 K; T2 sama dengan 87 positif 273 sama dengan 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac memberi P1/T1 sama dengan P2/T2 - lebih daripada P2 sama dengan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Eksperimen 4.3 (Set Kawalan) serta Penyejukan…",
+                    "detail": "Soalan wajib Kertas 2: Mengapakah kecederaan akibat stim pada 100°C jauh lebih parah daripada air mendidih…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Teori Kinetik Gas & Hukum Boyle (P₁V₁ = P₂V₂)",
+                    "detail": "Soalan Perbincangan Eksperimen 4.4: Mengapakah omboh picagari mesti ditolak dengan PERLAHAN? Supaya haba…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Hukum Charles, Hukum Gay-Lussac & Sifar Mutlak…",
+                    "detail": "Perangkap NOMBOR SATU Hukum Gas SPM: Jangan sesekali masukkan suhu °C ke dalam V1/T1 = V2/T2 atau P1/T1 =…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "183 kPa, dengan andaian tekanan tayar berkurang apabila molekul bergerak lebih pantas",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 183 kPa, dengan andaian tekanan tayar… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 183 kilopascal, dengan andaian tekanan tayar tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "T1 = 27 + 273 = 300 K; T2 = 87 + 273 = 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac memberi P1/T1 = P2/T2 -> P2 =…",
+              "spokenText": "T1 sama dengan 27 positif 273 sama dengan 300 K; T2 sama dengan 87 positif 273 sama dengan 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac memberi P1/T1 sama dengan P2/T2 - lebih daripada P2 sama dengan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Eksperimen 4.3 (Set Kawalan) serta Penyejukan…",
+                    "detail": "Soalan wajib Kertas 2: Mengapakah kecederaan akibat stim pada 100°C jauh lebih parah daripada air mendidih…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Teori Kinetik Gas & Hukum Boyle (P₁V₁ = P₂V₂)",
+                    "detail": "Soalan Perbincangan Eksperimen 4.4: Mengapakah omboh picagari mesti ditolak dengan PERLAHAN? Supaya haba…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Hukum Charles, Hukum Gay-Lussac & Sifar Mutlak…",
+                    "detail": "Perangkap NOMBOR SATU Hukum Gas SPM: Jangan sesekali masukkan suhu °C ke dalam V1/T1 = V2/T2 atau P1/T1 =…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Eksperimen 4.3 (Set Kawalan) serta Penyejukan…",
+              "detail": "Soalan wajib Kertas 2: Mengapakah kecederaan akibat stim pada 100°C jauh lebih parah daripada air mendidih…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Teori Kinetik Gas & Hukum Boyle (P₁V₁ = P₂V₂)",
+              "detail": "Soalan Perbincangan Eksperimen 4.4: Mengapakah omboh picagari mesti ditolak dengan PERLAHAN? Supaya haba…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Hukum Charles, Hukum Gay-Lussac & Sifar Mutlak…",
+              "detail": "Perangkap NOMBOR SATU Hukum Gas SPM: Jangan sesekali masukkan suhu °C ke dalam V1/T1 = V2/T2 atau P1/T1 =…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Haba",
+          "desc": "T1 = 27 + 273 = 300 K; T2 = 87 + 273 = 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac memberi P1/T1 =…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: T1 = 27 + 273 = 300 K; T2 = 87 + 273 = 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: T1 sama dengan 27 positif 273 sama dengan 300 K; T2 sama dengan 87 positif 273 sama dengan 360 K. Dengan andaian isi padu tayar dan jisim udara malar, Hukum Gay-Lussac",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Eksperimen 4.3 (Set Kawalan) serta Penyejukan…",
+              "detail": "Soalan wajib Kertas 2: Mengapakah kecederaan akibat stim pada 100°C jauh lebih parah daripada air mendidih…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Teori Kinetik Gas & Hukum Boyle (P₁V₁ = P₂V₂)",
+              "detail": "Soalan Perbincangan Eksperimen 4.4: Mengapakah omboh picagari mesti ditolak dengan PERLAHAN? Supaya haba…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Hukum Charles, Hukum Gay-Lussac & Sifar Mutlak…",
+              "detail": "Perangkap NOMBOR SATU Hukum Gas SPM: Jangan sesekali masukkan suhu °C ke dalam V1/T1 = V2/T2 atau P1/T1 =…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

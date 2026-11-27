@@ -1,0 +1,813 @@
+{
+  "deckId": "matematik-t4-bab01",
+  "title": "Fungsi & Persamaan Kuadratik dalam Satu Pemboleh Ubah",
+  "shortTitle": "Fungsi Kuadratik",
+  "subject": "Matematik",
+  "form": "T4",
+  "bab": 1,
+  "mastery": {
+    "tag": "Kad Rumus SPM",
+    "title": "3 Hukum Emas Kuadratik",
+    "desc": "1) +a Senyum ∪, −a Masam ∩. 2) |a| kecil = Lebar. 3) c = lif pintasan-y (0, c)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Tanda a",
+      "heading": "Kad 1: Graf Senyum atau Masam?",
+      "underlineColor": "#4F46E5",
+      "template": "graph-slider",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Ujian pantas! Lihat fungsi kuadratik di papan. Graf ini buka ke atas atau ke bawah?",
+        "spokenText": "Ujian pantas! Lihat fungsi kuadratik di papan. Graf ini buka ke atas atau ke bawah?"
+      },
+      "board": {
+        "equation": {
+          "prefix": "f(x) =",
+          "terms": [
+            {
+              "text": "−2",
+              "highlight": null
+            },
+            {
+              "text": "x² + 4x + 6",
+              "highlight": null
+            }
+          ],
+          "promptPill": "Lihat a = −2. Buka arah mana?"
+        },
+        "graph": {
+          "curves": []
+        }
+      },
+      "choices": [
+        {
+          "id": "up",
+          "label": "Buka ke ATAS (∪ Minimum)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "BUKA KE ATAS?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "c1_wrong_up_1",
+              "text": "Eh kejap, kejap! Buka ke atas? Terkena perangkap klasik SPM ni! Tengok depan x² tu.",
+              "spokenText": "Eh kejap, kejap! Buka ke atas? Terkena perangkap klasik S P M ni! Tengok depan x kuasa dua tu.",
+              "boardPatch": {
+                "equation": {
+                  "prefix": "f(x) =",
+                  "terms": [
+                    {
+                      "text": "−2",
+                      "highlight": "orange"
+                    },
+                    {
+                      "text": "x² + 4x + 6",
+                      "highlight": null
+                    }
+                  ],
+                  "promptPill": "Lihat a = −2. Buka arah mana?"
+                },
+                "graph": {
+                  "curves": []
+                }
+              }
+            },
+            {
+              "heading": "BUKA KE ATAS?!",
+              "underlineColor": "#F43F5E",
+              "mood": "deadpan",
+              "lookAt": "side",
+              "camera": "equation",
+              "audioId": "c1_wrong_up_2",
+              "text": "Ada tanda tolak besar duduk kat situ kot. Kalau a negatif, graf dia masam, bukan senyum.",
+              "spokenText": "Ada tanda tolak besar duduk kat situ kot. Kalau a negatif, graf dia masam, bukan senyum."
+            },
+            {
+              "heading": "a Negatif = Masam ∩",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "board",
+              "camera": "overview",
+              "sfx": "chalk",
+              "audioId": "c1_wrong_up_3",
+              "text": "Bayangkan pancutan air. Ia naik sampai puncak maksimum, lepas tu melengkung turun ke bawah!",
+              "spokenText": "Bayangkan pancutan air. Ia naik sampai puncak maksimum, lepas tu melengkung turun ke bawah!",
+              "boardPatch": {
+                "graph": {
+                  "curves": [
+                    {
+                      "a": -0.5,
+                      "b": 1,
+                      "c": 3.5,
+                      "color": "#F97316",
+                      "animate": true
+                    }
+                  ],
+                  "showVertex": true
+                }
+              },
+              "analogy": {
+                "tag": "Analogi Sebenar",
+                "title": "Lengkung Pancutan Air (∩)",
+                "desc": "a negatif naik ke titik Maksimum, kemudian melengkung turun.",
+                "svgType": "fountain"
+              }
+            },
+            {
+              "heading": "a Negatif = Masam ∩",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "audioId": "c1_wrong_up_4",
+              "text": "Ingat geng, a negatif sentiasa muka masam dengan titik maksimum. Jangan bagi markah percuma kat pemeriksa!",
+              "spokenText": "Ingat geng, a negatif sentiasa muka masam dengan titik maksimum. Jangan bagi markah percuma kat pemeriksa!"
+            }
+          ]
+        },
+        {
+          "id": "down",
+          "label": "Buka ke BAWAH (∩ Maksimum)",
+          "correct": true
+        },
+        {
+          "id": "line",
+          "label": "Garis Lurus",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "BUKA KE ATAS?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "c1_wrong_up_1",
+              "text": "Eh kejap, kejap! Buka ke atas? Terkena perangkap klasik SPM ni! Tengok depan x² tu.",
+              "spokenText": "Eh kejap, kejap! Buka ke atas? Terkena perangkap klasik S P M ni! Tengok depan x kuasa dua tu.",
+              "boardPatch": {
+                "equation": {
+                  "prefix": "f(x) =",
+                  "terms": [
+                    {
+                      "text": "−2",
+                      "highlight": "orange"
+                    },
+                    {
+                      "text": "x² + 4x + 6",
+                      "highlight": null
+                    }
+                  ],
+                  "promptPill": "Lihat a = −2. Buka arah mana?"
+                },
+                "graph": {
+                  "curves": []
+                }
+              }
+            },
+            {
+              "heading": "BUKA KE ATAS?!",
+              "underlineColor": "#F43F5E",
+              "mood": "deadpan",
+              "lookAt": "side",
+              "camera": "equation",
+              "audioId": "c1_wrong_up_2",
+              "text": "Ada tanda tolak besar duduk kat situ kot. Kalau a negatif, graf dia masam, bukan senyum.",
+              "spokenText": "Ada tanda tolak besar duduk kat situ kot. Kalau a negatif, graf dia masam, bukan senyum."
+            },
+            {
+              "heading": "a Negatif = Masam ∩",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "board",
+              "camera": "overview",
+              "sfx": "chalk",
+              "audioId": "c1_wrong_up_3",
+              "text": "Bayangkan pancutan air. Ia naik sampai puncak maksimum, lepas tu melengkung turun ke bawah!",
+              "spokenText": "Bayangkan pancutan air. Ia naik sampai puncak maksimum, lepas tu melengkung turun ke bawah!",
+              "boardPatch": {
+                "graph": {
+                  "curves": [
+                    {
+                      "a": -0.5,
+                      "b": 1,
+                      "c": 3.5,
+                      "color": "#F97316",
+                      "animate": true
+                    }
+                  ],
+                  "showVertex": true
+                }
+              },
+              "analogy": {
+                "tag": "Analogi Sebenar",
+                "title": "Lengkung Pancutan Air (∩)",
+                "desc": "a negatif naik ke titik Maksimum, kemudian melengkung turun.",
+                "svgType": "fountain"
+              }
+            },
+            {
+              "heading": "a Negatif = Masam ∩",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "audioId": "c1_wrong_up_4",
+              "text": "Ingat geng, a negatif sentiasa muka masam dengan titik maksimum. Jangan bagi markah percuma kat pemeriksa!",
+              "spokenText": "Ingat geng, a negatif sentiasa muka masam dengan titik maksimum. Jangan bagi markah percuma kat pemeriksa!"
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Tambah sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Tambah sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "equation": {
+            "prefix": "f(x) =",
+            "terms": [
+              {
+                "text": "−2",
+                "highlight": "orange"
+              },
+              {
+                "text": "x² + 4x + 6",
+                "highlight": null
+              }
+            ],
+            "promptPill": "Lihat a = −2. Buka arah mana?"
+          },
+          "graph": {
+            "curves": [
+              {
+                "a": -0.5,
+                "b": 1,
+                "c": 3.5,
+                "color": "#0D9488",
+                "animate": true
+              }
+            ],
+            "showVertex": true
+          }
+        },
+        "analogy": {
+          "tag": "Analogi Pancutan Air",
+          "title": "Lengkung Maksimum (∩)",
+          "desc": "Negatif a naik ke puncak maksimum, kemudian turun.",
+          "svgType": "fountain"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "c1_calm_hint",
+        "text": "Tak apa geng, ramai calon SPM keliru kat sini. Cari tanda tolak depan x². Negatif maksudnya lengkung buka ke bawah.",
+        "spokenText": "Tak apa geng, ramai calon S P M keliru kat sini. Cari tanda tolak depan x kuasa dua. Negatif maksudnya lengkung buka ke bawah.",
+        "boardPatch": {
+          "equation": {
+            "prefix": "f(x) =",
+            "terms": [
+              {
+                "text": "−2",
+                "highlight": "orange"
+              },
+              {
+                "text": "x² + 4x + 6",
+                "highlight": null
+              }
+            ],
+            "promptPill": "Lihat a = −2. Buka arah mana?"
+          },
+          "graph": {
+            "curves": [
+              {
+                "a": -0.5,
+                "b": 1,
+                "c": 3.5,
+                "color": "#0D9488",
+                "animate": true
+              }
+            ],
+            "showVertex": true
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Papan Hidup",
+      "heading": "Kad 2: Papan Hidup (a & c)",
+      "underlineColor": "#4F46E5",
+      "template": "graph-slider",
+      "mode": "sandbox",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Giliran awak di papan hidup! Gerakkan pelaras a dan c, bina senyum sempit dengan lif pintasan-y pada +3.",
+        "spokenText": "Giliran awak di papan hidup! Gerakkan pelaras a dan c, bina senyum sempit dengan lif pintasan y pada positif 3."
+      },
+      "board": {
+        "equation": {
+          "prefix": "f(x) =",
+          "terms": [
+            {
+              "text": "1",
+              "highlight": "teal"
+            },
+            {
+              "text": "x²",
+              "highlight": null
+            },
+            {
+              "text": "− 1",
+              "highlight": "teal"
+            }
+          ],
+          "promptPill": "Seret a & c untuk uji graf"
+        },
+        "graph": {
+          "curves": [
+            {
+              "a": 1,
+              "b": 0,
+              "c": -1,
+              "color": "#0D9488"
+            }
+          ],
+          "showVertex": true,
+          "showIntercept": -1,
+          "elevatorC": -1
+        },
+        "analogy": {
+          "tag": "Lif Pintasan-y",
+          "title": "c Mengangkat Graf",
+          "desc": "Tukar c cuma gerakkan lif pintasan-y ke (0, c) tanpa ubah bentuk!",
+          "svgType": "elevator"
+        }
+      },
+      "sandbox": {
+        "initialA": 1,
+        "initialC": -1,
+        "sliders": [
+          {
+            "key": "a",
+            "label": "a",
+            "min": -3,
+            "max": 3,
+            "step": 0.5
+          },
+          {
+            "key": "c",
+            "label": "c",
+            "min": -4,
+            "max": 4,
+            "step": 1
+          }
+        ],
+        "missions": [
+          {
+            "id": "m_a",
+            "label": "Senyum sempit (a ≥ 2)",
+            "rule": {
+              "param": "a",
+              "op": ">=",
+              "value": 2
+            }
+          },
+          {
+            "id": "m_c",
+            "label": "Lif di c = +3",
+            "rule": {
+              "param": "c",
+              "op": "===",
+              "value": 3
+            }
+          }
+        ],
+        "zeroTrigger": {
+          "param": "a",
+          "value": 0,
+          "audioId": "c2_zero",
+          "text": "Aik! Bila a = 0, x² terus hilang. Awak dah tukar parabola jadi garis lurus!",
+          "spokenText": "Aik! Bila a sama dengan sifar, x kuasa dua terus hilang. Awak dah tukar parabola jadi garis lurus!",
+          "mood": "shocked",
+          "sfx": "boing"
+        }
+      },
+      "win": {
+        "heading": "Misi Berjaya! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Lebar Graf",
+      "heading": "Kad 3: Mana Lebih Lebar?",
+      "underlineColor": "#F59E0B",
+      "template": "graph-slider",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap klasik SPM! Antara 3x² dengan 0.5x², lengkung mana terbuka lebih LEBAR?",
+        "spokenText": "Perangkap klasik S P M! Antara 3x kuasa dua dengan kosong perpuluhan limax kuasa dua, lengkung mana terbuka lebih LEBAR?"
+      },
+      "board": {
+        "equation": {
+          "prefix": "",
+          "terms": [
+            {
+              "text": "f(x) = 3x²",
+              "highlight": "coral"
+            },
+            {
+              "text": "vs",
+              "highlight": "muted"
+            },
+            {
+              "text": "g(x) = 0.5x²",
+              "highlight": "teal"
+            }
+          ],
+          "promptPill": "Parabola mana lebih LEBAR?"
+        },
+        "graph": {
+          "curves": [
+            {
+              "a": 3,
+              "b": 0,
+              "c": 0,
+              "color": "#F43F5E",
+              "label": "3x²",
+              "labelX": -1.6,
+              "labelY": 4.9
+            },
+            {
+              "a": 0.5,
+              "b": 0,
+              "c": 0,
+              "color": "#0D9488",
+              "label": "0.5x²",
+              "labelX": -3.1,
+              "labelY": 3.2
+            }
+          ]
+        }
+      },
+      "choices": [
+        {
+          "id": "3x2",
+          "label": "f(x) = 3x² (Nombor besar!)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "BESAR TU LEBAR?!",
+              "underlineColor": "#F43F5E",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "graph",
+              "sfx": "boing",
+              "audioId": "c3_trap_1",
+              "text": "Aha, terkena perangkap klasik lagi! Nombor besar bukan bermaksud lebih lebar. Pada x = 2, 3x² mencanak naik ke 12!",
+              "spokenText": "Aha, terkena perangkap klasik lagi! Nombor besar bukan bermaksud lebih lebar. Pada x sama dengan 2, 3x kuasa dua mencanak naik ke 12!",
+              "boardPatch": {
+                "graph": {
+                  "curves": [
+                    {
+                      "a": 3,
+                      "b": 0,
+                      "c": 0,
+                      "color": "#F43F5E",
+                      "label": "3x²",
+                      "labelX": -1.6,
+                      "labelY": 4.9
+                    },
+                    {
+                      "a": 0.5,
+                      "b": 0,
+                      "c": 0,
+                      "color": "#0D9488",
+                      "label": "0.5x²",
+                      "labelX": -3.1,
+                      "labelY": 3.2
+                    }
+                  ],
+                  "heightCompare": true
+                }
+              }
+            },
+            {
+              "heading": "|a| Kecil = Lebih Lebar!",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "c3_trap_2",
+              "text": "Manakala 0.5x² santai di aras 2, macam buaian lebar. Makin kecil nilai |a|, makin lebar lengkungnya!",
+              "spokenText": "Manakala kosong perpuluhan lima x kuasa dua santai di aras dua, macam buaian lebar. Makin kecil nilai a, makin lebar lengkungnya!",
+              "analogy": {
+                "tag": "Analogi Visual",
+                "title": "Roket Curam vs Buaian Lebar",
+                "desc": "Pada x = 2, 3x² mencanak ke 12 (sempit!), manakala 0.5x² santai di 2 (lebar).",
+                "svgType": "rocket-hammock"
+              }
+            }
+          ]
+        },
+        {
+          "id": "0.5x2",
+          "label": "g(x) = 0.5x² (|a| lebih kecil)",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Tepat! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Tambah sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Tambah sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "graph": {
+            "curves": [
+              {
+                "a": 3,
+                "b": 0,
+                "c": 0,
+                "color": "#F43F5E",
+                "label": "3x²",
+                "labelX": -1.6,
+                "labelY": 4.9
+              },
+              {
+                "a": 0.5,
+                "b": 0,
+                "c": 0,
+                "color": "#0D9488",
+                "label": "0.5x²",
+                "labelX": -3.1,
+                "labelY": 3.2
+              }
+            ],
+            "heightCompare": true
+          }
+        },
+        "analogy": {
+          "tag": "Analogi Visual",
+          "title": "Roket Curam vs Buaian Lebar",
+          "desc": "Pada x = 2, 3x² mencanak ke 12 (sempit!), manakala 0.5x² santai di 2 (lebar).",
+          "svgType": "rocket-hammock"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Nilai Pada x = 2",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng! Cuba gantikan x dengan 2. Graf 0.5x² cuma naik ke 2, jadi lengkungnya terbuka lebih lebar.",
+        "spokenText": "Tenang geng! Cuba gantikan x dengan 2. Graf kosong perpuluhan limax kuasa dua cuma naik ke 2, jadi lengkungnya terbuka lebih lebar."
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Padanan",
+      "heading": "Kad 4: Padankan Graf Ini!",
+      "underlineColor": "#4F46E5",
+      "template": "graph-slider",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Kad terakhir! Graf ini masam ke bawah dan memotong paksi-y di −2. Persamaan mana tepat?",
+        "spokenText": "Kad terakhir! Graf ini masam ke bawah dan memotong paksi y di negatif 2. Persamaan mana tepat?"
+      },
+      "board": {
+        "equation": {
+          "prefix": "f(x) =",
+          "terms": [
+            {
+              "text": "?",
+              "highlight": "orange"
+            },
+            {
+              "text": "x²",
+              "highlight": null
+            },
+            {
+              "text": "+ ?",
+              "highlight": "teal"
+            }
+          ],
+          "promptPill": "Semak arah (a) & lif (c)"
+        },
+        "graph": {
+          "curves": [
+            {
+              "a": -2,
+              "b": 0,
+              "c": -2,
+              "color": "#4F46E5",
+              "animate": true
+            }
+          ],
+          "showVertex": true,
+          "showIntercept": -2
+        }
+      },
+      "choices": [
+        {
+          "id": "pos",
+          "label": "f(x) = 2x² − 2",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK TANDA a!",
+              "underlineColor": "#F43F5E",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "graph",
+              "sfx": "boing",
+              "audioId": "c4_wrong_a",
+              "text": "Eh kejap! Positif 2 buat graf senyum ke atas, tapi graf di papan kita masam ke bawah. Semak tanda a dulu!",
+              "spokenText": "Eh kejap! Positif 2 buat graf senyum ke atas, tapi graf di papan kita masam ke bawah. Semak tanda a dulu!",
+              "boardPatch": {
+                "graph": {
+                  "curves": [
+                    {
+                      "a": -2,
+                      "b": 0,
+                      "c": -2,
+                      "color": "#4F46E5"
+                    },
+                    {
+                      "a": 2,
+                      "b": 0,
+                      "c": -2,
+                      "color": "#F43F5E",
+                      "dashed": true,
+                      "label": "+2x²−2",
+                      "labelX": 1.8,
+                      "labelY": 3.5
+                    }
+                  ],
+                  "showIntercept": -2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "upC",
+          "label": "f(x) = −2x² + 2",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TINGKAT LIF SALAH!",
+              "underlineColor": "#F97316",
+              "mood": "deadpan",
+              "lookAt": "board",
+              "camera": "graph",
+              "sfx": "boing",
+              "audioId": "c4_wrong_c",
+              "text": "Masam dah betul, tapi tingkat lif salah! Tambah 2 naik ke +2, bukan turun ke −2.",
+              "spokenText": "Masam dah betul, tapi tingkat lif salah! Tambah 2 naik ke positif 2, bukan turun ke tolak 2.",
+              "boardPatch": {
+                "graph": {
+                  "curves": [
+                    {
+                      "a": -2,
+                      "b": 0,
+                      "c": -2,
+                      "color": "#4F46E5"
+                    },
+                    {
+                      "a": -2,
+                      "b": 0,
+                      "c": 2,
+                      "color": "#F97316",
+                      "dashed": true,
+                      "label": "−2x²+2",
+                      "labelX": 1.9,
+                      "labelY": 1.8
+                    }
+                  ],
+                  "showIntercept": -2,
+                  "elevatorC": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "win",
+          "label": "f(x) = −2x² − 2",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Bab 1 Kuadratik Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "c4_win",
+        "text": "Padu habis! Negatif 2 buat graf masam, tolak 2 turunkan lif tepat ke −2. Bab satu kuadratik beres!",
+        "spokenText": "Padu habis! Negatif 2 buat graf masam, tolak 2 turunkan lif tepat ke tolak 2. Bab satu kuadratik beres!",
+        "boardPatch": {
+          "equation": {
+            "prefix": "f(x) =",
+            "terms": [
+              {
+                "text": "−2",
+                "highlight": "orange"
+              },
+              {
+                "text": "x²",
+                "highlight": null
+              },
+              {
+                "text": "− 2",
+                "highlight": "teal"
+              }
+            ],
+            "promptPill": "✓ 100% Padu"
+          },
+          "graph": {
+            "curves": [
+              {
+                "a": -2,
+                "b": 0,
+                "c": -2,
+                "color": "#0D9488",
+                "animate": true
+              }
+            ],
+            "showVertex": true,
+            "showIntercept": -2
+          }
+        },
+        "analogy": {
+          "tag": "Kad Rumus SPM",
+          "title": "3 Hukum Emas Kuadratik",
+          "desc": "1) +a Senyum ∪, −a Masam ∩. 2) |a| kecil = Lebar. 3) c = lif pintasan-y (0, c).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Dua Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Graf masam bermaksud a negatif, dan pintasan di −2 bermaksud c ialah −2. Jadi jawapannya −2x² − 2.",
+        "spokenText": "Graf masam bermaksud a negatif, dan pintasan di negatif 2 bermaksud c ialah negatif 2. Jadi jawapannya tolak 2x kuasa dua tolak 2."
+      }
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["kimia-t5-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t5-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Apakah pemerhatian pada lengan X dan arah aliran elektron yang PALING tepat?",
+      "duration": 5.792,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "lazim",
+          "start": 0.44,
+          "end": 0.76
+        },
+        {
+          "word": "kimia,",
+          "start": 0.76,
+          "end": 1.14
+        },
+        {
+          "word": "apakah",
+          "start": 1.64,
+          "end": 2.16
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.16,
+          "end": 2.84
+        },
+        {
+          "word": "pada",
+          "start": 2.84,
+          "end": 3.08
+        },
+        {
+          "word": "dengan",
+          "start": 3.08,
+          "end": 3.3
+        },
+        {
+          "word": "X",
+          "start": 3.3,
+          "end": 3.64
+        },
+        {
+          "word": "dan",
+          "start": 3.64,
+          "end": 3.86
+        },
+        {
+          "word": "arah",
+          "start": 3.86,
+          "end": 4.26
+        },
+        {
+          "word": "aliran",
+          "start": 4.26,
+          "end": 4.56
+        },
+        {
+          "word": "elektron",
+          "start": 4.56,
+          "end": 5.06
+        },
+        {
+          "word": "yang",
+          "start": 5.06,
+          "end": 5.14
+        },
+        {
+          "word": "paling",
+          "start": 5.14,
+          "end": 5.34
+        },
+        {
+          "word": "tepat?",
+          "start": 5.34,
+          "end": 5.66
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t5-bab01/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Manakah persamaan ion keseluruhan serta pemerhatian selepas 30 minit yang PALING tepat?",
+      "duration": 7.243,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "langkah",
+          "start": 0.48,
+          "end": 0.78
+        },
+        {
+          "word": "di",
+          "start": 0.78,
+          "end": 0.92
+        },
+        {
+          "word": "papan",
+          "start": 0.92,
+          "end": 1.28
+        },
+        {
+          "word": "manakah",
+          "start": 1.28,
+          "end": 2.26
+        },
+        {
+          "word": "persamaan",
+          "start": 2.26,
+          "end": 2.78
+        },
+        {
+          "word": "ayam",
+          "start": 2.78,
+          "end": 3.58
+        },
+        {
+          "word": "keseluruhan",
+          "start": 3.58,
+          "end": 4.18
+        },
+        {
+          "word": "serta",
+          "start": 4.18,
+          "end": 4.82
+        },
+        {
+          "word": "pemerhatian",
+          "start": 4.82,
+          "end": 5.56
+        },
+        {
+          "word": "selepas",
+          "start": 5.56,
+          "end": 5.96
+        },
+        {
+          "word": "3",
+          "start": 5.96,
+          "end": 6.24
+        },
+        {
+          "word": "minit",
+          "start": 6.24,
+          "end": 6.56
+        },
+        {
+          "word": "yang",
+          "start": 6.56,
+          "end": 6.64
+        },
+        {
+          "word": "paling",
+          "start": 6.64,
+          "end": 6.82
+        },
+        {
+          "word": "tepat.",
+          "start": 6.82,
+          "end": 7.16
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t5-bab01/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah warna lapisan bawah (CH tigaCCl tiga) dalam Tabung A dan Tabung B?",
+      "duration": 7.093,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "raja",
+          "start": 0.62,
+          "end": 0.88
+        },
+        {
+          "word": "konsep",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "word": "di",
+          "start": 1.28,
+          "end": 1.34
+        },
+        {
+          "word": "Papan",
+          "start": 1.34,
+          "end": 1.74
+        },
+        {
+          "word": "apakah",
+          "start": 1.74,
+          "end": 2.44
+        },
+        {
+          "word": "warna",
+          "start": 2.44,
+          "end": 2.72
+        },
+        {
+          "word": "lapisan",
+          "start": 2.72,
+          "end": 3.06
+        },
+        {
+          "word": "bawah",
+          "start": 3.06,
+          "end": 3.56
+        },
+        {
+          "word": "CA",
+          "start": 3.56,
+          "end": 3.8
+        },
+        {
+          "word": "-CCL3",
+          "start": 3.8,
+          "end": 5.24
+        },
+        {
+          "word": "dalam",
+          "start": 5.24,
+          "end": 5.52
+        },
+        {
+          "word": "tabung",
+          "start": 5.52,
+          "end": 5.9
+        },
+        {
+          "word": "A",
+          "start": 5.9,
+          "end": 6.1
+        },
+        {
+          "word": "dan",
+          "start": 6.1,
+          "end": 6.26
+        },
+        {
+          "word": "tabung",
+          "start": 6.26,
+          "end": 6.62
+        },
+        {
+          "word": "B.",
+          "start": 6.62,
+          "end": 6.72
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t5-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah himpunan jawapan skema Kertas 2 yang PALING tepat dan lengkap bagi perbandingan Set I dan Set II?",
+      "duration": 7.403,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "urutan",
+          "start": 0.58,
+          "end": 1.04
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.04,
+          "end": 1.56
+        },
+        {
+          "word": "di",
+          "start": 1.56,
+          "end": 1.66
+        },
+        {
+          "word": "papan,",
+          "start": 1.66,
+          "end": 2.02
+        },
+        {
+          "word": "manekah",
+          "start": 2.2,
+          "end": 2.92
+        },
+        {
+          "word": "infunan",
+          "start": 2.92,
+          "end": 3.24
+        },
+        {
+          "word": "jawapan",
+          "start": 3.24,
+          "end": 3.6
+        },
+        {
+          "word": "skema",
+          "start": 3.6,
+          "end": 3.92
+        },
+        {
+          "word": "ketas",
+          "start": 3.92,
+          "end": 4.3
+        },
+        {
+          "word": "dua",
+          "start": 4.3,
+          "end": 4.52
+        },
+        {
+          "word": "yang",
+          "start": 4.52,
+          "end": 4.72
+        },
+        {
+          "word": "paling",
+          "start": 4.72,
+          "end": 4.96
+        },
+        {
+          "word": "tepat",
+          "start": 4.96,
+          "end": 5.38
+        },
+        {
+          "word": "dan",
+          "start": 5.38,
+          "end": 5.56
+        },
+        {
+          "word": "lengkap",
+          "start": 5.56,
+          "end": 5.88
+        },
+        {
+          "word": "bagi",
+          "start": 5.88,
+          "end": 6.14
+        },
+        {
+          "word": "perbandingan",
+          "start": 6.14,
+          "end": 6.54
+        },
+        {
+          "word": "siap",
+          "start": 6.54,
+          "end": 6.72
+        },
+        {
+          "word": "air",
+          "start": 6.72,
+          "end": 6.8
+        },
+        {
+          "word": "dan",
+          "start": 6.8,
+          "end": 6.92
+        },
+        {
+          "word": "siap",
+          "start": 6.92,
+          "end": 7.1
+        },
+        {
+          "word": "tu.",
+          "start": 7.1,
+          "end": 7.2
+        }
+      ]
+    }
+  }
+};

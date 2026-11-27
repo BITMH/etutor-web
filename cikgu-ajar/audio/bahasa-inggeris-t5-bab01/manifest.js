@@ -1,0 +1,456 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["bahasa-inggeris-t5-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-inggeris-t5-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Family Types & Household Relationships (Unit 1 ?",
+      "duration": 8.885,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "Lazim",
+          "start": 0.4,
+          "end": 0.7
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.7,
+          "end": 0.92
+        },
+        {
+          "word": "Inggris",
+          "start": 0.92,
+          "end": 1.26
+        },
+        {
+          "word": "awas",
+          "start": 1.26,
+          "end": 1.6
+        },
+        {
+          "word": "perangkap!",
+          "start": 1.6,
+          "end": 2.14
+        },
+        {
+          "word": "Mana",
+          "start": 2.6,
+          "end": 2.78
+        },
+        {
+          "word": "kefakta",
+          "start": 2.78,
+          "end": 3.42
+        },
+        {
+          "word": "atau",
+          "start": 3.42,
+          "end": 3.58
+        },
+        {
+          "word": "langkah",
+          "start": 3.58,
+          "end": 3.9
+        },
+        {
+          "word": "yang",
+          "start": 3.9,
+          "end": 4.04
+        },
+        {
+          "word": "betul",
+          "start": 4.04,
+          "end": 4.36
+        },
+        {
+          "word": "tentang",
+          "start": 4.36,
+          "end": 4.6
+        },
+        {
+          "word": "huan",
+          "start": 4.6,
+          "end": 4.96
+        },
+        {
+          "word": "perpuluhan",
+          "start": 4.96,
+          "end": 5.46
+        },
+        {
+          "word": "satu",
+          "start": 5.46,
+          "end": 5.8
+        },
+        {
+          "word": "family",
+          "start": 5.8,
+          "end": 6.26
+        },
+        {
+          "word": "types",
+          "start": 6.26,
+          "end": 6.56
+        },
+        {
+          "word": "and",
+          "start": 6.56,
+          "end": 6.76
+        },
+        {
+          "word": "household",
+          "start": 6.76,
+          "end": 7.02
+        },
+        {
+          "word": "relationships?",
+          "start": 7.02,
+          "end": 7.66
+        },
+        {
+          "word": "Wana",
+          "start": 8.06,
+          "end": 8.24
+        },
+        {
+          "word": "ni",
+          "start": 8.24,
+          "end": 8.38
+        },
+        {
+          "word": "ni",
+          "start": 8.38,
+          "end": 8.48
+        },
+        {
+          "word": "buat?",
+          "start": 8.48,
+          "end": 8.58
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-inggeris-t5-bab01/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Which family type consists of parents, children, grandparents, aunts and uncles maintaining close daily contact or",
+      "duration": 9.739,
+      "words": [
+        {
+          "word": "Teleti",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "binaan",
+          "start": 0.38,
+          "end": 0.72
+        },
+        {
+          "word": "kata",
+          "start": 0.72,
+          "end": 0.96
+        },
+        {
+          "word": "dan",
+          "start": 0.96,
+          "end": 1.18
+        },
+        {
+          "word": "ayat",
+          "start": 1.18,
+          "end": 1.58
+        },
+        {
+          "word": "di",
+          "start": 1.58,
+          "end": 1.68
+        },
+        {
+          "word": "papan",
+          "start": 1.68,
+          "end": 1.98
+        },
+        {
+          "word": "yang",
+          "start": 1.98,
+          "end": 2.7
+        },
+        {
+          "word": "keluarga",
+          "start": 2.7,
+          "end": 3.22
+        },
+        {
+          "word": "itu",
+          "start": 3.22,
+          "end": 3.32
+        },
+        {
+          "word": "berkongsi",
+          "start": 3.32,
+          "end": 3.72
+        },
+        {
+          "word": "dengan",
+          "start": 3.72,
+          "end": 3.88
+        },
+        {
+          "word": "anak",
+          "start": 3.88,
+          "end": 4.16
+        },
+        {
+          "word": "-anak,",
+          "start": 4.16,
+          "end": 4.6
+        },
+        {
+          "word": "anak",
+          "start": 4.78,
+          "end": 5.06
+        },
+        {
+          "word": "-anak,",
+          "start": 5.06,
+          "end": 5.8
+        },
+        {
+          "word": "kawan",
+          "start": 5.8,
+          "end": 5.8
+        },
+        {
+          "word": "-kawan",
+          "start": 5.8,
+          "end": 6.28
+        },
+        {
+          "word": "mereka",
+          "start": 6.28,
+          "end": 6.56
+        },
+        {
+          "word": "anak",
+          "start": 6.56,
+          "end": 6.88
+        },
+        {
+          "word": "-anak",
+          "start": 6.88,
+          "end": 7.24
+        },
+        {
+          "word": "dan",
+          "start": 7.24,
+          "end": 7.24
+        },
+        {
+          "word": "anak",
+          "start": 7.24,
+          "end": 7.42
+        },
+        {
+          "word": "-anak",
+          "start": 7.42,
+          "end": 7.64
+        },
+        {
+          "word": "menjauhkan",
+          "start": 7.64,
+          "end": 8.68
+        },
+        {
+          "word": "kontak",
+          "start": 8.68,
+          "end": 9.28
+        },
+        {
+          "word": "sepanjang",
+          "start": 9.28,
+          "end": 9.34
+        },
+        {
+          "word": "hari",
+          "start": 9.34,
+          "end": 9.34
+        },
+        {
+          "word": "atau...",
+          "start": 9.34,
+          "end": 9.7
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-inggeris-t5-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Choose the sentence where 'think' uses the continuous form accurately.",
+      "duration": 5.173,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "lazim",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "basing",
+          "start": 0.9,
+          "end": 1.24
+        },
+        {
+          "word": "gris?",
+          "start": 1.24,
+          "end": 1.54
+        },
+        {
+          "word": "Pilih",
+          "start": 1.68,
+          "end": 2.18
+        },
+        {
+          "word": "perangkat",
+          "start": 2.18,
+          "end": 2.56
+        },
+        {
+          "word": "yang",
+          "start": 2.56,
+          "end": 2.72
+        },
+        {
+          "word": "fikir",
+          "start": 2.72,
+          "end": 3.14
+        },
+        {
+          "word": "menggunakan",
+          "start": 3.14,
+          "end": 3.56
+        },
+        {
+          "word": "pakaian",
+          "start": 3.56,
+          "end": 3.62
+        },
+        {
+          "word": "yang",
+          "start": 3.62,
+          "end": 3.62
+        },
+        {
+          "word": "terus",
+          "start": 3.62,
+          "end": 4.02
+        },
+        {
+          "word": "secara",
+          "start": 4.02,
+          "end": 4.42
+        },
+        {
+          "word": "akurasi.",
+          "start": 4.42,
+          "end": 5.0
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-inggeris-t5-bab01/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Select the grammatically CORRECT formal relative clause with a preposition upfront.",
+      "duration": 6.965,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "binaan",
+          "start": 0.5,
+          "end": 0.86
+        },
+        {
+          "word": "kata",
+          "start": 0.86,
+          "end": 1.18
+        },
+        {
+          "word": "dan",
+          "start": 1.18,
+          "end": 1.38
+        },
+        {
+          "word": "ayat",
+          "start": 1.38,
+          "end": 1.8
+        },
+        {
+          "word": "di",
+          "start": 1.8,
+          "end": 1.9
+        },
+        {
+          "word": "papan.",
+          "start": 1.9,
+          "end": 2.26
+        },
+        {
+          "word": "Selekt",
+          "start": 2.6,
+          "end": 3.22
+        },
+        {
+          "word": "grammatiknya.",
+          "start": 3.22,
+          "end": 3.98
+        },
+        {
+          "word": "Korek",
+          "start": 4.3,
+          "end": 4.72
+        },
+        {
+          "word": "formal,",
+          "start": 4.72,
+          "end": 4.94
+        },
+        {
+          "word": "relatif",
+          "start": 5.12,
+          "end": 5.48
+        },
+        {
+          "word": "klaus",
+          "start": 5.48,
+          "end": 5.76
+        },
+        {
+          "word": "dengan",
+          "start": 5.76,
+          "end": 6.0
+        },
+        {
+          "word": "perempuan",
+          "start": 6.0,
+          "end": 6.48
+        },
+        {
+          "word": "api.",
+          "start": 6.48,
+          "end": 6.8
+        }
+      ]
+    }
+  }
+};

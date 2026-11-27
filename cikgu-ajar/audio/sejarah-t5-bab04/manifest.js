@@ -1,0 +1,386 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t5-bab04"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t5-bab04/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Mengapakah penyatuan Negeri Sembilan pada tahun 1895 dikelaskan sebagai sistem konfederasi?",
+      "duration": 6.88,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "sejarah",
+          "start": 0.92,
+          "end": 1.98
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.98,
+          "end": 2.72
+        },
+        {
+          "word": "penyatuan",
+          "start": 2.72,
+          "end": 3.22
+        },
+        {
+          "word": "Negeri",
+          "start": 3.22,
+          "end": 3.48
+        },
+        {
+          "word": "9",
+          "start": 3.48,
+          "end": 3.74
+        },
+        {
+          "word": "pada",
+          "start": 3.74,
+          "end": 3.98
+        },
+        {
+          "word": "tahun",
+          "start": 3.98,
+          "end": 4.28
+        },
+        {
+          "word": "MBT",
+          "start": 4.28,
+          "end": 4.8
+        },
+        {
+          "word": "dikelaskan",
+          "start": 4.8,
+          "end": 5.44
+        },
+        {
+          "word": "sebagai",
+          "start": 5.44,
+          "end": 5.64
+        },
+        {
+          "word": "sistem",
+          "start": 5.64,
+          "end": 6.0
+        },
+        {
+          "word": "confederasi.",
+          "start": 6.0,
+          "end": 6.7
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t5-bab04/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Mengapakah Persekutuan Tanah Melayu 1948 dianggap sebagai permulaan era moden amalan Persekutuan di Malaysia?",
+      "duration": 8.384,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "urutan",
+          "start": 0.5,
+          "end": 0.92
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.92,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.6
+        },
+        {
+          "word": "Papai",
+          "start": 1.6,
+          "end": 1.94
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.94,
+          "end": 3.0
+        },
+        {
+          "word": "peskutuan",
+          "start": 3.0,
+          "end": 3.54
+        },
+        {
+          "word": "Tanah",
+          "start": 3.54,
+          "end": 3.8
+        },
+        {
+          "word": "Melayu",
+          "start": 3.8,
+          "end": 4.32
+        },
+        {
+          "word": "dianggap",
+          "start": 4.32,
+          "end": 4.98
+        },
+        {
+          "word": "sebagai",
+          "start": 4.98,
+          "end": 5.22
+        },
+        {
+          "word": "pemulaan",
+          "start": 5.22,
+          "end": 5.78
+        },
+        {
+          "word": "era",
+          "start": 5.78,
+          "end": 5.94
+        },
+        {
+          "word": "modern",
+          "start": 5.94,
+          "end": 6.28
+        },
+        {
+          "word": "amalan",
+          "start": 6.28,
+          "end": 6.86
+        },
+        {
+          "word": "peskutuan",
+          "start": 6.86,
+          "end": 7.46
+        },
+        {
+          "word": "di",
+          "start": 7.46,
+          "end": 7.56
+        },
+        {
+          "word": "Malaysia.",
+          "start": 7.56,
+          "end": 7.84
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t5-bab04/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Mengapakah Perlembagaan Persekutuan memberi bidang kuasa lebih besar kepada Kerajaan Persekutuan?",
+      "duration": 6.699,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "raja",
+          "start": 0.56,
+          "end": 0.84
+        },
+        {
+          "word": "konsek",
+          "start": 0.84,
+          "end": 1.24
+        },
+        {
+          "word": "di",
+          "start": 1.24,
+          "end": 1.28
+        },
+        {
+          "word": "Papan",
+          "start": 1.28,
+          "end": 1.66
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.66,
+          "end": 2.72
+        },
+        {
+          "word": "pembagaan",
+          "start": 2.72,
+          "end": 3.24
+        },
+        {
+          "word": "persekutuan",
+          "start": 3.24,
+          "end": 3.78
+        },
+        {
+          "word": "memberi",
+          "start": 3.78,
+          "end": 4.12
+        },
+        {
+          "word": "bidang",
+          "start": 4.12,
+          "end": 4.32
+        },
+        {
+          "word": "kuasa",
+          "start": 4.32,
+          "end": 4.58
+        },
+        {
+          "word": "lebih",
+          "start": 4.58,
+          "end": 4.72
+        },
+        {
+          "word": "besar",
+          "start": 4.72,
+          "end": 5.06
+        },
+        {
+          "word": "kepada",
+          "start": 5.06,
+          "end": 5.34
+        },
+        {
+          "word": "kerajaan",
+          "start": 5.34,
+          "end": 5.82
+        },
+        {
+          "word": "persekutuan.",
+          "start": 5.82,
+          "end": 6.3
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t5-bab04/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Pada pendapat anda, apakah kesan paling utama amalan kerjasama erat antara Kerajaan Persekutuan dengan Kerajaan Negeri",
+      "duration": 7.861,
+      "words": [
+        {
+          "word": "dikuti",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "urutan",
+          "start": 0.3,
+          "end": 0.64
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.64,
+          "end": 1.04
+        },
+        {
+          "word": "di",
+          "start": 1.04,
+          "end": 1.14
+        },
+        {
+          "word": "Papand.",
+          "start": 1.14,
+          "end": 1.56
+        },
+        {
+          "word": "Wada",
+          "start": 1.76,
+          "end": 2.28
+        },
+        {
+          "word": "pendapat",
+          "start": 2.28,
+          "end": 2.56
+        },
+        {
+          "word": "anda",
+          "start": 2.56,
+          "end": 2.78
+        },
+        {
+          "word": "apakah",
+          "start": 2.78,
+          "end": 3.28
+        },
+        {
+          "word": "kesan",
+          "start": 3.28,
+          "end": 3.62
+        },
+        {
+          "word": "paling",
+          "start": 3.62,
+          "end": 3.78
+        },
+        {
+          "word": "utama",
+          "start": 3.78,
+          "end": 4.12
+        },
+        {
+          "word": "amal",
+          "start": 4.12,
+          "end": 4.38
+        },
+        {
+          "word": "yang",
+          "start": 4.38,
+          "end": 4.46
+        },
+        {
+          "word": "kerjasama",
+          "start": 4.46,
+          "end": 4.86
+        },
+        {
+          "word": "irat",
+          "start": 4.86,
+          "end": 5.26
+        },
+        {
+          "word": "antara",
+          "start": 5.26,
+          "end": 5.7
+        },
+        {
+          "word": "kerajaan",
+          "start": 5.7,
+          "end": 6.3
+        },
+        {
+          "word": "peskutuan",
+          "start": 6.3,
+          "end": 6.84
+        },
+        {
+          "word": "dengan",
+          "start": 6.84,
+          "end": 7.04
+        },
+        {
+          "word": "kerajaan",
+          "start": 7.04,
+          "end": 7.52
+        },
+        {
+          "word": "negeri?",
+          "start": 7.52,
+          "end": 7.8
+        }
+      ]
+    }
+  }
+};

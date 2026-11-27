@@ -1,0 +1,622 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T09:28:57.000Z",
+  "clips": {
+    "fast_win_1": {
+      "file": "audio/common/fast_win_1.mp3",
+      "text": "Padu! Tambah sepuluh X P. Jom kad seterusnya!",
+      "duration": 3.84,
+      "words": [
+        {
+          "word": "Padu,",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "tambah",
+          "start": 0.9,
+          "end": 1.28
+        },
+        {
+          "word": "10xp,",
+          "start": 1.28,
+          "end": 2.08
+        },
+        {
+          "word": "jomkat",
+          "start": 2.6,
+          "end": 3.1
+        },
+        {
+          "word": "seterusnya.",
+          "start": 3.1,
+          "end": 3.62
+        }
+      ]
+    },
+    "fast_win_2": {
+      "file": "audio/common/fast_win_2.mp3",
+      "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+      "duration": 2.72,
+      "words": [
+        {
+          "word": "Cantik!",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "Pemeriksa",
+          "start": 0.92,
+          "end": 1.4
+        },
+        {
+          "word": "pun",
+          "start": 1.4,
+          "end": 1.5
+        },
+        {
+          "word": "senyum",
+          "start": 1.5,
+          "end": 1.8
+        },
+        {
+          "word": "tengok",
+          "start": 1.8,
+          "end": 2.04
+        },
+        {
+          "word": "jawapan",
+          "start": 2.04,
+          "end": 2.38
+        },
+        {
+          "word": "ni.",
+          "start": 2.38,
+          "end": 2.56
+        }
+      ]
+    },
+    "fast_win_3": {
+      "file": "audio/common/fast_win_3.mp3",
+      "text": "Mantap habis! Teruskan rentak juara S P M awak!",
+      "duration": 3.691,
+      "words": [
+        {
+          "word": "Mantap",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "habis!",
+          "start": 0.54,
+          "end": 1.0
+        },
+        {
+          "word": "Terus",
+          "start": 1.4,
+          "end": 1.7
+        },
+        {
+          "word": "karen",
+          "start": 1.7,
+          "end": 1.94
+        },
+        {
+          "word": "tak",
+          "start": 1.94,
+          "end": 2.18
+        },
+        {
+          "word": "juara",
+          "start": 2.18,
+          "end": 2.52
+        },
+        {
+          "word": "SEM",
+          "start": 2.52,
+          "end": 3.06
+        },
+        {
+          "word": "awak",
+          "start": 3.06,
+          "end": 3.36
+        }
+      ]
+    },
+    "trap_react_1": {
+      "file": "audio/common/trap_react_1.mp3",
+      "text": "Eh kejap, kejap! Hampir kena perangkap klasik S P M tu. Cuba tengok papan balik!",
+      "duration": 4.629,
+      "words": [
+        {
+          "word": "Eh,",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "kejap.",
+          "start": 0.4,
+          "end": 0.9
+        },
+        {
+          "word": "Kamping",
+          "start": 1.04,
+          "end": 1.34
+        },
+        {
+          "word": "kena",
+          "start": 1.34,
+          "end": 1.52
+        },
+        {
+          "word": "perangkap",
+          "start": 1.52,
+          "end": 1.9
+        },
+        {
+          "word": "klasik",
+          "start": 1.9,
+          "end": 2.3
+        },
+        {
+          "word": "SPN",
+          "start": 2.3,
+          "end": 2.72
+        },
+        {
+          "word": "itu?",
+          "start": 2.72,
+          "end": 2.9
+        },
+        {
+          "word": "Cuma",
+          "start": 3.46,
+          "end": 3.64
+        },
+        {
+          "word": "tengok",
+          "start": 3.64,
+          "end": 3.86
+        },
+        {
+          "word": "Papa",
+          "start": 3.86,
+          "end": 4.08
+        },
+        {
+          "word": "yang",
+          "start": 4.08,
+          "end": 4.2
+        },
+        {
+          "word": "balik!",
+          "start": 4.2,
+          "end": 4.48
+        }
+      ]
+    },
+    "trap_react_2": {
+      "file": "audio/common/trap_react_2.mp3",
+      "text": "Aha, ramai calon tertipu kat sini! Jom Cikgu tunjuk rahsia sebenar dia.",
+      "duration": 5.205,
+      "words": [
+        {
+          "word": "Ah,",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "ramai",
+          "start": 1.3,
+          "end": 1.64
+        },
+        {
+          "word": "calon",
+          "start": 1.64,
+          "end": 1.9
+        },
+        {
+          "word": "tertipu",
+          "start": 1.9,
+          "end": 2.26
+        },
+        {
+          "word": "kat",
+          "start": 2.26,
+          "end": 2.38
+        },
+        {
+          "word": "sini.",
+          "start": 2.38,
+          "end": 2.6
+        },
+        {
+          "word": "Jom",
+          "start": 3.16,
+          "end": 3.5
+        },
+        {
+          "word": "cikgu",
+          "start": 3.5,
+          "end": 3.76
+        },
+        {
+          "word": "tunjuk",
+          "start": 3.76,
+          "end": 4.02
+        },
+        {
+          "word": "rahsia",
+          "start": 4.02,
+          "end": 4.34
+        },
+        {
+          "word": "sebenarnya.",
+          "start": 4.34,
+          "end": 4.76
+        }
+      ]
+    },
+    "trap_react_3": {
+      "file": "audio/common/trap_react_3.mp3",
+      "text": "Sabar dulu geng, nombor atau fakta tu bukan macam tu. Semak petunjuk kat papan!",
+      "duration": 4.736,
+      "words": [
+        {
+          "word": "Sabar",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "dulu",
+          "start": 0.4,
+          "end": 0.58
+        },
+        {
+          "word": "gang,",
+          "start": 0.58,
+          "end": 0.8
+        },
+        {
+          "word": "nombor",
+          "start": 1.4,
+          "end": 1.8
+        },
+        {
+          "word": "atau",
+          "start": 1.8,
+          "end": 1.96
+        },
+        {
+          "word": "fakta",
+          "start": 1.96,
+          "end": 2.34
+        },
+        {
+          "word": "itu",
+          "start": 2.34,
+          "end": 2.48
+        },
+        {
+          "word": "bukan",
+          "start": 2.48,
+          "end": 2.62
+        },
+        {
+          "word": "macam",
+          "start": 2.62,
+          "end": 2.82
+        },
+        {
+          "word": "tu.",
+          "start": 2.82,
+          "end": 3.06
+        },
+        {
+          "word": "Siap",
+          "start": 3.26,
+          "end": 3.68
+        },
+        {
+          "word": "nak",
+          "start": 3.68,
+          "end": 3.76
+        },
+        {
+          "word": "petunjuk",
+          "start": 3.76,
+          "end": 4.1
+        },
+        {
+          "word": "kat",
+          "start": 4.1,
+          "end": 4.22
+        },
+        {
+          "word": "papan?",
+          "start": 4.22,
+          "end": 4.4
+        }
+      ]
+    },
+    "calm_hint_1": {
+      "file": "audio/common/calm_hint_1.mp3",
+      "text": "Tak apa geng, ramai calon S P M keliru kat sini. Tarik nafas, kita semak kata kunci dia perlahan-lahan.",
+      "duration": 6.197,
+      "words": [
+        {
+          "word": "Tak",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "apa",
+          "start": 0.22,
+          "end": 0.36
+        },
+        {
+          "word": "gang,",
+          "start": 0.36,
+          "end": 0.6
+        },
+        {
+          "word": "ramai",
+          "start": 1.14,
+          "end": 1.44
+        },
+        {
+          "word": "calon",
+          "start": 1.44,
+          "end": 1.68
+        },
+        {
+          "word": "SPM",
+          "start": 1.68,
+          "end": 2.14
+        },
+        {
+          "word": "keliru",
+          "start": 2.14,
+          "end": 2.5
+        },
+        {
+          "word": "kat",
+          "start": 2.5,
+          "end": 2.6
+        },
+        {
+          "word": "sini.",
+          "start": 2.6,
+          "end": 2.8
+        },
+        {
+          "word": "Tarik",
+          "start": 3.1,
+          "end": 3.5
+        },
+        {
+          "word": "nafas,",
+          "start": 3.5,
+          "end": 3.92
+        },
+        {
+          "word": "kita",
+          "start": 4.04,
+          "end": 4.2
+        },
+        {
+          "word": "semak",
+          "start": 4.2,
+          "end": 4.6
+        },
+        {
+          "word": "kata",
+          "start": 4.6,
+          "end": 4.86
+        },
+        {
+          "word": "kunci",
+          "start": 4.86,
+          "end": 5.22
+        },
+        {
+          "word": "dia",
+          "start": 5.22,
+          "end": 5.38
+        },
+        {
+          "word": "pelah",
+          "start": 5.38,
+          "end": 5.66
+        },
+        {
+          "word": "-lahan.",
+          "start": 5.66,
+          "end": 6.0
+        }
+      ]
+    },
+    "calm_hint_2": {
+      "file": "audio/common/calm_hint_2.mp3",
+      "text": "Relaks, jangan gabra. Cuba fokus pada petunjuk warna hijau kat papan putih tu.",
+      "duration": 4.757,
+      "words": [
+        {
+          "word": "Relax.",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "Jangan",
+          "start": 0.9,
+          "end": 1.1
+        },
+        {
+          "word": "gabra.",
+          "start": 1.1,
+          "end": 1.48
+        },
+        {
+          "word": "Coba",
+          "start": 1.92,
+          "end": 2.3
+        },
+        {
+          "word": "fokus",
+          "start": 2.3,
+          "end": 2.66
+        },
+        {
+          "word": "pada",
+          "start": 2.66,
+          "end": 2.84
+        },
+        {
+          "word": "petunjuk",
+          "start": 2.84,
+          "end": 3.24
+        },
+        {
+          "word": "warna",
+          "start": 3.24,
+          "end": 3.44
+        },
+        {
+          "word": "hijau",
+          "start": 3.44,
+          "end": 3.76
+        },
+        {
+          "word": "kat",
+          "start": 3.76,
+          "end": 3.9
+        },
+        {
+          "word": "Papang",
+          "start": 3.9,
+          "end": 4.16
+        },
+        {
+          "word": "Putih",
+          "start": 4.16,
+          "end": 4.52
+        },
+        {
+          "word": "tu.",
+          "start": 4.52,
+          "end": 4.66
+        }
+      ]
+    },
+    "deck_complete_1": {
+      "file": "audio/common/deck_complete_1.mp3",
+      "text": "Syabas! Satu lagi bab S P M berjaya ditawan dengan cemerlang!",
+      "duration": 4.235,
+      "words": [
+        {
+          "word": "Syabas!",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "Satu",
+          "start": 1.12,
+          "end": 1.5
+        },
+        {
+          "word": "lagi",
+          "start": 1.5,
+          "end": 1.64
+        },
+        {
+          "word": "bub",
+          "start": 1.64,
+          "end": 1.96
+        },
+        {
+          "word": "SPM",
+          "start": 1.96,
+          "end": 2.6
+        },
+        {
+          "word": "berjaya",
+          "start": 2.6,
+          "end": 2.96
+        },
+        {
+          "word": "ditawan",
+          "start": 2.96,
+          "end": 3.34
+        },
+        {
+          "word": "dengan",
+          "start": 3.34,
+          "end": 3.56
+        },
+        {
+          "word": "cemulang",
+          "start": 3.56,
+          "end": 4.06
+        }
+      ]
+    },
+    "deck_complete_2": {
+      "file": "audio/common/deck_complete_2.mp3",
+      "text": "Padu betul prestasi awak hari ni! Semua kad berjaya diselesaikan.",
+      "duration": 3.147,
+      "words": [
+        {
+          "word": "Pada",
+          "start": 0.0,
+          "end": 0.16
+        },
+        {
+          "word": "betul",
+          "start": 0.16,
+          "end": 0.4
+        },
+        {
+          "word": "prestasi",
+          "start": 0.4,
+          "end": 0.82
+        },
+        {
+          "word": "awak",
+          "start": 0.82,
+          "end": 0.96
+        },
+        {
+          "word": "hari",
+          "start": 0.96,
+          "end": 1.16
+        },
+        {
+          "word": "ini,",
+          "start": 1.16,
+          "end": 1.34
+        },
+        {
+          "word": "semua",
+          "start": 1.54,
+          "end": 1.94
+        },
+        {
+          "word": "Kak",
+          "start": 1.94,
+          "end": 2.12
+        },
+        {
+          "word": "berjaya",
+          "start": 2.12,
+          "end": 2.44
+        },
+        {
+          "word": "diselesaikan.",
+          "start": 2.44,
+          "end": 2.92
+        }
+      ]
+    }
+  }
+}

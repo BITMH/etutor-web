@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t4-bab12",
+  "title": "Tenaga Nuklear",
+  "shortTitle": "Tenaga Nuklear",
+  "subject": "Sains",
+  "form": "T4",
+  "bab": 12,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Tenaga Nuklear",
+    "desc": "Untuk soalan Kertas 2 mengenai kelebihan tenaga nuklear, wajib nyatakan gabungan kata kunci: tenaga lebih besar dan efisien, membebaskan sedikit gas…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Berdasarkan Subtopik 12.1, ramalkan faktor UTAMA yang menjadikan tenaga nuklear pilihan berkesan bagi Negara X?",
+        "spokenText": "Perangkap lazim Sains! Berdasarkan Subtopik 12 perpuluhan satu, ramalkan faktor UTAMA yang menjadikan tenaga nuklear pilihan berkesan bagi Negara X?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Berdasarkan Subtopik 12.1, ramalkan faktor UTAMA yang menjadikan tenaga nuklear pilihan berkesan bagi Negara X?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Loji nuklear tidak memerlukan sebarang kos pembinaan dan tidak menghasilkan sisa radioaktif langsung",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan kepada bahan api fosil",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Loji nuklear tidak memerlukan sebarang kos pembinaan dan tidak menghasilkan sisa radioaktif…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan…. Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan…",
+              "spokenText": "Fakta sebenar: Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan . Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan kepada bahan api fosil",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan petroleum dan arang batu serta membebaskan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Uranium dapat dibakar bersama arang batu di atmosfera terbuka tanpa perisai keselamatan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan…. Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan…",
+              "spokenText": "Fakta sebenar: Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan . Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan kepada bahan api fosil",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan petroleum dan arang batu serta membebaskan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan kepada bahan api fosil",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan petroleum dan arang batu serta membebaskan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan petroleum dan arang batu serta…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Tenaga nuklear ialah tenaga alternatif berkapasiti amat besar yang menggantikan petroleum dan arang batu serta",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tenaga nuklear menghasilkan jumlah tenaga jauh lebih besar, efisien, rendah gas rumah hijau serta mengurangkan kebergantungan kepada bahan api fosil",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: Sinaran Mengion, Kesan Buruk",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Manakah antara padanan negara pengguna utama tenaga nuklear dan kelebihannya berikut PALING tepat?",
+        "spokenText": "Perhatikan rajah konsep di papan! Manakah antara padanan negara pengguna utama tenaga nuklear dan kelebihannya berikut PALING tepat?"
+      },
+      "board": {
+        "promptPill": "Manakah antara padanan negara pengguna utama tenaga nuklear dan kelebihannya…",
+        "title": "Sinaran Mengion, Kesan Buruk & Rencana Torium",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Sinaran Mengion",
+            "detail": "Dimanfaatkan dalam bidang perubatan, pertanian dan industri",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Gas Rumah Hijau",
+            "detail": "Dibebaskan dalam kuantiti amat sedikit oleh loji nuklear",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Sisa Radioaktif",
+            "detail": "Bahan buangan berkeaktifan tinggi yang mengancam nyawa hidupan",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Malaysia, Indonesia dan Thailand — membebaskan asap karbon dioksida tertinggi di dunia",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Malaysia, Indonesia dan Thailand —… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Malaysia, Indonesia dan Thailand , tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana kecekapan tenaganya…",
+              "spokenText": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana kecekapan tenaganya",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Sinaran Mengion, Kesan Buruk",
+                "desc": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Amerika Syarikat, Perancis dan Jepun — menghasilkan tenaga amat besar dengan sedikit gas…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Singapura, Brunei dan Slovakia — hanya menggunakan arang batu bagi menggantikan reaktor",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Singapura, Brunei dan Slovakia — hanya… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Singapura, Brunei dan Slovakia , hanya tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana kecekapan tenaganya…",
+              "spokenText": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana kecekapan tenaganya",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Sinaran Mengion, Kesan Buruk",
+                "desc": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Sinaran Mengion, Kesan Buruk",
+          "desc": "Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear kerana…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Lebih 30 buah negara termasuk Amerika Syarikat, Perancis, Rusia, China, Slovakia dan Jepun menggunakan tenaga nuklear"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pembelahan Nukleus Uranium-235 &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah akibatnya apabila kesemua neutron yang dibebaskan terus membedil nukleus Uranium-235 lain secara berterusan?",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah akibatnya apabila kesemua neutron yang dibebaskan terus membedil nukleus Uranium-235 lain secara berterusan?"
+      },
+      "board": {
+        "promptPill": "Apakah akibatnya apabila kesemua neutron yang dibebaskan terus membedil nukleus…",
+        "title": "Pembelahan Nukleus Uranium-235 & Tindak Balas Berantai",
+        "diagramType": "cell",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Uranium-235 dibedil 1 neutron perlahan",
+            "detail": "Pembelahan nukleus (hasilkan Ba, Kr + 3 neutron)",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Deuterium (H-2) + Tritium (H-3)…",
+            "detail": "Pelakuran nukleus (hasilkan Helium + 1 neutron)",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Tindak balas berterusan di Matahari",
+            "detail": "Pelakuran pada suhu dan tekanan amat tinggi",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tindak balas terhenti serta-merta kerana nukleus Barium dan Kripton menyerap semua haba",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Tindak balas terhenti serta-merta kerana… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Tindak balas terhenti serta-merta kerana tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan kadar tindak balas…",
+              "spokenText": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan kadar tindak balas",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pembelahan Nukleus Uranium-235 &",
+                "desc": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kadar tindak balas berantai meningkat secara eksponen (1 -> 3 -> 9 -> 27) menyebabkan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Uranium-235 berubah menjadi gas helium tanpa sebarang pembebasan tenaga",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Uranium-235 berubah menjadi gas helium… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Uranium-235 berubah menjadi gas helium tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan kadar tindak balas…",
+              "spokenText": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan kadar tindak balas",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pembelahan Nukleus Uranium-235 &",
+                "desc": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pembelahan Nukleus Uranium-235 &",
+          "desc": "Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...), menyebabkan kadar…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...),…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Dalam tindak balas berantai tanpa kawalan, setiap 1 pembelahan mencetuskan 3 pembelahan baharu (kemudian 9, 27...),"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Tenaga Nuklear",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah kesimpulan KBAT yang PALING tepat menggabungkan fakta Subtopik 12.1 hingga 12.4?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah kesimpulan K B A T yang PALING tepat menggabungkan fakta Subtopik 12 perpuluhan satu hingga 12 perpuluhan empat?"
+      },
+      "board": {
+        "promptPill": "Manakah kesimpulan KBAT yang PALING tepat menggabungkan fakta Subtopik 12.1 hingga…",
+        "title": "Rumusan: Tenaga Nuklear",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Penyebaran Radiasi Mengion: Kesan Somatik vs…",
+            "detail": "Rajah 12.6 ialah rajah popular soalan objektif & struktur SPM! Ingat: keletihan, loya, katarak, keguguran…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Agensi Nuklear Malaysia & Reaktor TRIGA…",
+            "detail": "Perangkap lazim soalan SPM: Pelajar tersilap menyangka Reaktor TRIGA PUSPATI membekalkan elektrik ke…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Wajarkah Stesen Jana Kuasa Nuklear Dibina di…",
+            "detail": "Praktis Formatif 12.4 No. 1 & 2: Tenaga utama Malaysia kini = gas asli (70%), petroleum, arang batu dan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Malaysia boleh menaik taraf terus Reaktor TRIGA PUSPATI 1 MW di Bangi tanpa membina loji…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Malaysia boleh menaik taraf terus… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Malaysia boleh menaik taraf terus tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kesimpulan KBAT terbaik mengiktiraf keperluan menggantikan gas asli (70%) dengan tenaga berkapasiti besar (1,000 MW) serta syarat keselamatan (punca…",
+              "spokenText": "Kesimpulan K B A T terbaik mengiktiraf keperluan menggantikan gas asli (70 peratus) dengan tenaga berkapasiti besar (1,000 MW) serta syarat keselamatan (punca",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Penyebaran Radiasi Mengion: Kesan Somatik vs…",
+                    "detail": "Rajah 12.6 ialah rajah popular soalan objektif & struktur SPM! Ingat: keletihan, loya, katarak, keguguran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Agensi Nuklear Malaysia & Reaktor TRIGA…",
+                    "detail": "Perangkap lazim soalan SPM: Pelajar tersilap menyangka Reaktor TRIGA PUSPATI membekalkan elektrik ke…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Wajarkah Stesen Jana Kuasa Nuklear Dibina di…",
+                    "detail": "Praktis Formatif 12.4 No. 1 & 2: Tenaga utama Malaysia kini = gas asli (70%), petroleum, arang batu dan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Loji nuklear 1,000 MW mampu mengatasi penyusutan 70% gas asli dengan gas rumah hijau…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Pembinaan loji nuklear di Malaysia tidak memerlukan sebarang punca air penyejukan kerana…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pembinaan loji nuklear di Malaysia tidak… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pembinaan loji nuklear di Malaysia tidak tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kesimpulan KBAT terbaik mengiktiraf keperluan menggantikan gas asli (70%) dengan tenaga berkapasiti besar (1,000 MW) serta syarat keselamatan (punca…",
+              "spokenText": "Kesimpulan K B A T terbaik mengiktiraf keperluan menggantikan gas asli (70 peratus) dengan tenaga berkapasiti besar (1,000 MW) serta syarat keselamatan (punca",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Penyebaran Radiasi Mengion: Kesan Somatik vs…",
+                    "detail": "Rajah 12.6 ialah rajah popular soalan objektif & struktur SPM! Ingat: keletihan, loya, katarak, keguguran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Agensi Nuklear Malaysia & Reaktor TRIGA…",
+                    "detail": "Perangkap lazim soalan SPM: Pelajar tersilap menyangka Reaktor TRIGA PUSPATI membekalkan elektrik ke…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Wajarkah Stesen Jana Kuasa Nuklear Dibina di…",
+                    "detail": "Praktis Formatif 12.4 No. 1 & 2: Tenaga utama Malaysia kini = gas asli (70%), petroleum, arang batu dan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Penyebaran Radiasi Mengion: Kesan Somatik vs…",
+              "detail": "Rajah 12.6 ialah rajah popular soalan objektif & struktur SPM! Ingat: keletihan, loya, katarak, keguguran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Agensi Nuklear Malaysia & Reaktor TRIGA…",
+              "detail": "Perangkap lazim soalan SPM: Pelajar tersilap menyangka Reaktor TRIGA PUSPATI membekalkan elektrik ke…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Wajarkah Stesen Jana Kuasa Nuklear Dibina di…",
+              "detail": "Praktis Formatif 12.4 No. 1 & 2: Tenaga utama Malaysia kini = gas asli (70%), petroleum, arang batu dan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Tenaga Nuklear",
+          "desc": "Kesimpulan KBAT terbaik mengiktiraf keperluan menggantikan gas asli (70%) dengan tenaga berkapasiti besar (1,000 MW) serta syarat…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kesimpulan KBAT terbaik mengiktiraf keperluan menggantikan gas asli (70%) dengan tenaga berkapasiti besar (1,000 MW)…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kesimpulan K B A T terbaik mengiktiraf keperluan menggantikan gas asli (70 peratus) dengan tenaga berkapasiti besar (1,000 MW)",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Penyebaran Radiasi Mengion: Kesan Somatik vs…",
+              "detail": "Rajah 12.6 ialah rajah popular soalan objektif & struktur SPM! Ingat: keletihan, loya, katarak, keguguran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Agensi Nuklear Malaysia & Reaktor TRIGA…",
+              "detail": "Perangkap lazim soalan SPM: Pelajar tersilap menyangka Reaktor TRIGA PUSPATI membekalkan elektrik ke…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Wajarkah Stesen Jana Kuasa Nuklear Dibina di…",
+              "detail": "Praktis Formatif 12.4 No. 1 & 2: Tenaga utama Malaysia kini = gas asli (70%), petroleum, arang batu dan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

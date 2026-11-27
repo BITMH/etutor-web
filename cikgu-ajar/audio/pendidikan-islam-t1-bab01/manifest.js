@@ -1,0 +1,401 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["pendidikan-islam-t1-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:39.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/pendidikan-islam-t1-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Keagungan Al-Quran sebagai Petunjuk Orang ?",
+      "duration": 9.44,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "Lazim",
+          "start": 0.52,
+          "end": 0.84
+        },
+        {
+          "word": "penidikan",
+          "start": 0.84,
+          "end": 1.2
+        },
+        {
+          "word": "Islam.",
+          "start": 1.2,
+          "end": 1.5
+        },
+        {
+          "word": "Awas",
+          "start": 2.06,
+          "end": 2.46
+        },
+        {
+          "word": "perangkap.",
+          "start": 2.46,
+          "end": 2.98
+        },
+        {
+          "word": "Manakah",
+          "start": 3.38,
+          "end": 3.76
+        },
+        {
+          "word": "fakta",
+          "start": 3.76,
+          "end": 4.16
+        },
+        {
+          "word": "atau",
+          "start": 4.16,
+          "end": 4.36
+        },
+        {
+          "word": "langkah",
+          "start": 4.36,
+          "end": 4.72
+        },
+        {
+          "word": "yang",
+          "start": 4.72,
+          "end": 4.88
+        },
+        {
+          "word": "betul",
+          "start": 4.88,
+          "end": 5.26
+        },
+        {
+          "word": "tentang",
+          "start": 5.26,
+          "end": 5.5
+        },
+        {
+          "word": "wang",
+          "start": 5.5,
+          "end": 5.8
+        },
+        {
+          "word": "kepuluhan",
+          "start": 5.8,
+          "end": 6.3
+        },
+        {
+          "word": "satu",
+          "start": 6.3,
+          "end": 6.56
+        },
+        {
+          "word": "keagungan",
+          "start": 6.56,
+          "end": 7.12
+        },
+        {
+          "word": "al",
+          "start": 7.12,
+          "end": 7.28
+        },
+        {
+          "word": "-Quran",
+          "start": 7.28,
+          "end": 7.64
+        },
+        {
+          "word": "sebagai",
+          "start": 7.64,
+          "end": 7.94
+        },
+        {
+          "word": "petunjuk",
+          "start": 7.94,
+          "end": 8.86
+        },
+        {
+          "word": "orang?",
+          "start": 8.86,
+          "end": 9.02
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/pendidikan-islam-t1-bab01/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah maksud ayat kedua Surah al-Baqarah: 'Zalikal-kitabu la raiba fih, hudal-lilmuttaqin'?",
+      "duration": 7.488,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "urutan",
+          "start": 0.52,
+          "end": 0.88
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.88,
+          "end": 1.3
+        },
+        {
+          "word": "di",
+          "start": 1.3,
+          "end": 1.4
+        },
+        {
+          "word": "Papan?",
+          "start": 1.4,
+          "end": 1.78
+        },
+        {
+          "word": "Apakah",
+          "start": 2.3,
+          "end": 2.78
+        },
+        {
+          "word": "maksud",
+          "start": 2.78,
+          "end": 3.08
+        },
+        {
+          "word": "ayat",
+          "start": 3.08,
+          "end": 3.4
+        },
+        {
+          "word": "kedua",
+          "start": 3.4,
+          "end": 3.68
+        },
+        {
+          "word": "surat",
+          "start": 3.68,
+          "end": 3.96
+        },
+        {
+          "word": "al",
+          "start": 3.96,
+          "end": 4.06
+        },
+        {
+          "word": "-Bakarah?",
+          "start": 4.06,
+          "end": 4.42
+        },
+        {
+          "word": "Zalikal",
+          "start": 4.82,
+          "end": 5.3
+        },
+        {
+          "word": "Kitabu",
+          "start": 5.3,
+          "end": 5.7
+        },
+        {
+          "word": "Daraibafi,",
+          "start": 5.7,
+          "end": 6.34
+        },
+        {
+          "word": "Udahlil",
+          "start": 6.54,
+          "end": 6.9
+        },
+        {
+          "word": "Nutakin",
+          "start": 6.9,
+          "end": 7.26
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/pendidikan-islam-t1-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Pendidikan Islam! Manakah antara berikut BUKAN ciri mukmin bertakwa yang disebut dalam ayat 3 hingga 4 Surah al-Baqarah?",
+      "duration": 7.04,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "lazim",
+          "start": 0.58,
+          "end": 1.0
+        },
+        {
+          "word": "pendidikan",
+          "start": 1.0,
+          "end": 1.42
+        },
+        {
+          "word": "Islam,",
+          "start": 1.42,
+          "end": 1.76
+        },
+        {
+          "word": "manakah",
+          "start": 2.18,
+          "end": 2.66
+        },
+        {
+          "word": "antara",
+          "start": 2.66,
+          "end": 3.02
+        },
+        {
+          "word": "berikut",
+          "start": 3.02,
+          "end": 3.34
+        },
+        {
+          "word": "bukan",
+          "start": 3.34,
+          "end": 3.62
+        },
+        {
+          "word": "ciri",
+          "start": 3.62,
+          "end": 3.96
+        },
+        {
+          "word": "mumin",
+          "start": 3.96,
+          "end": 4.22
+        },
+        {
+          "word": "bertakua",
+          "start": 4.22,
+          "end": 4.78
+        },
+        {
+          "word": "yang",
+          "start": 4.78,
+          "end": 4.92
+        },
+        {
+          "word": "disebut",
+          "start": 4.92,
+          "end": 5.22
+        },
+        {
+          "word": "dalam",
+          "start": 5.22,
+          "end": 5.4
+        },
+        {
+          "word": "Ayat",
+          "start": 5.4,
+          "end": 5.68
+        },
+        {
+          "word": "T.",
+          "start": 5.68,
+          "end": 5.8
+        },
+        {
+          "word": "Surat",
+          "start": 5.88,
+          "end": 6.52
+        },
+        {
+          "word": "Al",
+          "start": 6.52,
+          "end": 6.56
+        },
+        {
+          "word": "-Bakarah?",
+          "start": 6.56,
+          "end": 6.88
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/pendidikan-islam-t1-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah maksud perkataan 'Al-Muflihun' pada ayat 5 Surah al-Baqarah?",
+      "duration": 5.451,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "urutan",
+          "start": 0.6,
+          "end": 0.96
+        },
+        {
+          "word": "peristiho",
+          "start": 0.96,
+          "end": 1.34
+        },
+        {
+          "word": "di",
+          "start": 1.34,
+          "end": 1.46
+        },
+        {
+          "word": "Papan,",
+          "start": 1.46,
+          "end": 1.82
+        },
+        {
+          "word": "apakah",
+          "start": 2.3,
+          "end": 2.7
+        },
+        {
+          "word": "masuk",
+          "start": 2.7,
+          "end": 2.9
+        },
+        {
+          "word": "perkataan",
+          "start": 2.9,
+          "end": 3.44
+        },
+        {
+          "word": "alam",
+          "start": 3.44,
+          "end": 3.58
+        },
+        {
+          "word": "uflikon",
+          "start": 3.58,
+          "end": 3.9
+        },
+        {
+          "word": "pada",
+          "start": 3.9,
+          "end": 4.08
+        },
+        {
+          "word": "ayat",
+          "start": 4.08,
+          "end": 4.34
+        },
+        {
+          "word": "Cimah",
+          "start": 4.34,
+          "end": 4.58
+        },
+        {
+          "word": "Asrullah",
+          "start": 4.58,
+          "end": 4.84
+        },
+        {
+          "word": "Bakarah?",
+          "start": 4.84,
+          "end": 5.14
+        }
+      ]
+    }
+  }
+};

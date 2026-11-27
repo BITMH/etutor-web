@@ -1,0 +1,416 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["bahasa-melayu-t2-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-melayu-t2-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Kata Ganti Nama Diri & Laras Bahasa (SP 5 perpuluhan satu.1)?",
+      "duration": 8.448,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "Lazim",
+          "start": 0.52,
+          "end": 0.86
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.86,
+          "end": 1.1
+        },
+        {
+          "word": "Melayu.",
+          "start": 1.1,
+          "end": 1.92
+        },
+        {
+          "word": "Awas",
+          "start": 1.98,
+          "end": 2.32
+        },
+        {
+          "word": "perangkap.",
+          "start": 2.32,
+          "end": 2.9
+        },
+        {
+          "word": "Manakah",
+          "start": 3.26,
+          "end": 3.64
+        },
+        {
+          "word": "fakta",
+          "start": 3.64,
+          "end": 4.1
+        },
+        {
+          "word": "atau",
+          "start": 4.1,
+          "end": 4.28
+        },
+        {
+          "word": "langkah",
+          "start": 4.28,
+          "end": 4.7
+        },
+        {
+          "word": "yang",
+          "start": 4.7,
+          "end": 4.86
+        },
+        {
+          "word": "betul",
+          "start": 4.86,
+          "end": 5.3
+        },
+        {
+          "word": "tentang",
+          "start": 5.3,
+          "end": 5.6
+        },
+        {
+          "word": "1",
+          "start": 5.6,
+          "end": 5.9
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.9,
+          "end": 6.42
+        },
+        {
+          "word": "satu",
+          "start": 6.42,
+          "end": 6.62
+        },
+        {
+          "word": "kata",
+          "start": 6.62,
+          "end": 6.88
+        },
+        {
+          "word": "ganti",
+          "start": 6.88,
+          "end": 7.14
+        },
+        {
+          "word": "nama",
+          "start": 7.14,
+          "end": 7.44
+        },
+        {
+          "word": "diri",
+          "start": 7.44,
+          "end": 7.68
+        },
+        {
+          "word": "Enlaras",
+          "start": 7.68,
+          "end": 7.98
+        },
+        {
+          "word": "Basis?",
+          "start": 7.98,
+          "end": 8.3
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-melayu-t2-bab01/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Pilih kata ganti nama diri yang paling tepat: 'Sebagai pengawas bertugas, ______ memohon kerjasama semua murid menjaga",
+      "duration": 6.293,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "binaan",
+          "start": 0.3,
+          "end": 0.7
+        },
+        {
+          "word": "kata",
+          "start": 0.7,
+          "end": 1.02
+        },
+        {
+          "word": "dan",
+          "start": 1.02,
+          "end": 1.2
+        },
+        {
+          "word": "ayat",
+          "start": 1.2,
+          "end": 1.5
+        },
+        {
+          "word": "di",
+          "start": 1.5,
+          "end": 1.6
+        },
+        {
+          "word": "Papan,",
+          "start": 1.6,
+          "end": 1.9
+        },
+        {
+          "word": "pilih",
+          "start": 2.12,
+          "end": 2.66
+        },
+        {
+          "word": "kata",
+          "start": 2.66,
+          "end": 2.86
+        },
+        {
+          "word": "ganti",
+          "start": 2.86,
+          "end": 3.18
+        },
+        {
+          "word": "nama",
+          "start": 3.18,
+          "end": 3.4
+        },
+        {
+          "word": "diri",
+          "start": 3.4,
+          "end": 3.7
+        },
+        {
+          "word": "yang",
+          "start": 3.7,
+          "end": 3.82
+        },
+        {
+          "word": "paling",
+          "start": 3.82,
+          "end": 4.0
+        },
+        {
+          "word": "tepat",
+          "start": 4.0,
+          "end": 4.4
+        },
+        {
+          "word": "sebagai",
+          "start": 4.4,
+          "end": 4.94
+        },
+        {
+          "word": "pengawal",
+          "start": 4.94,
+          "end": 5.4
+        },
+        {
+          "word": "sebetul",
+          "start": 5.4,
+          "end": 5.7
+        },
+        {
+          "word": "gas.",
+          "start": 5.7,
+          "end": 5.88
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-melayu-t2-bab01/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Antara berikut, kumpulan manakah KESEMUANYA ialah kata akronim nama am yang dieja dengan betul?",
+      "duration": 6.763,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "Lazim",
+          "start": 0.44,
+          "end": 0.74
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.74,
+          "end": 0.98
+        },
+        {
+          "word": "Melayu,",
+          "start": 0.98,
+          "end": 1.78
+        },
+        {
+          "word": "antara",
+          "start": 1.78,
+          "end": 2.16
+        },
+        {
+          "word": "berikut,",
+          "start": 2.16,
+          "end": 2.5
+        },
+        {
+          "word": "kumpulan",
+          "start": 2.86,
+          "end": 3.22
+        },
+        {
+          "word": "manakah",
+          "start": 3.22,
+          "end": 3.58
+        },
+        {
+          "word": "kek",
+          "start": 3.58,
+          "end": 3.84
+        },
+        {
+          "word": "semuanya",
+          "start": 3.84,
+          "end": 4.26
+        },
+        {
+          "word": "ialah",
+          "start": 4.26,
+          "end": 4.56
+        },
+        {
+          "word": "kata",
+          "start": 4.56,
+          "end": 4.84
+        },
+        {
+          "word": "ekronin",
+          "start": 4.84,
+          "end": 5.28
+        },
+        {
+          "word": "nama",
+          "start": 5.28,
+          "end": 5.5
+        },
+        {
+          "word": "Am",
+          "start": 5.5,
+          "end": 5.72
+        },
+        {
+          "word": "yang",
+          "start": 5.72,
+          "end": 5.84
+        },
+        {
+          "word": "digunakan",
+          "start": 5.84,
+          "end": 6.14
+        },
+        {
+          "word": "dengan",
+          "start": 6.14,
+          "end": 6.32
+        },
+        {
+          "word": "betul",
+          "start": 6.32,
+          "end": 6.62
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-melayu-t2-bab01/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Kata akronim 'kugiran' terhasil daripada cantuman rangkai kata apa?",
+      "duration": 6.283,
+      "words": [
+        {
+          "word": "Teriti",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "binaan",
+          "start": 0.46,
+          "end": 0.82
+        },
+        {
+          "word": "kata",
+          "start": 0.82,
+          "end": 1.14
+        },
+        {
+          "word": "dan",
+          "start": 1.14,
+          "end": 1.58
+        },
+        {
+          "word": "ayat",
+          "start": 1.58,
+          "end": 1.9
+        },
+        {
+          "word": "di",
+          "start": 1.9,
+          "end": 2.0
+        },
+        {
+          "word": "Papuan.",
+          "start": 2.0,
+          "end": 2.34
+        },
+        {
+          "word": "Kata",
+          "start": 2.66,
+          "end": 3.14
+        },
+        {
+          "word": "acronym",
+          "start": 3.14,
+          "end": 3.52
+        },
+        {
+          "word": "kugiran",
+          "start": 3.52,
+          "end": 4.06
+        },
+        {
+          "word": "terhasil",
+          "start": 4.06,
+          "end": 4.62
+        },
+        {
+          "word": "daripada",
+          "start": 4.62,
+          "end": 4.88
+        },
+        {
+          "word": "contoh",
+          "start": 4.88,
+          "end": 5.12
+        },
+        {
+          "word": "marangkai",
+          "start": 5.12,
+          "end": 5.48
+        },
+        {
+          "word": "kata",
+          "start": 5.48,
+          "end": 5.68
+        },
+        {
+          "word": "apa?",
+          "start": 5.68,
+          "end": 5.86
+        }
+      ]
+    }
+  }
+};

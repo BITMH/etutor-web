@@ -1,0 +1,431 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t4-bab09"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab09/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Apakah tujuan strategik Tunku Abdul Rahman memilih pelayaran kapal laut M.V. Asia dari Singapura ke Karachi?",
+      "duration": 7.008,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "lazim",
+          "start": 0.52,
+          "end": 0.86
+        },
+        {
+          "word": "sejarah",
+          "start": 0.86,
+          "end": 1.34
+        },
+        {
+          "word": "apakah",
+          "start": 1.34,
+          "end": 1.84
+        },
+        {
+          "word": "tujuan",
+          "start": 1.84,
+          "end": 2.22
+        },
+        {
+          "word": "strategik",
+          "start": 2.22,
+          "end": 2.8
+        },
+        {
+          "word": "tungku",
+          "start": 2.8,
+          "end": 3.04
+        },
+        {
+          "word": "Abdu",
+          "start": 3.04,
+          "end": 3.26
+        },
+        {
+          "word": "Rahman",
+          "start": 3.26,
+          "end": 3.6
+        },
+        {
+          "word": "memilih",
+          "start": 3.6,
+          "end": 4.02
+        },
+        {
+          "word": "pelayaran",
+          "start": 4.02,
+          "end": 4.4
+        },
+        {
+          "word": "kapal",
+          "start": 4.4,
+          "end": 4.72
+        },
+        {
+          "word": "laut",
+          "start": 4.72,
+          "end": 4.82
+        },
+        {
+          "word": "MV",
+          "start": 4.82,
+          "end": 5.1
+        },
+        {
+          "word": "Asia",
+          "start": 5.1,
+          "end": 5.42
+        },
+        {
+          "word": "dari",
+          "start": 5.42,
+          "end": 5.74
+        },
+        {
+          "word": "Singapura",
+          "start": 5.74,
+          "end": 6.2
+        },
+        {
+          "word": "ke",
+          "start": 6.2,
+          "end": 6.36
+        },
+        {
+          "word": "Karachi?",
+          "start": 6.36,
+          "end": 6.76
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab09/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Siapakah pemimpin Parti Rakyat yang menyeru agar rakyat menyokong usaha rombongan kemerdekaan ke London, bersama wakil",
+      "duration": 7.787,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "urutan",
+          "start": 0.3,
+          "end": 0.62
+        },
+        {
+          "word": "prestiwa",
+          "start": 0.62,
+          "end": 1.1
+        },
+        {
+          "word": "depan",
+          "start": 1.1,
+          "end": 1.4
+        },
+        {
+          "word": "-pan",
+          "start": 1.4,
+          "end": 1.58
+        },
+        {
+          "word": "siapakah",
+          "start": 1.58,
+          "end": 2.42
+        },
+        {
+          "word": "pemimpin",
+          "start": 2.42,
+          "end": 2.98
+        },
+        {
+          "word": "parti",
+          "start": 2.98,
+          "end": 3.28
+        },
+        {
+          "word": "rakyat",
+          "start": 3.28,
+          "end": 3.66
+        },
+        {
+          "word": "yang",
+          "start": 3.66,
+          "end": 3.76
+        },
+        {
+          "word": "menyeru",
+          "start": 3.76,
+          "end": 4.12
+        },
+        {
+          "word": "agar",
+          "start": 4.12,
+          "end": 4.4
+        },
+        {
+          "word": "rakyat",
+          "start": 4.4,
+          "end": 4.62
+        },
+        {
+          "word": "menyokong",
+          "start": 4.62,
+          "end": 4.96
+        },
+        {
+          "word": "usaha",
+          "start": 4.96,
+          "end": 5.22
+        },
+        {
+          "word": "rombongan",
+          "start": 5.22,
+          "end": 5.58
+        },
+        {
+          "word": "kemerikaan",
+          "start": 5.58,
+          "end": 5.98
+        },
+        {
+          "word": "ke",
+          "start": 5.98,
+          "end": 6.06
+        },
+        {
+          "word": "London",
+          "start": 6.06,
+          "end": 6.36
+        },
+        {
+          "word": "bersama",
+          "start": 6.36,
+          "end": 7.28
+        },
+        {
+          "word": "wakil",
+          "start": 7.28,
+          "end": 7.66
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab09/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Mengapakah Padang Banda Hilir, Melaka mempunyai nilai simbolik paling mendalam sebagai lokasi pengisytiharan tarikh",
+      "duration": 7.179,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "raja",
+          "start": 0.5,
+          "end": 0.74
+        },
+        {
+          "word": "konsep",
+          "start": 0.74,
+          "end": 1.16
+        },
+        {
+          "word": "di",
+          "start": 1.16,
+          "end": 1.26
+        },
+        {
+          "word": "Papan",
+          "start": 1.26,
+          "end": 1.64
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.64,
+          "end": 2.34
+        },
+        {
+          "word": "padan",
+          "start": 2.34,
+          "end": 2.66
+        },
+        {
+          "word": "bandar",
+          "start": 2.66,
+          "end": 2.92
+        },
+        {
+          "word": "iler",
+          "start": 2.92,
+          "end": 3.2
+        },
+        {
+          "word": "melakukannya",
+          "start": 3.2,
+          "end": 3.72
+        },
+        {
+          "word": "mempunyai",
+          "start": 3.72,
+          "end": 4.04
+        },
+        {
+          "word": "nilai",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "word": "simbolik",
+          "start": 4.38,
+          "end": 4.86
+        },
+        {
+          "word": "paling",
+          "start": 4.86,
+          "end": 5.04
+        },
+        {
+          "word": "mendalam",
+          "start": 5.04,
+          "end": 5.48
+        },
+        {
+          "word": "sebagai",
+          "start": 5.48,
+          "end": 5.74
+        },
+        {
+          "word": "lokasi",
+          "start": 5.74,
+          "end": 6.18
+        },
+        {
+          "word": "pengishtiharan",
+          "start": 6.18,
+          "end": 6.74
+        },
+        {
+          "word": "tarikh.",
+          "start": 6.74,
+          "end": 7.14
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab09/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan Kajian Kes dan Nilai Sivik Bab 9, mengapakah pendekatan toleransi antara kaum dan sikap keterbukaan",
+      "duration": 8.373,
+      "words": [
+        {
+          "word": "dikuti",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "unutan",
+          "start": 0.34,
+          "end": 0.8
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.8,
+          "end": 1.3
+        },
+        {
+          "word": "di",
+          "start": 1.3,
+          "end": 1.42
+        },
+        {
+          "word": "papan.",
+          "start": 1.42,
+          "end": 1.76
+        },
+        {
+          "word": "Berdasarkan",
+          "start": 2.18,
+          "end": 2.78
+        },
+        {
+          "word": "kajian",
+          "start": 2.78,
+          "end": 3.14
+        },
+        {
+          "word": "kes",
+          "start": 3.14,
+          "end": 3.38
+        },
+        {
+          "word": "dan",
+          "start": 3.38,
+          "end": 3.56
+        },
+        {
+          "word": "nilai",
+          "start": 3.56,
+          "end": 3.88
+        },
+        {
+          "word": "CVBUB",
+          "start": 3.88,
+          "end": 4.3
+        },
+        {
+          "word": "Act,",
+          "start": 4.3,
+          "end": 4.48
+        },
+        {
+          "word": "mengapakah",
+          "start": 4.92,
+          "end": 5.38
+        },
+        {
+          "word": "pendekatan",
+          "start": 5.38,
+          "end": 5.86
+        },
+        {
+          "word": "toleransi",
+          "start": 5.86,
+          "end": 6.4
+        },
+        {
+          "word": "antara",
+          "start": 6.4,
+          "end": 6.66
+        },
+        {
+          "word": "kaum",
+          "start": 6.66,
+          "end": 6.92
+        },
+        {
+          "word": "dan",
+          "start": 6.92,
+          "end": 7.22
+        },
+        {
+          "word": "sikap",
+          "start": 7.22,
+          "end": 7.62
+        },
+        {
+          "word": "keterbukaan.",
+          "start": 7.62,
+          "end": 8.28
+        }
+      ]
+    }
+  }
+};

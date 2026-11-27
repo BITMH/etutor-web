@@ -1,0 +1,376 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t5-bab07"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t5-bab07/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Apakah kesan langsung dasar pemisahan ekonomi, petempatan dan pendidikan vernakular warisan British terhadap masyarakat selepas",
+      "duration": 8.021,
+      "words": [
+        {
+          "word": "berangkap",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "lazim",
+          "start": 0.38,
+          "end": 0.76
+        },
+        {
+          "word": "sejarah",
+          "start": 0.76,
+          "end": 1.3
+        },
+        {
+          "word": "apakah",
+          "start": 1.3,
+          "end": 1.7
+        },
+        {
+          "word": "kesan",
+          "start": 1.7,
+          "end": 2.04
+        },
+        {
+          "word": "langsung",
+          "start": 2.04,
+          "end": 2.38
+        },
+        {
+          "word": "dasar",
+          "start": 2.38,
+          "end": 2.76
+        },
+        {
+          "word": "pengisahan",
+          "start": 2.76,
+          "end": 3.14
+        },
+        {
+          "word": "ekonomi,",
+          "start": 3.14,
+          "end": 3.62
+        },
+        {
+          "word": "pertempatan",
+          "start": 4.04,
+          "end": 4.76
+        },
+        {
+          "word": "dan",
+          "start": 4.76,
+          "end": 4.9
+        },
+        {
+          "word": "penelitikan",
+          "start": 4.9,
+          "end": 5.36
+        },
+        {
+          "word": "bernakulau",
+          "start": 5.36,
+          "end": 5.98
+        },
+        {
+          "word": "warisan",
+          "start": 5.98,
+          "end": 6.3
+        },
+        {
+          "word": "British",
+          "start": 6.3,
+          "end": 6.6
+        },
+        {
+          "word": "terhadap",
+          "start": 6.6,
+          "end": 7.08
+        },
+        {
+          "word": "masyarakat",
+          "start": 7.08,
+          "end": 7.5
+        },
+        {
+          "word": "selepas",
+          "start": 7.5,
+          "end": 7.86
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t5-bab07/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Mengapakah kerajaan menubuhkan Majlis Perundingan Negara (MAPEN) pada 29 Januari 1970?",
+      "duration": 8.608,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "urutan",
+          "start": 0.36,
+          "end": 0.74
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.74,
+          "end": 1.22
+        },
+        {
+          "word": "di",
+          "start": 1.22,
+          "end": 1.36
+        },
+        {
+          "word": "Papan,",
+          "start": 1.36,
+          "end": 1.76
+        },
+        {
+          "word": "mengapakah",
+          "start": 2.18,
+          "end": 2.86
+        },
+        {
+          "word": "kerajaan",
+          "start": 2.86,
+          "end": 3.62
+        },
+        {
+          "word": "menubuhkan",
+          "start": 3.62,
+          "end": 4.4
+        },
+        {
+          "word": "Majlis",
+          "start": 4.4,
+          "end": 4.76
+        },
+        {
+          "word": "Perlundingan",
+          "start": 4.76,
+          "end": 5.22
+        },
+        {
+          "word": "Negara",
+          "start": 5.22,
+          "end": 5.68
+        },
+        {
+          "word": "apa",
+          "start": 5.68,
+          "end": 6.26
+        },
+        {
+          "word": "ada",
+          "start": 6.26,
+          "end": 6.48
+        },
+        {
+          "word": "26",
+          "start": 6.48,
+          "end": 6.72
+        },
+        {
+          "word": "Januari,",
+          "start": 6.72,
+          "end": 7.3
+        },
+        {
+          "word": "Nansi",
+          "start": 7.34,
+          "end": 7.56
+        },
+        {
+          "word": "Peseno.",
+          "start": 7.56,
+          "end": 8.2
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t5-bab07/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah matlamat utama Laporan Rahman Talib 1960 menekankan mata pelajaran Sejarah dan mewajibkan mata pelajaran Tatarakyat?",
+      "duration": 9.323,
+      "words": [
+        {
+          "word": "perhatikan",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "raja",
+          "start": 0.68,
+          "end": 1.04
+        },
+        {
+          "word": "konsep",
+          "start": 1.04,
+          "end": 1.52
+        },
+        {
+          "word": "di",
+          "start": 1.52,
+          "end": 1.6
+        },
+        {
+          "word": "Papan,",
+          "start": 1.6,
+          "end": 2.0
+        },
+        {
+          "word": "apakah",
+          "start": 2.18,
+          "end": 2.78
+        },
+        {
+          "word": "matulamat",
+          "start": 2.78,
+          "end": 3.22
+        },
+        {
+          "word": "utama",
+          "start": 3.22,
+          "end": 3.58
+        },
+        {
+          "word": "laporan",
+          "start": 3.58,
+          "end": 3.98
+        },
+        {
+          "word": "ramai",
+          "start": 3.98,
+          "end": 4.18
+        },
+        {
+          "word": "talib",
+          "start": 4.18,
+          "end": 4.48
+        },
+        {
+          "word": "INAN",
+          "start": 4.48,
+          "end": 4.82
+        },
+        {
+          "word": "6",
+          "start": 4.82,
+          "end": 5.16
+        },
+        {
+          "word": "ini",
+          "start": 5.16,
+          "end": 5.52
+        },
+        {
+          "word": "menekankan",
+          "start": 5.52,
+          "end": 6.38
+        },
+        {
+          "word": "mata",
+          "start": 6.38,
+          "end": 6.54
+        },
+        {
+          "word": "pelajaran",
+          "start": 6.54,
+          "end": 6.98
+        },
+        {
+          "word": "sejarah",
+          "start": 6.98,
+          "end": 7.52
+        },
+        {
+          "word": "dan",
+          "start": 7.52,
+          "end": 7.68
+        },
+        {
+          "word": "mewajibkan",
+          "start": 7.68,
+          "end": 8.2
+        },
+        {
+          "word": "mata",
+          "start": 8.2,
+          "end": 8.4
+        },
+        {
+          "word": "pelajaran",
+          "start": 8.4,
+          "end": 8.76
+        },
+        {
+          "word": "tak",
+          "start": 8.76,
+          "end": 8.88
+        },
+        {
+          "word": "terayat.",
+          "start": 8.88,
+          "end": 9.28
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t5-bab07/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan keseluruhan Bab 7 (Cakna dan Cerminan Sejarah), bagaimanakah warganegara pelbagai kaum dapat menjamin",
+      "duration": 3.552,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "urutan",
+          "start": 0.26,
+          "end": 0.62
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.62,
+          "end": 1.1
+        },
+        {
+          "word": "di",
+          "start": 1.1,
+          "end": 1.24
+        },
+        {
+          "word": "Papuan",
+          "start": 1.24,
+          "end": 1.6
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.6,
+          "end": 2.54
+        },
+        {
+          "word": "keseluruhan",
+          "start": 2.54,
+          "end": 3.08
+        },
+        {
+          "word": "bab",
+          "start": 3.08,
+          "end": 3.26
+        },
+        {
+          "word": "pis.",
+          "start": 3.26,
+          "end": 3.48
+        }
+      ]
+    }
+  }
+};

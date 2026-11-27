@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-inggeris-t5-bab02",
+  "title": "Unit 2: Life's Great Mysteries (Past Tenses, Used To & Would)",
+  "shortTitle": "Unit 2: Life's Great",
+  "subject": "Bahasa Inggeris",
+  "form": "T5",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Unit 2: Life's Great",
+    "desc": "Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'), ban 'would'!"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Past Simple vs. Past Continuous in Mystery Stories?",
+        "spokenText": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Past Simple vs. Past Continuous in Mystery Stories?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Past Simple vs. Past Continuous in Mystery Stories?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Using 'would' for past states, e.g. 'Years ago, there would be a creepy well behind our school.'",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Using 'would' for past states, e.g. 'Years ago, there would be a creepy well behind our…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.. Ask: Could you actually SEE someone doing that action repeatedly every evening? If no…",
+              "spokenText": "Fakta sebenar: 'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.. Ask: Could you actually SEE someone doing that action repeatedly every evening? If no",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'), ban 'would'!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Writing 'She didn't used to believe in legends' or 'Did people would tell stories?'",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.. Ask: Could you actually SEE someone doing that action repeatedly every evening? If no…",
+              "spokenText": "Fakta sebenar: 'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.. Ask: Could you actually SEE someone doing that action repeatedly every evening? If no",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'), ban 'would'!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'), ban 'would'!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'),…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Ask: Could you actually SEE someone doing that action repeatedly every evening? If no (like 'be/live/have/believe'),",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "'Be' describes a state, not a repeated action, so use 'used to': 'There used to be a creepy well...'.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 2.1 Past Simple vs.",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! In which sentence can 'used to' be replaced with 'would' WITHOUT a grammar error?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! In which sentence can 'used to' be replaced with 'would' WITHOUT a grammar error?"
+      },
+      "board": {
+        "promptPill": "In which sentence can 'used to' be replaced with 'would' WITHOUT a grammar error?",
+        "title": "2.1 Past Simple vs. Past Continuous in Mystery Stories",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Past Simple",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Past Continuous ('was/were +…",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "Time anchors",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Watch irregular verbs like spread-spread-spread, cost-cost-cost and put-put-put!"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "My family used to live in an old wooden bungalow in Perak.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan My family used to live in an old wooden… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan My family used to live in an old wooden tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states where 'would' cannot be used.",
+              "spokenText": "'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states where 'would' cannot be used."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "My grandmother used to own an antique brass clock.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan My grandmother used to own an antique… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan My grandmother used to own an antique tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states where 'would' cannot be used.",
+              "spokenText": "'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states where 'would' cannot be used."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Every Friday night, Grandma would gather us and tell mystery tales.",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Past Simple vs.",
+          "desc": "'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states where 'would'…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'gather' and 'tell' are repeated past actions ('would gather... tell'); 'live', 'own' and 'believe' are past states"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Inggeris! Choose the sentence from Unit 2 style that uses 'would' incorrectly.",
+        "spokenText": "Perangkap lazim Bahasa Inggeris! Choose the sentence from Unit 2 style that uses 'would' incorrectly."
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Choose the sentence from Unit 2 style that uses 'would' incorrectly.",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Sarah would wear special robes while planning rooms.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Sarah would have a huge fortune from her husband's company.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Sarah would wear special robes while planning rooms.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Sarah would have a huge fortune from her husband's company.. 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+              "spokenText": "Fakta sebenar: Sarah would have a huge fortune from her husband's company.. 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Sarah would have a huge fortune from her husband's company.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Carpenters would hammer continuously throughout the night.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Sarah would have a huge fortune from her husband's company.. 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+              "spokenText": "Fakta sebenar: Sarah would have a huge fortune from her husband's company.. 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Sarah would have a huge fortune from her husband's company.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Sarah would have a huge fortune from her husband's company.",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Sarah would have a huge fortune from her husband's company.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'have' (possess a fortune) is a stative verb; it must be 'Sarah used to have...'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Sarah would have a huge fortune from her husband's company.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Unit 2: Life's",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! According to the reading text in Unit 2, what unusual construction pattern happened at Winchester House starting in…",
+        "spokenText": "Teliti binaan kata dan ayat di papan! According to the reading text in Unit 2, what unusual construction pattern happened at Winchester House starting in"
+      },
+      "board": {
+        "promptPill": "According to the reading text in Unit 2, what unusual construction pattern happened…",
+        "title": "Rumusan: Unit 2: Life's Great",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Phrases for explaining…",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Suspicious/mysterious…",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Dramatic story openings",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "'Must have V3' = almost 100% sure; 'Might/Could have V3' = possible; 'Can't have V3' = impossible (NEVER 'mustn't…"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Builders tore down the entire house every winter.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Builders tore down the entire house… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Builders tore down the entire house tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse.",
+              "spokenText": "For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Builders worked around-the-clock for 38 years adding strange rooms and staircases.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "The house floated on a lake in Connecticut.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan The house floated on a lake in… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan The house floated on a lake in tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse.",
+              "spokenText": "For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Unit 2: Life's",
+          "desc": "For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: For 38 years starting in 1884 in California, builders worked continuously expanding the unfinished farmhouse."
+      }
+    }
+  ]
+}

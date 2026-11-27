@@ -1,0 +1,405 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t4-bab04/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Apakah maksud penarafan 5 Bintang pada Label Cekap Tenaga kelengkapan elektrik berbanding 1 Bintang?",
+      "duration": 6.037,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "Lazim",
+          "start": 0.5,
+          "end": 0.78
+        },
+        {
+          "word": "Science",
+          "start": 0.78,
+          "end": 1.06
+        },
+        {
+          "word": "apakah",
+          "start": 1.06,
+          "end": 1.44
+        },
+        {
+          "word": "maksud",
+          "start": 1.44,
+          "end": 1.72
+        },
+        {
+          "word": "penerapan",
+          "start": 1.72,
+          "end": 2.12
+        },
+        {
+          "word": "intang",
+          "start": 2.12,
+          "end": 2.74
+        },
+        {
+          "word": "pada",
+          "start": 2.74,
+          "end": 2.9
+        },
+        {
+          "word": "label",
+          "start": 2.9,
+          "end": 3.18
+        },
+        {
+          "word": "cikap",
+          "start": 3.18,
+          "end": 3.46
+        },
+        {
+          "word": "tenaga",
+          "start": 3.46,
+          "end": 3.78
+        },
+        {
+          "word": "kelenkapan",
+          "start": 3.78,
+          "end": 4.3
+        },
+        {
+          "word": "elektrik",
+          "start": 4.3,
+          "end": 4.74
+        },
+        {
+          "word": "gobanding",
+          "start": 4.74,
+          "end": 5.16
+        },
+        {
+          "word": "Wan",
+          "start": 5.16,
+          "end": 5.32
+        },
+        {
+          "word": "Bintang?",
+          "start": 5.32,
+          "end": 5.7
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t4-bab04/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Manakah antara pernyataan berikut BENAR mengenai sektor Bangunan dan sektor TMK dalam Teknologi Hijau?",
+      "duration": 8.117,
+      "words": [
+        {
+          "word": "perhatikan",
+          "start": 0.0,
+          "end": 0.66
+        },
+        {
+          "word": "raja",
+          "start": 0.66,
+          "end": 1.0
+        },
+        {
+          "word": "konsep",
+          "start": 1.0,
+          "end": 1.44
+        },
+        {
+          "word": "di",
+          "start": 1.44,
+          "end": 1.54
+        },
+        {
+          "word": "papan.",
+          "start": 1.54,
+          "end": 1.9
+        },
+        {
+          "word": "Manakah",
+          "start": 2.34,
+          "end": 2.78
+        },
+        {
+          "word": "antara",
+          "start": 2.78,
+          "end": 3.1
+        },
+        {
+          "word": "penyeltaan",
+          "start": 3.1,
+          "end": 3.62
+        },
+        {
+          "word": "berikut",
+          "start": 3.62,
+          "end": 3.94
+        },
+        {
+          "word": "benar",
+          "start": 3.94,
+          "end": 4.32
+        },
+        {
+          "word": "mengenai",
+          "start": 4.32,
+          "end": 4.68
+        },
+        {
+          "word": "sektor",
+          "start": 4.68,
+          "end": 5.06
+        },
+        {
+          "word": "bangunan",
+          "start": 5.06,
+          "end": 5.6
+        },
+        {
+          "word": "dan",
+          "start": 5.6,
+          "end": 5.78
+        },
+        {
+          "word": "sektor",
+          "start": 5.78,
+          "end": 6.18
+        },
+        {
+          "word": "TMK",
+          "start": 6.18,
+          "end": 6.7
+        },
+        {
+          "word": "dalam",
+          "start": 6.7,
+          "end": 6.94
+        },
+        {
+          "word": "teknologi",
+          "start": 6.94,
+          "end": 7.48
+        },
+        {
+          "word": "jauh?",
+          "start": 7.48,
+          "end": 7.92
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t4-bab04/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah kesan utama peralihan grid elektrik ini terhadap atmosfera dan iklim?",
+      "duration": 6.944,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "raja",
+          "start": 0.54,
+          "end": 0.84
+        },
+        {
+          "word": "konsek",
+          "start": 0.84,
+          "end": 1.26
+        },
+        {
+          "word": "di",
+          "start": 1.26,
+          "end": 1.34
+        },
+        {
+          "word": "Papan.",
+          "start": 1.34,
+          "end": 1.72
+        },
+        {
+          "word": "Apakah",
+          "start": 2.16,
+          "end": 2.64
+        },
+        {
+          "word": "kesan",
+          "start": 2.64,
+          "end": 2.94
+        },
+        {
+          "word": "utama",
+          "start": 2.94,
+          "end": 3.3
+        },
+        {
+          "word": "peralian",
+          "start": 3.3,
+          "end": 3.74
+        },
+        {
+          "word": "grid",
+          "start": 3.74,
+          "end": 3.96
+        },
+        {
+          "word": "elektrik",
+          "start": 3.96,
+          "end": 4.48
+        },
+        {
+          "word": "ini",
+          "start": 4.48,
+          "end": 4.64
+        },
+        {
+          "word": "terhadap",
+          "start": 4.64,
+          "end": 5.36
+        },
+        {
+          "word": "atmosfera",
+          "start": 5.36,
+          "end": 5.88
+        },
+        {
+          "word": "dan",
+          "start": 5.88,
+          "end": 6.16
+        },
+        {
+          "word": "iklim?",
+          "start": 6.16,
+          "end": 6.5
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t4-bab04/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah pelan tindakan bersepadu Teknologi Hijau PALING tepat merentas sektor 4 perpuluhan dua hingga 4 perpuluhan enam untuk memulihkan bandar",
+      "duration": 9.963,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "urutan",
+          "start": 0.58,
+          "end": 0.96
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.96,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.58
+        },
+        {
+          "word": "Papal,",
+          "start": 1.58,
+          "end": 1.94
+        },
+        {
+          "word": "apakah",
+          "start": 2.3,
+          "end": 2.74
+        },
+        {
+          "word": "pelan",
+          "start": 2.74,
+          "end": 3.06
+        },
+        {
+          "word": "tindakan",
+          "start": 3.06,
+          "end": 3.48
+        },
+        {
+          "word": "besar",
+          "start": 3.48,
+          "end": 3.78
+        },
+        {
+          "word": "teknologi",
+          "start": 3.78,
+          "end": 4.48
+        },
+        {
+          "word": "hijau",
+          "start": 4.48,
+          "end": 4.72
+        },
+        {
+          "word": "paling",
+          "start": 4.72,
+          "end": 4.96
+        },
+        {
+          "word": "tepat",
+          "start": 4.96,
+          "end": 5.34
+        },
+        {
+          "word": "merintas",
+          "start": 5.34,
+          "end": 5.76
+        },
+        {
+          "word": "sektor",
+          "start": 5.76,
+          "end": 6.0
+        },
+        {
+          "word": "swyte",
+          "start": 6.0,
+          "end": 6.34
+        },
+        {
+          "word": "perpuluhan",
+          "start": 6.34,
+          "end": 6.8
+        },
+        {
+          "word": "2",
+          "start": 6.8,
+          "end": 7.0
+        },
+        {
+          "word": "hingga",
+          "start": 7.0,
+          "end": 7.34
+        },
+        {
+          "word": "46",
+          "start": 7.34,
+          "end": 7.78
+        },
+        {
+          "word": "untuk",
+          "start": 7.78,
+          "end": 8.86
+        },
+        {
+          "word": "mengulihkan",
+          "start": 8.86,
+          "end": 9.46
+        },
+        {
+          "word": "bandar?",
+          "start": 9.46,
+          "end": 9.82
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,471 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sains-t4-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:39.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Bantuan Kecemasan (CPR & Heimlich Manoeuvre)?",
+      "duration": 9.013,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "lasing",
+          "start": 0.58,
+          "end": 0.88
+        },
+        {
+          "word": "science",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "word": "awas",
+          "start": 1.28,
+          "end": 2.02
+        },
+        {
+          "word": "perangkap",
+          "start": 2.02,
+          "end": 2.62
+        },
+        {
+          "word": "manakah",
+          "start": 2.62,
+          "end": 3.36
+        },
+        {
+          "word": "fakta",
+          "start": 3.36,
+          "end": 3.84
+        },
+        {
+          "word": "atau",
+          "start": 3.84,
+          "end": 4.02
+        },
+        {
+          "word": "langkah",
+          "start": 4.02,
+          "end": 4.42
+        },
+        {
+          "word": "yang",
+          "start": 4.42,
+          "end": 4.6
+        },
+        {
+          "word": "betul",
+          "start": 4.6,
+          "end": 5.02
+        },
+        {
+          "word": "tentang",
+          "start": 5.02,
+          "end": 5.34
+        },
+        {
+          "word": "bantuan",
+          "start": 5.34,
+          "end": 6.22
+        },
+        {
+          "word": "kecemasan",
+          "start": 6.22,
+          "end": 6.9
+        },
+        {
+          "word": "CPRN",
+          "start": 6.9,
+          "end": 7.98
+        },
+        {
+          "word": "Heinrich",
+          "start": 7.98,
+          "end": 8.28
+        },
+        {
+          "word": "Manoeuvre",
+          "start": 8.28,
+          "end": 8.6
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t4-bab02/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Semasa melakukan tekanan dada langkah 3 CPR dewasa, berapakah julat kedalaman dan kadar tekanan seminit yang tepat mengikut",
+      "duration": 8.555,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "raja",
+          "start": 0.46,
+          "end": 0.7
+        },
+        {
+          "word": "konsep",
+          "start": 0.7,
+          "end": 1.14
+        },
+        {
+          "word": "di",
+          "start": 1.14,
+          "end": 1.2
+        },
+        {
+          "word": "Papan",
+          "start": 1.2,
+          "end": 1.52
+        },
+        {
+          "word": "semasa",
+          "start": 1.52,
+          "end": 2.28
+        },
+        {
+          "word": "melakukan",
+          "start": 2.28,
+          "end": 2.56
+        },
+        {
+          "word": "tekanan",
+          "start": 2.56,
+          "end": 3.06
+        },
+        {
+          "word": "dada",
+          "start": 3.06,
+          "end": 3.28
+        },
+        {
+          "word": "langkah",
+          "start": 3.28,
+          "end": 3.6
+        },
+        {
+          "word": "3",
+          "start": 3.6,
+          "end": 3.8
+        },
+        {
+          "word": "CP",
+          "start": 3.8,
+          "end": 4.06
+        },
+        {
+          "word": "Ari",
+          "start": 4.06,
+          "end": 4.24
+        },
+        {
+          "word": "Wasa,",
+          "start": 4.24,
+          "end": 4.6
+        },
+        {
+          "word": "berapakah",
+          "start": 4.88,
+          "end": 5.5
+        },
+        {
+          "word": "julat",
+          "start": 5.5,
+          "end": 5.82
+        },
+        {
+          "word": "kedalaman",
+          "start": 5.82,
+          "end": 6.26
+        },
+        {
+          "word": "dan",
+          "start": 6.26,
+          "end": 6.44
+        },
+        {
+          "word": "kadar",
+          "start": 6.44,
+          "end": 6.76
+        },
+        {
+          "word": "tekanan",
+          "start": 6.76,
+          "end": 7.18
+        },
+        {
+          "word": "semenit",
+          "start": 7.18,
+          "end": 7.58
+        },
+        {
+          "word": "yang",
+          "start": 7.58,
+          "end": 7.68
+        },
+        {
+          "word": "tepat",
+          "start": 7.68,
+          "end": 8.0
+        },
+        {
+          "word": "mengikut.",
+          "start": 8.0,
+          "end": 8.38
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t4-bab02/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Jika seseorang tidak selesa melakukan hembusan mulut ke mulut semasa memberi bantuan CPR, apakah tindakan yang disyorkan",
+      "duration": 8.779,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "raja",
+          "start": 0.42,
+          "end": 0.72
+        },
+        {
+          "word": "konsep",
+          "start": 0.72,
+          "end": 1.18
+        },
+        {
+          "word": "di",
+          "start": 1.18,
+          "end": 1.28
+        },
+        {
+          "word": "Papan",
+          "start": 1.28,
+          "end": 1.6
+        },
+        {
+          "word": "jika",
+          "start": 1.6,
+          "end": 2.32
+        },
+        {
+          "word": "seseorang",
+          "start": 2.32,
+          "end": 2.72
+        },
+        {
+          "word": "tidak",
+          "start": 2.72,
+          "end": 2.9
+        },
+        {
+          "word": "selesa",
+          "start": 2.9,
+          "end": 3.3
+        },
+        {
+          "word": "melakukan",
+          "start": 3.3,
+          "end": 3.72
+        },
+        {
+          "word": "hembusan",
+          "start": 3.72,
+          "end": 4.22
+        },
+        {
+          "word": "mulut",
+          "start": 4.22,
+          "end": 4.56
+        },
+        {
+          "word": "ke",
+          "start": 4.56,
+          "end": 4.66
+        },
+        {
+          "word": "mulut",
+          "start": 4.66,
+          "end": 5.02
+        },
+        {
+          "word": "semasa",
+          "start": 5.02,
+          "end": 5.48
+        },
+        {
+          "word": "memberi",
+          "start": 5.48,
+          "end": 5.78
+        },
+        {
+          "word": "bantuan",
+          "start": 5.78,
+          "end": 6.08
+        },
+        {
+          "word": "CPR,",
+          "start": 6.08,
+          "end": 6.54
+        },
+        {
+          "word": "apakah",
+          "start": 7.02,
+          "end": 7.44
+        },
+        {
+          "word": "tindakan",
+          "start": 7.44,
+          "end": 7.9
+        },
+        {
+          "word": "yang",
+          "start": 7.9,
+          "end": 8.08
+        },
+        {
+          "word": "disyurkan?",
+          "start": 8.08,
+          "end": 8.58
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t4-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah risiko utama jika teknik tekanan dada CPR dilakukan secara salah atau terlalu kasar pada dada mangsa ( meter per saat 22)?",
+      "duration": 9.557,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "ulutan",
+          "start": 0.54,
+          "end": 0.94
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.94,
+          "end": 1.42
+        },
+        {
+          "word": "di",
+          "start": 1.42,
+          "end": 1.54
+        },
+        {
+          "word": "Papai,",
+          "start": 1.54,
+          "end": 1.88
+        },
+        {
+          "word": "apakah",
+          "start": 2.24,
+          "end": 2.84
+        },
+        {
+          "word": "risiko",
+          "start": 2.84,
+          "end": 3.24
+        },
+        {
+          "word": "utama",
+          "start": 3.24,
+          "end": 3.58
+        },
+        {
+          "word": "jika",
+          "start": 3.58,
+          "end": 3.88
+        },
+        {
+          "word": "teknik",
+          "start": 3.88,
+          "end": 4.18
+        },
+        {
+          "word": "tekanan",
+          "start": 4.18,
+          "end": 4.56
+        },
+        {
+          "word": "dada",
+          "start": 4.56,
+          "end": 4.72
+        },
+        {
+          "word": "CPI",
+          "start": 4.72,
+          "end": 5.22
+        },
+        {
+          "word": "dilakukan",
+          "start": 5.22,
+          "end": 5.6
+        },
+        {
+          "word": "secara",
+          "start": 5.6,
+          "end": 6.0
+        },
+        {
+          "word": "salah",
+          "start": 6.0,
+          "end": 6.26
+        },
+        {
+          "word": "atau",
+          "start": 6.26,
+          "end": 6.56
+        },
+        {
+          "word": "terlalu",
+          "start": 6.56,
+          "end": 6.92
+        },
+        {
+          "word": "kasa",
+          "start": 6.92,
+          "end": 7.2
+        },
+        {
+          "word": "pada",
+          "start": 7.2,
+          "end": 7.44
+        },
+        {
+          "word": "dada",
+          "start": 7.44,
+          "end": 7.66
+        },
+        {
+          "word": "mangsa,",
+          "start": 7.66,
+          "end": 8.14
+        },
+        {
+          "word": "miter",
+          "start": 8.52,
+          "end": 9.02
+        },
+        {
+          "word": "pesaat?",
+          "start": 9.02,
+          "end": 9.46
+        }
+      ]
+    }
+  }
+};

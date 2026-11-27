@@ -1,0 +1,411 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sains-t4-bab05"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t4-bab05/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Apakah kesan utama kepada anak atau spesies sekiranya proses pindah silang pada Profasa I tidak berlaku?",
+      "duration": 7.637,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "Lazim",
+          "start": 0.46,
+          "end": 0.78
+        },
+        {
+          "word": "Science,",
+          "start": 0.78,
+          "end": 1.16
+        },
+        {
+          "word": "apakah",
+          "start": 1.48,
+          "end": 1.9
+        },
+        {
+          "word": "kesan",
+          "start": 1.9,
+          "end": 2.3
+        },
+        {
+          "word": "utama",
+          "start": 2.3,
+          "end": 2.7
+        },
+        {
+          "word": "kepada",
+          "start": 2.7,
+          "end": 2.88
+        },
+        {
+          "word": "anak",
+          "start": 2.88,
+          "end": 3.36
+        },
+        {
+          "word": "atau",
+          "start": 3.36,
+          "end": 3.58
+        },
+        {
+          "word": "spesies",
+          "start": 3.58,
+          "end": 4.14
+        },
+        {
+          "word": "kira",
+          "start": 4.14,
+          "end": 4.42
+        },
+        {
+          "word": "-kira",
+          "start": 4.42,
+          "end": 4.52
+        },
+        {
+          "word": "proses",
+          "start": 4.52,
+          "end": 5.1
+        },
+        {
+          "word": "pindah",
+          "start": 5.1,
+          "end": 5.6
+        },
+        {
+          "word": "silang",
+          "start": 5.6,
+          "end": 5.9
+        },
+        {
+          "word": "pada",
+          "start": 5.9,
+          "end": 6.14
+        },
+        {
+          "word": "Prof.",
+          "start": 6.14,
+          "end": 6.58
+        },
+        {
+          "word": "I.",
+          "start": 6.78,
+          "end": 6.88
+        },
+        {
+          "word": "Tidak",
+          "start": 6.98,
+          "end": 7.16
+        },
+        {
+          "word": "berlaku?",
+          "start": 7.16,
+          "end": 7.42
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t4-bab05/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Sebuah sel epitelium pipi manusia mengandungi 46 kromosom. Antara pernyataan berikut, manakah betul tentang kandungan",
+      "duration": 10.016,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "raja",
+          "start": 0.52,
+          "end": 0.78
+        },
+        {
+          "word": "konsek",
+          "start": 0.78,
+          "end": 1.18
+        },
+        {
+          "word": "di",
+          "start": 1.18,
+          "end": 1.24
+        },
+        {
+          "word": "Papai,",
+          "start": 1.24,
+          "end": 1.58
+        },
+        {
+          "word": "sebuah",
+          "start": 2.04,
+          "end": 2.6
+        },
+        {
+          "word": "sel",
+          "start": 2.6,
+          "end": 2.78
+        },
+        {
+          "word": "eketiliam",
+          "start": 2.78,
+          "end": 3.38
+        },
+        {
+          "word": "pipi",
+          "start": 3.38,
+          "end": 3.72
+        },
+        {
+          "word": "manusia",
+          "start": 3.72,
+          "end": 4.14
+        },
+        {
+          "word": "mengandungi",
+          "start": 4.14,
+          "end": 4.7
+        },
+        {
+          "word": "sikongosom.",
+          "start": 4.7,
+          "end": 6.48
+        },
+        {
+          "word": "Antara",
+          "start": 6.66,
+          "end": 6.96
+        },
+        {
+          "word": "penyataan",
+          "start": 6.96,
+          "end": 7.42
+        },
+        {
+          "word": "berikut,",
+          "start": 7.42,
+          "end": 7.8
+        },
+        {
+          "word": "manakan",
+          "start": 8.28,
+          "end": 8.6
+        },
+        {
+          "word": "betul",
+          "start": 8.6,
+          "end": 8.98
+        },
+        {
+          "word": "tentang",
+          "start": 8.98,
+          "end": 9.2
+        },
+        {
+          "word": "kandungan.",
+          "start": 9.2,
+          "end": 9.8
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t4-bab05/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berapakah anggaran bilangan pokok kerdil (tt) dan peratusan anak berfenotip tinggi yang terhasil?",
+      "duration": 7.573,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.8
+        },
+        {
+          "word": "raja",
+          "start": 0.8,
+          "end": 1.14
+        },
+        {
+          "word": "konsep",
+          "start": 1.14,
+          "end": 1.62
+        },
+        {
+          "word": "di",
+          "start": 1.62,
+          "end": 1.72
+        },
+        {
+          "word": "Papan.",
+          "start": 1.72,
+          "end": 2.06
+        },
+        {
+          "word": "Berapakah",
+          "start": 2.54,
+          "end": 3.0
+        },
+        {
+          "word": "anggaran",
+          "start": 3.0,
+          "end": 3.42
+        },
+        {
+          "word": "bilangan",
+          "start": 3.42,
+          "end": 3.72
+        },
+        {
+          "word": "pokok",
+          "start": 3.72,
+          "end": 4.14
+        },
+        {
+          "word": "kedil",
+          "start": 4.14,
+          "end": 4.5
+        },
+        {
+          "word": "dan",
+          "start": 4.5,
+          "end": 5.08
+        },
+        {
+          "word": "peratusan",
+          "start": 5.08,
+          "end": 5.58
+        },
+        {
+          "word": "anak",
+          "start": 5.58,
+          "end": 5.76
+        },
+        {
+          "word": "berfenoti",
+          "start": 5.76,
+          "end": 6.24
+        },
+        {
+          "word": "tinggi",
+          "start": 6.24,
+          "end": 6.6
+        },
+        {
+          "word": "yang",
+          "start": 6.6,
+          "end": 6.72
+        },
+        {
+          "word": "terhasil?",
+          "start": 6.72,
+          "end": 7.16
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t4-bab05/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah sebab munasabah Puan K menjalani prosedur amniosentesis, nama penyakit genetik fetus serta jantinanya?",
+      "duration": 8.48,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.62
+        },
+        {
+          "word": "urutan",
+          "start": 0.62,
+          "end": 1.0
+        },
+        {
+          "word": "prestiwa",
+          "start": 1.0,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.58
+        },
+        {
+          "word": "Papuan,",
+          "start": 1.58,
+          "end": 1.96
+        },
+        {
+          "word": "apakah",
+          "start": 2.42,
+          "end": 2.88
+        },
+        {
+          "word": "sebab",
+          "start": 2.88,
+          "end": 3.14
+        },
+        {
+          "word": "munasabah",
+          "start": 3.14,
+          "end": 3.64
+        },
+        {
+          "word": "puan",
+          "start": 3.64,
+          "end": 3.9
+        },
+        {
+          "word": "-kir",
+          "start": 3.9,
+          "end": 4.12
+        },
+        {
+          "word": "menjalani",
+          "start": 4.12,
+          "end": 4.62
+        },
+        {
+          "word": "proses",
+          "start": 4.62,
+          "end": 4.94
+        },
+        {
+          "word": "di",
+          "start": 4.94,
+          "end": 5.08
+        },
+        {
+          "word": "amyosintesis",
+          "start": 5.08,
+          "end": 5.76
+        },
+        {
+          "word": "nama",
+          "start": 5.76,
+          "end": 6.4
+        },
+        {
+          "word": "penyakit",
+          "start": 6.4,
+          "end": 6.8
+        },
+        {
+          "word": "genetic",
+          "start": 6.8,
+          "end": 7.02
+        },
+        {
+          "word": "fetus",
+          "start": 7.02,
+          "end": 7.54
+        },
+        {
+          "word": "seterjantinannya?",
+          "start": 7.54,
+          "end": 8.2
+        }
+      ]
+    }
+  }
+};

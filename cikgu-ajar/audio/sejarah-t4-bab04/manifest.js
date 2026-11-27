@@ -1,0 +1,401 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t4-bab04"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab04/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Apakah halangan fizikal utama yang menyebabkan BMA sukar memulihkan sektor sosioekonomi pascaperang?",
+      "duration": 6.709,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "lazim",
+          "start": 0.34,
+          "end": 0.64
+        },
+        {
+          "word": "sejarah?",
+          "start": 0.64,
+          "end": 1.1
+        },
+        {
+          "word": "Apakah",
+          "start": 1.3,
+          "end": 1.64
+        },
+        {
+          "word": "halanian",
+          "start": 1.64,
+          "end": 2.04
+        },
+        {
+          "word": "fizikal",
+          "start": 2.04,
+          "end": 2.52
+        },
+        {
+          "word": "utama",
+          "start": 2.52,
+          "end": 2.88
+        },
+        {
+          "word": "yang",
+          "start": 2.88,
+          "end": 3.06
+        },
+        {
+          "word": "menyebabkan",
+          "start": 3.06,
+          "end": 3.56
+        },
+        {
+          "word": "BMA",
+          "start": 3.56,
+          "end": 3.94
+        },
+        {
+          "word": "Suka",
+          "start": 3.94,
+          "end": 4.3
+        },
+        {
+          "word": "memulihkan",
+          "start": 4.3,
+          "end": 4.86
+        },
+        {
+          "word": "sektor",
+          "start": 4.86,
+          "end": 5.2
+        },
+        {
+          "word": "sosial",
+          "start": 5.2,
+          "end": 5.48
+        },
+        {
+          "word": "ekonomi",
+          "start": 5.48,
+          "end": 5.92
+        },
+        {
+          "word": "pasgapera?",
+          "start": 5.92,
+          "end": 6.38
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab04/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Mengapakah Sultan Ismail Nasiruddin Shah (Terengganu) enggan menandatangani perjanjian Malayan Union ketika ditemui",
+      "duration": 8.267,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "urutan",
+          "start": 0.28,
+          "end": 0.7
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.7,
+          "end": 1.28
+        },
+        {
+          "word": "di",
+          "start": 1.28,
+          "end": 1.38
+        },
+        {
+          "word": "Papan,",
+          "start": 1.38,
+          "end": 1.8
+        },
+        {
+          "word": "mengapakah",
+          "start": 2.0,
+          "end": 2.84
+        },
+        {
+          "word": "Sultan",
+          "start": 2.84,
+          "end": 3.12
+        },
+        {
+          "word": "Ismail",
+          "start": 3.12,
+          "end": 3.6
+        },
+        {
+          "word": "Nasir",
+          "start": 3.6,
+          "end": 3.9
+        },
+        {
+          "word": "Udinshah",
+          "start": 3.9,
+          "end": 4.34
+        },
+        {
+          "word": "Terengahlu",
+          "start": 4.34,
+          "end": 4.84
+        },
+        {
+          "word": "enggak",
+          "start": 4.84,
+          "end": 5.6
+        },
+        {
+          "word": "menanlatangani",
+          "start": 5.6,
+          "end": 6.16
+        },
+        {
+          "word": "perjanjian",
+          "start": 6.16,
+          "end": 6.62
+        },
+        {
+          "word": "Malaya",
+          "start": 6.62,
+          "end": 6.84
+        },
+        {
+          "word": "Yunyeng",
+          "start": 6.84,
+          "end": 7.22
+        },
+        {
+          "word": "ketika",
+          "start": 7.22,
+          "end": 7.56
+        },
+        {
+          "word": "ditemui",
+          "start": 7.56,
+          "end": 7.98
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab04/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah kesan strategik tindakan Raja-raja Melayu memulaukan upacara pelantikan Gabenor Malayan Union?",
+      "duration": 7.989,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "raja",
+          "start": 0.68,
+          "end": 0.92
+        },
+        {
+          "word": "konsep",
+          "start": 0.92,
+          "end": 1.38
+        },
+        {
+          "word": "di",
+          "start": 1.38,
+          "end": 1.46
+        },
+        {
+          "word": "Papan,",
+          "start": 1.46,
+          "end": 1.84
+        },
+        {
+          "word": "apakah",
+          "start": 2.36,
+          "end": 2.76
+        },
+        {
+          "word": "kesan",
+          "start": 2.76,
+          "end": 3.16
+        },
+        {
+          "word": "strategik",
+          "start": 3.16,
+          "end": 3.76
+        },
+        {
+          "word": "tindakan",
+          "start": 3.76,
+          "end": 4.08
+        },
+        {
+          "word": "raja",
+          "start": 4.08,
+          "end": 4.38
+        },
+        {
+          "word": "-raja",
+          "start": 4.38,
+          "end": 4.58
+        },
+        {
+          "word": "Melayu",
+          "start": 4.58,
+          "end": 5.04
+        },
+        {
+          "word": "memulaukan",
+          "start": 5.04,
+          "end": 5.7
+        },
+        {
+          "word": "upacara",
+          "start": 5.7,
+          "end": 6.16
+        },
+        {
+          "word": "pelantikan",
+          "start": 6.16,
+          "end": 6.64
+        },
+        {
+          "word": "Gia",
+          "start": 6.64,
+          "end": 6.82
+        },
+        {
+          "word": "Beno",
+          "start": 6.82,
+          "end": 7.02
+        },
+        {
+          "word": "Manayang",
+          "start": 7.02,
+          "end": 7.32
+        },
+        {
+          "word": "Union?",
+          "start": 7.32,
+          "end": 7.52
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab04/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Mengapakah gerakan penentangan rakyat Tanah Melayu menentang Malayan Union pada tahun 1946 berjaya mencapai",
+      "duration": 8.299,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "urutan",
+          "start": 0.64,
+          "end": 1.14
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.14,
+          "end": 1.64
+        },
+        {
+          "word": "di",
+          "start": 1.64,
+          "end": 1.76
+        },
+        {
+          "word": "Papal",
+          "start": 1.76,
+          "end": 2.16
+        },
+        {
+          "word": "mengapakah",
+          "start": 2.16,
+          "end": 3.08
+        },
+        {
+          "word": "gerakkan",
+          "start": 3.08,
+          "end": 3.46
+        },
+        {
+          "word": "penentangan",
+          "start": 3.46,
+          "end": 3.88
+        },
+        {
+          "word": "rakyat",
+          "start": 3.88,
+          "end": 4.18
+        },
+        {
+          "word": "Tanah",
+          "start": 4.18,
+          "end": 4.4
+        },
+        {
+          "word": "Melayu",
+          "start": 4.4,
+          "end": 4.72
+        },
+        {
+          "word": "menentang",
+          "start": 4.72,
+          "end": 5.1
+        },
+        {
+          "word": "Malayan",
+          "start": 5.1,
+          "end": 5.46
+        },
+        {
+          "word": "Union",
+          "start": 5.46,
+          "end": 5.8
+        },
+        {
+          "word": "pada",
+          "start": 5.8,
+          "end": 6.46
+        },
+        {
+          "word": "Tahun",
+          "start": 6.46,
+          "end": 6.76
+        },
+        {
+          "word": "Enk",
+          "start": 6.76,
+          "end": 6.96
+        },
+        {
+          "word": "Timor",
+          "start": 6.96,
+          "end": 7.22
+        },
+        {
+          "word": "Jaya",
+          "start": 7.22,
+          "end": 7.52
+        },
+        {
+          "word": "mencapai?",
+          "start": 7.52,
+          "end": 8.06
+        }
+      ]
+    }
+  }
+};

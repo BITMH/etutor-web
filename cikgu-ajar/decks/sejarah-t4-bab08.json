@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t4-bab08",
+  "title": "Pilihan Raya",
+  "shortTitle": "Pilihan Raya",
+  "subject": "Sejarah",
+  "form": "T4",
+  "bab": 8,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Pilihan Raya",
+    "desc": "Soalan Kertas 1 kerap menyoal pilihan raya terawal di negara kita: jawapannya ialah Pilihan Raya Majlis Perbandaran George Town (1951)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Mengapakah pilihan raya peringkat awal di majlis perbandaran penting diadakan sebelum Pilihan Raya Umum Persekutuan?",
+        "spokenText": "Perangkap lazim Sejarah! Mengapakah pilihan raya peringkat awal di majlis perbandaran penting diadakan sebelum Pilihan Raya Umum Persekutuan?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Mengapakah pilihan raya peringkat awal di majlis perbandaran penting diadakan sebelum Pilihan Raya Umum Persekutuan?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menyerahkan pentadbiran seluruh Negeri-negeri Selat terus kepada Gabenor Singapura tanpa perwakilan",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menyerahkan pentadbiran seluruh Negeri-negeri Selat terus kepada Gabenor Singapura tanpa…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri. Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi…",
+              "spokenText": "Fakta sebenar: Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri. Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi pengalaman mengendalikan pilihan raya…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Mengurangkan bilangan pengundi berdaftar di bandar pelabuhan kepada bawah lima ribu orang",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri. Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi…",
+              "spokenText": "Fakta sebenar: Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri. Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi pengalaman mengendalikan pilihan raya…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi pengalaman mengendalikan pilihan raya…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi pengalaman mengendalikan…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Pilihan raya peringkat awal berjaya menyedarkan rakyat tentang amalan demokrasi, memberi pengalaman mengendalikan",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Menyedarkan rakyat tentang amalan demokrasi serta melatih rakyat mengendalikan pilihan raya ke arah berkerajaan sendiri",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Kuala Lumpur , Bandar",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah bukti penting daripada kejayaan gabungan UMNO-MCA di Majlis Perbandaran Kuala Lumpur (1952) dan Pilihan Raya…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah bukti penting daripada kejayaan gabungan UMNO-MCA di Majlis Perbandaran Kuala Lumpur (1952) dan Pilihan Raya"
+      },
+      "board": {
+        "promptPill": "Apakah bukti penting daripada kejayaan gabungan UMNO-MCA di Majlis Perbandaran…",
+        "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan Raya Negeri (1954)",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "8.1 Ordinan 1950 & Pilihan Raya George Town…",
+            "detail": "Ordinan Pilihan Raya Pihak Berkuasa Tempatan 1950 membuka ruang pilihan raya bermula di majlis perbandaran…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan…",
+            "detail": "Kejayaan gabungan awal Perikatan di Kuala Lumpur merebak ke bandar utama lain sebelum mencatat kemenangan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Pilihan Raya Awal di Sarawak (1956-1957) &…",
+            "detail": "Pilihan raya tempatan di Kuching, Sibu, Miri dan seluruh Sabah membuka peluang saksama kepada rakyat…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Penerimaan meluas masyarakat terhadap kerjasama politik antara kaum ke arah berkerajaan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Gabenor Negeri-negeri Selat melantik semula semua ahli majlis perbandaran tanpa undian",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Gabenor Negeri-negeri Selat melantik… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Gabenor Negeri-negeri Selat melantik tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama antara kaum UMNO-MCA sebagai…",
+              "spokenText": "Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama antara kaum UMNO-MCA sebagai",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "8.1 Ordinan 1950 & Pilihan Raya George Town…",
+                    "detail": "Ordinan Pilihan Raya Pihak Berkuasa Tempatan 1950 membuka ruang pilihan raya bermula di majlis perbandaran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan…",
+                    "detail": "Kejayaan gabungan awal Perikatan di Kuala Lumpur merebak ke bandar utama lain sebelum mencatat kemenangan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pilihan Raya Awal di Sarawak (1956-1957) &…",
+                    "detail": "Pilihan raya tempatan di Kuching, Sibu, Miri dan seluruh Sabah membuka peluang saksama kepada rakyat…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Parti Buruh dan IMP memperoleh kemenangan mutlak di seluruh kawasan Petaling Jaya",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Parti Buruh dan IMP memperoleh… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Parti Buruh dan IMP memperoleh tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama antara kaum UMNO-MCA sebagai…",
+              "spokenText": "Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama antara kaum UMNO-MCA sebagai",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "8.1 Ordinan 1950 & Pilihan Raya George Town…",
+                    "detail": "Ordinan Pilihan Raya Pihak Berkuasa Tempatan 1950 membuka ruang pilihan raya bermula di majlis perbandaran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan…",
+                    "detail": "Kejayaan gabungan awal Perikatan di Kuala Lumpur merebak ke bandar utama lain sebelum mencatat kemenangan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pilihan Raya Awal di Sarawak (1956-1957) &…",
+                    "detail": "Pilihan raya tempatan di Kuching, Sibu, Miri dan seluruh Sabah membuka peluang saksama kepada rakyat…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "8.1 Ordinan 1950 & Pilihan Raya George Town…",
+              "detail": "Ordinan Pilihan Raya Pihak Berkuasa Tempatan 1950 membuka ruang pilihan raya bermula di majlis perbandaran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan…",
+              "detail": "Kejayaan gabungan awal Perikatan di Kuala Lumpur merebak ke bandar utama lain sebelum mencatat kemenangan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pilihan Raya Awal di Sarawak (1956-1957) &…",
+              "detail": "Pilihan raya tempatan di Kuching, Sibu, Miri dan seluruh Sabah membuka peluang saksama kepada rakyat…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Kuala Lumpur , Bandar",
+          "desc": "Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama antara kaum…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kemenangan 9/12 kerusi di Kuala Lumpur (1952) dan 226/268 kerusi negeri (1954) membuktikan rakyat menyokong kerjasama",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "8.1 Ordinan 1950 & Pilihan Raya George Town…",
+              "detail": "Ordinan Pilihan Raya Pihak Berkuasa Tempatan 1950 membuka ruang pilihan raya bermula di majlis perbandaran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kuala Lumpur (1952), Bandar Utama & Pilihan…",
+              "detail": "Kejayaan gabungan awal Perikatan di Kuala Lumpur merebak ke bandar utama lain sebelum mencatat kemenangan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pilihan Raya Awal di Sarawak (1956-1957) &…",
+              "detail": "Pilihan raya tempatan di Kuching, Sibu, Miri dan seluruh Sabah membuka peluang saksama kepada rakyat…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pilihan Raya Awal di",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Mengapakah Tunku Abdul Rahman dan Parti Perikatan memilih Bentuk A berbanding Bentuk B?",
+        "spokenText": "Perhatikan rajah konsep di papan! Mengapakah Tunku Abdul Rahman dan Parti Perikatan memilih Bentuk A berbanding Bentuk B?"
+      },
+      "board": {
+        "promptPill": "Mengapakah Tunku Abdul Rahman dan Parti Perikatan memilih Bentuk A berbanding…",
+        "title": "Pilihan Raya Awal di Sarawak (1956-1957) & Sabah (1962)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Datuk Siti Rahmah Kassim",
+            "detail": "Menghulurkan gelang emas bagi membiayai tambang rombongan ke London",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Lord Ogmore",
+            "detail": "Membantu Tunku bertemu ahli Parlimen Parti Buruh, Konservatif & Liberal",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Oliver Lyttelton",
+            "detail": "Setiausaha Tanah Jajahan British yang berunding dengan Tunku (14 Mei 1954)",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Memastikan sekurang-kurangnya tiga perlima anggota MPP dipilih terus oleh rakyat dan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Supaya jawatan Speaker dan Setiausaha Pertahanan turut dimansuhkan sebelum pilihan raya…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Supaya jawatan Speaker dan Setiausaha… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Supaya jawatan Speaker dan Setiausaha tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat pengundi serta…",
+              "spokenText": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat pengundi serta",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pilihan Raya Awal di",
+                "desc": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Untuk mengehadkan wakil negeri kepada lima buah negeri sahaja tanpa penyertaan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Untuk mengehadkan wakil negeri kepada… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Untuk mengehadkan wakil negeri kepada tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat pengundi serta…",
+              "spokenText": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat pengundi serta",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pilihan Raya Awal di",
+                "desc": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pilihan Raya Awal di",
+          "desc": "Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar mewakili mandat…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Bentuk A menjamin tiga perlima (60) anggota MPP dipilih oleh rakyat supaya kerajaan yang terbentuk benar-benar"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Pilihan Raya",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan Nilai, Patriotisme dan Iktibar Bab 8, apakah tanggungjawab utama warganegara dalam era moden berwadahkan…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan Nilai, Patriotisme dan Iktibar Bab 8, apakah tanggungjawab utama warganegara dalam era moden berwadahkan"
+      },
+      "board": {
+        "promptPill": "Berdasarkan Nilai, Patriotisme dan Iktibar Bab 8, apakah tanggungjawab utama…",
+        "title": "Rumusan: Pilihan Raya",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "8.4 Pembentukan Kabinet Pertama (4 Ogos 1955)…",
+            "detail": "Bezakan 3 pegawai British dalam Kabinet 1955 (Setiausaha Kewangan, Setiausaha Hal Ehwal Ekonomi & Setiausaha…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Portfolio Menteri 6-10 & Tanggungjawab Awal…",
+            "detail": "Gunakan akronim S-V-L-O-A untuk Menteri 6 hingga 10: Sardon (Kerja Raya), V.T. Sambanthan (Buruh), Leong Yew…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "5 Peranan Kabinet Pertama, Model Westminster &…",
+            "detail": "Fahami dua istilah glosari buku teks Subtopik 8.4: Model Westminster (demokrasi mengikut Britain) dan Kuasa…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menunaikan tanggungjawab mengundi secara bijak memilih pemimpin berintegriti serta…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Membiarkan parti politik berkempen tanpa peraturan dan menyerahkan kuasa penuh kepada…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Membiarkan parti politik berkempen tanpa… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Membiarkan parti politik berkempen tanpa tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan menggunakan media sosial secara…",
+              "spokenText": "Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan menggunakan media sosial secara",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "8.4 Pembentukan Kabinet Pertama (4 Ogos 1955)…",
+                    "detail": "Bezakan 3 pegawai British dalam Kabinet 1955 (Setiausaha Kewangan, Setiausaha Hal Ehwal Ekonomi & Setiausaha…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Portfolio Menteri 6-10 & Tanggungjawab Awal…",
+                    "detail": "Gunakan akronim S-V-L-O-A untuk Menteri 6 hingga 10: Sardon (Kerja Raya), V.T. Sambanthan (Buruh), Leong Yew…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "5 Peranan Kabinet Pertama, Model Westminster &…",
+                    "detail": "Fahami dua istilah glosari buku teks Subtopik 8.4: Model Westminster (demokrasi mengikut Britain) dan Kuasa…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menghapuskan sistem perkongsian kuasa antara kaum supaya hanya satu golongan mentadbir…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menghapuskan sistem perkongsian kuasa… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menghapuskan sistem perkongsian kuasa tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan menggunakan media sosial secara…",
+              "spokenText": "Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan menggunakan media sosial secara",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "8.4 Pembentukan Kabinet Pertama (4 Ogos 1955)…",
+                    "detail": "Bezakan 3 pegawai British dalam Kabinet 1955 (Setiausaha Kewangan, Setiausaha Hal Ehwal Ekonomi & Setiausaha…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Portfolio Menteri 6-10 & Tanggungjawab Awal…",
+                    "detail": "Gunakan akronim S-V-L-O-A untuk Menteri 6 hingga 10: Sardon (Kerja Raya), V.T. Sambanthan (Buruh), Leong Yew…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "5 Peranan Kabinet Pertama, Model Westminster &…",
+                    "detail": "Fahami dua istilah glosari buku teks Subtopik 8.4: Model Westminster (demokrasi mengikut Britain) dan Kuasa…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "8.4 Pembentukan Kabinet Pertama (4 Ogos 1955)…",
+              "detail": "Bezakan 3 pegawai British dalam Kabinet 1955 (Setiausaha Kewangan, Setiausaha Hal Ehwal Ekonomi & Setiausaha…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Portfolio Menteri 6-10 & Tanggungjawab Awal…",
+              "detail": "Gunakan akronim S-V-L-O-A untuk Menteri 6 hingga 10: Sardon (Kerja Raya), V.T. Sambanthan (Buruh), Leong Yew…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "5 Peranan Kabinet Pertama, Model Westminster &…",
+              "detail": "Fahami dua istilah glosari buku teks Subtopik 8.4: Model Westminster (demokrasi mengikut Britain) dan Kuasa…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Pilihan Raya",
+          "desc": "Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan menggunakan media…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kesanggupan penduduk bertolak ansur antara kaum, kepimpinan berwibawa serta kebijaksanaan rakyat mengundi dan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "8.4 Pembentukan Kabinet Pertama (4 Ogos 1955)…",
+              "detail": "Bezakan 3 pegawai British dalam Kabinet 1955 (Setiausaha Kewangan, Setiausaha Hal Ehwal Ekonomi & Setiausaha…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Portfolio Menteri 6-10 & Tanggungjawab Awal…",
+              "detail": "Gunakan akronim S-V-L-O-A untuk Menteri 6 hingga 10: Sardon (Kerja Raya), V.T. Sambanthan (Buruh), Leong Yew…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "5 Peranan Kabinet Pertama, Model Westminster &…",
+              "detail": "Fahami dua istilah glosari buku teks Subtopik 8.4: Model Westminster (demokrasi mengikut Britain) dan Kuasa…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

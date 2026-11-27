@@ -1,0 +1,386 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t4-bab10"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab10/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Berdasarkan pandangan Nelson Mandela, apakah sasaran sebenar perjuangan menuntut kebebasan tersebut?",
+      "duration": 6.613,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.74
+        },
+        {
+          "word": "lazing",
+          "start": 0.74,
+          "end": 1.06
+        },
+        {
+          "word": "sejarah.",
+          "start": 1.06,
+          "end": 1.92
+        },
+        {
+          "word": "Berdasarkan",
+          "start": 1.92,
+          "end": 2.5
+        },
+        {
+          "word": "pandangan",
+          "start": 2.5,
+          "end": 2.8
+        },
+        {
+          "word": "Nelson",
+          "start": 2.8,
+          "end": 3.0
+        },
+        {
+          "word": "Mandela,",
+          "start": 3.0,
+          "end": 3.46
+        },
+        {
+          "word": "apakah",
+          "start": 3.84,
+          "end": 4.2
+        },
+        {
+          "word": "sasaran",
+          "start": 4.2,
+          "end": 4.58
+        },
+        {
+          "word": "sebenar",
+          "start": 4.58,
+          "end": 4.92
+        },
+        {
+          "word": "perjuangan",
+          "start": 4.92,
+          "end": 5.3
+        },
+        {
+          "word": "menutup",
+          "start": 5.3,
+          "end": 5.74
+        },
+        {
+          "word": "kebebasan",
+          "start": 5.74,
+          "end": 6.14
+        },
+        {
+          "word": "tersebut?",
+          "start": 6.14,
+          "end": 6.46
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab10/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah kesan utama kemerdekaan menurut Tun Fuad Stephens, Ketua Menteri Sabah yang pertama?",
+      "duration": 7.595,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "urutan",
+          "start": 0.52,
+          "end": 0.9
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.9,
+          "end": 1.42
+        },
+        {
+          "word": "di",
+          "start": 1.42,
+          "end": 1.54
+        },
+        {
+          "word": "Papan",
+          "start": 1.54,
+          "end": 1.96
+        },
+        {
+          "word": "apakah",
+          "start": 1.96,
+          "end": 2.96
+        },
+        {
+          "word": "kesan",
+          "start": 2.96,
+          "end": 3.28
+        },
+        {
+          "word": "utama",
+          "start": 3.28,
+          "end": 3.6
+        },
+        {
+          "word": "kemedeikan",
+          "start": 3.6,
+          "end": 4.14
+        },
+        {
+          "word": "menurut",
+          "start": 4.14,
+          "end": 4.66
+        },
+        {
+          "word": "Tuan",
+          "start": 4.66,
+          "end": 4.82
+        },
+        {
+          "word": "Fuat",
+          "start": 4.82,
+          "end": 5.06
+        },
+        {
+          "word": "Stevens,",
+          "start": 5.06,
+          "end": 5.46
+        },
+        {
+          "word": "Ketua",
+          "start": 5.9,
+          "end": 6.18
+        },
+        {
+          "word": "Menteri",
+          "start": 6.18,
+          "end": 6.46
+        },
+        {
+          "word": "Sabah",
+          "start": 6.46,
+          "end": 6.72
+        },
+        {
+          "word": "yang",
+          "start": 6.72,
+          "end": 6.82
+        },
+        {
+          "word": "pertama.",
+          "start": 6.82,
+          "end": 7.02
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab10/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah tujuan teras Jawatankuasa Persediaan Fizikal menyediakan prasarana dan lambang kebangsaan menjelang merdeka?",
+      "duration": 8.587,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "raja",
+          "start": 0.56,
+          "end": 0.88
+        },
+        {
+          "word": "konsep",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "word": "di",
+          "start": 1.28,
+          "end": 1.36
+        },
+        {
+          "word": "Papan.",
+          "start": 1.36,
+          "end": 1.74
+        },
+        {
+          "word": "Apakah",
+          "start": 2.24,
+          "end": 2.58
+        },
+        {
+          "word": "tujuan",
+          "start": 2.58,
+          "end": 2.96
+        },
+        {
+          "word": "teras",
+          "start": 2.96,
+          "end": 3.22
+        },
+        {
+          "word": "Jawatan",
+          "start": 3.22,
+          "end": 3.52
+        },
+        {
+          "word": "Kuasa",
+          "start": 3.52,
+          "end": 3.86
+        },
+        {
+          "word": "Persediaan",
+          "start": 3.86,
+          "end": 4.42
+        },
+        {
+          "word": "Fizikal",
+          "start": 4.42,
+          "end": 4.86
+        },
+        {
+          "word": "menyediakan",
+          "start": 4.86,
+          "end": 5.48
+        },
+        {
+          "word": "perasa",
+          "start": 5.48,
+          "end": 5.8
+        },
+        {
+          "word": "rana",
+          "start": 5.8,
+          "end": 6.16
+        },
+        {
+          "word": "dan",
+          "start": 6.16,
+          "end": 6.74
+        },
+        {
+          "word": "lambang",
+          "start": 6.74,
+          "end": 7.18
+        },
+        {
+          "word": "kebangsaan",
+          "start": 7.18,
+          "end": 7.66
+        },
+        {
+          "word": "menjelang",
+          "start": 7.66,
+          "end": 7.96
+        },
+        {
+          "word": "mereka?",
+          "start": 7.96,
+          "end": 8.12
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab10/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah iktibar dan tanggungjawab patriotik terpenting bagi generasi kini dalam mempertahankan kedaulatan Persekutuan",
+      "duration": 7.872,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "urutan",
+          "start": 0.34,
+          "end": 0.76
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.76,
+          "end": 1.26
+        },
+        {
+          "word": "di",
+          "start": 1.26,
+          "end": 1.4
+        },
+        {
+          "word": "Papan?",
+          "start": 1.4,
+          "end": 1.76
+        },
+        {
+          "word": "Apakah",
+          "start": 2.0,
+          "end": 2.38
+        },
+        {
+          "word": "itiba",
+          "start": 2.38,
+          "end": 2.76
+        },
+        {
+          "word": "dan",
+          "start": 2.76,
+          "end": 3.0
+        },
+        {
+          "word": "tanggungjawab",
+          "start": 3.0,
+          "end": 3.56
+        },
+        {
+          "word": "patriotik",
+          "start": 3.56,
+          "end": 4.06
+        },
+        {
+          "word": "terpenting",
+          "start": 4.06,
+          "end": 4.48
+        },
+        {
+          "word": "bagi",
+          "start": 4.48,
+          "end": 4.8
+        },
+        {
+          "word": "generasi",
+          "start": 4.8,
+          "end": 5.3
+        },
+        {
+          "word": "kini",
+          "start": 5.3,
+          "end": 5.6
+        },
+        {
+          "word": "dalam",
+          "start": 5.6,
+          "end": 5.82
+        },
+        {
+          "word": "mempertahankan",
+          "start": 5.82,
+          "end": 6.6
+        },
+        {
+          "word": "kedualatan",
+          "start": 6.6,
+          "end": 7.04
+        },
+        {
+          "word": "persekutuan?",
+          "start": 7.04,
+          "end": 7.7
+        }
+      ]
+    }
+  }
+};

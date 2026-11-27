@@ -1,0 +1,361 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t2-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t2-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Sistem Pemerintahan Beraja (Pusat & Wilayah) (SP ?",
+      "duration": 8.725,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "lasing",
+          "start": 0.44,
+          "end": 0.7
+        },
+        {
+          "word": "sejarah!",
+          "start": 0.7,
+          "end": 1.22
+        },
+        {
+          "word": "Awas",
+          "start": 1.64,
+          "end": 1.94
+        },
+        {
+          "word": "perangkap!",
+          "start": 1.94,
+          "end": 2.44
+        },
+        {
+          "word": "Manakah",
+          "start": 2.84,
+          "end": 3.26
+        },
+        {
+          "word": "fakta",
+          "start": 3.26,
+          "end": 3.68
+        },
+        {
+          "word": "atau",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "langkah",
+          "start": 3.86,
+          "end": 4.16
+        },
+        {
+          "word": "yang",
+          "start": 4.16,
+          "end": 4.3
+        },
+        {
+          "word": "betul",
+          "start": 4.3,
+          "end": 4.62
+        },
+        {
+          "word": "tentang",
+          "start": 4.62,
+          "end": 4.88
+        },
+        {
+          "word": "dua",
+          "start": 4.88,
+          "end": 5.18
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.18,
+          "end": 5.7
+        },
+        {
+          "word": "satu",
+          "start": 5.7,
+          "end": 5.98
+        },
+        {
+          "word": "sistem",
+          "start": 5.98,
+          "end": 6.3
+        },
+        {
+          "word": "pemerintahan",
+          "start": 6.3,
+          "end": 6.88
+        },
+        {
+          "word": "beraja",
+          "start": 6.88,
+          "end": 7.26
+        },
+        {
+          "word": "pusat",
+          "start": 7.26,
+          "end": 7.98
+        },
+        {
+          "word": "yang",
+          "start": 7.98,
+          "end": 8.06
+        },
+        {
+          "word": "wilayah?",
+          "start": 8.06,
+          "end": 8.36
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t2-bab02/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah gelaran yang digunakan oleh Raja Funan yang bermaksud 'Raja Gunung'?",
+      "duration": 5.973,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "urutan",
+          "start": 0.64,
+          "end": 1.0
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.0,
+          "end": 1.46
+        },
+        {
+          "word": "di",
+          "start": 1.46,
+          "end": 1.6
+        },
+        {
+          "word": "Papan",
+          "start": 1.6,
+          "end": 1.98
+        },
+        {
+          "word": "apakah",
+          "start": 1.98,
+          "end": 3.0
+        },
+        {
+          "word": "gelaran",
+          "start": 3.0,
+          "end": 3.42
+        },
+        {
+          "word": "yang",
+          "start": 3.42,
+          "end": 3.6
+        },
+        {
+          "word": "digunakan",
+          "start": 3.6,
+          "end": 4.08
+        },
+        {
+          "word": "oleh",
+          "start": 4.08,
+          "end": 4.26
+        },
+        {
+          "word": "Raja",
+          "start": 4.26,
+          "end": 4.5
+        },
+        {
+          "word": "Funan",
+          "start": 4.5,
+          "end": 4.8
+        },
+        {
+          "word": "yang",
+          "start": 4.8,
+          "end": 4.92
+        },
+        {
+          "word": "bermaksud",
+          "start": 4.92,
+          "end": 5.28
+        },
+        {
+          "word": "Raja",
+          "start": 5.28,
+          "end": 5.48
+        },
+        {
+          "word": "Gulung?",
+          "start": 5.48,
+          "end": 5.78
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t2-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Dalam Kerajaan Srivijaya, apakah perbezaan antara wilayah Kedatuan dengan Pradatuan?",
+      "duration": 6.272,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "lasing",
+          "start": 0.6,
+          "end": 0.9
+        },
+        {
+          "word": "sejarah",
+          "start": 0.9,
+          "end": 1.46
+        },
+        {
+          "word": "dalam",
+          "start": 1.46,
+          "end": 2.1
+        },
+        {
+          "word": "kerajaan",
+          "start": 2.1,
+          "end": 2.56
+        },
+        {
+          "word": "Srivijaya",
+          "start": 2.56,
+          "end": 3.14
+        },
+        {
+          "word": "apakah",
+          "start": 3.14,
+          "end": 3.54
+        },
+        {
+          "word": "perbezaan",
+          "start": 3.54,
+          "end": 4.12
+        },
+        {
+          "word": "antara",
+          "start": 4.12,
+          "end": 4.38
+        },
+        {
+          "word": "wilayah",
+          "start": 4.38,
+          "end": 4.78
+        },
+        {
+          "word": "kedatuan",
+          "start": 4.78,
+          "end": 5.2
+        },
+        {
+          "word": "dengan",
+          "start": 5.2,
+          "end": 5.36
+        },
+        {
+          "word": "peradatuan.",
+          "start": 5.36,
+          "end": 5.88
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t2-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah kegunaan utama 'baray' yang dibina oleh pemerintah Kerajaan Angkor?",
+      "duration": 6.091,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "urutan",
+          "start": 0.48,
+          "end": 0.92
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.92,
+          "end": 1.48
+        },
+        {
+          "word": "di",
+          "start": 1.48,
+          "end": 1.6
+        },
+        {
+          "word": "Papan,",
+          "start": 1.6,
+          "end": 1.96
+        },
+        {
+          "word": "apakah",
+          "start": 2.4,
+          "end": 2.84
+        },
+        {
+          "word": "kegunaan",
+          "start": 2.84,
+          "end": 3.32
+        },
+        {
+          "word": "utama",
+          "start": 3.32,
+          "end": 3.62
+        },
+        {
+          "word": "barai",
+          "start": 3.62,
+          "end": 4.0
+        },
+        {
+          "word": "yang",
+          "start": 4.0,
+          "end": 4.14
+        },
+        {
+          "word": "dibina",
+          "start": 4.14,
+          "end": 4.48
+        },
+        {
+          "word": "oleh",
+          "start": 4.48,
+          "end": 4.66
+        },
+        {
+          "word": "pemerintah",
+          "start": 4.66,
+          "end": 5.26
+        },
+        {
+          "word": "kerajaan",
+          "start": 5.26,
+          "end": 5.64
+        },
+        {
+          "word": "Angkor?",
+          "start": 5.64,
+          "end": 5.96
+        }
+      ]
+    }
+  }
+};

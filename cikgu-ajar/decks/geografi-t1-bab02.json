@@ -1,0 +1,744 @@
+{
+  "deckId": "geografi-t1-bab02",
+  "title": "Kedudukan (Kedudukan Relatif, Latitud & Longitud)",
+  "shortTitle": "Kedudukan",
+  "subject": "Geografi",
+  "form": "T1",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Kedudukan",
+    "desc": "Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Geografi! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Kedudukan Relatif & Titik Rujukan (SP 1.2.1)?",
+        "spokenText": "Perangkap lazim Geografi! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Kedudukan Relatif & Titik Rujukan (SP 1 perpuluhan dua.1)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Kedudukan Relatif & Titik Rujukan (SP 1.2.1)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menulis nilai longitud dahulu sebelum nilai latitud, contohnya '55°B 40°U'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menulis nilai longitud dahulu sebelum nilai latitud, contohnya '55°B 40°U'.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Geografi. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Geografi. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.. Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+              "spokenText": "Fakta sebenar: Sentiasa tulis latitud ( darjahU/ darjahS) dahulu kemudian diikuti longitud ( darjahT/ darjahB): '40 darjahU 55 darjahB'.. Latitud ada huruf 'a' (datang awal) , menghasilkan tulis awal; Longitud ada huruf 'o' , menghasilkan tulis kedua.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menganggap Garisan Jadi berada di Hemisfera Utara (23½°U) dan Garisan Sartan di Selatan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Geografi. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Geografi. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.. Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+              "spokenText": "Fakta sebenar: Sentiasa tulis latitud ( darjahU/ darjahS) dahulu kemudian diikuti longitud ( darjahT/ darjahB): '40 darjahU 55 darjahB'.. Latitud ada huruf 'a' (datang awal) , menghasilkan tulis awal; Longitud ada huruf 'o' , menghasilkan tulis kedua.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Latitud ada huruf 'a' (datang awal) → tulis awal; Longitud ada huruf 'o' → tulis kedua.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Latitud ada huruf 'a' (datang awal) , menghasilkan tulis awal; Longitud ada huruf 'o' , menghasilkan tulis kedua.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Sentiasa tulis latitud (°U/°S) dahulu kemudian diikuti longitud (°T/°B): '40°U 55°B'.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: 2.1 Kedudukan Relatif &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Garisan latitud manakah yang paling panjang dan membahagikan bumi kepada Hemisfera Utara dan Selatan?",
+        "spokenText": "Perhatikan rajah konsep di papan! Garisan latitud manakah yang paling panjang dan membahagikan bumi kepada Hemisfera Utara dan Selatan?"
+      },
+      "board": {
+        "promptPill": "Garisan latitud manakah yang paling panjang dan membahagikan bumi kepada Hemisfera…",
+        "title": "2.1 Kedudukan Relatif & Titik Rujukan (SP 1.2.1)",
+        "diagramType": "geo-map",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Empat arah bandingan utama",
+            "detail": "hadapan, belakang, sebelah kiri dan sebelah kanan dari titik rujukan.",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Dalam bilik darjah (Rajah 2.1)",
+            "detail": "jika Siva dijadikan titik rujukan, murid yang duduk di hadapan, belakang, kiri atau kanan Siva dinamakan…",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Di lapangan (Rajah 2.2 Peta Pekan…",
+            "detail": "masjid, sekolah atau jambatan boleh dijadikan titik rujukan untuk memandu arah.",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Garisan Sartan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Garisan Sartan tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Garisan Sartan tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+              "spokenText": "Garisan Khatulistiwa (0 darjah) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.1 Kedudukan Relatif &",
+                "desc": "Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Garisan Jadi",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Garisan Jadi tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Garisan Jadi tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+              "spokenText": "Garisan Khatulistiwa (0 darjah) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.1 Kedudukan Relatif &",
+                "desc": "Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Garisan Khatulistiwa (0°)",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "2.1 Kedudukan Relatif &",
+          "desc": "Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Garisan Khatulistiwa (0°) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan.",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Garisan Khatulistiwa (0 darjah) ialah bulatan terpanjang yang memisahkan Hemisfera Utara dan Hemisfera Selatan."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 2.2 Garisan Latitud Utama",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Di manakah letaknya Garisan Sartan pada glob?",
+        "spokenText": "Perhatikan rajah konsep di papan! Di manakah letaknya Garisan Sartan pada glob?"
+      },
+      "board": {
+        "promptPill": "Di manakah letaknya Garisan Sartan pada glob?",
+        "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+        "diagramType": "geo-map",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Garisan Khatulistiwa (0°) ialah…",
+            "detail": "Garisan Khatulistiwa (0°) ialah garisan latitud terpanjang yang membahagikan bumi kepada Hemisfera Utara dan…",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Lima garisan latitud utama",
+            "detail": "Garisan Artik (66½°U), Garisan Sartan (23½°U), Garisan Khatulistiwa (0°), Garisan Jadi (23½°S) dan Garisan…",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Nilai latitud bermula dari 0° di…",
+            "detail": "Nilai latitud bermula dari 0° di Khatulistiwa hingga 90°U di Kutub Utara dan 90°S di Kutub Selatan.",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "23½°U",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "23½°S",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 23½°S tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 23 setengah darjahS tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+              "spokenText": "Garisan Sartan terletak pada latitud 23 setengah darjahU, manakala Garisan Jadi pada 23 setengah darjahS.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.2 Garisan Latitud Utama",
+                "desc": "Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "66½°U",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan 66½°U tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan 66 setengah darjahU tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+              "spokenText": "Garisan Sartan terletak pada latitud 23 setengah darjahU, manakala Garisan Jadi pada 23 setengah darjahS.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "2.2 Garisan Latitud Utama",
+                "desc": "Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "2.2 Garisan Latitud Utama",
+          "desc": "Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Garisan Sartan terletak pada latitud 23½°U, manakala Garisan Jadi pada 23½°S.",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Garisan Sartan terletak pada latitud 23 setengah darjahU, manakala Garisan Jadi pada 23 setengah darjahS."
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Kedudukan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah fungsi Garisan Tarikh Antarabangsa (180°T/B)?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah fungsi Garisan Tarikh Antarabangsa (180 darjahT/B)?"
+      },
+      "board": {
+        "promptPill": "Apakah fungsi Garisan Tarikh Antarabangsa (180°T/B)?",
+        "title": "Rumusan: Kedudukan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+            "detail": "Ingat urutan huruf abjad dari utara ke selatan bagi dua garisan tropika: 'S'artan (Utara) di atas, 'J'adi…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "2.3 Garisan Longitud, GMP & GTA (SP 1.2.2)",
+            "detail": "Latitud = melintang (U/S); Longitud = menegak/panjang kutub ke kutub (T/B).",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "2.4 Menentukan Kedudukan Berdasarkan Latitud &…",
+            "detail": "Ingat hukum abjad mudah: LATITUD sebelum LONGITUD ('a' datang sebelum 'o').",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Membahagikan Hemisfera Utara dan Selatan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Membahagikan Hemisfera Utara dan Selatan tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Membahagikan Hemisfera Utara dan Selatan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+              "spokenText": "Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+                    "detail": "Ingat urutan huruf abjad dari utara ke selatan bagi dua garisan tropika: 'S'artan (Utara) di atas, 'J'adi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Garisan Longitud, GMP & GTA (SP 1.2.2)",
+                    "detail": "Latitud = melintang (U/S); Longitud = menegak/panjang kutub ke kutub (T/B).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Menentukan Kedudukan Berdasarkan Latitud &…",
+                    "detail": "Ingat hukum abjad mudah: LATITUD sebelum LONGITUD ('a' datang sebelum 'o').",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Memisahkan tarikh dan waktu antara bahagian timur dan barat bumi",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menentukan jarak mutlak antara dua sekolah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menentukan jarak mutlak antara dua sekolah tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menentukan jarak mutlak antara dua sekolah tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+              "spokenText": "Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+                    "detail": "Ingat urutan huruf abjad dari utara ke selatan bagi dua garisan tropika: 'S'artan (Utara) di atas, 'J'adi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "2.3 Garisan Longitud, GMP & GTA (SP 1.2.2)",
+                    "detail": "Latitud = melintang (U/S); Longitud = menegak/panjang kutub ke kutub (T/B).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "2.4 Menentukan Kedudukan Berdasarkan Latitud &…",
+                    "detail": "Ingat hukum abjad mudah: LATITUD sebelum LONGITUD ('a' datang sebelum 'o').",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+              "detail": "Ingat urutan huruf abjad dari utara ke selatan bagi dua garisan tropika: 'S'artan (Utara) di atas, 'J'adi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Garisan Longitud, GMP & GTA (SP 1.2.2)",
+              "detail": "Latitud = melintang (U/S); Longitud = menegak/panjang kutub ke kutub (T/B).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Menentukan Kedudukan Berdasarkan Latitud &…",
+              "detail": "Ingat hukum abjad mudah: LATITUD sebelum LONGITUD ('a' datang sebelum 'o').",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Kedudukan",
+          "desc": "Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Garisan Tarikh Antarabangsa (GTA) memisahkan tarikh dan hari antara bahagian timur dan barat bumi.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "2.2 Garisan Latitud Utama (SP 1.2.2)",
+              "detail": "Ingat urutan huruf abjad dari utara ke selatan bagi dua garisan tropika: 'S'artan (Utara) di atas, 'J'adi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "2.3 Garisan Longitud, GMP & GTA (SP 1.2.2)",
+              "detail": "Latitud = melintang (U/S); Longitud = menegak/panjang kutub ke kutub (T/B).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "2.4 Menentukan Kedudukan Berdasarkan Latitud &…",
+              "detail": "Ingat hukum abjad mudah: LATITUD sebelum LONGITUD ('a' datang sebelum 'o').",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

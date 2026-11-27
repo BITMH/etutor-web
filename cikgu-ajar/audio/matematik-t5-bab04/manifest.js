@@ -1,0 +1,406 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t5-bab04"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t5-bab04/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Apakah tindakan perundangan yang akan diambil terhadap Puan Salma selepas tamat tempoh 15 hari tersebut?",
+      "duration": 6.059,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "lazim",
+          "start": 0.46,
+          "end": 0.8
+        },
+        {
+          "word": "matematik.",
+          "start": 0.8,
+          "end": 1.3
+        },
+        {
+          "word": "Apakah",
+          "start": 1.52,
+          "end": 2.0
+        },
+        {
+          "word": "tindakan",
+          "start": 2.0,
+          "end": 2.4
+        },
+        {
+          "word": "perundangan",
+          "start": 2.4,
+          "end": 2.88
+        },
+        {
+          "word": "yang",
+          "start": 2.88,
+          "end": 3.02
+        },
+        {
+          "word": "akan",
+          "start": 3.02,
+          "end": 3.18
+        },
+        {
+          "word": "diambil",
+          "start": 3.18,
+          "end": 3.56
+        },
+        {
+          "word": "terhadap",
+          "start": 3.56,
+          "end": 3.94
+        },
+        {
+          "word": "puan",
+          "start": 3.94,
+          "end": 4.12
+        },
+        {
+          "word": "Salma",
+          "start": 4.12,
+          "end": 4.44
+        },
+        {
+          "word": "selepas",
+          "start": 4.44,
+          "end": 4.74
+        },
+        {
+          "word": "tamat",
+          "start": 4.74,
+          "end": 4.98
+        },
+        {
+          "word": "tempoh",
+          "start": 4.98,
+          "end": 5.3
+        },
+        {
+          "word": "5",
+          "start": 5.3,
+          "end": 5.38
+        },
+        {
+          "word": "hari",
+          "start": 5.38,
+          "end": 5.6
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.6,
+          "end": 5.94
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t5-bab04/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Mengapakah sebuah warung makanan dengan jualan tahunan 120000 ringgit Malaysia TIDAK mengutip cukai perkhidmatan 6 peratus daripada pelanggannya?",
+      "duration": 9.995,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "langkah",
+          "start": 0.44,
+          "end": 0.8
+        },
+        {
+          "word": "di",
+          "start": 0.8,
+          "end": 0.92
+        },
+        {
+          "word": "Papan,",
+          "start": 0.92,
+          "end": 1.26
+        },
+        {
+          "word": "mengapakah",
+          "start": 1.76,
+          "end": 2.34
+        },
+        {
+          "word": "sebuah",
+          "start": 2.34,
+          "end": 2.64
+        },
+        {
+          "word": "warung",
+          "start": 2.64,
+          "end": 2.94
+        },
+        {
+          "word": "makanan",
+          "start": 2.94,
+          "end": 3.3
+        },
+        {
+          "word": "dengan",
+          "start": 3.3,
+          "end": 3.5
+        },
+        {
+          "word": "jualan",
+          "start": 3.5,
+          "end": 3.88
+        },
+        {
+          "word": "tahulian",
+          "start": 3.88,
+          "end": 4.34
+        },
+        {
+          "word": "Muan",
+          "start": 4.34,
+          "end": 4.72
+        },
+        {
+          "word": "Turas",
+          "start": 4.72,
+          "end": 5.0
+        },
+        {
+          "word": "Rupuak",
+          "start": 5.0,
+          "end": 5.34
+        },
+        {
+          "word": "Pim",
+          "start": 5.34,
+          "end": 5.76
+        },
+        {
+          "word": "beringit",
+          "start": 5.76,
+          "end": 6.26
+        },
+        {
+          "word": "Malaysia",
+          "start": 6.26,
+          "end": 6.64
+        },
+        {
+          "word": "tidak",
+          "start": 6.64,
+          "end": 6.96
+        },
+        {
+          "word": "mengutik",
+          "start": 6.96,
+          "end": 7.64
+        },
+        {
+          "word": "cukai",
+          "start": 7.64,
+          "end": 8.0
+        },
+        {
+          "word": "perhidmatan",
+          "start": 8.0,
+          "end": 8.6
+        },
+        {
+          "word": "sing",
+          "start": 8.6,
+          "end": 8.92
+        },
+        {
+          "word": "-fi",
+          "start": 8.92,
+          "end": 9.08
+        },
+        {
+          "word": "perpelangganya.",
+          "start": 9.08,
+          "end": 9.72
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t5-bab04/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Tujuan & Fungsi Rasmi Percukaian\":",
+      "duration": 6.752,
+      "words": [
+        {
+          "word": "korangkap",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "Lazim",
+          "start": 0.54,
+          "end": 0.84
+        },
+        {
+          "word": "Mathematik,",
+          "start": 0.84,
+          "end": 1.42
+        },
+        {
+          "word": "pilih",
+          "start": 1.54,
+          "end": 2.02
+        },
+        {
+          "word": "item",
+          "start": 2.02,
+          "end": 2.34
+        },
+        {
+          "word": "yang",
+          "start": 2.34,
+          "end": 2.5
+        },
+        {
+          "word": "tepat",
+          "start": 2.5,
+          "end": 2.8
+        },
+        {
+          "word": "bagi",
+          "start": 2.8,
+          "end": 3.12
+        },
+        {
+          "word": "kategori",
+          "start": 3.12,
+          "end": 3.7
+        },
+        {
+          "word": "tujuan",
+          "start": 3.7,
+          "end": 4.78
+        },
+        {
+          "word": "dan",
+          "start": 4.78,
+          "end": 4.9
+        },
+        {
+          "word": "fungsi",
+          "start": 4.9,
+          "end": 5.24
+        },
+        {
+          "word": "rasmi",
+          "start": 5.24,
+          "end": 5.62
+        },
+        {
+          "word": "percukayan.",
+          "start": 5.62,
+          "end": 6.18
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t5-bab04/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Hitung cukai yang perlu dibayar dan tentukan baki bayaran atau lebihan PCB Encik Amir:",
+      "duration": 6.517,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "langkah",
+          "start": 0.48,
+          "end": 0.76
+        },
+        {
+          "word": "di",
+          "start": 0.76,
+          "end": 0.88
+        },
+        {
+          "word": "papan,",
+          "start": 0.88,
+          "end": 1.16
+        },
+        {
+          "word": "hitung",
+          "start": 1.7,
+          "end": 2.12
+        },
+        {
+          "word": "cukai",
+          "start": 2.12,
+          "end": 2.5
+        },
+        {
+          "word": "yang",
+          "start": 2.5,
+          "end": 2.62
+        },
+        {
+          "word": "perlu",
+          "start": 2.62,
+          "end": 2.8
+        },
+        {
+          "word": "dibayar",
+          "start": 2.8,
+          "end": 3.24
+        },
+        {
+          "word": "dan",
+          "start": 3.24,
+          "end": 3.34
+        },
+        {
+          "word": "tentukan",
+          "start": 3.34,
+          "end": 3.7
+        },
+        {
+          "word": "baki",
+          "start": 3.7,
+          "end": 3.98
+        },
+        {
+          "word": "bayaran",
+          "start": 3.98,
+          "end": 4.36
+        },
+        {
+          "word": "atau",
+          "start": 4.36,
+          "end": 4.52
+        },
+        {
+          "word": "lebihhan",
+          "start": 4.52,
+          "end": 4.9
+        },
+        {
+          "word": "PCB,",
+          "start": 4.9,
+          "end": 5.26
+        },
+        {
+          "word": "Cik",
+          "start": 5.92,
+          "end": 6.1
+        },
+        {
+          "word": "Amir",
+          "start": 6.1,
+          "end": 6.34
+        }
+      ]
+    }
+  }
+};

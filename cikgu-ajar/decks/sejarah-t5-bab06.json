@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t5-bab06",
+  "title": "Bab 6: Cabaran Selepas Pembentukan Malaysia",
+  "shortTitle": "Bab 6: Cabaran Selepas",
+  "subject": "Sejarah",
+  "form": "T5",
+  "bab": 6,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bab 6: Cabaran Selepas",
+    "desc": "Untuk soalan SPM Subtopik 6.1, kaitkan 3 teras tindakan di Sarawak dan Sabah: mempelbagaikan ekonomi komersial, membangunkan perhubungan RMK1 (1966)…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Mengapakah darurat tetap diisytiharkan di Sarawak pada September 1966 sebelum Tawi Sli dilantik?",
+        "spokenText": "Perangkap lazim Sejarah! Mengapakah darurat tetap diisytiharkan di Sarawak pada September 1966 sebelum Tawi Sli dilantik?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Mengapakah darurat tetap diisytiharkan di Sarawak pada September 1966 sebelum Tawi Sli dilantik?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Kerajaan Indonesia melancarkan serangan udara secara langsung ke atas bangunan Dewan Undangan di Kuching",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan negeri",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kerajaan Indonesia melancarkan serangan udara secara langsung ke atas bangunan Dewan Undangan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan…. Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima…",
+              "spokenText": "Fakta sebenar: Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan . Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan negeri",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima undi tidak percaya daripada Council Negri.…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Gabenor Sarawak membubarkan Perjanjian Malaysia 1963 untuk menyertai Konfederasi Kalimantan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan…. Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima…",
+              "spokenText": "Fakta sebenar: Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan . Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan negeri",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima undi tidak percaya daripada Council Negri.…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan negeri",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima undi tidak percaya daripada Council Negri.…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima undi tidak percaya daripada…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sekembalinya ke pejabat selepas menang kes mahkamah, Stephen Kalong Ningkan menerima undi tidak percaya daripada",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Beliau berdepan undi tidak percaya daripada Council Negri sehingga ketegangan politik mengancam keselamatan serta kestabilan negeri",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Krisis Politik Sarawak 1966",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Dalam The Sarawak Gazette (31 Ogos 1963), YB Abdul Taib Mahmud menyatakan sesebuah negara akan menikmati kemerdekaan…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Dalam The Sarawak Gazette (31 Ogos 1963), YB Abdul Taib Mahmud menyatakan sesebuah negara akan menikmati kemerdekaan"
+      },
+      "board": {
+        "promptPill": "Dalam The Sarawak Gazette (31 Ogos 1963), YB Abdul Taib Mahmud menyatakan sesebuah…",
+        "title": "Krisis Politik Sarawak 1966 & Cabaran Perpaduan Kaum",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "6.1 Cabaran Pembangunan & Sosioekonomi…",
+            "detail": "Kerajaan Persekutuan melangkah ke hadapan untuk mengubah kegiatan sara diri di Sarawak dan Sabah kepada…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Krisis Politik Sarawak 1966 & Cabaran…",
+            "detail": "Ketidakstabilan politik di Sarawak serta cabaran jarak geografi dan kepelbagaian kaum menuntut pendekatan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik,…",
+            "detail": "Pertembungan aspirasi politik, tuntutan kewangan serta insiden perkauman meruncingkan hubungan Kerajaan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kestabilan ekonomi, kesejahteraan rakyat serta perkongsian kemakmuran bersama sebahagian…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Penumpuan hasil cukai petroleum sepenuhnya di ibu kota Semenanjung tanpa melibatkan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Penumpuan hasil cukai petroleum… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Penumpuan hasil cukai petroleum tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial dan perkongsian kemakmuran…",
+              "spokenText": "YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial dan perkongsian kemakmuran",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "6.1 Cabaran Pembangunan & Sosioekonomi…",
+                    "detail": "Kerajaan Persekutuan melangkah ke hadapan untuk mengubah kegiatan sara diri di Sarawak dan Sabah kepada…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Krisis Politik Sarawak 1966 & Cabaran…",
+                    "detail": "Ketidakstabilan politik di Sarawak serta cabaran jarak geografi dan kepelbagaian kaum menuntut pendekatan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik,…",
+                    "detail": "Pertembungan aspirasi politik, tuntutan kewangan serta insiden perkauman meruncingkan hubungan Kerajaan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Pemansuhan kesemua sekolah vernakular dan penutupan laluan sungai di kawasan pedalaman",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pemansuhan kesemua sekolah vernakular… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pemansuhan kesemua sekolah vernakular tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial dan perkongsian kemakmuran…",
+              "spokenText": "YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial dan perkongsian kemakmuran",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "6.1 Cabaran Pembangunan & Sosioekonomi…",
+                    "detail": "Kerajaan Persekutuan melangkah ke hadapan untuk mengubah kegiatan sara diri di Sarawak dan Sabah kepada…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Krisis Politik Sarawak 1966 & Cabaran…",
+                    "detail": "Ketidakstabilan politik di Sarawak serta cabaran jarak geografi dan kepelbagaian kaum menuntut pendekatan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik,…",
+                    "detail": "Pertembungan aspirasi politik, tuntutan kewangan serta insiden perkauman meruncingkan hubungan Kerajaan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "6.1 Cabaran Pembangunan & Sosioekonomi…",
+              "detail": "Kerajaan Persekutuan melangkah ke hadapan untuk mengubah kegiatan sara diri di Sarawak dan Sabah kepada…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Krisis Politik Sarawak 1966 & Cabaran…",
+              "detail": "Ketidakstabilan politik di Sarawak serta cabaran jarak geografi dan kepelbagaian kaum menuntut pendekatan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik,…",
+              "detail": "Pertembungan aspirasi politik, tuntutan kewangan serta insiden perkauman meruncingkan hubungan Kerajaan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Krisis Politik Sarawak 1966",
+          "desc": "YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial dan perkongsian…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: YB Abdul Taib Mahmud menegaskan bahawa kemerdekaan bermakna terjamin melalui kestabilan ekonomi, kesejahteraan sosial",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "6.1 Cabaran Pembangunan & Sosioekonomi…",
+              "detail": "Kerajaan Persekutuan melangkah ke hadapan untuk mengubah kegiatan sara diri di Sarawak dan Sabah kepada…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Krisis Politik Sarawak 1966 & Cabaran…",
+              "detail": "Ketidakstabilan politik di Sarawak serta cabaran jarak geografi dan kepelbagaian kaum menuntut pendekatan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik,…",
+              "detail": "Pertembungan aspirasi politik, tuntutan kewangan serta insiden perkauman meruncingkan hubungan Kerajaan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 6.2 Tiga Faktor Pemisahan",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah rasional utama Tunku Abdul Rahman Putra al-Haj membawa usul pemisahan Singapura secara rundingan ke Parlimen pada 9…",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah rasional utama Tunku Abdul Rahman Putra al-Haj membawa usul pemisahan Singapura secara rundingan ke Parlimen pada 9"
+      },
+      "board": {
+        "promptPill": "Apakah rasional utama Tunku Abdul Rahman Putra al-Haj membawa usul pemisahan…",
+        "title": "6.2 Tiga Faktor Pemisahan Singapura (Politik, Ekonomi & Sosial)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "21 Julai 1964",
+            "detail": "Rusuhan kaum di Singapura ekoran tuntutan hak sama rata semua kaum",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Pasaran Bersama (Common Market)",
+            "detail": "Penghapusan cukai antara negara anggota dengan cukai import seragam terhadap negara luar",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Pinjaman RM150 Juta",
+            "detail": "Cadangan Singapura mengenakan kadar faedah ke atas dana pembangunan Sarawak & Sabah",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menjaga kepentingan, keselamatan serta kemakmuran kedua-dua negara dengan mengelakkan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menyerahkan hak pertahanan Singapura sepenuhnya kepada tentera British tanpa perjanjian…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menyerahkan hak pertahanan Singapura… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menyerahkan hak pertahanan Singapura tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan pertikaian perkauman tanpa…",
+              "spokenText": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan pertikaian perkauman tanpa",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "6.2 Tiga Faktor Pemisahan",
+                "desc": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Membolehkan Singapura menyertai negara jiran di selatan sebagai wilayah kesatuan baharu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Membolehkan Singapura menyertai negara… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Membolehkan Singapura menyertai negara tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan pertikaian perkauman tanpa…",
+              "spokenText": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan pertikaian perkauman tanpa",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "6.2 Tiga Faktor Pemisahan",
+                "desc": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "6.2 Tiga Faktor Pemisahan",
+          "desc": "Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara, menamatkan pertikaian…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara,…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Pemisahan secara rundingan bertujuan memelihara kepentingan serta kemakmuran jangka panjang kedua-dua negara,"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Bab 6: Cabaran",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Cakna dan Cerminan Sejarah Bab 6 (m/s 24), apakah tanggungjawab utama setiap warganegara Malaysia…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Cakna dan Cerminan Sejarah Bab 6 ( meter per saat 24), apakah tanggungjawab utama setiap warganegara Malaysia"
+      },
+      "board": {
+        "promptPill": "Berdasarkan rumusan Cakna dan Cerminan Sejarah Bab 6 (m/s 24), apakah tanggungjawab…",
+        "title": "Rumusan: Bab 6: Cabaran Selepas",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Taraf Hidup, Latihan Vokasional & Kesihatan…",
+            "detail": "Jangan lupa poin kesihatan dan sosial wanita (m/s 15): kadar kelahiran tidak normal & kematian tinggi…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "6.5 Faktor Rusuhan 13 Mei 1969 & Tindakan…",
+            "detail": "Hafal 2 lokasi pusat perlindungan rasmi mangsa rusuhan dalam buku teks: Stadium Merdeka dan Tiong Nam…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "MAGERAN (1969–1971) & Peranan Raja-raja Melayu",
+            "detail": "Hafal tempoh tepat pemerintahan MAGERAN (16 Mei 1969 – 23 Februari 1971), dua fokus utamanya (perpaduan kaum…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menghargai nikmat keamanan, mengamalkan sikap bertolak ansur, menyelesaikan masalah…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Mengutamakan kepentingan satu kaum sahaja dalam kempen politik supaya persaingan menjadi…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Mengutamakan kepentingan satu kaum… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Mengutamakan kepentingan satu kaum tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara bijaksana dan memelihara…",
+              "spokenText": "Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara bijaksana dan memelihara",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Taraf Hidup, Latihan Vokasional & Kesihatan…",
+                    "detail": "Jangan lupa poin kesihatan dan sosial wanita (m/s 15): kadar kelahiran tidak normal & kematian tinggi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "6.5 Faktor Rusuhan 13 Mei 1969 & Tindakan…",
+                    "detail": "Hafal 2 lokasi pusat perlindungan rasmi mangsa rusuhan dalam buku teks: Stadium Merdeka dan Tiong Nam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "MAGERAN (1969–1971) & Peranan Raja-raja Melayu",
+                    "detail": "Hafal tempoh tepat pemerintahan MAGERAN (16 Mei 1969 – 23 Februari 1971), dua fokus utamanya (perpaduan kaum…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menyerahkan tugas memelihara keharmonian masyarakat sepenuhnya kepada pasukan polis dan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menyerahkan tugas memelihara keharmonian… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menyerahkan tugas memelihara keharmonian tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara bijaksana dan memelihara…",
+              "spokenText": "Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara bijaksana dan memelihara",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Taraf Hidup, Latihan Vokasional & Kesihatan…",
+                    "detail": "Jangan lupa poin kesihatan dan sosial wanita (m/s 15): kadar kelahiran tidak normal & kematian tinggi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "6.5 Faktor Rusuhan 13 Mei 1969 & Tindakan…",
+                    "detail": "Hafal 2 lokasi pusat perlindungan rasmi mangsa rusuhan dalam buku teks: Stadium Merdeka dan Tiong Nam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "MAGERAN (1969–1971) & Peranan Raja-raja Melayu",
+                    "detail": "Hafal tempoh tepat pemerintahan MAGERAN (16 Mei 1969 – 23 Februari 1971), dua fokus utamanya (perpaduan kaum…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Taraf Hidup, Latihan Vokasional & Kesihatan…",
+              "detail": "Jangan lupa poin kesihatan dan sosial wanita (m/s 15): kadar kelahiran tidak normal & kematian tinggi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "6.5 Faktor Rusuhan 13 Mei 1969 & Tindakan…",
+              "detail": "Hafal 2 lokasi pusat perlindungan rasmi mangsa rusuhan dalam buku teks: Stadium Merdeka dan Tiong Nam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "MAGERAN (1969–1971) & Peranan Raja-raja Melayu",
+              "detail": "Hafal tempoh tepat pemerintahan MAGERAN (16 Mei 1969 – 23 Februari 1971), dua fokus utamanya (perpaduan kaum…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bab 6: Cabaran",
+          "desc": "Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara bijaksana dan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Iktibar utama Bab 6 menegaskan pentingnya menghargai keamanan, bersikap tolak ansur, memilih meja perundingan secara",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Taraf Hidup, Latihan Vokasional & Kesihatan…",
+              "detail": "Jangan lupa poin kesihatan dan sosial wanita (m/s 15): kadar kelahiran tidak normal & kematian tinggi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "6.5 Faktor Rusuhan 13 Mei 1969 & Tindakan…",
+              "detail": "Hafal 2 lokasi pusat perlindungan rasmi mangsa rusuhan dalam buku teks: Stadium Merdeka dan Tiong Nam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "MAGERAN (1969–1971) & Peranan Raja-raja Melayu",
+              "detail": "Hafal tempoh tepat pemerintahan MAGERAN (16 Mei 1969 – 23 Februari 1971), dua fokus utamanya (perpaduan kaum…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

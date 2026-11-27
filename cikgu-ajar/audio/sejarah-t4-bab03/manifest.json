@@ -1,0 +1,405 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab03/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Dalam 'Cerita Tekukur' (1920), burung tekukur menangisi nasibnya terkurung dalam sangkar emas sambil merujuk 'Tekukur nombor",
+      "duration": 6.987,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "lazim",
+          "start": 0.4,
+          "end": 0.72
+        },
+        {
+          "word": "sejarah",
+          "start": 0.72,
+          "end": 1.2
+        },
+        {
+          "word": "dalam",
+          "start": 1.2,
+          "end": 1.52
+        },
+        {
+          "word": "cerita",
+          "start": 1.52,
+          "end": 1.88
+        },
+        {
+          "word": "terbukur,",
+          "start": 1.88,
+          "end": 2.42
+        },
+        {
+          "word": "burung",
+          "start": 2.56,
+          "end": 3.2
+        },
+        {
+          "word": "terkukur",
+          "start": 3.2,
+          "end": 3.6
+        },
+        {
+          "word": "melangisi",
+          "start": 3.6,
+          "end": 3.94
+        },
+        {
+          "word": "nasibnya",
+          "start": 3.94,
+          "end": 4.34
+        },
+        {
+          "word": "terkurung",
+          "start": 4.34,
+          "end": 4.74
+        },
+        {
+          "word": "dalam",
+          "start": 4.74,
+          "end": 4.92
+        },
+        {
+          "word": "sangka",
+          "start": 4.92,
+          "end": 5.32
+        },
+        {
+          "word": "emas",
+          "start": 5.32,
+          "end": 5.62
+        },
+        {
+          "word": "sambil",
+          "start": 5.62,
+          "end": 5.9
+        },
+        {
+          "word": "merujut",
+          "start": 5.9,
+          "end": 6.22
+        },
+        {
+          "word": "terkukur",
+          "start": 6.22,
+          "end": 6.58
+        },
+        {
+          "word": "nombor.",
+          "start": 6.58,
+          "end": 6.86
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab03/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan Persidangan Damai Paris & Perjanjian Versailles (28 Jun 1919), tindakan manakah dikenakan ke atas Jerman?",
+      "duration": 6.603,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "urutan",
+          "start": 0.58,
+          "end": 1.04
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.04,
+          "end": 1.54
+        },
+        {
+          "word": "di",
+          "start": 1.54,
+          "end": 1.64
+        },
+        {
+          "word": "Papan",
+          "start": 1.64,
+          "end": 2.08
+        },
+        {
+          "word": "berdasarkan",
+          "start": 2.08,
+          "end": 3.1
+        },
+        {
+          "word": "persidangan",
+          "start": 3.1,
+          "end": 3.58
+        },
+        {
+          "word": "damai",
+          "start": 3.58,
+          "end": 3.92
+        },
+        {
+          "word": "perisian",
+          "start": 3.92,
+          "end": 4.36
+        },
+        {
+          "word": "perjanjian",
+          "start": 4.36,
+          "end": 4.82
+        },
+        {
+          "word": "bersiaul",
+          "start": 4.82,
+          "end": 5.26
+        },
+        {
+          "word": "-saul",
+          "start": 5.26,
+          "end": 5.96
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab03/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah sebab kegagalan Operasi Barbarossa Jerman di Rusia ( meter per saat 13) serta kunci kejayaan Pendaratan D-Day oleh Kuasa",
+      "duration": 10.293,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.7
+        },
+        {
+          "word": "raja",
+          "start": 0.7,
+          "end": 0.96
+        },
+        {
+          "word": "konsep",
+          "start": 0.96,
+          "end": 1.4
+        },
+        {
+          "word": "di",
+          "start": 1.4,
+          "end": 1.48
+        },
+        {
+          "word": "Papan?",
+          "start": 1.48,
+          "end": 1.82
+        },
+        {
+          "word": "Apakah",
+          "start": 2.28,
+          "end": 2.7
+        },
+        {
+          "word": "sebab",
+          "start": 2.7,
+          "end": 3.02
+        },
+        {
+          "word": "kegagalan",
+          "start": 3.02,
+          "end": 3.66
+        },
+        {
+          "word": "operasi",
+          "start": 3.66,
+          "end": 4.16
+        },
+        {
+          "word": "Bapak",
+          "start": 4.16,
+          "end": 4.38
+        },
+        {
+          "word": "Rafa",
+          "start": 4.38,
+          "end": 4.54
+        },
+        {
+          "word": "Sajemen",
+          "start": 4.54,
+          "end": 5.02
+        },
+        {
+          "word": "di",
+          "start": 5.02,
+          "end": 5.18
+        },
+        {
+          "word": "Rusia,",
+          "start": 5.18,
+          "end": 5.5
+        },
+        {
+          "word": "kini",
+          "start": 6.14,
+          "end": 6.36
+        },
+        {
+          "word": "terperasaan",
+          "start": 6.36,
+          "end": 6.94
+        },
+        {
+          "word": "titik",
+          "start": 6.94,
+          "end": 7.28
+        },
+        {
+          "word": "seta",
+          "start": 7.28,
+          "end": 7.64
+        },
+        {
+          "word": "kunci",
+          "start": 7.64,
+          "end": 7.98
+        },
+        {
+          "word": "kejayaan",
+          "start": 7.98,
+          "end": 8.48
+        },
+        {
+          "word": "pendaratan",
+          "start": 8.48,
+          "end": 9.04
+        },
+        {
+          "word": "dide",
+          "start": 9.04,
+          "end": 9.32
+        },
+        {
+          "word": "oleh",
+          "start": 9.32,
+          "end": 9.54
+        },
+        {
+          "word": "kuasa?",
+          "start": 9.54,
+          "end": 9.98
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab03/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan penutup Bab 3 ( meter per saat 36 & 42), apakah iktibar terpenting daripada tragedi konflik dunia, kekejaman perang,",
+      "duration": 8.587,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "urutan",
+          "start": 0.28,
+          "end": 0.62
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.62,
+          "end": 1.12
+        },
+        {
+          "word": "di",
+          "start": 1.12,
+          "end": 1.22
+        },
+        {
+          "word": "Papand.",
+          "start": 1.22,
+          "end": 1.56
+        },
+        {
+          "word": "Berdasarkan",
+          "start": 1.72,
+          "end": 2.44
+        },
+        {
+          "word": "penutup",
+          "start": 2.44,
+          "end": 2.92
+        },
+        {
+          "word": "bukti",
+          "start": 2.92,
+          "end": 3.3
+        },
+        {
+          "word": "meter",
+          "start": 3.3,
+          "end": 3.6
+        },
+        {
+          "word": "pesaian",
+          "start": 3.6,
+          "end": 4.02
+        },
+        {
+          "word": "3C",
+          "start": 4.02,
+          "end": 4.64
+        },
+        {
+          "word": "apakah",
+          "start": 4.64,
+          "end": 5.16
+        },
+        {
+          "word": "itibah",
+          "start": 5.16,
+          "end": 5.58
+        },
+        {
+          "word": "terpenting",
+          "start": 5.58,
+          "end": 6.02
+        },
+        {
+          "word": "daripada",
+          "start": 6.02,
+          "end": 6.32
+        },
+        {
+          "word": "tragedy",
+          "start": 6.32,
+          "end": 6.62
+        },
+        {
+          "word": "konfig",
+          "start": 6.62,
+          "end": 7.06
+        },
+        {
+          "word": "dunia",
+          "start": 7.06,
+          "end": 7.48
+        },
+        {
+          "word": "kekejaman",
+          "start": 7.48,
+          "end": 7.98
+        },
+        {
+          "word": "kurang.",
+          "start": 7.98,
+          "end": 8.32
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-inggeris-t2-bab01",
+  "title": "Unit 1 (Pulse 2 Unit 6): Money & Future Plans",
+  "shortTitle": "Unit 1 : Money",
+  "subject": "Bahasa Inggeris",
+  "form": "T2",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Unit 1 : Money",
+    "desc": "'Would like' wants 'to'; plain 'like' often takes '-ing'."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Earning & Saving Money Vocabulary (Pulse 2 Unit 6)?",
+        "spokenText": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Earning & Saving Money Vocabulary (Pulse 2 Unit 6)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Earning & Saving Money Vocabulary (Pulse 2 Unit 6)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Writing 'I would like going shopping' instead of 'to go shopping'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Writing 'I would like going shopping' instead of 'to go shopping'.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'. 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+              "spokenText": "Fakta sebenar: Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'. 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mixing up 'borrow' and 'lend': 'Can you borrow me your pen?'",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'. 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+              "spokenText": "Fakta sebenar: Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'. 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Would like' wants 'to'; plain 'like' often takes '-ing'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Always follow 'would like' with 'to + infinitive': 'I would like to go shopping.'",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 1.1 Earning & Saving",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Complete with the correct DSKP grammar pattern: 'Jess ______ to babysit every weekend because she prefers tutoring…",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Complete with the correct D S K P grammar pattern: 'Jess ______ to babysit every weekend because she prefers tutoring"
+      },
+      "board": {
+        "promptPill": "Complete with the correct DSKP grammar pattern: 'Jess ______ to babysit every…",
+        "title": "1.1 Earning & Saving Money Vocabulary (Pulse 2 Unit 6)",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Chores & pocket money verbs",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Money verbs",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "Compare pairs carefully",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Remember: Borrow FROM a lender; Lend TO a borrower."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "wouldn't like",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "doesn't would like",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan doesn't would like tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan doesn't would like tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "The negative form in DSKP Form 2 is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'.",
+              "spokenText": "The negative form in D S K P Fo2 ringgit Malaysia is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "would like not",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan would like not tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan would like not tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "The negative form in DSKP Form 2 is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'.",
+              "spokenText": "The negative form in D S K P Fo2 ringgit Malaysia is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "1.1 Earning & Saving",
+          "desc": "The negative form in DSKP Form 2 is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: The negative form in DSKP Form 2 is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: The negative form in D S K P Fo2 ringgit Malaysia is 'wouldn't like + to-infinitive': 'Jess wouldn't like to babysit'."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Inggeris! Choose the natural short reply to 'Would you like to join our recycling sale?'",
+        "spokenText": "Perangkap lazim Bahasa Inggeris! Choose the natural short reply to 'Would you like to join our recycling sale?'"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Choose the natural short reply to 'Would you like to join our recycling sale?'",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Yes, I would like.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Yes, I would.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Yes, I would like.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Yes, I would.. DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+              "spokenText": "Fakta sebenar: Yes, I would.. D S K P specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Yes, I would.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Yes, I am.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Inggeris. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Yes, I would.. DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+              "spokenText": "Fakta sebenar: Yes, I would.. D S K P specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Yes, I would.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Yes, I would.",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Yes, I would.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: DSKP specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: D S K P specifies 'Yes, I would.' / 'No, I wouldn't.' for 'Would you like...' questions.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Yes, I would.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Unit 1 :",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Which verb completes this sentence accurately: 'Aina wants to ______ RM50 from her elder brother until Friday.'",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Which verb completes this sentence accurately: 'Aina wants to ______ 50 ringgit Malaysia from her elder brother until Friday.'"
+      },
+      "board": {
+        "promptPill": "Which verb completes this sentence accurately: 'Aina wants to ______ RM50 from her…",
+        "title": "Rumusan: Unit 1 : Money",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Affirmative & Negative",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Questions & Short Answers",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Contrast 'would like to…",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "DSKP target rule: 'Yes, I would.' / 'No, I wouldn't.'"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "lend",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan lend tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan lend tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'Borrow ... from' means receiving something temporarily with a promise to return it.",
+              "spokenText": "'Borrow ... from' means receiving something temporarily with a promise to return it."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "borrow",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "spend",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan spend tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan spend tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'Borrow ... from' means receiving something temporarily with a promise to return it.",
+              "spokenText": "'Borrow ... from' means receiving something temporarily with a promise to return it."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Unit 1 :",
+          "desc": "'Borrow ... from' means receiving something temporarily with a promise to return it.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'Borrow ... from' means receiving something temporarily with a promise to return it.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'Borrow ... from' means receiving something temporarily with a promise to return it."
+      }
+    }
+  ]
+}

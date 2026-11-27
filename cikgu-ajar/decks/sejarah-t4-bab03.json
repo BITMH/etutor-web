@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t4-bab03",
+  "title": "Konflik Dunia & Pendudukan Jepun di Negara Kita",
+  "shortTitle": "Konflik Dunia & Pendudukan",
+  "subject": "Sejarah",
+  "form": "T4",
+  "bab": 3,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Konflik Dunia & Pendudukan",
+    "desc": "Ingat kod tarikh kiasan dalam Cerita Tekukur: 1874 (Pangkor / NMB) dan 1909 (Bangkok / NMTB)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Dalam 'Cerita Tekukur' (1920), burung tekukur menangisi nasibnya terkurung dalam sangkar emas sambil merujuk 'Tekukur nombor…",
+        "spokenText": "Perangkap lazim Sejarah! Dalam 'Cerita Tekukur' (1920), burung tekukur menangisi nasibnya terkurung dalam sangkar emas sambil merujuk 'Tekukur nombor"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Dalam 'Cerita Tekukur' (1920), burung tekukur menangisi nasibnya terkurung dalam sangkar emas sambil merujuk 'Tekukur nombor 1874' dan 'Tekukur nombor 1909'.…",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Tarikh bermulanya Perang Dunia Pertama dan Perjanjian Versailles.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung undang-undang penerbitan.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tarikh bermulanya Perang Dunia Pertama dan Perjanjian Versailles.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung…. Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan…",
+              "spokenText": "Fakta sebenar: Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung . Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung undang-undang penerbitan.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan 1909 (Negeri Melayu Tidak Bersekutu utara)…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Harga cukai padi dan getah di Pasir Puteh, Kelantan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung…. Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan…",
+              "spokenText": "Fakta sebenar: Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung . Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung undang-undang penerbitan.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan 1909 (Negeri Melayu Tidak Bersekutu utara)…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung undang-undang penerbitan.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan 1909 (Negeri Melayu Tidak Bersekutu utara)…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan 1909 (Negeri Melayu Tidak…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Karya sastera kiasan menggunakan 1874 (campur tangan di Negeri Melayu Bersekutu) dan 1909 (Negeri Melayu Tidak",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tarikh penting negeri Melayu dikuasai British (Perjanjian Pangkor 1874 & Perjanjian Bangkok 1909) tanpa menyinggung undang-undang penerbitan.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: 3.2 Punca PD1 :",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan Persidangan Damai Paris & Perjanjian Versailles (28 Jun 1919), tindakan manakah dikenakan ke atas Jerman?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan Persidangan Damai Paris & Perjanjian Versailles (28 Jun 1919), tindakan manakah dikenakan ke atas Jerman?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan Persidangan Damai Paris & Perjanjian Versailles (28 Jun 1919), tindakan…",
+        "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs Pakatan Bertiga",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "3.1 Kawalan Akhbar British & Kebangkitan Tok…",
+            "detail": "Nasionalisme awal di Tanah Melayu bergerak secara halus dan bersenjata apabila berdepan kawalan ketat British.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs…",
+            "detail": "Ketegangan di Eropah meletup apabila kuasa besar membahagikan diri kepada dua blok ketenteraan.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Persidangan Damai Paris & Perjanjian…",
+            "detail": "Syarat berat terhadap Jerman menanam benih ketidakpuasan hati yang kelak mencetuskan Perang Dunia Kedua.",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengiktiraf Jerman sebagai ketua Liga Bangsa-Bangsa.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Mengiktiraf Jerman sebagai ketua Liga… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Mengiktiraf Jerman sebagai ketua Liga tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak mencetuskan ketidakpuasan hati yang…",
+              "spokenText": "Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak mencetuskan ketidakpuasan hati yang",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "3.1 Kawalan Akhbar British & Kebangkitan Tok…",
+                    "detail": "Nasionalisme awal di Tanah Melayu bergerak secara halus dan bersenjata apabila berdepan kawalan ketat British.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs…",
+                    "detail": "Ketegangan di Eropah meletup apabila kuasa besar membahagikan diri kepada dua blok ketenteraan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Persidangan Damai Paris & Perjanjian…",
+                    "detail": "Syarat berat terhadap Jerman menanam benih ketidakpuasan hati yang kelak mencetuskan Perang Dunia Kedua.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Bertanggungjawab atas kemusnahan perang, membayar pampasan, mengehadkan tentera dan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyerahkan wilayah Alsace-Lorraine kepada Itali sebagai sekutu Pakatan Bertiga.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menyerahkan wilayah Alsace-Lorraine… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menyerahkan wilayah Alsace-Lorraine tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak mencetuskan ketidakpuasan hati yang…",
+              "spokenText": "Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak mencetuskan ketidakpuasan hati yang",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "3.1 Kawalan Akhbar British & Kebangkitan Tok…",
+                    "detail": "Nasionalisme awal di Tanah Melayu bergerak secara halus dan bersenjata apabila berdepan kawalan ketat British.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs…",
+                    "detail": "Ketegangan di Eropah meletup apabila kuasa besar membahagikan diri kepada dua blok ketenteraan.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Persidangan Damai Paris & Perjanjian…",
+                    "detail": "Syarat berat terhadap Jerman menanam benih ketidakpuasan hati yang kelak mencetuskan Perang Dunia Kedua.",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "3.1 Kawalan Akhbar British & Kebangkitan Tok…",
+              "detail": "Nasionalisme awal di Tanah Melayu bergerak secara halus dan bersenjata apabila berdepan kawalan ketat British.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs…",
+              "detail": "Ketegangan di Eropah meletup apabila kuasa besar membahagikan diri kepada dua blok ketenteraan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Persidangan Damai Paris & Perjanjian…",
+              "detail": "Syarat berat terhadap Jerman menanam benih ketidakpuasan hati yang kelak mencetuskan Perang Dunia Kedua.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "3.2 Punca PD1 :",
+          "desc": "Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak mencetuskan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Syarat berat Perjanjian Versailles terhadap Jerman dan kegagalan memberi ganjaran jajahan kepada Itali kelak",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "3.1 Kawalan Akhbar British & Kebangkitan Tok…",
+              "detail": "Nasionalisme awal di Tanah Melayu bergerak secara halus dan bersenjata apabila berdepan kawalan ketat British.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "3.2 Punca PD1 (1914–1918): Kuasa Tengah vs…",
+              "detail": "Ketegangan di Eropah meletup apabila kuasa besar membahagikan diri kepada dua blok ketenteraan.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Persidangan Damai Paris & Perjanjian…",
+              "detail": "Syarat berat terhadap Jerman menanam benih ketidakpuasan hati yang kelak mencetuskan Perang Dunia Kedua.",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Persidangan Damai Paris &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah sebab kegagalan Operasi Barbarossa Jerman di Rusia (m/s 13) serta kunci kejayaan Pendaratan D-Day oleh Kuasa…",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah sebab kegagalan Operasi Barbarossa Jerman di Rusia ( meter per saat 13) serta kunci kejayaan Pendaratan D-Day oleh Kuasa"
+      },
+      "board": {
+        "promptPill": "Apakah sebab kegagalan Operasi Barbarossa Jerman di Rusia (m/s 13) serta kunci…",
+        "title": "Persidangan Damai Paris & Perjanjian Versailles (1919)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Krisis Manchuria (1931–1933)",
+            "detail": "Jepun menakluki wilayah Manchuria di China",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Perjanjian Pelucutan Senjata…",
+            "detail": "Jerman keluar liga & memperbesar angkatan tentera",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Krisis Habsyah (1935–1936)",
+            "detail": "Itali menyerang Habsyah (Ethiopia) di Afrika",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Perang melepasi dua musim sejuk menyebabkan Jerman kehabisan peluru/minyak/makanan;…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Rusia menggunakan senjata bom atom di Stalingrad; manakala Jerman berundur secara…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Rusia menggunakan senjata bom atom di… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Rusia menggunakan senjata bom atom di tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais membolehkan pendaratan…",
+              "spokenText": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais membolehkan pendaratan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Persidangan Damai Paris &",
+                "desc": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Cuaca musim panas terlampau di Eropah; manakala Itali berpaling tadah menyerang Berlin.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Cuaca musim panas terlampau di Eropah;… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Cuaca musim panas terlampau di Eropah; tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais membolehkan pendaratan…",
+              "spokenText": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais membolehkan pendaratan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Persidangan Damai Paris &",
+                "desc": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Persidangan Damai Paris &",
+          "desc": "Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke Calais…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Jeneral Friedrich Von Paulus kehabisan bekalan selepas dua musim sejuk di Rusia, sementara strategi maklumat palsu ke"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Konflik Dunia &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan penutup Bab 3 (m/s 36 & 42), apakah iktibar terpenting daripada tragedi konflik dunia, kekejaman perang,…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan penutup Bab 3 ( meter per saat 36 & 42), apakah iktibar terpenting daripada tragedi konflik dunia, kekejaman perang,"
+      },
+      "board": {
+        "promptPill": "Berdasarkan penutup Bab 3 (m/s 36 & 42), apakah iktibar terpenting daripada tragedi…",
+        "title": "Rumusan: Konflik Dunia & Pendudukan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Wira Individu, Operasi Semut (Sarawak) &…",
+            "detail": "Double Tenth (10 Okt 1943) ialah pemberontakan di Jesselton yang berakhir dengan pengorbanan di Petagas.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "3.8 Perkembangan Semangat Nasionalisme (KMM ->…",
+            "detail": "Rantaian wajib: KMM (dibubar) -> KRIS (batal Ogos 1945) -> PKMM (diteruskan pasca-perang).",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "3.9 Bom Atom 1945, Bintang Tiga (14 Hari) &…",
+            "detail": "Ingat peranan Dato' Onn Jaafar sebagai Pegawai Daerah Batu Pahat memeterai perdamaian di Dewan Perniagaan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Memulakan sekatan ekonomi terhadap jiran serantau bagi menjamin kemajuan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Memulakan sekatan ekonomi terhadap jiran… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Memulakan sekatan ekonomi terhadap jiran tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan strategi serta penyelesaian konflik…",
+              "spokenText": "Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan strategi serta penyelesaian konflik",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Wira Individu, Operasi Semut (Sarawak) &…",
+                    "detail": "Double Tenth (10 Okt 1943) ialah pemberontakan di Jesselton yang berakhir dengan pengorbanan di Petagas.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "3.8 Perkembangan Semangat Nasionalisme (KMM ->…",
+                    "detail": "Rantaian wajib: KMM (dibubar) -> KRIS (batal Ogos 1945) -> PKMM (diteruskan pasca-perang).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "3.9 Bom Atom 1945, Bintang Tiga (14 Hari) &…",
+                    "detail": "Ingat peranan Dato' Onn Jaafar sebagai Pegawai Daerah Batu Pahat memeterai perdamaian di Dewan Perniagaan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Menghargai nikmat keamanan, mempertahankan kedaulatan tanah air, dan menyelesaikan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyerahkan keselamatan negara sepenuhnya kepada pakatan ketenteraan asing.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menyerahkan keselamatan negara… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menyerahkan keselamatan negara tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan strategi serta penyelesaian konflik…",
+              "spokenText": "Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan strategi serta penyelesaian konflik",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Wira Individu, Operasi Semut (Sarawak) &…",
+                    "detail": "Double Tenth (10 Okt 1943) ialah pemberontakan di Jesselton yang berakhir dengan pengorbanan di Petagas.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "3.8 Perkembangan Semangat Nasionalisme (KMM ->…",
+                    "detail": "Rantaian wajib: KMM (dibubar) -> KRIS (batal Ogos 1945) -> PKMM (diteruskan pasca-perang).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "3.9 Bom Atom 1945, Bintang Tiga (14 Hari) &…",
+                    "detail": "Ingat peranan Dato' Onn Jaafar sebagai Pegawai Daerah Batu Pahat memeterai perdamaian di Dewan Perniagaan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Wira Individu, Operasi Semut (Sarawak) &…",
+              "detail": "Double Tenth (10 Okt 1943) ialah pemberontakan di Jesselton yang berakhir dengan pengorbanan di Petagas.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "3.8 Perkembangan Semangat Nasionalisme (KMM ->…",
+              "detail": "Rantaian wajib: KMM (dibubar) -> KRIS (batal Ogos 1945) -> PKMM (diteruskan pasca-perang).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "3.9 Bom Atom 1945, Bintang Tiga (14 Hari) &…",
+              "detail": "Ingat peranan Dato' Onn Jaafar sebagai Pegawai Daerah Batu Pahat memeterai perdamaian di Dewan Perniagaan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Konflik Dunia &",
+          "desc": "Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan strategi serta…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Nilai & Iktibar Bab 3 menegaskan kepentingan mempertahankan keamanan dunia, perpaduan antara kaum, kebijaksanaan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Wira Individu, Operasi Semut (Sarawak) &…",
+              "detail": "Double Tenth (10 Okt 1943) ialah pemberontakan di Jesselton yang berakhir dengan pengorbanan di Petagas.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "3.8 Perkembangan Semangat Nasionalisme (KMM ->…",
+              "detail": "Rantaian wajib: KMM (dibubar) -> KRIS (batal Ogos 1945) -> PKMM (diteruskan pasca-perang).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "3.9 Bom Atom 1945, Bintang Tiga (14 Hari) &…",
+              "detail": "Ingat peranan Dato' Onn Jaafar sebagai Pegawai Daerah Batu Pahat memeterai perdamaian di Dewan Perniagaan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

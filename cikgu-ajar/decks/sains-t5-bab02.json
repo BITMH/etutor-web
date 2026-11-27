@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t5-bab02",
+  "title": "Nutrisi dan Teknologi Makanan",
+  "shortTitle": "Nutrisi dan Teknologi Makanan",
+  "subject": "Sains",
+  "form": "T5",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Nutrisi dan Teknologi Makanan",
+    "desc": "Bezakan Kwasyiorkor (kekurangan protein dengan perut membuncit) daripada Marasmus (kekurangan tenaga/karbohidrat serta protein secara menyeluruh…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Nutrisi dan Teknologi Makanan?",
+        "spokenText": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Nutrisi dan Teknologi Makanan?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Nutrisi dan Teknologi Makanan?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengelirukan fungsi Bakteria Penitritan dengan Bakteria Pendenitritan dalam Kitar Nitrogen.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali…. De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+              "spokenText": "Fakta sebenar: Penitritan MENAMBAH kesuburan tanah (ammonia , menghasilkan nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali . De-nitritan sama dengan 'De' bererti membuang/mengurangkan nitrat tanah!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menganggap tumbuhan menyerap terus gas nitrogen (N₂) dari udara melalui stoma daun untuk…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali…. De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+              "spokenText": "Fakta sebenar: Penitritan MENAMBAH kesuburan tanah (ammonia , menghasilkan nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali . De-nitritan sama dengan 'De' bererti membuang/mengurangkan nitrat tanah!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: De-nitritan = 'De' bererti membuang/mengurangkan nitrat tanah!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: De-nitritan sama dengan 'De' bererti membuang/mengurangkan nitrat tanah!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Penitritan MENAMBAH kesuburan tanah (ammonia → nitrat berguna untuk tumbuhan); Pendenitritan MENYINGKIRKAN nitrat tanah kembali menjadi gas N₂ di atmosfera.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: Nilai Kalori Makanan, Kalorimeter",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Berdasarkan jadual serta prinsip nilai kalori makanan, pernyataan manakah yang paling tepat?",
+        "spokenText": "Perhatikan rajah konsep di papan! Berdasarkan jadual serta prinsip nilai kalori makanan, pernyataan manakah yang paling tepat?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan jadual serta prinsip nilai kalori makanan, pernyataan manakah yang…",
+        "title": "Nilai Kalori Makanan, Kalorimeter Bom & Faktor Keperluan Kalori",
+        "diagramType": "organ",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Goiter (bengkak kelenjar tiroid)",
+            "detail": "Kekurangan mineral iodin",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Skurvi (gusi mudah berdarah)",
+            "detail": "Kekurangan vitamin C",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kwasyiorkor (perut buncit pada…",
+            "detail": "Kekurangan protein yang teruk",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Dari umur 30 hingga 40 tahun keperluan tenaga harian menurun kerana kadar metabolisme…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kanak-kanak berumur 5 tahun memerlukan tenaga paling tinggi berbanding dewasa kerana…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kanak-kanak berumur 5 tahun memerlukan… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kanak-kanak berumur 5 tahun memerlukan tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30 hingga 40 tahun (12 000…",
+              "spokenText": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30 hingga 40 tahun (12 000",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Nilai Kalori Makanan, Kalorimeter",
+                "desc": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Keperluan tenaga harian terus meningkat tanpa had melepasi usia 40 tahun akibat…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Keperluan tenaga harian terus meningkat… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Keperluan tenaga harian terus meningkat tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30 hingga 40 tahun (12 000…",
+              "spokenText": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30 hingga 40 tahun (12 000",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Nilai Kalori Makanan, Kalorimeter",
+                "desc": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Nilai Kalori Makanan, Kalorimeter",
+          "desc": "Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun dari 30 hingga 40…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Purata keperluan tenaga meningkat dari 5 tahun (5 500 kJ) sehingga kemuncak 25 tahun (13 500 kJ), kemudian menurun"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Kesan Kalori Tidak Seimbang",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Larutan kultur manakah yang diisi ke dalam tabung didih X?",
+        "spokenText": "Perhatikan rajah konsep di papan! Larutan kultur manakah yang diisi ke dalam tabung didih X?"
+      },
+      "board": {
+        "promptPill": "Larutan kultur manakah yang diisi ke dalam tabung didih X?",
+        "title": "Kesan Kalori Tidak Seimbang & Corak Pemakanan Malaysia",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Magnesium (Mg)",
+            "detail": "Komponen penting dalam pembentukan molekul klorofil",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Fosforus (P)",
+            "detail": "Kekurangannya menyebabkan daun atas ungu dan akar merosot",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kalium (K)",
+            "detail": "Kekurangannya menyebabkan pinggir daun bertompok perang dan tisu mati",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Larutan kultur tanpa fosforus (-P)",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Larutan kultur tanpa nitrogen (-N)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Larutan kultur tanpa nitrogen (-N) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Larutan kultur tanpa nitrogen (-N) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan bertepi perang,…",
+              "spokenText": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan bertepi perang,",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kesan Kalori Tidak Seimbang",
+                "desc": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Larutan kultur tanpa kalium (-K)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Larutan kultur tanpa kalium (-K) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Larutan kultur tanpa kalium (-K) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan bertepi perang,…",
+              "spokenText": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan bertepi perang,",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kesan Kalori Tidak Seimbang",
+                "desc": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Kesan Kalori Tidak Seimbang",
+          "desc": "Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau kebiruan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Kekurangan fosforus menyebabkan tumbuhan lambat membesar, daun bahagian atas kecil dan berwarna ungu, daun bawah hijau"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Nutrisi dan Teknologi",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Manakah kombinasi pernyataan sintesis Bab 2 yang KESEMUANYA BENAR?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Manakah kombinasi pernyataan sintesis Bab 2 yang KESEMUANYA BENAR?"
+      },
+      "board": {
+        "promptPill": "Manakah kombinasi pernyataan sintesis Bab 2 yang KESEMUANYA BENAR?",
+        "title": "Rumusan: Nutrisi dan Teknologi Makanan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "8 Kaedah Teknologi Pemprosesan Makanan (m/s…",
+            "detail": "Dalam Praktis Sumatif 2 No. 3, pembungkusan vakum buah cempedak/durian menggunakan pam vakum menyingkir…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "8 Jenis Bahan Kimia Makanan & Impak Berlebihan…",
+            "detail": "Bezakan fungsi Penstabil (mencegah pemendapan butiran dalam cecair seperti kanji dalam sos cili) dengan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Makanan Kesihatan, Suplemen, Akta Makanan…",
+            "detail": "Ramuan utama yang paling berat sentiasa ditulis paling awal pada label makanan ('susunan menurun mengikut…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pengetinan (>115°C) memusnahkan spora bakteria; penyejukbekuan (< -18°C) menghentikan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Pempasteuran (72°C) membunuh semua spora bakteria; penyejukbekuan membunuh semua…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pempasteuran (72°C) membunuh semua spora… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pempasteuran (72 darjah Celsius) membunuh semua spora tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Pengetinan melebihi 115°C membunuh mikrob dan sporanya, suhu < -18°C menghentikan enzim dan merencat mikrob, lemak membekalkan 37.6 kJ/g…",
+              "spokenText": "Tahniah! Pengetinan melebihi 115 darjah Celsius membunuh mikrob dan sporanya, suhu kurang daripada negatif 18 darjah Celsius menghentikan enzim dan merencat mikrob, lemak membekalkan 37 perpuluhan enam kJ/g",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "8 Kaedah Teknologi Pemprosesan Makanan (m/s…",
+                    "detail": "Dalam Praktis Sumatif 2 No. 3, pembungkusan vakum buah cempedak/durian menggunakan pam vakum menyingkir…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "8 Jenis Bahan Kimia Makanan & Impak Berlebihan…",
+                    "detail": "Bezakan fungsi Penstabil (mencegah pemendapan butiran dalam cecair seperti kanji dalam sos cili) dengan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Makanan Kesihatan, Suplemen, Akta Makanan…",
+                    "detail": "Ramuan utama yang paling berat sentiasa ditulis paling awal pada label makanan ('susunan menurun mengikut…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Pembungkusan vakum menambahkan oksigen untuk bakteria aerob; dan PBKD hanya mengawal…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pembungkusan vakum menambahkan oksigen… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pembungkusan vakum menambahkan oksigen tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Pengetinan melebihi 115°C membunuh mikrob dan sporanya, suhu < -18°C menghentikan enzim dan merencat mikrob, lemak membekalkan 37.6 kJ/g…",
+              "spokenText": "Tahniah! Pengetinan melebihi 115 darjah Celsius membunuh mikrob dan sporanya, suhu kurang daripada negatif 18 darjah Celsius menghentikan enzim dan merencat mikrob, lemak membekalkan 37 perpuluhan enam kJ/g",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "8 Kaedah Teknologi Pemprosesan Makanan (m/s…",
+                    "detail": "Dalam Praktis Sumatif 2 No. 3, pembungkusan vakum buah cempedak/durian menggunakan pam vakum menyingkir…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "8 Jenis Bahan Kimia Makanan & Impak Berlebihan…",
+                    "detail": "Bezakan fungsi Penstabil (mencegah pemendapan butiran dalam cecair seperti kanji dalam sos cili) dengan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Makanan Kesihatan, Suplemen, Akta Makanan…",
+                    "detail": "Ramuan utama yang paling berat sentiasa ditulis paling awal pada label makanan ('susunan menurun mengikut…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "8 Kaedah Teknologi Pemprosesan Makanan (m/s…",
+              "detail": "Dalam Praktis Sumatif 2 No. 3, pembungkusan vakum buah cempedak/durian menggunakan pam vakum menyingkir…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "8 Jenis Bahan Kimia Makanan & Impak Berlebihan…",
+              "detail": "Bezakan fungsi Penstabil (mencegah pemendapan butiran dalam cecair seperti kanji dalam sos cili) dengan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Makanan Kesihatan, Suplemen, Akta Makanan…",
+              "detail": "Ramuan utama yang paling berat sentiasa ditulis paling awal pada label makanan ('susunan menurun mengikut…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Nutrisi dan Teknologi",
+          "desc": "Tahniah! Pengetinan melebihi 115°C membunuh mikrob dan sporanya, suhu < -18°C menghentikan enzim dan merencat mikrob, lemak…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Pengetinan melebihi 115°C membunuh mikrob dan sporanya, suhu < -18°C menghentikan enzim dan merencat mikrob,…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Pengetinan melebihi 115 darjah Celsius membunuh mikrob dan sporanya, suhu kurang daripada negatif 18 darjah Celsius menghentikan enzim dan merencat mikrob,",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "8 Kaedah Teknologi Pemprosesan Makanan (m/s…",
+              "detail": "Dalam Praktis Sumatif 2 No. 3, pembungkusan vakum buah cempedak/durian menggunakan pam vakum menyingkir…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "8 Jenis Bahan Kimia Makanan & Impak Berlebihan…",
+              "detail": "Bezakan fungsi Penstabil (mencegah pemendapan butiran dalam cecair seperti kanji dalam sos cili) dengan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Makanan Kesihatan, Suplemen, Akta Makanan…",
+              "detail": "Ramuan utama yang paling berat sentiasa ditulis paling awal pada label makanan ('susunan menurun mengikut…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t4-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Asas Nombor?",
+      "duration": 5.92,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "Lazir",
+          "start": 0.52,
+          "end": 0.86
+        },
+        {
+          "word": "Mathematik",
+          "start": 0.86,
+          "end": 1.44
+        },
+        {
+          "word": "Awas",
+          "start": 1.44,
+          "end": 1.86
+        },
+        {
+          "word": "Perangkap,",
+          "start": 1.86,
+          "end": 2.38
+        },
+        {
+          "word": "manakah",
+          "start": 2.66,
+          "end": 3.02
+        },
+        {
+          "word": "fakta",
+          "start": 3.02,
+          "end": 3.54
+        },
+        {
+          "word": "atau",
+          "start": 3.54,
+          "end": 3.76
+        },
+        {
+          "word": "langkah",
+          "start": 3.76,
+          "end": 4.1
+        },
+        {
+          "word": "yang",
+          "start": 4.1,
+          "end": 4.24
+        },
+        {
+          "word": "betul",
+          "start": 4.24,
+          "end": 4.52
+        },
+        {
+          "word": "tentang",
+          "start": 4.52,
+          "end": 4.76
+        },
+        {
+          "word": "asas",
+          "start": 4.76,
+          "end": 5.06
+        },
+        {
+          "word": "nombor?",
+          "start": 5.06,
+          "end": 5.42
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t4-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Hitung beza nilai digit 5 antara nombor 1576 lapan dengan 125 tujuh (Praktis Kendiri 2 perpuluhan satua Q11).",
+      "duration": 8.811,
+      "words": [
+        {
+          "word": "dihat",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "langkah",
+          "start": 0.48,
+          "end": 0.82
+        },
+        {
+          "word": "di",
+          "start": 0.82,
+          "end": 0.94
+        },
+        {
+          "word": "papan,",
+          "start": 0.94,
+          "end": 1.28
+        },
+        {
+          "word": "hitung",
+          "start": 1.64,
+          "end": 1.96
+        },
+        {
+          "word": "beza",
+          "start": 1.96,
+          "end": 2.22
+        },
+        {
+          "word": "nilai",
+          "start": 2.22,
+          "end": 2.48
+        },
+        {
+          "word": "DJI",
+          "start": 2.48,
+          "end": 2.86
+        },
+        {
+          "word": "-FI",
+          "start": 2.86,
+          "end": 3.0
+        },
+        {
+          "word": "antara",
+          "start": 3.0,
+          "end": 3.72
+        },
+        {
+          "word": "lombor",
+          "start": 3.72,
+          "end": 4.02
+        },
+        {
+          "word": "658",
+          "start": 4.02,
+          "end": 4.68
+        },
+        {
+          "word": "dengan",
+          "start": 4.68,
+          "end": 4.92
+        },
+        {
+          "word": "di",
+          "start": 4.92,
+          "end": 5.68
+        },
+        {
+          "word": "testi",
+          "start": 6.24,
+          "end": 6.72
+        },
+        {
+          "word": "diri",
+          "start": 6.72,
+          "end": 6.98
+        },
+        {
+          "word": "tu",
+          "start": 6.98,
+          "end": 7.1
+        },
+        {
+          "word": "praktis",
+          "start": 7.1,
+          "end": 7.92
+        },
+        {
+          "word": "kini",
+          "start": 7.92,
+          "end": 8.16
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t4-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Sah dalam Asas 6 (Digit 0 hingga 5 Sahaja)\":",
+      "duration": 6.805,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "Lazim",
+          "start": 0.56,
+          "end": 0.9
+        },
+        {
+          "word": "Mathematik",
+          "start": 0.9,
+          "end": 1.44
+        },
+        {
+          "word": "Ini",
+          "start": 1.44,
+          "end": 1.94
+        },
+        {
+          "word": "item",
+          "start": 1.94,
+          "end": 2.28
+        },
+        {
+          "word": "yang",
+          "start": 2.28,
+          "end": 2.46
+        },
+        {
+          "word": "tepat",
+          "start": 2.46,
+          "end": 2.76
+        },
+        {
+          "word": "bagi",
+          "start": 2.76,
+          "end": 3.0
+        },
+        {
+          "word": "kategori",
+          "start": 3.0,
+          "end": 3.36
+        },
+        {
+          "word": "sah",
+          "start": 3.36,
+          "end": 3.68
+        },
+        {
+          "word": "dalam",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "asas",
+          "start": 3.86,
+          "end": 4.22
+        },
+        {
+          "word": "ini",
+          "start": 4.22,
+          "end": 4.54
+        },
+        {
+          "word": "DJO",
+          "start": 4.54,
+          "end": 5.28
+        },
+        {
+          "word": "hingga",
+          "start": 5.28,
+          "end": 5.48
+        },
+        {
+          "word": "itu",
+          "start": 5.48,
+          "end": 5.56
+        },
+        {
+          "word": "saja",
+          "start": 5.56,
+          "end": 5.82
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t4-bab02/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Kishendran membeli sehelai kemeja batik dengan potongan diskaun 25 peratus. Harga asal kemeja tersebut ialah 220 ringgit Malaysia empat (Praktis",
+      "duration": 9.333,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "langkah",
+          "start": 0.34,
+          "end": 0.6
+        },
+        {
+          "word": "depapan,",
+          "start": 0.6,
+          "end": 0.96
+        },
+        {
+          "word": "Kishinran",
+          "start": 1.54,
+          "end": 2.04
+        },
+        {
+          "word": "membeli",
+          "start": 2.04,
+          "end": 2.4
+        },
+        {
+          "word": "sehelai",
+          "start": 2.4,
+          "end": 2.72
+        },
+        {
+          "word": "kemeja",
+          "start": 2.72,
+          "end": 3.04
+        },
+        {
+          "word": "batik",
+          "start": 3.04,
+          "end": 3.4
+        },
+        {
+          "word": "dengan",
+          "start": 3.4,
+          "end": 3.62
+        },
+        {
+          "word": "potongan",
+          "start": 3.62,
+          "end": 4.1
+        },
+        {
+          "word": "discount",
+          "start": 4.1,
+          "end": 4.4
+        },
+        {
+          "word": "2",
+          "start": 4.4,
+          "end": 4.62
+        },
+        {
+          "word": ".5",
+          "start": 4.62,
+          "end": 4.84
+        },
+        {
+          "word": "%",
+          "start": 4.84,
+          "end": 5.2
+        },
+        {
+          "word": "Agar",
+          "start": 5.2,
+          "end": 6.04
+        },
+        {
+          "word": "asal",
+          "start": 6.04,
+          "end": 6.28
+        },
+        {
+          "word": "kemeja",
+          "start": 6.28,
+          "end": 6.58
+        },
+        {
+          "word": "tersebut",
+          "start": 6.58,
+          "end": 6.96
+        },
+        {
+          "word": "ialah",
+          "start": 6.96,
+          "end": 7.28
+        },
+        {
+          "word": "2",
+          "start": 7.28,
+          "end": 7.88
+        },
+        {
+          "word": "ringgit",
+          "start": 7.88,
+          "end": 8.12
+        },
+        {
+          "word": "Malaysia",
+          "start": 8.12,
+          "end": 8.32
+        },
+        {
+          "word": "4",
+          "start": 8.32,
+          "end": 8.72
+        },
+        {
+          "word": "artis",
+          "start": 8.72,
+          "end": 9.24
+        }
+      ]
+    }
+  }
+};

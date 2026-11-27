@@ -1,0 +1,466 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["bahasa-inggeris-t3-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-inggeris-t3-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Present Perfect Continuous vs. Simple (D S K P Items ?",
+      "duration": 9.803,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "lezing",
+          "start": 0.56,
+          "end": 0.92
+        },
+        {
+          "word": "bahasa",
+          "start": 0.92,
+          "end": 1.24
+        },
+        {
+          "word": "Inggris,",
+          "start": 1.24,
+          "end": 2.02
+        },
+        {
+          "word": "awas",
+          "start": 2.1,
+          "end": 2.46
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.46,
+          "end": 3.1
+        },
+        {
+          "word": "manakah",
+          "start": 3.48,
+          "end": 3.84
+        },
+        {
+          "word": "fakta",
+          "start": 3.84,
+          "end": 4.28
+        },
+        {
+          "word": "atau",
+          "start": 4.28,
+          "end": 4.46
+        },
+        {
+          "word": "langkah",
+          "start": 4.46,
+          "end": 4.86
+        },
+        {
+          "word": "yang",
+          "start": 4.86,
+          "end": 5.04
+        },
+        {
+          "word": "betul",
+          "start": 5.04,
+          "end": 5.44
+        },
+        {
+          "word": "tentang",
+          "start": 5.44,
+          "end": 5.68
+        },
+        {
+          "word": "dua",
+          "start": 5.68,
+          "end": 6.04
+        },
+        {
+          "word": "perpuluhan",
+          "start": 6.04,
+          "end": 6.66
+        },
+        {
+          "word": "satu",
+          "start": 6.66,
+          "end": 6.92
+        },
+        {
+          "word": "prison",
+          "start": 6.92,
+          "end": 7.22
+        },
+        {
+          "word": "Perfect",
+          "start": 7.22,
+          "end": 7.5
+        },
+        {
+          "word": "Continuous",
+          "start": 7.5,
+          "end": 8.08
+        },
+        {
+          "word": "vests?",
+          "start": 8.08,
+          "end": 8.58
+        },
+        {
+          "word": "Simpel",
+          "start": 8.64,
+          "end": 9.16
+        },
+        {
+          "word": "pari",
+          "start": 9.16,
+          "end": 9.4
+        },
+        {
+          "word": "tiap.",
+          "start": 9.4,
+          "end": 9.68
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-inggeris-t3-bab02/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Complete cleanly: 'Look! My hands are covered in mud because I ______ trees in the school garden for two hours.'",
+      "duration": 8.075,
+      "words": [
+        {
+          "word": "Teliti",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "binaan",
+          "start": 0.42,
+          "end": 0.76
+        },
+        {
+          "word": "kata",
+          "start": 0.76,
+          "end": 1.04
+        },
+        {
+          "word": "dan",
+          "start": 1.04,
+          "end": 1.24
+        },
+        {
+          "word": "ayat",
+          "start": 1.24,
+          "end": 1.52
+        },
+        {
+          "word": "di",
+          "start": 1.52,
+          "end": 1.6
+        },
+        {
+          "word": "papan",
+          "start": 1.6,
+          "end": 1.92
+        },
+        {
+          "word": "Complete",
+          "start": 1.92,
+          "end": 2.72
+        },
+        {
+          "word": "cleanly",
+          "start": 2.72,
+          "end": 3.32
+        },
+        {
+          "word": "Look,",
+          "start": 3.32,
+          "end": 3.94
+        },
+        {
+          "word": "my",
+          "start": 4.3,
+          "end": 4.5
+        },
+        {
+          "word": "hands",
+          "start": 4.5,
+          "end": 4.7
+        },
+        {
+          "word": "are",
+          "start": 4.7,
+          "end": 4.84
+        },
+        {
+          "word": "covered",
+          "start": 4.84,
+          "end": 5.04
+        },
+        {
+          "word": "in",
+          "start": 5.04,
+          "end": 5.22
+        },
+        {
+          "word": "mud",
+          "start": 5.22,
+          "end": 5.38
+        },
+        {
+          "word": "because",
+          "start": 5.38,
+          "end": 5.7
+        },
+        {
+          "word": "I",
+          "start": 5.7,
+          "end": 5.92
+        },
+        {
+          "word": "laid",
+          "start": 5.92,
+          "end": 6.08
+        },
+        {
+          "word": "trees",
+          "start": 6.08,
+          "end": 6.36
+        },
+        {
+          "word": "in",
+          "start": 6.36,
+          "end": 6.58
+        },
+        {
+          "word": "the",
+          "start": 6.58,
+          "end": 6.68
+        },
+        {
+          "word": "school",
+          "start": 6.68,
+          "end": 6.82
+        },
+        {
+          "word": "garden",
+          "start": 6.82,
+          "end": 7.08
+        },
+        {
+          "word": "for",
+          "start": 7.08,
+          "end": 7.32
+        },
+        {
+          "word": "2",
+          "start": 7.32,
+          "end": 7.5
+        },
+        {
+          "word": "hours",
+          "start": 7.5,
+          "end": 7.66
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-inggeris-t3-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Inggeris! Contrast with result: 'So far, our eco-team ______ twenty-four saplings near the sports field.'",
+      "duration": 8.235,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "Lazim",
+          "start": 0.5,
+          "end": 0.82
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.82,
+          "end": 1.08
+        },
+        {
+          "word": "Inggris,",
+          "start": 1.08,
+          "end": 1.42
+        },
+        {
+          "word": "kontras",
+          "start": 1.58,
+          "end": 2.12
+        },
+        {
+          "word": "dengan",
+          "start": 2.12,
+          "end": 2.3
+        },
+        {
+          "word": "keputusan,",
+          "start": 2.3,
+          "end": 2.76
+        },
+        {
+          "word": "sejauh",
+          "start": 3.12,
+          "end": 3.34
+        },
+        {
+          "word": "ini,",
+          "start": 3.34,
+          "end": 3.62
+        },
+        {
+          "word": "ekotik",
+          "start": 3.78,
+          "end": 4.54
+        },
+        {
+          "word": "kita",
+          "start": 4.54,
+          "end": 4.58
+        },
+        {
+          "word": "M24",
+          "start": 4.58,
+          "end": 5.6
+        },
+        {
+          "word": "sapping",
+          "start": 5.6,
+          "end": 6.46
+        },
+        {
+          "word": "di",
+          "start": 6.46,
+          "end": 6.78
+        },
+        {
+          "word": "depan",
+          "start": 6.78,
+          "end": 7.24
+        },
+        {
+          "word": "tempat",
+          "start": 7.24,
+          "end": 7.44
+        },
+        {
+          "word": "tempat.",
+          "start": 7.44,
+          "end": 8.0
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-inggeris-t3-bab02/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Which sentence uses the correct modal to show something is STRICTLY FORBIDDEN?",
+      "duration": 6.677,
+      "words": [
+        {
+          "word": "teliti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "binaan",
+          "start": 0.48,
+          "end": 0.82
+        },
+        {
+          "word": "kata",
+          "start": 0.82,
+          "end": 1.1
+        },
+        {
+          "word": "dan",
+          "start": 1.1,
+          "end": 1.24
+        },
+        {
+          "word": "ayat",
+          "start": 1.24,
+          "end": 1.56
+        },
+        {
+          "word": "di",
+          "start": 1.56,
+          "end": 1.64
+        },
+        {
+          "word": "papan,",
+          "start": 1.64,
+          "end": 1.92
+        },
+        {
+          "word": "yang",
+          "start": 2.18,
+          "end": 2.64
+        },
+        {
+          "word": "menggunakan",
+          "start": 2.64,
+          "end": 3.4
+        },
+        {
+          "word": "model",
+          "start": 3.4,
+          "end": 3.48
+        },
+        {
+          "word": "yang",
+          "start": 3.48,
+          "end": 3.56
+        },
+        {
+          "word": "sesuai",
+          "start": 3.56,
+          "end": 4.24
+        },
+        {
+          "word": "untuk",
+          "start": 4.24,
+          "end": 4.44
+        },
+        {
+          "word": "menunjukkan",
+          "start": 4.44,
+          "end": 4.76
+        },
+        {
+          "word": "sesuatu",
+          "start": 4.76,
+          "end": 5.08
+        },
+        {
+          "word": "yang",
+          "start": 5.08,
+          "end": 5.2
+        },
+        {
+          "word": "benar",
+          "start": 5.2,
+          "end": 5.52
+        },
+        {
+          "word": "-benar",
+          "start": 5.52,
+          "end": 5.86
+        },
+        {
+          "word": "dungu.",
+          "start": 5.86,
+          "end": 6.36
+        }
+      ]
+    }
+  }
+};

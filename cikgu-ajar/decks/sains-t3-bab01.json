@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t3-bab01",
+  "title": "Rangsangan dan Gerak Balas (Saraf, Organ Deria & Tropisme)",
+  "shortTitle": "Rangsangan dan Gerak Balas",
+  "subject": "Sains",
+  "form": "T3",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Rangsangan dan Gerak Balas",
+    "desc": "Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Sistem Saraf Manusia: Tindakan Terkawal vs Luar…?",
+        "spokenText": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Sistem Saraf Manusia: Tindakan Terkawal vs Luar ?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Sistem Saraf Manusia: Tindakan Terkawal vs Luar…?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung).",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengelirukan kanta pembetulan rabun jauh (kanta cembung) dengan rabun dekat (kanta cekung).",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta…. Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk…",
+              "spokenText": "Fakta sebenar: Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta . Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina);…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menyatakan salur separuh bulat dan tiub Eustachio membantu proses mendengar bunyi.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta…. Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk…",
+              "spokenText": "Fakta sebenar: Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta . Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Mata rabun jauh terlalu KUAT memfokus (imej di depan), jadi guna kanta cekung untuk menolak fokus ke belakang.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Rabun jauh dibetulkan dengan Kanta Cekung (mencapahkan cahaya supaya jatuh tepat di retina); Rabun dekat dibetulkan dengan Kanta Cembung (menumpukan cahaya).",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: 1.1 Sistem Saraf Manusia:",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Antara berikut, laluan manakah menggambarkan urutan tindakan refleks apabila jari tertusuk jarum?",
+        "spokenText": "Perhatikan rajah konsep di papan! Antara berikut, laluan manakah menggambarkan urutan tindakan refleks apabila jari tertusuk jarum?"
+      },
+      "board": {
+        "promptPill": "Antara berikut, laluan manakah menggambarkan urutan tindakan refleks apabila jari…",
+        "title": "1.1 Sistem Saraf Manusia: Tindakan Terkawal vs Luar Kawal (SK 1.1)",
+        "diagramType": "organ",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Sistem saraf terbahagi kepada Sistem…",
+            "detail": "Sistem saraf terbahagi kepada Sistem Saraf Pusat (otak dan saraf tunjang) dan Sistem Saraf Periferi (saraf…",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Tindakan Terkawal (disedari, dikawal…",
+            "detail": "Rangsangan → Reseptor → Otak (tafsir) → Efektor (otot/kelenjar) → Gerak balas (cth: menangkap pembaris jatuh).",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Tindakan Luar Kawal (serta-merta…",
+            "detail": "(a) Melibatkan medula oblongata (denyutan jantung, pernafasan, peristalsis); (b) Melibatkan saraf tunjang /…",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Reseptor → Otak → Saraf tunjang → Efektor",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Reseptor → Otak → Saraf tunjang → Efektor tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Reseptor , menghasilkan Otak , menghasilkan Saraf tunjang , menghasilkan Efektor tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+              "spokenText": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.1 Sistem Saraf Manusia:",
+                "desc": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Reseptor → Saraf tunjang → Efektor",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Efektor → Saraf tunjang → Reseptor",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Efektor → Saraf tunjang → Reseptor tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Efektor , menghasilkan Saraf tunjang , menghasilkan Reseptor tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+              "spokenText": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.1 Sistem Saraf Manusia:",
+                "desc": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "1.1 Sistem Saraf Manusia:",
+          "desc": "Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor.",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Tindakan refleks melangkaui tafsiran otak secara sedar dan menghantar impuls terus melalui saraf tunjang ke efektor."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 1.2 Lima Organ Deria,",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Seorang murid tidak dapat melihat papan putih di hadapan kelas dengan jelas. Apakah kecacatan mata dan kanta pembetulannya?",
+        "spokenText": "Perhatikan rajah konsep di papan! Seorang murid tidak dapat melihat papan putih di hadapan kelas dengan jelas. Apakah kecacatan mata dan kanta pembetulannya?"
+      },
+      "board": {
+        "promptPill": "Seorang murid tidak dapat melihat papan putih di hadapan kelas dengan jelas. Apakah…",
+        "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan Mata (SK 1.2)",
+        "diagramType": "wave",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Laluan Cahaya ke Mata",
+            "detail": "Kornea → Gelemair → Anak mata (dikawal Iris) → Kanta mata → Gelemaca → Retina (sel rod untuk cahaya…",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Laluan Bunyi di Telinga",
+            "detail": "Cuping → Salur telinga → Gegendang telinga → Osikel (tulang kecil menguatkan getaran) → Jendela bujur →…",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kecacatan Penglihatan",
+            "detail": "Rabun Jauh (imej fokus DI HADAPAN retina kerana bebola mata terlalu panjang / kanta terlalu tebal →…",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Rabun dekat — kanta cembung",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Rabun dekat — kanta cembung tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Rabun dekat , kanta cembung tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+              "spokenText": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.2 Lima Organ Deria,",
+                "desc": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Rabun jauh — kanta cekung",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Astigmatisme — kanta dwifokus",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Astigmatisme — kanta dwifokus tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Astigmatisme , kanta dwifokus tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+              "spokenText": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.2 Lima Organ Deria,",
+                "desc": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "1.2 Lima Organ Deria,",
+          "desc": "Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung.",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Rabun jauh menyebabkan imej objek jauh jatuh di depan retina dan dibetulkan menggunakan kanta cekung."
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Rangsangan dan Gerak",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Bahagian telinga manakah yang mengandungi cecair dan sel deria untuk menukarkan getaran bunyi kepada impuls saraf?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Bahagian telinga manakah yang mengandungi cecair dan sel deria untuk menukarkan getaran bunyi kepada impuls saraf?"
+      },
+      "board": {
+        "promptPill": "Bahagian telinga manakah yang mengandungi cecair dan sel deria untuk menukarkan…",
+        "title": "Rumusan: Rangsangan dan Gerak Balas",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan…",
+            "detail": "Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "1.3 Lidah, Hidung, Kulit & Had Deria (SK 1.2)",
+            "detail": "Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "1.4 Tropisme Tumbuhan & Penglihatan Haiwan (SK…",
+            "detail": "Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Osikel",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Osikel tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Osikel tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+              "spokenText": "Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan…",
+                    "detail": "Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "1.3 Lidah, Hidung, Kulit & Had Deria (SK 1.2)",
+                    "detail": "Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "1.4 Tropisme Tumbuhan & Penglihatan Haiwan (SK…",
+                    "detail": "Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Gegendang telinga",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Gegendang telinga tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Gegendang telinga tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+              "spokenText": "Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan…",
+                    "detail": "Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "1.3 Lidah, Hidung, Kulit & Had Deria (SK 1.2)",
+                    "detail": "Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "1.4 Tropisme Tumbuhan & Penglihatan Haiwan (SK…",
+                    "detail": "Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Koklea",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan…",
+              "detail": "Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "1.3 Lidah, Hidung, Kulit & Had Deria (SK 1.2)",
+              "detail": "Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "1.4 Tropisme Tumbuhan & Penglihatan Haiwan (SK…",
+              "detail": "Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Rangsangan dan Gerak",
+          "desc": "Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Koklea menukarkan getaran mekanikal daripada jendela bujur kepada impuls saraf auditori.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "1.2 Lima Organ Deria, Mekanisme & Kecacatan…",
+              "detail": "Hafal pasangan mata: Jauh = Depan = Cekung (J-D-C); Dekat = Belakang = Cembung (D-B-C).",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "1.3 Lidah, Hidung, Kulit & Had Deria (SK 1.2)",
+              "detail": "Dua faktor kepekaan kulit: ketebalan epidermis dan bilangan/kepadatan reseptor.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "1.4 Tropisme Tumbuhan & Penglihatan Haiwan (SK…",
+              "detail": "Dalam eksperimen hidrotropisme, kalsium klorida kontang berfungsi menyerap semua wap air dari udara supaya…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t3-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Menentukan Bilangan Angka Bererti (a.b.) (SK 2 perpuluhan satu)?",
+      "duration": 9.973,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "Matematik.",
+          "start": 0.9,
+          "end": 1.36
+        },
+        {
+          "word": "Awas",
+          "start": 1.54,
+          "end": 1.92
+        },
+        {
+          "word": "perangkap,",
+          "start": 1.92,
+          "end": 2.44
+        },
+        {
+          "word": "manakah",
+          "start": 2.9,
+          "end": 3.24
+        },
+        {
+          "word": "fakta",
+          "start": 3.24,
+          "end": 3.68
+        },
+        {
+          "word": "atau",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "langkah",
+          "start": 3.86,
+          "end": 4.28
+        },
+        {
+          "word": "yang",
+          "start": 4.28,
+          "end": 4.48
+        },
+        {
+          "word": "vital",
+          "start": 4.48,
+          "end": 4.84
+        },
+        {
+          "word": "tentang",
+          "start": 4.84,
+          "end": 5.28
+        },
+        {
+          "word": "dua",
+          "start": 5.28,
+          "end": 5.74
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.74,
+          "end": 6.22
+        },
+        {
+          "word": "satu",
+          "start": 6.22,
+          "end": 6.62
+        },
+        {
+          "word": "menentukan",
+          "start": 6.62,
+          "end": 7.66
+        },
+        {
+          "word": "bilangan",
+          "start": 7.66,
+          "end": 7.94
+        },
+        {
+          "word": "angka",
+          "start": 7.94,
+          "end": 8.28
+        },
+        {
+          "word": "berhati",
+          "start": 8.28,
+          "end": 8.6
+        },
+        {
+          "word": "-hati",
+          "start": 8.6,
+          "end": 9.28
+        },
+        {
+          "word": "AB?",
+          "start": 9.28,
+          "end": 9.64
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t3-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Berapakah bilangan angka bererti bagi nombor kosong perpuluhan kosong tujuh kosong empat kosong?",
+      "duration": 6.336,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "langkah",
+          "start": 0.48,
+          "end": 0.8
+        },
+        {
+          "word": "di",
+          "start": 0.8,
+          "end": 0.94
+        },
+        {
+          "word": "papan?",
+          "start": 0.94,
+          "end": 1.28
+        },
+        {
+          "word": "Berapakah",
+          "start": 1.8,
+          "end": 2.46
+        },
+        {
+          "word": "bilangan",
+          "start": 2.46,
+          "end": 2.76
+        },
+        {
+          "word": "angka",
+          "start": 2.76,
+          "end": 3.14
+        },
+        {
+          "word": "beriti",
+          "start": 3.14,
+          "end": 3.54
+        },
+        {
+          "word": "bagi",
+          "start": 3.54,
+          "end": 3.92
+        },
+        {
+          "word": "nunggu",
+          "start": 3.92,
+          "end": 4.12
+        },
+        {
+          "word": "kosong",
+          "start": 4.12,
+          "end": 4.42
+        },
+        {
+          "word": "perpuluhan",
+          "start": 4.42,
+          "end": 4.82
+        },
+        {
+          "word": "07040?",
+          "start": 4.82,
+          "end": 5.74
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t3-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Bundarkan 68 perpuluhan tujuh sembilan kepada 1 angka bererti.",
+      "duration": 6.549,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "Lazim",
+          "start": 0.56,
+          "end": 0.88
+        },
+        {
+          "word": "Mathematik,",
+          "start": 0.88,
+          "end": 1.44
+        },
+        {
+          "word": "bundakan",
+          "start": 1.6,
+          "end": 2.34
+        },
+        {
+          "word": "6B",
+          "start": 2.34,
+          "end": 3.0
+        },
+        {
+          "word": "-1799",
+          "start": 3.0,
+          "end": 4.26
+        },
+        {
+          "word": "kepada",
+          "start": 4.26,
+          "end": 4.64
+        },
+        {
+          "word": "wain",
+          "start": 4.64,
+          "end": 5.6
+        },
+        {
+          "word": "kebereti.",
+          "start": 5.6,
+          "end": 6.12
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t3-bab02/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Ungkapkan kosong perpuluhan kosong kosong kosong tiga lapan lima dalam bentuk piawai.",
+      "duration": 5.12,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "langkah",
+          "start": 0.4,
+          "end": 0.7
+        },
+        {
+          "word": "di",
+          "start": 0.7,
+          "end": 0.82
+        },
+        {
+          "word": "papan,",
+          "start": 0.82,
+          "end": 1.14
+        },
+        {
+          "word": "mengkalkan",
+          "start": 1.54,
+          "end": 2.18
+        },
+        {
+          "word": "0803085",
+          "start": 2.18,
+          "end": 3.8
+        },
+        {
+          "word": "dalam",
+          "start": 3.8,
+          "end": 4.16
+        },
+        {
+          "word": "bentuk",
+          "start": 4.16,
+          "end": 4.46
+        },
+        {
+          "word": "piawai.",
+          "start": 4.46,
+          "end": 4.8
+        }
+      ]
+    }
+  }
+}

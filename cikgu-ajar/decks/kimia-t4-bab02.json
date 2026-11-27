@@ -1,0 +1,791 @@
+{
+  "deckId": "kimia-t4-bab02",
+  "title": "Jirim dan Struktur Atom",
+  "shortTitle": "Jirim dan Struktur Atom",
+  "subject": "Kimia",
+  "form": "T4",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Jirim dan Struktur Atom",
+    "desc": "Untuk definisi Kertas 2, nyatakan dua syarat wajib jirim: 'sesuatu yang mempunyai jisim dan memenuhi ruang' serta terdiri daripada zarah halus dan…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Kimia! Mengapakah kulit terasa sejuk apabila disapu dengan alkohol?",
+        "spokenText": "Perangkap lazim Kimia! Mengapakah kulit terasa sejuk apabila disapu dengan alkohol?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Mengapakah kulit terasa sejuk apabila disapu dengan alkohol?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Alkohol membeku di atas permukaan kulit lalu membebaskan haba ke atmosfera",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Alkohol membeku di atas permukaan kulit lalu membebaskan haba ke atmosfera",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk. Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah…",
+              "spokenText": "Fakta sebenar: Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk. Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah alkohol menyerap tenaga haba daripada…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Alkohol bertindak balas membentuk ion natrium dan ion klorida di bawah kulit",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Kimia. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk. Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah…",
+              "spokenText": "Fakta sebenar: Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk. Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah alkohol menyerap tenaga haba daripada…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah alkohol menyerap tenaga haba daripada…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah alkohol menyerap tenaga haba…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Alkohol ialah cecair mudah meruap. Semasa penyejatan daripada cecair kepada gas, zarah alkohol menyerap tenaga haba",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Alkohol menyejat dengan menyerap tenaga haba daripada kulit menyebabkan kulit kehilangan haba dan terasa sejuk",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: 3 Keadaan Jirim &",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Antara bahan berikut, yang manakah dipadankan dengan BETUL bersama jenis zarah dan pengelasannya?",
+        "spokenText": "Lihat langkah di papan! Antara bahan berikut, yang manakah dipadankan dengan BETUL bersama jenis zarah dan pengelasannya?"
+      },
+      "board": {
+        "promptPill": "Antara bahan berikut, yang manakah dipadankan dengan BETUL bersama jenis zarah dan…",
+        "title": "3 Keadaan Jirim & Perubahan Tenaga Zarah (Rajah 2.2)",
+        "given": "Apabila tenaga haba diserap atau dibebaskan, tenaga kinetik, susunan dan daya tarikan antara zarah berubah sehingga…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Pepejal vs Cecair vs Gas: Zarah pepejal tersusun padat dan teratur, tenaga kinetik…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Fenomena Harian & Aplikasi Kondensasi: Aiskrim menyerap haba untuk melebur; titisan air…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Wayar kuprum: sebatian ion yang terbentuk daripada pemindahan elektron",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Wayar kuprum: sebatian ion yang terbentuk… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Wayar kuprum: sebatian ion yang terbentuk tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom, air ialah sebatian molekul,…",
+              "spokenText": "Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom, air ialah sebatian molekul,",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Pepejal vs Cecair vs Gas: Zarah pepejal tersusun padat dan teratur, tenaga kinetik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Fenomena Harian & Aplikasi Kondensasi: Aiskrim menyerap haba untuk melebur; titisan air…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Karbon (C) dan Oksigen (O₂): kedua-duanya ialah unsur, masing-masing berzarah atom dan…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Air (H₂O): unsur berzarah ion yang mengandungi ion H⁺ dan O²⁻ sahaja",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Air (H₂O): unsur berzarah ion yang… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Air (H dua O): unsur berzarah ion yang tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom, air ialah sebatian molekul,…",
+              "spokenText": "Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom, air ialah sebatian molekul,",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Pepejal vs Cecair vs Gas: Zarah pepejal tersusun padat dan teratur, tenaga kinetik…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Fenomena Harian & Aplikasi Kondensasi: Aiskrim menyerap haba untuk melebur; titisan air…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Pepejal vs Cecair vs Gas: Zarah pepejal tersusun padat dan teratur, tenaga kinetik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Fenomena Harian & Aplikasi Kondensasi: Aiskrim menyerap haba untuk melebur; titisan air…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "3 Keadaan Jirim &",
+          "desc": "Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom, air ialah sebatian…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom,…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Karbon ialah unsur berzarah atom dan gas oksigen ialah unsur berzarah molekul; wayar kuprum ialah unsur berzarah atom,",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Pepejal vs Cecair vs Gas: Zarah pepejal tersusun padat dan teratur, tenaga kinetik…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Fenomena Harian & Aplikasi Kondensasi: Aiskrim menyerap haba untuk melebur; titisan air…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Unsur vs Sebatian: Atom,",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah fenomena yang akan berlaku pada lengkung penyejukan naftalena tersebut?",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah fenomena yang akan berlaku pada lengkung penyejukan naftalena tersebut?"
+      },
+      "board": {
+        "promptPill": "Apakah fenomena yang akan berlaku pada lengkung penyejukan naftalena tersebut?",
+        "title": "Unsur vs Sebatian: Atom, Molekul & Ion (Rajah 2.3 & Lensa Kimia)",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Kaedah kukus air",
+            "detail": "Memastikan pemanasan sekata dan mengelak naftalena mudah terbakar",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Tabung didih dimasukkan ke dalam…",
+            "detail": "Memastikan penyejukan berlaku secara perlahan dan sekata",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Naftalena dikacau secara berterusan…",
+            "detail": "Menyebarkan suhu secara sekata dan mengelakkan penyejukan lampau",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Penyejukan lampau (supercooling) berlaku di mana suhu turun di bawah takat beku sebenar…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Suhu akan terus meningkat melebihi 100.0 °C kerana haba terperangkap di dasar tabung",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Suhu akan terus meningkat melebihi 100.0… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Suhu akan terus meningkat melebihi 100 perpuluhan kosong tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun seketika di bawah takat…",
+              "spokenText": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun seketika di bawah takat",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Unsur vs Sebatian: Atom,",
+                "desc": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Naftalena terus memejalwap menjadi gas oksigen tanpa membentuk pepejal",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Naftalena terus memejalwap menjadi gas… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Naftalena terus memejalwap menjadi gas tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun seketika di bawah takat…",
+              "spokenText": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun seketika di bawah takat",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Unsur vs Sebatian: Atom,",
+                "desc": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Unsur vs Sebatian: Atom,",
+          "desc": "Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair turun seketika…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Tanpa pengacauan berterusan, penyejukan menjadi tidak sekata dan berlaku penyejukan lampau (supercooling): suhu cecair"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Jirim dan Struktur",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Atom P (¹²₆P), Atom Q (¹⁴₆Q), Atom R (²⁴₁₂R) dan Atom S (²⁸₁₄S) dikaji. Pasangan manakah ialah isotop, dan berapakah…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Atom P ( kuasa satu kuasa dua enamP), Atom Q ( kuasa satu kuasa empat enamQ), Atom R ( kuasa dua kuasa empat satu duaR) dan Atom S ( kuasa dua kuasa lapan satu empatS) dikaji. Pasangan manakah ialah isotop, dan berapakah"
+      },
+      "board": {
+        "promptPill": "Atom P (¹²₆P), Atom Q (¹⁴₆Q), Atom R (²⁴₁₂R) dan Atom S (²⁸₁₄S) dikaji. Pasangan…",
+        "title": "Rumusan: Jirim dan Struktur Atom",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Maksud Isotop & Zarah Subatomnya (Rajah 2.15 &…",
+            "detail": "Semasa menulis definisi isotop dalam Kertas 2, anda boleh menulis sama ada 'bilangan proton sama tetapi…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Menghitung Jisim Atom Relatif (JAR) daripada…",
+            "detail": "Sentiasa semak jawapan JAR anda berada di antara jisim isotop teringan dan jisim isotop terberat (cth.…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "8 Aplikasi Isotop Jadual 2.5 & Isu Penggunaannya",
+            "detail": "Bezakan Karbon-14 vs Plumbum-210 dalam bidang Arkeologi: Karbon-14 untuk menganggar umur ARTIFAK atau FOSIL;…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "P dan Q ialah isotop kerana Z = 6 sama dengan neutron berbeza (6 vs 8); S (2.8.4)…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Q dan S ialah isotop kerana kedua-duanya mempunyai 14 neutron; S (2.8.4) mempunyai 14…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Q dan S ialah isotop kerana kedua-duanya… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Q dan S ialah isotop kerana kedua-duanya tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "P dan Q mempunyai nombor proton Z = 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 -> 6 vs 8 neutron), maka P dan Q ialah isotop. Atom S (Z =…",
+              "spokenText": "P dan Q mempunyai nombor proton Z sama dengan 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 - lebih daripada 6 vs 8 neutron), maka P dan Q ialah isotop. Atom S (Z sama dengan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Maksud Isotop & Zarah Subatomnya (Rajah 2.15 &…",
+                    "detail": "Semasa menulis definisi isotop dalam Kertas 2, anda boleh menulis sama ada 'bilangan proton sama tetapi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Menghitung Jisim Atom Relatif (JAR) daripada…",
+                    "detail": "Sentiasa semak jawapan JAR anda berada di antara jisim isotop teringan dan jisim isotop terberat (cth.…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "8 Aplikasi Isotop Jadual 2.5 & Isu Penggunaannya",
+                    "detail": "Bezakan Karbon-14 vs Plumbum-210 dalam bidang Arkeologi: Karbon-14 untuk menganggar umur ARTIFAK atau FOSIL;…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "P dan R ialah isotop kerana nombor nukleonnya berganda dua; S (2.8.4) mempunyai 8…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan P dan R ialah isotop kerana nombor… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan P dan R ialah isotop kerana nombor tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "P dan Q mempunyai nombor proton Z = 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 -> 6 vs 8 neutron), maka P dan Q ialah isotop. Atom S (Z =…",
+              "spokenText": "P dan Q mempunyai nombor proton Z sama dengan 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 - lebih daripada 6 vs 8 neutron), maka P dan Q ialah isotop. Atom S (Z sama dengan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Maksud Isotop & Zarah Subatomnya (Rajah 2.15 &…",
+                    "detail": "Semasa menulis definisi isotop dalam Kertas 2, anda boleh menulis sama ada 'bilangan proton sama tetapi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Menghitung Jisim Atom Relatif (JAR) daripada…",
+                    "detail": "Sentiasa semak jawapan JAR anda berada di antara jisim isotop teringan dan jisim isotop terberat (cth.…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "8 Aplikasi Isotop Jadual 2.5 & Isu Penggunaannya",
+                    "detail": "Bezakan Karbon-14 vs Plumbum-210 dalam bidang Arkeologi: Karbon-14 untuk menganggar umur ARTIFAK atau FOSIL;…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Maksud Isotop & Zarah Subatomnya (Rajah 2.15 &…",
+              "detail": "Semasa menulis definisi isotop dalam Kertas 2, anda boleh menulis sama ada 'bilangan proton sama tetapi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Menghitung Jisim Atom Relatif (JAR) daripada…",
+              "detail": "Sentiasa semak jawapan JAR anda berada di antara jisim isotop teringan dan jisim isotop terberat (cth.…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "8 Aplikasi Isotop Jadual 2.5 & Isu Penggunaannya",
+              "detail": "Bezakan Karbon-14 vs Plumbum-210 dalam bidang Arkeologi: Karbon-14 untuk menganggar umur ARTIFAK atau FOSIL;…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Jirim dan Struktur",
+          "desc": "P dan Q mempunyai nombor proton Z = 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 -> 6 vs 8 neutron), maka P dan Q ialah…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: P dan Q mempunyai nombor proton Z = 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 -> 6 vs 8 neutron), maka P dan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: P dan Q mempunyai nombor proton Z sama dengan 6 yang sama tetapi nombor nukleon berbeza (12 vs 14 - lebih daripada 6 vs 8 neutron), maka P dan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Maksud Isotop & Zarah Subatomnya (Rajah 2.15 &…",
+              "detail": "Semasa menulis definisi isotop dalam Kertas 2, anda boleh menulis sama ada 'bilangan proton sama tetapi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Menghitung Jisim Atom Relatif (JAR) daripada…",
+              "detail": "Sentiasa semak jawapan JAR anda berada di antara jisim isotop teringan dan jisim isotop terberat (cth.…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "8 Aplikasi Isotop Jadual 2.5 & Isu Penggunaannya",
+              "detail": "Bezakan Karbon-14 vs Plumbum-210 dalam bidang Arkeologi: Karbon-14 untuk menganggar umur ARTIFAK atau FOSIL;…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

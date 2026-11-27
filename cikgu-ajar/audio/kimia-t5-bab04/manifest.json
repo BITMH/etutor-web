@@ -1,0 +1,435 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t5-bab04/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Ramalkan kelakuan pemanasan melamina berbanding polietena SERTA sebab perbezaan keadaan fizik etena dengan polietena?",
+      "duration": 7.253,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "Razim",
+          "start": 0.42,
+          "end": 0.7
+        },
+        {
+          "word": "Kimia",
+          "start": 0.7,
+          "end": 1.08
+        },
+        {
+          "word": "ramalkan",
+          "start": 1.08,
+          "end": 2.08
+        },
+        {
+          "word": "kelakuan",
+          "start": 2.08,
+          "end": 2.4
+        },
+        {
+          "word": "pemanasan",
+          "start": 2.4,
+          "end": 2.9
+        },
+        {
+          "word": "Melanina",
+          "start": 2.9,
+          "end": 3.36
+        },
+        {
+          "word": "berbanding",
+          "start": 3.36,
+          "end": 4.08
+        },
+        {
+          "word": "politina",
+          "start": 4.08,
+          "end": 4.48
+        },
+        {
+          "word": "setah",
+          "start": 4.48,
+          "end": 4.84
+        },
+        {
+          "word": "sebab",
+          "start": 4.84,
+          "end": 5.18
+        },
+        {
+          "word": "perbezaan",
+          "start": 5.18,
+          "end": 5.62
+        },
+        {
+          "word": "kadaan",
+          "start": 5.62,
+          "end": 5.94
+        },
+        {
+          "word": "fizik",
+          "start": 5.94,
+          "end": 6.2
+        },
+        {
+          "word": "etina",
+          "start": 6.2,
+          "end": 6.5
+        },
+        {
+          "word": "dengan",
+          "start": 6.5,
+          "end": 6.66
+        },
+        {
+          "word": "politina",
+          "start": 6.66,
+          "end": 7.06
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t5-bab04/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Apakah jenis tindak balas pempolimeran daripada glukosa kepada kanji, produk sampingannya, SERTA nama kumpulan , C enamH lima pada",
+      "duration": 13.803,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "langkah",
+          "start": 0.36,
+          "end": 0.7
+        },
+        {
+          "word": "nipapan",
+          "start": 0.7,
+          "end": 1.04
+        },
+        {
+          "word": "apakah",
+          "start": 1.04,
+          "end": 2.02
+        },
+        {
+          "word": "jenis",
+          "start": 2.02,
+          "end": 2.32
+        },
+        {
+          "word": "tidak",
+          "start": 2.32,
+          "end": 2.5
+        },
+        {
+          "word": "balas",
+          "start": 2.5,
+          "end": 2.86
+        },
+        {
+          "word": "pemeran",
+          "start": 2.86,
+          "end": 3.5
+        },
+        {
+          "word": "daripada",
+          "start": 3.5,
+          "end": 3.78
+        },
+        {
+          "word": "geluk",
+          "start": 3.78,
+          "end": 4.0
+        },
+        {
+          "word": "kosa",
+          "start": 4.0,
+          "end": 4.28
+        },
+        {
+          "word": "kepada",
+          "start": 4.28,
+          "end": 4.5
+        },
+        {
+          "word": "kanji,",
+          "start": 4.5,
+          "end": 4.94
+        },
+        {
+          "word": "produk",
+          "start": 5.3,
+          "end": 5.6
+        },
+        {
+          "word": "sampingannya",
+          "start": 5.6,
+          "end": 6.24
+        },
+        {
+          "word": "setan",
+          "start": 6.24,
+          "end": 7.16
+        },
+        {
+          "word": "nama",
+          "start": 7.16,
+          "end": 7.38
+        },
+        {
+          "word": "kumpulan",
+          "start": 7.38,
+          "end": 7.82
+        },
+        {
+          "word": "C6",
+          "start": 7.82,
+          "end": 9.56
+        },
+        {
+          "word": "kumpulan",
+          "start": 9.56,
+          "end": 10.88
+        },
+        {
+          "word": "C",
+          "start": 10.88,
+          "end": 11.8
+        },
+        {
+          "word": "enak",
+          "start": 11.8,
+          "end": 12.72
+        },
+        {
+          "word": "pada...",
+          "start": 12.72,
+          "end": 13.6
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t5-bab04/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah pemerhatian dan inferens yang TEPAT bagi ketiga-tiga bikar selepas dua hari?",
+      "duration": 6.229,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "raja",
+          "start": 0.5,
+          "end": 0.8
+        },
+        {
+          "word": "konsep",
+          "start": 0.8,
+          "end": 1.26
+        },
+        {
+          "word": "di",
+          "start": 1.26,
+          "end": 1.34
+        },
+        {
+          "word": "papan?",
+          "start": 1.34,
+          "end": 1.66
+        },
+        {
+          "word": "Apakah",
+          "start": 2.04,
+          "end": 2.5
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.5,
+          "end": 3.14
+        },
+        {
+          "word": "dan",
+          "start": 3.14,
+          "end": 3.26
+        },
+        {
+          "word": "infrensi",
+          "start": 3.26,
+          "end": 3.7
+        },
+        {
+          "word": "yang",
+          "start": 3.7,
+          "end": 3.82
+        },
+        {
+          "word": "tepat",
+          "start": 3.82,
+          "end": 4.18
+        },
+        {
+          "word": "bagi",
+          "start": 4.18,
+          "end": 4.5
+        },
+        {
+          "word": "ketiga",
+          "start": 4.5,
+          "end": 4.76
+        },
+        {
+          "word": "-tiga",
+          "start": 4.76,
+          "end": 4.94
+        },
+        {
+          "word": "bikar",
+          "start": 4.94,
+          "end": 5.36
+        },
+        {
+          "word": "selepas",
+          "start": 5.36,
+          "end": 5.7
+        },
+        {
+          "word": "dua",
+          "start": 5.7,
+          "end": 5.84
+        },
+        {
+          "word": "hari?",
+          "start": 5.84,
+          "end": 6.0
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t5-bab04/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah jawapan PALING tepat bagi kelemahan utama polimer termoset SERTA amalan pengurusan lestari polimer sintetik",
+      "duration": 8.555,
+      "words": [
+        {
+          "word": "Di",
+          "start": 0.0,
+          "end": 0.08
+        },
+        {
+          "word": "kutip",
+          "start": 0.08,
+          "end": 0.34
+        },
+        {
+          "word": "urutan",
+          "start": 0.34,
+          "end": 0.62
+        },
+        {
+          "word": "peristimewa",
+          "start": 0.62,
+          "end": 1.06
+        },
+        {
+          "word": "di",
+          "start": 1.06,
+          "end": 1.16
+        },
+        {
+          "word": "Papal,",
+          "start": 1.16,
+          "end": 1.52
+        },
+        {
+          "word": "manakah",
+          "start": 2.16,
+          "end": 2.4
+        },
+        {
+          "word": "jawab",
+          "start": 2.4,
+          "end": 2.76
+        },
+        {
+          "word": "paling",
+          "start": 2.76,
+          "end": 3.04
+        },
+        {
+          "word": "tepat",
+          "start": 3.04,
+          "end": 3.44
+        },
+        {
+          "word": "bagi",
+          "start": 3.44,
+          "end": 3.74
+        },
+        {
+          "word": "kelemahan",
+          "start": 3.74,
+          "end": 4.14
+        },
+        {
+          "word": "utama",
+          "start": 4.14,
+          "end": 4.46
+        },
+        {
+          "word": "kolima",
+          "start": 4.46,
+          "end": 4.86
+        },
+        {
+          "word": "termoset",
+          "start": 4.86,
+          "end": 5.34
+        },
+        {
+          "word": "seta,",
+          "start": 5.34,
+          "end": 5.74
+        },
+        {
+          "word": "amalan",
+          "start": 6.18,
+          "end": 6.62
+        },
+        {
+          "word": "pengurusan",
+          "start": 6.62,
+          "end": 7.22
+        },
+        {
+          "word": "less",
+          "start": 7.22,
+          "end": 7.4
+        },
+        {
+          "word": "dari",
+          "start": 7.4,
+          "end": 7.58
+        },
+        {
+          "word": "kolima",
+          "start": 7.58,
+          "end": 7.9
+        },
+        {
+          "word": "sintetik?",
+          "start": 7.9,
+          "end": 8.42
+        }
+      ]
+    }
+  }
+}

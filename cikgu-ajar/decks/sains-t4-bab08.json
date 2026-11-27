@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t4-bab08",
+  "title": "Unsur dan Bahan",
+  "shortTitle": "Unsur dan Bahan",
+  "subject": "Sains",
+  "form": "T4",
+  "bab": 8,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Unsur dan Bahan",
+    "desc": "Untuk definisi Kertas 2, nyatakan tepat: atom ialah zarah paling kecil dalam sesuatu unsur, molekul ialah gabungan dua atau lebih atom secara kimia,…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Apakah pemerhatian pada mentol apabila pepejal PbBr2 dipanaskan sehingga melebur sepenuhnya, dan apakah sebabnya?",
+        "spokenText": "Perangkap lazim Sains! Apakah pemerhatian pada mentol apabila pepejal PbBr2 dipanaskan sehingga melebur sepenuhnya, dan apakah sebabnya?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah pemerhatian pada mentol apabila pepejal PbBr2 dipanaskan sehingga melebur sepenuhnya, dan apakah sebabnya?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mentol kekal padam kerana bahan ion hanya terdiri daripada molekul kovalen neutral",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Mentol kekal padam kerana bahan ion hanya terdiri daripada molekul kovalen neutral",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod. Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan…",
+              "spokenText": "Fakta sebenar: Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod. Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan tidak bebas bergerak; apabila…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Mentol menyala sekejap lalu pecah kerana elektron valens PbBr2 bertukar menjadi gas helium",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod. Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan…",
+              "spokenText": "Fakta sebenar: Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod. Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan tidak bebas bergerak; apabila…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan tidak bebas bergerak; apabila…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan tidak bebas bergerak; apabila…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Plumbum(II) bromida ialah bahan ion. Dalam keadaan pepejal, ion-ionnya terikat kuat dan tidak bebas bergerak; apabila",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mentol menyala kerana dalam keadaan leburan, ion Pb2+ dan Br- menjadi bebas bergerak membawa cas elektrik ke elektrod",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: Bahan Atom, Molekul &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Berdasarkan Praktis Sumatif 8 No. 1, pernyataan manakah PALING TEPAT membandingkan garam biasa (NaCl) dengan ketulan gula?",
+        "spokenText": "Perhatikan rajah konsep di papan! Berdasarkan Praktis Sumatif 8 No. 1, pernyataan manakah PALING TEPAT membandingkan garam biasa (natrium klorida) dengan ketulan gula?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan Praktis Sumatif 8 No. 1, pernyataan manakah PALING TEPAT membandingkan…",
+        "title": "Bahan Atom, Molekul & Ion: Hubung Kait Sifat Fizik",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Atom",
+            "detail": "Zarah paling kecil dalam sesuatu unsur mengandungi proton, neutron dan elektron",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Molekul",
+            "detail": "Gabungan dua atau lebih atom bukan logam secara kimia melalui ikatan kovalen",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Ion",
+            "detail": "Zarah bercas positif atau negatif terbentuk apabila atom derma atau terima elektron",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Garam dibina daripada zarah ion dengan takat lebur tinggi dan larutan akueusnya…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Garam dan gula kedua-duanya terdiri daripada atom logam tunggal seperti wayar kuprum",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Garam dan gula kedua-duanya terdiri… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Garam dan gula kedua-duanya terdiri tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul bukan logam (ikatan…",
+              "spokenText": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul bukan logam (ikatan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Bahan Atom, Molekul &",
+                "desc": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Larutan gula mengkonduksikan elektrik lebih kuat kerana ikatan kovalen membebaskan ion…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Larutan gula mengkonduksikan elektrik… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Larutan gula mengkonduksikan elektrik tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul bukan logam (ikatan…",
+              "spokenText": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul bukan logam (ikatan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Bahan Atom, Molekul &",
+                "desc": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Bahan Atom, Molekul &",
+          "desc": "Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan molekul bukan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Garam biasa ialah bahan ion (takat lebur tinggi, larutannya mengkonduksi elektrik melalui ion bebas); gula ialah bahan"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Kewujudan Unsur dalam Pelbagai",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Berdasarkan Jadual Berkala Unsur Moden, apakah identiti unsur M dan kedudukannya?",
+        "spokenText": "Perhatikan rajah konsep di papan! Berdasarkan Jadual Berkala Unsur Moden, apakah identiti unsur M dan kedudukannya?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan Jadual Berkala Unsur Moden, apakah identiti unsur M dan kedudukannya?",
+        "title": "Kewujudan Unsur dalam Pelbagai Bentuk Zarah (m/s 170)",
+        "diagramType": "atom",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Nombor proton",
+            "detail": "Bilangan proton dalam nukleus yang menentukan tertib menaik susunan unsur",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Kumpulan (1 hingga 18)",
+            "detail": "Turus menegak unsur yang berkongsi sifat kimia serupa dan elektron valens sama",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kala (1 hingga 7)",
+            "detail": "Baris mengufuk unsur yang mempunyai bilangan petala berisi elektron yang sama",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kalium (K), terletak di Kumpulan 1 dan Kala 4 dalam keluarga Logam Alkali yang reaktif",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kalsium (Ca), terletak di Kumpulan 18 sebagai Gas Adi yang lengai",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kalsium (Ca), terletak di Kumpulan 18… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kalsium (Ca), terletak di Kumpulan 18 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan dengan 1 elektron valens ia berada…",
+              "spokenText": "Nombor proton Z sama dengan 19 ialah Kalium (simbol K, susunan elektron 2 perpuluhan lapan.8 perpuluhan satu). Dengan 4 petala ia berada di Kala 4, dan dengan 1 elektron valens ia berada",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kewujudan Unsur dalam Pelbagai",
+                "desc": "Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan dengan 1…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Klorin (Cl), terletak di Kumpulan 17 sebagai Halogen berbentuk gas",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Klorin (Cl), terletak di Kumpulan 17… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Klorin (Cl), terletak di Kumpulan 17 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan dengan 1 elektron valens ia berada…",
+              "spokenText": "Nombor proton Z sama dengan 19 ialah Kalium (simbol K, susunan elektron 2 perpuluhan lapan.8 perpuluhan satu). Dengan 4 petala ia berada di Kala 4, dan dengan 1 elektron valens ia berada",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kewujudan Unsur dalam Pelbagai",
+                "desc": "Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan dengan 1…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Kewujudan Unsur dalam Pelbagai",
+          "desc": "Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan dengan 1 elektron…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Nombor proton Z = 19 ialah Kalium (simbol K, susunan elektron 2.8.8.1). Dengan 4 petala ia berada di Kala 4, dan…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Nombor proton Z sama dengan 19 ialah Kalium (simbol K, susunan elektron 2 perpuluhan lapan.8 perpuluhan satu). Dengan 4 petala ia berada di Kala 4, dan"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Unsur dan Bahan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Gabungan kegunaan radioisotop manakah yang PALING TEPAT untuk markah penuh Kertas 2 SPM?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Gabungan kegunaan radioisotop manakah yang PALING TEPAT untuk markah penuh Kertas 2 S P M?"
+      },
+      "board": {
+        "promptPill": "Gabungan kegunaan radioisotop manakah yang PALING TEPAT untuk markah penuh Kertas 2…",
+        "title": "Rumusan: Unsur dan Bahan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Definisi Isotop, Nombor Nukleon (A) &…",
+            "detail": "Isotop sentiasa mempunyai sifat KIMIA yang sama (bilangan proton dan elektron valens sama), tetapi sifat…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Kegunaan Radioisotop: Perubatan, Teknologi…",
+            "detail": "Kobalt-60 mempunyai TIGA kegunaan popular dalam soalan SPM: (1) radioterapi membunuh sel kanser, (2)…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Pertanian, Arkeologi & Perindustrian (Aktiviti…",
+            "detail": "Skema Praktis Sumatif 8 No. 4d menamakan DUA kegunaan Karbon-14: (1) Pertanian: mengesan kadar fotosintesis…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Fosforus-32 mengkaji kadar penyerapan baja tumbuhan; Karbon-14 menentukan usia fosil…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Fosforus-32 membunuh sel kanser; Karbon-14 mengesan kebocoran paip bawah tanah;…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Fosforus-32 membunuh sel kanser;… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Fosforus-32 membunuh sel kanser; tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual Berkala Unsur Moden & susunan…",
+              "spokenText": "Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual Berkala Unsur Moden & susunan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Definisi Isotop, Nombor Nukleon (A) &…",
+                    "detail": "Isotop sentiasa mempunyai sifat KIMIA yang sama (bilangan proton dan elektron valens sama), tetapi sifat…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kegunaan Radioisotop: Perubatan, Teknologi…",
+                    "detail": "Kobalt-60 mempunyai TIGA kegunaan popular dalam soalan SPM: (1) radioterapi membunuh sel kanser, (2)…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Pertanian, Arkeologi & Perindustrian (Aktiviti…",
+                    "detail": "Skema Praktis Sumatif 8 No. 4d menamakan DUA kegunaan Karbon-14: (1) Pertanian: mengesan kadar fotosintesis…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kobalt-60 menentukan usia fosil dinosaur; Uranium-235 mengkaji serapan baja akar tumbuhan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kobalt-60 menentukan usia fosil… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kobalt-60 menentukan usia fosil tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual Berkala Unsur Moden & susunan…",
+              "spokenText": "Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual Berkala Unsur Moden & susunan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Definisi Isotop, Nombor Nukleon (A) &…",
+                    "detail": "Isotop sentiasa mempunyai sifat KIMIA yang sama (bilangan proton dan elektron valens sama), tetapi sifat…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kegunaan Radioisotop: Perubatan, Teknologi…",
+                    "detail": "Kobalt-60 mempunyai TIGA kegunaan popular dalam soalan SPM: (1) radioterapi membunuh sel kanser, (2)…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Pertanian, Arkeologi & Perindustrian (Aktiviti…",
+                    "detail": "Skema Praktis Sumatif 8 No. 4d menamakan DUA kegunaan Karbon-14: (1) Pertanian: mengesan kadar fotosintesis…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Definisi Isotop, Nombor Nukleon (A) &…",
+              "detail": "Isotop sentiasa mempunyai sifat KIMIA yang sama (bilangan proton dan elektron valens sama), tetapi sifat…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kegunaan Radioisotop: Perubatan, Teknologi…",
+              "detail": "Kobalt-60 mempunyai TIGA kegunaan popular dalam soalan SPM: (1) radioterapi membunuh sel kanser, (2)…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Pertanian, Arkeologi & Perindustrian (Aktiviti…",
+              "detail": "Skema Praktis Sumatif 8 No. 4d menamakan DUA kegunaan Karbon-14: (1) Pertanian: mengesan kadar fotosintesis…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Unsur dan Bahan",
+          "desc": "Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual Berkala Unsur…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Anda telah menguasai kesemua 45 langkah Bab 8 (Unsur dan Bahan): asas jirim 3 zarah & sifat fizik, Jadual",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Definisi Isotop, Nombor Nukleon (A) &…",
+              "detail": "Isotop sentiasa mempunyai sifat KIMIA yang sama (bilangan proton dan elektron valens sama), tetapi sifat…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kegunaan Radioisotop: Perubatan, Teknologi…",
+              "detail": "Kobalt-60 mempunyai TIGA kegunaan popular dalam soalan SPM: (1) radioterapi membunuh sel kanser, (2)…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Pertanian, Arkeologi & Perindustrian (Aktiviti…",
+              "detail": "Skema Praktis Sumatif 8 No. 4d menamakan DUA kegunaan Karbon-14: (1) Pertanian: mengesan kadar fotosintesis…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

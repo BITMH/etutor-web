@@ -1,0 +1,375 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/fizik-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Fizik! Berapakah halaju awal u, halaju akhir v dan pecutan a troli tersebut?",
+      "duration": 5.931,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "lazim",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "fizik",
+          "start": 0.92,
+          "end": 1.9
+        },
+        {
+          "word": "berapakah",
+          "start": 1.9,
+          "end": 2.4
+        },
+        {
+          "word": "halaju",
+          "start": 2.4,
+          "end": 2.76
+        },
+        {
+          "word": "awal",
+          "start": 2.76,
+          "end": 3.04
+        },
+        {
+          "word": "itu,",
+          "start": 3.04,
+          "end": 3.2
+        },
+        {
+          "word": "halaju",
+          "start": 3.68,
+          "end": 4.1
+        },
+        {
+          "word": "ahir",
+          "start": 4.1,
+          "end": 4.36
+        },
+        {
+          "word": "V",
+          "start": 4.36,
+          "end": 4.5
+        },
+        {
+          "word": "dan",
+          "start": 4.5,
+          "end": 4.66
+        },
+        {
+          "word": "pecutan",
+          "start": 4.66,
+          "end": 5.06
+        },
+        {
+          "word": "Atroly",
+          "start": 5.06,
+          "end": 5.46
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.46,
+          "end": 5.8
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/fizik-t4-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Berapakah sesaran yang dilalui oleh alat pengangkutan peribadi pintar tersebut?",
+      "duration": 5.387,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "langkah",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "di",
+          "start": 0.9,
+          "end": 1.02
+        },
+        {
+          "word": "Papan?",
+          "start": 1.02,
+          "end": 1.34
+        },
+        {
+          "word": "Berapakah",
+          "start": 1.62,
+          "end": 2.3
+        },
+        {
+          "word": "sesarahan",
+          "start": 2.3,
+          "end": 2.72
+        },
+        {
+          "word": "yang",
+          "start": 2.72,
+          "end": 2.84
+        },
+        {
+          "word": "dilalui",
+          "start": 2.84,
+          "end": 3.24
+        },
+        {
+          "word": "oleh",
+          "start": 3.24,
+          "end": 3.4
+        },
+        {
+          "word": "alat",
+          "start": 3.4,
+          "end": 3.78
+        },
+        {
+          "word": "pengangkutan",
+          "start": 3.78,
+          "end": 4.26
+        },
+        {
+          "word": "peribadi",
+          "start": 4.26,
+          "end": 4.62
+        },
+        {
+          "word": "pinta",
+          "start": 4.62,
+          "end": 4.9
+        },
+        {
+          "word": "tersebut?",
+          "start": 4.9,
+          "end": 5.26
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/fizik-t4-bab02/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Manakah pemerhatian yang TEPAT semasa kedua-dua objek jatuh di dalam kebuk vakum?",
+      "duration": 6.261,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "raja",
+          "start": 0.64,
+          "end": 0.96
+        },
+        {
+          "word": "konsep",
+          "start": 0.96,
+          "end": 1.34
+        },
+        {
+          "word": "di",
+          "start": 1.34,
+          "end": 1.42
+        },
+        {
+          "word": "papan?",
+          "start": 1.42,
+          "end": 1.76
+        },
+        {
+          "word": "Manakah",
+          "start": 2.18,
+          "end": 2.62
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.62,
+          "end": 3.26
+        },
+        {
+          "word": "yang",
+          "start": 3.26,
+          "end": 3.4
+        },
+        {
+          "word": "tepat",
+          "start": 3.4,
+          "end": 3.9
+        },
+        {
+          "word": "semasa",
+          "start": 3.9,
+          "end": 4.3
+        },
+        {
+          "word": "kedua",
+          "start": 4.3,
+          "end": 4.54
+        },
+        {
+          "word": "-dua",
+          "start": 4.54,
+          "end": 4.66
+        },
+        {
+          "word": "objek",
+          "start": 4.66,
+          "end": 4.86
+        },
+        {
+          "word": "jatuh",
+          "start": 4.86,
+          "end": 5.16
+        },
+        {
+          "word": "di",
+          "start": 5.16,
+          "end": 5.28
+        },
+        {
+          "word": "dalam",
+          "start": 5.28,
+          "end": 5.44
+        },
+        {
+          "word": "kebuk",
+          "start": 5.44,
+          "end": 5.72
+        },
+        {
+          "word": "bakom?",
+          "start": 5.72,
+          "end": 6.02
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/fizik-t4-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah pasangan jawapan yang PALING tepat bagi pecutan hoverkraf, fungsi lapisan udara dan graf v-t pantulan bola?",
+      "duration": 8.853,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "urutan",
+          "start": 0.64,
+          "end": 1.06
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.06,
+          "end": 1.58
+        },
+        {
+          "word": "di",
+          "start": 1.58,
+          "end": 1.7
+        },
+        {
+          "word": "papan,",
+          "start": 1.7,
+          "end": 2.1
+        },
+        {
+          "word": "manakah",
+          "start": 2.36,
+          "end": 3.0
+        },
+        {
+          "word": "pasangan",
+          "start": 3.0,
+          "end": 3.38
+        },
+        {
+          "word": "jawapan",
+          "start": 3.38,
+          "end": 3.8
+        },
+        {
+          "word": "yang",
+          "start": 3.8,
+          "end": 3.92
+        },
+        {
+          "word": "paling",
+          "start": 3.92,
+          "end": 4.18
+        },
+        {
+          "word": "tepat",
+          "start": 4.18,
+          "end": 4.56
+        },
+        {
+          "word": "bagi",
+          "start": 4.56,
+          "end": 4.82
+        },
+        {
+          "word": "percutan",
+          "start": 4.82,
+          "end": 5.2
+        },
+        {
+          "word": "hovercraft,",
+          "start": 5.2,
+          "end": 5.72
+        },
+        {
+          "word": "fungsi",
+          "start": 5.94,
+          "end": 6.22
+        },
+        {
+          "word": "lapisan",
+          "start": 6.22,
+          "end": 6.58
+        },
+        {
+          "word": "udara,",
+          "start": 6.58,
+          "end": 7.0
+        },
+        {
+          "word": "dan",
+          "start": 7.22,
+          "end": 7.26
+        },
+        {
+          "word": "graph",
+          "start": 7.26,
+          "end": 7.56
+        },
+        {
+          "word": "beauty",
+          "start": 7.56,
+          "end": 7.88
+        },
+        {
+          "word": "pantulan",
+          "start": 7.88,
+          "end": 8.28
+        },
+        {
+          "word": "bola.",
+          "start": 8.28,
+          "end": 8.52
+        }
+      ]
+    }
+  }
+}

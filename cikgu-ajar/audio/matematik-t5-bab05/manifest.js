@@ -1,0 +1,536 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t5-bab05"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t5-bab05/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Segi tiga ABC dan PQR mempunyai AC sama dengan PR sama dengan 8 cm, BC sama dengan QR sama dengan 5 perpuluhan enam cm, dan sudut bukan tercangkum A sama dengan P sama dengan 38 darjah. Adakah kedua-duanya",
+      "duration": 15.968,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "Lazim",
+          "start": 0.46,
+          "end": 0.76
+        },
+        {
+          "word": "Matematik,",
+          "start": 0.76,
+          "end": 1.32
+        },
+        {
+          "word": "segi",
+          "start": 1.6,
+          "end": 2.1
+        },
+        {
+          "word": "3",
+          "start": 2.1,
+          "end": 2.32
+        },
+        {
+          "word": "EDC",
+          "start": 2.32,
+          "end": 2.82
+        },
+        {
+          "word": "dan",
+          "start": 2.82,
+          "end": 3.5
+        },
+        {
+          "word": "PQR",
+          "start": 3.5,
+          "end": 4.16
+        },
+        {
+          "word": "mempunyai",
+          "start": 4.16,
+          "end": 4.58
+        },
+        {
+          "word": "EAC",
+          "start": 4.58,
+          "end": 4.92
+        },
+        {
+          "word": "sama",
+          "start": 4.92,
+          "end": 5.14
+        },
+        {
+          "word": "dengan",
+          "start": 5.14,
+          "end": 5.36
+        },
+        {
+          "word": "PR,",
+          "start": 5.36,
+          "end": 5.66
+        },
+        {
+          "word": "sama",
+          "start": 5.98,
+          "end": 5.98
+        },
+        {
+          "word": "dengan",
+          "start": 5.98,
+          "end": 6.24
+        },
+        {
+          "word": "EMBC,",
+          "start": 6.24,
+          "end": 7.14
+        },
+        {
+          "word": "sama",
+          "start": 7.42,
+          "end": 7.52
+        },
+        {
+          "word": "dengan",
+          "start": 7.52,
+          "end": 7.72
+        },
+        {
+          "word": "QR,",
+          "start": 7.72,
+          "end": 8.16
+        },
+        {
+          "word": "sama",
+          "start": 8.3,
+          "end": 8.38
+        },
+        {
+          "word": "dengan",
+          "start": 8.38,
+          "end": 8.7
+        },
+        {
+          "word": "C",
+          "start": 8.7,
+          "end": 9.16
+        },
+        {
+          "word": "-6CM",
+          "start": 9.16,
+          "end": 10.48
+        },
+        {
+          "word": "dan",
+          "start": 10.48,
+          "end": 11.14
+        },
+        {
+          "word": "sudut",
+          "start": 11.14,
+          "end": 11.44
+        },
+        {
+          "word": "bukan",
+          "start": 11.44,
+          "end": 11.58
+        },
+        {
+          "word": "tercangkung",
+          "start": 11.58,
+          "end": 12.0
+        },
+        {
+          "word": "A,",
+          "start": 12.0,
+          "end": 12.18
+        },
+        {
+          "word": "sama",
+          "start": 12.34,
+          "end": 12.46
+        },
+        {
+          "word": "dengan",
+          "start": 12.46,
+          "end": 12.72
+        },
+        {
+          "word": "P,",
+          "start": 12.72,
+          "end": 13.08
+        },
+        {
+          "word": "sama",
+          "start": 13.46,
+          "end": 13.56
+        },
+        {
+          "word": "dengan",
+          "start": 13.56,
+          "end": 13.78
+        },
+        {
+          "word": "TR",
+          "start": 13.78,
+          "end": 14.02
+        },
+        {
+          "word": "saja.",
+          "start": 14.02,
+          "end": 14.28
+        },
+        {
+          "word": "Adakah",
+          "start": 14.7,
+          "end": 15.0
+        },
+        {
+          "word": "kedua",
+          "start": 15.0,
+          "end": 15.42
+        },
+        {
+          "word": "-duanya?",
+          "start": 15.42,
+          "end": 15.68
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t5-bab05/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Dua kad trapezium bersudut tepat yang kongruen dicantum pada sisi selari panjangnya (AB) membentuk sebuah pentagon simetri",
+      "duration": 7.371,
+      "words": [
+        {
+          "word": "Ia",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "langkah",
+          "start": 0.18,
+          "end": 0.5
+        },
+        {
+          "word": "di",
+          "start": 0.5,
+          "end": 0.6
+        },
+        {
+          "word": "papan,",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "dua",
+          "start": 1.26,
+          "end": 1.64
+        },
+        {
+          "word": "kat",
+          "start": 1.64,
+          "end": 1.82
+        },
+        {
+          "word": "trapezium",
+          "start": 1.82,
+          "end": 2.36
+        },
+        {
+          "word": "bersuduk",
+          "start": 2.36,
+          "end": 2.76
+        },
+        {
+          "word": "tepat",
+          "start": 2.76,
+          "end": 3.0
+        },
+        {
+          "word": "yang",
+          "start": 3.0,
+          "end": 3.14
+        },
+        {
+          "word": "kongruan",
+          "start": 3.14,
+          "end": 3.56
+        },
+        {
+          "word": "dijantung",
+          "start": 3.56,
+          "end": 4.02
+        },
+        {
+          "word": "pada",
+          "start": 4.02,
+          "end": 4.2
+        },
+        {
+          "word": "sisi",
+          "start": 4.2,
+          "end": 4.46
+        },
+        {
+          "word": "selari",
+          "start": 4.46,
+          "end": 4.78
+        },
+        {
+          "word": "panjangnya,",
+          "start": 4.78,
+          "end": 5.3
+        },
+        {
+          "word": "yang",
+          "start": 5.42,
+          "end": 5.52
+        },
+        {
+          "word": "di",
+          "start": 5.52,
+          "end": 5.62
+        },
+        {
+          "word": "membentuk",
+          "start": 5.62,
+          "end": 6.12
+        },
+        {
+          "word": "sebuah",
+          "start": 6.12,
+          "end": 6.42
+        },
+        {
+          "word": "pentagon",
+          "start": 6.42,
+          "end": 6.76
+        },
+        {
+          "word": "simitri.",
+          "start": 6.76,
+          "end": 7.26
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t5-bab05/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Kongruen (Sisi & Sudut Sepadan Sama)\":",
+      "duration": 6.091,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "lazim",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "matematik",
+          "start": 0.92,
+          "end": 1.68
+        },
+        {
+          "word": "pilih",
+          "start": 1.68,
+          "end": 2.22
+        },
+        {
+          "word": "item",
+          "start": 2.22,
+          "end": 2.5
+        },
+        {
+          "word": "yang",
+          "start": 2.5,
+          "end": 2.64
+        },
+        {
+          "word": "tepat",
+          "start": 2.64,
+          "end": 2.94
+        },
+        {
+          "word": "bagi",
+          "start": 2.94,
+          "end": 3.26
+        },
+        {
+          "word": "kategori",
+          "start": 3.26,
+          "end": 3.76
+        },
+        {
+          "word": "konggrin",
+          "start": 3.76,
+          "end": 4.44
+        },
+        {
+          "word": "CC",
+          "start": 4.44,
+          "end": 4.68
+        },
+        {
+          "word": "sudut",
+          "start": 4.68,
+          "end": 5.16
+        },
+        {
+          "word": "sepadang",
+          "start": 5.16,
+          "end": 5.44
+        },
+        {
+          "word": "sama",
+          "start": 5.44,
+          "end": 5.66
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t5-bab05/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Dalam pelan sebuah taman tema, medan selera berbentuk heksagon P mempunyai luas 48 m kuasa dua. Heksagon Q ialah imej bagi P di",
+      "duration": 11.371,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "langkah",
+          "start": 0.5,
+          "end": 0.82
+        },
+        {
+          "word": "di",
+          "start": 0.82,
+          "end": 0.94
+        },
+        {
+          "word": "papan.",
+          "start": 0.94,
+          "end": 1.26
+        },
+        {
+          "word": "Dalam",
+          "start": 1.88,
+          "end": 2.32
+        },
+        {
+          "word": "plan",
+          "start": 2.32,
+          "end": 2.54
+        },
+        {
+          "word": "sebuah",
+          "start": 2.54,
+          "end": 2.92
+        },
+        {
+          "word": "tamat",
+          "start": 2.92,
+          "end": 3.14
+        },
+        {
+          "word": "tema.",
+          "start": 3.14,
+          "end": 3.46
+        },
+        {
+          "word": "Medan",
+          "start": 4.12,
+          "end": 4.66
+        },
+        {
+          "word": "selera",
+          "start": 4.66,
+          "end": 5.02
+        },
+        {
+          "word": "berbentuk",
+          "start": 5.02,
+          "end": 5.56
+        },
+        {
+          "word": "Hexagon",
+          "start": 5.56,
+          "end": 5.94
+        },
+        {
+          "word": "P",
+          "start": 5.94,
+          "end": 6.22
+        },
+        {
+          "word": "mempunyai",
+          "start": 6.22,
+          "end": 6.64
+        },
+        {
+          "word": "luas",
+          "start": 6.64,
+          "end": 7.06
+        },
+        {
+          "word": "5M",
+          "start": 7.06,
+          "end": 8.0
+        },
+        {
+          "word": "kwasa",
+          "start": 8.0,
+          "end": 8.42
+        },
+        {
+          "word": "2",
+          "start": 8.42,
+          "end": 8.58
+        },
+        {
+          "word": "Hexagon",
+          "start": 8.58,
+          "end": 9.56
+        },
+        {
+          "word": "Q",
+          "start": 9.56,
+          "end": 9.78
+        },
+        {
+          "word": "ialah",
+          "start": 9.78,
+          "end": 10.04
+        },
+        {
+          "word": "image",
+          "start": 10.04,
+          "end": 10.32
+        },
+        {
+          "word": "bagi",
+          "start": 10.32,
+          "end": 10.72
+        },
+        {
+          "word": "P",
+          "start": 10.72,
+          "end": 10.96
+        },
+        {
+          "word": "di",
+          "start": 10.96,
+          "end": 11.2
+        }
+      ]
+    }
+  }
+};

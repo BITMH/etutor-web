@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t4-bab11",
+  "title": "Daya dan Gerakan",
+  "shortTitle": "Daya dan Gerakan",
+  "subject": "Sains",
+  "form": "T4",
+  "bab": 11,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Daya dan Gerakan",
+    "desc": "Sentiasa nyatakan ARAH (contohnya timur atau barat laut) apabila menulis jawapan sesaran atau halaju dalam Kertas 2 SPM!"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Apakah nilai tepat bagi jarak yang dilalui serta sesaran Syafiq dari titik mula R?",
+        "spokenText": "Perangkap lazim Sains! Apakah nilai tepat bagi jarak yang dilalui serta sesaran Syafiq dari titik mula R?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah nilai tepat bagi jarak yang dilalui serta sesaran Syafiq dari titik mula R?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Jarak = 150 m; Sesaran = 350 m ke arah utara",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Jarak = 150 m; Sesaran = 350 m ke arah utara",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Jarak = 350 m; Sesaran = 150 m ke arah timur. Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus…",
+              "spokenText": "Fakta sebenar: Jarak sama dengan 350 m; Sesaran sama dengan 150 m ke arah timur. Jumlah panjang lintasan ialah 100 m positif 150 m positif 100 m sama dengan 350 m (jarak). Garis lurus",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus terpendek yang menyambungkan R terus ke U ialah…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Jarak = 250 m; Sesaran = 100 m ke arah selatan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Jarak = 350 m; Sesaran = 150 m ke arah timur. Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus…",
+              "spokenText": "Fakta sebenar: Jarak sama dengan 350 m; Sesaran sama dengan 150 m ke arah timur. Jumlah panjang lintasan ialah 100 m positif 150 m positif 100 m sama dengan 350 m (jarak). Garis lurus",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus terpendek yang menyambungkan R terus ke U ialah…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus terpendek yang menyambungkan R terus ke U ialah…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Jumlah panjang lintasan ialah 100 m + 150 m + 100 m = 350 m (jarak). Garis lurus terpendek yang menyambungkan R terus…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Jumlah panjang lintasan ialah 100 m positif 150 m positif 100 m sama dengan 350 m (jarak). Garis lurus terpendek yang menyambungkan R terus",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Jarak = 350 m; Sesaran = 150 m ke arah timur",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: Laju, Laju Purata, Halaju",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Berapakah jumlah sesaran dan halaju purata kereta itu dari titik A ke titik C?",
+        "spokenText": "Perhatikan rajah konsep di papan! Berapakah jumlah sesaran dan halaju purata kereta itu dari titik A ke titik C?"
+      },
+      "board": {
+        "promptPill": "Berapakah jumlah sesaran dan halaju purata kereta itu dari titik A ke titik C?",
+        "title": "Laju, Laju Purata, Halaju & Tanda Arah (+/-)",
+        "diagramType": "force",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Jarak",
+            "detail": "Jumlah panjang keseluruhan lintasan gerakan sesuatu objek",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Sesaran",
+            "detail": "Lintasan terpendek menyambungkan dua titik pada satu arah tertentu",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Laju purata",
+            "detail": "Jumlah jarak yang dilalui dibahagikan dengan jumlah masa",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Sesaran = 1150 m; Halaju = 12.11 m s^-1",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Sesaran = 1150 m; Halaju = 12.11 m s^-1 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Sesaran sama dengan 1150 m; Halaju sama dengan 12 perpuluhan satu satu meter per saat tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s = 4.74 m s^-1!",
+              "spokenText": "Sesaran bersih sama dengan 800 m - 350 m sama dengan 450 m. Jumlah masa sama dengan 65 s positif 30 s sama dengan 95 s. Maka Halaju sama dengan Sesaran / Masa sama dengan 450 m / 95 s sama dengan 4 perpuluhan tujuh empat meter per saat!",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Laju, Laju Purata, Halaju",
+                "desc": "Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s = 4.74 m…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Sesaran = 450 m; Halaju = 4.74 m s^-1",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Sesaran = 350 m; Halaju = 11.67 m s^-1",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Sesaran = 350 m; Halaju = 11.67 m s^-1 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Sesaran sama dengan 350 m; Halaju sama dengan 11 perpuluhan enam tujuh meter per saat tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s = 4.74 m s^-1!",
+              "spokenText": "Sesaran bersih sama dengan 800 m - 350 m sama dengan 450 m. Jumlah masa sama dengan 65 s positif 30 s sama dengan 95 s. Maka Halaju sama dengan Sesaran / Masa sama dengan 450 m / 95 s sama dengan 4 perpuluhan tujuh empat meter per saat!",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Laju, Laju Purata, Halaju",
+                "desc": "Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s = 4.74 m…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Laju, Laju Purata, Halaju",
+          "desc": "Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s = 4.74 m s^-1!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Sesaran bersih = 800 m - 350 m = 450 m. Jumlah masa = 65 s + 30 s = 95 s. Maka Halaju = Sesaran / Masa = 450 m / 95 s…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Sesaran bersih sama dengan 800 m - 350 m sama dengan 450 m. Jumlah masa sama dengan 65 s positif 30 s sama dengan 95 s. Maka Halaju sama dengan Sesaran / Masa sama dengan 450 m / 95 s"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pecutan, Nyahpecutan & Masalah",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Berapakah halaju awal u, halaju akhir v, dan nilai pecutan a troli tersebut?",
+        "spokenText": "Perhatikan rajah konsep di papan! Berapakah halaju awal u, halaju akhir v, dan nilai pecutan a troli tersebut?"
+      },
+      "board": {
+        "promptPill": "Berapakah halaju awal u, halaju akhir v, dan nilai pecutan a troli tersebut?",
+        "title": "Pecutan, Nyahpecutan & Masalah Gerakan Linear",
+        "diagramType": "force",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Kecerunan graf v-t positif & seragam",
+            "detail": "Halaju bertambah secara seragam (pecutan seragam)",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Kecerunan graf v-t negatif & seragam",
+            "detail": "Halaju berkurang secara seragam (nyahpecutan seragam)",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Garis mendatar pada v = 12 m s^-1…",
+            "detail": "Halaju malar dengan nilai pecutan sifar (a = 0)",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "u = 10 cm s^-1; v = 50 cm s^-1; a = 40 cm s^-2 (kerana t = 1.0 s)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan u = 10 cm s^-1; v = 50 cm s^-1; a = 40… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan u sama dengan 10 c meter per saat; v sama dengan 50 c meter per saat; a sama dengan 40 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a = (50 - 10) / 0.8 = 50 cm s^-2!",
+              "spokenText": "u sama dengan 2 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 10 c meter per saat; v sama dengan 10 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 50 c meter per saat. Selang masa t sama dengan (5 - 1) x kosong perpuluhan dua s sama dengan kosong perpuluhan lapan s. Maka a sama dengan (50 - 10) / kosong perpuluhan lapan sama dengan 50 c meter per saat kuasa dua!",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pecutan, Nyahpecutan & Masalah",
+                "desc": "u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a = (50 - 10) /…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "u = 10 cm s^-1; v = 50 cm s^-1; a = 50 cm s^-2 (kerana t = 0.8 s)",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "u = 20 cm s^-1; v = 100 cm s^-1; a = 100 cm s^-2",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan u = 20 cm s^-1; v = 100 cm s^-1; a = 100… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan u sama dengan 20 c meter per saat; v sama dengan 100 c meter per saat; a sama dengan 100 tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a = (50 - 10) / 0.8 = 50 cm s^-2!",
+              "spokenText": "u sama dengan 2 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 10 c meter per saat; v sama dengan 10 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 50 c meter per saat. Selang masa t sama dengan (5 - 1) x kosong perpuluhan dua s sama dengan kosong perpuluhan lapan s. Maka a sama dengan (50 - 10) / kosong perpuluhan lapan sama dengan 50 c meter per saat kuasa dua!",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pecutan, Nyahpecutan & Masalah",
+                "desc": "u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a = (50 - 10) /…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pecutan, Nyahpecutan & Masalah",
+          "desc": "u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a = (50 - 10) / 0.8…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. u = 2.0 cm / 0.2 s = 10 cm s^-1; v = 10.0 cm / 0.2 s = 50 cm s^-1. Selang masa t = (5 - 1) x 0.2 s = 0.8 s. Maka a =…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. u sama dengan 2 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 10 c meter per saat; v sama dengan 10 perpuluhan kosong cm / kosong perpuluhan dua s sama dengan 50 c meter per saat. Selang masa t sama dengan (5 - 1) x kosong perpuluhan dua s sama dengan kosong perpuluhan lapan s. Maka a sama dengan"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Daya dan Gerakan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah keadaan bola tepat pada ketinggian maksimumnya serta perbandingan dengan graf v-t objek bergerak melawan graviti?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah keadaan bola tepat pada ketinggian maksimumnya serta perbandingan dengan graf v-t objek bergerak melawan graviti?"
+      },
+      "board": {
+        "promptPill": "Apakah keadaan bola tepat pada ketinggian maksimumnya serta perbandingan dengan…",
+        "title": "Rumusan: Daya dan Gerakan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Neraca Inersia NASA & Kesan Graviti terhadap…",
+            "detail": "Aktifkan butang 'Uji di Angkasa NASA (0 g)' dalam simulator di atas untuk melihat tempoh T kekal sama walau…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Kesan Positif Inersia: Tukul, Payung Basah &…",
+            "detail": "Soalan Cabar Minda No. 9: apabila menghuraikan cara mengetatkan kepala tukul, wajib sebut 'pemegang tukul…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Mengatasi Kesan Negatif Inersia dalam…",
+            "detail": "Soalan KBAT popular: Mengapakah tempat sandar kepala penting apabila dilanggar DARI BELAKANG? Kerana badan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Halaju bola ialah 20 m s^-1 dan kecerunan graf v-t adalah sifar kerana daya graviti…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Halaju bola ialah 20 m s^-1 dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Halaju bola ialah 20 meter per saat dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ketika naik melawan graviti, bola menyahpecut pada kadar -10 m s^-2 (kecerunan graf v-t negatif seragam) sehingga halaju v = 0 m s^-1 seketika pada…",
+              "spokenText": "Ketika naik melawan graviti, bola menyahpecut pada kadar negatif 10 meter per saat kuasa dua (kecerunan graf v-t negatif seragam) sehingga halaju v sama dengan 0 meter per saat seketika pada",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Neraca Inersia NASA & Kesan Graviti terhadap…",
+                    "detail": "Aktifkan butang 'Uji di Angkasa NASA (0 g)' dalam simulator di atas untuk melihat tempoh T kekal sama walau…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kesan Positif Inersia: Tukul, Payung Basah &…",
+                    "detail": "Soalan Cabar Minda No. 9: apabila menghuraikan cara mengetatkan kepala tukul, wajib sebut 'pemegang tukul…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Mengatasi Kesan Negatif Inersia dalam…",
+                    "detail": "Soalan KBAT popular: Mengapakah tempat sandar kepala penting apabila dilanggar DARI BELAKANG? Kerana badan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Halaju bola ialah 0 m s^-1 buat seketika (kecerunan graf s-t = 0) selepas mengalami…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Bola terus naik ke atas selama-lamanya mengikut Hukum Gerakan Newton Pertama walaupun…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Bola terus naik ke atas selama-lamanya… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Bola terus naik ke atas selama-lamanya tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ketika naik melawan graviti, bola menyahpecut pada kadar -10 m s^-2 (kecerunan graf v-t negatif seragam) sehingga halaju v = 0 m s^-1 seketika pada…",
+              "spokenText": "Ketika naik melawan graviti, bola menyahpecut pada kadar negatif 10 meter per saat kuasa dua (kecerunan graf v-t negatif seragam) sehingga halaju v sama dengan 0 meter per saat seketika pada",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Neraca Inersia NASA & Kesan Graviti terhadap…",
+                    "detail": "Aktifkan butang 'Uji di Angkasa NASA (0 g)' dalam simulator di atas untuk melihat tempoh T kekal sama walau…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kesan Positif Inersia: Tukul, Payung Basah &…",
+                    "detail": "Soalan Cabar Minda No. 9: apabila menghuraikan cara mengetatkan kepala tukul, wajib sebut 'pemegang tukul…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Mengatasi Kesan Negatif Inersia dalam…",
+                    "detail": "Soalan KBAT popular: Mengapakah tempat sandar kepala penting apabila dilanggar DARI BELAKANG? Kerana badan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Neraca Inersia NASA & Kesan Graviti terhadap…",
+              "detail": "Aktifkan butang 'Uji di Angkasa NASA (0 g)' dalam simulator di atas untuk melihat tempoh T kekal sama walau…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kesan Positif Inersia: Tukul, Payung Basah &…",
+              "detail": "Soalan Cabar Minda No. 9: apabila menghuraikan cara mengetatkan kepala tukul, wajib sebut 'pemegang tukul…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Mengatasi Kesan Negatif Inersia dalam…",
+              "detail": "Soalan KBAT popular: Mengapakah tempat sandar kepala penting apabila dilanggar DARI BELAKANG? Kerana badan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Daya dan Gerakan",
+          "desc": "Ketika naik melawan graviti, bola menyahpecut pada kadar -10 m s^-2 (kecerunan graf v-t negatif seragam) sehingga halaju v = 0 m s^-1…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ketika naik melawan graviti, bola menyahpecut pada kadar -10 m s^-2 (kecerunan graf v-t negatif seragam) sehingga…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ketika naik melawan graviti, bola menyahpecut pada kadar negatif 10 meter per saat kuasa dua (kecerunan graf v-t negatif seragam) sehingga",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Neraca Inersia NASA & Kesan Graviti terhadap…",
+              "detail": "Aktifkan butang 'Uji di Angkasa NASA (0 g)' dalam simulator di atas untuk melihat tempoh T kekal sama walau…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kesan Positif Inersia: Tukul, Payung Basah &…",
+              "detail": "Soalan Cabar Minda No. 9: apabila menghuraikan cara mengetatkan kepala tukul, wajib sebut 'pemegang tukul…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Mengatasi Kesan Negatif Inersia dalam…",
+              "detail": "Soalan KBAT popular: Mengapakah tempat sandar kepala penting apabila dilanggar DARI BELAKANG? Kerana badan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

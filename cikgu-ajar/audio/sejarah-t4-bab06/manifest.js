@@ -1,0 +1,391 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t4-bab06"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab06/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Apakah faktor utama yang menyebabkan orang Melayu tidak menyambut penyebaran fahaman komunis dari Indonesia?",
+      "duration": 6.997,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "lazim",
+          "start": 0.38,
+          "end": 0.7
+        },
+        {
+          "word": "sejarah?",
+          "start": 0.7,
+          "end": 1.54
+        },
+        {
+          "word": "Apakah",
+          "start": 1.54,
+          "end": 1.98
+        },
+        {
+          "word": "faktor",
+          "start": 1.98,
+          "end": 2.38
+        },
+        {
+          "word": "utama",
+          "start": 2.38,
+          "end": 2.72
+        },
+        {
+          "word": "yang",
+          "start": 2.72,
+          "end": 2.96
+        },
+        {
+          "word": "menyebabkan",
+          "start": 2.96,
+          "end": 3.46
+        },
+        {
+          "word": "orang",
+          "start": 3.46,
+          "end": 3.66
+        },
+        {
+          "word": "layu",
+          "start": 3.66,
+          "end": 4.02
+        },
+        {
+          "word": "tidak",
+          "start": 4.02,
+          "end": 4.18
+        },
+        {
+          "word": "menyambut",
+          "start": 4.18,
+          "end": 4.68
+        },
+        {
+          "word": "penyebaran",
+          "start": 4.68,
+          "end": 5.16
+        },
+        {
+          "word": "fahaman",
+          "start": 5.16,
+          "end": 5.54
+        },
+        {
+          "word": "komunis",
+          "start": 5.54,
+          "end": 6.02
+        },
+        {
+          "word": "dari",
+          "start": 6.02,
+          "end": 6.22
+        },
+        {
+          "word": "Indonesia?",
+          "start": 6.22,
+          "end": 6.48
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab06/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah tujuan British meluluskan Trade Union Ordinance No. 9 of 1948 menjelang pertengahan tahun 1948?",
+      "duration": 7.499,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "urutan",
+          "start": 0.6,
+          "end": 1.04
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.04,
+          "end": 1.6
+        },
+        {
+          "word": "di",
+          "start": 1.6,
+          "end": 1.74
+        },
+        {
+          "word": "Papan.",
+          "start": 1.74,
+          "end": 2.18
+        },
+        {
+          "word": "Apakah",
+          "start": 2.54,
+          "end": 3.06
+        },
+        {
+          "word": "tujuan",
+          "start": 3.06,
+          "end": 3.48
+        },
+        {
+          "word": "British",
+          "start": 3.48,
+          "end": 3.84
+        },
+        {
+          "word": "meluluskan",
+          "start": 3.84,
+          "end": 4.56
+        },
+        {
+          "word": "trade",
+          "start": 4.56,
+          "end": 4.78
+        },
+        {
+          "word": "union",
+          "start": 4.78,
+          "end": 5.04
+        },
+        {
+          "word": "ordinance",
+          "start": 5.04,
+          "end": 5.38
+        },
+        {
+          "word": "No.",
+          "start": 5.38,
+          "end": 5.6
+        },
+        {
+          "word": "498?",
+          "start": 5.9,
+          "end": 6.62
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab06/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah tujuan strategik PKM bertindak melumpuhkan ekonomi dan merosakkan infrastruktur asas di Tanah Melayu?",
+      "duration": 10.037,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "raja",
+          "start": 0.64,
+          "end": 0.98
+        },
+        {
+          "word": "konsep",
+          "start": 0.98,
+          "end": 1.44
+        },
+        {
+          "word": "di",
+          "start": 1.44,
+          "end": 1.54
+        },
+        {
+          "word": "Papan",
+          "start": 1.54,
+          "end": 1.9
+        },
+        {
+          "word": "apakah",
+          "start": 1.9,
+          "end": 2.8
+        },
+        {
+          "word": "tujuan",
+          "start": 2.8,
+          "end": 3.18
+        },
+        {
+          "word": "strategik",
+          "start": 3.18,
+          "end": 3.7
+        },
+        {
+          "word": "PKM",
+          "start": 3.7,
+          "end": 4.24
+        },
+        {
+          "word": "bertindak",
+          "start": 4.24,
+          "end": 4.86
+        },
+        {
+          "word": "melumpuhkan",
+          "start": 4.86,
+          "end": 5.42
+        },
+        {
+          "word": "ekonomi",
+          "start": 5.42,
+          "end": 5.92
+        },
+        {
+          "word": "dan",
+          "start": 5.92,
+          "end": 6.32
+        },
+        {
+          "word": "merosakkan",
+          "start": 6.32,
+          "end": 7.04
+        },
+        {
+          "word": "infrastruktur",
+          "start": 7.04,
+          "end": 7.68
+        },
+        {
+          "word": "asas",
+          "start": 7.68,
+          "end": 8.56
+        },
+        {
+          "word": "di",
+          "start": 8.56,
+          "end": 8.84
+        },
+        {
+          "word": "Tanah",
+          "start": 8.84,
+          "end": 9.24
+        },
+        {
+          "word": "Ngayu.",
+          "start": 9.24,
+          "end": 9.54
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab06/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah iktibar kenegaraan dan nilai sivik paling utama yang perlu dihayati generasi muda daripada kejayaan negara",
+      "duration": 8.011,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "urutan",
+          "start": 0.3,
+          "end": 0.7
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.7,
+          "end": 1.16
+        },
+        {
+          "word": "di",
+          "start": 1.16,
+          "end": 1.26
+        },
+        {
+          "word": "Papan,",
+          "start": 1.26,
+          "end": 1.6
+        },
+        {
+          "word": "apakah",
+          "start": 1.76,
+          "end": 2.52
+        },
+        {
+          "word": "itibah",
+          "start": 2.52,
+          "end": 2.92
+        },
+        {
+          "word": "kenaegaraan",
+          "start": 2.92,
+          "end": 3.54
+        },
+        {
+          "word": "dan",
+          "start": 3.54,
+          "end": 3.68
+        },
+        {
+          "word": "nilai",
+          "start": 3.68,
+          "end": 4.08
+        },
+        {
+          "word": "CVK",
+          "start": 4.08,
+          "end": 4.38
+        },
+        {
+          "word": "paling",
+          "start": 4.38,
+          "end": 4.54
+        },
+        {
+          "word": "utama",
+          "start": 4.54,
+          "end": 4.92
+        },
+        {
+          "word": "yang",
+          "start": 4.92,
+          "end": 5.1
+        },
+        {
+          "word": "perlu",
+          "start": 5.1,
+          "end": 5.32
+        },
+        {
+          "word": "dihayati",
+          "start": 5.32,
+          "end": 5.78
+        },
+        {
+          "word": "generasi",
+          "start": 5.78,
+          "end": 6.3
+        },
+        {
+          "word": "muda",
+          "start": 6.3,
+          "end": 6.7
+        },
+        {
+          "word": "daripada",
+          "start": 6.7,
+          "end": 7.06
+        },
+        {
+          "word": "kejayaan",
+          "start": 7.06,
+          "end": 7.56
+        },
+        {
+          "word": "negara?",
+          "start": 7.56,
+          "end": 7.84
+        }
+      ]
+    }
+  }
+};

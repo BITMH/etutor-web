@@ -1,0 +1,390 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:56.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sains-t4-bab11/c1_intro.mp3",
+      "text": "Perangkap lazim Sains! Apakah nilai tepat bagi jarak yang dilalui serta sesaran Syafiq dari titik mula R?",
+      "duration": 5.547,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.4
+        },
+        {
+          "word": "Lazim",
+          "start": 0.4,
+          "end": 0.7
+        },
+        {
+          "word": "Science",
+          "start": 0.7,
+          "end": 0.96
+        },
+        {
+          "word": "apakah",
+          "start": 0.96,
+          "end": 1.48
+        },
+        {
+          "word": "nilai",
+          "start": 1.48,
+          "end": 1.92
+        },
+        {
+          "word": "tepat",
+          "start": 1.92,
+          "end": 2.28
+        },
+        {
+          "word": "bagi",
+          "start": 2.28,
+          "end": 2.58
+        },
+        {
+          "word": "jarak",
+          "start": 2.58,
+          "end": 2.92
+        },
+        {
+          "word": "yang",
+          "start": 2.92,
+          "end": 3.08
+        },
+        {
+          "word": "dilalui",
+          "start": 3.08,
+          "end": 3.52
+        },
+        {
+          "word": "serta",
+          "start": 3.52,
+          "end": 3.78
+        },
+        {
+          "word": "sesara",
+          "start": 3.78,
+          "end": 4.08
+        },
+        {
+          "word": "Shafiq",
+          "start": 4.08,
+          "end": 4.52
+        },
+        {
+          "word": "dari",
+          "start": 4.52,
+          "end": 4.66
+        },
+        {
+          "word": "titik",
+          "start": 4.66,
+          "end": 5.0
+        },
+        {
+          "word": "muluar?",
+          "start": 5.0,
+          "end": 5.36
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sains-t4-bab11/c2_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berapakah jumlah sesaran dan halaju purata kereta itu dari titik A ke titik C?",
+      "duration": 6.571,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.6
+        },
+        {
+          "word": "raja",
+          "start": 0.6,
+          "end": 0.92
+        },
+        {
+          "word": "konsep",
+          "start": 0.92,
+          "end": 1.4
+        },
+        {
+          "word": "di",
+          "start": 1.4,
+          "end": 1.48
+        },
+        {
+          "word": "Papal,",
+          "start": 1.48,
+          "end": 1.88
+        },
+        {
+          "word": "berapakah",
+          "start": 2.48,
+          "end": 2.9
+        },
+        {
+          "word": "jumlah",
+          "start": 2.9,
+          "end": 3.24
+        },
+        {
+          "word": "sesaran",
+          "start": 3.24,
+          "end": 3.66
+        },
+        {
+          "word": "dan",
+          "start": 3.66,
+          "end": 3.82
+        },
+        {
+          "word": "halaju",
+          "start": 3.82,
+          "end": 4.24
+        },
+        {
+          "word": "purata",
+          "start": 4.24,
+          "end": 4.52
+        },
+        {
+          "word": "kereta",
+          "start": 4.52,
+          "end": 4.94
+        },
+        {
+          "word": "itu",
+          "start": 4.94,
+          "end": 5.08
+        },
+        {
+          "word": "dari",
+          "start": 5.08,
+          "end": 5.26
+        },
+        {
+          "word": "titik",
+          "start": 5.26,
+          "end": 5.64
+        },
+        {
+          "word": "A",
+          "start": 5.64,
+          "end": 5.72
+        },
+        {
+          "word": "ke",
+          "start": 5.72,
+          "end": 5.86
+        },
+        {
+          "word": "titik",
+          "start": 5.86,
+          "end": 6.18
+        },
+        {
+          "word": "C.",
+          "start": 6.18,
+          "end": 6.36
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sains-t4-bab11/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Berapakah halaju awal u, halaju akhir v, dan nilai pecutan a troli tersebut?",
+      "duration": 7.04,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "raja",
+          "start": 0.5,
+          "end": 0.74
+        },
+        {
+          "word": "konsep",
+          "start": 0.74,
+          "end": 1.14
+        },
+        {
+          "word": "di",
+          "start": 1.14,
+          "end": 1.2
+        },
+        {
+          "word": "Papan.",
+          "start": 1.2,
+          "end": 1.6
+        },
+        {
+          "word": "Perapakah",
+          "start": 1.86,
+          "end": 2.62
+        },
+        {
+          "word": "halaju",
+          "start": 2.62,
+          "end": 3.0
+        },
+        {
+          "word": "awal",
+          "start": 3.0,
+          "end": 3.36
+        },
+        {
+          "word": "itu,",
+          "start": 3.36,
+          "end": 3.52
+        },
+        {
+          "word": "halaju",
+          "start": 3.94,
+          "end": 4.28
+        },
+        {
+          "word": "Ahevi",
+          "start": 4.28,
+          "end": 4.76
+        },
+        {
+          "word": "dan",
+          "start": 4.76,
+          "end": 5.48
+        },
+        {
+          "word": "nilai",
+          "start": 5.48,
+          "end": 5.82
+        },
+        {
+          "word": "pecutan",
+          "start": 5.82,
+          "end": 6.2
+        },
+        {
+          "word": "atroli",
+          "start": 6.2,
+          "end": 6.58
+        },
+        {
+          "word": "tersebut.",
+          "start": 6.58,
+          "end": 6.92
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sains-t4-bab11/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah keadaan bola tepat pada ketinggian maksimumnya serta perbandingan dengan graf v-t objek bergerak melawan graviti?",
+      "duration": 8.309,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "urutan",
+          "start": 0.54,
+          "end": 0.94
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.94,
+          "end": 1.52
+        },
+        {
+          "word": "di",
+          "start": 1.52,
+          "end": 1.64
+        },
+        {
+          "word": "Papan,",
+          "start": 1.64,
+          "end": 2.04
+        },
+        {
+          "word": "apakah",
+          "start": 2.4,
+          "end": 2.78
+        },
+        {
+          "word": "keadaan",
+          "start": 2.78,
+          "end": 3.12
+        },
+        {
+          "word": "bola",
+          "start": 3.12,
+          "end": 3.3
+        },
+        {
+          "word": "tepat",
+          "start": 3.3,
+          "end": 3.74
+        },
+        {
+          "word": "pada",
+          "start": 3.74,
+          "end": 3.94
+        },
+        {
+          "word": "ketinggian",
+          "start": 3.94,
+          "end": 4.42
+        },
+        {
+          "word": "maksimumnya",
+          "start": 4.42,
+          "end": 5.04
+        },
+        {
+          "word": "seterpa",
+          "start": 5.04,
+          "end": 5.46
+        },
+        {
+          "word": "bandingan",
+          "start": 5.46,
+          "end": 5.8
+        },
+        {
+          "word": "dengan",
+          "start": 5.8,
+          "end": 5.96
+        },
+        {
+          "word": "grafiti",
+          "start": 5.96,
+          "end": 6.58
+        },
+        {
+          "word": "objek",
+          "start": 6.58,
+          "end": 7.0
+        },
+        {
+          "word": "bergerak",
+          "start": 7.0,
+          "end": 7.38
+        },
+        {
+          "word": "melawan",
+          "start": 7.38,
+          "end": 7.64
+        },
+        {
+          "word": "grafiti?",
+          "start": 7.64,
+          "end": 8.1
+        }
+      ]
+    }
+  }
+}

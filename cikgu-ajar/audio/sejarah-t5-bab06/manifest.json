@@ -1,0 +1,385 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:39.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t5-bab06/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Mengapakah darurat tetap diisytiharkan di Sarawak pada September 1966 sebelum Tawi Sli dilantik?",
+      "duration": 6.464,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.56
+        },
+        {
+          "word": "lazim",
+          "start": 0.56,
+          "end": 0.86
+        },
+        {
+          "word": "sejarah?",
+          "start": 0.86,
+          "end": 1.4
+        },
+        {
+          "word": "Mengapakah",
+          "start": 1.52,
+          "end": 1.98
+        },
+        {
+          "word": "darurat",
+          "start": 1.98,
+          "end": 2.38
+        },
+        {
+          "word": "tetap",
+          "start": 2.38,
+          "end": 2.74
+        },
+        {
+          "word": "diistiharkan",
+          "start": 2.74,
+          "end": 3.34
+        },
+        {
+          "word": "di",
+          "start": 3.34,
+          "end": 3.64
+        },
+        {
+          "word": "Sarawak",
+          "start": 3.64,
+          "end": 4.0
+        },
+        {
+          "word": "pada",
+          "start": 4.0,
+          "end": 4.18
+        },
+        {
+          "word": "setiap",
+          "start": 4.18,
+          "end": 4.54
+        },
+        {
+          "word": "9",
+          "start": 4.54,
+          "end": 4.66
+        },
+        {
+          "word": ".6",
+          "start": 4.66,
+          "end": 5.08
+        },
+        {
+          "word": "sebelum",
+          "start": 5.08,
+          "end": 5.48
+        },
+        {
+          "word": "tau",
+          "start": 5.48,
+          "end": 5.66
+        },
+        {
+          "word": "isi",
+          "start": 5.66,
+          "end": 5.9
+        },
+        {
+          "word": "dilantik?",
+          "start": 5.9,
+          "end": 6.38
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t5-bab06/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Dalam The Sarawak Gazette (31 Ogos 1963), YB Abdul Taib Mahmud menyatakan sesebuah negara akan menikmati kemerdekaan",
+      "duration": 4.235,
+      "words": [
+        {
+          "word": "dikuti",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "urutan",
+          "start": 0.34,
+          "end": 0.76
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.76,
+          "end": 1.32
+        },
+        {
+          "word": "di",
+          "start": 1.32,
+          "end": 1.44
+        },
+        {
+          "word": "Papai",
+          "start": 1.44,
+          "end": 1.78
+        },
+        {
+          "word": "dalam",
+          "start": 1.78,
+          "end": 2.58
+        },
+        {
+          "word": "desa",
+          "start": 2.58,
+          "end": 2.94
+        },
+        {
+          "word": "rawat",
+          "start": 2.94,
+          "end": 3.2
+        },
+        {
+          "word": "Gazette",
+          "start": 3.2,
+          "end": 3.64
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t5-bab06/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Apakah rasional utama Tunku Abdul Rahman Putra al-Haj membawa usul pemisahan Singapura secara rundingan ke Parlimen pada 9",
+      "duration": 7.595,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "raja",
+          "start": 0.46,
+          "end": 0.68
+        },
+        {
+          "word": "konsek",
+          "start": 0.68,
+          "end": 1.1
+        },
+        {
+          "word": "di",
+          "start": 1.1,
+          "end": 1.16
+        },
+        {
+          "word": "Papan.",
+          "start": 1.16,
+          "end": 1.52
+        },
+        {
+          "word": "Apakah",
+          "start": 1.86,
+          "end": 2.28
+        },
+        {
+          "word": "rational",
+          "start": 2.28,
+          "end": 2.58
+        },
+        {
+          "word": "utama",
+          "start": 2.58,
+          "end": 3.04
+        },
+        {
+          "word": "tungku",
+          "start": 3.04,
+          "end": 3.44
+        },
+        {
+          "word": "Abdul",
+          "start": 3.44,
+          "end": 3.62
+        },
+        {
+          "word": "Rahman",
+          "start": 3.62,
+          "end": 3.92
+        },
+        {
+          "word": "Putra",
+          "start": 3.92,
+          "end": 4.2
+        },
+        {
+          "word": "Al",
+          "start": 4.2,
+          "end": 4.34
+        },
+        {
+          "word": "-Haj",
+          "start": 4.34,
+          "end": 4.54
+        },
+        {
+          "word": "membawa",
+          "start": 4.54,
+          "end": 4.9
+        },
+        {
+          "word": "usul",
+          "start": 4.9,
+          "end": 5.2
+        },
+        {
+          "word": "pemisahan",
+          "start": 5.2,
+          "end": 5.54
+        },
+        {
+          "word": "Singapura",
+          "start": 5.54,
+          "end": 5.96
+        },
+        {
+          "word": "secara",
+          "start": 5.96,
+          "end": 6.28
+        },
+        {
+          "word": "rundingan",
+          "start": 6.28,
+          "end": 6.7
+        },
+        {
+          "word": "Kepaliman",
+          "start": 6.7,
+          "end": 7.18
+        },
+        {
+          "word": "pada",
+          "start": 7.18,
+          "end": 7.44
+        },
+        {
+          "word": "di...",
+          "start": 7.44,
+          "end": 7.56
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t5-bab06/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Cakna dan Cerminan Sejarah Bab 6 ( meter per saat 24), apakah tanggungjawab utama setiap warganegara Malaysia",
+      "duration": 8.64,
+      "words": [
+        {
+          "word": "dikutip",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "urutan",
+          "start": 0.32,
+          "end": 0.62
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.62,
+          "end": 1.12
+        },
+        {
+          "word": "di",
+          "start": 1.12,
+          "end": 1.24
+        },
+        {
+          "word": "Papan,",
+          "start": 1.24,
+          "end": 1.58
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.82,
+          "end": 2.6
+        },
+        {
+          "word": "Rumusan",
+          "start": 2.6,
+          "end": 2.92
+        },
+        {
+          "word": "Cakna",
+          "start": 2.92,
+          "end": 3.3
+        },
+        {
+          "word": "dan",
+          "start": 3.3,
+          "end": 3.48
+        },
+        {
+          "word": "Seminah",
+          "start": 3.48,
+          "end": 3.92
+        },
+        {
+          "word": "Sejarabab",
+          "start": 3.92,
+          "end": 4.32
+        },
+        {
+          "word": "Senfis",
+          "start": 4.32,
+          "end": 4.74
+        },
+        {
+          "word": "terpersaantua",
+          "start": 4.74,
+          "end": 5.44
+        },
+        {
+          "word": "apakah",
+          "start": 5.44,
+          "end": 6.14
+        },
+        {
+          "word": "tanggung",
+          "start": 6.14,
+          "end": 6.42
+        },
+        {
+          "word": "jawab",
+          "start": 6.42,
+          "end": 6.66
+        },
+        {
+          "word": "utama",
+          "start": 6.66,
+          "end": 7.06
+        },
+        {
+          "word": "setiap",
+          "start": 7.06,
+          "end": 7.66
+        },
+        {
+          "word": "wagan",
+          "start": 7.66,
+          "end": 7.92
+        },
+        {
+          "word": "negara",
+          "start": 7.92,
+          "end": 8.12
+        },
+        {
+          "word": "Malaysia",
+          "start": 8.12,
+          "end": 8.4
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,775 @@
+{
+  "deckId": "matematik-t4-bab07",
+  "title": "Graf Gerakan",
+  "shortTitle": "Graf Gerakan",
+  "subject": "Matematik",
+  "form": "T4",
+  "bab": 7,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Graf Gerakan",
+    "desc": "Sentiasa periksa label serta unit pada kedua-dua paksi sebelum mengira kecerunan supaya nilai laju anda sepadan dengan kehendak soalan seperti meter…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Pasangan titik hujung manakah yang tepat untuk melukis graf jarak-masa pelari itu?",
+        "spokenText": "Perangkap lazim Matematik! Pasangan titik hujung manakah yang tepat untuk melukis graf jarak-masa pelari itu?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pasangan titik hujung manakah yang tepat untuk melukis graf jarak-masa pelari itu?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "(0, 0) dan (48, 12) dengan garis condong menaik ke atas",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "(0, 0) dan (48, 12) dengan garis condong menaik ke atas",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: (0, 12) dan (48, 0) dengan garis condong menurun ke bawah. Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0…",
+              "spokenText": "Fakta sebenar: (0, 12) dan (48, 0) dengan garis condong menurun ke bawah. Apabila t sama dengan 0, s sama dengan 12 - kosong perpuluhan dua lima(0) sama dengan 12 km. Apabila t sama dengan 48, s sama dengan 12 - kosong perpuluhan dua lima(48) sama dengan 12 - 12 sama dengan 0",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0 km. Menyambungkan (0, 12) ke (48, 0)…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "(0, 12) dan (12, 48) dengan garis mendatar",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: (0, 12) dan (48, 0) dengan garis condong menurun ke bawah. Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0…",
+              "spokenText": "Fakta sebenar: (0, 12) dan (48, 0) dengan garis condong menurun ke bawah. Apabila t sama dengan 0, s sama dengan 12 - kosong perpuluhan dua lima(0) sama dengan 12 km. Apabila t sama dengan 48, s sama dengan 12 - kosong perpuluhan dua lima(48) sama dengan 12 - 12 sama dengan 0",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0 km. Menyambungkan (0, 12) ke (48, 0)…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0 km. Menyambungkan (0, 12) ke (48, 0)…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Apabila t = 0, s = 12 - 0.25(0) = 12 km. Apabila t = 48, s = 12 - 0.25(48) = 12 - 12 = 0 km. Menyambungkan (0, 12) ke…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Apabila t sama dengan 0, s sama dengan 12 - kosong perpuluhan dua lima(0) sama dengan 12 km. Apabila t sama dengan 48, s sama dengan 12 - kosong perpuluhan dua lima(48) sama dengan 12 - 12 sama dengan 0 km. Menyambungkan (0, 12) ke",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "(0, 12) dan (48, 0) dengan garis condong menurun ke bawah",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Melukis Graf Jarak-Masa: Jadual",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Apakah persamaan jarak-masa serta kelajuan kereta mainan tersebut?",
+        "spokenText": "Lihat langkah di papan! Apakah persamaan jarak-masa serta kelajuan kereta mainan tersebut?"
+      },
+      "board": {
+        "promptPill": "Apakah persamaan jarak-masa serta kelajuan kereta mainan tersebut?",
+        "title": "Melukis Graf Jarak-Masa: Jadual & Persamaan Linear",
+        "given": "Langkah melukis graf jarak-masa bermula dengan penentuan skala paksi yang sekata, diikuti pemplotan pasangan koordinat…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Daripada Jadual & Persamaan s = mt: Pilih skala mudah baca (cth. 2 cm mewakili 20 km),…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Persamaan Menuju Penamat & Pintasan Awal (s = mt + c): Jika jarak berbaki dari garisan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "s = 6t + 4 dengan laju 6 cm s⁻¹",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "s = 4t + 6 dengan laju 4 cm s⁻¹",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan s = 4t + 6 dengan laju 4 cm s⁻¹ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan s sama dengan 4t positif 6 dengan laju 4 c meter per saat tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pintasan-y pada t = 0 ialah c = 4 cm. Kecerunan m = (28 - 4) / (4 - 0) = 24 / 4 = 6 cm s⁻¹. Oleh itu persamaannya ialah s = 6t + 4.",
+              "spokenText": "pintasan y pada t sama dengan 0 ialah c sama dengan 4 cm. Kecerunan m sama dengan (28 - 4) / (4 - 0) sama dengan 24 / 4 sama dengan 6 c meter per saat. Oleh itu persamaannya ialah s sama dengan 6t positif 4.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Daripada Jadual & Persamaan s = mt: Pilih skala mudah baca (cth. 2 cm mewakili 20 km),…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Persamaan Menuju Penamat & Pintasan Awal (s = mt + c): Jika jarak berbaki dari garisan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "s = 7t dengan laju 7 cm s⁻¹",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan s = 7t dengan laju 7 cm s⁻¹ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan s sama dengan 7t dengan laju 7 c meter per saat tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pintasan-y pada t = 0 ialah c = 4 cm. Kecerunan m = (28 - 4) / (4 - 0) = 24 / 4 = 6 cm s⁻¹. Oleh itu persamaannya ialah s = 6t + 4.",
+              "spokenText": "pintasan y pada t sama dengan 0 ialah c sama dengan 4 cm. Kecerunan m sama dengan (28 - 4) / (4 - 0) sama dengan 24 / 4 sama dengan 6 c meter per saat. Oleh itu persamaannya ialah s sama dengan 6t positif 4.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Daripada Jadual & Persamaan s = mt: Pilih skala mudah baca (cth. 2 cm mewakili 20 km),…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Persamaan Menuju Penamat & Pintasan Awal (s = mt + c): Jika jarak berbaki dari garisan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Daripada Jadual & Persamaan s = mt: Pilih skala mudah baca (cth. 2 cm mewakili 20 km),…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Persamaan Menuju Penamat & Pintasan Awal (s = mt + c): Jika jarak berbaki dari garisan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Melukis Graf Jarak-Masa: Jadual",
+          "desc": "Pintasan-y pada t = 0 ialah c = 4 cm. Kecerunan m = (28 - 4) / (4 - 0) = 24 / 4 = 6 cm s⁻¹. Oleh itu persamaannya ialah s = 6t + 4.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Pintasan-y pada t = 0 ialah c = 4 cm. Kecerunan m = (28 - 4) / (4 - 0) = 24 / 4 = 6 cm s⁻¹. Oleh itu persamaannya…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: pintasan y pada t sama dengan 0 ialah c sama dengan 4 cm. Kecerunan m sama dengan (28 - 4) / (4 - 0) sama dengan 24 / 4 sama dengan 6 c meter per saat. Oleh itu persamaannya",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Daripada Jadual & Persamaan s = mt: Pilih skala mudah baca (cth. 2 cm mewakili 20 km),…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Persamaan Menuju Penamat & Pintasan Awal (s = mt + c): Jika jarak berbaki dari garisan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Ciri Tepat Graf Jarak-Masa\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Ciri Tepat Graf Jarak-Masa\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Ciri Tepat Graf Jarak-Masa\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Luas di bawah graf jarak-masa mewakili jumlah jarak perjalanan",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Luas di bawah graf jarak-masa mewakili jumlah jarak perjalanan",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Paksi mencancang mewakili jarak yang dilalui oleh objek. Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+              "spokenText": "Fakta sebenar: Paksi mencancang mewakili jarak yang dilalui oleh objek. Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Garis yang lebih curam pada graf jarak-masa menandakan kelajuan lebih rendah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Paksi mencancang mewakili jarak yang dilalui oleh objek. Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+              "spokenText": "Fakta sebenar: Paksi mencancang mewakili jarak yang dilalui oleh objek. Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Betul! Jarak (s) sentiasa diplot pada paksi mencancang.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Paksi mencancang mewakili jarak yang dilalui oleh objek",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Graf",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Pada graf jarak-masa sejauh 120 km, Kereta P dipandu dengan laju purata v km j⁻¹ manakala Kereta Q dengan laju purata (v -…",
+        "spokenText": "Lihat langkah di papan! Pada graf jarak-masa sejauh 120 km, Kereta P dipandu dengan laju purata v km j negatif kuasa satu manakala Kereta Q dengan laju purata (v -"
+      },
+      "board": {
+        "promptPill": "Pada graf jarak-masa sejauh 120 km, Kereta P dipandu dengan laju purata v km j⁻¹…",
+        "title": "Uji Minda Akhir: Graf Gerakan",
+        "given": "Masalah berpandukan langkah Polya memerlukan pelajar menterjemahkan syarat perbandingan jarak atau pecutan kepada…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "Pola 1 & 2 (Nisbah Luas & Magnitud Kecerunan): Jika jarak fasa 1 ialah separuh jarak…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Pola 3 & 4 (Beza Jarak & Gabungan s-t / v-t): Apabila kereta mendahului teksi sebanyak…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "v = 80 km j⁻¹; waktu tiba ialah 1000",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "v = 60 km j⁻¹; waktu tiba ialah 1030",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan v = 60 km j⁻¹; waktu tiba ialah 1030 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan v sama dengan 60 km j negatif kuasa satu; waktu tiba ialah 1030 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Persamaan beza masa: 120/(v - 20) - 120/v = 0.5. Darab silang: 120(20) = 0.5 v(v - 20) -> v² - 20v - 4800 = 0 -> (v - 80)(v + 60) = 0 -> v = 80 km…",
+              "spokenText": "Persamaan beza masa: 120/(v - 20) - 120/v sama dengan kosong perpuluhan lima. Darab silang: 120(20) sama dengan kosong perpuluhan lima v(v - 20) - lebih daripada v kuasa dua - 20v - 4800 sama dengan 0 - lebih daripada (v - 80)(v positif 60) sama dengan 0 - lebih daripada v sama dengan 80 km",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Pola 1 & 2 (Nisbah Luas & Magnitud Kecerunan): Jika jarak fasa 1 ialah separuh jarak…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Pola 3 & 4 (Beza Jarak & Gabungan s-t / v-t): Apabila kereta mendahului teksi sebanyak…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "v = 100 km j⁻¹; waktu tiba ialah 0942",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan v = 100 km j⁻¹; waktu tiba ialah 0942 tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan v sama dengan 100 km j negatif kuasa satu; waktu tiba ialah 0942 tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Persamaan beza masa: 120/(v - 20) - 120/v = 0.5. Darab silang: 120(20) = 0.5 v(v - 20) -> v² - 20v - 4800 = 0 -> (v - 80)(v + 60) = 0 -> v = 80 km…",
+              "spokenText": "Persamaan beza masa: 120/(v - 20) - 120/v sama dengan kosong perpuluhan lima. Darab silang: 120(20) sama dengan kosong perpuluhan lima v(v - 20) - lebih daripada v kuasa dua - 20v - 4800 sama dengan 0 - lebih daripada (v - 80)(v positif 60) sama dengan 0 - lebih daripada v sama dengan 80 km",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Pola 1 & 2 (Nisbah Luas & Magnitud Kecerunan): Jika jarak fasa 1 ialah separuh jarak…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Pola 3 & 4 (Beza Jarak & Gabungan s-t / v-t): Apabila kereta mendahului teksi sebanyak…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Pola 1 & 2 (Nisbah Luas & Magnitud Kecerunan): Jika jarak fasa 1 ialah separuh jarak…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Pola 3 & 4 (Beza Jarak & Gabungan s-t / v-t): Apabila kereta mendahului teksi sebanyak…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Graf",
+          "desc": "Persamaan beza masa: 120/(v - 20) - 120/v = 0.5. Darab silang: 120(20) = 0.5 v(v - 20) -> v² - 20v - 4800 = 0 -> (v - 80)(v + 60) = 0 -> v…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Persamaan beza masa: 120/(v - 20) - 120/v = 0.5. Darab silang: 120(20) = 0.5 v(v - 20) -> v² - 20v - 4800 = 0 -> (v -…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Persamaan beza masa: 120/(v - 20) - 120/v sama dengan kosong perpuluhan lima. Darab silang: 120(20) sama dengan kosong perpuluhan lima v(v - 20) - lebih daripada v kuasa dua - 20v - 4800 sama dengan 0 - lebih daripada (v -",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Pola 1 & 2 (Nisbah Luas & Magnitud Kecerunan): Jika jarak fasa 1 ialah separuh jarak…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Pola 3 & 4 (Beza Jarak & Gabungan s-t / v-t): Apabila kereta mendahului teksi sebanyak…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

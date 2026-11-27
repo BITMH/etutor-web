@@ -1,0 +1,421 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["bahasa-melayu-t4-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:25.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/bahasa-melayu-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Homograf: Ejaan Sama, Sebutan & Makna Berbeza (SP ?",
+      "duration": 11.765,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "Lazim",
+          "start": 0.42,
+          "end": 0.78
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.78,
+          "end": 1.06
+        },
+        {
+          "word": "Melayu",
+          "start": 1.06,
+          "end": 1.54
+        },
+        {
+          "word": "Awas",
+          "start": 1.54,
+          "end": 2.22
+        },
+        {
+          "word": "Perangkap",
+          "start": 2.22,
+          "end": 3.0
+        },
+        {
+          "word": "Manikah",
+          "start": 3.0,
+          "end": 3.64
+        },
+        {
+          "word": "Fakta",
+          "start": 3.64,
+          "end": 4.04
+        },
+        {
+          "word": "atau",
+          "start": 4.04,
+          "end": 4.24
+        },
+        {
+          "word": "Langkah",
+          "start": 4.24,
+          "end": 4.58
+        },
+        {
+          "word": "yang",
+          "start": 4.58,
+          "end": 4.72
+        },
+        {
+          "word": "ditului",
+          "start": 4.72,
+          "end": 5.3
+        },
+        {
+          "word": "tentang",
+          "start": 5.3,
+          "end": 5.3
+        },
+        {
+          "word": "dua",
+          "start": 5.3,
+          "end": 5.64
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.64,
+          "end": 6.16
+        },
+        {
+          "word": "satu",
+          "start": 6.16,
+          "end": 6.38
+        },
+        {
+          "word": "homograf",
+          "start": 6.38,
+          "end": 6.94
+        },
+        {
+          "word": "Ejiat",
+          "start": 6.94,
+          "end": 7.38
+        },
+        {
+          "word": "dan",
+          "start": 7.38,
+          "end": 7.46
+        },
+        {
+          "word": "sama",
+          "start": 7.46,
+          "end": 7.76
+        },
+        {
+          "word": "Sebutan",
+          "start": 7.76,
+          "end": 8.78
+        },
+        {
+          "word": "dan",
+          "start": 8.78,
+          "end": 8.96
+        },
+        {
+          "word": "makna",
+          "start": 8.96,
+          "end": 9.32
+        },
+        {
+          "word": "berbeza",
+          "start": 9.32,
+          "end": 10.16
+        },
+        {
+          "word": "ST",
+          "start": 10.77,
+          "end": 11.18
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/bahasa-melayu-t4-bab02/c2_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Apakah definisi yang tepat bagi pasangan kata HOMOGRAF dalam bahasa Melayu?",
+      "duration": 7.317,
+      "words": [
+        {
+          "word": "teliti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "binaan",
+          "start": 0.48,
+          "end": 0.88
+        },
+        {
+          "word": "kata",
+          "start": 0.88,
+          "end": 1.22
+        },
+        {
+          "word": "dan",
+          "start": 1.22,
+          "end": 1.6
+        },
+        {
+          "word": "ayat",
+          "start": 1.6,
+          "end": 1.98
+        },
+        {
+          "word": "di",
+          "start": 1.98,
+          "end": 2.06
+        },
+        {
+          "word": "papan,",
+          "start": 2.06,
+          "end": 2.42
+        },
+        {
+          "word": "apakah",
+          "start": 2.9,
+          "end": 3.36
+        },
+        {
+          "word": "definisi",
+          "start": 3.36,
+          "end": 3.92
+        },
+        {
+          "word": "yang",
+          "start": 3.92,
+          "end": 4.08
+        },
+        {
+          "word": "tepat",
+          "start": 4.08,
+          "end": 4.36
+        },
+        {
+          "word": "bagi",
+          "start": 4.36,
+          "end": 4.64
+        },
+        {
+          "word": "pasangan",
+          "start": 4.64,
+          "end": 4.94
+        },
+        {
+          "word": "kata",
+          "start": 4.94,
+          "end": 5.3
+        },
+        {
+          "word": "HOM",
+          "start": 5.3,
+          "end": 5.78
+        },
+        {
+          "word": "OJR",
+          "start": 5.78,
+          "end": 6.26
+        },
+        {
+          "word": "dalam",
+          "start": 6.26,
+          "end": 6.42
+        },
+        {
+          "word": "Bahasa",
+          "start": 6.42,
+          "end": 6.66
+        },
+        {
+          "word": "Melayu?",
+          "start": 6.66,
+          "end": 7.02
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/bahasa-melayu-t4-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Bahasa Melayu! Antara berikut, pasangan perkataan manakah merupakan HOMOFON (bunyi sama/hampir sama, ejaan berbeza)?",
+      "duration": 7.84,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "Lazim",
+          "start": 0.42,
+          "end": 0.78
+        },
+        {
+          "word": "Bahasa",
+          "start": 0.78,
+          "end": 1.04
+        },
+        {
+          "word": "Melayu,",
+          "start": 1.04,
+          "end": 1.8
+        },
+        {
+          "word": "antara",
+          "start": 1.8,
+          "end": 2.22
+        },
+        {
+          "word": "berikut",
+          "start": 2.22,
+          "end": 2.62
+        },
+        {
+          "word": "pasangan",
+          "start": 2.62,
+          "end": 3.44
+        },
+        {
+          "word": "perkataan",
+          "start": 3.44,
+          "end": 4.04
+        },
+        {
+          "word": "manakah",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "word": "merupakan",
+          "start": 4.38,
+          "end": 4.86
+        },
+        {
+          "word": "HOM",
+          "start": 4.86,
+          "end": 5.36
+        },
+        {
+          "word": "Ocon",
+          "start": 5.36,
+          "end": 5.8
+        },
+        {
+          "word": "bukan",
+          "start": 5.8,
+          "end": 6.02
+        },
+        {
+          "word": "salah",
+          "start": 6.02,
+          "end": 6.28
+        },
+        {
+          "word": "satu",
+          "start": 6.28,
+          "end": 6.48
+        },
+        {
+          "word": "ijaan",
+          "start": 6.48,
+          "end": 7.0
+        },
+        {
+          "word": "berbeza?",
+          "start": 7.0,
+          "end": 7.42
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/bahasa-melayu-t4-bab02/c4_intro.mp3",
+      "text": "Teliti binaan kata dan ayat di papan! Kenal pasti kata terbitan yang mengandungi IMBUHAN SISIPAN.",
+      "duration": 6.325,
+      "words": [
+        {
+          "word": "terlitih",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "binaan",
+          "start": 0.58,
+          "end": 0.92
+        },
+        {
+          "word": "kata",
+          "start": 0.92,
+          "end": 1.16
+        },
+        {
+          "word": "dan",
+          "start": 1.16,
+          "end": 1.3
+        },
+        {
+          "word": "ayat",
+          "start": 1.3,
+          "end": 1.6
+        },
+        {
+          "word": "di",
+          "start": 1.6,
+          "end": 1.68
+        },
+        {
+          "word": "papan",
+          "start": 1.68,
+          "end": 1.96
+        },
+        {
+          "word": "kenal",
+          "start": 1.96,
+          "end": 2.84
+        },
+        {
+          "word": "pasti",
+          "start": 2.84,
+          "end": 3.08
+        },
+        {
+          "word": "kata",
+          "start": 3.08,
+          "end": 3.48
+        },
+        {
+          "word": "terbitan",
+          "start": 3.48,
+          "end": 3.96
+        },
+        {
+          "word": "yang",
+          "start": 3.96,
+          "end": 4.08
+        },
+        {
+          "word": "mengandungi",
+          "start": 4.08,
+          "end": 4.64
+        },
+        {
+          "word": "IMBU",
+          "start": 4.64,
+          "end": 5.6
+        },
+        {
+          "word": "HSI",
+          "start": 5.6,
+          "end": 5.9
+        },
+        {
+          "word": "Siphan",
+          "start": 5.9,
+          "end": 6.24
+        }
+      ]
+    }
+  }
+};

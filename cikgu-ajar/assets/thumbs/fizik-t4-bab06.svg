@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="480" height="270" role="img" aria-label="Cahaya dan Optik">
+  <defs>
+    <linearGradient id="g_fizik_t4_bab06" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0E7490"/>
+    </linearGradient>
+    <radialGradient id="g_fizik_t4_bab06_glow" cx="78%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#0E7490" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="270" rx="18" fill="url(#g_fizik_t4_bab06)"/>
+  <rect width="480" height="270" rx="18" fill="url(#g_fizik_t4_bab06_glow)"/>
+  <g opacity="0.10" stroke="#FFFFFF" stroke-width="1">
+    <line x1="78" y1="0" x2="78" y2="270"/>
+    <line x1="158" y1="0" x2="158" y2="270"/>
+    <line x1="238" y1="0" x2="238" y2="270"/>
+    <line x1="0" y1="83" x2="480" y2="83"/>
+    <line x1="0" y1="173" x2="480" y2="173"/>
+  </g>
+  
+        <g transform="translate(292, 46)" opacity="0.94">
+          <rect x="0" y="0" width="158" height="135" rx="16" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <line x1="14" y1="68" x2="144" y2="68" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M 16 68 Q 36 22 56 68 T 96 68 T 136 68" fill="none" stroke="#22D3EE" stroke-width="4" stroke-linecap="round"/>
+          <path d="M 16 68 Q 36 100 56 68 T 96 68 T 136 68" fill="none" stroke="#FBBF24" stroke-width="2.4" stroke-dasharray="5 3"/>
+        </g>
+  <rect x="26" y="24" width="92" height="26" rx="13" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+  <text x="72" y="41" text-anchor="middle" font-size="11.5" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">T4 · BAB 6</text>
+  <rect x="126" y="24" width="84" height="26" rx="13" fill="#0284C7"/>
+  <text x="168" y="41" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">Fizik</text>
+  <text x="26" y="92" font-size="22" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif"><tspan x="26" dy="0">Cahaya dan Optik</tspan></text>
+  <rect x="26" y="216" width="136" height="28" rx="10" fill="rgba(15,23,42,0.52)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <text x="94" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E2E8F0" font-family="Plus Jakarta Sans, Arial, sans-serif">Perangkap SPM</text>
+  <rect x="170" y="216" width="112" height="28" rx="10" fill="rgba(16,185,129,0.24)" stroke="rgba(52,211,153,0.55)" stroke-width="1"/>
+  <text x="226" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#A7F3D0" font-family="Plus Jakarta Sans, Arial, sans-serif">Suara BM 100%</text>
+  <text x="454" y="234" text-anchor="end" font-size="11.5" font-weight="800" fill="#22D3EE" font-family="Plus Jakarta Sans, Arial, sans-serif">4 Kad</text>
+</svg>

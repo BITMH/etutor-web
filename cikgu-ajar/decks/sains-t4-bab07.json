@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t4-bab07",
+  "title": "Koordinasi Badan",
+  "shortTitle": "Koordinasi Badan",
+  "subject": "Sains",
+  "form": "T4",
+  "bab": 7,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Koordinasi Badan",
+    "desc": "Dalam soalan struktur Kertas 2, nyatakan kata kunci 'kelenjar tanpa duktus' dan 'dirembes terus ke dalam aliran darah' apabila mentakrifkan kelenjar…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Antara berikut, kombinasi tindak balas manakah yang berlaku akibat rembesan hormon adrenalina semasa Danial menyelamatkan diri?",
+        "spokenText": "Perangkap lazim Sains! Antara berikut, kombinasi tindak balas manakah yang berlaku akibat rembesan hormon adrenalina semasa Danial menyelamatkan diri?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Antara berikut, kombinasi tindak balas manakah yang berlaku akibat rembesan hormon adrenalina semasa Danial menyelamatkan diri?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Denyutan jantung serta tekanan darah menurun sementara semua glukosa darah ditukar menjadi glikogen di hati",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih banyak oksigen serta…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Denyutan jantung serta tekanan darah menurun sementara semua glukosa darah ditukar menjadi…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih…. Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan…",
+              "spokenText": "Fakta sebenar: Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih . Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih banyak oksigen serta tenaga ke otot",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan jantung, kadar pernafasan, tekanan darah,…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kadar pernafasan terhenti seketika dan saiz anak mata mengecil untuk mengurangkan kemasukan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih…. Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan…",
+              "spokenText": "Fakta sebenar: Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih . Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih banyak oksigen serta tenaga ke otot",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan jantung, kadar pernafasan, tekanan darah,…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih banyak oksigen serta tenaga ke otot",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan jantung, kadar pernafasan, tekanan darah,…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan jantung, kadar pernafasan,…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semasa kecemasan, kelenjar adrenal merembeskan adrenalina yang meningkatkan denyutan jantung, kadar pernafasan,",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Denyutan jantung, kadar pernafasan, tekanan darah, aras glukosa darah dan kadar metabolisme meningkat bagi membekalkan lebih banyak oksigen serta tenaga ke otot",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: Kelenjar Induk Pituitari, Kelenjar",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Seorang wanita berusia 50 tahun mengalami menopaus dengan simptom sukar tidur dan sakit sendi akibat penurunan hormon…",
+        "spokenText": "Perhatikan rajah konsep di papan! Seorang wanita berusia 50 tahun mengalami menopaus dengan simptom sukar tidur dan sakit sendi akibat penurunan hormon"
+      },
+      "board": {
+        "promptPill": "Seorang wanita berusia 50 tahun mengalami menopaus dengan simptom sukar tidur dan…",
+        "title": "Kelenjar Induk Pituitari, Kelenjar Tiroid & Kelenjar Adrenal",
+        "diagramType": "organ",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Kelenjar pituitari (bawah serebrum)",
+            "detail": "Hormon antidiuresis (ADH) & Hormon pertumbuhan (GH)",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Kelenjar tiroid (hadapan trakea)",
+            "detail": "Tiroksina pengawal kadar metabolisme badan",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Kelenjar adrenal (atas ginjal)",
+            "detail": "Adrenalina untuk tindakan kecemasan dan membesarkan anak mata",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Terapi Estrogen (ET) kerana wanita tanpa rahim tidak memerlukan tambahan progestin",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Terapi Estrogen-Progestin (EPT) khas untuk pesakit yang mengalami kekurangan insulin",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Terapi Estrogen-Progestin (EPT) khas… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Terapi Estrogen-Progestin (EPT) khas tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala Terapi Estrogen (ET)…",
+              "spokenText": "Mengikut Rencana Sains Bab 7 (muka surat 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala Terapi Estrogen (ET)",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kelenjar Induk Pituitari, Kelenjar",
+                "desc": "Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Suntikan hormon pertumbuhan (GH) bagi menebalkan dinding uterus semula",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Suntikan hormon pertumbuhan (GH) bagi… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Suntikan hormon pertumbuhan (GH) bagi tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala Terapi Estrogen (ET)…",
+              "spokenText": "Mengikut Rencana Sains Bab 7 (muka surat 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala Terapi Estrogen (ET)",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Kelenjar Induk Pituitari, Kelenjar",
+                "desc": "Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Kelenjar Induk Pituitari, Kelenjar",
+          "desc": "Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim, manakala Terapi…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Mengikut Rencana Sains Bab 7 (m.s. 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim,…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Mengikut Rencana Sains Bab 7 (muka surat 143), Terapi Estrogen-Progestin (EPT) diberikan jika wanita masih mempunyai rahim,"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pankreas, Ovari, Testis &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah hormon yang kurang dirembeskan oleh kelenjar pituitari pesakit tersebut dan nama penyakitnya?",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah hormon yang kurang dirembeskan oleh kelenjar pituitari pesakit tersebut dan nama penyakitnya?"
+      },
+      "board": {
+        "promptPill": "Apakah hormon yang kurang dirembeskan oleh kelenjar pituitari pesakit tersebut dan…",
+        "title": "Pankreas, Ovari, Testis & Rawatan Menopaus (HRT)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Diabetes melitus",
+            "detail": "Kekurangan hormon insulin daripada pankreas",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Diabetes insipidus",
+            "detail": "Kekurangan hormon antidiuresis (ADH) daripada pituitari",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Akromegali & Kegergasian",
+            "detail": "Hormon pertumbuhan (GH) dirembeskan secara berlebihan",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kekurangan hormon antidiuresis (ADH) yang menyebabkan penyakit diabetes insipidus",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Kekurangan hormon insulin yang menyebabkan penyakit hipoglisemia",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kekurangan hormon insulin yang… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kekurangan hormon insulin yang tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin berlebihan serta rasa…",
+              "spokenText": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin berlebihan serta rasa",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pankreas, Ovari, Testis &",
+                "desc": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kelebihan hormon pertumbuhan (GH) yang menyebabkan penyakit akromegali",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Kelebihan hormon pertumbuhan (GH) yang… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Kelebihan hormon pertumbuhan (GH) yang tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin berlebihan serta rasa…",
+              "spokenText": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin berlebihan serta rasa",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pankreas, Ovari, Testis &",
+                "desc": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pankreas, Ovari, Testis &",
+          "desc": "Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal, menghasilkan urin…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal,…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Kekurangan hormon antidiuresis (ADH) menyebabkan air tidak dapat diserap semula di duktus pengumpul ginjal,"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Koordinasi Badan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Gabungan pernyataan manakah yang paling TEPAT merumuskan kesepaduan koordinasi badan dan minda sihat dalam Bab 7?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Gabungan pernyataan manakah yang paling TEPAT merumuskan kesepaduan koordinasi badan dan minda sihat dalam Bab 7?"
+      },
+      "board": {
+        "promptPill": "Gabungan pernyataan manakah yang paling TEPAT merumuskan kesepaduan koordinasi…",
+        "title": "Rumusan: Koordinasi Badan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "Maksud Minda & 10 Ciri Individu Berminda Sihat",
+            "detail": "Soalan Praktis Formatif 7.3 meminta 5 ciri minda sihat: tulis frasa lengkap seperti 'mampu menaakul dan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "6 Faktor yang Mempengaruhi Kesihatan Minda…",
+            "detail": "Jika disoal bagaimana kecederaan otak berlaku dalam Rajah 7.6, sebutkan ketiga-tiga puncanya: jangkitan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Kepentingan Minda Sihat kepada 4 Tonggak &…",
+            "detail": "Untuk soalan esei kepentingan minda sihat, sentiasa bahagikan jawapan kepada empat skop jelas: Keluarga,…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kelenjar tanpa duktus merembes hormon terus ke aliran darah untuk keseimbangan tubuh;…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Hormon endokrin dialirkan melalui duktus ke luar kulit manakala inhalan menguatkan tisu…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Hormon endokrin dialirkan melalui duktus… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Hormon endokrin dialirkan melalui duktus tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Keseimbangan hormon (7.1), pencegahan penyalahgunaan dadah dan alkohol (7.2) serta pemupukan minda yang sihat (7.3) saling melengkapi untuk…",
+              "spokenText": "Tahniah! Keseimbangan hormon (7 perpuluhan satu), pencegahan penyalahgunaan dadah dan alkohol (7 perpuluhan dua) serta pemupukan minda yang sihat (7 perpuluhan tiga) saling melengkapi untuk",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Maksud Minda & 10 Ciri Individu Berminda Sihat",
+                    "detail": "Soalan Praktis Formatif 7.3 meminta 5 ciri minda sihat: tulis frasa lengkap seperti 'mampu menaakul dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "6 Faktor yang Mempengaruhi Kesihatan Minda…",
+                    "detail": "Jika disoal bagaimana kecederaan otak berlaku dalam Rajah 7.6, sebutkan ketiga-tiga puncanya: jangkitan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Kepentingan Minda Sihat kepada 4 Tonggak &…",
+                    "detail": "Untuk soalan esei kepentingan minda sihat, sentiasa bahagikan jawapan kepada empat skop jelas: Keluarga,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Diabetes insipidus berpunca daripada kekurangan insulin manakala pengambilan kafein…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Diabetes insipidus berpunca daripada… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Diabetes insipidus berpunca daripada tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tahniah! Keseimbangan hormon (7.1), pencegahan penyalahgunaan dadah dan alkohol (7.2) serta pemupukan minda yang sihat (7.3) saling melengkapi untuk…",
+              "spokenText": "Tahniah! Keseimbangan hormon (7 perpuluhan satu), pencegahan penyalahgunaan dadah dan alkohol (7 perpuluhan dua) serta pemupukan minda yang sihat (7 perpuluhan tiga) saling melengkapi untuk",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "Maksud Minda & 10 Ciri Individu Berminda Sihat",
+                    "detail": "Soalan Praktis Formatif 7.3 meminta 5 ciri minda sihat: tulis frasa lengkap seperti 'mampu menaakul dan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "6 Faktor yang Mempengaruhi Kesihatan Minda…",
+                    "detail": "Jika disoal bagaimana kecederaan otak berlaku dalam Rajah 7.6, sebutkan ketiga-tiga puncanya: jangkitan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Kepentingan Minda Sihat kepada 4 Tonggak &…",
+                    "detail": "Untuk soalan esei kepentingan minda sihat, sentiasa bahagikan jawapan kepada empat skop jelas: Keluarga,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Maksud Minda & 10 Ciri Individu Berminda Sihat",
+              "detail": "Soalan Praktis Formatif 7.3 meminta 5 ciri minda sihat: tulis frasa lengkap seperti 'mampu menaakul dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "6 Faktor yang Mempengaruhi Kesihatan Minda…",
+              "detail": "Jika disoal bagaimana kecederaan otak berlaku dalam Rajah 7.6, sebutkan ketiga-tiga puncanya: jangkitan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Kepentingan Minda Sihat kepada 4 Tonggak &…",
+              "detail": "Untuk soalan esei kepentingan minda sihat, sentiasa bahagikan jawapan kepada empat skop jelas: Keluarga,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Koordinasi Badan",
+          "desc": "Tahniah! Keseimbangan hormon (7.1), pencegahan penyalahgunaan dadah dan alkohol (7.2) serta pemupukan minda yang sihat (7.3) saling…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Keseimbangan hormon (7.1), pencegahan penyalahgunaan dadah dan alkohol (7.2) serta pemupukan minda yang sihat…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tahniah! Keseimbangan hormon (7 perpuluhan satu), pencegahan penyalahgunaan dadah dan alkohol (7 perpuluhan dua) serta pemupukan minda yang sihat",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "Maksud Minda & 10 Ciri Individu Berminda Sihat",
+              "detail": "Soalan Praktis Formatif 7.3 meminta 5 ciri minda sihat: tulis frasa lengkap seperti 'mampu menaakul dan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "6 Faktor yang Mempengaruhi Kesihatan Minda…",
+              "detail": "Jika disoal bagaimana kecederaan otak berlaku dalam Rajah 7.6, sebutkan ketiga-tiga puncanya: jangkitan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Kepentingan Minda Sihat kepada 4 Tonggak &…",
+              "detail": "Untuk soalan esei kepentingan minda sihat, sentiasa bahagikan jawapan kepada empat skop jelas: Keluarga,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

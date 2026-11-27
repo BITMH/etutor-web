@@ -1,0 +1,381 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["fizik-t4-bab05"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:47.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/fizik-t4-bab05/c1_intro.mp3",
+      "text": "Perangkap lazim Fizik! Apakah gerakan reben tersebut dan nilai laju gelombang sepanjang spring slinki?",
+      "duration": 5.045,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "lazim",
+          "start": 0.34,
+          "end": 0.64
+        },
+        {
+          "word": "fizik!",
+          "start": 0.64,
+          "end": 1.14
+        },
+        {
+          "word": "Apakah",
+          "start": 1.16,
+          "end": 1.62
+        },
+        {
+          "word": "gerak",
+          "start": 1.62,
+          "end": 1.88
+        },
+        {
+          "word": "-gerak",
+          "start": 1.88,
+          "end": 2.0
+        },
+        {
+          "word": "ribbon",
+          "start": 2.0,
+          "end": 2.2
+        },
+        {
+          "word": "tersebut",
+          "start": 2.2,
+          "end": 2.56
+        },
+        {
+          "word": "dan",
+          "start": 2.56,
+          "end": 2.72
+        },
+        {
+          "word": "nilai",
+          "start": 2.72,
+          "end": 3.02
+        },
+        {
+          "word": "laju",
+          "start": 3.02,
+          "end": 3.26
+        },
+        {
+          "word": "glombang",
+          "start": 3.26,
+          "end": 3.64
+        },
+        {
+          "word": "sepanjang",
+          "start": 3.64,
+          "end": 3.92
+        },
+        {
+          "word": "sprint",
+          "start": 3.92,
+          "end": 4.12
+        },
+        {
+          "word": "slinky?",
+          "start": 4.12,
+          "end": 4.48
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/fizik-t4-bab05/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Berapakah frekuensi f dan laju gelombang v bagi gelombang air tersebut?",
+      "duration": 5.739,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.42
+        },
+        {
+          "word": "langkah",
+          "start": 0.42,
+          "end": 0.72
+        },
+        {
+          "word": "di",
+          "start": 0.72,
+          "end": 0.84
+        },
+        {
+          "word": "papan?",
+          "start": 0.84,
+          "end": 1.16
+        },
+        {
+          "word": "Berapakah",
+          "start": 1.6,
+          "end": 2.18
+        },
+        {
+          "word": "frekuensi",
+          "start": 2.18,
+          "end": 2.74
+        },
+        {
+          "word": "F",
+          "start": 2.74,
+          "end": 2.94
+        },
+        {
+          "word": "dan",
+          "start": 2.94,
+          "end": 3.12
+        },
+        {
+          "word": "laju",
+          "start": 3.12,
+          "end": 3.42
+        },
+        {
+          "word": "glombang",
+          "start": 3.42,
+          "end": 3.76
+        },
+        {
+          "word": "V",
+          "start": 3.76,
+          "end": 3.98
+        },
+        {
+          "word": "bagi",
+          "start": 3.98,
+          "end": 4.84
+        },
+        {
+          "word": "glombang",
+          "start": 4.84,
+          "end": 5.18
+        },
+        {
+          "word": "air",
+          "start": 5.18,
+          "end": 5.28
+        },
+        {
+          "word": "tersebut?",
+          "start": 5.28,
+          "end": 5.64
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/fizik-t4-bab05/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Bandul manakah yang akan berayun dengan amplitud PALING besar dan mengapa?",
+      "duration": 5.653,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "raja",
+          "start": 0.46,
+          "end": 0.7
+        },
+        {
+          "word": "konsep",
+          "start": 0.7,
+          "end": 1.14
+        },
+        {
+          "word": "di",
+          "start": 1.14,
+          "end": 1.22
+        },
+        {
+          "word": "Papan,",
+          "start": 1.22,
+          "end": 1.58
+        },
+        {
+          "word": "bandul",
+          "start": 1.88,
+          "end": 2.46
+        },
+        {
+          "word": "manakah",
+          "start": 2.46,
+          "end": 2.8
+        },
+        {
+          "word": "yang",
+          "start": 2.8,
+          "end": 3.02
+        },
+        {
+          "word": "akan",
+          "start": 3.02,
+          "end": 3.2
+        },
+        {
+          "word": "berayon",
+          "start": 3.2,
+          "end": 3.62
+        },
+        {
+          "word": "dengan",
+          "start": 3.62,
+          "end": 3.8
+        },
+        {
+          "word": "amplitude",
+          "start": 3.8,
+          "end": 4.1
+        },
+        {
+          "word": "PLing",
+          "start": 4.1,
+          "end": 4.58
+        },
+        {
+          "word": "besar",
+          "start": 4.58,
+          "end": 4.84
+        },
+        {
+          "word": "dan",
+          "start": 4.84,
+          "end": 5.18
+        },
+        {
+          "word": "mengapa?",
+          "start": 5.18,
+          "end": 5.44
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/fizik-t4-bab05/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Apakah nilai panjang gelombang air di kawasan dalam dan panjang gelombang cahaya biru dalam eksperimen dwicelah Young",
+      "duration": 7.84,
+      "words": [
+        {
+          "word": "dikuti",
+          "start": 0.0,
+          "end": 0.36
+        },
+        {
+          "word": "urutan",
+          "start": 0.36,
+          "end": 0.76
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.76,
+          "end": 1.24
+        },
+        {
+          "word": "di",
+          "start": 1.24,
+          "end": 1.34
+        },
+        {
+          "word": "Papan.",
+          "start": 1.34,
+          "end": 1.62
+        },
+        {
+          "word": "Apakah",
+          "start": 2.02,
+          "end": 2.46
+        },
+        {
+          "word": "nilai",
+          "start": 2.46,
+          "end": 2.8
+        },
+        {
+          "word": "panjang",
+          "start": 2.8,
+          "end": 3.12
+        },
+        {
+          "word": "grombang",
+          "start": 3.12,
+          "end": 3.52
+        },
+        {
+          "word": "air",
+          "start": 3.52,
+          "end": 3.82
+        },
+        {
+          "word": "di",
+          "start": 3.82,
+          "end": 4.02
+        },
+        {
+          "word": "kawasan",
+          "start": 4.02,
+          "end": 4.4
+        },
+        {
+          "word": "dalam",
+          "start": 4.4,
+          "end": 4.7
+        },
+        {
+          "word": "dan",
+          "start": 4.7,
+          "end": 4.94
+        },
+        {
+          "word": "panjang",
+          "start": 4.94,
+          "end": 5.3
+        },
+        {
+          "word": "grombang",
+          "start": 5.3,
+          "end": 5.66
+        },
+        {
+          "word": "jaya",
+          "start": 5.66,
+          "end": 5.86
+        },
+        {
+          "word": "diru",
+          "start": 5.86,
+          "end": 6.16
+        },
+        {
+          "word": "dalam",
+          "start": 6.16,
+          "end": 6.3
+        },
+        {
+          "word": "eksperimen",
+          "start": 6.3,
+          "end": 6.86
+        },
+        {
+          "word": "duit",
+          "start": 6.86,
+          "end": 7.08
+        },
+        {
+          "word": "jelah",
+          "start": 7.08,
+          "end": 7.32
+        },
+        {
+          "word": "yang...",
+          "start": 7.32,
+          "end": 7.82
+        }
+      ]
+    }
+  }
+};

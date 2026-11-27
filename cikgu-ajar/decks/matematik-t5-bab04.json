@@ -1,0 +1,810 @@
+{
+  "deckId": "matematik-t5-bab04",
+  "title": "Matematik Pengguna: Percukaian",
+  "shortTitle": "Matematik Pengguna: Percukaian",
+  "subject": "Matematik",
+  "form": "T5",
+  "bab": 4,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Matematik Pengguna: Percukaian",
+    "desc": "Untuk soalan pemahaman CKHT atau cukai rokok Kertas 2, nyatakan tujuan spesifiknya: CKHT sebagai alat pelaksanaan polisi kerajaan mengurangkan…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Apakah tindakan perundangan yang akan diambil terhadap Puan Salma selepas tamat tempoh 15 hari tersebut?",
+        "spokenText": "Perangkap lazim Matematik! Apakah tindakan perundangan yang akan diambil terhadap Puan Salma selepas tamat tempoh 15 hari tersebut?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah tindakan perundangan yang akan diambil terhadap Puan Salma selepas tamat tempoh 15 hari tersebut?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Notis tuntutan Borang 6A dikeluarkan dan geran tanah terus dilucuthak",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Notis tuntutan Borang 6A dikeluarkan dan geran tanah terus dilucuthak",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita. Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan…",
+              "spokenText": "Fakta sebenar: Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita. Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan melunaskan tunggakan cukai pintu dalam tempoh 15…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Penalti 300% dikenakan oleh LHDN atas nilai sewa tahunan premis",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita. Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan…",
+              "spokenText": "Fakta sebenar: Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita. Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan melunaskan tunggakan cukai pintu dalam tempoh 15…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan melunaskan tunggakan cukai pintu dalam tempoh 15…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan melunaskan tunggakan cukai pintu dalam…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Di bawah Seksyen 147 dan 148 Akta Kerajaan Tempatan 1976 (Akta 171), kegagalan melunaskan tunggakan cukai pintu dalam",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Waran tahanan dalam Borang F dikeluarkan dan harta mudah alih di premis boleh disita",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Lima Jenis Cukai Utama",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Mengapakah sebuah warung makanan dengan jualan tahunan RM120,000 TIDAK mengutip cukai perkhidmatan 6% daripada pelanggannya?",
+        "spokenText": "Lihat langkah di papan! Mengapakah sebuah warung makanan dengan jualan tahunan 120000 ringgit Malaysia TIDAK mengutip cukai perkhidmatan 6 peratus daripada pelanggannya?"
+      },
+      "board": {
+        "promptPill": "Mengapakah sebuah warung makanan dengan jualan tahunan RM120,000 TIDAK mengutip…",
+        "title": "Lima Jenis Cukai Utama Malaysia & Sistem Taksiran Sendiri",
+        "given": "Rakyat dan syarikat di Malaysia terlibat dengan lima jenis cukai utama yang ditadbir oleh agensi Persekutuan dan…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Cukai Pendapatan (LHDN) — Sistem Taksiran Sendiri: (1) Taksir Sendiri untuk tahun…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Cukai Jalan (JPJ) & Cukai Pintu (PBT) vs Cukai Tanah (PTG): Lesen Kenderaan Motor (LKM)…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 3,
+            "label": "Langkah 3",
+            "expr": "Cukai Jualan & Perkhidmatan SST (JKDM — sejak 1 Sept 2018): Cukai jualan dikenakan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Nilai jualan perkhidmatan makanan dan minumannya tidak melebihi nilai ambang RM1,500,000…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Semua premis makanan dan minuman di Malaysia dikecualikan daripada Akta Cukai…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Semua premis makanan dan minuman di… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Semua premis makanan dan minuman di tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib berdaftar dan mengutip SST 6%…",
+              "spokenText": "Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib berdaftar dan mengutip SST 6 peratus",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Cukai Pendapatan (LHDN) — Sistem Taksiran Sendiri: (1) Taksir Sendiri untuk tahun…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Cukai Jalan (JPJ) & Cukai Pintu (PBT) vs Cukai Tanah (PTG): Lesen Kenderaan Motor (LKM)…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Langkah 3",
+                    "expr": "Cukai Jualan & Perkhidmatan SST (JKDM — sejak 1 Sept 2018): Cukai jualan dikenakan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Gerai tersebut hanya membayar Cukai Tanah tahunan kepada Jabatan Kastam Diraja Malaysia",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Gerai tersebut hanya membayar Cukai Tanah… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Gerai tersebut hanya membayar Cukai Tanah tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib berdaftar dan mengutip SST 6%…",
+              "spokenText": "Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib berdaftar dan mengutip SST 6 peratus",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Cukai Pendapatan (LHDN) — Sistem Taksiran Sendiri: (1) Taksir Sendiri untuk tahun…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Cukai Jalan (JPJ) & Cukai Pintu (PBT) vs Cukai Tanah (PTG): Lesen Kenderaan Motor (LKM)…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Langkah 3",
+                    "expr": "Cukai Jualan & Perkhidmatan SST (JKDM — sejak 1 Sept 2018): Cukai jualan dikenakan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Cukai Pendapatan (LHDN) — Sistem Taksiran Sendiri: (1) Taksir Sendiri untuk tahun…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Cukai Jalan (JPJ) & Cukai Pintu (PBT) vs Cukai Tanah (PTG): Lesen Kenderaan Motor (LKM)…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Langkah 3",
+              "expr": "Cukai Jualan & Perkhidmatan SST (JKDM — sejak 1 Sept 2018): Cukai jualan dikenakan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Lima Jenis Cukai Utama",
+          "desc": "Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib berdaftar dan mengutip…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Di bawah Akta Cukai Perkhidmatan 2018 (Akta 807), pembekal perkhidmatan penyediaan makanan dan minuman hanya wajib",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Cukai Pendapatan (LHDN) — Sistem Taksiran Sendiri: (1) Taksir Sendiri untuk tahun…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Cukai Jalan (JPJ) & Cukai Pintu (PBT) vs Cukai Tanah (PTG): Lesen Kenderaan Motor (LKM)…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Langkah 3",
+              "expr": "Cukai Jualan & Perkhidmatan SST (JKDM — sejak 1 Sept 2018): Cukai jualan dikenakan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Tujuan & Fungsi Rasmi Percukaian\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Tujuan & Fungsi Rasmi Percukaian\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Tujuan & Fungsi Rasmi Percukaian\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Pekerja bergaji 5 tahun enggan melaporkan pendapatan kerana menganggap gajinya terlalu rendah",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pekerja bergaji 5 tahun enggan melaporkan pendapatan kerana menganggap gajinya terlalu rendah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan. Alat pelaksanaan polisi kerajaan yang berkesan",
+              "spokenText": "Fakta sebenar: Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan. Alat pelaksanaan polisi kerajaan yang berkesan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Alat pelaksanaan polisi kerajaan yang berkesan",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mengagih semula ketidakseimbangan pendapatan serta menstabilkan ekonomi negara",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan. Alat pelaksanaan polisi kerajaan yang berkesan",
+              "spokenText": "Fakta sebenar: Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan. Alat pelaksanaan polisi kerajaan yang berkesan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Alat pelaksanaan polisi kerajaan yang berkesan",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Alat pelaksanaan polisi kerajaan yang berkesan",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Alat pelaksanaan polisi kerajaan yang berkesan",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Alat pelaksanaan polisi kerajaan yang berkesan",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mengenakan Cukai Keuntungan Harta Tanah (CKHT) untuk mengurangkan pelaburan hartanah keterlaluan",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Matematik",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Hitung cukai yang perlu dibayar dan tentukan baki bayaran atau lebihan PCB Encik Amir:",
+        "spokenText": "Lihat langkah di papan! Hitung cukai yang perlu dibayar dan tentukan baki bayaran atau lebihan PCB Encik Amir:"
+      },
+      "board": {
+        "promptPill": "Hitung cukai yang perlu dibayar dan tentukan baki bayaran atau lebihan PCB Encik…",
+        "title": "Uji Minda Akhir: Matematik Pengguna: Percukaian",
+        "given": "Cukai pintu dihitung berdasarkan kadar peratusan atas anggaran sewa tahunan pegangan, manakala SST dikenakan atas…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "Rumus Cukai Pintu: Jumlah cukai pintu setahun = Kadar cukai pintu (%) x Nilai tahunan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Cukai Jualan & Perkhidmatan (SST): Kadar cukai jualan barangan berbeza (5%, 10% atau…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Cukai RM2,740.00; LHDN memulangkan lebihan PCB sebanyak RM260.00",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Cukai RM2,740.00; Encik Amir perlu membayar baki RM260.00 kepada LHDN",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Cukai RM2,740.00; Encik Amir perlu membayar… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Cukai 2740 perpuluhan kosong kosong ringgit Malaysia; Encik Amir perlu membayar tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pelepasan sah (KWSP dihadkan ke RM7,000!) = 9,000 + 7,000 + 2,200 + 1,800 = RM20,000. Pendapatan bercukai = 82,000 - 1,000 - 20,000 = RM61,000.…",
+              "spokenText": "Pelepasan sah (KWSP dihadkan ke 7000 ringgit Malaysia!) sama dengan 9,000 positif 7,000 positif 2,200 positif 1,800 sama dengan 20000 ringgit Malaysia. Pendapatan bercukai sama dengan 82,000 - 1,000 - 20,000 sama dengan 61000 ringgit Malaysia.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Rumus Cukai Pintu: Jumlah cukai pintu setahun = Kadar cukai pintu (%) x Nilai tahunan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Cukai Jualan & Perkhidmatan (SST): Kadar cukai jualan barangan berbeza (5%, 10% atau…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Cukai RM2,656.00; LHDN memulangkan lebihan PCB sebanyak RM344.00",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Cukai RM2,656.00; LHDN memulangkan lebihan… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Cukai 2656 perpuluhan kosong kosong ringgit Malaysia; LHDN memulangkan lebihan tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pelepasan sah (KWSP dihadkan ke RM7,000!) = 9,000 + 7,000 + 2,200 + 1,800 = RM20,000. Pendapatan bercukai = 82,000 - 1,000 - 20,000 = RM61,000.…",
+              "spokenText": "Pelepasan sah (KWSP dihadkan ke 7000 ringgit Malaysia!) sama dengan 9,000 positif 7,000 positif 2,200 positif 1,800 sama dengan 20000 ringgit Malaysia. Pendapatan bercukai sama dengan 82,000 - 1,000 - 20,000 sama dengan 61000 ringgit Malaysia.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Rumus Cukai Pintu: Jumlah cukai pintu setahun = Kadar cukai pintu (%) x Nilai tahunan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Cukai Jualan & Perkhidmatan (SST): Kadar cukai jualan barangan berbeza (5%, 10% atau…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Rumus Cukai Pintu: Jumlah cukai pintu setahun = Kadar cukai pintu (%) x Nilai tahunan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Cukai Jualan & Perkhidmatan (SST): Kadar cukai jualan barangan berbeza (5%, 10% atau…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Matematik",
+          "desc": "Pelepasan sah (KWSP dihadkan ke RM7,000!) = 9,000 + 7,000 + 2,200 + 1,800 = RM20,000. Pendapatan bercukai = 82,000 - 1,000 - 20,000 =…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Pelepasan sah (KWSP dihadkan ke RM7,000!) = 9,000 + 7,000 + 2,200 + 1,800 = RM20,000. Pendapatan bercukai = 82,000 -…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Pelepasan sah (KWSP dihadkan ke 7000 ringgit Malaysia!) sama dengan 9,000 positif 7,000 positif 2,200 positif 1,800 sama dengan 20000 ringgit Malaysia. Pendapatan bercukai sama dengan 82,000 -",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Rumus Cukai Pintu: Jumlah cukai pintu setahun = Kadar cukai pintu (%) x Nilai tahunan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Cukai Jualan & Perkhidmatan (SST): Kadar cukai jualan barangan berbeza (5%, 10% atau…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

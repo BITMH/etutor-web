@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t5-bab03",
+  "title": "Bab 3: Raja Berperlembagaan dan Demokrasi Berparlimen",
+  "shortTitle": "Bab 3: Raja Berperlembagaan",
+  "subject": "Sejarah",
+  "form": "T5",
+  "bab": 3,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bab 3: Raja Berperlembagaan",
+    "desc": "Hafal pecahan empat jalur kesultanan Melayu selepas Melaka: Johor Riau/Pahang/Perak (legasi terus) dan Terengganu/Selangor (kesinambungan Johor Riau)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Mengapakah pemerintah tentera Jepun memutuskan untuk mengekalkan kedudukan Raja-raja Melayu sebagai ketua agama Islam dan…",
+        "spokenText": "Perangkap lazim Sejarah! Mengapakah pemerintah tentera Jepun memutuskan untuk mengekalkan kedudukan Raja-raja Melayu sebagai ketua agama Islam dan"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Mengapakah pemerintah tentera Jepun memutuskan untuk mengekalkan kedudukan Raja-raja Melayu sebagai ketua agama Islam dan memberi pendapatan kepada baginda…",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Untuk menyerahkan kuasa penggubalan dasar perang Pasifik kepada pembesar negeri Melayu",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor Jepun",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Untuk menyerahkan kuasa penggubalan dasar perang Pasifik kepada pembesar negeri Melayu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor…. Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan…",
+              "spokenText": "Fakta sebenar: Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor . Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor Jepun",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan seperti pra-PD2 di bawah pengawasan Gabenor…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Bagi membolehkan pilihan raya Parlimen dilaksanakan di seluruh Tanah Melayu pada tahun 1943",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor…. Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan…",
+              "spokenText": "Fakta sebenar: Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor . Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor Jepun",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan seperti pra-PD2 di bawah pengawasan Gabenor…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor Jepun",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan seperti pra-PD2 di bawah pengawasan Gabenor…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan seperti pra-PD2 di bawah…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Dengan mengekalkan pengiktirafan sebagai ketua hal ehwal agama Islam dan pendapatan seperti pra-PD2 di bawah",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Untuk memelihara sokongan dan mengelakkan penentangan terbuka orang Melayu sambil meletakkan raja di bawah pengawasan Gabenor Jepun",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Sebelum PD2: Diplomasi Beraja,",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah kesan utama penggubalan Undang-Undang Tubuh di negeri-negeri Melayu selepas Perjanjian Persekutuan Tanah Melayu…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah kesan utama penggubalan Undang-Undang Tubuh di negeri-negeri Melayu selepas Perjanjian Persekutuan Tanah Melayu"
+      },
+      "board": {
+        "promptPill": "Apakah kesan utama penggubalan Undang-Undang Tubuh di negeri-negeri Melayu selepas…",
+        "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU Tubuh",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "3.1 Pemerintahan Beraja Kesultanan Melaka &…",
+            "detail": "Raja merupakan sumber keabsahan undang-undang, ketua kerajaan dan ketua agama Islam yang tradisinya diwarisi…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU…",
+            "detail": "Kebijaksanaan Raja-raja Melayu serta penggubalan perlembagaan bertulis di Johor dan Terengganu mengekalkan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka…",
+            "detail": "Daripada pengiktirafan terhad di Singapura (1943) hingga penubuhan jawatan Yang di-Pertuan Agong pada 1957,…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengangkat kedudukan Raja-raja Melayu sebagai Raja Berperlembagaan yang mengesahkan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Memindahkan kesemua kuasa pentadbiran agama Islam negeri kepada Pesuruhjaya Tinggi British",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Memindahkan kesemua kuasa pentadbiran… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Memindahkan kesemua kuasa pentadbiran tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan selepas kedaulatan dipulihkan…",
+              "spokenText": "Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan selepas kedaulatan dipulihkan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "3.1 Pemerintahan Beraja Kesultanan Melaka &…",
+                    "detail": "Raja merupakan sumber keabsahan undang-undang, ketua kerajaan dan ketua agama Islam yang tradisinya diwarisi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU…",
+                    "detail": "Kebijaksanaan Raja-raja Melayu serta penggubalan perlembagaan bertulis di Johor dan Terengganu mengekalkan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka…",
+                    "detail": "Daripada pengiktirafan terhad di Singapura (1943) hingga penubuhan jawatan Yang di-Pertuan Agong pada 1957,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Menghapuskan sistem pembesar tempatan di semua Negeri-negeri Melayu Tidak Bersekutu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Menghapuskan sistem pembesar tempatan di… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Menghapuskan sistem pembesar tempatan di tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan selepas kedaulatan dipulihkan…",
+              "spokenText": "Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan selepas kedaulatan dipulihkan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "3.1 Pemerintahan Beraja Kesultanan Melaka &…",
+                    "detail": "Raja merupakan sumber keabsahan undang-undang, ketua kerajaan dan ketua agama Islam yang tradisinya diwarisi…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU…",
+                    "detail": "Kebijaksanaan Raja-raja Melayu serta penggubalan perlembagaan bertulis di Johor dan Terengganu mengekalkan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka…",
+                    "detail": "Daripada pengiktirafan terhad di Singapura (1943) hingga penubuhan jawatan Yang di-Pertuan Agong pada 1957,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "3.1 Pemerintahan Beraja Kesultanan Melaka &…",
+              "detail": "Raja merupakan sumber keabsahan undang-undang, ketua kerajaan dan ketua agama Islam yang tradisinya diwarisi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU…",
+              "detail": "Kebijaksanaan Raja-raja Melayu serta penggubalan perlembagaan bertulis di Johor dan Terengganu mengekalkan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka…",
+              "detail": "Daripada pengiktirafan terhad di Singapura (1943) hingga penubuhan jawatan Yang di-Pertuan Agong pada 1957,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Sebelum PD2: Diplomasi Beraja,",
+          "desc": "Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan selepas…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Undang-Undang Tubuh negeri yang diguna pakai hingga hari ini mengangkat Raja-raja Melayu sebagai Raja Berperlembagaan",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "3.1 Pemerintahan Beraja Kesultanan Melaka &…",
+              "detail": "Raja merupakan sumber keabsahan undang-undang, ketua kerajaan dan ketua agama Islam yang tradisinya diwarisi…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Sebelum PD2: Diplomasi Beraja, NNMB–NNMTB & UU…",
+              "detail": "Kebijaksanaan Raja-raja Melayu serta penggubalan perlembagaan bertulis di Johor dan Terengganu mengekalkan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka…",
+              "detail": "Daripada pengiktirafan terhad di Singapura (1943) hingga penubuhan jawatan Yang di-Pertuan Agong pada 1957,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Pendudukan Jepun , PTM",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Mengapakah Majlis Sultan-Sultan gagal dilaksanakan sepanjang tempoh pentadbiran Malayan Union pada tahun 1946?",
+        "spokenText": "Perhatikan rajah konsep di papan! Mengapakah Majlis Sultan-Sultan gagal dilaksanakan sepanjang tempoh pentadbiran Malayan Union pada tahun 1946?"
+      },
+      "board": {
+        "promptPill": "Mengapakah Majlis Sultan-Sultan gagal dilaksanakan sepanjang tempoh pentadbiran…",
+        "title": "Pendudukan Jepun (1943), PTM 1948, Merdeka 1957 & Muzium Diraja",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Durbar NNMB (1897)",
+            "detail": "Persidangan pertama di Kuala Kangsar dipengerusikan Pesuruhjaya Tinggi British",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Majlis Sultan-Sultan (1946)",
+            "detail": "Diperuntukkan di bawah Malayan Union Order in Council tetapi tidak pernah diwujudkan",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Majlis Raja-Raja PTM (1948)",
+            "detail": "Diurus sepenuhnya oleh 9 Raja Melayu bersama Penyimpan Mohor Besar",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Raja-raja Melayu bersatu menentang serta memulaukan pelaksanaan Malayan Union sehingga…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Pesuruhjaya Tinggi British melarang empat Raja NNMB menghadiri sebarang mesyuarat di…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Pesuruhjaya Tinggi British melarang… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Pesuruhjaya Tinggi British melarang tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak pernah diwujudkan…",
+              "spokenText": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak pernah diwujudkan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pendudukan Jepun , PTM",
+                "desc": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Yang di-Pertua Negeri Melaka dan Pulau Pinang belum dilantik pada tahun 1957",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Yang di-Pertua Negeri Melaka dan Pulau… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Yang di-Pertua Negeri Melaka dan Pulau tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak pernah diwujudkan…",
+              "spokenText": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak pernah diwujudkan",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Pendudukan Jepun , PTM",
+                "desc": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Pendudukan Jepun , PTM",
+          "desc": "Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis Sultan-Sultan tidak pernah…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Penentangan teguh Raja-raja Melayu bersama sokongan orang Melayu terhadap Malayan Union menyebabkan Majlis"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Bab 3: Raja",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Bab 3 (m/s 71 & 73), apakah kepentingan pindaan Undi 18 tahun (Julai 2019) serta iktibar daripada…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Berdasarkan rumusan Bab 3 ( meter per saat 71 & 73), apakah kepentingan pindaan Undi 18 tahun (Julai 2019) serta iktibar daripada"
+      },
+      "board": {
+        "promptPill": "Berdasarkan rumusan Bab 3 (m/s 71 & 73), apakah kepentingan pindaan Undi 18 tahun…",
+        "title": "Rumusan: Bab 3: Raja Berperlembagaan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "3.5 Gabungan Tradisional–Moden & Mekanisme…",
+            "detail": "Untuk soalan esei KBAT 3.5, kaitkan 'model Westminster England' dengan 'warisan sosiopolitik Melayu' serta…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Kuasa Budi Bicara Raja & Akta Lambang dan Nama…",
+            "detail": "Hati-hati soalan perangkap SPM: Budi bicara membabitkan *tidak memperkenankan* permintaan pembubaran…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Kerjasama Politik Pelbagai Kaum (1954–2020)",
+            "detail": "Ingat tiga nilai kerjasama politik dalam buku teks: tolak ansur, perundingan dan pengorbanan; serta susunan…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Meluaskan penyertaan matang golongan belia dalam demokrasi sambil mempertahankan warisan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Mengurangkan peranan Parlimen dan memansuhkan pilihan raya umum setiap lima tahun",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Mengurangkan peranan Parlimen dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Mengurangkan peranan Parlimen dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja Berperlembagaan dan Demokrasi Berparlimen…",
+              "spokenText": "Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja Berperlembagaan dan Demokrasi Berparlimen",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "3.5 Gabungan Tradisional–Moden & Mekanisme…",
+                    "detail": "Untuk soalan esei KBAT 3.5, kaitkan 'model Westminster England' dengan 'warisan sosiopolitik Melayu' serta…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kuasa Budi Bicara Raja & Akta Lambang dan Nama…",
+                    "detail": "Hati-hati soalan perangkap SPM: Budi bicara membabitkan *tidak memperkenankan* permintaan pembubaran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Kerjasama Politik Pelbagai Kaum (1954–2020)",
+                    "detail": "Ingat tiga nilai kerjasama politik dalam buku teks: tolak ansur, perundingan dan pengorbanan; serta susunan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Memberi kuasa kepada pengundi muda untuk menukar model Westminster kepada pemerintahan…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Memberi kuasa kepada pengundi muda untuk… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Memberi kuasa kepada pengundi muda untuk tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja Berperlembagaan dan Demokrasi Berparlimen…",
+              "spokenText": "Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja Berperlembagaan dan Demokrasi Berparlimen",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "3.5 Gabungan Tradisional–Moden & Mekanisme…",
+                    "detail": "Untuk soalan esei KBAT 3.5, kaitkan 'model Westminster England' dengan 'warisan sosiopolitik Melayu' serta…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kuasa Budi Bicara Raja & Akta Lambang dan Nama…",
+                    "detail": "Hati-hati soalan perangkap SPM: Budi bicara membabitkan *tidak memperkenankan* permintaan pembubaran…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Kerjasama Politik Pelbagai Kaum (1954–2020)",
+                    "detail": "Ingat tiga nilai kerjasama politik dalam buku teks: tolak ansur, perundingan dan pengorbanan; serta susunan…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "3.5 Gabungan Tradisional–Moden & Mekanisme…",
+              "detail": "Untuk soalan esei KBAT 3.5, kaitkan 'model Westminster England' dengan 'warisan sosiopolitik Melayu' serta…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kuasa Budi Bicara Raja & Akta Lambang dan Nama…",
+              "detail": "Hati-hati soalan perangkap SPM: Budi bicara membabitkan *tidak memperkenankan* permintaan pembubaran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Kerjasama Politik Pelbagai Kaum (1954–2020)",
+              "detail": "Ingat tiga nilai kerjasama politik dalam buku teks: tolak ansur, perundingan dan pengorbanan; serta susunan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Bab 3: Raja",
+          "desc": "Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja Berperlembagaan dan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pindaan Undi 18 tahun memperkasakan suara belia secara automatik dalam demokrasi, manakala gandingan Raja",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "3.5 Gabungan Tradisional–Moden & Mekanisme…",
+              "detail": "Untuk soalan esei KBAT 3.5, kaitkan 'model Westminster England' dengan 'warisan sosiopolitik Melayu' serta…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kuasa Budi Bicara Raja & Akta Lambang dan Nama…",
+              "detail": "Hati-hati soalan perangkap SPM: Budi bicara membabitkan *tidak memperkenankan* permintaan pembubaran…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Kerjasama Politik Pelbagai Kaum (1954–2020)",
+              "detail": "Ingat tiga nilai kerjasama politik dalam buku teks: tolak ansur, perundingan dan pengorbanan; serta susunan…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

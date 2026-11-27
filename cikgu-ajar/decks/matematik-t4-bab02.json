@@ -1,0 +1,775 @@
+{
+  "deckId": "matematik-t4-bab02",
+  "title": "Asas Nombor",
+  "shortTitle": "Asas Nombor",
+  "subject": "Matematik",
+  "form": "T4",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Asas Nombor",
+    "desc": "Untuk mengesan sama ada suatu angka sah dalam asas n, semak digit paling besarnya: nilai asas n mestilah sekurang-kurangnya satu lebih besar…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Asas Nombor?",
+        "spokenText": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Asas Nombor?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Asas Nombor?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Meminjam nilai '10' ketika menolak dalam asas bukan sepuluh, seperti 100₂ - 1₂.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂…",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Meminjam nilai '10' ketika menolak dalam asas bukan sepuluh, seperti 100₂ - 1₂.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2,…. Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+              "spokenText": "Fakta sebenar: Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai positif 2, . Semak sentiasa dengan asas 10: 4 - 1 sama dengan 3 sama dengan 11 dua!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Membaca baki pembahagian berulang dari ATAS ke BAWAH semasa menukar daripada asas 10.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2,…. Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+              "spokenText": "Fakta sebenar: Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai positif 2, . Semak sentiasa dengan asas 10: 4 - 1 sama dengan 3 sama dengan 11 dua!",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semak sentiasa dengan asas 10: 4 - 1 = 3 = 11₂!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semak sentiasa dengan asas 10: 4 - 1 sama dengan 3 sama dengan 11 dua!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Apabila meminjam daripada lajur sebelah kiri dalam asas b, nilai yang dipinjam ialah b (jadi dalam asas 2 ia membawa nilai +2, menjadikan 100₂ - 1₂ = 11₂).",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Warisan Brahmagupta & Konrad",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Hitung beza nilai digit 5 antara nombor 1576₈ dengan 125₇ (Praktis Kendiri 2.1a Q11).",
+        "spokenText": "Lihat langkah di papan! Hitung beza nilai digit 5 antara nombor 1576 lapan dengan 125 tujuh (Praktis Kendiri 2 perpuluhan satua Q11)."
+      },
+      "board": {
+        "promptPill": "Hitung beza nilai digit 5 antara nombor 1576₈ dengan 125₇ (Praktis Kendiri 2.1a Q11).",
+        "title": "Warisan Brahmagupta & Konrad Zuse serta Nilai Tempat aⁿ",
+        "given": "Sumbangan Brahmagupta (598–668 M) memperkenalkan digit sifar (0) manakala Konrad Zuse (1910–1995) merintis komputer…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Brahmagupta & Konrad Zuse: Brahmagupta (Rajasthan, India) merintis penggunaan simbol 0…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Susunan Nilai Tempat (Contoh 2): Dari kanan ke kiri, nilai tempat bagi asas a ialah a⁰,…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "35₁₀",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 35₁₀ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 35 satu kosong tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam 1576₈, digit 5 berada pada nilai tempat 8² = 64 -> nilai digit = 5 × 64 = 320. Dalam 125₇, digit 5 berada pada nilai tempat 7⁰ = 1 -> nilai…",
+              "spokenText": "Dalam 1576 lapan, digit 5 berada pada nilai tempat 8 kuasa dua sama dengan 64 - lebih daripada nilai digit sama dengan 5 darab 64 sama dengan 320. Dalam 125 tujuh, digit 5 berada pada nilai tempat 7 kuasa sifar sama dengan 1 - lebih daripada nilai",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Brahmagupta & Konrad Zuse: Brahmagupta (Rajasthan, India) merintis penggunaan simbol 0…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Susunan Nilai Tempat (Contoh 2): Dari kanan ke kiri, nilai tempat bagi asas a ialah a⁰,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "315₁₀",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "325₁₀",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 325₁₀ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 325 satu kosong tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam 1576₈, digit 5 berada pada nilai tempat 8² = 64 -> nilai digit = 5 × 64 = 320. Dalam 125₇, digit 5 berada pada nilai tempat 7⁰ = 1 -> nilai…",
+              "spokenText": "Dalam 1576 lapan, digit 5 berada pada nilai tempat 8 kuasa dua sama dengan 64 - lebih daripada nilai digit sama dengan 5 darab 64 sama dengan 320. Dalam 125 tujuh, digit 5 berada pada nilai tempat 7 kuasa sifar sama dengan 1 - lebih daripada nilai",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Brahmagupta & Konrad Zuse: Brahmagupta (Rajasthan, India) merintis penggunaan simbol 0…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Susunan Nilai Tempat (Contoh 2): Dari kanan ke kiri, nilai tempat bagi asas a ialah a⁰,…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Brahmagupta & Konrad Zuse: Brahmagupta (Rajasthan, India) merintis penggunaan simbol 0…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Susunan Nilai Tempat (Contoh 2): Dari kanan ke kiri, nilai tempat bagi asas a ialah a⁰,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Warisan Brahmagupta & Konrad",
+          "desc": "Dalam 1576₈, digit 5 berada pada nilai tempat 8² = 64 -> nilai digit = 5 × 64 = 320. Dalam 125₇, digit 5 berada pada nilai tempat 7⁰ = 1…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Dalam 1576₈, digit 5 berada pada nilai tempat 8² = 64 -> nilai digit = 5 × 64 = 320. Dalam 125₇, digit 5 berada pada…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Dalam 1576 lapan, digit 5 berada pada nilai tempat 8 kuasa dua sama dengan 64 - lebih daripada nilai digit sama dengan 5 darab 64 sama dengan 320. Dalam 125 tujuh, digit 5 berada pada",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Brahmagupta & Konrad Zuse: Brahmagupta (Rajasthan, India) merintis penggunaan simbol 0…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Susunan Nilai Tempat (Contoh 2): Dari kanan ke kiri, nilai tempat bagi asas a ialah a⁰,…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Sah dalam Asas 6 (Digit 0–5 Sahaja)\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Sah dalam Asas 6 (Digit 0 hingga 5 Sahaja)\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Sah dalam Asas 6 (Digit 0–5 Sahaja)\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "461",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "245",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "461",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 245. Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+              "spokenText": "Fakta sebenar: 245. Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "245",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "245",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "4510",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 245. Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+              "spokenText": "Fakta sebenar: 245. Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "245",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "245",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Sah! Semua digit (2, 4, 5) lebih kecil daripada 6.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "245",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Asas",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Kishendran membeli sehelai kemeja batik dengan potongan diskaun 25%. Harga asal kemeja tersebut ialah RM220₄ (Praktis…",
+        "spokenText": "Lihat langkah di papan! Kishendran membeli sehelai kemeja batik dengan potongan diskaun 25 peratus. Harga asal kemeja tersebut ialah 220 ringgit Malaysia empat (Praktis"
+      },
+      "board": {
+        "promptPill": "Kishendran membeli sehelai kemeja batik dengan potongan diskaun 25%. Harga asal…",
+        "title": "Uji Minda Akhir: Asas Nombor",
+        "given": "Dalam Bentuk Lazim operasi tolak asas a, peminjaman 1 daripada nilai tempat di sebelah kiri menambah tepat a unit…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "Contoh 11 (Bentuk Lazim Tolak): 4005₆ - 325₆ = 3240₆ (pinjam melintasi dua sifar dalam…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Contoh 12 (200 Murid ke Sekolah, m.s. 50): Bas (25% = 50₁₀ = 302₄) & Kereta (40% = 80₁₀…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "RM35₇",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan RM35₇ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 35 ringgit Malaysia tujuh tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Harga asal = RM220₄ = (2×16) + (2×4) + 0 = RM40₁₀. Harga selepas diskaun 25% = 75% × RM40 = RM30₁₀. Tukar 30₁₀ ke asas 7 (30÷7 = 4 baki 2; 4÷7 = 0…",
+              "spokenText": "Harga asal sama dengan 220 ringgit Malaysia empat sama dengan (2 darab 16) + (2 darab 4) positif 0 sama dengan 40 ringgit Malaysia satu kosong. Harga selepas diskaun 25 peratus sama dengan 75 peratus darab 40 ringgit Malaysia sama dengan 30 ringgit Malaysia satu kosong. Tukar 30 satu kosong ke asas 7 (30 bahagi 7 sama dengan 4 baki 2; 4 bahagi 7 sama dengan 0",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Contoh 11 (Bentuk Lazim Tolak): 4005₆ - 325₆ = 3240₆ (pinjam melintasi dua sifar dalam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Contoh 12 (200 Murid ke Sekolah, m.s. 50): Bas (25% = 50₁₀ = 302₄) & Kereta (40% = 80₁₀…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "RM42₇",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "RM45₇",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan RM45₇ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 45 ringgit Malaysia tujuh tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Harga asal = RM220₄ = (2×16) + (2×4) + 0 = RM40₁₀. Harga selepas diskaun 25% = 75% × RM40 = RM30₁₀. Tukar 30₁₀ ke asas 7 (30÷7 = 4 baki 2; 4÷7 = 0…",
+              "spokenText": "Harga asal sama dengan 220 ringgit Malaysia empat sama dengan (2 darab 16) + (2 darab 4) positif 0 sama dengan 40 ringgit Malaysia satu kosong. Harga selepas diskaun 25 peratus sama dengan 75 peratus darab 40 ringgit Malaysia sama dengan 30 ringgit Malaysia satu kosong. Tukar 30 satu kosong ke asas 7 (30 bahagi 7 sama dengan 4 baki 2; 4 bahagi 7 sama dengan 0",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Contoh 11 (Bentuk Lazim Tolak): 4005₆ - 325₆ = 3240₆ (pinjam melintasi dua sifar dalam…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Contoh 12 (200 Murid ke Sekolah, m.s. 50): Bas (25% = 50₁₀ = 302₄) & Kereta (40% = 80₁₀…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Contoh 11 (Bentuk Lazim Tolak): 4005₆ - 325₆ = 3240₆ (pinjam melintasi dua sifar dalam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Contoh 12 (200 Murid ke Sekolah, m.s. 50): Bas (25% = 50₁₀ = 302₄) & Kereta (40% = 80₁₀…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Asas",
+          "desc": "Harga asal = RM220₄ = (2×16) + (2×4) + 0 = RM40₁₀. Harga selepas diskaun 25% = 75% × RM40 = RM30₁₀. Tukar 30₁₀ ke asas 7 (30÷7 = 4 baki 2;…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Harga asal = RM220₄ = (2×16) + (2×4) + 0 = RM40₁₀. Harga selepas diskaun 25% = 75% × RM40 = RM30₁₀. Tukar 30₁₀ ke asas…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Harga asal sama dengan 220 ringgit Malaysia empat sama dengan (2 darab 16) + (2 darab 4) positif 0 sama dengan 40 ringgit Malaysia satu kosong. Harga selepas diskaun 25 peratus sama dengan 75 peratus darab 40 ringgit Malaysia sama dengan 30 ringgit Malaysia satu kosong. Tukar 30 satu kosong ke asas",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Contoh 11 (Bentuk Lazim Tolak): 4005₆ - 325₆ = 3240₆ (pinjam melintasi dua sifar dalam…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Contoh 12 (200 Murid ke Sekolah, m.s. 50): Bas (25% = 50₁₀ = 302₄) & Kereta (40% = 80₁₀…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-melayu-t4-bab01",
+  "title": "Sistem Bahasa KSSM: Morfologi & Sintaksis (SP 5.1–5.3)",
+  "shortTitle": "Sistem Bahasa KSSM: Morfologi",
+  "subject": "Bahasa Melayu",
+  "form": "T4",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Sistem Bahasa KSSM: Morfologi",
+    "desc": "Perangkap lazim SPM: 'diambil alih' (pisah kerana awalan sahaja) vs 'pengambilalihan' (cantum kerana apitan!)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Sistem Bahasa KSSM: Morfologi & Sintaksis (SP 5.1–5.3)?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Sistem Bahasa K S S M: Morfologi & Sintaksis (SP 5 perpuluhan satu hingga 5 perpuluhan tiga)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Sistem Bahasa KSSM: Morfologi & Sintaksis (SP 5.1–5.3)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mencantumkan kata majmuk biasa yang bukan mantap seperti 'keretapi', 'ibubapa', 'ambilalih' atau 'terimakasih'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' (ejaan terpisah!).",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mencantumkan kata majmuk biasa yang bukan mantap seperti 'keretapi', 'ibubapa', 'ambilalih'…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih'…. Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya…",
+              "spokenText": "Fakta sebenar: Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' . Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' (ejaan terpisah!).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya wajib TERPISAH!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menggandakan kata majmuk terpisah sepenuhnya seperti 'alat tulis-alat tulis' atau 'balai…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih'…. Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya…",
+              "spokenText": "Fakta sebenar: Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' . Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' (ejaan terpisah!).",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya wajib TERPISAH!",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' (ejaan terpisah!).",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya wajib TERPISAH!",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya wajib TERPISAH!",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hafal senarai 15 kata majmuk mantap sahaja; selain daripada 15 itu, bentuk dasarnya wajib TERPISAH!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Kesemua perkataan di atas bukan antara 15 kata majmuk mantap kecuali 'kereta api', 'ibu bapa', 'ambil alih' dan 'terima kasih' (ejaan terpisah!).",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 5.1.2 Kata Terbitan &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Antara ayat berikut, yang manakah mengandungi ejaan kata majmuk berimbuhan yang BETUL sepenuhnya?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Antara ayat berikut, yang manakah mengandungi ejaan kata majmuk berimbuhan yang BETUL sepenuhnya?"
+      },
+      "board": {
+        "promptPill": "Antara ayat berikut, yang manakah mengandungi ejaan kata majmuk berimbuhan yang…",
+        "title": "5.1.2 Kata Terbitan & Hukum Pengguguran K-T-S-P",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Surat rasmi itu",
+            "role": "Unsur 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "telah",
+            "role": "Unsur 2",
+            "highlight": null
+          },
+          {
+            "text": "saya teliti",
+            "role": "Unsur 3",
+            "highlight": null
+          },
+          {
+            "text": "semalam.",
+            "role": "Unsur 4",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Kata dasar 'sapu' -> 'menyapu' (gugur s), 'tulis' -> 'menulis' (gugur t), 'pilih' -> 'memilih' (gugur p)."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Guru mengambil alih tugas itu selepas pengambil alihan syarikat selesai.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Guru mengambil alih tugas itu selepas… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Guru mengambil alih tugas itu selepas tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan bercantum ('menyebarluaskan').…",
+              "spokenText": "'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan bercantum ('menyebarluaskan')."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kerajaan mengemaskini pangkalan data dan menyebar luaskan panduan keselamatan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerajaan mengemaskini pangkalan data dan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Kerajaan mengemaskini pangkalan data dan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan bercantum ('menyebarluaskan').…",
+              "spokenText": "'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan bercantum ('menyebarluaskan')."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Jabatan Pendaftaran Negara mengemas kini sistem kad pintar dan menyebarluaskan maklumat…",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "5.1.2 Kata Terbitan &",
+          "desc": "'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan bercantum…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: 'kemas kini' dengan awalan meN- sahaja kekal terpisah ('mengemas kini'); 'sebar luas' dengan apitan meN-...-kan"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Pilih item yang tepat bagi kategori \"Kata Majmuk Bentuk Mantap (Dieja Rapat)\":",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Pilih item yang tepat bagi kategori \"Kata Majmuk Bentuk Mantap (Dieja Rapat)\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Kata Majmuk Bentuk Mantap (Dieja Rapat)\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "terkontang-kanting",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "tanggungjawab",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "terkontang-kanting",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: tanggungjawab. Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+              "spokenText": "Fakta sebenar: tanggungjawab. Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "tanggungjawab",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "tanggungjawab",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "tadika & pawagam",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: tanggungjawab. Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+              "spokenText": "Fakta sebenar: tanggungjawab. Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "tanggungjawab",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "tanggungjawab",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Salah satu daripada 15 kata majmuk mantap yang wajib dieja rapat.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "tanggungjawab",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Sistem Bahasa KSSM:",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Berdasarkan petikan 'Alam Kerjaya' (m/s 59) dan tema buku teks, apakah maksud peribahasa 'jika pengayuh sayang…",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Berdasarkan petikan 'Alam Kerjaya' ( meter per saat 59) dan tema buku teks, apakah maksud peribahasa 'jika pengayuh sayang"
+      },
+      "board": {
+        "promptPill": "Berdasarkan petikan 'Alam Kerjaya' (m/s 59) dan tema buku teks, apakah maksud…",
+        "title": "Rumusan: Sistem Bahasa KSSM: Morfologi",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Penyata & Tanya",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Perintah & Seruan",
+            "role": "Fokus 2",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Partikel '-kah' hanya boleh melekat pada kata tanya apabila kata tanya diletak di AWAL ayat ('Siapakah nama anda?')."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Seseorang tidak akan memperoleh kejayaan jika takut bersusah payah atau enggan berusaha.",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Semua masalah dapat diselesaikan dengan menunggu bantuan tanpa berbuat apa-apa.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Semua masalah dapat diselesaikan dengan… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Semua masalah dapat diselesaikan dengan tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' (m/s 59) bermaksud cita-cita tidak akan tercapai sekiranya takut…",
+              "spokenText": "Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' ( meter per saat 59) bermaksud cita-cita tidak akan tercapai sekiranya takut"
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Berhijrah ke negeri orang sentiasa lebih baik daripada berbakti di tanah air sendiri.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Berhijrah ke negeri orang sentiasa lebih… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Berhijrah ke negeri orang sentiasa lebih tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' (m/s 59) bermaksud cita-cita tidak akan tercapai sekiranya takut…",
+              "spokenText": "Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' ( meter per saat 59) bermaksud cita-cita tidak akan tercapai sekiranya takut"
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Sistem Bahasa KSSM:",
+          "desc": "Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' (m/s 59) bermaksud cita-cita tidak akan tercapai…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' (m/s 59) bermaksud cita-cita tidak…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Peribahasa 'jika pengayuh sayang dibasahkan, sampan tidak akan sampai ke seberang' ( meter per saat 59) bermaksud cita-cita tidak"
+      }
+    }
+  ]
+}

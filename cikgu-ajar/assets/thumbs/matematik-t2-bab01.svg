@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="480" height="270" role="img" aria-label="Pola dan Jujukan (Nombor Fibonacci &amp; Ungkapan)">
+  <defs>
+    <linearGradient id="g_matematik_t2_bab01" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <radialGradient id="g_matematik_t2_bab01_glow" cx="78%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#3730A3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="270" rx="18" fill="url(#g_matematik_t2_bab01)"/>
+  <rect width="480" height="270" rx="18" fill="url(#g_matematik_t2_bab01_glow)"/>
+  <g opacity="0.10" stroke="#FFFFFF" stroke-width="1">
+    <line x1="53" y1="0" x2="53" y2="270"/>
+    <line x1="133" y1="0" x2="133" y2="270"/>
+    <line x1="213" y1="0" x2="213" y2="270"/>
+    <line x1="0" y1="78" x2="480" y2="78"/>
+    <line x1="0" y1="168" x2="480" y2="168"/>
+  </g>
+  
+      <g transform="translate(295, 45)" opacity="0.92">
+        <rect x="8" y="8" width="144" height="132" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+        <circle cx="62" cy="72" r="34" fill="rgba(56,189,248,0.22)" stroke="#38BDF8" stroke-width="2.6"/>
+        <circle cx="98" cy="72" r="34" fill="rgba(167,139,250,0.22)" stroke="#A78BFA" stroke-width="2.6"/>
+        <text x="80" y="78" text-anchor="middle" font-size="22" font-weight="800" fill="#fff" font-family="Plus Jakarta Sans, sans-serif">∑</text>
+      </g>
+  <rect x="26" y="24" width="92" height="26" rx="13" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+  <text x="72" y="41" text-anchor="middle" font-size="11.5" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">T2 · BAB 1</text>
+  <rect x="126" y="24" width="94.2" height="26" rx="13" fill="#4F46E5"/>
+  <text x="173.1" y="41" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif">Matematik</text>
+  <text x="26" y="92" font-size="22" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, Arial, sans-serif"><tspan x="26" dy="0">Pola dan Jujukan (Nombor</tspan><tspan x="26" dy="28">Fibonacci &amp; Ungkapan)</tspan></text>
+  <rect x="26" y="216" width="136" height="28" rx="10" fill="rgba(15,23,42,0.52)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+  <text x="94" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E2E8F0" font-family="Plus Jakarta Sans, Arial, sans-serif">Perangkap SPM</text>
+  <rect x="170" y="216" width="112" height="28" rx="10" fill="rgba(16,185,129,0.24)" stroke="rgba(52,211,153,0.55)" stroke-width="1"/>
+  <text x="226" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#A7F3D0" font-family="Plus Jakarta Sans, Arial, sans-serif">Suara BM 100%</text>
+  <text x="454" y="234" text-anchor="end" font-size="11.5" font-weight="800" fill="#38BDF8" font-family="Plus Jakarta Sans, Arial, sans-serif">4 Kad</text>
+</svg>

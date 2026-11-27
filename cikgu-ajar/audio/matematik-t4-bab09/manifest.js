@@ -1,0 +1,396 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t4-bab09"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:38:12.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t4-bab09/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Ramalkan jumlah bilangan kesudahan yang mungkin n(S) bagi eksperimen ini:",
+      "duration": 5.227,
+      "words": [
+        {
+          "word": "perangkap",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "nazi",
+          "start": 0.34,
+          "end": 0.66
+        },
+        {
+          "word": "matematik,",
+          "start": 0.66,
+          "end": 1.3
+        },
+        {
+          "word": "ramakan",
+          "start": 1.6,
+          "end": 2.02
+        },
+        {
+          "word": "jumlah",
+          "start": 2.02,
+          "end": 2.36
+        },
+        {
+          "word": "bilangan",
+          "start": 2.36,
+          "end": 2.68
+        },
+        {
+          "word": "kesudahan",
+          "start": 2.68,
+          "end": 3.22
+        },
+        {
+          "word": "yang",
+          "start": 3.22,
+          "end": 3.38
+        },
+        {
+          "word": "mungkin",
+          "start": 3.38,
+          "end": 3.58
+        },
+        {
+          "word": "yang",
+          "start": 3.58,
+          "end": 3.78
+        },
+        {
+          "word": "sepagi",
+          "start": 3.78,
+          "end": 4.08
+        },
+        {
+          "word": "eksperimen",
+          "start": 4.08,
+          "end": 4.52
+        },
+        {
+          "word": "ini",
+          "start": 4.52,
+          "end": 4.72
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t4-bab09/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Hana (H) dan Zaki (Z) bermain perlawanan pingpong maksimum 5 set; pemain pertama memenangi 3 set menjadi juara. Berapakah",
+      "duration": 9.899,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "langkah",
+          "start": 0.5,
+          "end": 0.82
+        },
+        {
+          "word": "di",
+          "start": 0.82,
+          "end": 0.94
+        },
+        {
+          "word": "papan,",
+          "start": 0.94,
+          "end": 1.28
+        },
+        {
+          "word": "Hanna",
+          "start": 1.6,
+          "end": 2.26
+        },
+        {
+          "word": "dan",
+          "start": 2.26,
+          "end": 2.96
+        },
+        {
+          "word": "Zaki",
+          "start": 2.96,
+          "end": 3.38
+        },
+        {
+          "word": "bermain",
+          "start": 3.38,
+          "end": 4.18
+        },
+        {
+          "word": "perlawanan",
+          "start": 4.18,
+          "end": 5.0
+        },
+        {
+          "word": "pingpong",
+          "start": 5.0,
+          "end": 5.4
+        },
+        {
+          "word": "maksimal",
+          "start": 5.4,
+          "end": 5.74
+        },
+        {
+          "word": "-masimal",
+          "start": 5.74,
+          "end": 6.0
+        },
+        {
+          "word": "set,",
+          "start": 6.0,
+          "end": 6.28
+        },
+        {
+          "word": "pemain",
+          "start": 6.66,
+          "end": 6.96
+        },
+        {
+          "word": "pertama",
+          "start": 6.96,
+          "end": 7.26
+        },
+        {
+          "word": "memenangi",
+          "start": 7.26,
+          "end": 7.78
+        },
+        {
+          "word": "tisit",
+          "start": 7.78,
+          "end": 8.14
+        },
+        {
+          "word": "menjadi",
+          "start": 8.14,
+          "end": 8.32
+        },
+        {
+          "word": "juara.",
+          "start": 8.32,
+          "end": 8.78
+        },
+        {
+          "word": "Berapakah?",
+          "start": 9.3,
+          "end": 9.78
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t4-bab09/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"n(S) kurang daripada sama dengan 12 Kesudahan\":",
+      "duration": 6.464,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "Lazin",
+          "start": 0.38,
+          "end": 0.78
+        },
+        {
+          "word": "Matematik,",
+          "start": 0.78,
+          "end": 1.46
+        },
+        {
+          "word": "pilih",
+          "start": 1.58,
+          "end": 2.26
+        },
+        {
+          "word": "item",
+          "start": 2.26,
+          "end": 2.5
+        },
+        {
+          "word": "yang",
+          "start": 2.5,
+          "end": 2.62
+        },
+        {
+          "word": "tepat",
+          "start": 2.62,
+          "end": 2.9
+        },
+        {
+          "word": "bagi",
+          "start": 2.9,
+          "end": 3.12
+        },
+        {
+          "word": "kategori,",
+          "start": 3.12,
+          "end": 3.64
+        },
+        {
+          "word": "ini",
+          "start": 3.86,
+          "end": 4.02
+        },
+        {
+          "word": "dari",
+          "start": 4.02,
+          "end": 4.18
+        },
+        {
+          "word": "pada",
+          "start": 4.18,
+          "end": 4.44
+        },
+        {
+          "word": "sama",
+          "start": 4.44,
+          "end": 4.7
+        },
+        {
+          "word": "dengan",
+          "start": 4.7,
+          "end": 4.98
+        },
+        {
+          "word": "orang",
+          "start": 4.98,
+          "end": 5.54
+        },
+        {
+          "word": "untuk",
+          "start": 5.54,
+          "end": 5.72
+        },
+        {
+          "word": "sudahan.",
+          "start": 5.72,
+          "end": 6.1
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t4-bab09/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Damia menghantar permohonan kerja ke tiga buah syarikat. Kebarangkalian dia ditawarkan kerja oleh Syarikat P, Q dan R",
+      "duration": 8.064,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "langkah",
+          "start": 0.52,
+          "end": 0.84
+        },
+        {
+          "word": "di",
+          "start": 0.84,
+          "end": 0.98
+        },
+        {
+          "word": "papan",
+          "start": 0.98,
+          "end": 1.44
+        },
+        {
+          "word": "yang",
+          "start": 1.44,
+          "end": 2.06
+        },
+        {
+          "word": "ia",
+          "start": 2.06,
+          "end": 2.22
+        },
+        {
+          "word": "menghantar",
+          "start": 2.22,
+          "end": 2.72
+        },
+        {
+          "word": "pemohonan",
+          "start": 2.72,
+          "end": 3.1
+        },
+        {
+          "word": "kerja",
+          "start": 3.1,
+          "end": 3.48
+        },
+        {
+          "word": "ke",
+          "start": 3.48,
+          "end": 3.6
+        },
+        {
+          "word": "tiga",
+          "start": 3.6,
+          "end": 3.86
+        },
+        {
+          "word": "buah",
+          "start": 3.86,
+          "end": 4.1
+        },
+        {
+          "word": "syarikat",
+          "start": 4.1,
+          "end": 4.56
+        },
+        {
+          "word": "kebarang",
+          "start": 4.56,
+          "end": 5.34
+        },
+        {
+          "word": "kayaan",
+          "start": 5.34,
+          "end": 5.66
+        },
+        {
+          "word": "ditawarkan",
+          "start": 5.66,
+          "end": 6.22
+        },
+        {
+          "word": "kerja",
+          "start": 6.22,
+          "end": 6.62
+        },
+        {
+          "word": "oleh",
+          "start": 6.62,
+          "end": 6.78
+        },
+        {
+          "word": "syarikat",
+          "start": 6.78,
+          "end": 7.16
+        },
+        {
+          "word": "PQ",
+          "start": 7.16,
+          "end": 7.54
+        },
+        {
+          "word": "dan",
+          "start": 7.54,
+          "end": 7.7
+        },
+        {
+          "word": "R",
+          "start": 7.7,
+          "end": 7.9
+        }
+      ]
+    }
+  }
+};

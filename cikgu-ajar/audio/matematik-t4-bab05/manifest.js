@@ -1,0 +1,466 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["matematik-t4-bab05"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t4-bab05/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Sebuah graf bermula dengan 5 tepi mudah: (A,B), (B,C), (C,D), (A,D) dan (A,C). Kemudian, ditambah SATU berbilang tepi kedua",
+      "duration": 11.104,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "Lazim",
+          "start": 0.44,
+          "end": 0.72
+        },
+        {
+          "word": "Mathematik",
+          "start": 0.72,
+          "end": 1.24
+        },
+        {
+          "word": "sebuah",
+          "start": 1.24,
+          "end": 1.62
+        },
+        {
+          "word": "graf",
+          "start": 1.62,
+          "end": 1.84
+        },
+        {
+          "word": "bermula",
+          "start": 1.84,
+          "end": 2.2
+        },
+        {
+          "word": "dengan",
+          "start": 2.2,
+          "end": 2.42
+        },
+        {
+          "word": "Cima",
+          "start": 2.42,
+          "end": 3.22
+        },
+        {
+          "word": "Tepi",
+          "start": 3.22,
+          "end": 3.48
+        },
+        {
+          "word": "Nudah",
+          "start": 3.48,
+          "end": 3.9
+        },
+        {
+          "word": "A,",
+          "start": 3.9,
+          "end": 4.44
+        },
+        {
+          "word": "B,",
+          "start": 4.78,
+          "end": 5.04
+        },
+        {
+          "word": "C,",
+          "start": 5.16,
+          "end": 5.38
+        },
+        {
+          "word": "D,",
+          "start": 5.56,
+          "end": 5.62
+        },
+        {
+          "word": "D",
+          "start": 5.72,
+          "end": 5.84
+        },
+        {
+          "word": "dan",
+          "start": 5.84,
+          "end": 6.04
+        },
+        {
+          "word": "A,",
+          "start": 6.04,
+          "end": 6.26
+        },
+        {
+          "word": "D",
+          "start": 6.32,
+          "end": 6.46
+        },
+        {
+          "word": "dan",
+          "start": 6.46,
+          "end": 7.02
+        },
+        {
+          "word": "A,",
+          "start": 7.02,
+          "end": 7.3
+        },
+        {
+          "word": "A,",
+          "start": 7.3,
+          "end": 7.58
+        },
+        {
+          "word": "C",
+          "start": 7.58,
+          "end": 7.96
+        },
+        {
+          "word": "kemudian",
+          "start": 7.96,
+          "end": 8.9
+        },
+        {
+          "word": "ditambah",
+          "start": 8.9,
+          "end": 9.38
+        },
+        {
+          "word": "satu",
+          "start": 9.38,
+          "end": 9.62
+        },
+        {
+          "word": "berbilang",
+          "start": 9.62,
+          "end": 9.98
+        },
+        {
+          "word": "tepi",
+          "start": 9.98,
+          "end": 10.28
+        },
+        {
+          "word": "kedua",
+          "start": 10.28,
+          "end": 10.64
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t4-bab05/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Diberi suatu graf dengan V sama dengan {P, Q, R, S, T, U} dan set tepi E sama dengan {(P,Q), (P,U), (P,U), (Q,R), (Q,U), (R,S), (R,T), (S,S),",
+      "duration": 10.603,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "langkah",
+          "start": 0.46,
+          "end": 0.82
+        },
+        {
+          "word": "di",
+          "start": 0.82,
+          "end": 0.96
+        },
+        {
+          "word": "papan,",
+          "start": 0.96,
+          "end": 1.32
+        },
+        {
+          "word": "diberi",
+          "start": 1.6,
+          "end": 2.36
+        },
+        {
+          "word": "suatu",
+          "start": 2.36,
+          "end": 2.52
+        },
+        {
+          "word": "graf",
+          "start": 2.52,
+          "end": 2.86
+        },
+        {
+          "word": "dengan",
+          "start": 2.86,
+          "end": 3.02
+        },
+        {
+          "word": "V",
+          "start": 3.02,
+          "end": 3.3
+        },
+        {
+          "word": "Sama",
+          "start": 3.3,
+          "end": 4.02
+        },
+        {
+          "word": "dengan",
+          "start": 4.02,
+          "end": 4.28
+        },
+        {
+          "word": "PQRS",
+          "start": 4.28,
+          "end": 5.46
+        },
+        {
+          "word": "-TU",
+          "start": 5.46,
+          "end": 6.1
+        },
+        {
+          "word": "dan",
+          "start": 6.1,
+          "end": 6.64
+        },
+        {
+          "word": "set",
+          "start": 6.64,
+          "end": 6.94
+        },
+        {
+          "word": "tepi",
+          "start": 6.94,
+          "end": 7.4
+        },
+        {
+          "word": "sama",
+          "start": 7.4,
+          "end": 7.72
+        },
+        {
+          "word": "dengan",
+          "start": 7.72,
+          "end": 8.02
+        },
+        {
+          "word": "QQ",
+          "start": 8.02,
+          "end": 8.98
+        },
+        {
+          "word": "code",
+          "start": 8.98,
+          "end": 9.24
+        },
+        {
+          "word": "Pew,",
+          "start": 9.24,
+          "end": 9.96
+        },
+        {
+          "word": "Pew",
+          "start": 10.18,
+          "end": 10.38
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t4-bab05/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Bucu (V , Bintik / Objek Diskret)\":",
+      "duration": 5.547,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "Lazim",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "Mathematik",
+          "start": 0.9,
+          "end": 1.38
+        },
+        {
+          "word": "pilih",
+          "start": 1.38,
+          "end": 1.64
+        },
+        {
+          "word": "item",
+          "start": 1.64,
+          "end": 1.84
+        },
+        {
+          "word": "yang",
+          "start": 1.84,
+          "end": 1.94
+        },
+        {
+          "word": "tepat",
+          "start": 1.94,
+          "end": 2.26
+        },
+        {
+          "word": "bagi",
+          "start": 2.26,
+          "end": 2.52
+        },
+        {
+          "word": "kategori",
+          "start": 2.52,
+          "end": 2.9
+        },
+        {
+          "word": "mucu",
+          "start": 2.9,
+          "end": 3.76
+        },
+        {
+          "word": "bintik",
+          "start": 3.76,
+          "end": 4.56
+        },
+        {
+          "word": "selain",
+          "start": 4.56,
+          "end": 4.82
+        },
+        {
+          "word": "objek",
+          "start": 4.82,
+          "end": 5.08
+        },
+        {
+          "word": "diskret",
+          "start": 5.08,
+          "end": 5.44
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t4-bab05/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Berdasarkan rajah pokok struktur agensi insurans (Praktis Sumatif Q9): Pengurus P mempunyai 2 ejen di peringkat E satu, dan",
+      "duration": 9.643,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.54
+        },
+        {
+          "word": "langkah",
+          "start": 0.54,
+          "end": 0.84
+        },
+        {
+          "word": "di",
+          "start": 0.84,
+          "end": 0.96
+        },
+        {
+          "word": "Papai",
+          "start": 0.96,
+          "end": 1.28
+        },
+        {
+          "word": "berdasarkan",
+          "start": 1.28,
+          "end": 2.24
+        },
+        {
+          "word": "raja",
+          "start": 2.24,
+          "end": 2.5
+        },
+        {
+          "word": "pokok",
+          "start": 2.5,
+          "end": 2.84
+        },
+        {
+          "word": "struktur",
+          "start": 2.84,
+          "end": 3.2
+        },
+        {
+          "word": "agensi",
+          "start": 3.2,
+          "end": 3.64
+        },
+        {
+          "word": "insurans",
+          "start": 3.64,
+          "end": 4.1
+        },
+        {
+          "word": "praktis",
+          "start": 4.1,
+          "end": 4.78
+        },
+        {
+          "word": "sematif",
+          "start": 4.78,
+          "end": 5.14
+        },
+        {
+          "word": "QTA,",
+          "start": 5.14,
+          "end": 5.52
+        },
+        {
+          "word": "pengurus",
+          "start": 5.92,
+          "end": 6.42
+        },
+        {
+          "word": "P",
+          "start": 6.42,
+          "end": 6.64
+        },
+        {
+          "word": "mempunyai",
+          "start": 6.64,
+          "end": 7.12
+        },
+        {
+          "word": "2",
+          "start": 7.12,
+          "end": 7.34
+        },
+        {
+          "word": "agent",
+          "start": 7.34,
+          "end": 7.64
+        },
+        {
+          "word": "diperingkat",
+          "start": 7.64,
+          "end": 8.06
+        },
+        {
+          "word": "I",
+          "start": 8.06,
+          "end": 8.18
+        },
+        {
+          "word": "-1",
+          "start": 8.18,
+          "end": 8.44
+        },
+        {
+          "word": "dan",
+          "start": 8.44,
+          "end": 9.24
+        }
+      ]
+    }
+  }
+};

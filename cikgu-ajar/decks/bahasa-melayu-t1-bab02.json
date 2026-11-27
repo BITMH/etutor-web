@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-melayu-t1-bab02",
+  "title": "Beringat Supaya Selamat (Kata Seru, Tanya & Kerja Tak Transitif)",
+  "shortTitle": "Beringat Supaya Selamat",
+  "subject": "Bahasa Melayu",
+  "form": "T1",
+  "bab": 2,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Beringat Supaya Selamat",
+    "desc": "Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Kata Seru dan Ayat Seruan (SP 5.1.3)?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Kata Seru dan Ayat Seruan (SP 5 perpuluhan satu.3)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2.1 Kata Seru dan Ayat Seruan (SP 5.1.3)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Meletakkan partikel '-kah' pada kata tanya di hujung ayat seperti 'Kamu tinggal di manakah?'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Meletakkan partikel '-kah' pada kata tanya di hujung ayat seperti 'Kamu tinggal di manakah?'.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.. Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+              "spokenText": "Fakta sebenar: Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.. Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Meletakkan koma tetapi menamatkan ayat seruan dengan tanda noktah (.).",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.. Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+              "spokenText": "Fakta sebenar: Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.. Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Jangan gandakan '-kah' sekiranya kata tanya berada di posisi asal di akhir ayat.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Gunakan 'Di manakah kamu tinggal?' atau 'Kamu tinggal di mana?'.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 2.1 Kata Seru dan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Ayat seruan manakah yang betul daripada segi penggunaan kata seru dan tanda baca?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Ayat seruan manakah yang betul daripada segi penggunaan kata seru dan tanda baca?"
+      },
+      "board": {
+        "promptPill": "Ayat seruan manakah yang betul daripada segi penggunaan kata seru dan tanda baca?",
+        "title": "2.1 Kata Seru dan Ayat Seruan (SP 5.1.3)",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "'Aduh' menyatakan rasa sakit…",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "'Syabas' dan 'tahniah'…",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "'Wahai' digunakan untuk…",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Padankan jenis perasaan ayat dengan kata seru yang betul dan jangan lupa tanda seru di hujung ayat."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Wah, cantiknya pemandangan di taman keselamatan lalu lintas itu!",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Wah! cantiknya pemandangan di taman itu.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Wah! cantiknya pemandangan di taman itu. tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Wah! cantiknya pemandangan di taman itu. tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat.",
+              "spokenText": "Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Wah, cantiknya pemandangan di taman itu.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Wah, cantiknya pemandangan di taman itu. tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Wah, cantiknya pemandangan di taman itu. tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat.",
+              "spokenText": "Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "2.1 Kata Seru dan",
+          "desc": "Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Tanda koma diletakkan selepas kata seru 'Wah' dan tanda seru diletakkan pada akhir ayat."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Pilih ayat tanya yang paling gramatis mengikut tatabahasa Dewan.",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Pilih ayat tanya yang paling gramatis mengikut tatabahasa Dewan."
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih ayat tanya yang paling gramatis mengikut tatabahasa Dewan.",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Siapa nama pegawai keselamatan itu?",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Bagaimanakah cara memakai jaket keselamatan?",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Siapa nama pegawai keselamatan itu?",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Bagaimanakah cara memakai jaket keselamatan?. 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+              "spokenText": "Fakta sebenar: Bagaimanakah cara memakai jaket keselamatan?. 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Bagaimanakah cara memakai jaket keselamatan?",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Bagaimanakah cara memakai jaket keselamatan?",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Mengapa dia terjatuhkah?",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Bagaimanakah cara memakai jaket keselamatan?. 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+              "spokenText": "Fakta sebenar: Bagaimanakah cara memakai jaket keselamatan?. 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Bagaimanakah cara memakai jaket keselamatan?",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Bagaimanakah cara memakai jaket keselamatan?",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: 'Bagaimanakah' di awal ayat disertakan partikel '-kah' dan diakhiri tanda tanya.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Bagaimanakah cara memakai jaket keselamatan?",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Beringat Supaya Selamat",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Apakah maksud gaya bahasa sinkope dalam puisi?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Apakah maksud gaya bahasa sinkope dalam puisi?"
+      },
+      "board": {
+        "promptPill": "Apakah maksud gaya bahasa sinkope dalam puisi?",
+        "title": "Rumusan: Beringat Supaya Selamat",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Perbandingan semacam…",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Pengulangan kata…",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Sinkope ialah pemendekan…",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Perhatikan kata bandingan 'seperti', 'macam', 'bagai' dan 'laksana' untuk mengesan perbandingan semacam."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Perbandingan antara dua objek berbeza",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Perbandingan antara dua objek berbeza tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Perbandingan antara dua objek berbeza tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'.",
+              "spokenText": "Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'."
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Pemendekan perkataan seperti 'ku', 'mu', 'tak' dan 'nak'",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Pengulangan baris pertama hingga akhir",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pengulangan baris pertama hingga akhir tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pengulangan baris pertama hingga akhir tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'.",
+              "spokenText": "Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Beringat Supaya Selamat",
+          "desc": "Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Sinkope merujuk pemendekan kata seperti 'engkau' menjadi 'kau' dan 'tidak' menjadi 'tak'."
+      }
+    }
+  ]
+}

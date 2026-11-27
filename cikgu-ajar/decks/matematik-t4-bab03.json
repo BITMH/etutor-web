@@ -1,0 +1,775 @@
+{
+  "deckId": "matematik-t4-bab03",
+  "title": "Bab 3: Penaakulan Logik",
+  "shortTitle": "Bab 3: Penaakulan Logik",
+  "subject": "Matematik",
+  "form": "T4",
+  "bab": 3,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Bab 3: Penaakulan Logik",
+    "desc": "Untuk menguji sama ada sesuatu ayat matematik ialah pernyataan atau bukan, tanya diri anda: adakah semua penggantian nilai menghasilkan jawapan…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Apakah nilai kebenaran bagi pernyataan p dan penafiannya (~p)?",
+        "spokenText": "Perangkap lazim Matematik! Apakah nilai kebenaran bagi pernyataan p dan penafiannya (~p)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah nilai kebenaran bagi pernyataan p dan penafiannya (~p)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "p bernilai Benar apabila x = -5, maka ~p bernilai Palsu.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "p bernilai Benar apabila x = -5, maka ~p bernilai Palsu.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.. Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1,…",
+              "spokenText": "Fakta sebenar: p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa lebih daripada sama dengan 0), maka ~p bernilai Benar.. Kerana bagi sebarang nombor nyata x, nilai (x positif 4) kuasa dua sentiasa lebih daripada sama dengan 0 (contohnya jika x sama dengan 1,",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1, 25 > 0), maka p bernilai Palsu. Apabila…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kedua-dua p dan ~p ialah bukan pernyataan kerana mengandungi huruf x.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.. Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1,…",
+              "spokenText": "Fakta sebenar: p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa lebih daripada sama dengan 0), maka ~p bernilai Benar.. Kerana bagi sebarang nombor nyata x, nilai (x positif 4) kuasa dua sentiasa lebih daripada sama dengan 0 (contohnya jika x sama dengan 1,",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1, 25 > 0), maka p bernilai Palsu. Apabila…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1, 25 > 0), maka p bernilai Palsu. Apabila…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kerana bagi sebarang nombor nyata x, nilai (x + 4)² sentiasa >= 0 (contohnya jika x = 1, 25 > 0), maka p bernilai…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Kerana bagi sebarang nombor nyata x, nilai (x positif 4) kuasa dua sentiasa lebih daripada sama dengan 0 (contohnya jika x sama dengan 1, 25 lebih daripada 0), maka p bernilai",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "p bernilai Palsu (kerana kuasa dua nombor nyata sentiasa >= 0), maka ~p bernilai Benar.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Pengkuantiti & Penafian",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Antara pernyataan berikut, yang manakah bernilai BENAR?",
+        "spokenText": "Lihat langkah di papan! Antara pernyataan berikut, yang manakah bernilai BENAR?"
+      },
+      "board": {
+        "promptPill": "Antara pernyataan berikut, yang manakah bernilai BENAR?",
+        "title": "Pengkuantiti (Semua vs Sebilangan) & Penafian (~p)",
+        "given": "Pengkuantiti menentukan keluasan sesuatu ciri objek, manakala penafian (~p) menukar sesuatu pernyataan benar menjadi…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Hukum Pengkuantiti (Semua vs Sebilangan): Pernyataan berpengkuantiti 'Semua' hanya benar…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Penafian Pernyataan (~p): Tambah perkataan 'tidak' atau 'bukan' (atau tukar 'Semua'…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Sebilangan garis lurus memintas paksi-y.",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Semua segi empat mempunyai empat sudut tepat.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Semua segi empat mempunyai empat sudut tepat. tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Semua segi empat mempunyai empat sudut tepat. tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garis condong atau mengufuk memintas paksi-y manakala garis mencancang x = k (k ≠ 0) tidak memintas paksi-y, jadi 'Sebilangan garis lurus memintas…",
+              "spokenText": "Garis condong atau mengufuk memintas paksi y manakala garis mencancang x sama dengan k (k tidak sama dengan 0) tidak memintas paksi y, jadi 'Sebilangan garis lurus memintas",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Hukum Pengkuantiti (Semua vs Sebilangan): Pernyataan berpengkuantiti 'Semua' hanya benar…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Penafian Pernyataan (~p): Tambah perkataan 'tidak' atau 'bukan' (atau tukar 'Semua'…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Semua poligon mempunyai pepenjuru.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Semua poligon mempunyai pepenjuru. tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Semua poligon mempunyai pepenjuru. tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Garis condong atau mengufuk memintas paksi-y manakala garis mencancang x = k (k ≠ 0) tidak memintas paksi-y, jadi 'Sebilangan garis lurus memintas…",
+              "spokenText": "Garis condong atau mengufuk memintas paksi y manakala garis mencancang x sama dengan k (k tidak sama dengan 0) tidak memintas paksi y, jadi 'Sebilangan garis lurus memintas",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Hukum Pengkuantiti (Semua vs Sebilangan): Pernyataan berpengkuantiti 'Semua' hanya benar…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Penafian Pernyataan (~p): Tambah perkataan 'tidak' atau 'bukan' (atau tukar 'Semua'…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Hukum Pengkuantiti (Semua vs Sebilangan): Pernyataan berpengkuantiti 'Semua' hanya benar…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Penafian Pernyataan (~p): Tambah perkataan 'tidak' atau 'bukan' (atau tukar 'Semua'…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Pengkuantiti & Penafian",
+          "desc": "Garis condong atau mengufuk memintas paksi-y manakala garis mencancang x = k (k ≠ 0) tidak memintas paksi-y, jadi 'Sebilangan garis lurus…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Garis condong atau mengufuk memintas paksi-y manakala garis mencancang x = k (k ≠ 0) tidak memintas paksi-y, jadi…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Garis condong atau mengufuk memintas paksi y manakala garis mencancang x sama dengan k (k tidak sama dengan 0) tidak memintas paksi y, jadi",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Hukum Pengkuantiti (Semua vs Sebilangan): Pernyataan berpengkuantiti 'Semua' hanya benar…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Penafian Pernyataan (~p): Tambah perkataan 'tidak' atau 'bukan' (atau tukar 'Semua'…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Pernyataan (Ada Nilai Benar / Palsu)\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Pernyataan (Ada Nilai Benar / Palsu)\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Pernyataan (Ada Nilai Benar / Palsu)\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Tolong susun buku rujukan di atas rak.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "-6 < -8",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Tolong susun buku rujukan di atas rak.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: -6 < -8. Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+              "spokenText": "Fakta sebenar: negatif 6 kurang daripada negatif 8. Pernyataan bernilai palsu kerana negatif 6 lebih besar daripada negatif 8.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "-6 < -8",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "-6 < -8",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Alangkah indahnya pemandangan gunung itu!",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: -6 < -8. Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+              "spokenText": "Fakta sebenar: negatif 6 kurang daripada negatif 8. Pernyataan bernilai palsu kerana negatif 6 lebih besar daripada negatif 8.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "-6 < -8",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "-6 < -8",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Pernyataan bernilai palsu kerana -6 lebih besar daripada -8.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Pernyataan bernilai palsu kerana negatif 6 lebih besar daripada negatif 8.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "-6 < -8",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Bab",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Berdasarkan rumus pola umum 2^(6 - n) × (π + 2) cm, berapakah perimeter bagi semi bulatan yang ke-8 (n = 8) dalam sebutan π?",
+        "spokenText": "Lihat langkah di papan! Berdasarkan rumus pola umum 2^(6 - n) darab ( pai positif 2) cm, berapakah perimeter bagi semi bulatan yang ke-8 (n sama dengan 8) dalam sebutan pai ?"
+      },
+      "board": {
+        "promptPill": "Berdasarkan rumus pola umum 2^(6 - n) × (π + 2) cm, berapakah perimeter bagi semi…",
+        "title": "Uji Minda Akhir: Bab 3: Penaakulan Logik",
+        "given": "Penaakulan induktif menukar jadual pemerhatian kepada rumus algebra am, yang kemudiannya diguna secara deduktif untuk…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "3 Langkah Membina Rumus Induktif (Contoh 22): (1) Teliti contoh khusus (cth. 0, 9, 24,…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Gabungan Induktif + Deduktif KBAT (Contoh 23): Dalam masalah pertumbuhan sel P(t) = 2^t…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "0.25(π + 2) cm [iaitu (π + 2)/4 cm]",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "0.5(π + 2) cm [iaitu (π + 2)/2 cm]",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 0.5(π + 2) cm [iaitu (π + 2)/2 cm] tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan kosong perpuluhan lima( pai positif 2) cm [iaitu ( pai positif 2)/2 cm] tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Gantikan n = 8 ke dalam rumus deduktif: 2^(6 - 8) × (π + 2) = 2⁻²(π + 2) = (1/4)(π + 2) = 0.25(π + 2) cm. Tahniah — anda telah menguasai keseluruhan…",
+              "spokenText": "Gantikan n sama dengan 8 ke dalam rumus deduktif: 2^(6 - 8) darab ( pai positif 2) sama dengan 2 negatif kuasa dua( pai positif 2) sama dengan (1/4)( pai positif 2) sama dengan kosong perpuluhan dua lima( pai positif 2) cm. Tahniah , anda telah menguasai keseluruhan",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "3 Langkah Membina Rumus Induktif (Contoh 22): (1) Teliti contoh khusus (cth. 0, 9, 24,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Gabungan Induktif + Deduktif KBAT (Contoh 23): Dalam masalah pertumbuhan sel P(t) = 2^t…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "4(π + 2) cm",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 4(π + 2) cm tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 4( pai positif 2) cm tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Gantikan n = 8 ke dalam rumus deduktif: 2^(6 - 8) × (π + 2) = 2⁻²(π + 2) = (1/4)(π + 2) = 0.25(π + 2) cm. Tahniah — anda telah menguasai keseluruhan…",
+              "spokenText": "Gantikan n sama dengan 8 ke dalam rumus deduktif: 2^(6 - 8) darab ( pai positif 2) sama dengan 2 negatif kuasa dua( pai positif 2) sama dengan (1/4)( pai positif 2) sama dengan kosong perpuluhan dua lima( pai positif 2) cm. Tahniah , anda telah menguasai keseluruhan",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "3 Langkah Membina Rumus Induktif (Contoh 22): (1) Teliti contoh khusus (cth. 0, 9, 24,…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Gabungan Induktif + Deduktif KBAT (Contoh 23): Dalam masalah pertumbuhan sel P(t) = 2^t…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "3 Langkah Membina Rumus Induktif (Contoh 22): (1) Teliti contoh khusus (cth. 0, 9, 24,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Gabungan Induktif + Deduktif KBAT (Contoh 23): Dalam masalah pertumbuhan sel P(t) = 2^t…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Bab",
+          "desc": "Gantikan n = 8 ke dalam rumus deduktif: 2^(6 - 8) × (π + 2) = 2⁻²(π + 2) = (1/4)(π + 2) = 0.25(π + 2) cm. Tahniah — anda telah menguasai…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Gantikan n = 8 ke dalam rumus deduktif: 2^(6 - 8) × (π + 2) = 2⁻²(π + 2) = (1/4)(π + 2) = 0.25(π + 2) cm. Tahniah —…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Gantikan n sama dengan 8 ke dalam rumus deduktif: 2^(6 - 8) darab ( pai positif 2) sama dengan 2 negatif kuasa dua( pai positif 2) sama dengan (1/4)( pai positif 2) sama dengan kosong perpuluhan dua lima( pai positif 2) cm. Tahniah ,",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "3 Langkah Membina Rumus Induktif (Contoh 22): (1) Teliti contoh khusus (cth. 0, 9, 24,…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Gabungan Induktif + Deduktif KBAT (Contoh 23): Dalam masalah pertumbuhan sel P(t) = 2^t…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

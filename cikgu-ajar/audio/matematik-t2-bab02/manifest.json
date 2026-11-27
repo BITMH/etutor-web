@@ -1,0 +1,305 @@
+{
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/matematik-t2-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 2 perpuluhan satu Kembangan Ungkapan Algebra (SK 2 perpuluhan satu)?",
+      "duration": 10.027,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "Lazim",
+          "start": 0.52,
+          "end": 0.82
+        },
+        {
+          "word": "Matematik.",
+          "start": 0.82,
+          "end": 1.4
+        },
+        {
+          "word": "Awas",
+          "start": 1.6,
+          "end": 2.02
+        },
+        {
+          "word": "kurangkap,",
+          "start": 2.02,
+          "end": 2.52
+        },
+        {
+          "word": "manakah",
+          "start": 2.98,
+          "end": 3.34
+        },
+        {
+          "word": "fakta",
+          "start": 3.34,
+          "end": 3.74
+        },
+        {
+          "word": "atau",
+          "start": 3.74,
+          "end": 3.9
+        },
+        {
+          "word": "langkah",
+          "start": 3.9,
+          "end": 4.28
+        },
+        {
+          "word": "yang",
+          "start": 4.28,
+          "end": 4.42
+        },
+        {
+          "word": "mitul",
+          "start": 4.42,
+          "end": 4.74
+        },
+        {
+          "word": "tentang",
+          "start": 4.74,
+          "end": 4.98
+        },
+        {
+          "word": "2",
+          "start": 4.98,
+          "end": 5.32
+        },
+        {
+          "word": "perkuluhan",
+          "start": 5.32,
+          "end": 5.8
+        },
+        {
+          "word": "1",
+          "start": 5.8,
+          "end": 6.08
+        },
+        {
+          "word": "kembangan",
+          "start": 6.08,
+          "end": 6.6
+        },
+        {
+          "word": "unggapain",
+          "start": 6.6,
+          "end": 7.12
+        },
+        {
+          "word": "Al",
+          "start": 7.12,
+          "end": 7.28
+        },
+        {
+          "word": "-Jilbar,",
+          "start": 7.28,
+          "end": 7.64
+        },
+        {
+          "word": "SK",
+          "start": 8.0,
+          "end": 8.4
+        },
+        {
+          "word": "ke",
+          "start": 8.4,
+          "end": 8.86
+        },
+        {
+          "word": "perkuluhan",
+          "start": 8.86,
+          "end": 9.28
+        },
+        {
+          "word": "1?",
+          "start": 9.28,
+          "end": 9.54
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/matematik-t2-bab02/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Kembangkan ungkapan (2x - 3) kuasa dua.",
+      "duration": 4.053,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "langkah",
+          "start": 0.38,
+          "end": 0.74
+        },
+        {
+          "word": "di",
+          "start": 0.74,
+          "end": 0.88
+        },
+        {
+          "word": "papan,",
+          "start": 0.88,
+          "end": 1.28
+        },
+        {
+          "word": "kembangkan",
+          "start": 1.9,
+          "end": 2.46
+        },
+        {
+          "word": "unggapan",
+          "start": 2.46,
+          "end": 3.04
+        },
+        {
+          "word": "kosif.",
+          "start": 3.04,
+          "end": 3.94
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/matematik-t2-bab02/c3_intro.mp3",
+      "text": "Perangkap lazim Matematik! Faktorkan selengkapnya 3y kuasa dua - 147.",
+      "duration": 4.843,
+      "words": [
+        {
+          "word": "rangkaplazim",
+          "start": 0.0,
+          "end": 0.92
+        },
+        {
+          "word": "matematik",
+          "start": 0.92,
+          "end": 1.52
+        },
+        {
+          "word": "Faktorkan",
+          "start": 1.52,
+          "end": 2.46
+        },
+        {
+          "word": "selengkapnya",
+          "start": 2.46,
+          "end": 3.02
+        },
+        {
+          "word": "TWI",
+          "start": 3.02,
+          "end": 3.4
+        },
+        {
+          "word": "kuasa",
+          "start": 3.4,
+          "end": 3.64
+        },
+        {
+          "word": "2",
+          "start": 3.64,
+          "end": 3.88
+        },
+        {
+          "word": "WSWP",
+          "start": 3.88,
+          "end": 4.76
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/matematik-t2-bab02/c4_intro.mp3",
+      "text": "Lihat langkah di papan! Faktorkan empat sebutan algebra ini: ab + ac + bd + cd.",
+      "duration": 6.315,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.7
+        },
+        {
+          "word": "langkah",
+          "start": 0.7,
+          "end": 0.98
+        },
+        {
+          "word": "di",
+          "start": 0.98,
+          "end": 1.1
+        },
+        {
+          "word": "papan.",
+          "start": 1.1,
+          "end": 1.4
+        },
+        {
+          "word": "Faktokkan",
+          "start": 1.78,
+          "end": 2.4
+        },
+        {
+          "word": "empat",
+          "start": 2.4,
+          "end": 2.64
+        },
+        {
+          "word": "sebutan",
+          "start": 2.64,
+          "end": 2.98
+        },
+        {
+          "word": "algerak",
+          "start": 2.98,
+          "end": 3.38
+        },
+        {
+          "word": "ini",
+          "start": 3.38,
+          "end": 3.52
+        },
+        {
+          "word": "at",
+          "start": 3.52,
+          "end": 4.1
+        },
+        {
+          "word": "plus",
+          "start": 4.1,
+          "end": 4.56
+        },
+        {
+          "word": "X",
+          "start": 4.56,
+          "end": 5.0
+        },
+        {
+          "word": "plus",
+          "start": 5.0,
+          "end": 5.24
+        },
+        {
+          "word": "BD",
+          "start": 5.24,
+          "end": 5.56
+        },
+        {
+          "word": "plus",
+          "start": 5.56,
+          "end": 5.78
+        },
+        {
+          "word": "CD.",
+          "start": 5.78,
+          "end": 6.04
+        }
+      ]
+    }
+  }
+}

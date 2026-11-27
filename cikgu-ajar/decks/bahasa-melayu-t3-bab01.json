@@ -1,0 +1,635 @@
+{
+  "deckId": "bahasa-melayu-t3-bab01",
+  "title": "Suluh Masa Depan (Kata Nama & Kata Pinjaman)",
+  "shortTitle": "Suluh Masa Depan",
+  "subject": "Bahasa Melayu",
+  "form": "T3",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Suluh Masa Depan",
+    "desc": "Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Kata Nama & Kata Pinjaman Bahasa Melayu (SP 5.1.1)?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Kata Nama & Kata Pinjaman Bahasa Melayu (SP 5 perpuluhan satu.1)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Kata Nama & Kata Pinjaman Bahasa Melayu (SP 5.1.1)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Mengeja kata pinjaman Inggeris mengikut bunyi asal seperti 'tehnologi', 'vokesyenal' atau 'professional'.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Mengeja kata pinjaman Inggeris mengikut bunyi asal seperti 'tehnologi', 'vokesyenal' atau…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').. Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+              "spokenText": "Fakta sebenar: Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').. Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menjelaskan maksud rangkai kata dengan menggunakan perkataan dasar yang sama dari soalan.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').. Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+              "spokenText": "Fakta sebenar: Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').. Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semak keselarasan kata pinjaman Inggeris: '-tion' menjadi '-si', '-al' kekal '-al'.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Ejaan baku bahasa Melayu ialah 'teknologi', 'vokasional' dan 'profesional' (satu huruf 's').",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Bahasa 2",
+      "heading": "Kad 2: 1.1 Kata Nama &",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Antara berikut, ejaan kata pinjaman bahasa Melayu manakah yang BETUL semuanya?",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Antara berikut, ejaan kata pinjaman bahasa Melayu manakah yang BETUL semuanya?"
+      },
+      "board": {
+        "promptPill": "Antara berikut, ejaan kata pinjaman bahasa Melayu manakah yang BETUL semuanya?",
+        "title": "1.1 Kata Nama & Kata Pinjaman Bahasa Melayu (SP 5.1.1)",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Kata pinjaman Inggeris…",
+            "role": "Kunci 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Kata pinjaman Arab & Sanskrit",
+            "role": "Kunci 2",
+            "highlight": null
+          },
+          {
+            "text": "Pastikan kata pinjaman…",
+            "role": "Kunci 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Bezakan kata pinjaman yang sudah dimelayukan ejaannya ('ekonomi', 'akibat') daripada ungkapan asing utuh yang perlu…"
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "profesional, vokasional, teknologi, inovatif",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "professional, vokesyenal, tehnologi, inovatip",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan professional, vokesyenal, tehnologi,… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan professional, vokesyenal, tehnologi, tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif.",
+              "spokenText": "Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "profesional, vokasional, tekonologi, inovatib",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan profesional, vokasional, tekonologi,… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan profesional, vokasional, tekonologi, tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif.",
+              "spokenText": "Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "1.1 Kata Nama &",
+          "desc": "Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Ejaan baku Dewan Bahasa dan Pustaka ialah profesional, vokasional, teknologi dan inovatif."
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Bahasa Melayu! Apakah maksud kata kunci huruf 'K' dan 'W' dalam teknik bacaan KWLH?",
+        "spokenText": "Perangkap lazim Bahasa Melayu! Apakah maksud kata kunci huruf 'K' dan 'W' dalam teknik bacaan KWLH?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah maksud kata kunci huruf 'K' dan 'W' dalam teknik bacaan KWLH?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Kesan dan Waktu",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kesan dan Waktu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What). K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+              "spokenText": "Fakta sebenar: Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What). K sama dengan Know (sudah diketahui sebelum baca), W sama dengan What (ingin diketahui), L sama dengan Learned, H sama dengan How.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Kata nama dan Wacana",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Bahasa Melayu. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What). K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+              "spokenText": "Fakta sebenar: Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What). K sama dengan Know (sudah diketahui sebelum baca), W sama dengan What (ingin diketahui), L sama dengan Learned, H sama dengan How.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: K = Know (sudah diketahui sebelum baca), W = What (ingin diketahui), L = Learned, H = How.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: K sama dengan Know (sudah diketahui sebelum baca), W sama dengan What (ingin diketahui), L sama dengan Learned, H sama dengan How.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Perkara yang sudah diketahui (Know) dan Perkara yang hendak diketahui (What)",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Bahasa 4",
+      "heading": "Kad 4: Rumusan: Suluh Masa Depan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Teliti binaan kata dan ayat di papan! Berdasarkan petikan m.s. 24, apakah pilihan aliran pendidikan yang diperkenalkan oleh Kementerian Pendidikan Malaysia…",
+        "spokenText": "Teliti binaan kata dan ayat di papan! Berdasarkan petikan muka surat 24, apakah pilihan aliran pendidikan yang diperkenalkan oleh Kementerian Pendidikan Malaysia"
+      },
+      "board": {
+        "promptPill": "Berdasarkan petikan m.s. 24, apakah pilihan aliran pendidikan yang diperkenalkan…",
+        "title": "Rumusan: Suluh Masa Depan",
+        "variant": "grammar",
+        "tokens": [
+          {
+            "text": "Rangkai kata 'tidak…",
+            "role": "Fokus 1",
+            "highlight": "indigo"
+          },
+          {
+            "text": "Apabila diminta…",
+            "role": "Fokus 2",
+            "highlight": null
+          },
+          {
+            "text": "Gunakan tesaurus untuk…",
+            "role": "Fokus 3",
+            "highlight": "teal"
+          }
+        ],
+        "ruleNote": "Pastikan terjemahan makna rangkai kata masih mengekalkan golongan kata dan nada ayat asal."
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kolej Vokasional (KV)",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Sekolah tadika",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Sekolah tadika tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Sekolah tadika tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV).",
+              "spokenText": "Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV)."
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Pusat tuisyen swasta sahaja",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK HUKUM BAHASA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pusat tuisyen swasta sahaja tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pusat tuisyen swasta sahaja tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV).",
+              "spokenText": "Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV)."
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Suluh Masa Depan",
+          "desc": "Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV).",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Pada peringkat menengah rendah ialah PAV dan selepas Tingkatan 3 ialah Kolej Vokasional (KV)."
+      }
+    }
+  ]
+}

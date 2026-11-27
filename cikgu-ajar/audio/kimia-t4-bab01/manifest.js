@@ -1,0 +1,361 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["kimia-t4-bab01"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:37.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/kimia-t4-bab01/c1_intro.mp3",
+      "text": "Perangkap lazim Kimia! Pilih padanan kerjaya kimia yang PALING sesuai bagi kedua-dua misi tersebut:",
+      "duration": 4.533,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "Lazen",
+          "start": 0.38,
+          "end": 0.68
+        },
+        {
+          "word": "Kimia,",
+          "start": 0.68,
+          "end": 1.02
+        },
+        {
+          "word": "pilih",
+          "start": 1.2,
+          "end": 1.5
+        },
+        {
+          "word": "padanan",
+          "start": 1.5,
+          "end": 1.74
+        },
+        {
+          "word": "kerjaya",
+          "start": 1.74,
+          "end": 2.14
+        },
+        {
+          "word": "Kimia",
+          "start": 2.14,
+          "end": 2.48
+        },
+        {
+          "word": "yang",
+          "start": 2.48,
+          "end": 2.62
+        },
+        {
+          "word": "paling",
+          "start": 2.62,
+          "end": 2.86
+        },
+        {
+          "word": "sesuai",
+          "start": 2.86,
+          "end": 3.26
+        },
+        {
+          "word": "bagi",
+          "start": 3.26,
+          "end": 3.5
+        },
+        {
+          "word": "kedua",
+          "start": 3.5,
+          "end": 3.72
+        },
+        {
+          "word": "-dua",
+          "start": 3.72,
+          "end": 3.82
+        },
+        {
+          "word": "misi",
+          "start": 3.82,
+          "end": 4.06
+        },
+        {
+          "word": "tersebut",
+          "start": 4.06,
+          "end": 4.38
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/kimia-t4-bab01/c2_intro.mp3",
+      "text": "Lihat langkah di papan! Antara pernyataan berikut, yang manakah menerangkan hubungan nanokimia dan kemajuan teknologi kimia dengan TEPAT?",
+      "duration": 7.147,
+      "words": [
+        {
+          "word": "Lihat",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "langkah",
+          "start": 0.46,
+          "end": 0.72
+        },
+        {
+          "word": "di",
+          "start": 0.72,
+          "end": 0.84
+        },
+        {
+          "word": "Papang",
+          "start": 0.84,
+          "end": 1.2
+        },
+        {
+          "word": "antara",
+          "start": 1.2,
+          "end": 1.92
+        },
+        {
+          "word": "penyataan",
+          "start": 1.92,
+          "end": 2.42
+        },
+        {
+          "word": "berikut",
+          "start": 2.42,
+          "end": 2.78
+        },
+        {
+          "word": "yang",
+          "start": 2.78,
+          "end": 3.44
+        },
+        {
+          "word": "menerangkan",
+          "start": 3.44,
+          "end": 4.3
+        },
+        {
+          "word": "hubungan",
+          "start": 4.3,
+          "end": 4.66
+        },
+        {
+          "word": "nanokimia",
+          "start": 4.66,
+          "end": 5.2
+        },
+        {
+          "word": "dan",
+          "start": 5.2,
+          "end": 5.34
+        },
+        {
+          "word": "kemajuan",
+          "start": 5.34,
+          "end": 5.74
+        },
+        {
+          "word": "teknologi",
+          "start": 5.74,
+          "end": 6.24
+        },
+        {
+          "word": "kimia",
+          "start": 6.24,
+          "end": 6.52
+        },
+        {
+          "word": "dengan",
+          "start": 6.52,
+          "end": 6.66
+        },
+        {
+          "word": "tepat.",
+          "start": 6.66,
+          "end": 7.04
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/kimia-t4-bab01/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Manakah pemerhatian dan pentafsiran data yang TEPAT bagi Eksperimen 1 perpuluhan satu?",
+      "duration": 6.827,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "word": "raja",
+          "start": 0.52,
+          "end": 0.78
+        },
+        {
+          "word": "konsek",
+          "start": 0.78,
+          "end": 1.14
+        },
+        {
+          "word": "di",
+          "start": 1.14,
+          "end": 1.2
+        },
+        {
+          "word": "Papan.",
+          "start": 1.2,
+          "end": 1.56
+        },
+        {
+          "word": "Manakah",
+          "start": 1.86,
+          "end": 2.38
+        },
+        {
+          "word": "pemerhatian",
+          "start": 2.38,
+          "end": 2.96
+        },
+        {
+          "word": "dan",
+          "start": 2.96,
+          "end": 3.08
+        },
+        {
+          "word": "pentasiran",
+          "start": 3.08,
+          "end": 3.6
+        },
+        {
+          "word": "data",
+          "start": 3.6,
+          "end": 3.82
+        },
+        {
+          "word": "yang",
+          "start": 3.82,
+          "end": 4.04
+        },
+        {
+          "word": "tepat",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "word": "bagi",
+          "start": 4.38,
+          "end": 4.68
+        },
+        {
+          "word": "eksperimenman",
+          "start": 4.68,
+          "end": 5.34
+        },
+        {
+          "word": "perpuluhan",
+          "start": 5.34,
+          "end": 6.3
+        },
+        {
+          "word": "satu?",
+          "start": 6.3,
+          "end": 6.54
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/kimia-t4-bab01/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah pernyataan KESELURUHAN yang PALING tepat mengenai keselamatan kimia di dalam makmal?",
+      "duration": 6.955,
+      "words": [
+        {
+          "word": "Ikuti",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "ulutan",
+          "start": 0.48,
+          "end": 0.88
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.88,
+          "end": 1.36
+        },
+        {
+          "word": "di",
+          "start": 1.36,
+          "end": 1.5
+        },
+        {
+          "word": "Papan,",
+          "start": 1.5,
+          "end": 1.82
+        },
+        {
+          "word": "manakah",
+          "start": 1.94,
+          "end": 2.64
+        },
+        {
+          "word": "penyataan",
+          "start": 2.64,
+          "end": 3.16
+        },
+        {
+          "word": "keseluruhan",
+          "start": 3.16,
+          "end": 3.78
+        },
+        {
+          "word": "yang",
+          "start": 3.78,
+          "end": 3.92
+        },
+        {
+          "word": "paling",
+          "start": 3.92,
+          "end": 4.26
+        },
+        {
+          "word": "tepat",
+          "start": 4.26,
+          "end": 4.7
+        },
+        {
+          "word": "mengenai",
+          "start": 4.7,
+          "end": 5.12
+        },
+        {
+          "word": "keselamatan",
+          "start": 5.12,
+          "end": 5.6
+        },
+        {
+          "word": "kimia",
+          "start": 5.6,
+          "end": 6.04
+        },
+        {
+          "word": "di",
+          "start": 6.04,
+          "end": 6.2
+        },
+        {
+          "word": "dalam",
+          "start": 6.2,
+          "end": 6.36
+        },
+        {
+          "word": "Makmal?",
+          "start": 6.36,
+          "end": 6.74
+        }
+      ]
+    }
+  }
+};

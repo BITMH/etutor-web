@@ -1,0 +1,775 @@
+{
+  "deckId": "matematik-t5-bab08",
+  "title": "Pemodelan Matematik",
+  "shortTitle": "Pemodelan Matematik",
+  "subject": "Matematik",
+  "form": "T5",
+  "bab": 8,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Pemodelan Matematik",
+    "desc": "Dalam soalan pemahaman SPM, bezakan 'masalah rutin berstruktur' (semua nilai diberi untuk latih konsep) dengan 'soalan terbuka' (maklumat awal…"
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Berdasarkan carta alir KSSM, apakah tindakan tepat selepas mendapati andaian model tidak selari dengan dunia sebenar pada…",
+        "spokenText": "Perangkap lazim Matematik! Berdasarkan carta alir K S S M, apakah tindakan tepat selepas mendapati andaian model tidak selari dengan dunia sebenar pada"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Berdasarkan carta alir KSSM, apakah tindakan tepat selepas mendapati andaian model tidak selari dengan dunia sebenar pada langkah penentusahan?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menukar data pemerhatian asal supaya sepadan dengan rumus",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menukar data pemerhatian asal supaya sepadan dengan rumus",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu. Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5…",
+              "spokenText": "Fakta sebenar: Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu. Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5 (Memurnikan model) memulakan pusingan baharu ke…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Terus ke komponen 6 dan menyembunyikan nilai negatif tersebut",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu. Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5…",
+              "spokenText": "Fakta sebenar: Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu. Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5 (Memurnikan model) memulakan pusingan baharu ke…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5 (Memurnikan model) memulakan pusingan baharu ke…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5 (Memurnikan model) memulakan pusingan…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Penentusahan (Komponen 4) mendedahkan ketidakrasionalan jawapan, lalu Komponen 5 (Memurnikan model) memulakan pusingan",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Mengaktifkan komponen 5 (Memurnikan model) dan mengulang langkah membuat andaian serta pengiraan baharu",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: Enam Komponen Proses Pemodelan",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Mengapakah dua model matematik berbeza bagi satu soalan terbuka yang sama boleh kedua-duanya dianggap sah?",
+        "spokenText": "Lihat langkah di papan! Mengapakah dua model matematik berbeza bagi satu soalan terbuka yang sama boleh kedua-duanya dianggap sah?"
+      },
+      "board": {
+        "promptPill": "Mengapakah dua model matematik berbeza bagi satu soalan terbuka yang sama boleh…",
+        "title": "Enam Komponen Proses Pemodelan Matematik & Gelung Ulang",
+        "given": "Setiap projek pemodelan matematik bergerak melalui enam komponen tersusun dengan satu gelung maklum balas dari…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Langkah 1",
+            "expr": "Komponen 1 hingga 3 (Membina Model): (1) Mengenal pasti dan mendefinisikan masalah serta…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Langkah 2",
+            "expr": "Komponen 4 hingga 6 (Menguji & Melapor): (4) Menentusahkan dan mentafsir penyelesaian…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kerana pemodelan matematik tidak memerlukan sebarang rumus atau data",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerana pemodelan matematik tidak memerlukan… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Kerana pemodelan matematik tidak memerlukan tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri; selagi andaian itu boleh…",
+              "spokenText": "Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri; selagi andaian itu boleh",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Komponen 1 hingga 3 (Membina Model): (1) Mengenal pasti dan mendefinisikan masalah serta…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Komponen 4 hingga 6 (Menguji & Melapor): (4) Menentusahkan dan mentafsir penyelesaian…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Kerana penyelidik berbeza boleh menetapkan andaian, pemboleh ubah dan persepsi yang…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Kerana semua soalan terbuka sememangnya mempunyai jawapan tepat tanpa andaian",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Kerana semua soalan terbuka sememangnya… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan Kerana semua soalan terbuka sememangnya tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri; selagi andaian itu boleh…",
+              "spokenText": "Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri; selagi andaian itu boleh",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Langkah 1",
+                    "expr": "Komponen 1 hingga 3 (Membina Model): (1) Mengenal pasti dan mendefinisikan masalah serta…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Langkah 2",
+                    "expr": "Komponen 4 hingga 6 (Menguji & Melapor): (4) Menentusahkan dan mentafsir penyelesaian…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Komponen 1 hingga 3 (Membina Model): (1) Mengenal pasti dan mendefinisikan masalah serta…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Komponen 4 hingga 6 (Menguji & Melapor): (4) Menentusahkan dan mentafsir penyelesaian…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Enam Komponen Proses Pemodelan",
+          "desc": "Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri; selagi andaian itu boleh…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri;…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Dalam pemodelan matematik bagi soalan terbuka, setiap kumpulan mempunyai idea, kemahiran dan andaian tersendiri;",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Langkah 1",
+              "expr": "Komponen 1 hingga 3 (Membina Model): (1) Mengenal pasti dan mendefinisikan masalah serta…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Langkah 2",
+              "expr": "Komponen 4 hingga 6 (Menguji & Melapor): (4) Menentusahkan dan mentafsir penyelesaian…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Masalah Berstruktur (Data Lengkap)\":",
+        "spokenText": "Perangkap lazim Matematik! Pilih item yang tepat bagi kategori \"Masalah Berstruktur (Data Lengkap)\":"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Pilih item yang tepat bagi kategori \"Masalah Berstruktur (Data Lengkap)\":",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Berapa lamakah masa diperlukan untuk membersihkan tumpahan minyak di tengah lautan?",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Berapa lamakah masa diperlukan untuk membersihkan tumpahan minyak di tengah lautan?",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula. Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+              "spokenText": "Fakta sebenar: 40 000 penduduk bandar dengan 45 peratus kitar semula 5 botol seminggu; cari jumlah botol dikitar semula. Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 darab kosong perpuluhan empat lima darab 5.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Diberi isi padu kuboid ialah 240 cm³, panjang 10 cm dan lebar 6 cm; tentukan tingginya",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula. Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+              "spokenText": "Fakta sebenar: 40 000 penduduk bandar dengan 45 peratus kitar semula 5 botol seminggu; cari jumlah botol dikitar semula. Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 darab kosong perpuluhan empat lima darab 5.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 × 0.45 × 5.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Semua maklumat diberi jelas; hanya perlukan pengiraan terus 40 000 darab kosong perpuluhan empat lima darab 5.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "40 000 penduduk bandar dengan 45% kitar semula 5 botol seminggu; cari jumlah botol dikitar semula",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: Uji Minda Akhir: Pemodelan",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Tentukan nilai pelaburan selepas 2 tahun bagi (I) serta had domain masa yang munasabah dan tafsiran bagi (II):",
+        "spokenText": "Lihat langkah di papan! Tentukan nilai pelaburan selepas 2 tahun bagi (I) serta had domain masa yang munasabah dan tafsiran bagi (II):"
+      },
+      "board": {
+        "promptPill": "Tentukan nilai pelaburan selepas 2 tahun bagi (I) serta had domain masa yang…",
+        "title": "Uji Minda Akhir: Pemodelan Matematik",
+        "given": "Pemodelan tidak terhad kepada linear, kuadratik dan eksponen — model geometri salingan y = 6/x, skala pengukuran…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Petua 1",
+            "expr": "Latih Kendiri 8.1b Q2 — Risiko Hipertermia (Fungsi Salingan y = 6/x): Kadar kehilangan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Petua 2",
+            "expr": "Projek Mini (Pinggir Pantai Malaysia) & Pemurnian Jarak Berhenti / Tangki: Apabila…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "(I) RM11 255.09; (II) Domain sah ialah 0 ≤ t ≤ 15 minit kerana tangki kosong pada t = 15…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "(I) RM11 200.00; (II) Domain sah ialah 0 ≤ t ≤ 30 minit kerana baki tangki menjadi −120…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan (I) RM11 200.00; (II) Domain sah ialah 0 ≤… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan (I) 11 ringgit Malaysia 200 perpuluhan kosong kosong; (II) Domain sah ialah 0 kurang atau sama dengan tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bagi (I): A(2) = 10 000(1 + 0.06/2)^(2×2) = 10 000(1.03)⁴ = RM11 255.09. Bagi (II): V(t) = 0 apabila 120 − 8t = 0 => t = 15 minit. Selepas 15 minit,…",
+              "spokenText": "Bagi (I): A(2) sama dengan 10 000(1 + kosong perpuluhan kosong enam/2)^(2 darab 2) sama dengan 10 000(1 perpuluhan kosong tiga) kuasa empat sama dengan 11 ringgit Malaysia 255 perpuluhan kosong sembilan. Bagi (II): V(t) sama dengan 0 apabila 120 tolak 8t sama dengan 0 sama dengan lebih daripada t sama dengan 15 minit. Selepas 15 minit,",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Latih Kendiri 8.1b Q2 — Risiko Hipertermia (Fungsi Salingan y = 6/x): Kadar kehilangan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Projek Mini (Pinggir Pantai Malaysia) & Pemurnian Jarak Berhenti / Tangki: Apabila…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "(I) RM11 236.00; (II) Tangki boleh terus mengalir keluar tanpa had masa negatif",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan (I) RM11 236.00; (II) Tangki boleh terus… tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan (I) 11 ringgit Malaysia 236 perpuluhan kosong kosong; (II) Tangki boleh terus tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Bagi (I): A(2) = 10 000(1 + 0.06/2)^(2×2) = 10 000(1.03)⁴ = RM11 255.09. Bagi (II): V(t) = 0 apabila 120 − 8t = 0 => t = 15 minit. Selepas 15 minit,…",
+              "spokenText": "Bagi (I): A(2) sama dengan 10 000(1 + kosong perpuluhan kosong enam/2)^(2 darab 2) sama dengan 10 000(1 perpuluhan kosong tiga) kuasa empat sama dengan 11 ringgit Malaysia 255 perpuluhan kosong sembilan. Bagi (II): V(t) sama dengan 0 apabila 120 tolak 8t sama dengan 0 sama dengan lebih daripada t sama dengan 15 minit. Selepas 15 minit,",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Petua 1",
+                    "expr": "Latih Kendiri 8.1b Q2 — Risiko Hipertermia (Fungsi Salingan y = 6/x): Kadar kehilangan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Petua 2",
+                    "expr": "Projek Mini (Pinggir Pantai Malaysia) & Pemurnian Jarak Berhenti / Tangki: Apabila…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Latih Kendiri 8.1b Q2 — Risiko Hipertermia (Fungsi Salingan y = 6/x): Kadar kehilangan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Projek Mini (Pinggir Pantai Malaysia) & Pemurnian Jarak Berhenti / Tangki: Apabila…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "Uji Minda Akhir: Pemodelan",
+          "desc": "Bagi (I): A(2) = 10 000(1 + 0.06/2)^(2×2) = 10 000(1.03)⁴ = RM11 255.09. Bagi (II): V(t) = 0 apabila 120 − 8t = 0 => t = 15 minit. Selepas…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: Bagi (I): A(2) = 10 000(1 + 0.06/2)^(2×2) = 10 000(1.03)⁴ = RM11 255.09. Bagi (II): V(t) = 0 apabila 120 − 8t = 0 => t…",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: Bagi (I): A(2) sama dengan 10 000(1 + kosong perpuluhan kosong enam/2)^(2 darab 2) sama dengan 10 000(1 perpuluhan kosong tiga) kuasa empat sama dengan 11 ringgit Malaysia 255 perpuluhan kosong sembilan. Bagi (II): V(t) sama dengan 0 apabila 120 tolak 8t sama dengan 0 sama dengan lebih daripada t",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Petua 1",
+              "expr": "Latih Kendiri 8.1b Q2 — Risiko Hipertermia (Fungsi Salingan y = 6/x): Kadar kehilangan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Petua 2",
+              "expr": "Projek Mini (Pinggir Pantai Malaysia) & Pemurnian Jarak Berhenti / Tangki: Apabila…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

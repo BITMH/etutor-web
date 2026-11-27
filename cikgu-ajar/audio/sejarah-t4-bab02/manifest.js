@@ -1,0 +1,416 @@
+window.CIKGU_AJAR_DECK_AUDIO = window.CIKGU_AJAR_DECK_AUDIO || {};
+window.CIKGU_AJAR_DECK_AUDIO["sejarah-t4-bab02"] = {
+  "model": "mesolitica/Malaysian-TTS-4B-v0.1",
+  "speaker": "husein",
+  "generatedAt": "2026-11-27T10:39:16.000Z",
+  "clips": {
+    "c1_intro": {
+      "file": "audio/sejarah-t4-bab02/c1_intro.mp3",
+      "text": "Perangkap lazim Sejarah! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang Kebangkitan Nasionalisme?",
+      "duration": 6.432,
+      "words": [
+        {
+          "word": "Perangkap",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "word": "lazim",
+          "start": 0.58,
+          "end": 0.9
+        },
+        {
+          "word": "sejarah,",
+          "start": 0.9,
+          "end": 1.76
+        },
+        {
+          "word": "awas",
+          "start": 1.76,
+          "end": 2.16
+        },
+        {
+          "word": "perangkap,",
+          "start": 2.16,
+          "end": 2.74
+        },
+        {
+          "word": "manakah",
+          "start": 3.24,
+          "end": 3.58
+        },
+        {
+          "word": "fakta",
+          "start": 3.58,
+          "end": 4.0
+        },
+        {
+          "word": "atau",
+          "start": 4.0,
+          "end": 4.16
+        },
+        {
+          "word": "langkah",
+          "start": 4.16,
+          "end": 4.5
+        },
+        {
+          "word": "yang",
+          "start": 4.5,
+          "end": 4.62
+        },
+        {
+          "word": "bitu",
+          "start": 4.62,
+          "end": 4.88
+        },
+        {
+          "word": "tentang",
+          "start": 4.88,
+          "end": 5.14
+        },
+        {
+          "word": "kebangkitan",
+          "start": 5.14,
+          "end": 5.72
+        },
+        {
+          "word": "nasional",
+          "start": 5.72,
+          "end": 5.98
+        },
+        {
+          "word": "semua?",
+          "start": 5.98,
+          "end": 6.2
+        }
+      ]
+    },
+    "c2_intro": {
+      "file": "audio/sejarah-t4-bab02/c2_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Ramal & Uji: Bagaimanakah seruan Pan-Islamisme dan fatwa Empayar Uthmaniyah tahun 1914 memberi kesan langsung di Tanah",
+      "duration": 10.485,
+      "words": [
+        {
+          "word": "ikuti",
+          "start": 0.0,
+          "end": 0.74
+        },
+        {
+          "word": "urutan",
+          "start": 0.74,
+          "end": 1.26
+        },
+        {
+          "word": "peristiwa",
+          "start": 1.26,
+          "end": 1.76
+        },
+        {
+          "word": "di",
+          "start": 1.76,
+          "end": 1.88
+        },
+        {
+          "word": "Papan,",
+          "start": 1.88,
+          "end": 2.24
+        },
+        {
+          "word": "Ramal",
+          "start": 2.68,
+          "end": 3.02
+        },
+        {
+          "word": "Anuji.",
+          "start": 3.02,
+          "end": 3.74
+        },
+        {
+          "word": "Pada",
+          "start": 4.02,
+          "end": 4.2
+        },
+        {
+          "word": "manakah",
+          "start": 4.2,
+          "end": 4.58
+        },
+        {
+          "word": "seluruh",
+          "start": 4.58,
+          "end": 4.96
+        },
+        {
+          "word": "pang",
+          "start": 4.96,
+          "end": 5.12
+        },
+        {
+          "word": "Islamisme",
+          "start": 5.12,
+          "end": 5.76
+        },
+        {
+          "word": "dan",
+          "start": 5.76,
+          "end": 6.4
+        },
+        {
+          "word": "Fatua",
+          "start": 6.4,
+          "end": 6.84
+        },
+        {
+          "word": "Empayat",
+          "start": 6.84,
+          "end": 7.3
+        },
+        {
+          "word": "Utmania",
+          "start": 7.3,
+          "end": 7.68
+        },
+        {
+          "word": "Tahun",
+          "start": 7.68,
+          "end": 8.18
+        },
+        {
+          "word": "Nansinat",
+          "start": 8.18,
+          "end": 8.86
+        },
+        {
+          "word": "Tahun",
+          "start": 8.86,
+          "end": 9.3
+        },
+        {
+          "word": "ditanasung",
+          "start": 9.3,
+          "end": 9.94
+        },
+        {
+          "word": "di",
+          "start": 9.94,
+          "end": 10.08
+        },
+        {
+          "word": "Tanda?",
+          "start": 10.08,
+          "end": 10.34
+        }
+      ]
+    },
+    "c3_intro": {
+      "file": "audio/sejarah-t4-bab02/c3_intro.mp3",
+      "text": "Perhatikan rajah konsep di papan! Mengapakah Revolusi China pada tahun 1911 dianggap berjaya memenuhi asas perjuangan Dr. Sun Yat Sen?",
+      "duration": 8.0,
+      "words": [
+        {
+          "word": "Perhatikan",
+          "start": 0.0,
+          "end": 0.76
+        },
+        {
+          "word": "raja",
+          "start": 0.76,
+          "end": 1.1
+        },
+        {
+          "word": "konsep",
+          "start": 1.1,
+          "end": 1.56
+        },
+        {
+          "word": "di",
+          "start": 1.56,
+          "end": 1.66
+        },
+        {
+          "word": "Papuan.",
+          "start": 1.66,
+          "end": 2.02
+        },
+        {
+          "word": "Mengatukah",
+          "start": 2.4,
+          "end": 2.98
+        },
+        {
+          "word": "revolusi",
+          "start": 2.98,
+          "end": 3.42
+        },
+        {
+          "word": "China",
+          "start": 3.42,
+          "end": 3.74
+        },
+        {
+          "word": "pada",
+          "start": 3.74,
+          "end": 3.98
+        },
+        {
+          "word": "tahun",
+          "start": 3.98,
+          "end": 4.26
+        },
+        {
+          "word": "insin",
+          "start": 4.26,
+          "end": 4.66
+        },
+        {
+          "word": "ini",
+          "start": 4.66,
+          "end": 4.76
+        },
+        {
+          "word": "dianggap",
+          "start": 4.76,
+          "end": 5.22
+        },
+        {
+          "word": "berjaya",
+          "start": 5.22,
+          "end": 5.54
+        },
+        {
+          "word": "memungkinkan",
+          "start": 5.54,
+          "end": 6.12
+        },
+        {
+          "word": "asas",
+          "start": 6.12,
+          "end": 6.42
+        },
+        {
+          "word": "perjuangan",
+          "start": 6.42,
+          "end": 6.78
+        },
+        {
+          "word": "Doktor",
+          "start": 6.78,
+          "end": 7.08
+        },
+        {
+          "word": "Sanyat",
+          "start": 7.08,
+          "end": 7.34
+        },
+        {
+          "word": "Sen?",
+          "start": 7.34,
+          "end": 7.48
+        }
+      ]
+    },
+    "c4_intro": {
+      "file": "audio/sejarah-t4-bab02/c4_intro.mp3",
+      "text": "Ikuti urutan peristiwa di papan! Manakah pernyataan paling tepat merangkumkan perkembangan menyeluruh kesan nasionalisme sebelum Perang Dunia Kedua di",
+      "duration": 7.253,
+      "words": [
+        {
+          "word": "dikuti",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "urutan",
+          "start": 0.28,
+          "end": 0.7
+        },
+        {
+          "word": "peristiwa",
+          "start": 0.7,
+          "end": 1.16
+        },
+        {
+          "word": "di",
+          "start": 1.16,
+          "end": 1.28
+        },
+        {
+          "word": "Papan,",
+          "start": 1.28,
+          "end": 1.7
+        },
+        {
+          "word": "manakah",
+          "start": 1.92,
+          "end": 2.6
+        },
+        {
+          "word": "penyataan",
+          "start": 2.6,
+          "end": 3.08
+        },
+        {
+          "word": "paling",
+          "start": 3.08,
+          "end": 3.28
+        },
+        {
+          "word": "tepat",
+          "start": 3.28,
+          "end": 3.64
+        },
+        {
+          "word": "merangkungkan",
+          "start": 3.64,
+          "end": 4.2
+        },
+        {
+          "word": "perkembangan",
+          "start": 4.2,
+          "end": 4.62
+        },
+        {
+          "word": "menyeruruh",
+          "start": 4.62,
+          "end": 5.16
+        },
+        {
+          "word": "kesan",
+          "start": 5.16,
+          "end": 5.42
+        },
+        {
+          "word": "nasionalisme",
+          "start": 5.42,
+          "end": 6.0
+        },
+        {
+          "word": "sebelum",
+          "start": 6.0,
+          "end": 6.38
+        },
+        {
+          "word": "perang",
+          "start": 6.38,
+          "end": 6.54
+        },
+        {
+          "word": "dunia",
+          "start": 6.54,
+          "end": 6.76
+        },
+        {
+          "word": "kedua",
+          "start": 6.76,
+          "end": 7.02
+        },
+        {
+          "word": "-dia?",
+          "start": 7.02,
+          "end": 7.16
+        }
+      ]
+    }
+  }
+};

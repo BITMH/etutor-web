@@ -1,0 +1,826 @@
+{
+  "deckId": "sejarah-t4-bab06",
+  "title": "Ancaman Komunis dan Perisytiharan Darurat",
+  "shortTitle": "Ancaman Komunis dan Perisytiharan",
+  "subject": "Sejarah",
+  "form": "T4",
+  "bab": 6,
+  "mastery": {
+    "tag": "Rumusan SPM",
+    "title": "Kunci Ancaman Komunis dan Perisytiharan",
+    "desc": "Hafal 6 bandar cawangan KMT menjelang 1924 (Muar, Melaka, Seremban, Klang, KL, Sungai Petani) serta peranan Main School dalam kalangan orang Hailam."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sejarah! Apakah faktor utama yang menyebabkan orang Melayu tidak menyambut penyebaran fahaman komunis dari Indonesia?",
+        "spokenText": "Perangkap lazim Sejarah! Apakah faktor utama yang menyebabkan orang Melayu tidak menyambut penyebaran fahaman komunis dari Indonesia?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Apakah faktor utama yang menyebabkan orang Melayu tidak menyambut penyebaran fahaman komunis dari Indonesia?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Semua pemimpin PKI hanya menulis risalah dalam bahasa Belanda dan Rusia",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Semua pemimpin PKI hanya menulis risalah dalam bahasa Belanda dan Rusia",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka. Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak…",
+              "spokenText": "Fakta sebenar: Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka. Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak oleh orang Melayu kerana komunis…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Kerajaan Siam telah menutup semua sempadan darat di utara Kedah sejak 1920",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sejarah. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka. Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak…",
+              "spokenText": "Fakta sebenar: Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka. Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak oleh orang Melayu kerana komunis…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak oleh orang Melayu kerana komunis…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak oleh orang Melayu kerana…",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Usaha penyebaran oleh pemimpin komunis Indonesia dan cawangan PKI selepas 1926 ditolak oleh orang Melayu kerana",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Komunis menggunakan pendekatan kekerasan untuk mencapai matlamat politik mereka",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Garis Masa 2",
+      "heading": "Kad 2: Kemasukan Pengaruh Komunis dari",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah tujuan British meluluskan Trade Union Ordinance No. 9 of 1948 menjelang pertengahan tahun 1948?",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah tujuan British meluluskan Trade Union Ordinance No. 9 of 1948 menjelang pertengahan tahun 1948?"
+      },
+      "board": {
+        "promptPill": "Apakah tujuan British meluluskan Trade Union Ordinance No. 9 of 1948 menjelang…",
+        "title": "Kemasukan Pengaruh Komunis dari Indonesia (1920–1926)",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Fasa 1",
+            "title": "6.1 Asas Ideologi Komunis & Kemasukan Pengaruh…",
+            "detail": "Komunisme mengubah ekonomi dan barang pengguna menjadi milik negara lalu menyusup dari China melalui…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 2",
+            "title": "Kemasukan Pengaruh Komunis dari Indonesia…",
+            "detail": "Pemimpin komunis Indonesia giat menyebarkan ideologi di bahagian utara Semenanjung namun gagal meraih…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Fasa 3",
+            "title": "Penubuhan PKM (30 April 1930) & Kerjasama…",
+            "detail": "PKM yang lahir di Kuala Pilah memanfaatkan kesatuan sekerja serta kerjasama perang bersama British untuk…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menyekat pengaruh komunis yang menguasai 335 kesatuan sekerja melalui PMFTU dan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Membenarkan bekas anggota MPAJA menyimpan senjata api secara sah di estet getah",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Membenarkan bekas anggota MPAJA… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Membenarkan bekas anggota MPAJA tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British meluluskan Trade Union…",
+              "spokenText": "Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British meluluskan Trade Union",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "6.1 Asas Ideologi Komunis & Kemasukan Pengaruh…",
+                    "detail": "Komunisme mengubah ekonomi dan barang pengguna menjadi milik negara lalu menyusup dari China melalui…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kemasukan Pengaruh Komunis dari Indonesia…",
+                    "detail": "Pemimpin komunis Indonesia giat menyebarkan ideologi di bahagian utara Semenanjung namun gagal meraih…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Penubuhan PKM (30 April 1930) & Kerjasama…",
+                    "detail": "PKM yang lahir di Kuala Pilah memanfaatkan kesatuan sekerja serta kerjasama perang bersama British untuk…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Mewajibkan kesemua pekerja lombong bijih timah mendaftar menjadi ahli Parti Kuomintang",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Mewajibkan kesemua pekerja lombong bijih… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Mewajibkan kesemua pekerja lombong bijih tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British meluluskan Trade Union…",
+              "spokenText": "Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British meluluskan Trade Union",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Fasa 1",
+                    "title": "6.1 Asas Ideologi Komunis & Kemasukan Pengaruh…",
+                    "detail": "Komunisme mengubah ekonomi dan barang pengguna menjadi milik negara lalu menyusup dari China melalui…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 2",
+                    "title": "Kemasukan Pengaruh Komunis dari Indonesia…",
+                    "detail": "Pemimpin komunis Indonesia giat menyebarkan ideologi di bahagian utara Semenanjung namun gagal meraih…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Fasa 3",
+                    "title": "Penubuhan PKM (30 April 1930) & Kerjasama…",
+                    "detail": "PKM yang lahir di Kuala Pilah memanfaatkan kesatuan sekerja serta kerjasama perang bersama British untuk…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "spokenText": "Tepat sekali! Susunan dan fakta awak sangat padu.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "6.1 Asas Ideologi Komunis & Kemasukan Pengaruh…",
+              "detail": "Komunisme mengubah ekonomi dan barang pengguna menjadi milik negara lalu menyusup dari China melalui…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kemasukan Pengaruh Komunis dari Indonesia…",
+              "detail": "Pemimpin komunis Indonesia giat menyebarkan ideologi di bahagian utara Semenanjung namun gagal meraih…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Penubuhan PKM (30 April 1930) & Kerjasama…",
+              "detail": "PKM yang lahir di Kuala Pilah memanfaatkan kesatuan sekerja serta kerjasama perang bersama British untuk…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Kemasukan Pengaruh Komunis dari",
+          "desc": "Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British meluluskan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Apabila PKM menguasai 335 kesatuan sekerja menerusi PMFTU serta menyusup ke dalam PKMM, MDU dan PUTERA-AMCJA, British",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Fasa 1",
+              "title": "6.1 Asas Ideologi Komunis & Kemasukan Pengaruh…",
+              "detail": "Komunisme mengubah ekonomi dan barang pengguna menjadi milik negara lalu menyusup dari China melalui…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 2",
+              "title": "Kemasukan Pengaruh Komunis dari Indonesia…",
+              "detail": "Pemimpin komunis Indonesia giat menyebarkan ideologi di bahagian utara Semenanjung namun gagal meraih…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Fasa 3",
+              "title": "Penubuhan PKM (30 April 1930) & Kerjasama…",
+              "detail": "PKM yang lahir di Kuala Pilah memanfaatkan kesatuan sekerja serta kerjasama perang bersama British untuk…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: Penubuhan PKM & Kerjasama",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Apakah tujuan strategik PKM bertindak melumpuhkan ekonomi dan merosakkan infrastruktur asas di Tanah Melayu?",
+        "spokenText": "Perhatikan rajah konsep di papan! Apakah tujuan strategik PKM bertindak melumpuhkan ekonomi dan merosakkan infrastruktur asas di Tanah Melayu?"
+      },
+      "board": {
+        "promptPill": "Apakah tujuan strategik PKM bertindak melumpuhkan ekonomi dan merosakkan…",
+        "title": "Penubuhan PKM (30 April 1930) & Kerjasama MPAJA (1941–1945)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Sheum Circus, Kampar (5 Julai 1949)",
+            "detail": "Serangan bom tangan menyebabkan 46 orang cedera parah dan 4 terbunuh",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Balai Polis Bukit Kepong, Muar (22…",
+            "detail": "Serangan balai polis bagi menguji keupayaan keselamatan kerajaan di Johor",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Jalan Kuala Kubu Bharu – Bukit…",
+            "detail": "Serang hendap yang mengorbankan Pesuruhjaya Tinggi Sir Henry Gurney",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Melemahkan ekonomi British serta mencetuskan huru-hara supaya penduduk hilang keyakinan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Menggalakkan pembukaan syarikat perlombongan milik pelabur Eropah yang lebih baharu",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Menggalakkan pembukaan syarikat… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Menggalakkan pembukaan syarikat tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan mewujudkan huru-hara agar…",
+              "spokenText": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan mewujudkan huru-hara agar",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Penubuhan PKM & Kerjasama",
+                "desc": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Memindahkan semua pekerja ladang getah ke dalam bandar raya Kuala Lumpur dan Singapura",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Memindahkan semua pekerja ladang getah… tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Memindahkan semua pekerja ladang getah tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan mewujudkan huru-hara agar…",
+              "spokenText": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan mewujudkan huru-hara agar",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "Penubuhan PKM & Kerjasama",
+                "desc": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan…",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "Penubuhan PKM & Kerjasama",
+          "desc": "Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British dan mewujudkan…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Sasaran ke atas ekonomi (getah dan bijih timah) serta kemudahan awam bertujuan melemahkan keupayaan kewangan British"
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Ancaman Komunis dan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Apakah iktibar kenegaraan dan nilai sivik paling utama yang perlu dihayati generasi muda daripada kejayaan negara…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Apakah iktibar kenegaraan dan nilai sivik paling utama yang perlu dihayati generasi muda daripada kejayaan negara"
+      },
+      "board": {
+        "promptPill": "Apakah iktibar kenegaraan dan nilai sivik paling utama yang perlu dihayati generasi…",
+        "title": "Rumusan: Ancaman Komunis dan Perisytiharan",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "6.4 Kesan Aspek Politik: Kewarganegaraan 1952,…",
+            "detail": "Hafal peranan MCA (27 Feb 1949, Tan Cheng Lock, 250 ribu ahli, $2.5 juta loteri kebajikan, bantu 500 ribu…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "Kesan Aspek Sosioekonomi: Kos Belanja Tinggi,…",
+            "detail": "Hafal 3 makanan gantian semasa catuan zaman Darurat: ubi kayu, keledek dan jagung, serta jurang pembangunan…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "Penamatan Zaman Darurat (31 Julai 1960) &…",
+            "detail": "Tarikh wajib: 18 Jun 1948 (Darurat seluruh Tanah Melayu) hingga 31 Julai 1960 (Penamatan Darurat) = genap 12…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Kerjasama erat antara rakyat berbilang kaum dengan pasukan keselamatan serta kewaspadaan…",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Keselamatan negara hanya menjadi tanggungjawab pasukan polis dan tentera tanpa perlu…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Keselamatan negara hanya menjadi… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Keselamatan negara hanya menjadi tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kejayaan membanteras ancaman komunis (1948–1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan, pemikiran strategik dan perpaduan…",
+              "spokenText": "Kejayaan membanteras ancaman komunis (1948 hingga 1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan, pemikiran strategik dan perpaduan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "6.4 Kesan Aspek Politik: Kewarganegaraan 1952,…",
+                    "detail": "Hafal peranan MCA (27 Feb 1949, Tan Cheng Lock, 250 ribu ahli, $2.5 juta loteri kebajikan, bantu 500 ribu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kesan Aspek Sosioekonomi: Kos Belanja Tinggi,…",
+                    "detail": "Hafal 3 makanan gantian semasa catuan zaman Darurat: ubi kayu, keledek dan jagung, serta jurang pembangunan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Penamatan Zaman Darurat (31 Julai 1960) &…",
+                    "detail": "Tarikh wajib: 18 Jun 1948 (Darurat seluruh Tanah Melayu) hingga 31 Julai 1960 (Penamatan Darurat) = genap 12…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Pemisahan petempatan mengikut kaum perlu dikekalkan selama-lamanya bagi menjamin…",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan Pemisahan petempatan mengikut kaum perlu… tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan Pemisahan petempatan mengikut kaum perlu tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Kejayaan membanteras ancaman komunis (1948–1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan, pemikiran strategik dan perpaduan…",
+              "spokenText": "Kejayaan membanteras ancaman komunis (1948 hingga 1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan, pemikiran strategik dan perpaduan",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "6.4 Kesan Aspek Politik: Kewarganegaraan 1952,…",
+                    "detail": "Hafal peranan MCA (27 Feb 1949, Tan Cheng Lock, 250 ribu ahli, $2.5 juta loteri kebajikan, bantu 500 ribu…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "Kesan Aspek Sosioekonomi: Kos Belanja Tinggi,…",
+                    "detail": "Hafal 3 makanan gantian semasa catuan zaman Darurat: ubi kayu, keledek dan jagung, serta jurang pembangunan…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "Penamatan Zaman Darurat (31 Julai 1960) &…",
+                    "detail": "Tarikh wajib: 18 Jun 1948 (Darurat seluruh Tanah Melayu) hingga 31 Julai 1960 (Penamatan Darurat) = genap 12…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "6.4 Kesan Aspek Politik: Kewarganegaraan 1952,…",
+              "detail": "Hafal peranan MCA (27 Feb 1949, Tan Cheng Lock, 250 ribu ahli, $2.5 juta loteri kebajikan, bantu 500 ribu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kesan Aspek Sosioekonomi: Kos Belanja Tinggi,…",
+              "detail": "Hafal 3 makanan gantian semasa catuan zaman Darurat: ubi kayu, keledek dan jagung, serta jurang pembangunan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Penamatan Zaman Darurat (31 Julai 1960) &…",
+              "detail": "Tarikh wajib: 18 Jun 1948 (Darurat seluruh Tanah Melayu) hingga 31 Julai 1960 (Penamatan Darurat) = genap 12…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Ancaman Komunis dan",
+          "desc": "Kejayaan membanteras ancaman komunis (1948–1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan, pemikiran strategik…",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kejayaan membanteras ancaman komunis (1948–1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan,…",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Kejayaan membanteras ancaman komunis (1948 hingga 1960) membuktikan gandingan kesediaan berkorban pasukan keselamatan,",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "6.4 Kesan Aspek Politik: Kewarganegaraan 1952,…",
+              "detail": "Hafal peranan MCA (27 Feb 1949, Tan Cheng Lock, 250 ribu ahli, $2.5 juta loteri kebajikan, bantu 500 ribu…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "Kesan Aspek Sosioekonomi: Kos Belanja Tinggi,…",
+              "detail": "Hafal 3 makanan gantian semasa catuan zaman Darurat: ubi kayu, keledek dan jagung, serta jurang pembangunan…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "Penamatan Zaman Darurat (31 Julai 1960) &…",
+              "detail": "Tarikh wajib: 18 Jun 1948 (Darurat seluruh Tanah Melayu) hingga 31 Julai 1960 (Penamatan Darurat) = genap 12…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

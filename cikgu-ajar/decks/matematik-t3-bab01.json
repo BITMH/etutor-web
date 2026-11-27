@@ -1,0 +1,810 @@
+{
+  "deckId": "matematik-t3-bab01",
+  "title": "Indeks (Tatatanda & Hukum Indeks)",
+  "shortTitle": "Indeks",
+  "subject": "Matematik",
+  "form": "T3",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Indeks",
+    "desc": "Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Tatatanda Indeks & Pendaraban Berulang (SK 1.1)?",
+        "spokenText": "Perangkap lazim Matematik! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Tatatanda Indeks & Pendaraban Berulang (SK 1 perpuluhan satu)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Tatatanda Indeks & Pendaraban Berulang (SK 1.1)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Lupa mendarab indeks pada pekali nombor di dalam kurungan: menulis (3x²)³ = 3x⁶.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Lupa mendarab indeks pada pekali nombor di dalam kurungan: menulis (3x²)³ = 3x⁶.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.. Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+              "spokenText": "Fakta sebenar: Setiap faktor dalam kurungan (termasuk nombor pekali 3 kuasa satu) mesti didarab indeksnya dengan 3: 3 kuasa tigax^(2 darab 3) sama dengan 27x kuasa enam.. Tulis indeks tersirat '1' pada setiap pekali nombor: (3 kuasa satux kuasa dua) kuasa tiga , menghasilkan 3 kuasa tigax kuasa enam.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3:…",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menulis 2m⁻³ = 1 / (2m³) dengan menurunkan pekali 2 bersama m.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.. Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+              "spokenText": "Fakta sebenar: Setiap faktor dalam kurungan (termasuk nombor pekali 3 kuasa satu) mesti didarab indeksnya dengan 3: 3 kuasa tigax^(2 darab 3) sama dengan 27x kuasa enam.. Tulis indeks tersirat '1' pada setiap pekali nombor: (3 kuasa satux kuasa dua) kuasa tiga , menghasilkan 3 kuasa tigax kuasa enam.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Tulis indeks tersirat '1' pada setiap pekali nombor: (3¹x²)³ → 3³x⁶.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Tulis indeks tersirat '1' pada setiap pekali nombor: (3 kuasa satux kuasa dua) kuasa tiga , menghasilkan 3 kuasa tigax kuasa enam.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Setiap faktor dalam kurungan (termasuk nombor pekali 3¹) mesti didarab indeksnya dengan 3: 3³x^(2×3) = 27x⁶.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rumus 2",
+      "heading": "Kad 2: 1.1 Tatatanda Indeks &",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Lihat langkah di papan! Ringkaskan (3p²q³)² × p⁴q.",
+        "spokenText": "Lihat langkah di papan! Ringkaskan (3p kuasa duaq kuasa tiga) kuasa dua darab p kuasa empatq."
+      },
+      "board": {
+        "promptPill": "Ringkaskan (3p²q³)² × p⁴q.",
+        "title": "1.1 Tatatanda Indeks & Pendaraban Berulang (SK 1.1)",
+        "given": "Suatu nombor yang didarabkan secara berulang dengan dirinya sendiri sebanyak n kali boleh diringkaskan dalam bentuk…",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Situasi",
+            "expr": "Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Konsep",
+            "expr": "Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 3,
+            "label": "Penyelesaian",
+            "expr": "(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 =…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "6p⁸q⁷",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 6p⁸q⁷ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 6p kuasa lapanq kuasa tujuh tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "(3p²q³)² = 3²p⁴q⁶ = 9p⁴q⁶. Didarabkan p⁴q¹ menghasilkan 9p⁸q⁷.",
+              "spokenText": "(3p kuasa duaq kuasa tiga) kuasa dua sama dengan 3 kuasa duap kuasa empatq kuasa enam sama dengan 9p kuasa empatq kuasa enam. Didarabkan p kuasa empatq kuasa satu menghasilkan 9p kuasa lapanq kuasa tujuh.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Situasi",
+                    "expr": "Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Konsep",
+                    "expr": "Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Penyelesaian",
+                    "expr": "(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 =…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "9p⁸q⁷",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "9p⁶q⁶",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 9p⁶q⁶ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan 9p kuasa enamq kuasa enam tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "(3p²q³)² = 3²p⁴q⁶ = 9p⁴q⁶. Didarabkan p⁴q¹ menghasilkan 9p⁸q⁷.",
+              "spokenText": "(3p kuasa duaq kuasa tiga) kuasa dua sama dengan 3 kuasa duap kuasa empatq kuasa enam sama dengan 9p kuasa empatq kuasa enam. Didarabkan p kuasa empatq kuasa satu menghasilkan 9p kuasa lapanq kuasa tujuh.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Situasi",
+                    "expr": "Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Konsep",
+                    "expr": "Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 3,
+                    "label": "Penyelesaian",
+                    "expr": "(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 =…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Situasi",
+              "expr": "Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Konsep",
+              "expr": "Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Penyelesaian",
+              "expr": "(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 =…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "1.1 Tatatanda Indeks &",
+          "desc": "(3p²q³)² = 3²p⁴q⁶ = 9p⁴q⁶. Didarabkan p⁴q¹ menghasilkan 9p⁸q⁷.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: (3p²q³)² = 3²p⁴q⁶ = 9p⁴q⁶. Didarabkan p⁴q¹ menghasilkan 9p⁸q⁷.",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: (3p kuasa duaq kuasa tiga) kuasa dua sama dengan 3 kuasa duap kuasa empatq kuasa enam sama dengan 9p kuasa empatq kuasa enam. Didarabkan p kuasa empatq kuasa satu menghasilkan 9p kuasa lapanq kuasa tujuh.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Situasi",
+              "expr": "Nyatakan perbezaan nilai antara (-2)⁴ dengan -2⁴, dan ungkapkan 81 dalam bentuk indeks…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Konsep",
+              "expr": "Contoh: 0.3 × 0.3 × 0.3 × 0.3 = (0.3)⁴; (-2) × (-2) × (-2) = (-2)³.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 3,
+              "label": "Penyelesaian",
+              "expr": "(-2)⁴ = (-2)(-2)(-2)(-2) = +16, manakala -2⁴ = -(2⁴) = -16. Untuk 81: 81 ÷ 3 = 27 ÷ 3 =…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Perangkap 3",
+      "heading": "Kad 3: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perangkap lazim Matematik! Hitung nilai bagi 27^(2/3) tanpa menggunakan kalkulator.",
+        "spokenText": "Perangkap lazim Matematik! Hitung nilai bagi 27^(2/3) tanpa menggunakan kalkulator."
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Hitung nilai bagi 27^(2/3) tanpa menggunakan kalkulator.",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "18",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "9",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "18",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 9. ³√27 = 3, kemudian 3² = 9.",
+              "spokenText": "Fakta sebenar: 9. kuasa tiga punca kuasa dua 27 sama dengan 3, kemudian 3 kuasa dua sama dengan 9.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "9",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "³√27 = 3, kemudian 3² = 9.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "9",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "3",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Matematik. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: 9. ³√27 = 3, kemudian 3² = 9.",
+              "spokenText": "Fakta sebenar: 9. kuasa tiga punca kuasa dua 27 sama dengan 3, kemudian 3 kuasa dua sama dengan 9.",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "9",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "³√27 = 3, kemudian 3² = 9.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "spokenText": "Cantik! Pemeriksa pun senyum tengok jawapan ni.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "9",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "³√27 = 3, kemudian 3² = 9.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: ³√27 = 3, kemudian 3² = 9.",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: kuasa tiga punca kuasa dua 27 sama dengan 3, kemudian 3 kuasa dua sama dengan 9.",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "9",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Rumus 4",
+      "heading": "Kad 4: 1.4 Indeks Pecahan )",
+      "underlineColor": "#4F46E5",
+      "template": "formula-steps",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Lihat langkah di papan! Ungkapkan 32 / 3125 dalam bentuk indeks menggunakan asas 2/5.",
+        "spokenText": "Lihat langkah di papan! Ungkapkan 32 / 3125 dalam bentuk indeks menggunakan asas 2/5."
+      },
+      "board": {
+        "promptPill": "Ungkapkan 32 / 3125 dalam bentuk indeks menggunakan asas 2/5.",
+        "title": "1.4 Indeks Pecahan (a^(m/n)) & Persamaan Indeks (SK 1.2)",
+        "given": "Nilaikan (16^(3/4) × 81^(-1/4)) tanpa kalkulator.",
+        "steps": [
+          {
+            "num": 1,
+            "label": "Prinsip",
+            "expr": "Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ =…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "num": 2,
+            "label": "Semakan",
+            "expr": "Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka…",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "(2/5)⁴",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan (2/5)⁴ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan (2/5) kuasa empat tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "2⁵ = 32 dan 5⁵ = 3125, maka 32/3125 = (2/5)⁵.",
+              "spokenText": "2 kuasa lima sama dengan 32 dan 5 kuasa lima sama dengan 3125, maka 32/3125 sama dengan (2/5) kuasa lima.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Prinsip",
+                    "expr": "Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ =…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Semakan",
+                    "expr": "Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "(2/5)⁵",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "(2/5)⁶",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "SEMAK LANGKAH KIRA!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan (2/5)⁶ tu. Cuba semak langkah penukaran dan nilai akhir di papan!",
+              "spokenText": "Eh kejap! Bukan (2/5) kuasa enam tu. Cuba semak langkah penukaran dan nilai akhir di papan!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "2⁵ = 32 dan 5⁵ = 3125, maka 32/3125 = (2/5)⁵.",
+              "spokenText": "2 kuasa lima sama dengan 32 dan 5 kuasa lima sama dengan 3125, maka 32/3125 sama dengan (2/5) kuasa lima.",
+              "boardPatch": {
+                "steps": [
+                  {
+                    "num": 1,
+                    "label": "Prinsip",
+                    "expr": "Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ =…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "num": 2,
+                    "label": "Semakan",
+                    "expr": "Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka…",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_2",
+        "text": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "spokenText": "Tepat sekali! Jalan kerja dan jawapan awak sangat kemas.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Prinsip",
+              "expr": "Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ =…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Semakan",
+              "expr": "Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Ringkasan Konsep",
+          "title": "1.4 Indeks Pecahan )",
+          "desc": "2⁵ = 32 dan 5⁵ = 3125, maka 32/3125 = (2/5)⁵.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Langkah Demi Langkah",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jangan keliru pada langkah akhir. Semak semula: 2⁵ = 32 dan 5⁵ = 3125, maka 32/3125 = (2/5)⁵.",
+        "spokenText": "Jangan keliru pada langkah akhir. Semak semula: 2 kuasa lima sama dengan 32 dan 5 kuasa lima sama dengan 3125, maka 32/3125 sama dengan (2/5) kuasa lima.",
+        "boardPatch": {
+          "steps": [
+            {
+              "num": 1,
+              "label": "Prinsip",
+              "expr": "Hubungan asas: a^(1/n) = ⁿ√a, dan bagi pengangka m: a^(m/n) = (aᵐ)^(1/n) = (a^(1/n))ᵐ =…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "num": 2,
+              "label": "Semakan",
+              "expr": "Penyebut indeks pecahan ialah Punca Kuasa (akar di bawah pokok!), manakala pengangka…",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

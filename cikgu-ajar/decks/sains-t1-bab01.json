@@ -1,0 +1,744 @@
+{
+  "deckId": "sains-t1-bab01",
+  "title": "Pengenalan kepada Penyiasatan Saintifik (Scientific Investigation)",
+  "shortTitle": "Pengenalan kepada Penyiasatan Saintifik",
+  "subject": "Sains",
+  "form": "T1",
+  "bab": 1,
+  "mastery": {
+    "tag": "Rumusan KSSM",
+    "title": "Kunci Pengenalan kepada Penyiasatan Saintifik",
+    "desc": "Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda + atau -)."
+  },
+  "cards": [
+    {
+      "id": "c1",
+      "pillLabel": "Perangkap 1",
+      "heading": "Kad 1: Elak Perangkap SPM",
+      "underlineColor": "#F59E0B",
+      "template": "split-trap",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c1_intro",
+        "text": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Sains, Bidang & Keselamatan Makmal (SK 1.1–1.2)?",
+        "spokenText": "Perangkap lazim Sains! Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1 perpuluhan satu Sains, Bidang & Keselamatan Makmal (SK 1 perpuluhan satu hingga 1 perpuluhan dua)?"
+      },
+      "board": {
+        "promptPill": "Bandingkan SALAH vs BETUL",
+        "question": "Awas perangkap! Manakah fakta atau langkah yang BETUL tentang 1.1 Sains, Bidang & Keselamatan Makmal (SK 1.1–1.2)?",
+        "wrongSide": {
+          "badge": "PERANGKAP",
+          "title": "Kesilapan Biasa",
+          "body": "Menambah ralat sifar positif kepada bacaan angkup vernier atau tolok skru mikrometer.",
+          "highlight": "coral"
+        },
+        "rightSide": {
+          "badge": "BETUL",
+          "title": "Jawapan Tepat",
+          "body": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+          "highlight": "teal"
+        },
+        "maskRightUntilSolved": true
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Menambah ralat sifar positif kepada bacaan angkup vernier atau tolok skru mikrometer.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.. Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda +…",
+              "spokenText": "Fakta sebenar: Tolak ralat sifar positif (Bacaan Sebenar sama dengan Bacaan - (+ralat)) dan tambah jika ralat negatif.. Hafal satu rumus universal sahaja: Bacaan Sebenar sama dengan Bacaan - Ralat Sifar (bawa tanda +",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda + atau -).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "Menggunakan unit darjah Celsius (°C) sebagai unit S.I. bagi suhu.",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKENA PERANGKAP!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!",
+              "spokenText": "Eh kejap! Itu perangkap klasik Sains. Jangan terus percaya pilihan yang nampak macam betul tu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Fakta sebenar: Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.. Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda +…",
+              "spokenText": "Fakta sebenar: Tolak ralat sifar positif (Bacaan Sebenar sama dengan Bacaan - (+ralat)) dan tambah jika ralat negatif.. Hafal satu rumus universal sahaja: Bacaan Sebenar sama dengan Bacaan - Ralat Sifar (bawa tanda +",
+              "boardPatch": {
+                "maskRightUntilSolved": false,
+                "rightSide": {
+                  "badge": "BETUL",
+                  "title": "Jawapan Tepat",
+                  "body": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+                  "highlight": "teal"
+                }
+              },
+              "analogy": {
+                "tag": "Tip Pemeriksa",
+                "title": "Cara Elak Silap",
+                "desc": "Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda + atau -).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Padu! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_1",
+        "text": "Padu! Terus dapat sepuluh XP. Jom kad seterusnya!",
+        "spokenText": "Padu! Terus dapat sepuluh X P. Jom kad seterusnya!",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+            "highlight": "teal"
+          }
+        },
+        "analogy": {
+          "tag": "Tip Pemeriksa",
+          "title": "Kunci Markah Penuh",
+          "desc": "Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda + atau -).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Jom Semak Perlahan-lahan",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hafal satu rumus universal sahaja: Bacaan Sebenar = Bacaan - Ralat Sifar (bawa tanda + atau -).",
+        "spokenText": "Tenang geng, ramai calon terkeliru kat sini. Petuanya: Hafal satu rumus universal sahaja: Bacaan Sebenar sama dengan Bacaan - Ralat Sifar (bawa tanda + atau -).",
+        "boardPatch": {
+          "maskRightUntilSolved": false,
+          "rightSide": {
+            "badge": "BETUL",
+            "title": "Jawapan Tepat",
+            "body": "Tolak ralat sifar positif (Bacaan Sebenar = Bacaan - (+ralat)) dan tambah jika ralat negatif.",
+            "highlight": "teal"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2",
+      "pillLabel": "Rajah 2",
+      "heading": "Kad 2: 1.1 Sains, Bidang &",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c2_intro",
+        "text": "Perhatikan rajah konsep di papan! Antara berikut, manakah bukan kuantiti asas dalam Sistem Unit Antarabangsa (S.I.)?",
+        "spokenText": "Perhatikan rajah konsep di papan! Antara berikut, manakah bukan kuantiti asas dalam Sistem Unit Antarabangsa (S.I.)?"
+      },
+      "board": {
+        "promptPill": "Antara berikut, manakah bukan kuantiti asas dalam Sistem Unit Antarabangsa (S.I.)?",
+        "title": "1.1 Sains, Bidang & Keselamatan Makmal (SK 1.1–1.2)",
+        "diagramType": "cell",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Radas utama",
+            "detail": "Tabung didih (boiling tube) untuk memanaskan bahan kimia kecil; kelalang kon (conical flask) untuk…",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Simbol bahaya",
+            "detail": "Mengakis (asid pekat/alkali), Toksik/Beracun (merkuri, kloroform), Merengsa/Irritant (ammonia — guna dalam…",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Peraturan asas",
+            "detail": "Dilarang makan/minum di dalam makmal, laporkan tumpahan bahan kimia kepada guru serta-merta dan halakan…",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Jisim (kilogram)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Jisim (kilogram) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Jisim (kilogram) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+              "spokenText": "Isi padu ialah kuantiti terbitan (m kuasa tiga), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.1 Sains, Bidang &",
+                "desc": "Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "Suhu (kelvin)",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Suhu (kelvin) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Suhu (kelvin) tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+              "spokenText": "Isi padu ialah kuantiti terbitan (m kuasa tiga), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.1 Sains, Bidang &",
+                "desc": "Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Isi padu (liter)",
+          "correct": true
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "1.1 Sains, Bidang &",
+          "desc": "Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan arus elektrik.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Isi padu ialah kuantiti terbitan (m³), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan…",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Isi padu ialah kuantiti terbitan (m kuasa tiga), bukan kuantiti asas. Lima kuantiti asas ialah panjang, jisim, masa, suhu dan"
+      }
+    },
+    {
+      "id": "c3",
+      "pillLabel": "Rajah 3",
+      "heading": "Kad 3: 1.2 Kuantiti Fizik, Unit",
+      "underlineColor": "#0EA5E9",
+      "template": "diagram-pin",
+      "mode": "mcq",
+      "intro": {
+        "mood": "explaining",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c3_intro",
+        "text": "Perhatikan rajah konsep di papan! Alat manakah yang paling sesuai untuk menyukat ketebalan sehelai kertas atau diameter sehelai rambut dengan kejituan 0.01 mm?",
+        "spokenText": "Perhatikan rajah konsep di papan! Alat manakah yang paling sesuai untuk menyukat ketebalan sehelai kertas atau diameter sehelai rambut dengan kejituan kosong perpuluhan kosong satu mm?"
+      },
+      "board": {
+        "promptPill": "Alat manakah yang paling sesuai untuk menyukat ketebalan sehelai kertas atau…",
+        "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK 1.3)",
+        "diagramType": "concept-hub",
+        "pins": [
+          {
+            "id": "p1",
+            "x": 26,
+            "y": 32,
+            "label": "Lima kuantiti asas S.I.",
+            "detail": "Panjang (meter, m), Jisim (kilogram, kg), Masa (saat, s), Suhu (kelvin, K) dan Arus Elektrik (ampere, A).",
+            "color": "#4F46E5",
+            "highlight": true
+          },
+          {
+            "id": "p2",
+            "x": 74,
+            "y": 32,
+            "label": "Imbuhan utama",
+            "detail": "giga (G, 10⁹), mega (M, 10⁶), kilo (k, 10³), desi (d, 10⁻¹), senti (c, 10⁻²), mili (m, 10⁻³), mikro (μ,…",
+            "color": "#0D9488",
+            "highlight": false
+          },
+          {
+            "id": "p3",
+            "x": 50,
+            "y": 74,
+            "label": "Penukaran unit",
+            "detail": "Darab apabila menukar unit besar kepada kecil (2.5 km = 2,500 m); bahagi apabila menukar unit kecil kepada…",
+            "color": "#F97316",
+            "highlight": false
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "Pembaris meter",
+          "correct": true
+        },
+        {
+          "id": "opt2",
+          "label": "Angkup luar",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Angkup luar tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Angkup luar tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+              "spokenText": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan kosong perpuluhan kosong satu mm (kosong perpuluhan kosong kosong satu cm).",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.2 Kuantiti Fizik, Unit",
+                "desc": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt3",
+          "label": "Angkup vernier",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "TERKELIRU RAJAH?!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Pilihan Angkup vernier tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!",
+              "spokenText": "Eh kejap! Pilihan Angkup vernier tu bukan padanan yang tepat. Cuba perhati semula pin pada rajah!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+              "spokenText": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan kosong perpuluhan kosong satu mm (kosong perpuluhan kosong kosong satu cm).",
+              "analogy": {
+                "tag": "Peta Konsep",
+                "title": "1.2 Kuantiti Fizik, Unit",
+                "desc": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+                "svgType": "mastery"
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Mantap! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "xp",
+        "audioId": "fast_win_3",
+        "text": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "spokenText": "Mantap! Awak nampak kaitan fungsi dan konsep pada rajah dengan tepat.",
+        "analogy": {
+          "tag": "Kunci Rajah",
+          "title": "1.2 Kuantiti Fizik, Unit",
+          "desc": "Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Tengok Pin Petunjuk",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_2",
+        "text": "Tak apa, cuba tengok petunjuk pada pin rajah. Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan 0.01 mm (0.001 cm).",
+        "spokenText": "Tak apa, cuba tengok petunjuk pada pin rajah. Tolok skru mikrometer menyukat objek sangat kecil sehingga kejituan kosong perpuluhan kosong satu mm (kosong perpuluhan kosong kosong satu cm)."
+      }
+    },
+    {
+      "id": "c4",
+      "pillLabel": "Garis Masa 4",
+      "heading": "Kad 4: Rumusan: Pengenalan kepada Penyiasatan",
+      "underlineColor": "#4F46E5",
+      "template": "timeline-grammar",
+      "mode": "mcq",
+      "intro": {
+        "mood": "thinking",
+        "lookAt": "board",
+        "camera": "overview",
+        "audioId": "c4_intro",
+        "text": "Ikuti urutan peristiwa di papan! Sebutir guli berjisim 15 g meningkatkan bacaan air dalam silinder penyukat daripada 22 cm³ ke 28 cm³. Berapakah…",
+        "spokenText": "Ikuti urutan peristiwa di papan! Sebutir guli berjisim 15 g meningkatkan bacaan air dalam silinder penyukat daripada 22 cm kuasa tiga ke 28 cm kuasa tiga. Berapakah"
+      },
+      "board": {
+        "promptPill": "Sebutir guli berjisim 15 g meningkatkan bacaan air dalam silinder penyukat daripada…",
+        "title": "Rumusan: Pengenalan kepada Penyiasatan Saintifik",
+        "variant": "timeline",
+        "events": [
+          {
+            "year": "Teras 1",
+            "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK…",
+            "detail": "Ingat tangga imbuhan utama (k → asas → c → m → μ): setiap langkah utama bernilai faktor 1,000 (kecuali cm ke…",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 2",
+            "title": "1.3 Alat Pengukur Jitu & Pengurangan Ralat (SK…",
+            "detail": "Ralat sifar negatif perlu DITAMBAH kepada bacaan skala, manakala ralat sifar positif perlu DITOLAK.",
+            "highlight": null,
+            "hiddenUntilSolved": false
+          },
+          {
+            "year": "Teras 3",
+            "title": "1.4 Ketumpatan (Density) & Kaedah Saintifik…",
+            "detail": "Sentiasa tolak bacaan awal air daripada bacaan akhir sebelum membahagi jisim dengan isi padu!",
+            "highlight": "teal",
+            "hiddenUntilSolved": true
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "opt1",
+          "label": "0.4 g cm⁻³",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 0.4 g cm⁻³ tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan kosong perpuluhan empat gram per sentimeter kuasa tiga tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Isi padu guli = 28 - 22 = 6 cm³. Ketumpatan = 15 ÷ 6 = 2.5 g cm⁻³.",
+              "spokenText": "Isi padu guli sama dengan 28 - 22 sama dengan 6 cm kuasa tiga. Ketumpatan sama dengan 15 bahagi 6 sama dengan 2 perpuluhan lima gram per sentimeter kuasa tiga.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK…",
+                    "detail": "Ingat tangga imbuhan utama (k → asas → c → m → μ): setiap langkah utama bernilai faktor 1,000 (kecuali cm ke…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "1.3 Alat Pengukur Jitu & Pengurangan Ralat (SK…",
+                    "detail": "Ralat sifar negatif perlu DITAMBAH kepada bacaan skala, manakala ralat sifar positif perlu DITOLAK.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "1.4 Ketumpatan (Density) & Kaedah Saintifik…",
+                    "detail": "Sentiasa tolak bacaan awal air daripada bacaan akhir sebelum membahagi jisim dengan isi padu!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "opt2",
+          "label": "2.5 g cm⁻³",
+          "correct": true
+        },
+        {
+          "id": "opt3",
+          "label": "90 g cm⁻³",
+          "correct": false,
+          "wrongSequence": [
+            {
+              "heading": "URUTAN ATAU FAKTA TERSASAR!",
+              "underlineColor": "#F97316",
+              "mood": "shocked",
+              "lookAt": "board",
+              "camera": "equation",
+              "sfx": "boing",
+              "audioId": "trap_react_1",
+              "text": "Eh kejap! Bukan 90 g cm⁻³ tu. Cuba semak petunjuk pada papan dulu!",
+              "spokenText": "Eh kejap! Bukan 90 gram per sentimeter kuasa tiga tu. Cuba semak petunjuk pada papan dulu!"
+            },
+            {
+              "heading": "Fakta Sebenar SPM",
+              "underlineColor": "#0D9488",
+              "mood": "explaining",
+              "lookAt": "front",
+              "camera": "mascot-spotlight",
+              "dimBoard": true,
+              "sfx": "chalk",
+              "audioId": "trap_react_2",
+              "text": "Isi padu guli = 28 - 22 = 6 cm³. Ketumpatan = 15 ÷ 6 = 2.5 g cm⁻³.",
+              "spokenText": "Isi padu guli sama dengan 28 - 22 sama dengan 6 cm kuasa tiga. Ketumpatan sama dengan 15 bahagi 6 sama dengan 2 perpuluhan lima gram per sentimeter kuasa tiga.",
+              "boardPatch": {
+                "events": [
+                  {
+                    "year": "Teras 1",
+                    "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK…",
+                    "detail": "Ingat tangga imbuhan utama (k → asas → c → m → μ): setiap langkah utama bernilai faktor 1,000 (kecuali cm ke…",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 2",
+                    "title": "1.3 Alat Pengukur Jitu & Pengurangan Ralat (SK…",
+                    "detail": "Ralat sifar negatif perlu DITAMBAH kepada bacaan skala, manakala ralat sifar positif perlu DITOLAK.",
+                    "highlight": null,
+                    "hiddenUntilSolved": false
+                  },
+                  {
+                    "year": "Teras 3",
+                    "title": "1.4 Ketumpatan (Density) & Kaedah Saintifik…",
+                    "detail": "Sentiasa tolak bacaan awal air daripada bacaan akhir sebelum membahagi jisim dengan isi padu!",
+                    "highlight": "teal",
+                    "hiddenUntilSolved": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "win": {
+        "heading": "Bab Beres! +10 XP",
+        "underlineColor": "#0D9488",
+        "mood": "celebrating",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chime",
+        "audioId": "fast_win_1",
+        "text": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "spokenText": "Tahniah! Bab ini beres dikuasai dengan cemerlang!",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK…",
+              "detail": "Ingat tangga imbuhan utama (k → asas → c → m → μ): setiap langkah utama bernilai faktor 1,000 (kecuali cm ke…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "1.3 Alat Pengukur Jitu & Pengurangan Ralat (SK…",
+              "detail": "Ralat sifar negatif perlu DITAMBAH kepada bacaan skala, manakala ralat sifar positif perlu DITOLAK.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "1.4 Ketumpatan (Density) & Kaedah Saintifik…",
+              "detail": "Sentiasa tolak bacaan awal air daripada bacaan akhir sebelum membahagi jisim dengan isi padu!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        },
+        "analogy": {
+          "tag": "Rumusan Pantas",
+          "title": "Rumusan: Pengenalan kepada Penyiasatan",
+          "desc": "Isi padu guli = 28 - 22 = 6 cm³. Ketumpatan = 15 ÷ 6 = 2.5 g cm⁻³.",
+          "svgType": "mastery"
+        }
+      },
+      "calmHint": {
+        "heading": "Semak Petunjuk Utama",
+        "underlineColor": "#0D9488",
+        "mood": "calm",
+        "lookAt": "front",
+        "camera": "overview",
+        "sfx": "chalk",
+        "audioId": "calm_hint_1",
+        "text": "Jom semak perlahan-lahan. Kata kuncinya ialah: Isi padu guli = 28 - 22 = 6 cm³. Ketumpatan = 15 ÷ 6 = 2.5 g cm⁻³.",
+        "spokenText": "Jom semak perlahan-lahan. Kata kuncinya ialah: Isi padu guli sama dengan 28 - 22 sama dengan 6 cm kuasa tiga. Ketumpatan sama dengan 15 bahagi 6 sama dengan 2 perpuluhan lima gram per sentimeter kuasa tiga.",
+        "boardPatch": {
+          "events": [
+            {
+              "year": "Teras 1",
+              "title": "1.2 Kuantiti Fizik, Unit S.I. dan Imbuhan (SK…",
+              "detail": "Ingat tangga imbuhan utama (k → asas → c → m → μ): setiap langkah utama bernilai faktor 1,000 (kecuali cm ke…",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 2",
+              "title": "1.3 Alat Pengukur Jitu & Pengurangan Ralat (SK…",
+              "detail": "Ralat sifar negatif perlu DITAMBAH kepada bacaan skala, manakala ralat sifar positif perlu DITOLAK.",
+              "highlight": null,
+              "hiddenUntilSolved": false
+            },
+            {
+              "year": "Teras 3",
+              "title": "1.4 Ketumpatan (Density) & Kaedah Saintifik…",
+              "detail": "Sentiasa tolak bacaan awal air daripada bacaan akhir sebelum membahagi jisim dengan isi padu!",
+              "highlight": "teal",
+              "hiddenUntilSolved": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

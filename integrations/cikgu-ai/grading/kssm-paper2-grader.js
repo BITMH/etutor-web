@@ -1,6 +1,6 @@
 /**
  * public-web/integrations/cikgu-ai/grading/kssm-paper2-grader.js
- * Kotak jawapan terus (teks atau muat naik gambar) & semakan berstruktur Cikgu AI untuk soalan Kertas 2 KSSM.
+ * Kotak jawapan terus (teks atau gambar), rubrik TP1-TP6 & semakan Cikgu AI untuk soalan Kertas 2 KSSM.
  */
 
 import { CikguFailoverClient } from "../api/failover-client.js";
@@ -10,7 +10,49 @@ import { renderSpmMarkdown } from "../ui/markdown-spm.js";
 import { parseAiAwardedScore } from "./paper2-bridge.js";
 
 const MAX_B64_CHARS = 245000;
+const TP_STORAGE_KEY = "etutor_kssm_tp_v1";
 const client = new CikguFailoverClient();
+
+function loadTpStore() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(TP_STORAGE_KEY) || "{}") || {};
+    if (!raw.chapters || typeof raw.chapters !== "object") raw.chapters = {};
+    return raw;
+  } catch {
+    return { chapters: {} };
+  }
+}
+
+function recordTpAchievement(chapKey, tpLevel) {
+  const lvl = Number(tpLevel);
+  if (!chapKey || lvl < 1 || lvl > 6) return;
+  const st = loadTpStore();
+  const prev = st.chapters[chapKey] && typeof st.chapters[chapKey] === "object" ? st.chapters[chapKey] : { levels: {}, maxTp: 0 };
+  const levels = prev.levels && typeof prev.levels === "object" ? { ...prev.levels } : {};
+  levels[String(lvl)] = true;
+  const maxTp = Object.keys(levels).reduce((mx, k) => (levels[k] ? Math.max(mx, Number(k) || 0) : mx), 0);
+  st.chapters[chapKey] = { levels, maxTp, updatedMs: Date.now() };
+  try { localStorage.setItem(TP_STORAGE_KEY, JSON.stringify(st)); } catch {}
+}
+
+function syncTpBarDom() {
+  const bar = document.getElementById("kssmTpBar");
+  if (!bar) return;
+  const chapKey = bar.getAttribute("data-tp-chapter") || "";
+  const st = loadTpStore();
+  const rec = (st.chapters && st.chapters[chapKey]) || null;
+  const levels = (rec && rec.levels) || {};
+  bar.querySelectorAll("[data-tp-step]").forEach((el) => {
+    const step = el.getAttribute("data-tp-step") || "";
+    el.classList.toggle("is-done", Boolean(levels[step]));
+  });
+  const achievedEl = document.getElementById("kssmTpAchieved");
+  if (achievedEl) {
+    const maxTp = rec ? Number(rec.maxTp) || 0 : 0;
+    achievedEl.textContent = maxTp > 0 ? `Tahap Penguasaan Dicapai: TP ${maxTp}` : "Tahap Penguasaan Dicapai: Belum Dinilai";
+    achievedEl.classList.toggle("is-ready", maxTp > 0);
+  }
+}
 
 function resizeDataUrl(dataUrl, maxSide, quality) {
   return new Promise((resolve, reject) => {
@@ -33,17 +75,9 @@ function resizeDataUrl(dataUrl, maxSide, quality) {
 
 async function compressImageUnderLimit(file) {
   let out = await compressDesktopImageFile(file);
-  if (out.base64.length > MAX_B64_CHARS) {
-    const r1 = await resizeDataUrl(out.dataUrl, 960, 0.65);
-    out = { ...out, ...r1 };
-  }
-  if (out.base64.length > MAX_B64_CHARS) {
-    const r2 = await resizeDataUrl(out.dataUrl, 760, 0.55);
-    out = { ...out, ...r2 };
-  }
-  if (out.base64.length > MAX_B64_CHARS) {
-    throw new Error("Saiz gambar masih melebihi had. Sila ambil gambar lebih dekat.");
-  }
+  if (out.base64.length > MAX_B64_CHARS) out = { ...out, ...(await resizeDataUrl(out.dataUrl, 960, 0.65)) };
+  if (out.base64.length > MAX_B64_CHARS) out = { ...out, ...(await resizeDataUrl(out.dataUrl, 760, 0.55)) };
+  if (out.base64.length > MAX_B64_CHARS) throw new Error("Saiz gambar masih melebihi had. Sila ambil gambar lebih dekat.");
   return out;
 }
 
@@ -55,10 +89,7 @@ function refreshAllTokenChips() {
 }
 
 function escapePlain(raw) {
-  return String(raw || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return String(raw || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 function bindPaper2Card(card) {
@@ -76,7 +107,6 @@ function bindPaper2Card(card) {
   const aiBox = card.querySelector(".kssm-p2-ai-box");
   const aiScoreEl = card.querySelector(".kssm-p2-ai-score");
   const aiBodyEl = card.querySelector(".kssm-p2-ai-body");
-
   let pendingImg = null;
 
   const syncPreview = () => {
@@ -130,11 +160,7 @@ function bindPaper2Card(card) {
       for (let i = 0; i < items.length; i++) {
         if (items[i].type && items[i].type.startsWith("image/")) {
           const f = items[i].getAsFile();
-          if (f) {
-            ev.preventDefault();
-            void handleFile(f);
-            break;
-          }
+          if (f) { ev.preventDefault(); void handleFile(f); break; }
         }
       }
     });
@@ -145,10 +171,7 @@ function bindPaper2Card(card) {
   });
   grader.addEventListener("drop", (ev) => {
     const f = ev.dataTransfer && ev.dataTransfer.files && ev.dataTransfer.files[0];
-    if (f && String(f.type || "").startsWith("image/")) {
-      ev.preventDefault();
-      void handleFile(f);
-    }
+    if (f && String(f.type || "").startsWith("image/")) { ev.preventDefault(); void handleFile(f); }
   });
 
   if (submitBtn) {
@@ -168,6 +191,12 @@ function bindPaper2Card(card) {
         return;
       }
 
+      const tpLevel = Number(card.dataset.p2Tp) || 0;
+      const tpDesc = String(card.dataset.p2TpDesc || "").trim();
+      const tpPrefix = tpLevel > 0 ? `Tahap Penguasaan TP${tpLevel}${tpDesc ? ` (${tpDesc})` : ""}. ` : "";
+      const schemePayload = `${tpPrefix}${card.dataset.p2Scheme || ""}`.slice(0, 4500);
+      const chapKey = String(card.dataset.p2Subid || "").replace(/-p2-\d+$/, "");
+
       submitBtn.disabled = true;
       const origLabel = submitBtn.innerHTML;
       submitBtn.textContent = "Menyemak...";
@@ -184,7 +213,7 @@ function bindPaper2Card(card) {
             sub_id: (card.dataset.p2Subid || "").slice(0, 120),
             soalan: (card.dataset.p2Question || "").slice(0, 5500),
             jawapan_pelajar: (typed || "(Jawapan tulisan tangan dilampirkan melalui gambar)").slice(0, 7500),
-            skema_rasmi: (card.dataset.p2Scheme || "").slice(0, 4500),
+            skema_rasmi: schemePayload,
             imej_base64: hasImg ? pendingImg.base64.slice(0, 255000) : "",
             imej_mime: hasImg ? (pendingImg.mime || "image/jpeg") : "image/jpeg",
             sesi_sudah_sapa: true,
@@ -208,6 +237,12 @@ function bindPaper2Card(card) {
         );
         if (!accText && aiBodyEl) {
           showError("Tiada jawapan diterima daripada pelayan. Sila rujuk panduan pemarkahan di bawah atau cuba semula.");
+        } else if (tpLevel > 0) {
+          const finalScore = parseAiAwardedScore(accText, maxMarks);
+          if (finalScore !== null && finalScore >= Math.ceil(maxMarks * 0.6)) {
+            recordTpAchievement(chapKey, tpLevel);
+            syncTpBarDom();
+          }
         }
       } catch (err) {
         const msg = (err && err.message) || "Ralat menyambung ke Cikgu AI.";
@@ -223,6 +258,7 @@ function bindPaper2Card(card) {
 
 function initKssmPaper2Graders() {
   refreshAllTokenChips();
+  syncTpBarDom();
   document.querySelectorAll(".kssm-p2-card[data-p2-idx]").forEach(bindPaper2Card);
 }
 

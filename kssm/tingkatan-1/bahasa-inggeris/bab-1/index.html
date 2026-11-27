@@ -220,6 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
+  .kssm-tp-bar{margin:0 0 16px;padding:12px 14px;border-radius:14px;background:#f8fafc;border:1.5px solid #cbd5e1}
+  .kssm-tp-bar-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
+  .kssm-tp-bar-title{font-size:.82rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-tp-achieved{font-size:.8rem;padding:3px 10px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+  .kssm-tp-achieved.is-ready{background:#ecfdf5;color:#047857;border-color:#6ee7b7}
+  .kssm-tp-steps{display:flex;flex-wrap:wrap;gap:6px}
+  .kssm-tp-step{font-size:.73rem;font-weight:700;padding:4px 9px;border-radius:999px;background:#fff;color:#475569;border:1.5px solid #cbd5e1;transition:all .18s ease}
+  .kssm-tp-step.is-done{background:#059669;color:#fff;border-color:#059669;box-shadow:0 2px 6px rgb(5 150 105 / .18)}
+  .kssm-p2-head-left{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .kssm-tp-badge{display:inline-flex;align-items:center;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px;color:var(--tp-c,#1e3a8a);background:var(--tp-bg,#eff6ff);border:1px solid var(--tp-bd,#bfdbfe)}
+  .kssm-tp-desc{margin:0 0 10px;font-size:.82rem;font-weight:600;color:#475569;line-height:1.45}
   @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
@@ -1015,11 +1026,16 @@
           <p class="kssm-sublead">Tulis jawapan terus di ruang disediakan atau muat naik gambar jawapan bertulis anda untuk disemak Cikgu AI mengikut skema LPM.</p>
         </div>
       </div>
+      
       <div class="kssm-p2-list"><article class="seo-preview-item kssm-p2-card" data-p2-idx="0" data-p2-subject="Bahasa Inggeris" data-p2-marks="5" data-p2-subid="bahasa-inggeris-t1-bab-1-p2-1" data-p2-question="Write a short reply (40–60 words) to your friend inviting them to your family New Year open house. Use at least two proper nouns and three countable/uncountable food items accurately." data-p2-scheme="Kata Kunci: proper nouns, invitation, time and place, a/an. Panduan: Mention date, venue (capitalised), two dishes correctly (e.g., some fried rice, an apple pie), and a polite closing.">
         <div class="kssm-p2-top">
-          <span class="kssm-p2-label">Paper 2 Part 1 (Short Message Writing)</span>
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Paper 2 Part 1 (Short Message Writing)</span>
+            
+          </div>
           <span class="kssm-p2-marks">5 Markah</span>
         </div>
+        
         <p class="kssm-p2-q">Write a short reply (40–60 words) to your friend inviting them to your family New Year open house. Use at least two proper nouns and three countable/uncountable food items accurately.</p>
         <div class="kssm-p2-grader">
           <div class="kssm-p2-grader-top">
@@ -1064,9 +1080,13 @@
       </article>
 <article class="seo-preview-item kssm-p2-card" data-p2-idx="1" data-p2-subject="Bahasa Inggeris" data-p2-marks="5" data-p2-subid="bahasa-inggeris-t1-bab-1-p2-2" data-p2-question="Correct the five article and noun errors in this note: &#39;On sunday, my uncle gave me an useful advice for a upcoming exam. He brought three luggages from penang.&#39;" data-p2-scheme="Kata Kunci: Sunday, useful advice (no an), the/an upcoming, three pieces of luggage, Penang. Panduan: Check capital letters for days/places, &#39;a&#39; before consonant /j/ sound in &#39;useful&#39;, and uncountable nouns.">
         <div class="kssm-p2-top">
-          <span class="kssm-p2-label">Paper 2 Grammar &amp; Proofreading</span>
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Paper 2 Grammar &amp; Proofreading</span>
+            
+          </div>
           <span class="kssm-p2-marks">5 Markah</span>
         </div>
+        
         <p class="kssm-p2-q">Correct the five article and noun errors in this note: &#39;On sunday, my uncle gave me an useful advice for a upcoming exam. He brought three luggages from penang.&#39;</p>
         <div class="kssm-p2-grader">
           <div class="kssm-p2-grader-top">
@@ -1114,7 +1134,8 @@
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
       <div class="seo-related-grid">
-        <a href="../bab-2/" class="kssm-bab-link">Beralih ke Bahasa Inggeris Unit 2</a>
+        
+        <a href="../bab-2/" class="kssm-bab-link">Bab seterusnya: Bahasa Inggeris Unit 2</a>
         <a href="../../" class="kssm-bab-link">Semua Subjek Tingkatan 1</a>
         <a href="../../../" class="kssm-bab-link">Hab Utama KSSM T1–T5</a>
         <a href="../../../../kalkulator-merit-upu/" class="kssm-bab-link">Kalkulator Merit UPUOnline 2027</a>
@@ -1254,6 +1275,6 @@
 })();
 </script>
   <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
-  <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
+  <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=2"></script>
 </body>
 </html>

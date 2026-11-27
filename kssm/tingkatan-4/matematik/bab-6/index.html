@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Matematik T4 Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah |...</title>
+  <meta name="description" content="Nota ringkas KSSM Tingkatan 4 Matematik Bab 6 (Buku Teks KSSM (SK 6.1–6.2)), 4 objektif DSKP, contoh selesai, 20 MCQ &amp; 6 Kertas 2 (TP1-TP6) Cikgu AI.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://etutor.my/kssm/tingkatan-4/matematik/bab-6/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="eTutor.my">
+  <meta property="og:locale" content="ms_MY">
+  <meta property="og:url" content="https://etutor.my/kssm/tingkatan-4/matematik/bab-6/">
+  <meta property="og:title" content="Matematik T4 Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah |...">
+  <meta property="og:description" content="Nota ringkas KSSM Tingkatan 4 Matematik Bab 6 (Buku Teks KSSM (SK 6.1–6.2)), 4 objektif DSKP, contoh selesai, 20 MCQ &amp; 6 Kertas 2 (TP1-TP6) Cikgu AI.">
+  <meta property="og:image" content="https://etutor.my/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matematik T4 Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah |...">
+  <meta name="twitter:description" content="Nota ringkas KSSM Tingkatan 4 Matematik Bab 6 (Buku Teks KSSM (SK 6.1–6.2)), 4 objektif DSKP, contoh selesai, 20 MCQ &amp; 6 Kertas 2 (TP1-TP6) Cikgu AI.">
+  <meta name="twitter:image" content="https://etutor.my/og-preview.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Lexend:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="icon" type="image/svg+xml" href="../../../../favicon.svg">
+  <link rel="stylesheet" href="../../../../styles.css?v=27">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7216597758789088"
+       crossorigin="anonymous"></script>
+  
+  <style>
+    .seo-breadcrumb { display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:0.84rem; color:var(--text-secondary); margin-bottom:18px; list-style:none; padding:0; }
+    .seo-breadcrumb a { color:var(--brand-accent); text-decoration:none; font-weight:600; }
+    .seo-breadcrumb a:hover { text-decoration:underline; }
+    .seo-hero-box { background:#ffffff; border:1px solid var(--border-subtle); border-radius:20px; padding:clamp(22px, 4vw, 36px); box-shadow:0 12px 32px rgb(15 23 42 / 0.05); margin-bottom:28px; }
+    .seo-stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin-top:22px; }
+    .seo-stat-card { background:var(--surface-subtle, #f8fafc); border:1px solid var(--border-subtle); border-radius:14px; padding:14px 16px; }
+    .seo-stat-lbl { font-size:0.76rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.03em; }
+    .seo-stat-val { font-family:var(--font-heading); font-size:1.3rem; font-weight:800; color:var(--brand-navy); margin-top:4px; }
+    .seo-section-card { background:#ffffff; border:1px solid var(--border-subtle); border-radius:18px; padding:clamp(20px, 3vw, 30px); margin-bottom:24px; }
+    .seo-topic-tags { display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:14px 0 0; }
+    .seo-topic-tag { background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; border-radius:999px; padding:6px 13px; font-size:0.83rem; font-weight:600; }
+    .seo-preview-item { border:1px solid var(--border-subtle); border-radius:14px; padding:18px; background:#f8fafc; margin-top:14px; }
+    .seo-preview-opts { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
+    .seo-preview-opts li { background:#ffffff; border:1px solid var(--border-subtle); border-radius:10px; padding:9px 13px; font-size:0.9rem; color:var(--text-primary); }
+    .seo-ans-details { margin-top:10px; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; padding:10px 14px; font-size:0.88rem; }
+    .seo-ans-details summary { cursor:pointer; font-weight:700; color:#065f46; }
+    .seo-related-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; margin-top:16px; }
+    .seo-related-card { display:flex; flex-direction:column; justify-content:space-between; background:#f8fafc; border:1px solid var(--border-subtle); border-radius:14px; padding:16px; text-decoration:none; color:inherit; transition:border-color 0.18s ease, transform 0.18s ease; }
+    .seo-related-card:hover { border-color:var(--brand-accent); transform:translateY(-2px); }
+    .seo-hub-subject-block { scroll-margin-top:90px; margin-bottom:32px; }
+    .seo-cross-banner { margin-top:18px; padding:16px 20px; border-radius:14px; background:linear-gradient(135deg, #eff6ff, #ecfdf5); border:1px solid #bfdbfe; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; }
+    .seo-reminder-box { background:#fffbeb; border:1px solid #fde68a; border-left:4px solid #d97706; border-radius:12px; padding:16px 18px; margin:18px 0; color:#78350f; }
+    .seo-table-wrap { overflow-x:auto; margin-top:14px; border:1px solid var(--border-subtle); border-radius:14px; }
+    .seo-table { width:100%; border-collapse:collapse; font-size:0.9rem; text-align:left; }
+    .seo-table th, .seo-table td { padding:11px 14px; border-bottom:1px solid var(--border-subtle); vertical-align:top; }
+    .seo-table th { background:#f8fafc; color:var(--brand-navy); font-weight:700; font-size:0.82rem; text-transform:uppercase; }
+    .tips-card-media { border-radius:10px; overflow:hidden; margin-bottom:12px; background:#eff6ff; border:1px solid var(--border-subtle); }
+    .tips-card-media img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure { margin:18px 0 0; border-radius:16px; overflow:hidden; border:1px solid var(--border-subtle); background:#f8fafc; box-shadow:0 8px 24px rgb(15 23 42 / 0.06); }
+    .tips-hero-figure img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .tips-hero-figure figcaption { padding:10px 16px; font-size:0.82rem; color:var(--text-secondary); background:#f8fafc; border-top:1px solid var(--border-subtle); }
+    .tips-author-bar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:12px 0 6px; font-size:0.86rem; color:var(--text-secondary); }
+    .tips-author-pill { background:#eff6ff; color:#1e3a8a; border:1px solid #bfdbfe; border-radius:999px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+    .tips-compare-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:12px; margin:14px 0; }
+    .tips-cmp-bad { background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-good { background:#ecfdf5; border:1px solid #a7f3d0; border-left:4px solid #059669; border-radius:12px; padding:14px 16px; }
+    .tips-cmp-label { font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px; }
+    .tips-cmp-bad .tips-cmp-label { color:#991b1b; }
+    .tips-cmp-good .tips-cmp-label { color:#065f46; }
+    .tips-checklist { list-style:none; padding:0; margin:12px 0 0; display:grid; gap:8px; }
+    .tips-check-item { display:flex; align-items:flex-start; gap:10px; background:#f8fafc; border:1px solid var(--border-subtle); border-radius:12px; padding:11px 14px; cursor:pointer; font-size:0.93rem; line-height:1.5; }
+    .tips-check-item input { margin-top:4px; width:18px; height:18px; accent-color:#059669; flex-shrink:0; cursor:pointer; }
+    .tips-check-item input:checked + span { text-decoration:line-through; color:#065f46; font-weight:600; }
+    .tips-timeline { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:12px; margin-top:14px; }
+    .tips-time-step { background:#f8fafc; border:1px solid var(--border-subtle); border-top:3px solid var(--brand-accent); border-radius:12px; padding:14px; }
+    .tips-time-badge { font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:var(--brand-accent); margin-bottom:4px; }
+  </style>
+  <style>/* kssm-page-css */
+  .kssm-hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);color:#fff;border-radius:20px;padding:24px;margin-bottom:20px;box-shadow:0 12px 28px rgb(30 58 138 / .18)}
+  .kssm-hero-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+  .kssm-pill-row{display:flex;flex-wrap:wrap;gap:8px}
+  .kssm-pill{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:.76rem;font-weight:700;background:rgb(255 255 255 / .16);color:#fff;border:1px solid rgb(255 255 255 / .24)}
+  .kssm-pill.is-emerald{background:#059669;border-color:#10b981}
+  .kssm-pill.is-gold{background:#d97706;border-color:#f59e0b}
+  .kssm-playable-icon-btn{position:relative;flex:0 0 auto;width:46px;height:46px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#10b981 0%,#06b6d4 100%);color:#fff;text-decoration:none;border:1.5px solid rgb(255 255 255 / .65);box-shadow:0 6px 16px rgb(6 182 212 / .35);animation:kssmIconFloat 2.8s ease-in-out infinite;transition:transform .18s ease,box-shadow .18s ease}
+  .kssm-playable-icon-btn::after{content:"";position:absolute;inset:-4px;border-radius:17px;border:2px solid rgb(16 185 129 / .65);pointer-events:none;animation:kssmPulseRing 2.2s ease-out infinite}
+  .kssm-playable-icon-btn:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 10px 22px rgb(6 182 212 / .5)}
+  @keyframes kssmIconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  @keyframes kssmPulseRing{0%{transform:scale(.95);opacity:.85}75%,100%{transform:scale(1.22);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.kssm-playable-icon-btn,.kssm-playable-icon-btn::after{animation:none}}
+  .kssm-hero h1{margin:0 0 10px;font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.45rem,2.6vw,2.05rem);line-height:1.25;color:#fff}
+  .kssm-hero-desc{margin:0 0 16px;color:#e0f2fe;font-size:.96rem;line-height:1.6}
+  .kssm-hero-actions,.kssm-kw-row,.kssm-p2-cta-row,.kssm-filter-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .kssm-tab-btn{border:1.5px solid rgb(255 255 255 / .4);background:rgb(255 255 255 / .12);color:#fff;font-weight:700;padding:9px 15px;border-radius:11px;display:inline-flex;align-items:center;gap:6px;font-size:.86rem;cursor:pointer;transition:background .16s ease,color .16s ease,border-color .16s ease}
+  .kssm-tab-btn:hover{background:rgb(255 255 255 / .22)}
+  .kssm-tab-btn.is-active{background:#fff;color:#1e3a8a;border-color:#fff;box-shadow:0 4px 12px rgb(15 23 42 / .16)}
+  .kssm-tab-panel[hidden]{display:none !important}
+  .kssm-studio-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;max-width:840px;margin:0 auto 18px;background:#fff;border:1.5px solid #cbd5e1;border-radius:16px;padding:12px 14px;box-shadow:0 4px 14px rgb(15 23 42 / .05)}
+  .kssm-tpl-picker{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .kssm-tpl-label{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#475569;margin-right:2px}
+  .kssm-tpl-swatch{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:999px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e293b;font-size:.75rem;font-weight:700;cursor:pointer;transition:border-color .15s,box-shadow .15s,background .15s}
+  .kssm-tpl-swatch:hover{border-color:#2563eb;background:#fff}
+  .kssm-tpl-swatch.is-active{border-color:var(--swatch-accent,#1d4ed8);background:#eff6ff;color:#1e3a8a;box-shadow:0 0 0 2px rgb(37 99 235 / .2)}
+  .kssm-tpl-thumb{width:22px;height:22px;border-radius:999px;background-size:cover;background-position:top center;border:1px solid rgb(15 23 42 / .2);flex:0 0 auto}
+  .kssm-studio-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .kssm-pdf-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer;box-shadow:0 2px 8px rgb(5 150 105 / .28)}
+  .kssm-pdf-btn:hover:not(:disabled){background:#047857}
+  .kssm-pdf-btn:disabled{opacity:.65;cursor:wait}
+  .kssm-print-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:10px;border:1.5px solid #1e3a8a;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-print-btn:hover{background:#eff6ff}
+  #kssmNotaSheet.kssm-nota-sheet{--tpl-accent:#1d4ed8;--tpl-soft:#eff6ff;--tpl-border:#93c5fd;--tpl-ink:#1e3a8a;display:grid;gap:24px;max-width:840px;margin:0 auto 24px;background:none;border:none;padding:0;box-shadow:none}
+  .kssm-a4-page{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:1080px;border-radius:18px;overflow:hidden;padding:clamp(54px,6.8vw,76px) clamp(24px,5vw,54px) 22px;background-color:#fff;background-image:var(--tpl-bg);background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:1px solid #cbd5e1;box-shadow:0 14px 36px rgb(15 23 42 / .12)}
+  .kssm-a4-inner{background:rgb(255 255 255 / .86);border:1.5px solid var(--tpl-border);border-radius:16px;padding:clamp(16px,2.4vw,22px);display:grid;gap:16px;align-content:start;flex:1}
+  .kssm-a4-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 6px 0;font-size:.78rem;font-weight:600;color:#475569}
+  .kssm-sheet-head{background:var(--tpl-soft);border:2px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-mast-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+  .kssm-sheet-kicker{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.03em}
+  .kssm-mast-meta{font-size:.82rem;font-weight:700;color:var(--tpl-ink)}
+  .kssm-sheet-head h2{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.25}
+  .kssm-mast-sum{margin:0 0 8px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-mast-dskp{margin:0;font-size:.82rem;font-weight:700;color:var(--tpl-accent)}
+  .kssm-obj-card{background:#fff;border:1.5px solid var(--tpl-border);border-radius:14px;padding:16px 18px}
+  .kssm-obj-title{margin:0;font-family:var(--font-heading,"Lexend",sans-serif);font-size:.95rem;font-weight:800;color:var(--tpl-ink);letter-spacing:.02em;text-transform:uppercase}
+  .kssm-obj-list-v2{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .kssm-obj-item{display:flex;align-items:flex-start;gap:11px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-obj-num{flex:0 0 24px;height:24px;border-radius:999px;background:var(--tpl-accent);color:#fff;font-weight:800;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .kssm-sub-card{background:#fff;border:1.5px solid var(--tpl-border);border-top:5px solid var(--tpl-accent);border-radius:14px;padding:16px 18px}
+  .kssm-sub-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:var(--tpl-accent);background:var(--tpl-soft);border:1px solid var(--tpl-border);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  .kssm-sub-card h3{margin:0 0 8px;color:var(--tpl-ink);font-family:var(--font-heading,"Lexend",sans-serif);font-size:1.06rem}
+  .kssm-sub-summary{margin:0 0 10px;color:#334155;font-size:.9rem;line-height:1.55}
+  .kssm-kp-list{margin:0 0 12px;padding-left:19px;display:grid;gap:6px;color:#0f172a;font-size:.89rem;line-height:1.5}
+  .kssm-kp-list li::marker{color:var(--tpl-accent)}
+  .kssm-example-box{background:var(--tpl-soft);border:1px solid var(--tpl-border);border-radius:11px;padding:12px 14px}
+  .kssm-example-box p{margin:0 0 6px;font-size:.87rem;line-height:1.5;color:#1e293b}
+  .kssm-example-box p:last-child{margin-bottom:0}
+  .kssm-takeaway{color:#047857 !important;font-weight:700}
+  .kssm-mistake-card{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:14px 16px}
+  .kssm-mistake-head{font-family:var(--font-heading,"Lexend",sans-serif);font-size:.8rem;font-weight:800;color:#92400e;margin-bottom:6px}
+  .kssm-mistake-card p{margin:0 0 5px;font-size:.87rem;line-height:1.5}
+  .kssm-mistake-card p:last-child{margin-bottom:0}
+  .kssm-m-bad{color:#991b1b;font-weight:600}
+  .kssm-m-good{color:#065f46;font-weight:600}
+  .kssm-m-tip{color:#92400e;font-weight:700}
+  .kssm-eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#2563eb;margin-bottom:4px}
+  .kssm-sublead{color:#475569;font-size:.92rem;margin:4px 0 0}
+  .kssm-cta-light{background:#fff;color:#1e3a8a;border:1px solid #fff;font-weight:700;padding:9px 15px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:.86rem}
+  .kssm-section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px}
+  .kssm-xp-panel{display:flex;flex-wrap:wrap;gap:8px}
+  .kssm-xp-stat{background:#f8fafc;border:1px solid #cbd5e1;border-radius:11px;padding:7px 12px;text-align:center;min-width:90px}
+  .kssm-xp-stat span{display:block;font-size:.7rem;font-weight:700;color:#475569;text-transform:uppercase}
+  .kssm-xp-stat strong{font-size:.98rem;color:#1e3a8a}
+  .kssm-xp-stat.is-gold{background:#fffbeb;border-color:#f59e0b}
+  .kssm-xp-stat.is-gold strong{color:#b45309}
+  .kssm-progress-track{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-bottom:16px}
+  .kssm-progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#059669);transition:width .25s ease}
+  .kssm-quiz-grid,.kssm-p2-list{display:grid;gap:14px}
+  .kssm-q-card{border:1px solid #cbd5e1;border-radius:14px;padding:16px;background:#fff}
+  .kssm-q-head,.kssm-p2-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+  .kssm-q-num,.kssm-p2-label{font-size:.78rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-q-badge,.kssm-p2-marks{font-size:.75rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#fef3c7;color:#92400e}
+  .kssm-q-stem,.kssm-p2-q{margin:0 0 12px;font-weight:600;color:#0f172a;line-height:1.55}
+  .kssm-opt-list{display:grid;gap:8px}
+  .kssm-opt-btn{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;padding:10px 12px;border:1.5px solid #cbd5e1;border-radius:11px;background:#f8fafc;color:#0f172a;cursor:pointer;font-size:.91rem;line-height:1.45}
+  .kssm-opt-btn:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+  .kssm-opt-btn.is-correct{border-color:#059669;background:#ecfdf5;color:#065f46;font-weight:600}
+  .kssm-opt-btn.is-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b}
+  .kssm-opt-letter{flex:0 0 24px;height:24px;border-radius:7px;background:#fff;border:1px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.78rem}
+  .kssm-q-feedback{margin-top:11px;padding:11px 13px;border-radius:11px;background:#f8fafc;border:1px solid #cbd5e1}
+  .kssm-fb-status{margin:0 0 4px;font-weight:700;font-size:.88rem}
+  .kssm-fb-status.is-ok{color:#059669}
+  .kssm-fb-status.is-bad{color:#b91c1c}
+  .kssm-fb-exp{margin:0;font-size:.88rem;color:#334155;line-height:1.5}
+  .kssm-quiz-actions{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}
+  .kssm-quiz-summary{margin:0;font-weight:600;color:#1e3a8a;font-size:.9rem}
+  .kssm-kw-chip{font-size:.76rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
+  .kssm-p2-hint-body{padding-top:10px}
+  .kssm-p2-hint-body p{margin:8px 0 0;font-size:.88rem;color:#334155}
+  .kssm-p2-grader{margin:12px 0;padding:14px;border-radius:14px;background:#fff;border:1.5px solid #cbd5e1}
+  .kssm-p2-grader-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-size:.82rem;font-weight:700;color:#1e3a8a}
+  .kssm-p2-token-chip{padding:3px 9px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:.74rem;font-weight:700}
+  .kssm-p2-textarea{width:100%;box-sizing:border-box;border:1.5px solid #cbd5e1;border-radius:11px;padding:10px 12px;font-family:inherit;font-size:.91rem;line-height:1.5;color:#0f172a;background:#f8fafc;resize:vertical;min-height:92px}
+  .kssm-p2-textarea:focus{outline:none;border-color:#2563eb;background:#fff}
+  .kssm-p2-img-preview{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 10px;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0}
+  .kssm-p2-img-preview[hidden]{display:none !important}
+  .kssm-p2-img-thumb{width:44px;height:44px;object-fit:cover;border-radius:8px;border:1px solid #cbd5e1;flex:0 0 auto}
+  .kssm-p2-img-meta{flex:1;min-width:0;display:grid;gap:2px;font-size:.8rem;color:#065f46}
+  .kssm-p2-img-meta strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .kssm-p2-img-rm{width:28px;height:28px;border-radius:8px;border:1px solid #a7f3d0;background:#fff;color:#065f46;font-size:1rem;font-weight:700;cursor:pointer;line-height:1}
+  .kssm-p2-controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+  .kssm-p2-upload-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:10px;border:1.5px solid #cbd5e1;background:#f8fafc;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-p2-upload-btn:hover{border-color:#2563eb;background:#eff6ff}
+  .kssm-p2-submit-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:10px;border:none;background:#059669;color:#fff;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-p2-submit-btn:hover:not(:disabled){background:#047857}
+  .kssm-p2-submit-btn:disabled{opacity:.6;cursor:not-allowed}
+  .kssm-p2-ai-box{margin-top:12px;padding:12px 14px;border-radius:12px;background:#f8fafc;border:1.5px solid #93c5fd}
+  .kssm-p2-ai-box[hidden]{display:none !important}
+  .kssm-p2-ai-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #dbeafe}
+  .kssm-p2-ai-title{font-size:.82rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-p2-ai-score{padding:3px 10px;border-radius:999px;background:#fef3c7;color:#92400e;font-weight:800;font-size:.8rem}
+  .kssm-p2-ai-score[hidden]{display:none !important}
+  .kssm-p2-ai-body{font-size:.9rem;line-height:1.55;color:#0f172a}
+  .kssm-p2-ai-err{margin:0;color:#991b1b;font-weight:600;font-size:.87rem}
+  .cikgu-ai-sec-badge{display:inline-flex;align-items:center;margin:6px 0 4px;padding:3px 9px;border-radius:999px;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;font-size:.75rem;font-weight:800}
+  .cikgu-ai-mark-pill{display:inline-block;padding:1px 6px;border-radius:999px;background:#fef3c7;color:#92400e;font-weight:700;font-size:.75rem}
+  .cikgu-ai-p{margin:0 0 6px}
+  .cikgu-ai-list{margin:4px 0 8px 18px;padding:0}
+  .cikgu-ai-spacer{height:6px}
+  .kssm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
+  .kssm-track-card{border:1px solid #cbd5e1;border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:10px}
+  .kssm-track-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:#475569}
+  .kssm-bab-links{display:grid;gap:7px;margin-top:auto}
+  .kssm-bab-link{display:block;padding:8px 11px;border-radius:10px;border:1px solid #cbd5e1;background:#f8fafc;color:#1e3a8a;font-weight:600;font-size:.84rem;text-decoration:none}
+  .kssm-bab-link:hover{border-color:#2563eb;background:#eff6ff}
+  .kssm-filter-btn{padding:8px 14px;border-radius:999px;border:1.5px solid #cbd5e1;background:#fff;color:#1e3a8a;font-weight:700;font-size:.84rem;cursor:pointer}
+  .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
+  .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
+  .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
+  .kssm-tp-bar{margin:0 0 16px;padding:12px 14px;border-radius:14px;background:#f8fafc;border:1.5px solid #cbd5e1}
+  .kssm-tp-bar-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
+  .kssm-tp-bar-title{font-size:.82rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-tp-achieved{font-size:.8rem;padding:3px 10px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+  .kssm-tp-achieved.is-ready{background:#ecfdf5;color:#047857;border-color:#6ee7b7}
+  .kssm-tp-steps{display:flex;flex-wrap:wrap;gap:6px}
+  .kssm-tp-step{font-size:.73rem;font-weight:700;padding:4px 9px;border-radius:999px;background:#fff;color:#475569;border:1.5px solid #cbd5e1;transition:all .18s ease}
+  .kssm-tp-step.is-done{background:#059669;color:#fff;border-color:#059669;box-shadow:0 2px 6px rgb(5 150 105 / .18)}
+  .kssm-p2-head-left{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .kssm-tp-badge{display:inline-flex;align-items:center;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px;color:var(--tp-c,#1e3a8a);background:var(--tp-bg,#eff6ff);border:1px solid var(--tp-bd,#bfdbfe)}
+  .kssm-tp-desc{margin:0 0 10px;font-size:.82rem;font-weight:600;color:#475569;line-height:1.45}
+  @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
+  @media print{
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .lp-header,header,.seo-breadcrumb,.kssm-hero,.kssm-studio-bar,#panel-kertas1,#panel-kertas2,.kssm-related-section,footer{display:none !important}
+    body{background:#fff !important;color:#0f172a !important}
+    .lp-container{max-width:100% !important;padding:0 !important}
+    #panel-nota{display:block !important}
+    #kssmNotaSheet.kssm-nota-sheet{gap:0 !important;max-width:100% !important;margin:0 !important}
+    .kssm-a4-page{min-height:277mm;box-shadow:none !important;border:none !important;border-radius:0 !important;break-after:page;page-break-after:always}
+    .kssm-a4-page:last-child{break-after:auto;page-break-after:auto}
+    .kssm-sub-card,.kssm-mistake-card,.kssm-obj-card{break-inside:avoid;page-break-inside:avoid}
+  }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utama","item":"https://etutor.my/"},{"@type":"ListItem","position":2,"name":"Nota KSSM","item":"https://etutor.my/kssm/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4","item":"https://etutor.my/kssm/tingkatan-4/"},{"@type":"ListItem","position":4,"name":"Matematik Bab 6","item":"https://etutor.my/kssm/tingkatan-4/matematik/bab-6/"}]},{"@type":"LearningResource","name":"Matematik Tingkatan 4 Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah","description":"Menguasai pembentukan ketaksamaan linear daripada situasi pembelian dan kekangan harian, penentuan kedudukan titik (atas, pada, bawah garis), perbezaan garis padu dengan garis sempang, hukum penyongsangan tanda apabila membahagi pekali negatif, pantulan rantau pada paksi, penentuan rantau sepunya dan penyelesaian masalah pengoptimuman.","url":"https://etutor.my/kssm/tingkatan-4/matematik/bab-6/","inLanguage":"ms","educationalLevel":"Tingkatan 4","learningResourceType":"Study Guide and Interactive Practice","isAccessibleForFree":true,"about":{"@type":"Thing","name":"Matematik KSSM (1449)"},"provider":{"@type":"EducationalOrganization","name":"eTutor.my","url":"https://etutor.my/"}}]}</script>
+</head>
+<body class="lp-shell">
+  
+  <svg class="etutor-svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="etutor-brand-emblem" viewBox="0 0 124 98">
+      <polygon points="4,34 56,8 56,60" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,8 108,34 56,60" fill="var(--emblem-navy, #121e48)"/>
+      <rect x="13.2" y="37.5" width="4.6" height="20" fill="var(--emblem-blue, #1d49c9)"/>
+      <circle cx="15.5" cy="59.5" r="5.1" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="11.8,63.2 19.2,63.2 22.4,79.5 8.6,79.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="28,50.6 56,64.6 56,85 28,74.5" fill="var(--emblem-blue, #1d49c9)"/>
+      <polygon points="56,64.6 84,50.6 84,74.5 56,85" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M40.5 73.5 L56 89 L86.5 58.5" fill="none" stroke="var(--emblem-cutout, #ffffff)" stroke-width="15.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <path d="M43.2 76.2 L56 89 L86 59" fill="none" stroke="var(--emblem-navy, #121e48)" stroke-width="8.4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="6"/>
+      <circle cx="89.4" cy="55.6" r="6.4" fill="var(--emblem-cutout, #ffffff)"/>
+      <circle cx="89.4" cy="55.6" r="3.9" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="97.8" cy="48.6" r="2.55" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="104.5" cy="43.4" r="1.8" fill="var(--emblem-navy, #121e48)"/>
+      <circle cx="101.2" cy="57.6" r="2.7" fill="var(--emblem-navy, #121e48)"/>
+      <path d="M111 43.2 Q112 51.1 119.9 52.1 Q112 53.1 111 61 Q110 53.1 102.1 52.1 Q110 51.1 111 43.2 Z" fill="var(--emblem-navy, #121e48)"/>
+    </symbol>
+  </svg>
+  <header class="lp-navbar">
+    <div class="lp-navbar-inner">
+      <a href="../../../../" class="lp-brand-link etutor-logo-lockup" aria-label="eTutor.my Laman Utama">
+        <svg class="etutor-emblem-svg" width="48" height="38" aria-hidden="true">
+          <use href="#etutor-brand-emblem"></use>
+        </svg>
+        <div class="etutor-logo-text">
+          <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+          <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+        </div>
+      </a>
+      <nav aria-label="Navigasi Nota KSSM">
+        <ul class="lp-nav-links">
+          <li><a href="../../../">Hab KSSM</a></li>
+          <li><a href="../../">Tingkatan 4</a></li>
+          <li><a href="../../../../nota-interaktif/">Nota Playable</a></li>
+          <li><a href="../../../../kalkulator-merit-upu/">Merit UPU 2027</a></li>
+        </ul>
+      </nav>
+      <div class="lp-nav-actions">
+        <a href="../../../../#portal" rel="nofollow" class="btn btn-emerald btn-sm"><span>Buka Portal</span></a>
+      </div>
+    </div>
+  </header>
+  <main class="lp-container" style="padding-top:20px;padding-bottom:40px">
+    <nav class="seo-breadcrumb" aria-label="Breadcrumb">
+      <a href="../../../../">Utama</a> / <a href="../../../">Nota KSSM</a> / <a href="../../">Tingkatan 4</a> / <span>Matematik Bab 6</span>
+    </nav>
+    <section class="kssm-hero">
+      <div class="kssm-hero-head">
+        <div class="kssm-pill-row">
+          <span class="kssm-pill">Tingkatan 4</span>
+          <span class="kssm-pill">Matematik (1449)</span>
+          <span class="kssm-pill">Buku Teks KSSM (SK 6.1–6.2)</span>
+          <span class="kssm-pill is-emerald">0 Token • Percuma</span>
+          <span class="kssm-pill is-gold">+10 XP / Soalan</span>
+        </div>
+        <a href="../../../../nota-interaktif/matematik-t4-bab06/" data-playable-dist="../../../../nota-interaktif/dist/matematik-t4-bab06.html" class="kssm-playable-icon-btn" aria-label="Buka Nota Interaktif Bab Ini" title="Nota Interaktif Playable">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5.5v13l10.5-6.5L8 5.5z"/>
+        <path d="M19 3l.8 1.9L21.7 5.7l-1.9.8L19 8.4l-.8-1.9-1.9-.8 1.9-.8L19 3z"/>
+      </svg>
+    </a>
+      </div>
+      <h1>Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah</h1>
+      <p class="kssm-hero-desc">Menguasai pembentukan ketaksamaan linear daripada situasi pembelian dan kekangan harian, penentuan kedudukan titik (atas, pada, bawah garis), perbezaan garis padu dengan garis sempang, hukum penyongsangan tanda apabila membahagi pekali negatif, pantulan rantau pada paksi, penentuan rantau sepunya dan penyelesaian masalah pengoptimuman. <br><small>Rujukan Rasmi: SK 6.1–6.2 (DSKP KSSM Matematik Tingkatan 4)</small></p>
+      <div class="kssm-hero-actions" role="tablist" aria-label="Mod Kandungan Bab">
+        <button type="button" class="kssm-tab-btn is-active" data-kssm-tab-btn="nota" role="tab" aria-selected="true">Nota (Print PDF)</button>
+        <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas1" role="tab" aria-selected="false">Kertas 1 (20 Soalan)</button>
+        <button type="button" class="kssm-tab-btn" data-kssm-tab-btn="kertas2" role="tab" aria-selected="false">Kertas 2</button>
+      </div>
+    </section>
+    <div id="panel-nota" class="kssm-tab-panel" data-kssm-panel="nota" role="tabpanel">
+      <div class="kssm-studio-bar">
+      <div class="kssm-tpl-picker" role="group" aria-label="Pilih Templat Latar Nota"><span class="kssm-tpl-label">Templat:</span><button type="button" class="kssm-tpl-swatch" data-nota-tpl="bahasa" style="--swatch-accent:#1d4ed8" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/bahasa.jpg')"></span>
+        <span>Klasik Gading</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sains" style="--swatch-accent:#047857" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sains.jpg')"></span>
+        <span>Botani Pudina</span>
+      </button><button type="button" class="kssm-tpl-swatch is-active" data-nota-tpl="matematik" style="--swatch-accent:#4338ca" aria-pressed="true">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/matematik.jpg')"></span>
+        <span>Geometri Biru</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="sejarah" style="--swatch-accent:#b45309" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/sejarah.jpg')"></span>
+        <span>Warisan Emas</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="islam" style="--swatch-accent:#0f766e" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/islam.jpg')"></span>
+        <span>Arabes Zamrud</span>
+      </button><button type="button" class="kssm-tpl-swatch" data-nota-tpl="geografi" style="--swatch-accent:#0369a1" aria-pressed="false">
+        <span class="kssm-tpl-thumb" style="background-image:url('../../../../images/nota-templates/geografi.jpg')"></span>
+        <span>Puncak Awan</span>
+      </button></div>
+      <div class="kssm-studio-actions">
+        <button type="button" id="kssmDownloadPdfBtn" class="kssm-pdf-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Muat Turun PDF</span>
+        </button>
+        <button type="button" id="kssmPrintPdfBtn" class="kssm-print-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Cetak</span>
+        </button>
+      </div>
+    </div>
+      <div class="kssm-nota-sheet" id="kssmNotaSheet" data-default-tpl="matematik" data-tpl="matematik" data-subject-slug="matematik" data-asset-prefix="../../../../" data-pdf-filename="Nota_KSSM_T4_matematik_Bab_6.pdf" data-form-label="Tingkatan 4" data-subject-name="Matematik" data-subject-code="1449" data-pages="Buku Teks KSSM (SK 6.1–6.2)" data-dskp="SK 6.1–6.2 (DSKP KSSM Matematik Tingkatan 4)" data-chapter-heading="Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah" data-hero-summary="Menguasai pembentukan ketaksamaan linear daripada situasi pembelian dan kekangan harian, penentuan kedudukan titik (atas, pada, bawah garis), perbezaan garis padu dengan garis sempang, hukum penyongsangan tanda apabila membahagi pekali negatif, pantulan rantau pada paksi, penentuan rantau sepunya dan penyelesaian masalah pengoptimuman." style="--tpl-accent:#4338ca;--tpl-soft:#eef2ff;--tpl-border:#a5b4fc;--tpl-ink:#312e81;--tpl-bg:url('../../../../images/nota-templates/matematik.jpg')">
+        <section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 1">
+      <div class="kssm-a4-inner"><header class="kssm-sheet-head">
+      <div class="kssm-mast-top">
+        <span class="kssm-sheet-kicker">eTutor.my &bull; NOTA KSSM</span>
+        <span class="kssm-mast-meta">Tingkatan 4 &bull; Matematik (1449) &bull; Buku Teks KSSM (SK 6.1–6.2)</span>
+      </div>
+      <h2>Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah</h2>
+      <p class="kssm-mast-sum">Menguasai pembentukan ketaksamaan linear daripada situasi pembelian dan kekangan harian, penentuan kedudukan titik (atas, pada, bawah garis), perbezaan garis padu dengan garis sempang, hukum penyongsangan tanda apabila membahagi pekali negatif, pantulan rantau pada paksi, penentuan rantau sepunya dan penyelesaian masalah pengoptimuman.</p>
+      <p class="kssm-mast-dskp">Rujukan Rasmi: SK 6.1–6.2 (DSKP KSSM Matematik Tingkatan 4)</p>
+    </header>
+<section class="kssm-obj-card">
+      <h2 class="kssm-obj-title">OBJEKTIF PEMBELAJARAN DSKP</h2>
+      <div class="kssm-obj-list-v2"><div class="kssm-obj-item" data-obj-text="Mewakilkan situasi kekangan dalam dua pemboleh ubah menggunakan simbol &lt;, &gt;, &lt;= atau &gt;= serta meringkaskannya kepada bentuk integer termudah.">
+      <span class="kssm-obj-num">01</span>
+      <span>Mewakilkan situasi kekangan dalam dua pemboleh ubah menggunakan simbol &lt;, &gt;, &lt;= atau &gt;= serta meringkaskannya kepada bentuk integer termudah.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Menentukan kedudukan titik terhadap garis lurus y = mx + c, melorek rantau ketaksamaan dengan garis padu atau sempang, serta menentukan imej pantulan pada paksi koordinat.">
+      <span class="kssm-obj-num">02</span>
+      <span>Menentukan kedudukan titik terhadap garis lurus y = mx + c, melorek rantau ketaksamaan dengan garis padu atau sempang, serta menentukan imej pantulan pada paksi koordinat.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Membina sistem ketaksamaan linear daripada jadual 11 frasa KSSM dan menulis semula tiga ketaksamaan daripada gambar rajah rantau berlorek.">
+      <span class="kssm-obj-num">03</span>
+      <span>Membina sistem ketaksamaan linear daripada jadual 11 frasa KSSM dan menulis semula tiga ketaksamaan daripada gambar rajah rantau berlorek.</span>
+    </div>
+<div class="kssm-obj-item" data-obj-text="Mengenal pasti rantau sepunya menggunakan jadual titik uji dan menyelesaikan masalah pengoptimuman nilai maksimum atau minimum dalam konteks harian.">
+      <span class="kssm-obj-num">04</span>
+      <span>Mengenal pasti rantau sepunya menggunakan jadual titik uji dan menyelesaikan masalah pengoptimuman nilai maksimum atau minimum dalam konteks harian.</span>
+    </div></div>
+    </section>
+<article class="kssm-sub-card" data-ex-prompt="Harga anak ayam ialah RM2.00 (a) dan anak itik RM1.50 (i) dengan modal maksimum RM500. Tulis ketaksamaan integer termudah. Seterusnya tentukan kedudukan titik P(2, 5) terhadap garis y = -3x + 6." data-ex-solution="2a + 1.5i &lt;= 500 -&gt; darab 2: 4a + 3i &lt;= 1000. Bagi P(2, 5): -3(2) + 6 = 0; kerana y = 5 &gt; 0, titik P berada di rantau ATAS garis (y &gt; -3x + 6)." data-ex-takeaway="Seragamkan unit (RM atau sen) dahulu dan pastikan pendaraban untuk buang perpuluhan dibuat pada semua sebutan!">
+      <span class="kssm-sub-tag">SUBTOPIK 01</span>
+      <h3>6.1 Pemodelan Ketaksamaan Linear &amp; Tentusah Titik pada Satah</h3>
+      <p class="kssm-sub-summary">Ketaksamaan linear dua pemboleh ubah ax + by &lt;= c menerangkan kekangan antara dua kuantiti berunit seragam. Kedudukan titik pada satah diuji terus dengan membandingkan nilai y sebelah kiri terhadap ungkapan mx + c sebelah kanan.</p>
+      <ul class="kssm-kp-list"><li>Gunakan &lt;= untuk kata kunci &#39;tidak melebihi&#39;, &#39;selebih-lebihnya&#39; dan &#39;maksimum&#39;; gunakan &gt;= untuk &#39;sekurang-kurangnya&#39;, &#39;tidak kurang&#39; dan &#39;minimum&#39;; gunakan &lt; atau &gt; untuk &#39;kurang daripada&#39; atau &#39;melebihi&#39;.</li><li>Jika kos diberi dalam sen dan bajet dalam RM (atau ada perpuluhan seperti RM1.50x + RM3.50y &gt; RM120), seragamkan unit dan darab dengan faktor positif supaya menjadi pekali integer termudah (3x + 7y &gt; 240).</li><li>Bagi garis condong y = mx + c: rantau atas memenuhi y &gt; mx + c, rantau bawah memenuhi y &lt; mx + c, dan titik tepat pada garis memenuhi y = mx + c.</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh:</strong> Harga anak ayam ialah RM2.00 (a) dan anak itik RM1.50 (i) dengan modal maksimum RM500. Tulis ketaksamaan integer termudah. Seterusnya tentukan kedudukan titik P(2, 5) terhadap garis y = -3x + 6.</p>
+        <p>Penyelesaian: 2a + 1.5i &lt;= 500 -&gt; darab 2: 4a + 3i &lt;= 1000. Bagi P(2, 5): -3(2) + 6 = 0; kerana y = 5 &gt; 0, titik P berada di rantau ATAS garis (y &gt; -3x + 6).</p>
+        <p class="kssm-takeaway">Tip Penting: Seragamkan unit (RM atau sen) dahulu dan pastikan pendaraban untuk buang perpuluhan dibuat pada semua sebutan!</p>
+      </div>
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 1 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 2">
+      <div class="kssm-a4-inner"><article class="kssm-sub-card" data-ex-prompt="Susun ketaksamaan 2x - 3y &gt; 6 dengan y sebagai perkara rumus, nyatakan jenis garis dan arah lorekannya, dan uji sama ada titik (3, -2) berada dalam rantau." data-ex-solution="-3y &gt; -2x + 6 -&gt; bahagi -3 (terbalik tanda): y &lt; (2/3)x - 2. Dilukis dengan garis sempang dan dilorek di rantau bawah. Uji (3, -2): 2(3) - 3(-2) = 12 &gt; 6 (Benar, dalam rantau)." data-ex-takeaway="Jangan sekali-kali lupa membalikkan tanda ketaksamaan setiap kali mendarab atau membahagi dengan nombor negatif!">
+      <span class="kssm-sub-tag">SUBTOPIK 02</span>
+      <h3>6.2 Garis Padu vs Garis Sempang, Pekali Negatif &amp; Pantulan Rantau</h3>
+      <p class="kssm-sub-summary">Jenis garis sempadan menentukan sama ada titik pada garis diterima, manakala penyusunan y di sebelah kiri dengan pekali positif memastikan arah lorekan tepat.</p>
+      <ul class="kssm-kp-list"><li>Ketaksamaan inklusif (&lt;= dan &gt;=) menggunakan GARIS PADU (titik atas garis diterima); ketaksamaan ketat (&lt; dan &gt;) menggunakan GARIS SEMPANG (titik atas garis ditolak).</li><li>Apabila menyusun ax - by &gt; c untuk menjadikan y perkara rumus, pembahagian dengan pekali negatif (-b) WAJIB menyongsangkan tanda ketaksamaan (&gt; menjadi &lt;, &gt;= menjadi &lt;=).</li><li>Pantulan pada paksi-x menukar (x, y) -&gt; (x, -y) dengan menggantikan y kepada (-y); pantulan pada paksi-y menukar (x, y) -&gt; (-x, y) dengan menggantikan x kepada (-x).</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh:</strong> Susun ketaksamaan 2x - 3y &gt; 6 dengan y sebagai perkara rumus, nyatakan jenis garis dan arah lorekannya, dan uji sama ada titik (3, -2) berada dalam rantau.</p>
+        <p>Penyelesaian: -3y &gt; -2x + 6 -&gt; bahagi -3 (terbalik tanda): y &lt; (2/3)x - 2. Dilukis dengan garis sempang dan dilorek di rantau bawah. Uji (3, -2): 2(3) - 3(-2) = 12 &gt; 6 (Benar, dalam rantau).</p>
+        <p class="kssm-takeaway">Tip Penting: Jangan sekali-kali lupa membalikkan tanda ketaksamaan setiap kali mendarab atau membahagi dengan nombor negatif!</p>
+      </div>
+    </article>
+<article class="kssm-sub-card" data-ex-prompt="Puan Jasmin menjahit x baju kurung pesak (upah RM50) dan y baju kurung moden (upah RM75) dengan kekangan x + y &lt;= 40, x &lt;= 25 dan y &gt;= 10. Hitung pendapatan maksimum apabila beliau menjahit 15 helai baju kurung pesak." data-ex-solution="Apabila x = 15, x + y &lt;= 40 menghadkan y maksimum = 40 - 15 = 25 (memenuhi y &gt;= 10 dan x &lt;= 25). Pendapatan maksimum = 50(15) + 75(25) = 750 + 1 875 = RM2 625." data-ex-takeaway="Pastikan nilai optimum yang dipilih memenuhi semua ketaksamaan serentak dalam sistem, termasuk syarat garis sempang!">
+      <span class="kssm-sub-tag">SUBTOPIK 03</span>
+      <h3>6.3 Sistem Ketaksamaan Linear, Rantau Sepunya &amp; Pengoptimuman</h3>
+      <p class="kssm-sub-summary">Sistem ketaksamaan menggabungkan beberapa kekangan serentak pada sukuan pertama (x &gt;= 0, y &gt;= 0) untuk membentuk satu rantau sepunya bagi tujuan mencari nilai optimum.</p>
+      <ul class="kssm-kp-list"><li>Terjemahan frasa kritikal: &#39;y sekurang-kurangnya 2 kali x&#39; -&gt; y &gt;= 2x; &#39;x tidak kurang daripada y&#39; -&gt; x &gt;= y; &#39;y melebihi x sekurang-kurangnya k&#39; -&gt; y - x &gt;= k.</li><li>Untuk menulis semula 3 ketaksamaan daripada rajah berlorek, cari persamaan setiap sempadan (m = (y2 - y1)/(x2 - x1) dan pintasan c, atau paksi x=0 / y=0), kemudian pilih tanda berdasarkan lorekan serta garis padu atau sempang.</li><li>Semua nilai maksimum atau minimum dalam masalah pengoptimuman bajet atau pendapatan mesti dibaca daripada titik di dalam atau di atas sempadan padu rantau sepunya.</li></ul>
+      <div class="kssm-example-box">
+        <p><strong>Contoh:</strong> Puan Jasmin menjahit x baju kurung pesak (upah RM50) dan y baju kurung moden (upah RM75) dengan kekangan x + y &lt;= 40, x &lt;= 25 dan y &gt;= 10. Hitung pendapatan maksimum apabila beliau menjahit 15 helai baju kurung pesak.</p>
+        <p>Penyelesaian: Apabila x = 15, x + y &lt;= 40 menghadkan y maksimum = 40 - 15 = 25 (memenuhi y &gt;= 10 dan x &lt;= 25). Pendapatan maksimum = 50(15) + 75(25) = 750 + 1 875 = RM2 625.</p>
+        <p class="kssm-takeaway">Tip Penting: Pastikan nilai optimum yang dipilih memenuhi semua ketaksamaan serentak dalam sistem, termasuk syarat garis sempang!</p>
+      </div>
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 2 / 3</span>
+      </footer>
+    </section>
+<section class="kssm-a4-page" aria-label="Helaian Nota Muka Surat 3">
+      <div class="kssm-a4-inner"><article class="kssm-mistake-card" data-m-mistake="Lupa membalikkan tanda ketaksamaan apabila membahagi dengan pekali y negatif (cth. -2y &gt;= -4x + 6 menjadi y &gt;= 2x - 3)." data-m-correction="Membahagi atau mendarab dengan nombor negatif membalikkan tanda ketaksamaan secara automatik: -2y &gt;= -4x + 6 menjadi y &lt;= 2x - 3." data-m-tip="Pindahkan sebutan y yang negatif ke sebelah kanan dahulu supaya menjadi positif (+2y), baru baca tanda dari kanan ke kiri.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #1</div>
+      <p class="kssm-m-bad">ELAKKAN: Lupa membalikkan tanda ketaksamaan apabila membahagi dengan pekali y negatif (cth. -2y &gt;= -4x + 6 menjadi y &gt;= 2x - 3).</p>
+      <p class="kssm-m-good">TEPAT: Membahagi atau mendarab dengan nombor negatif membalikkan tanda ketaksamaan secara automatik: -2y &gt;= -4x + 6 menjadi y &lt;= 2x - 3.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Pindahkan sebutan y yang negatif ke sebelah kanan dahulu supaya menjadi positif (+2y), baru baca tanda dari kanan ke kiri.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Memilih titik bucu di atas garis sempang sebagai penyelesaian yang sah." data-m-correction="Titik yang terletak di atas garis sempang (&lt; atau &gt;) TIDAK termasuk dalam rantau penyelesaian dan gagal ujian ketaksamaan." data-m-tip="Gantikan koordinat titik bucu ke dalam semua ketaksamaan asal untuk mengesahkan sama ada tanda ketat dilanggar.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #2</div>
+      <p class="kssm-m-bad">ELAKKAN: Memilih titik bucu di atas garis sempang sebagai penyelesaian yang sah.</p>
+      <p class="kssm-m-good">TEPAT: Titik yang terletak di atas garis sempang (&lt; atau &gt;) TIDAK termasuk dalam rantau penyelesaian dan gagal ujian ketaksamaan.</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Gantikan koordinat titik bucu ke dalam semua ketaksamaan asal untuk mengesahkan sama ada tanda ketat dilanggar.</p>
+    </article>
+<article class="kssm-mistake-card" data-m-mistake="Menukar susunan &#39;x sekurang-kurangnya 3 kali y&#39; kepada y &gt;= 3x." data-m-correction="Jika kuantiti x sekurang-kurangnya 3 kali kuantiti y, x lebih besar daripada y, maka ketaksamaan betul ialah x &gt;= 3y (setara y &lt;= x/3)." data-m-tip="Uji dengan nombor: jika y = 4, sekurang-kurangnya 3 kali y ialah x &gt;= 12.">
+      <div class="kssm-mistake-head">AMARAN PEMERIKSA #3</div>
+      <p class="kssm-m-bad">ELAKKAN: Menukar susunan &#39;x sekurang-kurangnya 3 kali y&#39; kepada y &gt;= 3x.</p>
+      <p class="kssm-m-good">TEPAT: Jika kuantiti x sekurang-kurangnya 3 kali kuantiti y, x lebih besar daripada y, maka ketaksamaan betul ialah x &gt;= 3y (setara y &lt;= x/3).</p>
+      <p class="kssm-m-tip">Tip Skor Exam: Uji dengan nombor: jika y = 4, sekurang-kurangnya 3 kali y ialah x &gt;= 12.</p>
+    </article></div>
+      <footer class="kssm-a4-foot">
+        <span>eTutor.my &bull; Nota Ringkas KSSM (0 Token)</span>
+        <span>Muka Surat 3 / 3</span>
+      </footer>
+    </section>
+      </div>
+    </div>
+    <div id="panel-kertas1" class="kssm-tab-panel" data-kssm-panel="kertas1" role="tabpanel" hidden><section class="seo-section-card kssm-quiz-wrap" id="latih-tubi-mcq">
+      <div class="kssm-section-top">
+        <div>
+          <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 1 (Objektif) &bull; 0 Token</span>
+          <h2>Ujian Topikal SPM: 20 Soalan Objektif Bab 6</h2>
+          <p class="kssm-sublead">Pilih jawapan terbaik untuk semakan serta-merta, huraian penuh, dan kumpul <strong>+10 XP</strong> bagi setiap jawapan tepat.</p>
+        </div>
+        <div class="kssm-xp-panel" aria-live="polite">
+          <div class="kssm-xp-stat"><span>Kemajuan</span><strong id="kssmQuizProgressText">0 / 20</strong></div>
+          <div class="kssm-xp-stat"><span>Skor Betul</span><strong id="kssmQuizScoreText">0</strong></div>
+          <div class="kssm-xp-stat is-gold"><span>Jumlah XP KSSM</span><strong id="kssmTotalXpText">0 XP</strong></div>
+        </div>
+      </div>
+      <div class="kssm-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="kssmQuizProgressBar">
+        <div class="kssm-progress-fill" id="kssmQuizProgressFill" style="width:0%"></div>
+      </div>
+      <div class="kssm-quiz-grid"><article class="kssm-q-card" data-q-card="0" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 1 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Harga sebungkus nasi lemak telur ialah RM1.50 (x) dan nasi lemak ayam ialah RM3.50 (y). Jumlah jualan harian mesti melebihi RM120. Wakilkan situasi ini dalam bentuk integer termudah.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">3x + 7y &gt; 240</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">3x + 7y &gt;= 240</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">3x + 7y &lt; 240</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="0" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">15x + 35y &gt;= 120</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="0" hidden>
+          <p class="kssm-fb-status" data-q-status="0"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> &#39;Melebihi&#39; ialah tanda ketat &#39;&gt;&#39;: 1.5x + 3.5y &gt; 120. Darab kedua-dua belah dengan 2 menjadi 3x + 7y &gt; 240.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="1" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 2 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Seekor anak ayam berharga RM2.00 (a) dan seekor anak itik berharga RM1.50 (i). Modal maksimum untuk pembelian ialah RM500. Ketaksamaan manakah yang paling tepat?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">4a + 3i &lt; 1000</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">4a + 3i &lt;= 1000</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">4a + 3i &gt;= 1000</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="1" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">2a + 3i &lt;= 500</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="1" hidden>
+          <p class="kssm-fb-status" data-q-status="1"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Modal maksimum bermaksud &#39;&lt;=&#39;: 2a + 1.5i &lt;= 500. Darab 2 memberi 4a + 3i &lt;= 1000.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="2" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 3 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Diberi garis lurus y = -3x + 6. Tentukan kedudukan titik P(2, 5) dan titik Q(-1, 9) terhadap garis itu.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">P di rantau bawah; Q di rantau atas</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">P pada garis; Q di rantau bawah</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">P di rantau atas; Q berada tepat pada garis</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="2" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">Kedua-dua P dan Q di rantau atas</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="2" hidden>
+          <p class="kssm-fb-status" data-q-status="2"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Untuk P(2, 5): -3(2) + 6 = 0, dan 5 &gt; 0 (rantau atas). Untuk Q(-1, 9): -3(-1) + 6 = 9 = y (tepat pada garis).</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="3" data-correct="3">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 4 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Antara berikut, huraian manakah yang paling tepat bagi ketaksamaan linear 2x - 3y &gt; 6?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">y &gt; (2/3)x - 2; garis padu, lorek atas</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">y &lt; (2/3)x - 2; garis padu, lorek bawah</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">y &gt; (2/3)x - 2; garis sempang, lorek atas</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="3" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">y &lt; (2/3)x - 2; garis sempang, lorek bawah</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="3" hidden>
+          <p class="kssm-fb-status" data-q-status="3"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> 2x - 3y &gt; 6 -&gt; -3y &gt; -2x + 6 -&gt; bahagi -3 membalikkan tanda menjadi y &lt; (2/3)x - 2 (garis sempang, rantau bawah).</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="4" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 5 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Rantau berlorek yang ditakrifkan oleh y &lt;= x + 2 dan y &gt;= 0 dipantulkan pada paksi-x. Apakah sistem ketaksamaan bagi imej rantau tersebut?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">y &gt;= -x - 2 dan y &lt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">y &lt;= -x + 2 dan y &lt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">y &lt;= -x - 2 dan y &gt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="4" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">y &gt;= x + 2 dan y &lt;= 0</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="4" hidden>
+          <p class="kssm-fb-status" data-q-status="4"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Pantulan paksi-x menggantikan y dengan (-y): -y &lt;= x + 2 -&gt; y &gt;= -x - 2, dan -y &gt;= 0 -&gt; y &lt;= 0.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="5" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 6 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Sebuah kelab memilih x pelajar aliran sains dan y pelajar aliran seni dengan syarat: jumlah peserta selebih-lebihnya 40, pelajar sains sekurang-kurangnya 3 kali pelajar seni, dan minimum 4 pelajar seni. Nyatakan sistem ketaksamaan tersebut.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">x + y &lt;= 40, y &gt;= 3x, y &gt;= 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">x + y &lt;= 40, x &gt;= 3y, y &gt;= 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">x + y &lt; 40, x &gt;= 3y, y &gt; 4</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="5" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x + y &gt;= 40, x &lt;= 3y, y &gt;= 4</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="5" hidden>
+          <p class="kssm-fb-status" data-q-status="5"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Jumlah selebih-lebihnya 40 ialah x + y &lt;= 40; sains &gt;= 3 kali seni ialah x &gt;= 3y; minimum 4 seni ialah y &gt;= 4.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="6" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 7 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Sebuah kedai memesan x unit dakwat P (RM14) dan y unit dakwat Q (RM18). Jumlah unit tidak melebihi 25, bilangan y sekurang-kurangnya 2 kali x, maksimum y ialah 8, dan kos pembelian tidak melebihi RM400. Ketaksamaan manakah BUKAN sebahagian sistem ini?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">x + y &lt;= 25</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">y &gt;= 2x</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">14x + 18y &gt;= 400</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="6" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">y &lt;= 8</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="6" hidden>
+          <p class="kssm-fb-status" data-q-status="6"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Kos pembelian &#39;tidak melebihi RM400&#39; bermaksud 14x + 18y &lt;= 400, bukan &gt;= 400.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="7" data-correct="3">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 8 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Titik manakah memuaskan kesemua tiga ketaksamaan 2y &gt;= x, x + y &lt; 4 dan x &gt;= 0 secara serentak?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">(0, 4)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">(2, 2)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">(3, 1)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="7" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">(1, 2)</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="7" hidden>
+          <p class="kssm-fb-status" data-q-status="7"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Uji (1, 2): 2(2) = 4 &gt;= 1 (Benar), 1 + 2 = 3 &lt; 4 (Benar), dan 1 &gt;= 0 (Benar). (0, 4) dan (2, 2) gagal syarat ketat x + y &lt; 4.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="8" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 9 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Berdasarkan sistem x + y &lt;= 20 dan x &gt;= 2y (dengan x &gt;= 0, y &gt;= 0), jika bilangan peserta lelaki ialah y = 5, apakah julat bilangan peserta perempuan x yang sah?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">10 &lt;= x &lt;= 15</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">5 &lt;= x &lt;= 15</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">10 &lt;= x &lt;= 20</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="8" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">15 &lt;= x &lt;= 20</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="8" hidden>
+          <p class="kssm-fb-status" data-q-status="8"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Apabila y = 5: x &gt;= 2(5) = 10 dan x &lt;= 20 - 5 = 15, maka 10 &lt;= x &lt;= 15.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="9" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 10 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Bagi sistem x + y &lt;= 20 dan x &gt;= 2y, mengapakah nilai y = 8 tidak mematuhi sistem ketaksamaan?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">Kerana 8 ialah nombor genap.</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">Kerana y = 8 memerlukan x &gt;= 16, tetapi 16 + 8 = 24 &gt; 20 (di luar rantau berlorek).</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">Kerana x + y mesti sentiasa kurang daripada 10.</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="9" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">Kerana y tidak boleh melebihi 5.</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="9" hidden>
+          <p class="kssm-fb-status" data-q-status="9"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Apabila y = 8, syarat x &gt;= 2y memaksa x &gt;= 16, menyebabkan x + y &gt;= 24 &gt; 20 yang melanggar kekangan x + y &lt;= 20.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="10" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 11 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Seorang tukang jahit menjahit x helai baju pesak (RM50/helai) dan y helai baju moden (RM75/helai) dengan kekangan x + y &lt;= 40, x &lt;= 25 dan y &gt;= 10. Hitung pendapatan maksimum jika beliau menjahit 15 helai baju pesak.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="10" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">RM2 000</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="10" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">RM2 500</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="10" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">RM2 625</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="10" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">RM2 375</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="10" hidden>
+          <p class="kssm-fb-status" data-q-status="10"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Dengan x = 15, y maksimum ialah 40 - 15 = 25. Pendapatan maksimum = 50(15) + 75(25) = 750 + 1 875 = RM2 625.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="11" data-correct="3">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 12 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Panjang x meter kain bunga dan y meter kain abstrak memenuhi x + y &lt;= 120 dan y &gt;= (1/3)x dengan x &gt;= 0, y &gt;= 0. Berapakah panjang maksimum kain bunga (x) yang boleh dibeli?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="11" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">80 m</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="11" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">100 m</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="11" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">60 m</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="11" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">90 m</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="11" hidden>
+          <p class="kssm-fb-status" data-q-status="11"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Maksimum x berlaku pada persilangan x + y = 120 dan y = (1/3)x -&gt; (4/3)x = 120 -&gt; x = 90 m (dan y = 30 m).</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="12" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 13 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Tentukan garis sempadan manakah yang dilukis dengan GARIS SEMPANG pada satah Cartes?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="12" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">y - 2x &lt; 5</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="12" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">y + 3x &lt;= 10</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="12" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">2x + y &gt;= 8</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="12" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x &gt;= 4</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="12" hidden>
+          <p class="kssm-fb-status" data-q-status="12"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Tanda ketaksamaan ketat (&lt; atau &gt;) sentiasa dilukis menggunakan garis sempang; y - 2x &lt; 5 mempunyai tanda &#39;&lt;&#39;.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="13" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 14 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Suatu rantau berlorek dibatasi oleh paksi-y (x &gt;= 0), garis mengufuk y = 6 (rantau bawah, padu) dan garis y = 2x (rantau atas, sempang). Tulis sistem tiga ketaksamaan itu.</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="13" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">x &lt;= 0, y &lt;= 6, y &gt; 2x</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="13" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">x &gt;= 0, y &lt;= 6, y &gt; 2x</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="13" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">x &gt;= 0, y &lt; 6, y &gt;= 2x</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="13" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x &gt;= 0, y &gt;= 6, y &lt; 2x</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="13" hidden>
+          <p class="kssm-fb-status" data-q-status="13"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Sebelah kanan paksi-y ialah x &gt;= 0, bawah y = 6 (padu) ialah y &lt;= 6, dan atas y = 2x (sempang) ialah y &gt; 2x.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="14" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 15 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Uji titik (8, 4) terhadap sistem tiga ketaksamaan: (1) y &lt;= 6, (2) y &lt;= x, dan (3) x + y &gt;= 6. Apakah status titik ini?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="14" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">Gagal ketaksamaan (1) sahaja</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="14" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">Gagal ketaksamaan (2) sahaja</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="14" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">Memenuhi ketiga-tiga ketaksamaan dalam rantau sepunya</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="14" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">Terletak di luar semua garis sempadan</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="14" hidden>
+          <p class="kssm-fb-status" data-q-status="14"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> 4 &lt;= 6 (Benar), 4 &lt;= 8 (Benar), dan 8 + 4 = 12 &gt;= 6 (Benar). Titik (8, 4) berada dalam rantau sepunya.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="15" data-correct="3">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 16 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Frasa manakah daripada situasi harian yang tepat diterjemahkan kepada ketaksamaan &#39;y - x &gt;= k&#39;?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="15" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">Beza antara y dengan x kurang daripada k.</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="15" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">Hasil tambah y dan x sekurang-kurangnya k.</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="15" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">Nilai y tidak melebihi k kali x.</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="15" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">Nilai y melebihi nilai x sekurang-kurangnya k.</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="15" hidden>
+          <p class="kssm-fb-status" data-q-status="15"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> &#39;y melebihi x&#39; ialah (y - x), dan &#39;sekurang-kurangnya k&#39; ialah (&gt;= k), maka y - x &gt;= k.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="16" data-correct="0">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 17 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Sebuah taman tema mengenakan syarat jumlah pelawat dewasa (x) dan kanak-kanak (y) ialah x + y &lt;= 30 dengan bilangan kanak-kanak tidak kurang daripada dewasa (y &gt;= x). Berapakah bilangan maksimum pelawat dewasa yang dibenarkan?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="16" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">15 orang</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="16" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">20 orang</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="16" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">10 orang</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="16" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">30 orang</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="16" hidden>
+          <p class="kssm-fb-status" data-q-status="16"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Titik bucu paling kanan pada persilangan x + y = 30 dan y = x memberi 2x = 30 -&gt; x = 15 orang dewasa (dan 15 kanak-kanak).</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="17" data-correct="1">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 18 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Jika poster kecil berharga RM12.50 (k) dan poster besar RM18.50 (b) dengan peruntukan tidak melebihi RM150, apakah bentuk ketaksamaan integer termudah?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="17" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">25k + 37b &lt; 300</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="17" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">25k + 37b &lt;= 300</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="17" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">25k + 37b &gt;= 300</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="17" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">125k + 185b &lt;= 150</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="17" hidden>
+          <p class="kssm-fb-status" data-q-status="17"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> 12.5k + 18.5b &lt;= 150. Darab kedua-dua belah dengan 2 menghasilkan 25k + 37b &lt;= 300.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="18" data-correct="2">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 19 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Titik manakah antara berikut berada di rantau BAWAH garis lurus y = 2x - 1?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="18" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">(2, 5)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="18" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">(1, 1)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="18" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">(3, 4)</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="18" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">(0, 0)</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="18" hidden>
+          <p class="kssm-fb-status" data-q-status="18"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Uji (3, 4): 2(3) - 1 = 5. Oleh kerana koordinat y = 4 &lt; 5, titik (3, 4) berada di rantau bawah garis.</p>
+        </div>
+      </article>
+<article class="kssm-q-card" data-q-card="19" data-correct="3">
+        <div class="kssm-q-head">
+          <span class="kssm-q-num">Soalan 20 / 20</span>
+          <span class="kssm-q-badge">+10 XP</span>
+        </div>
+        <p class="kssm-q-stem">Rantau berlorek bagi x &gt;= 0 dan y &lt;= -x + 4 dipantulkan pada paksi-y. Apakah ketaksamaan imej bagi garis x &gt;= 0?</p>
+        <div class="kssm-opt-list"><button type="button" class="kssm-opt-btn" data-q-idx="19" data-opt-idx="0">
+            <span class="kssm-opt-letter">A</span>
+            <span class="kssm-opt-text">y &lt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="19" data-opt-idx="1">
+            <span class="kssm-opt-letter">B</span>
+            <span class="kssm-opt-text">x &gt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="19" data-opt-idx="2">
+            <span class="kssm-opt-letter">C</span>
+            <span class="kssm-opt-text">y &gt;= 0</span>
+          </button>
+<button type="button" class="kssm-opt-btn" data-q-idx="19" data-opt-idx="3">
+            <span class="kssm-opt-letter">D</span>
+            <span class="kssm-opt-text">x &lt;= 0</span>
+          </button></div>
+        <div class="kssm-q-feedback" data-q-fb="19" hidden>
+          <p class="kssm-fb-status" data-q-status="19"></p>
+          <p class="kssm-fb-exp"><strong>Huraian:</strong> Pantulan pada paksi-y menukar x kepada (-x): -x &gt;= 0 -&gt; darab -1 membalikkan tanda menjadi x &lt;= 0.</p>
+        </div>
+      </article></div>
+      <div class="kssm-quiz-actions">
+        <p id="kssmQuizSummaryNote" class="kssm-quiz-summary">Jawab semua 20 soalan untuk melengkapkan penguasaan bab ini.</p>
+        <button type="button" class="btn btn-outline btn-sm" id="kssmQuizResetBtn">Ulang Ujian Topikal</button>
+      </div>
+    </section></div>
+    <div id="panel-kertas2" class="kssm-tab-panel" data-kssm-panel="kertas2" role="tabpanel" hidden><section class="seo-section-card" id="kertas-2-berstruktur">
+      <div class="kssm-section-top">
+        <div>
+          <span class="kssm-eyebrow">Ujian Topikal SPM &bull; Kertas 2 / Berstruktur &amp; KBAT</span>
+          <h2>6 Soalan Kertas 2 SPM &amp; Semakan Cikgu AI</h2>
+          <p class="kssm-sublead">Tulis jawapan terus di ruang disediakan atau muat naik gambar jawapan bertulis anda untuk disemak Cikgu AI mengikut skema LPM.</p>
+        </div>
+      </div>
+      <div class="kssm-tp-bar" id="kssmTpBar" data-tp-chapter="matematik-t4-bab-6" aria-live="polite">
+      <div class="kssm-tp-bar-head">
+        <span class="kssm-tp-bar-title">Penilaian Tahap Penguasaan (TP1&ndash;TP6)</span>
+        <strong class="kssm-tp-achieved" id="kssmTpAchieved">Tahap Penguasaan Dicapai: Belum Dinilai</strong>
+      </div>
+      <div class="kssm-tp-steps"><span class="kssm-tp-step" data-tp-step="1" style="--tp-c:#475569;--tp-bg:#f1f5f9;--tp-bd:#cbd5e1" title="Mengingat kembali istilah, takrifan, atau fakta asas bab.">TP1 Mengingat</span><span class="kssm-tp-step" data-tp-step="2" style="--tp-c:#0369a1;--tp-bg:#e0f2fe;--tp-bd:#7dd3fc" title="Menerangkan konsep, prinsip, atau maksud dengan ayat sendiri.">TP2 Memahami</span><span class="kssm-tp-step" data-tp-step="3" style="--tp-c:#047857;--tp-bg:#d1fae5;--tp-bd:#6ee7b7" title="Mengaplikasikan pengetahuan dan kemahiran pada situasi baharu.">TP3 Mengaplikasi</span><span class="kssm-tp-step" data-tp-step="4" style="--tp-c:#b45309;--tp-bg:#fef3c7;--tp-bd:#fcd34d" title="Mencerakin maklumat, membanding beza, serta mengesan punca dan kesan.">TP4 Menganalisis</span><span class="kssm-tp-step" data-tp-step="5" style="--tp-c:#6d28d9;--tp-bg:#ede9fe;--tp-bd:#c4b5fd" title="Membuat pertimbangan wajar, justifikasi, atau keputusan berbukti.">TP5 Menilai</span><span class="kssm-tp-step" data-tp-step="6" style="--tp-c:#be123c;--tp-bg:#ffe4e6;--tp-bd:#fda4af" title="Menjana idea kreatif, mereka bentuk penyelesaian, atau rumusan KBAT.">TP6 Mencipta</span></div>
+    </div>
+      <div class="kssm-p2-list"><article class="seo-preview-item kssm-p2-card" data-p2-idx="0" data-p2-subject="Matematik" data-p2-marks="2" data-p2-subid="matematik-t4-bab-6-p2-1" data-p2-question="Diberi garis lurus y = -2x + 6. Tanpa melukis graf, tentukan sama ada titik A(1, 4) dan titik B(2, 6) berada pada garis, di rantau atas, atau di rantau bawah garis tersebut." data-p2-scheme="Kata Kunci: A(1, 4): -2(1)+6 = 4 -&gt; pada garis, B(2, 6): -2(2)+6 = 2, 6 &gt; 2 -&gt; rantau atas, y &gt; mx + c di atas garis. Panduan: 1. Uji A(1, 4): sebelah kanan -2(1) + 6 = 4. Kerana y = 4 sama dengan 4, A berada tepat PADA garis. 2. Uji B(2, 6): sebelah kanan -2(2) + 6 = 2. Kerana y = 6 &gt; 2, B berada di rantau ATAS garis (y &gt; -2x + 6)." data-p2-tp="1" data-p2-tp-desc="Mengingat: Menentukan kedudukan titik terhadap satu garis lurus dengan menggantikan koordinat.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP1)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#475569;--tp-bg:#f1f5f9;--tp-bd:#cbd5e1">TP1 &bull; Mengingat</span>
+          </div>
+          <span class="kssm-p2-marks">2 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Mengingat: Menentukan kedudukan titik terhadap satu garis lurus dengan menggantikan koordinat.</p>
+        <p class="kssm-p2-q">Diberi garis lurus y = -2x + 6. Tanpa melukis graf, tentukan sama ada titik A(1, 4) dan titik B(2, 6) berada pada garis, di rantau atas, atau di rantau bawah garis tersebut.</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">A(1, 4): -2(1)+6 = 4 -&gt; pada garis</span><span class="kssm-kw-chip">B(2, 6): -2(2)+6 = 2, 6 &gt; 2 -&gt; rantau atas</span><span class="kssm-kw-chip">y &gt; mx + c di atas garis</span></div>
+            <p>1. Uji A(1, 4): sebelah kanan -2(1) + 6 = 4. Kerana y = 4 sama dengan 4, A berada tepat PADA garis. 2. Uji B(2, 6): sebelah kanan -2(2) + 6 = 2. Kerana y = 6 &gt; 2, B berada di rantau ATAS garis (y &gt; -2x + 6).</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Diberi%20garis%20lurus%20y%20%3D%20-2x%20%2B%206.%20Tanpa%20melukis%20graf%2C%20tentukan%20sama%20ada%20titik%20A(1%2C%204)%20dan%20titik%20B(2%2C%206)%20berada%20pada%20garis%2C%20di%20rantau%20atas%2C%20atau%20di%20rantau%20bawah%20garis%20tersebut.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card" data-p2-idx="1" data-p2-subject="Matematik" data-p2-marks="3" data-p2-subid="matematik-t4-bab-6-p2-2" data-p2-question="Tukarkan ketaksamaan linear 4x - 2y &gt;= 10 kepada bentuk dengan y sebagai perkara rumus. Nyatakan jenis garis sempadan (padu atau sempang) dan arah rantau lorekannya, kemudian tentukan imej ketaksamaan jika ia dipantulkan pada paksi-y." data-p2-scheme="Kata Kunci: y &lt;= 2x - 5, garis padu, rantau bawah, pantulan paksi-y: y &lt;= -2x - 5. Panduan: 1. Susun: -2y &gt;= -4x + 10. Bahagi -2 dan songsangkan tanda: y &lt;= 2x - 5. 2. Kerana tanda &#39;&lt;=&#39;, ia menggunakan garis PADU dan lorekan di rantau BAWAH. 3. Pantulan paksi-y mengganti x dengan (-x): y &lt;= 2(-x) - 5 -&gt; y &lt;= -2x - 5." data-p2-tp="2" data-p2-tp-desc="Memahami: Menyusun ketaksamaan berpekali negatif dan menentukan jenis garis sempadan serta arah lorekan.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP2)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#0369a1;--tp-bg:#e0f2fe;--tp-bd:#7dd3fc">TP2 &bull; Memahami</span>
+          </div>
+          <span class="kssm-p2-marks">3 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Memahami: Menyusun ketaksamaan berpekali negatif dan menentukan jenis garis sempadan serta arah lorekan.</p>
+        <p class="kssm-p2-q">Tukarkan ketaksamaan linear 4x - 2y &gt;= 10 kepada bentuk dengan y sebagai perkara rumus. Nyatakan jenis garis sempadan (padu atau sempang) dan arah rantau lorekannya, kemudian tentukan imej ketaksamaan jika ia dipantulkan pada paksi-y.</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">y &lt;= 2x - 5</span><span class="kssm-kw-chip">garis padu, rantau bawah</span><span class="kssm-kw-chip">pantulan paksi-y: y &lt;= -2x - 5</span></div>
+            <p>1. Susun: -2y &gt;= -4x + 10. Bahagi -2 dan songsangkan tanda: y &lt;= 2x - 5. 2. Kerana tanda &#39;&lt;=&#39;, ia menggunakan garis PADU dan lorekan di rantau BAWAH. 3. Pantulan paksi-y mengganti x dengan (-x): y &lt;= 2(-x) - 5 -&gt; y &lt;= -2x - 5.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Tukarkan%20ketaksamaan%20linear%204x%20-%202y%20%3E%3D%2010%20kepada%20bentuk%20dengan%20y%20sebagai%20perkara%20rumus.%20Nyatakan%20jenis%20garis%20sempadan%20(padu%20atau%20sempang)%20dan%20arah%20rantau%20lorekannya%2C%20kemudian%20tentukan%20imej%20ketaksamaan%20jika%20ia%20dipantulkan%20pada%20paksi-y.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card" data-p2-idx="2" data-p2-subject="Matematik" data-p2-marks="4" data-p2-subid="matematik-t4-bab-6-p2-3" data-p2-question="Sebuah bas boleh memuatkan 32 orang penumpang dan 350 kg bagasi, manakala sebuah van boleh memuatkan 8 orang penumpang dan 100 kg bagasi. Suatu rombongan melibatkan b buah bas dan v buah van perlu membawa sekurang-kurangnya 150 orang penumpang serta sekurang-kurangnya 2 000 kg bagasi, dengan bilangan bas selebih-lebihnya 4 buah. Tulis tiga ketaksamaan linear selain b &gt;= 0 dan v &gt;= 0 yang mewakili kekangan ini (permudahkan jika boleh)." data-p2-scheme="Kata Kunci: 32b + 8v &gt;= 150 (atau 16b + 4v &gt;= 75), 350b + 100v &gt;= 2000 (atau 7b + 2v &gt;= 40), b &lt;= 4. Panduan: 1. Kekangan penumpang: 32b + 8v &gt;= 150 (bahagi 2: 16b + 4v &gt;= 75). 2. Kekangan bagasi: 350b + 100v &gt;= 2000 (bahagi 50: 7b + 2v &gt;= 40). 3. Kekangan bas maksimum: b &lt;= 4." data-p2-tp="3" data-p2-tp-desc="Mengaplikasi: Menterjemah situasi harian kepada satu sistem ketaksamaan linear dalam bentuk integer termudah.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP3)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#047857;--tp-bg:#d1fae5;--tp-bd:#6ee7b7">TP3 &bull; Mengaplikasi</span>
+          </div>
+          <span class="kssm-p2-marks">4 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Mengaplikasi: Menterjemah situasi harian kepada satu sistem ketaksamaan linear dalam bentuk integer termudah.</p>
+        <p class="kssm-p2-q">Sebuah bas boleh memuatkan 32 orang penumpang dan 350 kg bagasi, manakala sebuah van boleh memuatkan 8 orang penumpang dan 100 kg bagasi. Suatu rombongan melibatkan b buah bas dan v buah van perlu membawa sekurang-kurangnya 150 orang penumpang serta sekurang-kurangnya 2 000 kg bagasi, dengan bilangan bas selebih-lebihnya 4 buah. Tulis tiga ketaksamaan linear selain b &gt;= 0 dan v &gt;= 0 yang mewakili kekangan ini (permudahkan jika boleh).</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">32b + 8v &gt;= 150 (atau 16b + 4v &gt;= 75)</span><span class="kssm-kw-chip">350b + 100v &gt;= 2000 (atau 7b + 2v &gt;= 40)</span><span class="kssm-kw-chip">b &lt;= 4</span></div>
+            <p>1. Kekangan penumpang: 32b + 8v &gt;= 150 (bahagi 2: 16b + 4v &gt;= 75). 2. Kekangan bagasi: 350b + 100v &gt;= 2000 (bahagi 50: 7b + 2v &gt;= 40). 3. Kekangan bas maksimum: b &lt;= 4.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Sebuah%20bas%20boleh%20memuatkan%2032%20orang%20penumpang%20dan%20350%20kg%20bagasi%2C%20manakala%20sebuah%20van%20boleh%20memuatkan%208%20orang%20penumpang%20dan%20100%20kg%20bagasi.%20Suatu%20rombongan%20melibatkan%20b%20buah%20bas%20dan%20v%20buah%20van%20perlu%20membawa%20sekurang-kurangnya%20150%20orang%20penumpang%20serta%20sekurang-kurangnya%202%20000%20kg%20bagasi%2C%20dengan%20bilangan%20bas%20selebih-lebihnya%204%20buah.%20Tulis%20tiga%20ketaksamaan%20linear%20selain%20b%20%3E%3D%200%20dan%20v%20%3E%3D%200%20yang%20mewakili%20kekangan%20ini%20(permudahkan%20jika%20boleh).#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card" data-p2-idx="3" data-p2-subject="Matematik" data-p2-marks="5" data-p2-subid="matematik-t4-bab-6-p2-4" data-p2-question="Suatu rantau sepunya R pada sukuan pertama dibatasi oleh paksi-y, satu garis padu melalui (0, 2) dan (8, 8) dengan R di bawahnya, serta satu garis sempang melalui (0, 7) dan (7, 0) dengan R di atasnya. Tulis ketiga-tiga ketaksamaan linear yang mentakrifkan R, dan sahkan sama ada titik (4, 4) terletak di dalam rantau R." data-p2-scheme="Kata Kunci: x &gt;= 0, y &lt;= (3/4)x + 2, x + y &gt; 7 (atau y &gt; -x + 7), uji (4, 4): 4 &lt;= 5 Benar, 4+4=8 &gt; 7 Benar, 4 &gt;= 0 Benar -&gt; dalam R. Panduan: 1. Paksi-y (suku pertama): x &gt;= 0. 2. Garis padu melalui (0, 2) dan (8, 8): kecerunan m = (8-2)/(8-0) = 3/4, pintasan c = 2 -&gt; y &lt;= (3/4)x + 2. 3. Garis sempang melalui (0, 7) dan (7, 0): m = -1, c = 7 -&gt; y &gt; -x + 7 (iaitu x + y &gt; 7). 4. Uji (4, 4): 4 &gt;= 0 (Benar), 4 &lt;= 0.75(4)+2 = 5 (Benar), 4 + 4 = 8 &gt; 7 (Benar). Ya, (4, 4) terletak di dalam R." data-p2-tp="4" data-p2-tp-desc="Menganalisis: Membina sistem tiga ketaksamaan linear daripada maklumat sempadan satah Cartes dan menguji titik.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP4)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#b45309;--tp-bg:#fef3c7;--tp-bd:#fcd34d">TP4 &bull; Menganalisis</span>
+          </div>
+          <span class="kssm-p2-marks">5 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Menganalisis: Membina sistem tiga ketaksamaan linear daripada maklumat sempadan satah Cartes dan menguji titik.</p>
+        <p class="kssm-p2-q">Suatu rantau sepunya R pada sukuan pertama dibatasi oleh paksi-y, satu garis padu melalui (0, 2) dan (8, 8) dengan R di bawahnya, serta satu garis sempang melalui (0, 7) dan (7, 0) dengan R di atasnya. Tulis ketiga-tiga ketaksamaan linear yang mentakrifkan R, dan sahkan sama ada titik (4, 4) terletak di dalam rantau R.</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">x &gt;= 0</span><span class="kssm-kw-chip">y &lt;= (3/4)x + 2</span><span class="kssm-kw-chip">x + y &gt; 7 (atau y &gt; -x + 7)</span><span class="kssm-kw-chip">uji (4, 4): 4 &lt;= 5 Benar, 4+4=8 &gt; 7 Benar, 4 &gt;= 0 Benar -&gt; dalam R</span></div>
+            <p>1. Paksi-y (suku pertama): x &gt;= 0. 2. Garis padu melalui (0, 2) dan (8, 8): kecerunan m = (8-2)/(8-0) = 3/4, pintasan c = 2 -&gt; y &lt;= (3/4)x + 2. 3. Garis sempang melalui (0, 7) dan (7, 0): m = -1, c = 7 -&gt; y &gt; -x + 7 (iaitu x + y &gt; 7). 4. Uji (4, 4): 4 &gt;= 0 (Benar), 4 &lt;= 0.75(4)+2 = 5 (Benar), 4 + 4 = 8 &gt; 7 (Benar). Ya, (4, 4) terletak di dalam R.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Suatu%20rantau%20sepunya%20R%20pada%20sukuan%20pertama%20dibatasi%20oleh%20paksi-y%2C%20satu%20garis%20padu%20melalui%20(0%2C%202)%20dan%20(8%2C%208)%20dengan%20R%20di%20bawahnya%2C%20serta%20satu%20garis%20sempang%20melalui%20(0%2C%207)%20dan%20(7%2C%200)%20dengan%20R%20di%20atasnya.%20Tulis%20ketiga-tiga%20ketaksamaan%20linear%20yang%20mentakrifkan%20R%2C%20dan%20sahkan%20sama%20ada%20titik%20(4%2C%204)%20terletak%20di%20dalam%20rantau%20R.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card" data-p2-idx="4" data-p2-subject="Matematik" data-p2-marks="6" data-p2-subid="matematik-t4-bab-6-p2-5" data-p2-question="Seorang pereka fesyen membeli x meter kain bunga dan y meter kain abstrak tertakluk kepada syarat x + y &lt;= 120, y &gt;= (1/3)x, x &gt;= 0 dan y &gt;= 0. (a) Hitung panjang maksimum kain bunga (x) yang boleh dibeli. (b) Seorang pembantu mencadangkan pembelian 80 meter kain bunga dan 60 meter kain abstrak. Nilaikan cadangan tersebut dengan bukti pengiraan." data-p2-scheme="Kata Kunci: x + (1/3)x = 120 -&gt; x = 90 m, y = 30 m, uji (80, 60): 80 + 60 = 140 &gt; 120, tidak sah / di luar rantau sepunya. Panduan: 1. Panjang maksimum x berlaku pada persilangan sempadan x + y = 120 dan y = (1/3)x: x + (1/3)x = 120 -&gt; (4/3)x = 120 -&gt; x = 90 m (dengan y = 30 m). 2. Uji cadangan (80, 60): syarat kedua y &gt;= (1/3)(80) = 26.67 dipenuhi (60 &gt;= 26.67), TETAPI syarat pertama x + y = 80 + 60 = 140 &gt; 120 melanggar had &lt;= 120. Oleh itu cadangan ditolak kerana (80, 60) berada di luar rantau sepunya." data-p2-tp="5" data-p2-tp-desc="Menilai: Menentukan had maksimum pemboleh ubah dalam rantau sepunya dan menilai keabsahan sesuatu cadangan.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP5)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#6d28d9;--tp-bg:#ede9fe;--tp-bd:#c4b5fd">TP5 &bull; Menilai</span>
+          </div>
+          <span class="kssm-p2-marks">6 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Menilai: Menentukan had maksimum pemboleh ubah dalam rantau sepunya dan menilai keabsahan sesuatu cadangan.</p>
+        <p class="kssm-p2-q">Seorang pereka fesyen membeli x meter kain bunga dan y meter kain abstrak tertakluk kepada syarat x + y &lt;= 120, y &gt;= (1/3)x, x &gt;= 0 dan y &gt;= 0. (a) Hitung panjang maksimum kain bunga (x) yang boleh dibeli. (b) Seorang pembantu mencadangkan pembelian 80 meter kain bunga dan 60 meter kain abstrak. Nilaikan cadangan tersebut dengan bukti pengiraan.</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">x + (1/3)x = 120 -&gt; x = 90 m</span><span class="kssm-kw-chip">y = 30 m</span><span class="kssm-kw-chip">uji (80, 60): 80 + 60 = 140 &gt; 120</span><span class="kssm-kw-chip">tidak sah / di luar rantau sepunya</span></div>
+            <p>1. Panjang maksimum x berlaku pada persilangan sempadan x + y = 120 dan y = (1/3)x: x + (1/3)x = 120 -&gt; (4/3)x = 120 -&gt; x = 90 m (dengan y = 30 m). 2. Uji cadangan (80, 60): syarat kedua y &gt;= (1/3)(80) = 26.67 dipenuhi (60 &gt;= 26.67), TETAPI syarat pertama x + y = 80 + 60 = 140 &gt; 120 melanggar had &lt;= 120. Oleh itu cadangan ditolak kerana (80, 60) berada di luar rantau sepunya.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Seorang%20pereka%20fesyen%20membeli%20x%20meter%20kain%20bunga%20dan%20y%20meter%20kain%20abstrak%20tertakluk%20kepada%20syarat%20x%20%2B%20y%20%3C%3D%20120%2C%20y%20%3E%3D%20(1%2F3)x%2C%20x%20%3E%3D%200%20dan%20y%20%3E%3D%200.%20(a)%20Hitung%20panjang%20maksimum%20kain%20bunga%20(x)%20yang%20boleh%20dibeli.%20(b)%20Seorang%20pembantu%20mencadangkan%20pembelian%2080%20meter%20kain%20bunga%20dan%2060%20meter%20kain%20abstrak.%20Nilaikan%20cadangan%20tersebut%20dengan%20bukti%20pengiraan.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article>
+<article class="seo-preview-item kssm-p2-card" data-p2-idx="5" data-p2-subject="Matematik" data-p2-marks="7" data-p2-subid="matematik-t4-bab-6-p2-6" data-p2-question="Sebuah bengkel menghasilkan x kerusi kayu (untung RM50/unit) dan y meja kayu (untung RM75/unit) setiap minggu. Kekangan bengkel: jumlah perabot tidak melebihi 40 unit, kerusi sekurang-kurangnya 10 unit dan tidak lebih 25 unit, manakala meja sekurang-kurangnya 10 unit. (a) Tulis keempat-empat ketaksamaan kekangan bengkel itu. (b) Tentukan kombinasi (x, y) pada bucu rantau sepunya yang memaksimumkan keuntungan mingguan serta hitung keuntungan maksimum tersebut." data-p2-scheme="Kata Kunci: x + y &lt;= 40, x &gt;= 10, x &lt;= 25, y &gt;= 10, bucu optimum (10, 30), 50(10) + 75(30) = RM2 750, banding (25, 15) = RM2 375 dan (10, 10) = RM1 250. Panduan: 1. Sistem ketaksamaan: x + y &lt;= 40, x &gt;= 10, x &lt;= 25, y &gt;= 10. 2. Bucu rantau sepunya: (10, 10), (25, 10), (25, 15) dan (10, 30). 3. Uji fungsi objektif Untung U = 50x + 75y: pada (10, 10) = 1 250; pada (25, 10) = 2 000; pada (25, 15) = 1 250 + 1 125 = 2 375; pada (10, 30) = 500 + 2 250 = RM2 750. 4. Kombinasi terbaik ialah 10 kerusi dan 30 meja dengan keuntungan maksimum RM2 750." data-p2-tp="6" data-p2-tp-desc="Mencipta: Memodelkan masalah pengoptimuman keuntungan lengkap dan menentukan gabungan pengeluaran terbaik.">
+        <div class="kssm-p2-top">
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (TP6)</span>
+            <span class="kssm-tp-badge" style="--tp-c:#be123c;--tp-bg:#ffe4e6;--tp-bd:#fda4af">TP6 &bull; Mencipta</span>
+          </div>
+          <span class="kssm-p2-marks">7 Markah</span>
+        </div>
+        <p class="kssm-tp-desc">Mencipta: Memodelkan masalah pengoptimuman keuntungan lengkap dan menentukan gabungan pengeluaran terbaik.</p>
+        <p class="kssm-p2-q">Sebuah bengkel menghasilkan x kerusi kayu (untung RM50/unit) dan y meja kayu (untung RM75/unit) setiap minggu. Kekangan bengkel: jumlah perabot tidak melebihi 40 unit, kerusi sekurang-kurangnya 10 unit dan tidak lebih 25 unit, manakala meja sekurang-kurangnya 10 unit. (a) Tulis keempat-empat ketaksamaan kekangan bengkel itu. (b) Tentukan kombinasi (x, y) pada bucu rantau sepunya yang memaksimumkan keuntungan mingguan serta hitung keuntungan maksimum tersebut.</p>
+        <div class="kssm-p2-grader">
+          <div class="kssm-p2-grader-top">
+            <span>Hantar Jawapan Untuk Semakan Cikgu AI</span>
+            <span class="kssm-p2-token-chip">Tulis: 1 Token &bull; Gambar: 3 Token</span>
+          </div>
+          <textarea class="kssm-p2-textarea" rows="4" aria-label="Tulis jawapan Kertas 2" placeholder="Tulis jawapan anda terus di sini, atau muat naik / tampal (Ctrl+V) gambar jawapan bertulis..."></textarea>
+          <input type="file" class="kssm-p2-file-input" accept="image/*" hidden>
+          <div class="kssm-p2-img-preview" hidden>
+            <img class="kssm-p2-img-thumb" alt="Pratonton gambar jawapan" width="44" height="44">
+            <div class="kssm-p2-img-meta"><strong class="kssm-p2-img-name">jawapan.jpg</strong><span>Semakan Gambar &bull; 3 Token</span></div>
+            <button type="button" class="kssm-p2-img-rm" aria-label="Buang lampiran gambar">&times;</button>
+          </div>
+          <div class="kssm-p2-controls">
+            <button type="button" class="kssm-p2-upload-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+              <span>Muat Naik Gambar</span>
+            </button>
+            <button type="button" class="kssm-p2-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Semak Jawapan (Cikgu AI)</span>
+            </button>
+          </div>
+          <div class="kssm-p2-ai-box" hidden aria-live="polite">
+            <div class="kssm-p2-ai-head">
+              <span class="kssm-p2-ai-title">Semakan Cikgu AI</span>
+              <span class="kssm-p2-ai-score" hidden></span>
+            </div>
+            <div class="kssm-p2-ai-body"></div>
+          </div>
+        </div>
+        <details class="seo-ans-details kssm-p2-hints">
+          <summary>Petunjuk Kata Kunci &amp; Panduan Pemarkahan</summary>
+          <div class="kssm-p2-hint-body">
+            <div class="kssm-kw-row"><span class="kssm-kw-chip">x + y &lt;= 40, x &gt;= 10, x &lt;= 25, y &gt;= 10</span><span class="kssm-kw-chip">bucu optimum (10, 30)</span><span class="kssm-kw-chip">50(10) + 75(30) = RM2 750</span><span class="kssm-kw-chip">banding (25, 15) = RM2 375 dan (10, 10) = RM1 250</span></div>
+            <p>1. Sistem ketaksamaan: x + y &lt;= 40, x &gt;= 10, x &lt;= 25, y &gt;= 10. 2. Bucu rantau sepunya: (10, 10), (25, 10), (25, 15) dan (10, 30). 3. Uji fungsi objektif Untung U = 50x + 75y: pada (10, 10) = 1 250; pada (25, 10) = 2 000; pada (25, 15) = 1 250 + 1 125 = 2 375; pada (10, 30) = 500 + 2 250 = RM2 750. 4. Kombinasi terbaik ialah 10 kerusi dan 30 meja dengan keuntungan maksimum RM2 750.</p>
+          </div>
+        </details>
+        <div class="kssm-p2-cta-row">
+          <a href="../../../../?cikguSubjek=Matematik&amp;cikguMode=bimbing_kerja_sekolah&amp;cikguPrompt=%5BKSSM%20Tingkatan%204%20%E2%80%A2%20Matematik%20Bab%206%3A%20Ketaksamaan%20Linear%20dalam%20Dua%20Pemboleh%20Ubah%5D%20Sebuah%20bengkel%20menghasilkan%20x%20kerusi%20kayu%20(untung%20RM50%2Funit)%20dan%20y%20meja%20kayu%20(untung%20RM75%2Funit)%20setiap%20minggu.%20Kekangan%20bengkel%3A%20jumlah%20perabot%20tidak%20melebihi%2040%20unit%2C%20kerusi%20sekurang-kurangnya%2010%20unit%20dan%20tidak%20lebih%2025%20unit%2C%20manakala%20meja%20sekurang-kurangnya%2010%20unit.%20(a)%20Tulis%20keempat-empat%20ketaksamaan%20kekangan%20bengkel%20itu.%20(b)%20Tentukan%20kombinasi%20(x%2C%20y)%20pada%20bucu%20rantau%20sepunya%20yang%20memaksimumkan%20keuntungan%20mingguan%20serta%20hitung%20keuntungan%20maksimum%20tersebut.#portal" class="btn btn-outline btn-sm kssm-cikgu-ai-btn" rel="nofollow">Buka Sembang Penuh Cikgu AI</a>
+        </div>
+      </article></div>
+    </section></div>
+    <section class="seo-section-card kssm-related-section">
+      <span class="kssm-eyebrow">Pautan Seterusnya</span>
+      <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
+      <div class="seo-related-grid">
+        <a href="../bab-5/" class="kssm-bab-link">Bab sebelumnya: Matematik Bab 5</a>
+        <a href="../bab-7/" class="kssm-bab-link">Bab seterusnya: Matematik Bab 7</a>
+        <a href="../../" class="kssm-bab-link">Semua Subjek Tingkatan 4</a>
+        <a href="../../../" class="kssm-bab-link">Hab Utama KSSM T1–T5</a>
+        <a href="../../../../kalkulator-merit-upu/" class="kssm-bab-link">Kalkulator Merit UPUOnline 2027</a>
+        <a href="../../../../soalan-percubaan-spm/matematik/" class="kssm-bab-link">Soalan Percubaan SPM Matematik</a>
+      </div>
+    </section>
+  </main>
+  <footer class="lp-footer">
+    <div class="lp-container lp-footer-inner">
+      <div>
+        <div class="etutor-logo-lockup etutor-logo-on-dark">
+          <svg class="etutor-emblem-svg" width="46" height="36" aria-hidden="true"><use href="#etutor-brand-emblem"></use></svg>
+          <div class="etutor-logo-text">
+            <div class="etutor-wordmark"><span class="wm-etutor">eTutor</span><span class="wm-dotmy">.my</span></div>
+            <div class="etutor-tagline">Portal Set Soalan Interaktif</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;margin-top:10px;color:#94a3b8">Nota KSSM Interaktif • Buku Teks &amp; DSKP KPM</div>
+      </div>
+      <ul class="lp-footer-links">
+        <li><a href="../../../">Hab KSSM</a></li>
+        <li><a href="../../../../nota-interaktif/">Nota Playable</a></li>
+        <li><a href="../../../../kalkulator-merit-upu/">Kalkulator UPU</a></li>
+        <li><a href="../../../../soalan-percubaan-spm/">Percubaan SPM</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="../../../../config.js"></script>
+  <script src="../../../../live-index-sync.js" defer></script>
+  <script>
+(function () {
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll("[data-kssm-tab-btn]"));
+  var tabPanels = Array.prototype.slice.call(document.querySelectorAll("[data-kssm-panel]"));
+  function activateTab(name) {
+    var target = ["nota", "kertas1", "kertas2"].indexOf(name) !== -1 ? name : "nota";
+    tabBtns.forEach(function (b) {
+      var on = b.getAttribute("data-kssm-tab-btn") === target;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    tabPanels.forEach(function (p) { p.hidden = p.getAttribute("data-kssm-panel") !== target; });
+  }
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () { activateTab(btn.getAttribute("data-kssm-tab-btn")); });
+  });
+  var qView = new URLSearchParams(window.location.search || "").get("view");
+  if (qView) activateTab(qView);
+  else if (window.location.hash === "#latih-tubi-mcq") activateTab("kertas1");
+  else if (window.location.hash === "#kertas-2-berstruktur") activateTab("kertas2");
+  else activateTab("nota");
+
+  var playBtn = document.querySelector(".kssm-playable-icon-btn");
+  if (playBtn && window.self !== window.top) {
+    playBtn.addEventListener("click", function (ev) {
+      var dist = playBtn.getAttribute("data-playable-dist");
+      if (dist) { ev.preventDefault(); window.location.href = dist; }
+    });
+  }
+
+  var STORAGE_KEY = "etutor_kssm_bab_xp_v1", CHAP_KEY = "matematik-t4-bab-6", LETTERS = ["A", "B", "C", "D"];
+  var cards = Array.prototype.slice.call(document.querySelectorAll("[data-q-card]"));
+  if (!cards.length) return;
+  var progText = document.getElementById("kssmQuizProgressText"), scoreText = document.getElementById("kssmQuizScoreText");
+  var xpText = document.getElementById("kssmTotalXpText"), progBar = document.getElementById("kssmQuizProgressBar");
+  var progFill = document.getElementById("kssmQuizProgressFill"), sumNote = document.getElementById("kssmQuizSummaryNote");
+  var resetBtn = document.getElementById("kssmQuizResetBtn");
+
+  function loadStore() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};
+      if (!parsed.chapters || typeof parsed.chapters !== "object") parsed.chapters = {};
+      return parsed;
+    } catch (_) { return { totalXp: 0, chapters: {} }; }
+  }
+  function saveStore(st) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(st)); } catch (_) {} }
+  function recalcTotalXp(st) {
+    var total = 0;
+    Object.keys(st.chapters || {}).forEach(function (k) { if (st.chapters[k] && typeof st.chapters[k].earnedXp === "number") total += st.chapters[k].earnedXp; });
+    st.totalXp = total;
+    return total;
+  }
+
+  var state = loadStore();
+  if (!state.chapters[CHAP_KEY]) state.chapters[CHAP_KEY] = { answers: {}, earnedXp: 0 };
+
+  function renderAll() {
+    var rec = state.chapters[CHAP_KEY], ansMap = rec.answers || {}, answered = 0, correctCount = 0;
+    cards.forEach(function (card, idx) {
+      var correctIdx = Number(card.getAttribute("data-correct"));
+      var chosen = Object.prototype.hasOwnProperty.call(ansMap, idx) ? Number(ansMap[idx]) : -1;
+      var fb = card.querySelector('[data-q-fb="' + idx + '"]'), statusEl = card.querySelector('[data-q-status="' + idx + '"]');
+      Array.prototype.slice.call(card.querySelectorAll(".kssm-opt-btn")).forEach(function (btn) {
+        var optIdx = Number(btn.getAttribute("data-opt-idx"));
+        btn.classList.remove("is-correct", "is-wrong");
+        btn.disabled = chosen !== -1;
+        if (chosen !== -1) {
+          if (optIdx === correctIdx) btn.classList.add("is-correct");
+          else if (optIdx === chosen) btn.classList.add("is-wrong");
+        }
+      });
+      if (chosen !== -1) {
+        answered += 1;
+        var isRight = chosen === correctIdx;
+        if (isRight) correctCount += 1;
+        if (fb) fb.hidden = false;
+        if (statusEl) {
+          statusEl.className = "kssm-fb-status " + (isRight ? "is-ok" : "is-bad");
+          statusEl.textContent = isRight ? "Tepat! +10 XP direkodkan (Jawapan: " + LETTERS[correctIdx] + ")." : "Kurang tepat. Jawapan sebenar ialah " + LETTERS[correctIdx] + ".";
+        }
+      } else if (fb) fb.hidden = true;
+    });
+    var xpHere = correctCount * 10;
+    if (xpHere > (rec.earnedXp || 0)) rec.earnedXp = xpHere;
+    var totalXp = recalcTotalXp(state);
+    saveStore(state);
+    if (progText) progText.textContent = answered + " / " + cards.length;
+    if (scoreText) scoreText.textContent = String(correctCount);
+    if (xpText) xpText.textContent = totalXp + " XP";
+    if (progFill) progFill.style.width = Math.round((answered / cards.length) * 100) + "%";
+    if (progBar) progBar.setAttribute("aria-valuenow", String(answered));
+    if (sumNote) sumNote.textContent = answered === cards.length ? "Tahniah! Anda menjawab " + correctCount + "/" + cards.length + " tepat (+" + (correctCount * 10) + " XP untuk bab ini)." : "Kemajuan: " + answered + " daripada " + cards.length + " soalan telah disemak.";
+  }
+
+  cards.forEach(function (card, idx) {
+    card.addEventListener("click", function (ev) {
+      var btn = ev.target && ev.target.closest ? ev.target.closest(".kssm-opt-btn") : null;
+      if (!btn || btn.disabled) return;
+      var rec = state.chapters[CHAP_KEY];
+      if (!rec.answers) rec.answers = {};
+      if (Object.prototype.hasOwnProperty.call(rec.answers, idx)) return;
+      rec.answers[idx] = Number(btn.getAttribute("data-opt-idx"));
+      renderAll();
+    });
+  });
+  if (resetBtn) resetBtn.addEventListener("click", function () { state.chapters[CHAP_KEY] = { answers: {}, earnedXp: state.chapters[CHAP_KEY].earnedXp || 0 }; renderAll(); });
+  renderAll();
+})();
+</script>
+  <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
+  <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=2"></script>
+</body>
+</html>

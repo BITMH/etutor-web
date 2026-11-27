@@ -220,6 +220,17 @@
   .kssm-filter-btn.is-active{background:#1e3a8a;border-color:#1e3a8a;color:#fff}
   .kssm-sk-notice{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border:1px dashed #d97706;background:#fffbeb;border-radius:16px;padding:16px 20px;margin-top:20px}
   .kssm-sk-badge{padding:5px 12px;border-radius:999px;background:#d97706;color:#fff;font-weight:800;font-size:.78rem}
+  .kssm-tp-bar{margin:0 0 16px;padding:12px 14px;border-radius:14px;background:#f8fafc;border:1.5px solid #cbd5e1}
+  .kssm-tp-bar-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
+  .kssm-tp-bar-title{font-size:.82rem;font-weight:800;color:#1e3a8a;text-transform:uppercase}
+  .kssm-tp-achieved{font-size:.8rem;padding:3px 10px;border-radius:999px;background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+  .kssm-tp-achieved.is-ready{background:#ecfdf5;color:#047857;border-color:#6ee7b7}
+  .kssm-tp-steps{display:flex;flex-wrap:wrap;gap:6px}
+  .kssm-tp-step{font-size:.73rem;font-weight:700;padding:4px 9px;border-radius:999px;background:#fff;color:#475569;border:1.5px solid #cbd5e1;transition:all .18s ease}
+  .kssm-tp-step.is-done{background:#059669;color:#fff;border-color:#059669;box-shadow:0 2px 6px rgb(5 150 105 / .18)}
+  .kssm-p2-head-left{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .kssm-tp-badge{display:inline-flex;align-items:center;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px;color:var(--tp-c,#1e3a8a);background:var(--tp-bg,#eff6ff);border:1px solid var(--tp-bd,#bfdbfe)}
+  .kssm-tp-desc{margin:0 0 10px;font-size:.82rem;font-weight:600;color:#475569;line-height:1.45}
   @media (max-width:768px){.kssm-hero{padding:18px}.kssm-sub-card{padding:14px}.kssm-a4-page{min-height:auto;padding:34px 12px 16px;background-size:cover}.kssm-a4-inner{padding:12px;gap:12px}}
   @media print{
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
@@ -1015,11 +1026,16 @@
           <p class="kssm-sublead">Tulis jawapan terus di ruang disediakan atau muat naik gambar jawapan bertulis anda untuk disemak Cikgu AI mengikut skema LPM.</p>
         </div>
       </div>
+      
       <div class="kssm-p2-list"><article class="seo-preview-item kssm-p2-card" data-p2-idx="0" data-p2-subject="Matematik" data-p2-marks="4" data-p2-subid="matematik-t3-bab-2-p2-1" data-p2-question="Tanpa menggunakan kalkulator, hitung nilai bagi (4.8 × 10⁵ + 3.2 × 10⁴) ÷ (2 × 10⁻³) dan nyatakan jawapan anda dalam bentuk piawai betul kepada 2 angka bererti." data-p2-scheme="Kata Kunci: 4.8 × 10⁵ + 0.32 × 10⁵, 5.12 × 10⁵, 2.56 × 10⁸, 2.6 × 10⁸. Panduan: Samakan indeks penambah dahulu, bahagi dengan 2 × 10⁻³, kemudian bundar kepada 2 a.b.">
         <div class="kssm-p2-top">
-          <span class="kssm-p2-label">Soalan Kertas 2 (a) Operasi Bentuk Piawai</span>
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (a) Operasi Bentuk Piawai</span>
+            
+          </div>
           <span class="kssm-p2-marks">4 Markah</span>
         </div>
+        
         <p class="kssm-p2-q">Tanpa menggunakan kalkulator, hitung nilai bagi (4.8 × 10⁵ + 3.2 × 10⁴) ÷ (2 × 10⁻³) dan nyatakan jawapan anda dalam bentuk piawai betul kepada 2 angka bererti.</p>
         <div class="kssm-p2-grader">
           <div class="kssm-p2-grader-top">
@@ -1064,9 +1080,13 @@
       </article>
 <article class="seo-preview-item kssm-p2-card" data-p2-idx="1" data-p2-subject="Matematik" data-p2-marks="6" data-p2-subid="matematik-t3-bab-2-p2-2" data-p2-question="Anggaran jumlah penduduk Malaysia ialah 3.2 × 10⁷ orang dan keluasan negara ialah 3.308 × 10⁵ km². Hitung kepadatan penduduk Malaysia (orang per km²). Seterusnya, jika diameter Bumi ialah 1.2742 × 10⁴ km, hitung luas permukaan Bumi (guna Luas Sfera = 4πj², π = 3.142) dalam bentuk piawai betul kepada 3 a.b." data-p2-scheme="Kata Kunci: kepadatan ≈ 96.7 orang/km², jejari j = 6.371 × 10³ km, ≈ 5.10 × 10⁸ km². Panduan: Ingat untuk membahagikan diameter kepada jejari (j = d/2) sebelum mengira 4πj².">
         <div class="kssm-p2-top">
-          <span class="kssm-p2-label">Soalan Kertas 2 (b) Masalah Aplikasi Sains &amp; Geografi</span>
+          <div class="kssm-p2-head-left">
+            <span class="kssm-p2-label">Soalan Kertas 2 (b) Masalah Aplikasi Sains &amp; Geografi</span>
+            
+          </div>
           <span class="kssm-p2-marks">6 Markah</span>
         </div>
+        
         <p class="kssm-p2-q">Anggaran jumlah penduduk Malaysia ialah 3.2 × 10⁷ orang dan keluasan negara ialah 3.308 × 10⁵ km². Hitung kepadatan penduduk Malaysia (orang per km²). Seterusnya, jika diameter Bumi ialah 1.2742 × 10⁴ km, hitung luas permukaan Bumi (guna Luas Sfera = 4πj², π = 3.142) dalam bentuk piawai betul kepada 3 a.b.</p>
         <div class="kssm-p2-grader">
           <div class="kssm-p2-grader-top">
@@ -1114,7 +1134,8 @@
       <span class="kssm-eyebrow">Pautan Seterusnya</span>
       <h2>Teruskan Ulang Kaji KSSM &amp; Persediaan SPM</h2>
       <div class="seo-related-grid">
-        <a href="../bab-1/" class="kssm-bab-link">Beralih ke Matematik Bab 1</a>
+        
+        <a href="../bab-1/" class="kssm-bab-link">Kembali ke Matematik Bab 1</a>
         <a href="../../" class="kssm-bab-link">Semua Subjek Tingkatan 3</a>
         <a href="../../../" class="kssm-bab-link">Hab Utama KSSM T1–T5</a>
         <a href="../../../../kalkulator-merit-upu/" class="kssm-bab-link">Kalkulator Merit UPUOnline 2027</a>
@@ -1254,6 +1275,6 @@
 })();
 </script>
   <script type="module" src="../../../../integrations/kssm-studio/nota-studio.js?v=2"></script>
-  <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=1"></script>
+  <script type="module" src="../../../../integrations/cikgu-ai/grading/kssm-paper2-grader.js?v=2"></script>
 </body>
 </html>
